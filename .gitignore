@@ -1,0 +1,6 @@
+code/web/bundles/
+code/app/bootstrap*
+code/app/cache/*
+code/app/logs/*
+code/vendor/
+code/app/config/parameters.yml
