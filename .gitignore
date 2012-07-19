@@ -1,6 +1,8 @@
-code/web/bundles/
+code/web/bundles/*
+code/web/uploads/*
 code/app/bootstrap*
 code/app/cache/*
 code/app/logs/*
-code/vendor/
+code/vendor/*
 code/app/config/parameters.yml
+code/app/config/parameters.ini
