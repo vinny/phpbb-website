@@ -14,7 +14,7 @@ class DefaultController extends Controller
 		}
 		else
 		{
-			$static_templates_location = ':Static:'
+			$static_templates_location = ':Static:';
 		}
 
 		$template_slug = str_replace('/', '.', $slug);
