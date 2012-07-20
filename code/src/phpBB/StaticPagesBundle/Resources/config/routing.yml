@@ -1,3 +1,6 @@
-phpBBStaticPagesBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: phpBBStaticPagesBundle:Default:index }
+phpBBStaticPagesBundle_default:
+    pattern:  /{slug}
+    defaults: { _controller: phpBBStaticPagesBundle:Default:Default }
+    requirements:
+        slug: ".+"
+        _scheme:  http
