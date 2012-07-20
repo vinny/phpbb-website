@@ -1,0 +1,26 @@
+<div id="page-footer">
+		<span class="fcorners-bottom"><span></span></span>
+	</div>
+</div>
+
+{% block copyright %}
+<div id="copyright">
+	2012 <a href="{{ path('about') }}">phpBB Limited</a>
+	&bull; <a href="{{ path('contact') }}">Contact Us</a>
+	&bull; <a href="{{ path('advertise') }}">Advertise on www.phpbb.com</a>
+	<br />
+	Header illustrations by <a href="http://www.vladstudio.com/">Vlad Gerasimov</a>
+	&bull; Designed by <a href="{{ path('home') }}">phpBB</a>
+	&bull; Hosting donated by <a href="http://www.osuosl.org">OSUOSL</a><br />
+	{% if app.debug %}
+		<p>Login: {{ app.user.username }}</p>
+		<p>Request method: {{ app.request.method }}</p>
+		<p>Application Environment: {{ app.environment }}</p>
+	{% endif %}
+</div>
+{% endblock %}
+
+{% block javascript %}{% endblock %}
+
+</body>
+</html>
