@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new phpBB\WebsiteInterfaceBundle\phpBBWebsiteInterfaceBundle(),
             new phpBB\StaticPagesBundle\phpBBStaticPagesBundle(),
             new phpBB\LoggingAdminInterfaceBundle\phpBBLoggingAdminInterfaceBundle(),
+            new phpBB\DevToolsBundle\phpBBDevToolsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

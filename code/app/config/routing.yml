@@ -1,3 +1,7 @@
+phpBBDevToolsBundle:
+    resource: "@phpBBDevToolsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 phpBBLoggingAdminInterfaceBundle:
     resource: "@phpBBLoggingAdminInterfaceBundle/Resources/config/routing.yml"
     prefix:   /
