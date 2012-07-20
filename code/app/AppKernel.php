@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new phpBB\phpBBSessionsAuthBundle\phpBBphpBBSessionsAuthBundle(),
             new phpBB\AdminPanelBundle\phpBBAdminPanelBundle(),
+            new phpBB\UpdateGitRepoBundle\phpBBUpdateGitRepoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

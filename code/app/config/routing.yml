@@ -1,3 +1,7 @@
+phpBBUpdateGitRepoBundle:
+    resource: "@phpBBUpdateGitRepoBundle/Resources/config/routing.yml"
+    prefix:   /
+
 phpBBAdminPanelBundle:
     resource: "@phpBBAdminPanelBundle/Resources/config/routing.yml"
     prefix:   /
