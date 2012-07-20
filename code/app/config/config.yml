@@ -21,6 +21,10 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    globals:
+        facebook:
+        twitter:
+        plus_one:
 
 # Assetic Configuration
 assetic:
