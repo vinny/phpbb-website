@@ -1,3 +1,7 @@
+phpBBAdminPanelBundle:
+    resource: "@phpBBAdminPanelBundle/Resources/config/routing.yml"
+    prefix:   /
+
 phpBBphpBBSessionsAuthBundle:
     resource: "@phpBBphpBBSessionsAuthBundle/Resources/config/routing.yml"
     prefix:   /

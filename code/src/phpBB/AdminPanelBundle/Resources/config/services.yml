@@ -1,0 +1,7 @@
+parameters:
+#    php_bb_admin_panel.example.class: phpBB\AdminPanelBundle\Example
+
+services:
+#    php_bb_admin_panel.example:
+#        class: %php_bb_admin_panel.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
