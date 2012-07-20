@@ -24,7 +24,7 @@ phpBBUpdateGitRepoBundle:
 
 phpBBAdminPanelBundle:
     resource: "@phpBBAdminPanelBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 phpBBphpBBSessionsAuthBundle:
     resource: "@phpBBphpBBSessionsAuthBundle/Resources/config/routing.yml"
