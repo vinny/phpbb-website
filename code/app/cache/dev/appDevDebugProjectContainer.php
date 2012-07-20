@@ -2857,6 +2857,7 @@ class appDevDebugProjectContainer extends Container
                 'phpBBUpdateGitRepoBundle' => 'phpBB\\UpdateGitRepoBundle\\phpBBUpdateGitRepoBundle',
                 'phpBBPrivateWebsiteBundle' => 'phpBB\\PrivateWebsiteBundle\\phpBBPrivateWebsiteBundle',
                 'phpBBWebsiteInterfaceBundle' => 'phpBB\\WebsiteInterfaceBundle\\phpBBWebsiteInterfaceBundle',
+                'phpBBStaticPagesBundle' => 'phpBB\\StaticPagesBundle\\phpBBStaticPagesBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
                 'SensioGeneratorBundle' => 'Sensio\\Bundle\\GeneratorBundle\\SensioGeneratorBundle',

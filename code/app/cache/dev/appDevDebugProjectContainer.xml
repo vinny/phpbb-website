@@ -24,6 +24,7 @@
       <parameter key="phpBBUpdateGitRepoBundle">phpBB\UpdateGitRepoBundle\phpBBUpdateGitRepoBundle</parameter>
       <parameter key="phpBBPrivateWebsiteBundle">phpBB\PrivateWebsiteBundle\phpBBPrivateWebsiteBundle</parameter>
       <parameter key="phpBBWebsiteInterfaceBundle">phpBB\WebsiteInterfaceBundle\phpBBWebsiteInterfaceBundle</parameter>
+      <parameter key="phpBBStaticPagesBundle">phpBB\StaticPagesBundle\phpBBStaticPagesBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>

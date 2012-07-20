@@ -1,3 +1,7 @@
+phpBBLoggingAdminInterfaceBundle:
+    resource: "@phpBBLoggingAdminInterfaceBundle/Resources/config/routing.yml"
+    prefix:   /
+
 phpBBStaticPagesBundle:
     resource: "@phpBBStaticPagesBundle/Resources/config/routing.yml"
     prefix:   /
