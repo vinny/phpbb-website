@@ -1,12 +1,46 @@
 {
     "name": "phpbb/phpbb-website",
     "description": "The phpBB website located at www.phpbb.com",
+    "version": "4.0.0-dev",
+    "keywords": "website, phpbb",
+    "homepage": "http://www.phpbb.com",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Yuriy Rusko",
+            "email": "operations@phpbb.com",
+            "homepage": "http://phpbbhelp.org/",
+            "role": "phpBB Website Team Leader & Project Manager"
+        },
+        {
+            "name": "Michael Cullum",
+            "email": "unknownbliss@phpbb.com",
+            "homepage": "http://www.michaelcullum.com",
+            "role": "phpBB Website Team Member"
+        },
+        {
+            "name": "Callum Macrae",
+            "role": "phpBB Website Team Member"
+        },
+        {
+            "name": "Phil Crumm",
+            "role": "phpBB Website Team Member"
+        },
+        {
+            "name": "battye",
+            "role": "phpBB Website Team Member"
+        },
+        {
+            "name": "Wendy Liu",
+            "role": "phpBB Website Team Member"
+        }
+    ],
     "autoload": {
         "psr-0": { "": "src/" }
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.1.*",
+        "symfony/symfony": "2.1.*@beta",
         "doctrine/orm": "2.2.*",
         "doctrine/doctrine-bundle": "dev-master",
         "twig/extensions": "dev-master",
