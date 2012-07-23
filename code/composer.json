@@ -2,7 +2,7 @@
     "name": "phpbb/phpbb-website",
     "description": "The phpBB website located at www.phpbb.com",
     "version": "4.0.0-dev",
-    "keywords": "website, phpbb",
+    "keywords": ["website", "phpbb"],
     "homepage": "http://www.phpbb.com",
     "license": "GPL-3.0",
     "authors": [
@@ -40,7 +40,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.1.*@beta",
+        "symfony/symfony": "2.1.*",
         "doctrine/orm": "2.2.*",
         "doctrine/doctrine-bundle": "dev-master",
         "twig/extensions": "dev-master",
