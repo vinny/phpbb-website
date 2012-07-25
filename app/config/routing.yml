@@ -1,36 +1,36 @@
-phpBBDevToolsBundle:
-    resource: "@phpBBDevToolsBundle/Resources/config/routing.yml"
-    prefix:   /
+# phpBBDevToolsBundle:
+#     resource: "@phpBBDevToolsBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-phpBBLoggingAdminInterfaceBundle:
-    resource: "@phpBBLoggingAdminInterfaceBundle/Resources/config/routing.yml"
-    prefix:   /
+# phpBBLoggingAdminInterfaceBundle:
+#     resource: "@phpBBLoggingAdminInterfaceBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-phpBBUpdateGitRepoBundle:
-    resource: "@phpBBUpdateGitRepoBundle/Resources/config/routing.yml"
-    prefix:   /
+# phpBBUpdateGitRepoBundle:
+#     resource: "@phpBBUpdateGitRepoBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-phpBBAdminPanelBundle:
-    resource: "@phpBBAdminPanelBundle/Resources/config/routing.yml"
-    prefix:   /admin
+# phpBBAdminPanelBundle:
+#     resource: "@phpBBAdminPanelBundle/Resources/config/routing.yml"
+#     prefix:   /admin
 
-phpBBphpBBSessionsAuthBundle:
-    resource: "@phpBBphpBBSessionsAuthBundle/Resources/config/routing.yml"
-    prefix:   /
+# phpBBphpBBSessionsAuthBundle:
+#     resource: "@phpBBphpBBSessionsAuthBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-phpBBWebsiteInterfaceBundle:
-    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing.yml"
-    prefix:   /
+# phpBBWebsiteInterfaceBundle:
+#     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-phpBBPrivateWebsiteBundle:
-    resource: "@phpBBPrivateWebsiteBundle/Resources/config/routing.yml"
-    prefix:   /
+# phpBBPrivateWebsiteBundle:
+#     resource: "@phpBBPrivateWebsiteBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-phpBBStaticPagesBundle:
-    resource: "@phpBBStaticPagesBundle/Resources/config/routing.yml"
-    prefix:   /
+# phpBBStaticPagesBundle:
+#     resource: "@phpBBStaticPagesBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-# Internal routing configuration to handle ESI
-#_internal:
-#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
-#    prefix:   /_internal
+# # Internal routing configuration to handle ESI
+# #_internal:
+# #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+# #    prefix:   /_internal
