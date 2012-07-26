@@ -8,7 +8,7 @@ class DefaultController extends Controller
 {
 	public function defaultAction($slug)
 	{
-		if ($container->getParameter('phpbb_static_pages.template.location') 
+		if ($container->getParameter('phpbb_static_pages.template.location'))
 		{
 			$static_templates_location = $container->getParameter('phpbb_static_pages.template.location');
 		}
