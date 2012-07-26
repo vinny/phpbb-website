@@ -1,5 +1,5 @@
 {
-    "hash": "6998d731815993833b426c53aef58d00",
+    "hash": "6a7e89f5991a3043e5ec65e5644ce681",
     "packages": [
         {
             "package": "doctrine/common",
@@ -14,8 +14,8 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "c9ea46d1f0c48bb88bb87b44214fe44e03c0c692",
-            "commit-date": "1341405737"
+            "source-reference": "62134e6a8dd3f330131ee6a970f0cee1d7760c1d",
+            "commit-date": "1343203511"
         },
         {
             "package": "doctrine/orm",
@@ -33,7 +33,15 @@
         },
         {
             "package": "jms/di-extra-bundle",
-            "version": "1.0.1"
+            "version": "dev-master",
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
+        },
+        {
+            "package": "jms/di-extra-bundle",
+            "version": "dev-master",
+            "source-reference": "7458e34930a18879110fae18457df09b83fd60b9",
+            "commit-date": "1343212603"
         },
         {
             "package": "jms/metadata",
@@ -41,7 +49,15 @@
         },
         {
             "package": "jms/security-extra-bundle",
-            "version": "1.1.0"
+            "version": "dev-master",
+            "alias-pretty-version": "1.2.x-dev",
+            "alias-version": "1.2.9999999.9999999-dev"
+        },
+        {
+            "package": "jms/security-extra-bundle",
+            "version": "dev-master",
+            "source-reference": "1c2b2bef3505c390208f0411be82cc85cf5899eb",
+            "commit-date": "1343171612"
         },
         {
             "package": "kriswallsmith/assetic",
@@ -68,14 +84,14 @@
         {
             "package": "sensio/framework-extra-bundle",
             "version": "dev-master",
-            "source-reference": "e9ac8f1a911ed29e30296c7f1549f53d4c94eddf",
-            "commit-date": "1342084432"
+            "source-reference": "998f5edbffcc422ebd74dab093d9a35d96e3edf6",
+            "commit-date": "1343247216"
         },
         {
             "package": "sensio/generator-bundle",
             "version": "dev-master",
-            "source-reference": "c17dbddefe517e3adfcbeaa1ab7cef3e572d29c6",
-            "commit-date": "1342195488"
+            "source-reference": "4436c2e24301123fb413baf3f78cd93bbc016c07",
+            "commit-date": "1343291371"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -92,8 +108,8 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "e5e9a56a872d9e1f305d14cd8296bf77888388af",
-            "commit-date": "1342820047"
+            "source-reference": "a5daf7ca4588f88105c808de9a28ba1e66bfa082",
+            "commit-date": "1343161458"
         },
         {
             "package": "symfony/monolog-bundle",
