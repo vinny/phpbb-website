@@ -1,8 +1,8 @@
 parameters:
 
-    # When I refer to a sandbox install I refer to our sandbox and sites 
-    that are on a proper remote server in a domain root (e.g. David's Site). 
-    Local sites are sites on your computer/local network that probably don't have things 
+    # When I refer to a sandbox install I refer to our sandbox and sites
+    # that are on a proper remote server in a domain root (e.g. David's Site). 
+    # Local sites are sites on your computer/local network that probably don't have things
 
     # Shouldn't need to touch this
     database_driver:    pdo_mysql
@@ -25,3 +25,6 @@ parameters:
 
     # Location should be local, sandbox or live
     location:           local
+
+    # Location of java on this computer/server
+    java_location:      /usr/bin/java
