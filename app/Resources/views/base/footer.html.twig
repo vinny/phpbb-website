@@ -20,7 +20,13 @@
 </div>
 {% endblock %}
 
-{% block javascript %}{% endblock %}
+{% block javascript %}
+{% javascripts
+    '@phpBBWebsiteInterfaceBundle/Resources/public/js/*' %}
+
+	<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
 
 </body>
 </html>
