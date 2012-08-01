@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+{% block doctype %}<!DOCTYPE html>
+<html>{% endblock %}
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="content-style-type" content="text/css" />
@@ -23,8 +23,12 @@
 <title>{% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock %}</title>
 
 {% block head_assets %}
-<link href="{{ asset('css/stylesheet.min.css') }}" rel="stylesheet" type="text/css" media="screen, projection" />
-<script type="text/javascript" src="{{ asset('js/javascript_head.min.css') }}"></script>
+{% stylesheets
+	'@phpBBWebsiteInterfaceBundle/Resources/public/css/*' %}
+	
+	<link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
 <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/vnd.microsoft.icon" />
 {% endblock %}
 
@@ -41,9 +45,9 @@
 			<h1 id="logo-banner"><a href="{{ path('index') }}">phpBB &bull; Free and Open Source Forum Software</a></h1>
 			<div id="top-social" class="top-social-home">
 				<div id="top-social-icons">
-					<a href="{{ path('rss_feeds') }}"><img src="{{ asset('images/rss') }}" alt="RSS" /></a>
-					<a href="{{ facebook }}"><img src="{{ asset ('images/facebook') }}" alt="Facebook" /></a>
-					<a href="{{ twitter }}"><img src="{{ asset('images/twitter') }} " alt="Twitter" /></a>
+					<a href="{{ path('rss_feeds') }}"><img src="{{ asset('assets/images/rss') }}" alt="RSS" /></a>
+					<a href="{{ facebook }}"><img src="{{ asset ('assets/images/facebook') }}" alt="Facebook" /></a>
+					<a href="{{ twitter }}"><img src="{{ asset('assets/images/twitter') }} " alt="Twitter" /></a>
 				</div>
 			</div>
 		</div>
@@ -53,75 +57,75 @@
 	<div id="navbar">
 		<ul>
 			<li class="but-about">
-				<a href="{{ path('about') }}"><span></span>About</a>
+				<a href="/about/"><span></span>About</a>
 				
 				<div class="sub-menu sub-menu-extra">
 					<ul>
 						<li>
-							<h4><a href="{{ path('features') }}">Features</a></h4>
-							<p><a href="{{ path('features') }}">Learn about the features that phpBB has to offer.</a></p>
+							<h4><a href="about/features/?from=submenu">Features</a></h4>
+							<p><a href="about/features/?from=submenu">Learn about the features that phpBB has to offer.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('demo') }}">Demo</a></h4>
-							<p><a href="{{ path('demo') }}">Give phpBB a try with a fully-featured demo board.</a></p>
+							<h4><a href="/demo/?from=submenu">Demo</a></h4>
+							<p><a href="/demo/?from=submenu">Give phpBB a try with a fully-featured demo board.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('showcase') }}">Showcase</a></h4>
-							<p><a href="{{ path('showcase') }}">A showcase of popular and unique sites using phpBB.</a></p>
+							<h4><a href="/showcase/?from=submenu">Showcase</a></h4>
+							<p><a href="/showcase'/?from=submenu">A showcase of popular and unique sites using phpBB.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ path('get_involved') }}">Get Involved</a></h4>
-							<p><a href="{{ path('get_involved') }}">Learn how you can get involved with the project.</a></p>
+							<h4><a href="/get_involved/">Get Involved</a></h4>
+							<p><a href="/get_involved/">Learn how you can get involved with the project.</a></p>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="{{ path('team') }}">The Team</a></h4>
-							<p><a href="{{ path('team') }}">Find out who is responsible for all the mayhem.</a></p>
+							<h4><a href="/about/team/?from=submenu">The Team</a></h4>
+							<p><a href="/about/team/?from=submenu">Find out who is responsible for all the mayhem.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('contact') }}">Contact Us</a></h4>
-							<p><a href="{{ path('contact') }}">Have a question the forums don't answer? Come here.</a></p>
+							<h4><a href="/about/contact_us.php?from=submenu">Contact Us</a></h4>
+							<p><a href="/about/contact_us.php?from=submenu">Have a question the forums don't answer? Come here.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ path('advertise') }}">Advertising</a></h4>
-							<p><a href="{{ path('advertise') }}">Information if you want to advertise on phpBB.com.</a></p>
+							<h4><a href="/about/advertise/?from=submenu">Advertising</a></h4>
+							<p><a href="/about/advertise/?from=submenu">Information if you want to advertise on phpBB.com.</a></p>
 						</li>
 					</ul>
-					<div class="sub-menu-bottom"><a href="{{ path('about') }}">Find out more about the project &raquo;</a></div>
+					<div class="sub-menu-bottom"><a href="/about/">Find out more about the project &raquo;</a></div>
 
 				</div>
 				
 			</li>
-			<li class="but-downloads"><a href="{{ path('downloads') }}"><span></span>Downloads</a>
+			<li class="but-downloads"><a href="/downloads/"><span></span>Downloads</a>
 				
 				<div class="sub-menu">
 					<ul>
 						<li>
-							<h4><a href="{{ path('downloads') }}">Latest Version</a></h4>
-							<p><a href="{{ path('downloads') }}">Download the latest stable release of phpBB</a></p>
+							<h4><a href="/downloads/?from=submenu">Latest Version</a></h4>
+							<p><a href="/downloads/?from=submenu">Download the latest stable release of phpBB</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('downloads') }}">Update Packages</a></h4>
-							<p><a href="{{ path('downloads') }}">Automatic Update packages for your phpBB release</a></p>
+							<h4><a href="/downloads/?from=submenu">Update Packages</a></h4>
+							<p><a href="/downloads/?from=submenu">Automatic Update packages for your phpBB release</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ path('languages') }}">Language Packs</a></h4>
-							<p><a href="{{ path('languages') }}">Translate phpBB into (almost) any language you like.</a></p>
+							<h4><a href="/languages/?from=submenu">Language Packs</a></h4>
+							<p><a href="/languages/?from=submenu">Translate phpBB into (almost) any language you like.</a></p>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="{{ path('modsdb') }}">Modifications</a></h4>
-							<p><a href="{{ path('modsdb') }}">Download validated MODs to extend phpBB&rsquo;s functionality.</a></p>
+							<h4><a href="/customise/db/modifications-1/?from=submenu">Modifications</a></h4>
+							<p><a href="/customise/db/modifications-1/?from=submenu">Download validated MODs to extend phpBB&rsquo;s functionality.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('stylesdb') }}">Styles</a></h4>
-							<p><a href="{{ path('stylesdb') }}">Your forums need a new look? Browse our Styles DB.</a></p>
+							<h4><a href="/customise/db/styles-2/?from=submenu">Styles</a></h4>
+							<p><a href="/customise/db/styles-2/?from=submenu">Your forums need a new look? Browse our Styles DB.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ path('demo') }}">Demo</a></h4>
-							<p><a href="{{ path('demo') }}">Give phpBB a try with a fully-featured demo board.</a></p>
+							<h4><a href="/demo/">Demo</a></h4>
+							<p><a href="/demo/">Give phpBB a try with a fully-featured demo board.</a></p>
 						</li>
 
 					</ul>
@@ -129,37 +133,37 @@
 				</div>
 				
 			</li>
-			<li class="but-customise"><a href="{{ path('cdb') }}"><span></span>Customise</a>
+			<li class="but-customise"><a href="/customise/db/"><span></span>Customise</a>
 				
 				<div class="sub-menu">
 					<ul>
 						<li>
-							<h4><a href="{{ path('mods') }}">Modifications</a></h4>
-							<p><a href="{{ path('mods') }}">Guides on how to use them and how to create your own.</a></p>
+							<h4><a href="/mods/">Modifications</a></h4>
+							<p><a href="/mods/">Guides on how to use them and how to create your own.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('modsdb') }}">Modification database</a></h4>
-							<p><a href="{{ path('modsdb') }}">Download and submit your work to the MOD database.</a></p>
+							<h4><a href="/customise/db/modifications-1/?from=submenu">Modification database</a></h4>
+							<p><a href="/customise/db/modifications-1/?from=submenu">Download and submit your work to the MOD database.</a></p>
 						</li>
 						<li class="external last" title="Opens an external link.">
-							<h4><a href="{{ path('wiki') }}">Development Wiki</a></h4>
-							<p><a href="{{ path('wiki') }}">Share experience and learn more about the codebase.</a></p>
+							<h4><a href="https://wiki.phpbb.com/?from=submenu">Development Wiki</a></h4>
+							<p><a href="https://wiki.phpbb.com/?from=submenu">Share experience and learn more about the codebase.</a></p>
 						</li>
 
 					</ul>
 
 					<ul>
 						<li>
-							<h4><a href="{{ path('styles') }}">Styles</a></h4>
-							<p><a href="{{ path('styles') }}">Guides on how to use them and to create your own Styles.</a></p>
+							<h4><a href="/styles/">Styles</a></h4>
+							<p><a href="/styles/">Guides on how to use them and to create your own Styles.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('stylesdb') }}">Styles database</a></h4>
-							<p><a href="{{ path('stylesdb') }}">Download and submit your Styles to our Styles database.</a></p>
+							<h4><a href="/customise/db/styles-2/?from=submenu">Styles database</a></h4>
+							<p><a href="/customise/db/styles-2/?from=submenu">Download and submit your Styles to our Styles database.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ path('styles_demo') }}">Styles Demo</a></h4>
-							<p><a href="{{ path('styles_demo') }}">Test drive all the Styles from our database.</a></p>
+							<h4><a href="/styles/demo/3.0/?from=submenu">Styles Demo</a></h4>
+							<p><a href="/styles/demo/3.0/?from=submenu">Test drive all the Styles from our database.</a></p>
 						</li>
 
 					</ul>
@@ -167,13 +171,13 @@
 				</div>
 				
 			</li>
-			<li class="but-support"><a href="{{ path('support') }}"><span></span>Support</a>
+			<li class="but-support"><a href="/support/"><span></span>Support</a>
 				
 				<div class="sub-menu sub-menu-extra">
 					<ul>
 						<li>
-							<h4><a href="{{ path('documentation') }}">Documentation</a></h4>
-							<p><a href="{{ path('documentation') }}">Installation guide and the complete documentation.</a></p>
+							<h4><a href="/support/documentation/3.0/?from=submenu">Documentation</a></h4>
+							<p><a href="/support/documentation/3.0/?from=submenu">Installation guide and the complete documentation.</a></p>
 						</li>
 						<li>
 							<h4><a href="{{ path('kb') }}">Knowledge Base</a></h4>
