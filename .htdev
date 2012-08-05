@@ -1,0 +1,7 @@
+# Best way to integrate this is adding the following line to your VirtualHost definition:
+# Include /path/to/website/.htdev
+#
+# WARNING:
+# If you do not include this file as mentioned above and rewrite rules do not work for you,
+# you might need to locally remove leading slashes from the rewrite rules.
+# Including as mentioned above should work in almost every case.
