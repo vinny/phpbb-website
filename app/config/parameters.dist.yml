@@ -15,7 +15,7 @@ parameters:
     database_password:  ~
 
     # Mailer Settings, shouldn't need to touch these unless its a live/sandbox install.
-    mailer_transport:   smtp
+    m ailer_transport:   smtp
     mailer_host:        localhost
     mailer_user:        ~
     mailer_password:    ~

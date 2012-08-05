@@ -7,3 +7,4 @@ vendor/*
 app/config/parameters.yml
 app/config/parameters.ini
 composer.phar
+bin/*
