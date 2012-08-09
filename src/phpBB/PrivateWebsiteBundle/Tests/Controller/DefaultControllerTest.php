@@ -1,4 +1,12 @@
 <?php
+/**
+ * 
+ * @package phpBBPrivateWebsiteBundle
+ * @copyright (c) 2012 phpBB Group
+ * @license Not for re-distribution
+ * @author Unknown Bliss
+ * 
+ */
 
 namespace phpBB\PrivateWebsiteBundle\Tests\Controller;
 
