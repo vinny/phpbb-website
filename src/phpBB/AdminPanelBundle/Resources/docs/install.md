@@ -15,7 +15,7 @@ You can use composer by ``composer.json`` in your project's root with this conte
             "phpbb/admin-panel": "master-dev"
         }
     }
-    
+
 .. note ::
 
     If you don't wish to use the latest development version then you can set this to 
@@ -28,7 +28,7 @@ you add ``vendor/`` and ``composer.phar`` to your ``.gitignore`` *before* runnin
 these commands:
 
 .. code-block :: bash
-	
+
 	curl -s https://getcomposer.org/installer | php
     php composer.phar update
 
@@ -39,7 +39,7 @@ located:
 .. code-block :: bash
 
     php composer.phar update
-    
+
 Now, Composer will automatically download all required files, and install them
 for you. All that is left to do is to update your ``AppKernel.php`` file, and
 register the new bundle:
