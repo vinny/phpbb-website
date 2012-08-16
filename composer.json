@@ -51,7 +51,13 @@
         "sensio/framework-extra-bundle": "dev-master",
         "sensio/generator-bundle": "dev-master",
         "jms/security-extra-bundle": "1.2.*",
-        "jms/di-extra-bundle": "1.1.*"
+        "jms/di-extra-bundle": "1.1.*",
+        "phpbb/static-pages-bundle": "dev-master",
+        "phpbb/update-git-repo-bundle": "dev-master",
+        "phpbb/phpbb-sessions-auth-bundle": "dev-master",
+        "phpbb/logging-admin-interface-bundle": "dev-master",
+        "phpbb/dev-tools-bundle": "dev-master",
+        "phpbb/admin-panel-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
