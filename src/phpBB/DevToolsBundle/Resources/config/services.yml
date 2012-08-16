@@ -1,7 +1,0 @@
-parameters:
-#    php_bb_dev_tools.example.class: phpBB\DevToolsBundle\Example
-
-services:
-#    php_bb_dev_tools.example:
-#        class: %php_bb_dev_tools.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

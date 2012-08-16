@@ -1,5 +1,5 @@
 {
-    "hash": "67cd7da510af0e49c9db7ba664b638d8",
+    "hash": "62ed5fd1a85494e84d77801a37d278cf",
     "packages": [
         {
             "package": "doctrine/common",
@@ -10,20 +10,26 @@
         {
             "package": "doctrine/dbal",
             "version": "2.3.x-dev",
-            "source-reference": "86b10e7eda2eed1d9a07a580a40e14cea8e1733a",
-            "commit-date": "1343559046"
+            "source-reference": "6470e2089e9ab4a2d24e6927ebe073b7935d7ed5",
+            "commit-date": "1344980709"
         },
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "ed8d02b491512f947fdb2f8b665dc8fd72b5879c",
-            "commit-date": "1343657020"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "doctrine/doctrine-bundle",
+            "version": "dev-master",
+            "source-reference": "4d9bb0f3af470556983eb41a7d19ede23401ef0b",
+            "commit-date": "1344549563"
         },
         {
             "package": "doctrine/orm",
             "version": "2.3.x-dev",
-            "source-reference": "17862d9a2a38bf801e564d09a26eea8503621ae0",
-            "commit-date": "1343850025"
+            "source-reference": "971865f271771a3b06c474dfea9e91f023837cce",
+            "commit-date": "1344977483"
         },
         {
             "package": "jms/aop-bundle",
@@ -42,8 +48,8 @@
         {
             "package": "jms/di-extra-bundle",
             "version": "dev-master",
-            "source-reference": "912519a3dafc6318c781bd00a9ef7ff790b2c321",
-            "commit-date": "1343737883"
+            "source-reference": "a5484ac3f4900f792fa3fb2553461a287ad96b49",
+            "commit-date": "1344982028"
         },
         {
             "package": "jms/metadata",
@@ -58,8 +64,8 @@
         {
             "package": "jms/security-extra-bundle",
             "version": "dev-master",
-            "source-reference": "75b21cce40f7714f462deb4292f093a566958b02",
-            "commit-date": "1343654921"
+            "source-reference": "d65a3a9ff17892beea778e376c82bc420b77eb4e",
+            "commit-date": "1344175596"
         },
         {
             "package": "kriswallsmith/assetic",
@@ -70,24 +76,114 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "11324294acf2dcf6b7f7cb0c4f35fd77e6f01cb7",
-            "commit-date": "1343684910"
+            "source-reference": "d1d5066d9071a76d771993081ee23137e96216b7",
+            "commit-date": "1344507381"
         },
         {
             "package": "monolog/monolog",
             "version": "1.1.0"
         },
         {
+            "package": "phpbb/admin-panel-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.0.x-dev",
+            "alias-version": "1.0.0.9999999-dev"
+        },
+        {
+            "package": "phpbb/admin-panel-bundle",
+            "version": "dev-master",
+            "source-reference": "6942c4d93b474a31915c3b0f4123783aaf3ec5a0",
+            "commit-date": "1345133871"
+        },
+        {
+            "package": "phpbb/dev-tools-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.0.x-dev",
+            "alias-version": "1.0.0.9999999-dev"
+        },
+        {
+            "package": "phpbb/dev-tools-bundle",
+            "version": "dev-master",
+            "source-reference": "72aac1050d0741bd695a02ad43bce6bda02933ec",
+            "commit-date": "1345142182"
+        },
+        {
+            "package": "phpbb/logging-admin-interface-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.0.x-dev",
+            "alias-version": "1.0.0.9999999-dev"
+        },
+        {
+            "package": "phpbb/logging-admin-interface-bundle",
+            "version": "dev-master",
+            "source-reference": "070181a3e7314c0b65b51d27d2a7e38127244be7",
+            "commit-date": "1345146389"
+        },
+        {
+            "package": "phpbb/phpbb-sessions-auth-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.0.x-dev",
+            "alias-version": "1.0.0.9999999-dev"
+        },
+        {
+            "package": "phpbb/phpbb-sessions-auth-bundle",
+            "version": "dev-master",
+            "source-reference": "a2f22413edbf3690bde420f7f4de425ae5fc0067",
+            "commit-date": "1345146877"
+        },
+        {
+            "package": "phpbb/static-pages-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.0.x-dev",
+            "alias-version": "1.0.0.9999999-dev"
+        },
+        {
+            "package": "phpbb/static-pages-bundle",
+            "version": "dev-master",
+            "source-reference": "cbd1250cad553fca4d8712908e49b6c1305c8eb6",
+            "commit-date": "1345147288"
+        },
+        {
+            "package": "phpbb/update-git-repo-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.0.x-dev",
+            "alias-version": "1.0.0.9999999-dev"
+        },
+        {
+            "package": "phpbb/update-git-repo-bundle",
+            "version": "dev-master",
+            "source-reference": "731058a66b3f6fac778fe500f5a60dc75a9b6e1d",
+            "commit-date": "1345147552"
+        },
+        {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "26a1165b8cfbde91bf01d809f87bc286f18f0963",
-            "commit-date": "1343979103"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "sensio/distribution-bundle",
+            "version": "dev-master",
+            "source-reference": "bd98b5fb0e4a5dddb4f7acd2e11f28c4cd7eacee",
+            "commit-date": "1345139690"
+        },
+        {
+            "package": "sensio/framework-extra-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "sensio/framework-extra-bundle",
             "version": "dev-master",
             "source-reference": "ade2d53b20a9fc3428f04c863b3fd4fca0b62181",
             "commit-date": "1344072374"
+        },
+        {
+            "package": "sensio/generator-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "sensio/generator-bundle",
@@ -110,14 +206,32 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "0c09207be07b044e06d28a4111f554f071e5b658",
-            "commit-date": "1343812720"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/assetic-bundle",
+            "version": "dev-master",
+            "source-reference": "ec3a65d3eab342af9e93a3c21af0ac7b78e01c17",
+            "commit-date": "1344507386"
         },
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA4",
-            "commit-date": "1341078487"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/monolog-bundle",
+            "version": "dev-master",
+            "source-reference": "aed4d742838d2a7350633fed7afe18dbfd3415de",
+            "commit-date": "1344949802"
+        },
+        {
+            "package": "symfony/swiftmailer-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -144,8 +258,8 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "51c866f415bbee670cd9ba13591307bce8dabdca",
-            "commit-date": "1343464333"
+            "source-reference": "f2f698c820d4396f519ef4175ad6fe79fcfb9ecf",
+            "commit-date": "1344328685"
         }
     ],
     "packages-dev": null,
@@ -162,6 +276,12 @@
         "symfony/monolog-bundle": 20,
         "sensio/distribution-bundle": 20,
         "sensio/framework-extra-bundle": 20,
-        "sensio/generator-bundle": 20
+        "sensio/generator-bundle": 20,
+        "phpbb/static-pages-bundle": 20,
+        "phpbb/update-git-repo-bundle": 20,
+        "phpbb/phpbb-sessions-auth-bundle": 20,
+        "phpbb/logging-admin-interface-bundle": 20,
+        "phpbb/dev-tools-bundle": 20,
+        "phpbb/admin-panel-bundle": 20
     }
 }

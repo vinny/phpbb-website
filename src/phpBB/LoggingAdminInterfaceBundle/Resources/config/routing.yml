@@ -1,3 +1,0 @@
-phpBBLoggingAdminInterfaceBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: phpBBLoggingAdminInterfaceBundle:Default:index }

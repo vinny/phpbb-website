@@ -1,3 +1,0 @@
-phpBBUpdateGitRepoBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: phpBBUpdateGitRepoBundle:Default:index }
