@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new phpBB\phpBBSessionsAuthBundle\phpBBphpBBSessionsAuthBundle(),
             new phpBB\AdminPanelBundle\phpBBAdminPanelBundle(),
             new phpBB\UpdateGitRepoBundle\phpBBUpdateGitRepoBundle(),
+            new phpBB\PrivateWebsiteBundle\phpBBPrivateWebsiteBundle(),
             new phpBB\WebsiteInterfaceBundle\phpBBWebsiteInterfaceBundle(),
             new phpBB\StaticPagesBundle\phpBBStaticPagesBundle(),
             new phpBB\LoggingAdminInterfaceBundle\phpBBLoggingAdminInterfaceBundle(),
