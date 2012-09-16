@@ -18,9 +18,9 @@
 #     resource: "@phpBBphpBBSessionsAuthBundle/Resources/config/routing.yml"
 #     prefix:   /
 
-# phpBBWebsiteInterfaceBundle:
-#     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing.yml"
-#     prefix:   /
+phpBBWebsiteInterfaceBundle:
+    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing.yml"
+    prefix:   /
 
 # phpBBPrivateWebsiteBundle:
 #     resource: "@phpBBPrivateWebsiteBundle/Resources/config/routing.yml"
