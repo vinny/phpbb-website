@@ -1,5 +1,5 @@
 {
-    "hash": "0ceaf11fe8edc78f86d42b377de40318",
+    "hash": "c123c33b5d3741aaaaf2749b770ebc37",
     "packages": [
         {
             "name": "doctrine/common",
@@ -172,32 +172,57 @@
                 "psr-0": {
                     "Doctrine\\Bundle\\DoctrineBundle": ""
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                }
+            ],
+            "description": "Symfony DoctrineBundle",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database",
+                "orm",
+                "persistence",
+                "dbal"
+            ]
         },
         {
             "name": "doctrine/orm",
-            "version": "2.3.x-dev",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/doctrine2.git",
-                "reference": "ea2b28857830720460a345c80c6e7d3f6adae93a"
+                "reference": "2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/doctrine2/zipball/ea2b28857830720460a345c80c6e7d3f6adae93a",
-                "reference": "ea2b28857830720460a345c80c6e7d3f6adae93a",
+                "url": "https://github.com/doctrine/doctrine2/zipball/2.3.0",
+                "reference": "2.3.0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "ext-pdo": "*",
-                "symfony/console": "2.*",
-                "doctrine/dbal": "2.3.*"
+                "doctrine/dbal": "2.3.*",
+                "symfony/console": "2.*"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "1348121015",
+            "time": "2012-09-20 06:03:34",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -208,7 +233,7 @@
                     "dev-master": "2.3.x-dev"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\ORM": "lib/"
@@ -269,7 +294,23 @@
                 "psr-0": {
                     "JMS\\AopBundle": ""
                 }
-            }
+            },
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Adds AOP capabilities to Symfony2",
+            "keywords": [
+                "annotations",
+                "aop"
+            ]
         },
         {
             "name": "jms/cg",
@@ -295,7 +336,22 @@
                 "psr-0": {
                     "CG\\": "src/"
                 }
-            }
+            },
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Toolset for generating PHP code",
+            "keywords": [
+                "code generation"
+            ]
         },
         {
             "name": "jms/di-extra-bundle",
@@ -382,7 +438,25 @@
                 "psr-0": {
                     "Metadata\\": "src/"
                 }
-            }
+            },
+            "license": [
+                "Apache"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Class/method/property metadata management in PHP",
+            "keywords": [
+                "annotations",
+                "yaml",
+                "xml",
+                "metadata"
+            ]
         },
         {
             "name": "jms/security-extra-bundle",
@@ -427,7 +501,27 @@
                 "psr-0": {
                     "JMS\\SecurityExtraBundle": ""
                 }
-            }
+            },
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Enhances the Symfony2 Security Component by adding several new features",
+            "homepage": "http://jmsyst.com/bundles/JMSSecurityExtraBundle",
+            "keywords": [
+                "annotations",
+                "authorization",
+                "security",
+                "secure",
+                "expression"
+            ]
         },
         {
             "name": "kriswallsmith/assetic",
@@ -476,7 +570,24 @@
                 "files": [
                     "src/functions.php"
                 ]
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Asset Management for PHP",
+            "homepage": "https://github.com/kriswallsmith/assetic",
+            "keywords": [
+                "assets",
+                "compression",
+                "minification"
+            ]
         },
         {
             "name": "monolog/monolog",
@@ -564,7 +675,23 @@
                 "psr-0": {
                     "phpBB\\AdminPanelBundle": ""
                 }
-            }
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "phpBB Group",
+                    "email": "operations@phpbb.com",
+                    "homepage": "https://phpbb.com/"
+                }
+            ],
+            "description": "A symfony bundle that provides a modular admin panel.",
+            "homepage": "http://www.phpbb.com",
+            "keywords": [
+                "phpbb",
+                "adminpanel"
+            ]
         },
         {
             "name": "phpbb/dev-tools-bundle",
@@ -596,7 +723,24 @@
                 "psr-0": {
                     "phpBB\\DevToolsBundle": ""
                 }
-            }
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "phpBB Group",
+                    "email": "operations@phpbb.com",
+                    "homepage": "https://phpbb.com/"
+                }
+            ],
+            "description": "A symfony bundle that provides a number of tools to help with development.",
+            "homepage": "http://www.phpbb.com",
+            "keywords": [
+                "tools",
+                "development",
+                "phpbb"
+            ]
         },
         {
             "name": "phpbb/logging-admin-interface-bundle",
@@ -630,7 +774,25 @@
                 "psr-0": {
                     "phpBB\\LoggingAdminInterfaceBundle": ""
                 }
-            }
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "phpBB Group",
+                    "email": "operations@phpbb.com",
+                    "homepage": "https://phpbb.com/"
+                }
+            ],
+            "description": "A symfony bundle that provides an admin GUI for logs.",
+            "homepage": "http://www.phpbb.com",
+            "keywords": [
+                "logging",
+                "tools",
+                "phpbb",
+                "logs"
+            ]
         },
         {
             "name": "phpbb/phpbb-sessions-auth-bundle",
@@ -664,7 +826,24 @@
                 "psr-0": {
                     "phpBB\\phpBBSessionsAuthBundle": ""
                 }
-            }
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "phpBB Group",
+                    "email": "operations@phpbb.com",
+                    "homepage": "https://phpbb.com/"
+                }
+            ],
+            "description": "A symfony bundle that provides symfony the ability to integrate and share sessions with phpBB and use phpBB as the authentication provider.",
+            "homepage": "http://www.phpbb.com",
+            "keywords": [
+                "Bridge",
+                "phpbb",
+                "intergration"
+            ]
         },
         {
             "name": "phpbb/static-pages-bundle",
@@ -696,7 +875,24 @@
                 "psr-0": {
                     "phpBB\\StaticPagesBundle": ""
                 }
-            }
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "phpBB Group",
+                    "email": "operations@phpbb.com",
+                    "homepage": "https://phpbb.com/"
+                }
+            ],
+            "description": "A symfony bundle that provides you to create pages simply by creating a template for them (no controller needed).",
+            "homepage": "http://www.phpbb.com",
+            "keywords": [
+                "static",
+                "phpbb",
+                "pages"
+            ]
         },
         {
             "name": "phpbb/update-git-repo-bundle",
@@ -728,7 +924,24 @@
                 "psr-0": {
                     "phpBB\\UpdateGitRepoBundle": ""
                 }
-            }
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "phpBB Group",
+                    "email": "operations@phpbb.com",
+                    "homepage": "https://phpbb.com/"
+                }
+            ],
+            "description": "A symfony bundle that makes it easy to deploy git updates on your website",
+            "homepage": "http://www.phpbb.com",
+            "keywords": [
+                "git",
+                "deploy",
+                "phpbb"
+            ]
         },
         {
             "name": "sensio/distribution-bundle",
@@ -825,36 +1038,33 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "dev-master",
+            "version": "2.1.x-dev",
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioGeneratorBundle",
-                "reference": "f5bda1014f5f124a0fd881644664493e36a09ad0"
+                "reference": "3a65c9bf7d31aecacffc15a48f5eb2ece3615ef0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioGeneratorBundle/zipball/f5bda1014f5f124a0fd881644664493e36a09ad0",
-                "reference": "f5bda1014f5f124a0fd881644664493e36a09ad0",
+                "url": "https://github.com/sensio/SensioGeneratorBundle/zipball/3a65c9bf7d31aecacffc15a48f5eb2ece3615ef0",
+                "reference": "3a65c9bf7d31aecacffc15a48f5eb2ece3615ef0",
                 "shasum": ""
             },
             "require": {
-                "symfony/framework-bundle": "2.2.*",
-                "symfony/console": "2.2.*"
+                "symfony/framework-bundle": "2.1.*",
+                "symfony/console": "2.1.*"
             },
             "require-dev": {
+                "symfony/doctrine-bridge": "2.1.*",
                 "doctrine/orm": ">=2.1,<2.4-dev",
-                "twig/twig": ">=1.8,<2.0-dev",
-                "symfony/doctrine-bridge": "2.2.*"
+                "twig/twig": ">=1.8,<2.0-dev"
             },
-            "suggest": {
-                "doctrine/doctrine-bundle": "to generate entities and their crud controller"
-            },
-            "time": "1348070473",
+            "time": "1348030981",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "installation-source": "source",
@@ -903,7 +1113,25 @@
                 "files": [
                     "lib/swift_required.php"
                 ]
-            }
+            },
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Chris Corbyn"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "mail",
+                "mailer"
+            ]
         },
         {
             "name": "symfony/assetic-bundle",
@@ -949,7 +1177,24 @@
                 "psr-0": {
                     "Symfony\\Bundle\\AsseticBundle": ""
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Integrates Assetic into Symfony2",
+            "homepage": "https://github.com/symfony/AsseticBundle",
+            "keywords": [
+                "assets",
+                "compression",
+                "minification"
+            ]
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1183,7 +1428,23 @@
                 "psr-0": {
                     "Twig_Extensions_": "lib/"
                 }
-            }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Common additional features for Twig that do not directly belong in core",
+            "homepage": "https://github.com/fabpot/Twig-extensions",
+            "keywords": [
+                "debug",
+                "i18n",
+                "text"
+            ]
         },
         {
             "name": "twig/twig",
@@ -1242,6 +1503,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "symfony/symfony": 10,
+        "doctrine/orm": 10,
         "phpbb/static-pages-bundle": 20,
         "phpbb/update-git-repo-bundle": 20,
         "phpbb/phpbb-sessions-auth-bundle": 20,
