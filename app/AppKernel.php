@@ -20,7 +20,6 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new phpBB\phpBBSessionsAuthBundle\phpBBphpBBSessionsAuthBundle(),
-            new phpBB\AdminPanelBundle\phpBBAdminPanelBundle(),
             new phpBB\UpdateGitRepoBundle\phpBBUpdateGitRepoBundle(),
             new phpBB\WebsiteInterfaceBundle\phpBBWebsiteInterfaceBundle(),
             new phpBB\StaticPagesBundle\phpBBStaticPagesBundle(),
