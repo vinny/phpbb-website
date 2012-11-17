@@ -20,12 +20,12 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new phpBB\phpBBSessionsAuthBundle\phpBBphpBBSessionsAuthBundle(),
-            new phpBB\AdminPanelBundle\phpBBAdminPanelBundle(),
             new phpBB\UpdateGitRepoBundle\phpBBUpdateGitRepoBundle(),
             new phpBB\WebsiteInterfaceBundle\phpBBWebsiteInterfaceBundle(),
             new phpBB\StaticPagesBundle\phpBBStaticPagesBundle(),
             new phpBB\LoggingAdminInterfaceBundle\phpBBLoggingAdminInterfaceBundle(),
             new phpBB\DevToolsBundle\phpBBDevToolsBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
