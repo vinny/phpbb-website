@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
 
-<link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/vnd.microsoft.icon" />
+<link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/vnd.microsoft.icon" />
 {% endblock %}
 
 </head>
@@ -42,12 +42,12 @@
 		<span class="side-left"></span>
 		<div class="header" style="position: relative;">
 			{% block header_button %}{% endblock %}
-			<h1 id="logo-banner"><a href="{{ path('index') }}">phpBB &bull; Free and Open Source Forum Software</a></h1>
+			<h1 id="logo-banner"><a href="/">phpBB &bull; Free and Open Source Forum Software</a></h1>
 			<div id="top-social" class="top-social-home">
 				<div id="top-social-icons">
-					<a href="{{ path('rss_feeds') }}"><img src="{{ asset('assets/images/rss') }}" alt="RSS" /></a>
-					<a href="{{ facebook }}"><img src="{{ asset ('assets/images/facebook') }}" alt="Facebook" /></a>
-					<a href="{{ twitter }}"><img src="{{ asset('assets/images/twitter') }} " alt="Twitter" /></a>
+					<a href="/feeds/rss/"><img src="{{ asset('assets/images/icons/rss-20.png') }}" alt="RSS" /></a>
+					<a href="http://www.facebook.com/phpBB"><img src="{{ asset ('assets/images/icons/facebook-20.png') }}" alt="Facebook" /></a>
+					<a href="http://www.twitter.com/phpbb"><img src="{{ asset('assets/images/icons/twitter-20.png') }} " alt="Twitter" /></a>
 				</div>
 			</div>
 		</div>
@@ -180,116 +180,103 @@
 							<p><a href="/support/documentation/3.0/?from=submenu">Installation guide and the complete documentation.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('kb') }}">Knowledge Base</a></h4>
-							<p><a href="{{ path('kb') }}">Team and user submitted ar&shy;ticles covering support areas.</a></p>
+							<h4><a href="/kb/?from=submenu">Knowledge Base</a></h4>
+							<p><a href="/kb/?from=submenu">Team and user submitted ar&shy;ticles covering support areas.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('kb_flash') }}">Flash Tutorials</a></h4>
-							<p><a href="{{ path('kb_flash') }}">View Flash Tutorials that help you with the use of phpBB.</a></p>
+							<h4><a href="/support/tutorials/3.0/?from=submenu">Flash Tutorials</a></h4>
+							<p><a href="/support/tutorials/3.0/?from=submenu">View Flash Tutorials that help you with the use of phpBB.</a></p>
 						</li>
-						{% if on_team %}
-						<li class="last">
-							<h4><a href="{{ path('cookie_debugger') }}">Cookie Debugger</a></h4>
-							<p><a href="{{ path('cookie_debugger') }}">View various information about a site's cookies.</a></p>
-						</li>
-						{% endif %}
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="{{ path('support_forums') }}">Support Forums</a></h4>
-							<p><a href="{{ path('support_forums') }}">Please use the search facility before posting a question.</a></p>
+							<h4><a href="/support/forums/?from=submenu">Support Forums</a></h4>
+							<p><a href="/support/forums/?from=submenu">Please use the search facility before posting a question.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('irc') }}">IRC Support</a></h4>
-							<p><a href="{{ path('irc') }}">Old school? Visit the IRC support channel on freenode.</a></p>
+							<h4><a href="/support/irc/?from=submenu">IRC Support</a></h4>
+							<p><a href="/support/irc/?from=submenu">Old school? Visit the IRC support channel on freenode.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ path('ists') }}">International Support</a></h4>
-							<p><a href="{{ path('ists') }}">Find a 3rd party support site in your first language.</a></p>
+							<h4><a href="/support/intl/?from=submenu">International Support</a></h4>
+							<p><a href="/support/intl/?from=submenu">Find a 3rd party support site in your first language.</a></p>
 						</li>
 					</ul>
-					<div class="sub-menu-bottom"><a href="{{ path('support') }}">More information on support &raquo;</a></div>
+					<div class="sub-menu-bottom"><a href="/support/">More information on support &raquo;</a></div>
 				</div>
 				
 			</li>
-			<li class="but-development"><a href="{{ path('development') }}"><span></span>Development</a>
+			<li class="but-development"><a href="/development/"><span></span>Development</a>
 				
 				<div class="sub-menu sub-menu-extra">
 					<ul class="wide-menu">
 						<li class="external wide-menu-item" title="Opens an external link.">
-							<h4><a href="{{ path('area51') }}">Area51 phpBB Development</a></h4>
-							<img style="float:right;" src="{{ asset('images/alien.png') }}" alt="Area51 Alien" />
-							<p><a href="{{ path('area51') }}">All Development Discussion takes place at Area51. Bug tracker, development wiki, continuous integration and other development tools are located here. Find out how to get involved in phpBB development.</a></p>
+							<h4><a href="//area51.phpbb.com/">Area51 phpBB Development</a></h4>
+							<img style="float:right;" src="{{ asset('assets/images/aliens/alien32.png') }}" alt="Area51 Alien" />
+							<p><a href="//area51.phpbb.com/">All Development Discussion takes place at Area51. Bug tracker, development wiki, continuous integration and other development tools are located here. Find out how to get involved in phpBB development.</a></p>
 						</li>
 					</ul>
 					<ul>
 						<li class="external" title="Opens an external link.">
-							<h4><a href="{{ path('tracker') }}">phpBB Bug Tracker</a></h4>
-							<p><a href="{{ path('tracker') }}">Report problems with phpBB here.</a></p>
+							<h4><a href="http://tracker.phpbb.com/">phpBB Bug Tracker</a></h4>
+							<p><a href="http://tracker.phpbb.com/">Report problems with phpBB here.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ path('proj_tracker') }}">phpBB Projects Tracker</a></h4>
-							<p><a href="{{ path('proj_tracker') }}">Report issues with the Website, Customisation Database, and Team Tools here</a></p>
+							<h4><a href="/bugs/?from=submenu">phpBB Projects Tracker</a></h4>
+							<p><a href="/bugs/?from=submenu">Report issues with the Website, Customisation Database, and Team Tools here</a></p>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="{{ path('security_tracker') }}">Security Tracker</a></h4>
-							<p><a href="{{ path('security_tracker') }}">The tracker for security issues in phpBB or validated MODs.</a></p>
+							<h4><a href="/security/?from=submenu">Security Tracker</a></h4>
+							<p><a href="/security/?from=submenu">The tracker for security issues in phpBB or validated MODs.</a></p>
 						</li>
 						<li class="external last" title="Opens an external link.">
-							<h4><a href="{{ path('wiki') }}">Development Wiki</a></h4>
-							<p><a href="{{ path('wiki') }}">Share experience and learn more about the codebase.</a></p>
+							<h4><a href="//wiki.phpbb.com/">Development Wiki</a></h4>
+							<p><a href="//wiki.phpbb.com/">Share experience and learn more about the codebase.</a></p>
 						</li>
 					</ul>
-					<div class="sub-menu-bottom"><a href="{{ path('development') }}">Participate in phpBB development now &raquo;</a></div>
+					<div class="sub-menu-bottom"><a href="/development/">Participate in phpBB development now &raquo;</a></div>
 				</div>
 				
 			</li>
-			<li class="but-blog"><a href="{{ path('blog') }}"><span></span>Blog</a></li>
-			<li class="but-community"><a href="{{ path('community') }}"><span></span>Community</a>
+			<li class="but-blog"><a href="//blog.phpbb.com/"><span></span>Blog</a></li>
+			<li class="but-community"><a href="/community/"><span></span>Community</a>
 				
 				<div class="sub-menu sub-menu-extra">
 					<ul>
 						<li>
-							<h4><a href="{{ path('support_forum') }}">Support Forums</a></h4>
-							<p><a href="{{ path('support_forum') }}">Help with installation &amp; running phpBB &ndash; search first!</a></p>
+							<h4><a href="/community/viewforum.php?from=submenu&amp;f=46">Support Forums</a></h4>
+							<p><a href="/community/viewforum.php?from=submenu&amp;f=46">Help with installation &amp; running phpBB &ndash; search first!</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('mods_forum') }}">Modification Forums</a></h4>
-							<p><a href="{{ path('mods_forum') }}">Discuss and view MODs that are available for download.</a></p>
+							<h4><a href="/community/viewforum.php?from=submenu&amp;f=81">Modification Forums</a></h4>
+							<p><a href="/community/viewforum.php?from=submenu&amp;f=81">Discuss and view MODs that are available for download.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ path('styles_forum') }}">Styles Forums</a></h4>
-							<p><a href="{{ path('styles_forum') }}">Discuss and view Styles that are available for download.</a></p>
+							<h4><a href="/community/viewforum.php?from=submenu&amp;f=80">Styles Forums</a></h4>
+							<p><a href="/community/viewforum.php?from=submenu&amp;f=80">Discuss and view Styles that are available for download.</a></p>
 						</li>
 					</ul>
 					<ul>
 						<li>
-							<h4><a href="{{ path('phpbb_dicussion') }}">phpBB Discussion</a></h4>
-							<p><a href="{{ path('phpbb_discussion') }}">Discussions on all things phpBB: features, future, etc.</a></p>
+							<h4><a href="/community/viewforum.php?from=submenu&amp;f=64">phpBB Discussion</a></h4>
+							<p><a href="/community/viewforum.php?from=submenu&amp;f=64">Discussions on all things phpBB: features, future, etc.</a></p>
 						</li>
 						<li>
-							<h4><a href="{{ path('general_discussion') }}">General Discussion</a></h4>
-							<p><a href="{{ path('general_discussion') }}">General discussion and intelligent conversations.</a></p>
+							<h4><a href="/community/viewforum.php?from=submenu&amp;f=6">General Discussion</a></h4>
+							<p><a href="/community/viewforum.php?from=submenu&amp;f=6">General discussion and intelligent conversations.</a></p>
 						</li>
 						<li class="external" title="Opens an external link.">
-							<h4><a href="{{ path('area51') }}">Area51</a></h4>
-							<p><a href="{{ path('area51') }}">Bleeding edge testing and development discussion.</a></p>
-						</li>
-						{% if on_team %}
-						<li class="last">
-							<h4><a href="{{ path('private_forums') }}">Private Forums</a></h4>
-							<p><a href="{{ path('private_forums') }}">First and second rule: you do not talk about Fight Club.</a></p>
-						</li>
-						{% endif %}
-						
+							<h4><a href="//area51.phpbb.com/phpBB/">Area51</a></h4>
+							<p><a href="//area51.phpbb.com/phpBB/">Bleeding edge testing and development discussion.</a></p>
+						</li>				
 					</ul>
-					<div class="sub-menu-bottom"><a href="{{ path('community') }}">&#0133; and many more forums &raquo;</a></div>
+					<div class="sub-menu-bottom"><a href="/community/">&#0133; and many more forums &raquo;</a></div>
 				</div>
 				
 			</li>
-			<li class="but-hosting"><a href="{{ path('hosting') }}"><span></span>Hosting</a></li>
+			<li class="but-hosting"><a href="/hosting/"><span></span>Hosting</a></li>
 			<li id="searchbox">
 				<fieldset>
 					<!-- Google CSE Search Box Begins -->

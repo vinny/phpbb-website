@@ -25,7 +25,7 @@ body {
 ---------------------------------------- */
 #wrap {
 	width: 910px;
-	background: #FFFFFF url("./images/bg_body.gif") repeat-y 0 0;
+	background: #FFFFFF url("/assets/images/images/bg_body.gif") repeat-y 0 0;
 	margin: 0px auto;
 	text-align: left;
 	padding: 0;
@@ -34,7 +34,7 @@ body {
 	padding: 6px 10px;
 }
 #page-header {
-	background: url("./images/bg_header.gif") repeat-x 0 0;
+	background: url("/assets/images/images/bg_header.gif") repeat-x 0 0;
 	height: 150px;
 	clear: both;
 }
@@ -276,7 +276,7 @@ body.home #main div.column1 li, body.home #main div.column2 li {
 
 #main .mini-panel.feed-stats p a, .mini-panel.feed-stats p a {
 	padding: 1px 0pt 1px 17px;
-	background: transparent url(./images/feed-icon-14x14.png) no-repeat scroll 0 50%;
+	background: transparent url(/assets/images/images/feed-icon-14x14.png) no-repeat scroll 0 50%;
 }
 
 #main .mini-panel.feed-stats p img {
@@ -381,19 +381,19 @@ dl.extra-box.download2 dd.extras a {
 }
 
 dl.download {
-	background-image: url("./images/bg_download.png");
+	background-image: url("/assets/images/images/bg_download.png");
 }
 
 dl.download2 {
-	background-image: url("./images/bg_download2.png");
+	background-image: url("/assets/images/images/bg_download2.png");
 }
 
 dl.download3 {
-	background-image: url("./images/bg_download3.png");
+	background-image: url("/assets/images/images/bg_download3.png");
 }
 
 dl.download4 {
-	background-image: url("./images/bg_download4.png");
+	background-image: url("/assets/images/images/bg_download4.png");
 	position: absolute;
 	bottom: 0;
 	right:0;
@@ -401,7 +401,7 @@ dl.download4 {
 }
 
 dl.download5 {
-	background-image: url("./images/bg_download5.png");
+	background-image: url("/assets/images/images/bg_download5.png");
 }
 
 dl.download dt, dl.download2 dt, dl.download3 dt {
@@ -418,7 +418,7 @@ dl.download3 dd a {
 }
 
 dl.download-contrib {
-	background-image: url("./images/bg_download_contrib.png");
+	background-image: url("/assets/images/images/bg_download_contrib.png");
 }
 
 div.downloads-footer {
@@ -491,17 +491,17 @@ div.downloads .mini-panel h3 {
 
 dl.shop {
 	height: 66px;
-	background-image: url("./images/bg_shop.png");
+	background-image: url("/assets/images/images/bg_shop.png");
 }
 
 dl.showcase {
 	height: 76px;
 	width: 270px !important;
-	background: url("./images/showcasebg.gif") no-repeat left top;
+	background: url("/assets/images/images/showcasebg.gif") no-repeat left top;
 }
 
 dl.sourceforge-cca2007 {
-	background-image: url("./images/sourceforge_cca_2007_260x58.png");
+	background-image: url("/assets/images/images/sourceforge_cca_2007_260x58.png");
 	height: 58px;
 }
 
@@ -575,10 +575,10 @@ div.panel-emphasis {
 	margin: 0
 }
 
-#home-buttons a.what-is			{ background-image: url("./images/hb-what-is-phpbb.png"); }
-#home-buttons a.get-started		{ background-image: url("./images/hb-get-started.png?2010061000"); }
-#home-buttons a.enhance			{ background-image: url("./images/hb-enhance-phpbb.png?2010061100"); }
-#home-buttons a.contribute		{ background-image: url("./images/hb-contribute.png?2010061000"); }
+#home-buttons a.what-is			{ background-image: url("/assets/images/images/hb-what-is-phpbb.png"); }
+#home-buttons a.get-started		{ background-image: url("/assets/images/images/hb-get-started.png?2010061000"); }
+#home-buttons a.enhance			{ background-image: url("/assets/images/images/hb-enhance-phpbb.png?2010061100"); }
+#home-buttons a.contribute		{ background-image: url("/assets/images/images/hb-contribute.png?2010061000"); }
 
 #home-try-link {
 	position: absolute;
@@ -591,7 +591,7 @@ div.panel-emphasis {
 	top: 25px;
 	height: 77px;
 	width: 124px;
-	background: url("./images/home-version-bg.png") no-repeat;
+	background: url("/assets/images/images/home-version-bg.png") no-repeat;
 }
 
 #home-try-link a {
@@ -615,7 +615,7 @@ div.panel-emphasis {
 	text-decoration: none;
 	color: #CCCCCC;
 	/*
-	background: url("./images/home-version-bg.png") no-repeat -124px 0;
+	background: url("/assets/images/images/home-version-bg.png") no-repeat -124px 0;
 	*/
 }
 
@@ -630,7 +630,7 @@ div.panel-emphasis {
 	top: 25px;
 	height: 77px;
 	width: 124px;
-	background: url("./images/home-version-bg.png") no-repeat;
+	background: url("/assets/images/images/home-version-bg.png") no-repeat;
 }
 
 #home-dl-link a {
@@ -654,7 +654,7 @@ div.panel-emphasis {
 	text-decoration: none;
 	color: #CCCCCC;
 	/*
-	background: url("./images/home-version-bg.png") no-repeat -124px 0;
+	background: url("/assets/images/images/home-version-bg.png") no-repeat -124px 0;
 	*/
 }
 
@@ -737,7 +737,7 @@ div.panel-emphasis {
 .home-sponsors ul.ads li a {
 	padding: 2px 0 2px 18px;
 	background-position: 0 50%;
-	background-image: url(./images/favicons/blank.png);
+	background-image: url(/assets/images/images/favicons/blank.png);
 	background-repeat: no-repeat;
 }
 
@@ -760,7 +760,7 @@ div.panel-emphasis {
 
 /* Page footer styles */
 #page-footer {
-	background: url("./images/bg_footer.gif") repeat-x 0 100%;
+	background: url("/assets/images/images/bg_footer.gif") repeat-x 0 100%;
 	clear: both;
 	/*padding-top: 15px;*/
 }
@@ -821,7 +821,7 @@ div.banner-ad {
 	border-width: 1px 0;
 	padding: 1em 0;
 	text-align: center;
-	background: url("./images/bg_ads.gif") no-repeat  100% 100%;
+	background: url("/assets/images/images/bg_ads.gif") no-repeat  100% 100%;
 }
 
 h3.ad_vertisement {
@@ -1056,7 +1056,7 @@ body.languages ul.packages li {
 body.languages ul.packages img {
 	float: left;
 	margin: 0 10px 0 0;
-	background: url("./images/flags/flag_generic.gif") no-repeat scroll 0 0 transparent;
+	background: url("/assets/images/images/flags/flag_generic.gif") no-repeat scroll 0 0 transparent;
 	color: transparent;
 	height: 48px;
 	width: 48px;
@@ -1109,7 +1109,7 @@ body.trackers div.notice img {
 }
 
 .issue-icon span {
-	background-image: url("./images/button_new_ticket.gif");
+	background-image: url("/assets/images/images/button_new_ticket.gif");
 }
 
 .buttons div.issue-icon {
@@ -1294,7 +1294,7 @@ body.support_docs .margin-center {
 }
 
 body.support_docs li.rowkb {
-	background: #e8ecee url("./images/silver/row_bg.gif") repeat-x;
+	background: #e8ecee url("/assets/images/images/silver/row_bg.gif") repeat-x;
 }
 
 body.support_docs #main {
@@ -1308,14 +1308,14 @@ body.support_docs #tabs {
 }
 
 body.support_docs #tabs a {
-	background-image: url("./images/bg_grey_tabs1.gif");
+	background-image: url("/assets/images/images/bg_grey_tabs1.gif");
 	font-weight: normal;
 	font-size: 1.2em;
 	text-decoration: none;
 }
 
 body.support_docs #tabs a span {
-	background-image: url("./images/bg_grey_tabs2.gif");
+	background-image: url("/assets/images/images/bg_grey_tabs2.gif");
 	color: #FFFFFF !important;
 }
 
@@ -1324,13 +1324,13 @@ body.support_docs #tabs a:hover span {
 }
 
 body.support_docs #tabs .activetab a {
-	background-image: url("./images/bg_grey_tabs1.gif");
+	background-image: url("/assets/images/images/bg_grey_tabs1.gif");
 	color: #FFFFFF;
 	border-bottom-color: #505C65;
 }
 
 body.support_docs #tabs .activetab a span {
-	background-image: url("./images/bg_grey_tabs2.gif");
+	background-image: url("/assets/images/images/bg_grey_tabs2.gif");
 	color: #FFFFFF;
 	font-weight: normal;
 }
@@ -1340,7 +1340,7 @@ body.support_docs #tabs .activetab a:hover span {
 }
 
 body.support_docs .intro-head {
-	background: url("./images/intro_header.gif") repeat-x #F0F0F0;
+	background: url("/assets/images/images/intro_header.gif") repeat-x #F0F0F0;
 	border: 1px solid #C6C6C6;
 	color: #BC2A4D;
 	padding: 3px 3px 4px 3px;
@@ -1364,7 +1364,7 @@ body.support_docs .forumbg, body.team_new .forumbg {
 }
 
 body.support_docs .temp {
-	background: #505C65 url("./images/silver/forabg.gif") repeat-x;
+	background: #505C65 url("/assets/images/images/silver/forabg.gif") repeat-x;
 }
 
 body.support_docs .forumbg li.header {
@@ -1385,7 +1385,7 @@ body.support_docs p#explain {
 }
 
 body.support_docs span.corners-top.grey, body.support_docs span.corners-bottom.grey, body.kb span.corners-bottom.grey, body.team_new span.corners-top.grey {
-	background-image: url("./images/corners_left2.png");
+	background-image: url("/assets/images/images/corners_left2.png");
 }
 
 body.support_docs span.corners-top.grey, body.team_new span.corners-top.grey  {
@@ -1398,32 +1398,32 @@ body.support_docs li.row span.corners-top.grey, body.kb li.row span.corners-bott
 }
 
 * html body.support_docs span.corners-top.grey, * html body.kb span.corners-bottom.grey, * html body.team_new span.corners-top.grey {
-	background-image: url("./images/corners_left2.gif");
+	background-image: url("/assets/images/images/corners_left2.gif");
 }
 
 body.support_docs span.corners-top.grey span, body.support_docs span.corners-bottom.grey span, body.kb span.corners-bottom.grey span, body.team_new span.corners-top.grey span {
-	background-image: url("./images/corners_right2.png");
+	background-image: url("/assets/images/images/corners_right2.png");
 }
 
 * html body.support_docs span.corners-top.grey span, * html body.kb span.corners-bottom.grey span, * html body.team span.corners-top.grey span{
-	background-image: url("./images/corners_right2.gif");
+	background-image: url("/assets/images/images/corners_right2.gif");
 }
 
 /* Custom Corners */
 .intro-head span.corners-top, .intro-body span.corners-bottom {
-	background-image: url("./images/corners_left3.png");
+	background-image: url("/assets/images/images/corners_left3.png");
 }
 
 * html .intro-head span.corners-top, * html .intro-body span.corners-bottom {
-	background-image: url("./images/corners_left3.gif");
+	background-image: url("/assets/images/images/corners_left3.gif");
 }
 
 .intro-head span.corners-top span, .intro-body span.corners-bottom span {
-	background-image: url("./images/corners_right3.png");
+	background-image: url("/assets/images/images/corners_right3.png");
 }
 
 * html .intro-head span.corners-top span, * html .intro-body span.corners-bottom span {
-	background-image: url("./images/corners_right3.gif");
+	background-image: url("/assets/images/images/corners_right3.gif");
 }
 
 .intro-head span.corners-top {
@@ -1573,7 +1573,7 @@ span.article-views {
 .kb_dont_send_pm {
 	width: 150px;
 	height: 29px;
-	background: url("./images/support/docs/kb_pm_buttons.gif") no-repeat -108px top;
+	background: url("/assets/images/images/support/docs/kb_pm_buttons.gif") no-repeat -108px top;
 	border: 0;
 	text-indent: -9999px;
 	outline: none;
@@ -1591,7 +1591,7 @@ span.article-views {
 .kb_send_pm {
 	width: 108px;
 	height: 29px;
-	background: url("./images/support/docs/kb_pm_buttons.gif") no-repeat left top;
+	background: url("/assets/images/images/support/docs/kb_pm_buttons.gif") no-repeat left top;
 	border: 0;
 	text-indent: -9999px;
 	outline: none;
@@ -1701,7 +1701,7 @@ body.shop div#bertie-hugger {
 	padding: 0;
 	float: left;
 	position: relative;
-	background: transparent url(./images/loading_wait.gif) 50% 30% no-repeat;
+	background: transparent url(/assets/images/images/loading_wait.gif) 50% 30% no-repeat;
 }
 
 body.shop ul#bertie {
@@ -1712,7 +1712,7 @@ body.shop ul#bertie {
 	padding: 0;
 	float: left;
 	position: relative;
-	background: transparent url(./images/olympus-prosilver-bertie.jpg?20080629) 0 0 no-repeat;
+	background: transparent url(/assets/images/images/olympus-prosilver-bertie.jpg?20080629) 0 0 no-repeat;
 }
 
 body.shop ul#bertie li {
@@ -1730,7 +1730,7 @@ body.shop ul#bertie li a {
 	text-align: center;
 	text-decoration: none;
 	font-weight: bold;
-	background: transparent url(./images/olympus-prosilver-bertie.jpg?20080629) 480px 0 no-repeat;
+	background: transparent url(/assets/images/images/olympus-prosilver-bertie.jpg?20080629) 480px 0 no-repeat;
 	position: absolute;
 }
 
@@ -1935,10 +1935,10 @@ a.feature-extra:hover span.hover {
 	padding-right: 70px;
 }
 .feature-box .features-item-head.unselected {
-	background: url('./images/features/feat-arrow-right.png') 335px center no-repeat;
+	background: url('/assets/images/images/features/feat-arrow-right.png') 335px center no-repeat;
 }
 .feature-box .features-item-head.selected {
-	background: url('./images/features/feat-arrow-down.png') 335px center no-repeat;
+	background: url('/assets/images/images/features/feat-arrow-down.png') 335px center no-repeat;
 }
 .feature-box .features-item-head img {
 	margin-right: 20px;
@@ -1974,7 +1974,7 @@ a.feature-extra:hover span.hover {
 ul.feature-list li {
 	margin-left: -10px;
 	list-style-type: none;
-	background-image: url('./images/features/accept.png');
+	background-image: url('/assets/images/images/features/accept.png');
 	background-repeat: no-repeat;
 	background-position: 0 3px;
 	padding-left: 25px;
@@ -1987,7 +1987,7 @@ div.feature-item p {
 	font-size: 0.9em;
 }
 div.feature-item {
-	background: url('./images/features/arrow-right-24.png') left center no-repeat;
+	background: url('/assets/images/images/features/arrow-right-24.png') left center no-repeat;
 	padding-left: 40px;
 	margin-left: 10px;
 }
@@ -2034,7 +2034,7 @@ body.features span.feature-collapse:hover {
 	color: #D31141;
 }
 /*body.features span.feature-collapse:before {
-	content: url('./images/features/sm-arrow-up.gif');
+	content: url('/assets/images/images/features/sm-arrow-up.gif');
 }*/
 /* END NEW FEATURES */
 
@@ -2067,14 +2067,14 @@ span.inlinecode
 
 /* Wiki link */
 a.wikilink {
-	background: url("./images/wiki_badge.gif") center right no-repeat;
+	background: url("/assets/images/images/wiki_badge.gif") center right no-repeat;
 	padding-right: 34px;
 	zoom: 1; /* IE6/IE7 Wrapping fix */
 }
 
 /* kb link */
 a.kblink {
-	background: url("./images/kb_badge.gif") center right no-repeat;
+	background: url("/assets/images/images/kb_badge.gif") center right no-repeat;
 	padding-right: 34px;
 	zoom: 1; /* IE6/IE7 Wrapping fix */
 }
@@ -2209,7 +2209,7 @@ input.gsc-search-button {
 	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
 	color: #000;
 	background: #FAFAFA none repeat-x top;
-	background-image: url("../community/styles/prosilver/theme/images/bg_button.gif");
+	background-image: url("/community/styles/prosilver/theme/images/bg_button.gif");
 	border: 1px solid #666666;
 	margin-left: 6px;
 }
@@ -2720,11 +2720,11 @@ p.speaker span img {
 }
 
 a.download-png {
-	background: url("../../theme/images/logos/download.png") no-repeat 0 50%;
+	background: url("/assets/images/images/logos/download.png") no-repeat 0 50%;
 }
 
 a.download-psd {
-	background: url("../../theme/images/logos/photoshop.png") no-repeat 0 50%;
+	background: url("/assets/images/images/logos/photoshop.png") no-repeat 0 50%;
 }
 
 a.logo-only {
@@ -2766,7 +2766,7 @@ p.psd-download {
 .top-corners {
 	width: 425px;
 	height: 23px;
-	background: url("./images/hosting/top-corners.png") no-repeat left top;
+	background: url("/assets/images/images/hosting/top-corners.png") no-repeat left top;
 }
 
 .middle-content {
@@ -2776,19 +2776,19 @@ p.psd-download {
 	overflow: hidden;
 	font-size: 1.2em;
 	color: #00284f;
-	background: url("./images/hosting/middle-content.png") repeat-y left top;
+	background: url("/assets/images/images/hosting/middle-content.png") repeat-y left top;
 }
 
 .bottom-corners-left {
 	width: 425px;
 	height: 43px;
-	background: url("./images/hosting/corners-bottom.png") no-repeat left top;
+	background: url("/assets/images/images/hosting/corners-bottom.png") no-repeat left top;
 }
 
 .bottom-corners-right  {
 	width: 425px;
 	height: 43px;
-	background: url("./images/hosting/bottom-corners-right.png") no-repeat left top;
+	background: url("/assets/images/images/hosting/bottom-corners-right.png") no-repeat left top;
 }
 
 .provider-badge {
@@ -2796,7 +2796,7 @@ p.psd-download {
 	float: left;
 	margin: 0 19px 10px 0;
 	padding-bottom: 6px;
-	background: url("./images/hosting/badge-shadow.png") no-repeat 50% bottom;
+	background: url("/assets/images/images/hosting/badge-shadow.png") no-repeat 50% bottom;
 }
 
 .provider-badge-forumatic {
@@ -2804,7 +2804,7 @@ p.psd-download {
 	float: left;
 	margin: 0 79px 10px 0;
 	padding-bottom: 6px;
-	background: url("./images/hosting/badge-shadow-long.png") no-repeat 50% bottom;
+	background: url("/assets/images/images/hosting/badge-shadow-long.png") no-repeat 50% bottom;
 }
 
 h1.hostname {
@@ -2829,7 +2829,7 @@ ul.host-featurelist {
 
 ul.host-featurelist li {
 	font-size: 12px;
-	list-style-image: url("./images/hosting/tick-small.png");
+	list-style-image: url("/assets/images/images/hosting/tick-small.png");
 	line-height: normal !important;
 }
 
@@ -2910,7 +2910,7 @@ p.how-can-we-help {
 	text-decoration: none !important;
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 5px 5px 5px 16px;
-	background: url("./images/questionarrow.gif") no-repeat 2px 6px;
+	background: url("/assets/images/images/questionarrow.gif") no-repeat 2px 6px;
 }
 
 .accordion li.active a.question {
@@ -2964,7 +2964,7 @@ span.required {
 	font-size: 13px;
 	margin-bottom: 4px;
 	border: 1px solid #aac6e8;
-	background: url("./images/bluegrad.png") repeat-x left top;
+	background: url("/assets/images/images/bluegrad.png") repeat-x left top;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -2986,7 +2986,7 @@ span.required {
 	margin-bottom: 4px;
 	border: 1px solid #aac6e8;
 	color: #152c48;
-	background: url("./images/bluegrad.png") #FFFFFF repeat-x left top;
+	background: url("/assets/images/images/bluegrad.png") #FFFFFF repeat-x left top;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -3000,7 +3000,7 @@ span.required {
 	font-size: 14px;
 	margin-left: 4px;
 	border: 1px solid #aac6e8;
-	background: url("./images/buttonbg3.png") repeat-x left bottom;
+	background: url("/assets/images/images/buttonbg3.png") repeat-x left bottom;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -3012,7 +3012,7 @@ span.required {
 }
 
 .accordion li div form .formbutton:focus {
-	background: url("./images/bluegrad.png") #FFFFFF repeat-x left top;
+	background: url("/assets/images/images/bluegrad.png") #FFFFFF repeat-x left top;
 	outline: none;
 }
 
