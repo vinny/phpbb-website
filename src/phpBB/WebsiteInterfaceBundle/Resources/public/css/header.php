@@ -1,5 +1,5 @@
 <?php
-$file = "headers/header_winter%s.jpg";
+$file = "/assets/images/headers/header_winter%s.jpg";
 
 $file = sprintf($file, rand(1, 9));
 
