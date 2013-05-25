@@ -41,7 +41,6 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures": "dev-master",
         "twig/twig": "1.10.*",
-        "phpbb/static-pages-bundle": "dev-master",
         "phpbb/update-git-repo-bundle": "dev-master",
         "phpbb/phpbb-sessions-auth-bundle": "dev-master",
         "phpbb/logging-admin-interface-bundle": "dev-master",
