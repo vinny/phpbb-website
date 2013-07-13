@@ -11,4 +11,4 @@ Include /var/www/sandbox.phpbb.com/htdocs/old/.htdev
 
 # The real stuff
 RewriteEngine On
-RewriteRule ^(.*)$ /var/www/sandbox.phpbb.com/htdocs/old$1 [L]
+RewriteRule ^(.*)$ /var/www/sandbox.phpbb.com/htdocs/old$1
