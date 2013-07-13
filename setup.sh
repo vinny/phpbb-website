@@ -9,4 +9,26 @@ git push private master
 php composer.phar install
 php app/console doctrine:database:create
 php app/console doctrine:migrations:migrate
-./merge.sh
+
+# Merge.sh variation
+git status -sb
+git fetch public
+git fetch private
+git checkout -b master public/master
+git merge public/master
+git merge private/master
+git checkout -b develop public/develop
+git merge public/develop
+git merge private/develop
+git merge master
+git checkout -b private private/private
+git merge private/private
+git merge master
+git checkout -b sandbox private/sandbox
+git merge private/sandbox
+git merge develop
+git merge private
+git checkout master
+git push origin master develop
+git push private master develop private sandbox
+echo "Done"
