@@ -21,16 +21,17 @@
 
 
 <title>{% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock %}</title>
-
+{#
 {% block head_assets %}
 {% stylesheets
 	'@phpBBWebsiteInterfaceBundle/Resources/public/css/*' %}
-	
+
 	<link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
 
 <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/vnd.microsoft.icon" />
 {% endblock %}
+#}
 
 </head>
 
@@ -58,7 +59,7 @@
 		<ul>
 			<li class="but-about">
 				<a href="/about/"><span></span>About</a>
-				
+
 				<div class="sub-menu sub-menu-extra">
 					<ul>
 						<li>
@@ -95,10 +96,10 @@
 					<div class="sub-menu-bottom"><a href="/about/">Find out more about the project &raquo;</a></div>
 
 				</div>
-				
+
 			</li>
 			<li class="but-downloads"><a href="/downloads/"><span></span>Downloads</a>
-				
+
 				<div class="sub-menu">
 					<ul>
 						<li>
@@ -131,10 +132,10 @@
 					</ul>
 					<div class="sub-menu-bottom"></div>
 				</div>
-				
+
 			</li>
 			<li class="but-customise"><a href="/customise/db/"><span></span>Customise</a>
-				
+
 				<div class="sub-menu">
 					<ul>
 						<li>
@@ -169,10 +170,10 @@
 					</ul>
 					<div class="sub-menu-bottom"></div>
 				</div>
-				
+
 			</li>
 			<li class="but-support"><a href="/support/"><span></span>Support</a>
-				
+
 				<div class="sub-menu sub-menu-extra">
 					<ul>
 						<li>
@@ -204,10 +205,10 @@
 					</ul>
 					<div class="sub-menu-bottom"><a href="/support/">More information on support &raquo;</a></div>
 				</div>
-				
+
 			</li>
 			<li class="but-development"><a href="/development/"><span></span>Development</a>
-				
+
 				<div class="sub-menu sub-menu-extra">
 					<ul class="wide-menu">
 						<li class="external wide-menu-item" title="Opens an external link.">
@@ -238,11 +239,11 @@
 					</ul>
 					<div class="sub-menu-bottom"><a href="/development/">Participate in phpBB development now &raquo;</a></div>
 				</div>
-				
+
 			</li>
 			<li class="but-blog"><a href="//blog.phpbb.com/"><span></span>Blog</a></li>
 			<li class="but-community"><a href="/community/"><span></span>Community</a>
-				
+
 				<div class="sub-menu sub-menu-extra">
 					<ul>
 						<li>
@@ -270,11 +271,11 @@
 						<li class="external" title="Opens an external link.">
 							<h4><a href="//area51.phpbb.com/phpBB/">Area51</a></h4>
 							<p><a href="//area51.phpbb.com/phpBB/">Bleeding edge testing and development discussion.</a></p>
-						</li>				
+						</li>
 					</ul>
 					<div class="sub-menu-bottom"><a href="/community/">&#0133; and many more forums &raquo;</a></div>
 				</div>
-				
+
 			</li>
 			<li class="but-hosting"><a href="/hosting/"><span></span>Hosting</a></li>
 			<li id="searchbox">
