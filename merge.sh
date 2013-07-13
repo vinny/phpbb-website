@@ -1,5 +1,6 @@
 git status -sb
 echo "If that showed anything abort now!!!!!!"
+sleep 5
 git fetch public
 git fetch private
 git checkout master
