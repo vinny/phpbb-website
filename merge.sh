@@ -14,3 +14,6 @@ git checkout sandbox
 git merge private/sandbox
 git merge develop
 git merge private
+git push origin master develop
+git push private master develop private sandbox
+echo "Done"
