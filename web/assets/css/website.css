@@ -2069,14 +2069,12 @@ span.inlinecode
 a.wikilink {
 	background: url("/assets/images/images/wiki_badge.gif") center right no-repeat;
 	padding-right: 34px;
-	zoom: 1; /* IE6/IE7 Wrapping fix */
 }
 
 /* kb link */
 a.kblink {
 	background: url("/assets/images/images/kb_badge.gif") center right no-repeat;
 	padding-right: 34px;
-	zoom: 1; /* IE6/IE7 Wrapping fix */
 }
 /* Inline code tag */
 code.inline {
