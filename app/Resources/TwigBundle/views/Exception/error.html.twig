@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>An Error Occurred: {{ status_text }}</title>
-</head>
-<body>
-    <h1>Oops! An Error Occurred</h1>
-    <h2>The server returned a "{{ status_code }} {{ status_text }}".</h2>
-</body>
-</html>
+{% extends ':base:base.html.twig' %}
+
+{% block title %}An Error Occurred: {{ status_text }}{% endblock %}
+
+{% block body %}
+<div id="page-body">
+<div id="main">
+	<h2 class="imgrep error404">An error occured</h2>
+	<h3>Oopsies&hellip; what you have requested is gone!</h3>
+	<p>I&rsquo;m only a computer server and can only give you what I&rsquo;ve got. I&rsquo;ve searched and search and searched, yet there was no document of this name. So as they say&hellip; &ldquo;this page is an ex-parrot&rdquo;, perhaps you should use the <a href="/search/">search</a>?</p>
+</div>
+</div>
+{% endblock %}
