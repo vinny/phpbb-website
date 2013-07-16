@@ -21,13 +21,14 @@ git checkout -b develop public/develop
 git merge public/develop
 git merge private/develop
 git merge master
-git checkout -b private private/private
-git merge private/private
-git merge master
 git checkout -b sandbox private/sandbox
 git merge private/sandbox
 git merge develop
-git merge private
+git merge private/private
+git merge master
+git checkout -b private private/private
+git merge private/private
+git merge master
 git checkout master
 git push origin master develop
 git push private master develop private sandbox

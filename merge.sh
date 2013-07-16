@@ -29,15 +29,6 @@ echo ""
 echo "git merge master"
 git merge master
 echo ""
-echo "git checkout private"
-git checkout private
-echo ""
-echo "git merge private/private"
-git merge private/private
-echo ""
-echo "git merge master"
-git merge master
-echo ""
 echo "git checkout sandbox"
 git checkout sandbox
 echo ""
@@ -49,6 +40,21 @@ git merge develop
 echo ""
 echo "git merge private"
 git merge private
+echo ""
+echo "git merge private/private"
+git merge private/private
+echo ""
+echo "git merge master"
+git merge master
+echo ""
+echo "git checkout private"
+git checkout private
+echo ""
+echo "git merge private/private"
+git merge private/private
+echo ""
+echo "git merge master"
+git merge master
 echo ""
 echo "git checkout master"
 git checkout master
