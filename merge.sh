@@ -59,8 +59,8 @@ echo ""
 echo "git checkout master"
 git checkout master
 echo ""
-echo "git push origin master develop"
-git push origin master develop
+echo "git push public master develop"
+git push public master develop
 echo ""
 echo "git push private master develop private sandbox"
 git push private master develop private sandbox
