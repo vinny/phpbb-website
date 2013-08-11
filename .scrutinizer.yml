@@ -1,6 +1,9 @@
 tools:
     sensiolabs_security_checker: true
-    php_cpd: true
+    php_cpd:
+        enabled: true
+        excluded_dirs: [web/*.php]
+
     php_code_sniffer:
         enabled: true
         config:
