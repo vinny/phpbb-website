@@ -2,8 +2,7 @@ tools:
     sensiolabs_security_checker: true
     php_cpd:
         enabled: true
-        excluded_dirs: [web/*.php]
-
+        excluded_dirs: [web/app*]
     php_code_sniffer:
         enabled: true
         config:
@@ -17,7 +16,10 @@ tools:
             level: all
         filter:
             excluded_paths: [app/*]
-    php_mess_detector: true
+    php_mess_detector:
+        filter:
+            excluded_paths: [app/*]
+        enabled: true
     php_analyzer:
         enabled: true
         config:
