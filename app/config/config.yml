@@ -26,24 +26,37 @@ twig:
     debug:              %kernel.debug%
     strict_variables:   %kernel.debug%
     globals:
-        facebook:       
-        twitter:        
-        plus_one:       
+        facebook:
+        twitter:
+        plus_one:
 
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:     %database_driver%
-        host:       %database_host%
-        port:       %database_port%
-        dbname:     %database_name%
-        user:       %database_user%
-        password:   %database_password%
-        charset:    UTF8
+        default_connection:     default
+        connections:
+            default:
+                driver:     %database_driver%
+                host:       %database_host%
+                port:       %database_port%
+                dbname:     %database_name%
+                user:       %database_user%
+                password:   %database_password%
+            phpbb:
+                driver:     %phpbb_database_driver%
+                host:       %phpbb_database_host%
+                port:       %phpbb_database_port%
+                dbname:     %phpbb_database_name%
+                user:       %phpbb_database_user%
+                password:   %phpbb_database_password%
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
+        default_entity_manager:   default
+        entity_managers:
+            default:
+                connection:       default
 
 # Swiftmailer Configuration
 swiftmailer:
