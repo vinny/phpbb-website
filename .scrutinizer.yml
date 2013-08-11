@@ -10,6 +10,8 @@ tools:
         enabled: true
         config:
             level: all
+        filter:
+            excluded_paths: ['app/SymfonyRequirements.php']
     php_mess_detector: true
     php_analyzer:
         enabled: true
