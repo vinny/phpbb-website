@@ -1,18 +1,27 @@
 parameters:
 
     # When I refer to a sandbox install I refer to our sandbox and sites
-    # that are on a proper remote server in a domain root (e.g. David's Site). 
+    # that are on a proper remote server in a domain root (e.g. David's Site).
     # Local sites are sites on your computer/local network that probably don't have things
 
     # Shouldn't need to touch this
-    database_driver:    pdo_mysql
-    database_host:      localhost
-    database_port:      ~
+    database_driver:        pdo_mysql
+    phpbb_database_driver:  pdo_mysql
+    database_host:          localhost
+    phpbb_database_host:    localhost
+    database_port:          ~
+    phpbb_database_port:    ~
 
     # Its not rocket science, the user should have access to make dbs and have full access to it (we create it later)
+    # This is the DB for Symfony
     database_name:      symfony
     database_user:      root
     database_password:  ~
+
+    # phpBB Database
+    phpbb_database_name:        phpbb_local
+    phpbb_database_user:        root
+    phpbb_database_password:    ~
 
     # Mailer Settings, shouldn't need to touch these unless its a live/sandbox install.
     mailer_transport:   smtp
