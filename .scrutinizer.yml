@@ -16,3 +16,7 @@ tools:
         config:
             use_statement_fixes:
                 order_alphabetically: true
+    php_loc: true
+    php_pdepend: true
+#   php_code_coverage:
+#           test_command: phpunit -c app/
