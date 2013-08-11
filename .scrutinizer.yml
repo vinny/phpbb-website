@@ -7,13 +7,13 @@ tools:
             standard: PSR1
             tab_width: 4
         filter:
-            excluded_paths: ['app/']
+            excluded_paths: [app/*]
     php_cs_fixer:
         enabled: true
         config:
             level: all
         filter:
-            excluded_paths: ['app']
+            excluded_paths: [app/*]
     php_mess_detector: true
     php_analyzer:
         enabled: true
