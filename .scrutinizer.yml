@@ -26,6 +26,10 @@ tools:
             use_statement_fixes:
                 order_alphabetically: true
     php_loc: true
-    php_pdepend: true
+    php_pdepend:
+        excluded_dirs:
+            - vendor/
+            - app/
+        enabled:
 #   php_code_coverage:
 #           test_command: phpunit -c app/
