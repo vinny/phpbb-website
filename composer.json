@@ -20,29 +20,23 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "doctrine/common": "2.3.*",
-        "doctrine/dbal": "2.3.*",
         "doctrine/orm": "2.3.*",
-        "doctrine/doctrine-bundle": "1.0.*",
+        "doctrine/doctrine-bundle": "1.2.*",
         "doctrine/doctrine-migrations-bundle": "dev-master@dev",
         "doctrine/migrations": "dev-master@dev",
-        "jms/di-extra-bundle": "1.1.*",
-        "jms/security-extra-bundle": "1.2.*",
-        "kriswallsmith/assetic": "1.1.*@dev",
         "php": ">=5.3.3",
-        "sensio/distribution-bundle": "2.1.*",
-        "sensio/framework-extra-bundle": "2.1.*",
-        "sensio/generator-bundle": "2.1.*",
-        "symfony/assetic-bundle": "2.1.0",
-        "symfony/monolog-bundle": "2.1.*",
-        "symfony/swiftmailer-bundle": "2.1.*",
-        "symfony/symfony": "2.1.*",
-        "twig/extensions": "1.0.*@dev",
+        "sensio/distribution-bundle": "2.3.*",
+        "sensio/framework-extra-bundle": "2.3.*",
+        "sensio/generator-bundle": "2.3.*",
+        "symfony/assetic-bundle": "2.3.*",
+        "symfony/monolog-bundle": "2.3.*",
+        "symfony/swiftmailer-bundle": "2.3.*",
+        "symfony/symfony": "2.3.*",
+        "twig/extensions": "1.0.*",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures": "dev-master",
-        "twig/twig": "1.10.*",
-        "phpbb/phpbb-sessions-auth-bundle": "dev-master",
-        "friendsofsymfony/user-bundle": "dev-master@dev"
+        "friendsofsymfony/user-bundle": "dev-master",
+        "incenteev/composer-parameter-handler": "~2.0"
     },
     "scripts": {
         "post-install-cmd": [
@@ -61,7 +55,7 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web"
