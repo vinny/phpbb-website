@@ -28,8 +28,7 @@ tools:
     php_loc: true
     php_pdepend:
         excluded_dirs:
-            - vendor/
-            - app/
-        enabled:
+            [vendor/*, app/*]
+        enabled: true
 #   php_code_coverage:
 #           test_command: phpunit -c app/
