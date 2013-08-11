@@ -1,7 +1,6 @@
 tools:
     sensiolabs_security_checker: true
     php_cpd: true
-    js_hint: true
     php_code_sniffer:
         enabled: true
         config:
