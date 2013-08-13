@@ -1,6 +1,20 @@
-phpBBWebsiteInterfaceBundle_about:
+OldSitePages_about:
     path:  /about/
     defaults:
         _controller: FrameworkBundle:Redirect:urlRedirect
         path: http://www.phpbb.com/about/
+        permanent: true
+
+OldSitePages_advertise:
+    path:  /about/advertise/
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: http://www.phpbb.com/about/advertise/
+        permanent: true
+
+OldSitePages_contact:
+    path:  /about/contact_us.php
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: http://www.phpbb.com/about/contact_us.php
         permanent: true
