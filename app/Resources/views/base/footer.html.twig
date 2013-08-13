@@ -7,11 +7,11 @@
 		<p class="lynkorama">
 			<strong><a href="https://www.phpbb.com/hosting/r/bluehost-footer/" class="text-links-favicon" style="background-image: url(/theme/images/favicons/bluehost.png);"{% if bot %} rel="nofollow"{% endif %}>&nbsp;BlueHost.com</a></strong> &bull;
 
-			<a href="http://www.webhosting.uk.com/"{% if bot %} rel="nofollow"{% endif %}>>Web Hosting UK</a> &bull;
-			<a href="http://www.hostmonster.com/track/phpbbsoftwareltd/footer"{% if bot %} rel="nofollow"{% endif %}>>HostMonster</a> &bull;
-			<a href="http://www.heartinternet.co.uk/index.html"{% if bot %} rel="nofollow"{% endif %}>>Reseller Web Hosting UK</a> &bull;
-			<a href="http://hosting.fastdomain.com/track/phpbbsoftwareltd/footer"{% if bot %} rel="nofollow"{% endif %}>>FastDomain Hosting</a> &bull;
-			<a href="/about/advertise/"><em>Advertise on phpBB.com</em></a>
+			<a href="http://www.webhosting.uk.com/"{% if bot %} rel="nofollow"{% endif %}>Web Hosting UK</a> &bull;
+			<a href="http://www.hostmonster.com/track/phpbbsoftwareltd/footer"{% if bot %} rel="nofollow"{% endif %}>HostMonster</a> &bull;
+			<a href="http://www.heartinternet.co.uk/index.html"{% if bot %} rel="nofollow"{% endif %}>Reseller Web Hosting UK</a> &bull;
+			<a href="http://hosting.fastdomain.com/track/phpbbsoftwareltd/footer"{% if bot %} rel="nofollow"{% endif %}>FastDomain Hosting</a> &bull;
+			<a href="{{ path('OldSitePages_advertise') }}"><em>Advertise on phpBB.com</em></a>
 		</p>
 		<span class="fcorners-bottom"><span></span></span>
 	</div>
@@ -19,16 +19,16 @@
 
 {% block copyright %}
 <div id="copyright">
-	2001 - 2013 <a href="/about/">phpBB Limited</a>
-	&bull; <a href="/about/contact_us.php">Contact Us</a>
-	&bull; <a href="/about/advertise/">Advertise on www.phpbb.com</a>
+	2001 - 2013 <a href="{{ path('OldSitePages_about') }}">phpBB Limited</a>
+	&bull; <a href="{{ path('OldSitePages_contact') }}">Contact Us</a>
+	&bull; <a href="{{ path('OldSitePages_advertise') }}">Advertise on www.phpbb.com</a>
 	<br />
 	Header illustrations by <a href="http://www.vladstudio.com/">Vlad Gerasimov</a>
-	&bull; Designed by <a href="/">phpBB</a>
+	&bull; Designed by <a href="{{ path('phpBBWebsiteInterfaceBundle_homepage') }}">phpBB</a>
 	&bull; Hosting donated by <a href="http://www.osuosl.org">OSUOSL</a><br />
 	{% if app.debug %}
-		<p>Request method: {{ app.request.method }}</p>
-		<p>Application Environment: {{ app.environment }}</p>
+		Request method: {{ app.request.method }}<br />
+		Application Environment: {{ app.environment }}
 	{% endif %}
 </div>
 {% endblock %}
