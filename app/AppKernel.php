@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             //new phpBB\phpBBSessionsAuthBundle\phpBBphpBBSessionsAuthBundle(),
-            //new phpBB\PrivateWebsiteBundle\phpBBPrivateWebsiteBundle(),
+            new phpBB\PrivateWebsiteBundle\phpBBPrivateWebsiteBundle(),
             new phpBB\WebsiteInterfaceBundle\phpBBWebsiteInterfaceBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
         );
