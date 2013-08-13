@@ -1,4 +1,18 @@
 <div id="page-footer">
+		<h3 style="padding-top: 8px;">&#097;&#100;&#118;&#101;&#114;&#116;&#105;&#115;&#101;&#109;&#101;&#110;&#116;&#115;</h3>
+		<div id="footer_banner_leaderboard">
+			{% include ':base:ads_footer_banner.html.twig' %}
+		</div>
+
+		<p class="lynkorama">
+			<strong><a href="https://www.phpbb.com/hosting/r/bluehost-footer/" class="text-links-favicon" style="background-image: url(/theme/images/favicons/bluehost.png);"{% if bot %} rel="nofollow"{% endif %}>&nbsp;BlueHost.com</a></strong> &bull;
+
+			<a href="http://www.webhosting.uk.com/"{% if bot %} rel="nofollow"{% endif %}>>Web Hosting UK</a> &bull;
+			<a href="http://www.hostmonster.com/track/phpbbsoftwareltd/footer"{% if bot %} rel="nofollow"{% endif %}>>HostMonster</a> &bull;
+			<a href="http://www.heartinternet.co.uk/index.html"{% if bot %} rel="nofollow"{% endif %}>>Reseller Web Hosting UK</a> &bull;
+			<a href="http://hosting.fastdomain.com/track/phpbbsoftwareltd/footer"{% if bot %} rel="nofollow"{% endif %}>>FastDomain Hosting</a> &bull;
+			<a href="/about/advertise/"><em>Advertise on phpBB.com</em></a>
+		</p>
 		<span class="fcorners-bottom"><span></span></span>
 	</div>
 </div>
@@ -20,11 +34,7 @@
 {% endblock %}
 
 {% block javascript %}
-{% javascripts
-    '@phpBBWebsiteInterfaceBundle/Resources/public/js/*' %}
-
-	<script src="{{ asset_url }}"></script>
-{% endjavascripts %}
+<script src=""></script>
 {% endblock %}
 
 </body>
