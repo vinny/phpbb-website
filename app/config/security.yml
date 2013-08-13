@@ -15,15 +15,15 @@ security:
 
     firewalls:
         dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            path: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
         login:
-            pattern:  ^/demo/secured/login$
+            path: ^/demo/secured/login$
             security: false
 
         secured_area:
-            pattern:    ^/demo/secured/
+            path:   ^/demo/secured/
             form_login:
                 check_path: /demo/secured/login_check
                 login_path: /demo/secured/login
