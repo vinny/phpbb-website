@@ -3,23 +3,27 @@ imports:
     - { resource: security.yml }
 
 framework:
-    #esi:               ~
-    #translator:        { fallback: %locale% }
-    secret:             %secret%
+    #esi:             ~
+    #translator:      { fallback: %locale% }
+    secret:          %secret%
     router:
-        resource:       "%kernel.root_dir%/config/routing.yml"
-        strict_requirements:    %kernel.debug%
-    form:               true
-    csrf_protection:    true
-    validation:         { enable_annotations: true }
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
     templating:
-        assets_version:         v1
+        assets_version:         v2
         assets_version_format:  %%s?%%s
         engines:
             - twig
-    default_locale:         en
-    trust_proxy_headers:    false # Should Request object should trust proxy headers (X_FORWARDED_FOR/HTTP_CLIENT_IP)
-    session:                ~
+    default_locale:  en
+    trusted_proxies: ~
+    fragments:       ~
+    http_method_override: true
+    trusted_hosts:   ~
+
+    session:         ~
 
 # Twig Configuration
 twig:
@@ -52,7 +56,6 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
-        auto_mapping: true
         default_entity_manager:   default
         entity_managers:
             default:
