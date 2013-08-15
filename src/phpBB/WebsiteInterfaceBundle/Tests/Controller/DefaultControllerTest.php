@@ -1,11 +1,11 @@
 <?php
 /**
- * 
+ *
  * @package phpBBWebsiteInterfaceBundle
- * @copyright (c) 2012 phpBB Group
+ * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
- * @author Unknown Bliss
- * 
+ * @author MichaelC
+ *
  */
 
 namespace phpBB\WebsiteInterfaceBundle\Tests\Controller;
@@ -18,8 +18,8 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/hello/Fabien');
+        $crawler = $client->request('GET', '/');
 
-        $this->assertTrue($crawler->filter('html:contains("Hello Fabien")')->count() > 0);
+        $this->assertTrue($crawler->filter('html:contains("Designed by")')->count() > 0);
     }
 }
