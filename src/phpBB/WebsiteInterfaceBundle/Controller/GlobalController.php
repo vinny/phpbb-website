@@ -12,7 +12,7 @@ namespace phpBB\WebsiteInterfaceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class GlobalController extends Controller
 {
     public function homeAction()
     {
@@ -21,6 +21,6 @@ class DefaultController extends Controller
     		'homepage'	=> true,
     	);
 
-        return $this->render('phpBBWebsiteInterfaceBundle:Default:index.html.twig', $templateVariables);
+        return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
     }
 }
