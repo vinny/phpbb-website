@@ -41,6 +41,9 @@ class GlobalControllerTest extends WebTestCase
 		// Header Check
 		$this->assertTrue($crawler->filter('html:contains("About")')->count() > 0);
 
+		// Ads Check
+		$this->assertTrue($crawler->filter('html:contains("advertisements")')->count() > 0);
+
 		// Response Check
 		$this->assertEquals($response->getStatusCode(), $status);
 
