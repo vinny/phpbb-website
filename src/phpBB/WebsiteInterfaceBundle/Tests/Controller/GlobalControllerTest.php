@@ -33,7 +33,7 @@ class GlobalControllerTest extends WebTestCase
 		$this->reusableTests($client, $crawler, $response);
 	}
 
-	private function reusableTests($client, $crawler, $response, $status = 200, $queries = 20, $time = 10000)
+	private function reusableTests($client, $crawler, $response, $status = 200, $queries = 20, $time = 50000)
 	{
 		// Footer Check
 		$this->assertTrue($crawler->filter('html:contains("phpBB Limited")')->count() > 0);
