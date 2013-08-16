@@ -14,28 +14,52 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class GlobalControllerTest extends WebTestCase
 {
-    public function testIndex()
-    {
-        $client = static::createClient();
+	public function testIndex()
+	{
+		$client = static::createClient();
+		$client->enableProfiler();
+		$crawler = $client->request('GET', '/');
+		$response = $client->getResponse();
 
-        $crawler = $client->request('GET', '/');
+		// Title Check
+		$expectedTitle = array('phpBB', 'Free and Open Source Forum Software');
 
-        // Title Check
-        $expectedTitle = array('phpBB', 'Free and Open Source Forum Software');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),
+			$expectedTitle[0]) !== false);
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),
+			$expectedTitle[1]) !== false);
 
-        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()),
-        	$expectedTitle[0]) !== false);
-        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()),
-        	$expectedTitle[1]) !== false);
+		// Standard All Page Checks
+		$this->reusableTests($client, $crawler, $response);
+	}
 
-        // Standard All Page Checks
-        // Footer Check
-        $this->assertTrue($crawler->filter('html:contains("phpBB Limited")')->count() > 0);
+	private function reusableTests($client, $crawler, $response, $status = 200, $queries = 20, $time = 10000)
+	{
+		// Footer Check
+		$this->assertTrue($crawler->filter('html:contains("phpBB Limited")')->count() > 0);
 
-        // Header Check
-        $this->assertTrue($crawler->filter('html:contains("About")')->count() > 0);
+		// Header Check
+		$this->assertTrue($crawler->filter('html:contains("About")')->count() > 0);
 
-        // Response Check
-        $this->assertEquals($client->getResponse()->getStatusCode(), 200);
-    }
+		// Response Check
+		$this->assertEquals($response->getStatusCode(), $status);
+
+		if ($profile = $client->getProfile())
+		{
+			// Shouldn't really have more than 20 queries on any page
+			$this->assertLessThan(
+				$queries,
+				$profile->getCollector('db')->getQueryCount(),
+				('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
+			);
+
+			// Time spent in framework. Set for slow machines.
+			// If it's longer than $this ever we have a problem.
+			$this->assertLessThan(
+				$time,
+				$profile->getCollector('time')->getDuration(),
+				('Checks that $time is less than' . $time . ' (token ' .  $profile->getToken() .')')
+			);
+		}
+	}
 }
