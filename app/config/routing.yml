@@ -2,10 +2,6 @@ phpBBWebsiteInterfaceBundle:
     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing.yml"
     prefix:   /
 
-OldSitePages:
-    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing_old_site.yml"
-    prefix: /
-
 # phpBBPrivateWebsiteBundle:
 #     resource: "@phpBBPrivateWebsiteBundle/Resources/config/routing.yml"
 #     prefix:   /

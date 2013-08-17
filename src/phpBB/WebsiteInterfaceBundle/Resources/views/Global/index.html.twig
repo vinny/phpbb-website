@@ -3,7 +3,7 @@
 {% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock title %}
 
 {% block header_button %}
-<div id="home-dl-link"><a href="{U_DOWNLOADS_HEADER}">Download<span class="version">{30X_PACKAGE_VERSION}</span><span>{30X_PACKAGE_RELEASE_DATE}</span></a></div><div id="home-try-link"><a href="{U_DEMO}">Try our<span class="version">Demo</span></a></div>
+<div id="home-dl-link"><a href="{{ downloads_path }}">Download<span class="version">{{ package_version }}</span><span>{{ package_release_date }}</span></a></div><div id="home-try-link"><a href="{{ demo_path }}">Try our<span class="version">Demo</span></a></div>
 {% endblock header_button %}
 
 {% block body %}
@@ -18,12 +18,12 @@
 		<div class="inner"><span class="corners-top"><span></span></span>
 		<h3>You look lost&hellip; have you tried?</h3>
 		<ul class="menu">
-			<li><a href="/about/">About phpBB, The Team, et cetera</a></li>
-			<li><a href="/downloads/">Download phpBB</a></li>
-			<li><a href="/customise/db/">Customise your phpBB!</a></li>
-			<li><a href="/support/">phpBB Support Links You Can&rsquo;t Live Without</a></li>
-			<li><a href="/development/">phpBB Development Page, by Developers for Developers</a></li>
-			<li class="last"><a href="/community/">Our Community Forums</a></li>
+			<li><a href="{{ about_path }}">About phpBB, The Team, et cetera</a></li>
+			<li><a href="{{ downloads_path }}">Download phpBB</a></li>
+			<li><a href="{{ cdb_path }}">Customise your phpBB!</a></li>
+			<li><a href="{{ support_path }}">phpBB Support Links You Can&rsquo;t Live Without</a></li>
+			<li><a href="{{ development_path }}">phpBB Development Page, by Developers for Developers</a></li>
+			<li class="last"><a href="{{ community_path }}">Our Community Forums</a></li>
 		</ul>
 		<span class="corners-bottom"><span></span></span></div>
 	</div>
