@@ -41,7 +41,7 @@
 	<div id="page-header">
 		<span class="side-left"></span>
 		<div class="header" style="position: relative;">
-			{% if homepage %}<div id="home-dl-link"><a href="{ path('OldSitePages_downloads') }">Download<span class="version">{ 30X_PACKAGE_VERSION }</span><span>{30X_PACKAGE_RELEASE_DATE }</span></a></div><div id="home-try-link"><a href="{ path('OldSitePages_demo') }">Try our<span class="version">Demo</span></a></div>{% endif %}
+			{% if homepage is defined %}<div id="home-dl-link"><a href="{ path('OldSitePages_downloads') }">Download<span class="version">{ 30X_PACKAGE_VERSION }</span><span>{30X_PACKAGE_RELEASE_DATE }</span></a></div><div id="home-try-link"><a href="{ path('OldSitePages_demo') }">Try our<span class="version">Demo</span></a></div>{% endif %}
 			<h1 id="logo-banner"><a href="/">phpBB &bull; Free and Open Source Forum Software</a></h1>
 			<div id="top-social" class="top-social-home">
 				<div id="top-social-icons">
