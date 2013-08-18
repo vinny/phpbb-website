@@ -14,7 +14,7 @@ parameters:
 
     # Its not rocket science, the user should have access to make dbs and have full access to it (we create it later)
     # This is the DB for Symfony
-    database_name:      symfony
+    database_name:      phpbb_symfony
     database_user:      root
     database_password:  ~
 
@@ -22,6 +22,20 @@ parameters:
     phpbb_database_name:        phpbb_local
     phpbb_database_user:        root
     phpbb_database_password:    ~
+
+    # Databases for testing
+    test_database_driver:            pdo_mysql
+    phpbb_test_database_driver:      pdo_mysql
+    test_database_host:              localhost
+    phpbb_test_database_host:        localhost
+    test_database_port:              ~
+    phpbb_test_database_port:        ~
+    test_database_name:              phpbb_test_symfony
+    test_database_user:              root
+    test_database_password:          ~
+    phpbb_test_database_name:        phpbb_test_local
+    phpbb_test_database_user:        root
+    phpbb_test_database_password:    ~
 
     # Mailer Settings, shouldn't need to touch these unless its a live/sandbox install.
     mailer_transport:   smtp

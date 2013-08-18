@@ -12,3 +12,22 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+doctrine:
+    dbal:
+        default_connection:     default
+        connections:
+            default:
+                driver:     %test_database_driver%
+                host:       %test_database_host%
+                port:       %test_database_port%
+                dbname:     %test_database_name%
+                user:       %test_database_user%
+                password:   %test_database_password%
+            phpbb:
+                driver:     %phpbb_test_database_driver%
+                host:       %phpbb_test_database_host%
+                port:       %phpbb_test_database_port%
+                dbname:     %phpbb_test_database_name%
+                user:       %phpbb_test_database_user%
+                password:   %phpbb_test_database_password%
