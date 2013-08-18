@@ -61,12 +61,8 @@ class BootstrapTestSuite extends WebTestCase
 		return $container->get($dependency);
 	}
 
-	public function setupDatabase($symfonyTables, $phpbbTables)
+	private function dropTablesInDatabase($symfonyConnection, $phpbbConnection)
 	{
-		// Connections to databases
-		$symfonyConnection = $this->get('database_connection');
-		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
-
 		// Check what tables exists
 		$symfonyOldTables = $symfonyConnection->fetchAll('SHOW TABLES');
 		$phpbbOldTables = $phpbbConnection->fetchAll('SHOW TABLES');
@@ -83,14 +79,20 @@ class BootstrapTestSuite extends WebTestCase
 				$phpbbConnection->query('DROP TABLE '. $oldTableName);
 			}
 		}
+	}
+
+	public function setupDatabase($symfonyTables, $phpbbTables)
+	{
+		// Connections to databases
+		$symfonyConnection = $this->get('database_connection');
+		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
+
+		$this->dropTablesInDatabase($symfonyConnection, $phpbbConnection);
 
 		// Add each symfony table's fixtures for those tables needed
 		foreach ($symfonyTables as $symfonyTable)
 		{
-			/*switch ($symfonyTable)
-			{
-				// Case statement
-			}*/
+			$sql = $this->getSymfonyFixtures($symfonyTable);
 
 			if ($sql)
 			{
@@ -102,7 +104,31 @@ class BootstrapTestSuite extends WebTestCase
 		// Add each phpbb table's fixtures for those tables needed
 		foreach ($phpbbTables as $phpbbTable)
 		{
-			switch ($phpbbTable)
+			$sql = $this->getPhpbbFixtures($phpbbTable);
+
+			if ($sql)
+			{
+				$phpbbConnection->query($sql);
+				unset($sql);
+			}
+		}
+
+		return;
+	}
+
+	private function getSymfonyFixtures($table)
+	{
+		/*switch ($table)
+		{
+			// Case statement
+		}*/
+
+		return (isset($sql) ? $sql : null);
+	}
+
+	private function getPhpbbFixtures($table)
+	{
+		switch ($table)
 			{
 				case 'community_posts':
 					$sql = "
@@ -208,14 +234,8 @@ class BootstrapTestSuite extends WebTestCase
 					break;
 			}
 
-			if ($sql)
-			{
-				$phpbbConnection->query($sql);
-				unset($sql);
-			}
+			return (isset($sql) ? $sql : null);
 		}
-		return;
-	}
 
     /**
      * Gets the value of client.
