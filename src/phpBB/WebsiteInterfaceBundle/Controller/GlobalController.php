@@ -34,12 +34,11 @@ class GlobalController extends Controller
 
 		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
 		$announcements = $phpbbConnection->fetchAll($sql);
-		$phpbbHandling = new PhpbbHandling();
 
 		foreach ($announcements as $announcement)
 		{
 			$preview = $announcement['post_text'];
-			$preview = $phpbbHandling->bbcodeStripping($preview, $announcement['bbcode_uid']);
+			$preview = PhpbbHandling::bbcodeStripping($preview, $announcement['bbcode_uid']);
 			$preview = preg_replace('#http(?:\:|&\#58;)//\S+#', '', $preview);
 
 			// Decide how large the preview text should be
