@@ -11,6 +11,9 @@ echo ""
 echo "git checkout master"
 git checkout master
 echo ""
+echo "bin/phpunit -c app/"
+bin/phpunit -c app/
+echo ""
 echo "git merge public/master"
 git merge public/master
 echo ""

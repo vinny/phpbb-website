@@ -1,4 +1,12 @@
 <?php
+/**
+ *
+ * @package phpBBWebsiteInterfaceBundle
+ * @copyright (c) 2013 phpBB Group
+ * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
+ * @author MichaelC
+ *
+ */
 
 namespace phpBB\WebsiteInterfaceBundle\Tests\Controller;
 
@@ -237,75 +245,75 @@ class BootstrapTestSuite extends WebTestCase
 			return (isset($sql) ? $sql : null);
 		}
 
-    /**
-     * Gets the value of client.
-     *
-     * @return mixed
-     */
-    public function getClient()
-    {
-        return $this->client;
-    }
+	/**
+	 * Gets the value of client.
+	 *
+	 * @return mixed
+	 */
+	public function getClient()
+	{
+		return $this->client;
+	}
 
-    /**
-     * Sets the value of client.
-     *
-     * @param mixed $client the client
-     *
-     * @return self
-     */
-    public function setClient($client)
-    {
-        $this->client = $client;
+	/**
+	 * Sets the value of client.
+	 *
+	 * @param mixed $client the client
+	 *
+	 * @return self
+	 */
+	public function setClient($client)
+	{
+		$this->client = $client;
 
-        return $this;
-    }
+		return $this;
+	}
 
-    /**
-     * Gets the value of crawler.
-     *
-     * @return mixed
-     */
-    public function getCrawler()
-    {
-        return $this->crawler;
-    }
+	/**
+	 * Gets the value of crawler.
+	 *
+	 * @return mixed
+	 */
+	public function getCrawler()
+	{
+		return $this->crawler;
+	}
 
-    /**
-     * Sets the value of crawler.
-     *
-     * @param mixed $crawler the crawler
-     *
-     * @return self
-     */
-    public function setCrawler($crawler)
-    {
-        $this->crawler = $crawler;
+	/**
+	 * Sets the value of crawler.
+	 *
+	 * @param mixed $crawler the crawler
+	 *
+	 * @return self
+	 */
+	public function setCrawler($crawler)
+	{
+		$this->crawler = $crawler;
 
-        return $this;
-    }
+		return $this;
+	}
 
-    /**
-     * Gets the value of response.
-     *
-     * @return mixed
-     */
-    public function getResponse()
-    {
-        return $this->response;
-    }
+	/**
+	 * Gets the value of response.
+	 *
+	 * @return mixed
+	 */
+	public function getResponse()
+	{
+		return $this->response;
+	}
 
-    /**
-     * Sets the value of response.
-     *
-     * @param mixed $response the response
-     *
-     * @return self
-     */
-    public function setResponse($response)
-    {
-        $this->response = $response;
+	/**
+	 * Sets the value of response.
+	 *
+	 * @param mixed $response the response
+	 *
+	 * @return self
+	 */
+	public function setResponse($response)
+	{
+		$this->response = $response;
 
-        return $this;
-    }
+		return $this;
+	}
 }
