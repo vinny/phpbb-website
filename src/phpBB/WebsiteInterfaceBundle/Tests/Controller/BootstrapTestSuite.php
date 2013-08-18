@@ -12,9 +12,9 @@ class BootstrapTestSuite extends WebTestCase
 
 	public function setupBootstrapping($client, $crawler, $response)
 	{
-		$this->client = $client;
-		$this->crawler = $crawler;
-		$this->response = $response;
+		$this->setClient($client);
+		$this->setCrawler($crawler);
+		$this->setResponse($response);
 	}
 
 	public function globalTests($status = 200, $queries = 20, $time = 50000)
@@ -54,9 +54,35 @@ class BootstrapTestSuite extends WebTestCase
 		}
 	}
 
+	public function get($dependency)
+	{
+		$container = $this->client->getContainer();
+
+		return $container->get($dependency);
+	}
+
 	public function setupDatabase($symfonyTables, $phpbbTables)
 	{
-		// Strike database
+		// Connections to databases
+		$symfonyConnection = $this->get('database_connection');
+		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
+
+		// Check what tables exists
+		$symfonyOldTables = $symfonyConnection->fetchAll('SHOW TABLES');
+		$phpbbOldTables = $phpbbConnection->fetchAll('SHOW TABLES');
+
+		// Delete existing tables
+		foreach ($symfonyOldTables as $i => $oldTable) {
+			foreach ($oldTable as $key => $oldTableName) {
+				$symfonyConnection->query('DROP TABLE '. $oldTableName);
+			}
+		}
+
+		foreach ($phpbbOldTables as $i => $oldTable) {
+			foreach ($oldTable as $key => $oldTableName) {
+				$phpbbConnection->query('DROP TABLE '. $oldTableName);
+			}
+		}
 
 		// Add each symfony table's fixtures for those tables needed
 		foreach ($symfonyTables as $symfonyTable)
@@ -66,7 +92,11 @@ class BootstrapTestSuite extends WebTestCase
 				// Case statement
 			}*/
 
-			// Execute query
+			if ($sql)
+			{
+				$symfonyConnection->query($sql);
+				unset($sql);
+			}
 		}
 
 		// Add each phpbb table's fixtures for those tables needed
@@ -178,8 +208,84 @@ class BootstrapTestSuite extends WebTestCase
 					break;
 			}
 
-			// Execute query
+			if ($sql)
+			{
+				$phpbbConnection->query($sql);
+				unset($sql);
+			}
 		}
 		return;
 	}
+
+    /**
+     * Gets the value of client.
+     *
+     * @return mixed
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Sets the value of client.
+     *
+     * @param mixed $client the client
+     *
+     * @return self
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of crawler.
+     *
+     * @return mixed
+     */
+    public function getCrawler()
+    {
+        return $this->crawler;
+    }
+
+    /**
+     * Sets the value of crawler.
+     *
+     * @param mixed $crawler the crawler
+     *
+     * @return self
+     */
+    public function setCrawler($crawler)
+    {
+        $this->crawler = $crawler;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of response.
+     *
+     * @return mixed
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    /**
+     * Sets the value of response.
+     *
+     * @param mixed $response the response
+     *
+     * @return self
+     */
+    public function setResponse($response)
+    {
+        $this->response = $response;
+
+        return $this;
+    }
 }

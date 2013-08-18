@@ -16,11 +16,13 @@ class GlobalControllerTest extends BootstrapTestSuite
 {
 	public function testIndexMain()
 	{
+		$client = static::createClient();
+		$this->setClient($client);
+
 		$symfony_tables = array();
 		$phpbb_tables = array('community_topics', 'community_posts');
 		$this->setupDatabase($symfony_tables, $phpbb_tables);
 
-		$client = static::createClient();
 		$client->enableProfiler();
 		$crawler = $client->request('GET', '/');
 		$response = $client->getResponse();
@@ -33,7 +35,7 @@ class GlobalControllerTest extends BootstrapTestSuite
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),$expectedTitle[1]) !== false, 'Title contains Free and Open Source Forum Software');
 
 		// Content Check
-		$this->assertTrue($this->crawler->filter('html:contains("THE #1 FREE, OPEN SOURCE BULLETIN BOARD SOFTWARE")')->count() > 0, 'Homepage Content Check');
+		$this->assertTrue($crawler->filter('html:contains("THE #1 FREE, OPEN SOURCE BULLETIN BOARD SOFTWARE")')->count() > 0, 'Homepage Content Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
@@ -44,16 +46,22 @@ class GlobalControllerTest extends BootstrapTestSuite
      */
 	public function testIndexAnnouncements()
 	{
+		$client = static::createClient();
+		$this->setClient($client);
+
 		$symfony_tables = array();
 		$phpbb_tables = array('community_topics', 'community_posts');
 		$this->setupDatabase($symfony_tables, $phpbb_tables);
 
-		$client = static::createClient();
 		$client->enableProfiler();
 		$crawler = $client->request('GET', '/');
 		$response = $client->getResponse();
 		$this->setupBootstrapping($client, $crawler, $response);
+
+		$this->assertTrue($crawler->filter('html:contains("Lorem ipsum dolor sit amet")')->count() > 0, 'Announcement Content Check');
+		$this->assertTrue($crawler->filter('html:contains("another")')->count() > 0, 'Announcement Title Check 1');
+		$this->assertTrue($crawler->filter('html:contains("third")')->count() > 0, 'Announcement Title Check 2');
+		$this->assertTrue($crawler->filter('html:contains("show")')->count() > 0, 'Announcement Title Check 3');
+		$this->assertFalse($crawler->filter('html:contains("this should not show if it does die")')->count() > 0, 'Announcement Only Three Check');
 	}
-
-
 }
