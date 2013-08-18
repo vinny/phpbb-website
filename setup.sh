@@ -1,4 +1,5 @@
 # Ensure you have setup your parameters.yml and have no passkey on your ssh key before running this script.
+set -x
 
 php composer.phar self-update
 git commit -am 'Update composer'
