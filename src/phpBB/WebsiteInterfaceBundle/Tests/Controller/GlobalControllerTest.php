@@ -42,8 +42,8 @@ class GlobalControllerTest extends BootstrapTestSuite
 	}
 
 	/**
-     * @depends testIndexMain
-     */
+	 * @depends testIndexMain
+	 */
 	public function testIndexAnnouncements()
 	{
 		$client = static::createClient();
