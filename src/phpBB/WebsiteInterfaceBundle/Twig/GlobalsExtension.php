@@ -27,6 +27,7 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_db_path'	=> '/customise/db/styles-2/',
 			'shop_path'			=> '/shop/',
 			'blog_link'			=> '//blog.phpbb.com/',
+			'feeds_rss_path'	=> '/feeds/rss/',
 		);
 
 		$variables = array_merge($generalVars, $pathVars);

@@ -2,11 +2,16 @@
 
 namespace phpBB\WebsiteInterfaceBundle\Wrappers;
 
-class PhpbbTextHandling
+class PhpbbHandling
 {
-	public function bbcodeStripping($text)
+	public function bbcodeStripping($text, $uid = '')
 	{
-		$text = preg_replace("#\[\/?[a-z0-9\*\+\-]+(?:=(?:&quot;.*&quot;|[^\]]*))?(?::[a-z])?(\:[0-9a-z]{5,})\]#", ' ', $text);
+		if (!$uid)
+		{
+			$uid = '[0-9a-z]{5,}';
+		}
+
+		$text = preg_replace("#\[\/?[a-z0-9\*\+\-]+(?:=(?:&quot;.*&quot;|[^\]]*))?(?::[a-z])?(\:$uid)\]#", ' ', $text);
 		$match = array(
 			'#<!\-\- e \-\-><a href="mailto:(.*?)">.*?</a><!\-\- e \-\->#',
 			'#<!\-\- l \-\-><a (?:class="[\w-]+" )?href="(.*?)(?:(&amp;|\?)sid=[0-9a-f]{32})?">.*?</a><!\-\- l \-\->#',
