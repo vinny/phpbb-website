@@ -21,7 +21,12 @@ class GlobalsExtension extends \Twig_Extension
 			'support_path'		=> '/support/',
 			'development_path'	=> '/development/',
 			'community_path'	=> '/community/',
-			'contact_path'		=> '/about/contact_us.php'
+			'contact_path'		=> '/about/contact_us.php',
+			'get_involved_path'	=> '/get-involved/',
+			'mods_db_path'		=> '/customise/db/modifications-1/',
+			'styles_db_path'	=> '/customise/db/styles-2/',
+			'shop_path'			=> '/shop/',
+			'blog_link'			=> '//blog.phpbb.com/',
 		);
 
 		$variables = array_merge($generalVars, $pathVars);
