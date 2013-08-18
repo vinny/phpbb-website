@@ -5,23 +5,37 @@ parameters:
     # Local sites are sites on your computer/local network that probably don't have things
 
     # Shouldn't need to touch this
-    database_driver:        pdo_mysql
-    phpbb_database_driver:  pdo_mysql
-    database_host:          localhost
-    phpbb_database_host:    localhost
-    database_port:          ~
-    phpbb_database_port:    ~
+    test_database_driver:        pdo_mysql
+    phpbb_test_database_driver:  pdo_mysql
+    test_database_host:          localhost
+    phpbb_test_database_host:    localhost
+    test_database_port:          ~
+    phpbb_test_database_port:    ~
 
     # Its not rocket science, the user should have access to make dbs and have full access to it (we create it later)
     # This is the DB for Symfony
-    database_name:      www_tests_symfony
-    database_user:      bamboo_test_user
-    database_password:  hlgiHu7hFD
+    test_database_name:      www_tests_symfony
+    test_database_user:      bamboo_test_user
+    test_database_password:  hlgiHu7hFD
 
-    # phpBB Database
-    phpbb_database_name:        www_tests_phpbb
-    phpbb_database_user:        bamboo_test_user
-    phpbb_database_password:    hlgiHu7hFD
+    # phpBB test_database
+    phpbb_test_database_name:        www_tests_phpbb
+    phpbb_test_database_user:        bamboo_test_user
+    phpbb_test_database_password:    hlgiHu7hFD
+
+    # Databases for testing
+    test_database_driver:            pdo_mysql
+    phpbb_test_database_driver:      pdo_mysql
+    test_database_host:              localhost
+    phpbb_test_database_host:        localhost
+    test_database_port:              ~
+    phpbb_test_database_port:        ~
+    test_database_name:              www_tests_symfony
+    test_database_user:              bamboo_test_user
+    test_database_password:          hlgiHu7hFD
+    phpbb_test_database_name:        www_tests_phpbb
+    phpbb_test_database_user:        bamboo_test_user
+    phpbb_test_database_password:    hlgiHu7hFD
 
     # Mailer Settings, shouldn't need to touch these unless its a live/sandbox install.
     mailer_transport:   smtp
