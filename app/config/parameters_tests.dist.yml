@@ -23,6 +23,20 @@ parameters:
     phpbb_test_database_user:        bamboo_test_user
     phpbb_test_database_password:    hlgiHu7hFD
 
+    # Databases for testing
+    test_database_driver:            pdo_mysql
+    phpbb_test_database_driver:      pdo_mysql
+    test_database_host:              localhost
+    phpbb_test_database_host:        localhost
+    test_database_port:              ~
+    phpbb_test_database_port:        ~
+    test_database_name:              www_tests_symfony
+    test_database_user:              bamboo_test_user
+    test_database_password:          hlgiHu7hFD
+    phpbb_test_database_name:        www_tests_phpbb
+    phpbb_test_database_user:        bamboo_test_user
+    phpbb_test_database_password:    hlgiHu7hFD
+
     # Mailer Settings, shouldn't need to touch these unless its a live/sandbox install.
     mailer_transport:   smtp
     mailer_host:        localhost
