@@ -4,13 +4,8 @@ namespace phpBB\WebsiteInterfaceBundle\Wrappers;
 
 class PhpbbHandling
 {
-	public function bbcodeStripping($text, $uid = '')
+	public static function bbcodeStripping($text, $uid = '[0-9a-z]{5,}')
 	{
-		if (!$uid)
-		{
-			$uid = '[0-9a-z]{5,}';
-		}
-
 		$text = preg_replace("#\[\/?[a-z0-9\*\+\-]+(?:=(?:&quot;.*&quot;|[^\]]*))?(?::[a-z])?(\:$uid)\]#", ' ', $text);
 		$match = array(
 			'#<!\-\- e \-\-><a href="mailto:(.*?)">.*?</a><!\-\- e \-\->#',
