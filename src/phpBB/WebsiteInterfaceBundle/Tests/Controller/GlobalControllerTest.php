@@ -24,10 +24,8 @@ class GlobalControllerTest extends WebTestCase
 		// Title Check
 		$expectedTitle = array('phpBB', 'Free and Open Source Forum Software');
 
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),
-			$expectedTitle[0]) !== false);
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),
-			$expectedTitle[1]) !== false);
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),$expectedTitle[0]) !== false, 'Title contains phpBB');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),$expectedTitle[1]) !== false, 'Title contains Free and Open Source Forum Software');
 
 		// Standard All Page Checks
 		$this->reusableTests($client, $crawler, $response);
