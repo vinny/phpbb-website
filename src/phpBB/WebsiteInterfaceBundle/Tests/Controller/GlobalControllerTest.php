@@ -10,16 +10,23 @@
 
 namespace phpBB\WebsiteInterfaceBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use phpBB\WebsiteInterfaceBundle\Tests\Controller;
 
-class GlobalControllerTest extends WebTestCase
+class GlobalControllerTest extends BootstrapTestSuite
 {
-	public function testIndex()
+	public function testIndexMain()
 	{
 		$client = static::createClient();
+		$this->setClient($client);
+
+		$symfony_tables = array();
+		$phpbb_tables = array('community_topics', 'community_posts');
+		$this->setupDatabase($symfony_tables, $phpbb_tables);
+
 		$client->enableProfiler();
 		$crawler = $client->request('GET', '/');
 		$response = $client->getResponse();
+		$this->setupBootstrapping($client, $crawler, $response);
 
 		// Title Check
 		$expectedTitle = array('phpBB', 'Free and Open Source Forum Software');
@@ -27,40 +34,34 @@ class GlobalControllerTest extends WebTestCase
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),$expectedTitle[0]) !== false, 'Title contains phpBB');
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),$expectedTitle[1]) !== false, 'Title contains Free and Open Source Forum Software');
 
+		// Content Check
+		$this->assertTrue($crawler->filter('html:contains("THE #1 FREE, OPEN SOURCE BULLETIN BOARD SOFTWARE")')->count() > 0, 'Homepage Content Check');
+
 		// Standard All Page Checks
-		$this->reusableTests($client, $crawler, $response);
+		$this->globalTests();
 	}
 
-	private function reusableTests($client, $crawler, $response, $status = 200, $queries = 20, $time = 50000)
+	/**
+     * @depends testIndexMain
+     */
+	public function testIndexAnnouncements()
 	{
-		// Footer Check
-		$this->assertTrue($crawler->filter('html:contains("phpBB Limited")')->count() > 0);
+		$client = static::createClient();
+		$this->setClient($client);
 
-		// Header Check
-		$this->assertTrue($crawler->filter('html:contains("About")')->count() > 0);
+		$symfony_tables = array();
+		$phpbb_tables = array('community_topics', 'community_posts');
+		$this->setupDatabase($symfony_tables, $phpbb_tables);
 
-		// Ads Check
-		$this->assertTrue($crawler->filter('html:contains("advertisements")')->count() > 0);
+		$client->enableProfiler();
+		$crawler = $client->request('GET', '/');
+		$response = $client->getResponse();
+		$this->setupBootstrapping($client, $crawler, $response);
 
-		// Response Check
-		$this->assertEquals($response->getStatusCode(), $status);
-
-		if ($profile = $client->getProfile())
-		{
-			// Shouldn't really have more than 20 queries on any page
-			$this->assertLessThan(
-				$queries,
-				$profile->getCollector('db')->getQueryCount(),
-				('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
-			);
-
-			// Time spent in framework. Set for slow machines.
-			// If it's longer than $this ever we have a problem.
-			$this->assertLessThan(
-				$time,
-				$profile->getCollector('time')->getDuration(),
-				('Checks that $time is less than' . $time . ' (token ' .  $profile->getToken() .')')
-			);
-		}
+		$this->assertTrue($crawler->filter('html:contains("Lorem ipsum dolor sit amet")')->count() > 0, 'Announcement Content Check');
+		$this->assertTrue($crawler->filter('html:contains("another")')->count() > 0, 'Announcement Title Check 1');
+		$this->assertTrue($crawler->filter('html:contains("third")')->count() > 0, 'Announcement Title Check 2');
+		$this->assertTrue($crawler->filter('html:contains("show")')->count() > 0, 'Announcement Title Check 3');
+		$this->assertFalse($crawler->filter('html:contains("this should not show if it does die")')->count() > 0, 'Announcement Only Three Check');
 	}
 }

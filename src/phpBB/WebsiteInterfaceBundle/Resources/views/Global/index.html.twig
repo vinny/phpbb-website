@@ -23,22 +23,22 @@
 	<p>No other bulletin board software offers a greater complement of features, while maintaining efficiency and ease of use.  Best of all, phpBB is completely free.  We welcome you to <a href="{{ demo_path }}">test it</a> for yourself today.  If you have any questions please visit our <a href="{{ community_path }}">Community Forum</a> where our staff and members of the community will be happy to assist you with anything from configuring the software to modifying the code for individual needs.  <a href="{{ about_path }}">Learn more about phpBB.</a></p>
 	<hr />
 	<h3>Latest phpBB Announcements and Blog Posts</h3><br />
-	<ul class="announcements">{#
+	<ul class="announcements">
 	{% for announcement in announcements %}
 		<li>
 			<div class="date">
-				<span class="day">{{ announcement.DAY }}</span>
-				<span class="month">{{ announcement.MONTH }}</span>
+				<span class="day">{{ announcement.DAY }}</span><br />
+				<span class="month">{{ announcement.MONTH }}</span><br />
 				<span class="year">{{ announcement.YEAR }}</span>
 			</div>
-			<div class="announce_img">{% if announcement.FROM_BLOG is defined %}<img src="{{ asset('/assets/images/images/icon_blog.png') }}" title="Blog Post" alt="Blog Post" />{% else %}<img src="{{ asset('/assets/images/images/icon_announcement.png') }}" title="Announcement" alt="Announcement" />{% endif %}</div>
-			<div class="title"><a href="{announcements.U_LINK}">{% if announcement.FROM_BLOG is defined %}Blog{% else %}Announcement{% endif %} &bull; {{ announcement.TITLE }}</a></div>
+			<div class="announce_img">{% if announcement.FROM_BLOG %}<img src="{{ asset('/assets/images/images/icon_blog.png') }}" title="Blog Post" alt="Blog Post" />{% else %}<img src="{{ asset('/assets/images/images/icon_announcement.png') }}" title="Announcement" alt="Announcement" />{% endif %}</div>
+			<div class="title"><a href="{announcements.U_LINK}">{% if announcement.FROM_BLOG %}Blog{% else %}Announcement{% endif %} &bull; {{ announcement.TITLE }}</a></div>
 			<p class="preview">{{ announcement.PREVIEW }}&hellip; <a href="{{ announcement.U_LINK }}">read more</a></p>
 		</li>
-	{% endfor %} #}
+	{% endfor %}
 	</ul>
 	<div id="announce-footer">
-		<a href="{#{{ announcements_forum }}#}">All Announcements</a> <a href="{{ feeds_rss_path }}"><img src="{{ asset('/assets/images/images/feed-icon-14x14.png') }}" alt="feed" /></a> | <a href="{{ blog_link }}">phpBB Blog</a> <a href="http://blog.phpbb.com/feed/" class="feed_link" title="Blog feed"><img src="{{ asset('/assets/images/images/feed-icon-14x14.png') }}" alt="feed" /></a>
+		<a href="{{ announcements_forum }}">All Announcements</a> <a href="{{ feeds_rss_path }}"><img src="{{ asset('/assets/images/images/feed-icon-14x14.png') }}" alt="feed" /></a> | <a href="{{ blog_link }}">phpBB Blog</a> <a href="http://blog.phpbb.com/feed/" class="feed_link" title="Blog feed"><img src="{{ asset('/assets/images/images/feed-icon-14x14.png') }}" alt="feed" /></a>
 	</div>
 </div>
 
