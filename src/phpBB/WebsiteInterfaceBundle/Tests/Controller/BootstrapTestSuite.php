@@ -51,14 +51,6 @@ class BootstrapTestSuite extends WebTestCase
 				$profile->getCollector('db')->getQueryCount(),
 				('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
 			);
-
-			// Time spent in framework. Set for slow machines.
-			// If it's longer than $this ever we have a problem.
-			$this->assertLessThan(
-				$time,
-				$profile->getCollector('time')->getDuration(),
-				('Checks that time is less than' . $time . ' (token ' .  $profile->getToken() .')')
-			);
 		}
 	}
 
