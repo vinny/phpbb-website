@@ -26,8 +26,7 @@ class GlobalController extends Controller
 		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
 		$forumAnnouncements = PhpbbHandling::getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit);
 
-		foreach ($forumAnnouncements as $announcement)
-		{
+		foreach ($forumAnnouncements as $announcement) {
 			$preview = $announcement['post_text'];
 			$preview = PhpbbHandling::bbcodeStripping($preview, $announcement['bbcode_uid']);
 			$preview = preg_replace('#http(?:\:|&\#58;)//\S+#', '', $preview);
