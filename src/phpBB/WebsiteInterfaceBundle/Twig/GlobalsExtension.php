@@ -21,6 +21,7 @@ class GlobalsExtension extends \Twig_Extension
 		);
 
 		$pathVars = array(
+			'home_path'			=> '/',
 			'about_path'		=> '/about/',
 			'advertise_path'	=> '/about/advertise/',
 			'demo_path'			=> '/demo/',
@@ -32,13 +33,21 @@ class GlobalsExtension extends \Twig_Extension
 			'contact_path'		=> '/about/contact_us.php',
 			'get_involved_path'	=> '/get-involved/',
 			'mods_db_path'		=> '/customise/db/modifications-1/',
+			'mods_path'			=> '/mods/',
 			'styles_db_path'	=> '/customise/db/styles-2/',
 			'shop_path'			=> '/shop/',
 			'blog_link'			=> '//blog.phpbb.com/',
 			'feeds_rss_path'	=> '/feeds/rss/',
 		);
 
-		$variables = array_merge($generalVars, $pathVars);
+		$modVars = array(
+
+		);
+
+		$variables = array_merge(
+			$generalVars,
+			$pathVars,
+			$modVars);
 
 		return $variables;
 	}
