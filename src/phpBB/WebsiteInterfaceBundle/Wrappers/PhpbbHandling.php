@@ -29,4 +29,20 @@ class PhpbbHandling
 
 		return $text;
 	}
+
+	public static function getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit)
+	{
+		$sql = 'SELECT t.*, p.post_text, p.bbcode_uid
+			FROM community_topics t
+			LEFT JOIN community_posts p
+				ON t.topic_first_post_id = p.post_id
+			WHERE t.forum_id IN (' . $announcement_forum . ', 0)
+				AND t.topic_approved = 1
+			ORDER BY topic_time DESC
+			LIMIT 0,' . $retrieve_limit;
+
+		$topics = $phpbbConnection->fetchAll($sql);
+
+		return $topics;
+	}
 }
