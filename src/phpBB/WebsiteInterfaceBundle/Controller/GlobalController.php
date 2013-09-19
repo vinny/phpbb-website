@@ -23,19 +23,10 @@ class GlobalController extends Controller
 		$announcement_forum = 14;
 		$retrieve_limit = 3;
 
-		$sql = 'SELECT t.*, p.post_text, p.bbcode_uid
-			FROM community_topics t
-			LEFT JOIN community_posts p
-				ON t.topic_first_post_id = p.post_id
-			WHERE t.forum_id IN (' . $announcement_forum . ', 0)
-				AND t.topic_approved = 1
-			ORDER BY topic_time DESC
-			LIMIT 0,' . $retrieve_limit;
-
 		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
-		$announcements = $phpbbConnection->fetchAll($sql);
+		$forumAnnouncements = PhpbbHandling::getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit);
 
-		foreach ($announcements as $announcement)
+		foreach ($forumAnnouncements as $announcement)
 		{
 			$preview = $announcement['post_text'];
 			$preview = PhpbbHandling::bbcodeStripping($preview, $announcement['bbcode_uid']);
@@ -77,13 +68,20 @@ class GlobalController extends Controller
 			);
 		}
 
-		krsort($finishedAnnouncements);
+		// Get announcements file
+		$blogAnnouncements = json_decode(file_get_contents(
+			'https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe'
+		));
+
+		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
+		krsort($announcements);
 
 		$templateVariables += array(
 			'homepage'				=> true,
 			'announcements_forum'	=> '/community/viewforum.php?f=' . $announcement_forum,
-			'announcements'			=> $finishedAnnouncements,
-			'header_css_image'		=> 'home',);
+			'announcements'			=> $announcements,
+			'header_css_image'		=> 'home',
+		);
 
 		return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
 	}
