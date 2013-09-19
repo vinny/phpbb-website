@@ -1,4 +1,4 @@
-phpBBWebsite_homepage:
+phpBBWebsiteInterfaceBundle_homepage:
     path:  /
     defaults: { _controller: phpBBWebsiteInterfaceBundle:Global:home }
 
