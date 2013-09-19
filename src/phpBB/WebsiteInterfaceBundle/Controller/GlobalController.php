@@ -71,7 +71,9 @@ class GlobalController extends Controller
 		// Get announcements file
 		$blogAnnouncements = json_decode(file_get_contents(
 			'https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe'
-		));
+		), true);
+
+		var_dump($blogAnnouncements);
 
 		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
 		krsort($announcements);
