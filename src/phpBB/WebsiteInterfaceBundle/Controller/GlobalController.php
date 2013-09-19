@@ -73,8 +73,9 @@ class GlobalController extends Controller
 			'https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe'
 		), true);
 
+		krsort($blogAnnouncements);
+
 		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
-		krsort($announcements);
 
 		$templateVariables += array(
 			'homepage'				=> true,
