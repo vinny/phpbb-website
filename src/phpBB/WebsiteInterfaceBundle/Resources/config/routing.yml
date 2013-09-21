@@ -2,6 +2,10 @@ phpBBWebsiteInterfaceBundle_homepage:
     path:  /
     defaults: { _controller: phpBBWebsiteInterfaceBundle:Global:home }
 
-phpBBWebsite_mods:
+phpBBWebsite_Mods:
     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/mods.yml"
     prefix:   /mods
+
+phpBBWebsite_Development:
+    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/development.yml"
+    prefix:   /development
