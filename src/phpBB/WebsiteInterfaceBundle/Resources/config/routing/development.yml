@@ -11,9 +11,3 @@ phpBBWebsite_Development_prosilver_page:
     defaults: { _controller: phpBBWebsiteInterfaceBundle:Development:prosilver, page: 1 }
     requirements:
         page:  \d+
-
-phpBBWebsite_Development_prosilver_legacy:
-    path: /prosilver/?page={page}
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:Development:prosilver, page: 1 }
-    requirements:
-        page:  \d+
