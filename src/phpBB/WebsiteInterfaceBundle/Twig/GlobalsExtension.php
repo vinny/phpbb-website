@@ -15,9 +15,10 @@ class GlobalsExtension extends \Twig_Extension
 	public function getGlobals()
 	{
 		$generalVars = array(
-			'package_version'		=> '3.0.11',
-			'package_release_date'	=> '2012-08-25',
+			'package_version'		=> '3.0.11', // Usage = 1
+			'package_release_date'	=> '2012-08-25', // Usage = 1
 			'bot'					=> false, // @TODO Set this to true for bots
+			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce', // Usage = 1
 		);
 
 		// @TODO Generate URLs for routes
@@ -29,7 +30,7 @@ class GlobalsExtension extends \Twig_Extension
 			'downloads_path'	=> '/downloads/',
 			'cdb_path'			=> '/customise/db/',
 			'support_path'		=> '/support/',
-			'development_path'	=> '/development/',
+			'development_path'	=> '/development/', // Usage = 3
 			'community_path'	=> '/community/',
 			'contact_path'		=> '/about/contact_us.php',
 			'get_involved_path'	=> '/get-involved/',
@@ -74,7 +75,7 @@ class GlobalsExtension extends \Twig_Extension
 			'BUGS_PHPBB' => 'http://tracker.phpbb.com/',
 			'BUGS' => '/bugs/',
 			'SECURITY' => '/security/',
-			'DEV_PROSILVER' => '/development/prosilver/',
+			'DEV_PROSILVER' => '/development/prosilver/', // Usage = 2
 		);
 
 		$variables = array_merge(
