@@ -1,3 +1,19 @@
 phpBBWebsite_Development_home:
     path:  /
     defaults: { _controller: phpBBWebsiteInterfaceBundle:Development:home }
+
+phpBBWebsite_Development_prosilver:
+    path: /prosilver/
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:Development:prosilver, page: 1 }
+
+phpBBWebsite_Development_prosilver_page:
+    path: /prosilver/{page}
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:Development:prosilver, page: 1 }
+    requirements:
+        page:  \d+
+
+phpBBWebsite_Development_prosilver_legacy:
+    path: /prosilver/?page={page}
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:Development:prosilver, page: 1 }
+    requirements:
+        page:  \d+
