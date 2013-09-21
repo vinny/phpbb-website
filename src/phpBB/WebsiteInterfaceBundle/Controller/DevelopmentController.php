@@ -29,11 +29,6 @@ class DevelopmentController extends Controller
 
 		$data = $this->getProsilverPageData();
 
-		if (!isset($page, $data) || !isset($data[$page]))
-		{
-			$page = 1;
-		}
-
 		$next_page = (isset($data[$page + 1])) ? $page + 1 : '';
 		$prev_page = (isset($data[$page - 1])) ? $page - 1 : '';
 
