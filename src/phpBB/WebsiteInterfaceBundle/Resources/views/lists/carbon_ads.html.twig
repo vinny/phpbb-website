@@ -1,9 +1,10 @@
-{% if CARBON_ADS is defined %}
+{% if CARBON_ADS_DISABLE_BOX is not defined %}
 	<div class="mini-panel">
 		<div class="inner"><span class="corners-top"><span></span></span>
 			<h3>check out our sponsor</h3>
 			<ul class="text-links">
 				<li class="last">
+{% endif %}
 					<div id="carbonads-container"><div class="carbonad">
 						<div id="azcarbon"></div>
 						<script type="text/javascript">
@@ -15,6 +16,7 @@
 						s.parentNode.insertBefore(z, s);
 						</script>
 					</div></div>
+{% if CARBON_ADS_DISABLE_BOX is not defined %}
 				</li>
 			</ul>
 		<span class="corners-bottom"><span></span></span></div>
