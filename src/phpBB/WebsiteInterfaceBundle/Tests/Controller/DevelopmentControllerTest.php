@@ -40,4 +40,29 @@ class DevelopmentControllerTest extends BootstrapTestSuite
 
 		// @TODO Test the Release Notification Box
 	}
+
+	public function testDevelopmentProsilver()
+	{
+		$client = static::createClient();
+		$this->setClient($client);
+		$client->enableProfiler();
+		$crawler = $client->request('GET', '/development/prosilver/');
+		$response = $client->getResponse();
+		$this->setupBootstrapping($client, $crawler, $response);
+
+		// Title Check
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Designing Prosilver') !== false, 'Title contains Designing Prosilver');
+
+		// Content Check
+		$this->assertTrue($crawler->filter('html:contains("Designing prosilver")')->count() > 0, 'Prosilver Header Check');
+		$this->assertTrue($crawler->filter('html:contains("Moving the info panel to the right-hand side so the focus is on the post content")')->count() > 0, 'Prosilver Page 1 Check');
+		$this->assertTrue($crawler->filter('html:contains("July 2004: New smilies")')->count() > 0, 'Prosilver Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("February 2006: phpBB3 website")')->count() > 0, 'Prosilver Sidebar Check 2');
+		$this->assertTrue($crawler->filter('a:contains("July 2004: New smilies")')->count() > 0, 'Prosilver Sidebar ');
+
+		// Standard All Page Checks
+		$this->globalTests();
+
+		// @TODO Check for Images
+	}
 }
