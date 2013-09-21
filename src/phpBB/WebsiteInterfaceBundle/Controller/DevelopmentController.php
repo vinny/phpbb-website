@@ -12,14 +12,14 @@ namespace phpBB\WebsiteInterfaceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ModsController extends Controller
+class DevelopmentController extends Controller
 {
 	public function homeAction()
 	{
 		$templateVariables = array(
-			'header_css_image'		=> 'mods',
+			'header_css_image'		=> 'development',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:Mods:home.html.twig', $templateVariables);
+		return $this->render('phpBBWebsiteInterfaceBundle:Development:home.html.twig', $templateVariables);
 	}
 }

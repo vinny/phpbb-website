@@ -68,10 +68,20 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_TEAM_OVERVIEW_JR' => '/mods/team-overview/?p=jr',
 		);
 
+		$developmentVars = array(
+			'DEV_HOME' => '//area51.phpbb.com/',
+			'DEV_BOARD' => '//area51.phpbb.com/phpBB/',
+			'BUGS_PHPBB' => 'http://tracker.phpbb.com/',
+			'BUGS' => '/bugs/',
+			'SECURITY' => '/security/',
+			'DEV_PROSILVER' => '/development/prosilver/',
+		);
+
 		$variables = array_merge(
 			$generalVars,
 			$pathVars,
-			$modVars);
+			$modVars,
+			$developmentVars);
 
 		return $variables;
 	}
