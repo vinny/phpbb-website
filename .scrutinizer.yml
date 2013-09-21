@@ -1,4 +1,7 @@
 tools:
+    before_commands:
+        - "php composer.phar install --prefer-source"
+
     sensiolabs_security_checker: true
     php_cpd:
         enabled: true
@@ -30,5 +33,5 @@ tools:
         excluded_dirs:
             [vendor/*, app/*]
         enabled: true
-#   php_code_coverage:
-#           test_command: phpunit -c app/
+    php_code_coverage:
+        test_command: bin/phpunit -c app/
