@@ -14,12 +14,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AboutController extends Controller
 {
-	public function homeAction()
-	{
-		$templateVariables = array(
-			'header_css_image'		=> 'about',
-		);
+    public function homeAction()
+    {
+        $templateVariables = array(
+            'header_css_image'		=> 'about',
+        );
 
-		return $this->render('phpBBWebsiteInterfaceBundle:About:home.html.twig', $templateVariables);
-	}
+        return $this->render('phpBBWebsiteInterfaceBundle:About:home.html.twig', $templateVariables);
+    }
 }
