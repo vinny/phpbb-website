@@ -5,3 +5,7 @@ phpBBWebsite_About_home:
 phpBBWebsite_About_history:
     path:  /history/
     defaults: { _controller: phpBBWebsiteInterfaceBundle:About:history }
+
+phpBBWebsite_About_advertise:
+    path:  /advertise/
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:advertise }

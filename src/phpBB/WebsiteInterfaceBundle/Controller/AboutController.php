@@ -31,4 +31,13 @@ class AboutController extends Controller
 
 		return $this->render('phpBBWebsiteInterfaceBundle:About:history.html.twig', $templateVariables);
 	}
+
+	public function advertiseAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'about advertise-contact',
+		);
+
+		return $this->render('phpBBWebsiteInterfaceBundle:About:advertise.html.twig', $templateVariables);
+	}
 }
