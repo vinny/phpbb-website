@@ -1,0 +1,3 @@
+phpBBWebsite_About_home:
+    path:  /
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:home }
