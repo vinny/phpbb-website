@@ -34,4 +34,24 @@ class AboutControllerTest extends BootstrapTestSuite
 		// Standard All Page Checks
 		$this->globalTests();
 	}
+
+	public function testAboutHistory()
+	{
+		$client = static::createClient();
+		$this->setClient($client);
+		$client->enableProfiler();
+		$crawler = $client->request('GET', '/about/history/');
+		$response = $client->getResponse();
+		$this->setupBootstrapping($client, $crawler, $response);
+
+		// Title Check
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'History') !== false, 'Title contains About phpBB');
+
+		// Content Check
+		$this->assertTrue($crawler->filter('html:contains("phpBB was born as an open-source")')->count() > 0, 'About History Content Check');
+		$this->assertTrue($crawler->filter('a:contains("Logos")')->count() > 0, 'About Home Sidebar Check');
+
+		// Standard All Page Checks
+		$this->globalTests();
+	}
 }
