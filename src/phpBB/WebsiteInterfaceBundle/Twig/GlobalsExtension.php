@@ -41,6 +41,8 @@ class GlobalsExtension extends \Twig_Extension
 			'blog_link'			=> '//blog.phpbb.com/',
 			'feeds_rss_path'	=> '/feeds/rss/',
 			'kb_path'			=> '/kb/',
+			'showcase_path'		=> '/showcase/',
+			'documentation_path'=> '/support/documentation/',
 		);
 
 		$modVars = array(
@@ -78,11 +80,29 @@ class GlobalsExtension extends \Twig_Extension
 			'DEV_PROSILVER' => '/development/prosilver/', // Usage = 2
 		);
 
+		$supportVars = array(
+			'SUPPORT_TUTORIALS' => '/support/tutorials/',
+		);
+
+		$aboutVars = array(
+			'ABOUT_FEATURES' => '/about/features/',
+			'ABOUT_COMPARE' => '/about/features/compare.php',
+			'ABOUT_HISTORY' => '/about/history/',
+			'ABOUT_TEAM' => '/about/team/',
+			'ABOUT_MAP' => '/about/map/',
+			'ABOUT_LOGOS' => '/about/logos/',
+			'ABOUT_CONTACT' => '/about/contact_us.php',
+			'ABOUT_ADVERTISE' => '/about/advertise/',
+		);
+
 		$variables = array_merge(
 			$generalVars,
 			$pathVars,
 			$modVars,
-			$developmentVars);
+			$developmentVars,
+			$supportVars,
+			$aboutVars
+		);
 
 		return $variables;
 	}
