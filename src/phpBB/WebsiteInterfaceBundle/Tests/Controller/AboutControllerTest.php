@@ -54,4 +54,26 @@ class AboutControllerTest extends BootstrapTestSuite
 		// Standard All Page Checks
 		$this->globalTests();
 	}
+
+	public function testAboutAdvertise()
+	{
+		$client = static::createClient();
+		$this->setClient($client);
+		$client->enableProfiler();
+		$crawler = $client->request('GET', '/about/advertise/');
+		$response = $client->getResponse();
+		$this->setupBootstrapping($client, $crawler, $response);
+
+		// Title Check
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Advertise with phpbb.com') !== false, 'Title contains About phpBB');
+
+		// Content Check
+		$this->assertTrue($crawler->filter('html:contains("Static (non-rotating) text ads are possibly")')->count() > 0, 'About History Content Check');
+		$this->assertTrue($crawler->filter('a:contains("Logos")')->count() > 0, 'About Home Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("ready to order advertising on phpBB.com")')->count() > 0, 'About History Content Check 2');
+		$this->assertTrue($crawler->filter('html:contains("You may cancel your advertising with phpBB.com at any time")')->count() > 0, 'About History Content Check 3');
+
+		// Standard All Page Checks
+		$this->globalTests();
+	}
 }
