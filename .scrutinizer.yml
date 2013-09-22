@@ -31,4 +31,4 @@ tools:
             [vendor/*, app/*]
         enabled: true
     #php_code_coverage:
-    #   test_command: bin/phpunit -c app/
+        #test_command: bin/phpunit -c app/
