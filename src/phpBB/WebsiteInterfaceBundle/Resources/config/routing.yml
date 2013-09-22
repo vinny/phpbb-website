@@ -9,3 +9,7 @@ phpBBWebsite_Mods:
 phpBBWebsite_Development:
     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/development.yml"
     prefix:   /development
+
+phpBBWebsite_About:
+    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/about.yml"
+    prefix:   /about
