@@ -22,4 +22,13 @@ class AboutController extends Controller
 
 		return $this->render('phpBBWebsiteInterfaceBundle:About:home.html.twig', $templateVariables);
 	}
+
+	public function historyAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'about history',
+		);
+
+		return $this->render('phpBBWebsiteInterfaceBundle:About:history.html.twig', $templateVariables);
+	}
 }

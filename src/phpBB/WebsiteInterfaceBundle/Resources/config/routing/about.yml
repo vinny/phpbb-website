@@ -1,3 +1,7 @@
 phpBBWebsite_About_home:
     path:  /
     defaults: { _controller: phpBBWebsiteInterfaceBundle:About:home }
+
+phpBBWebsite_About_history:
+    path:  /history/
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:history }
