@@ -15,73 +15,70 @@ use phpBB\WebsiteInterfaceBundle\Wrappers\PhpbbHandling;
 
 class GlobalController extends Controller
 {
-	public function homeAction()
-	{
-		$templateVariables = array();
+    public function homeAction()
+    {
+        $templateVariables = array();
 
-		// Should the Announcements forum ever obtain a new forum_id, *CHANGE THIS VARIABLE*.
-		$announcement_forum = 14;
-		$retrieve_limit = 3;
+        // Should the Announcements forum ever obtain a new forum_id, *CHANGE THIS VARIABLE*.
+        $announcement_forum = 14;
+        $retrieve_limit = 3;
 
-		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
-		$forumAnnouncements = PhpbbHandling::getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit);
+        $phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
+        $forumAnnouncements = PhpbbHandling::getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit);
 
-		foreach ($forumAnnouncements as $announcement) {
-			$preview = $announcement['post_text'];
-			$preview = PhpbbHandling::bbcodeStripping($preview, $announcement['bbcode_uid']);
-			$preview = preg_replace('#http(?:\:|&\#58;)//\S+#', '', $preview);
+        foreach ($forumAnnouncements as $announcement) {
+            $preview = $announcement['post_text'];
+            $preview = PhpbbHandling::bbcodeStripping($preview, $announcement['bbcode_uid']);
+            $preview = preg_replace('#http(?:\:|&\#58;)//\S+#', '', $preview);
 
-			// Decide how large the preview text should be
-			$preview_max_len = 200;
-			$preview_len = strlen($preview);
+            // Decide how large the preview text should be
+            $preview_max_len = 200;
+            $preview_len = strlen($preview);
 
-			if ($preview_len > $preview_max_len)
-			{
-				// Truncate to the maximum length
-				$preview = substr($preview, 0, $preview_max_len);
+            if ($preview_len > $preview_max_len) {
+                // Truncate to the maximum length
+                $preview = substr($preview, 0, $preview_max_len);
 
-				// See if there is a nice place to break close to the max length
-				$breakchars = array(' ', ',', '.');
-				$clean_break_pos = 0;
+                // See if there is a nice place to break close to the max length
+                $breakchars = array(' ', ',', '.');
+                $clean_break_pos = 0;
 
-				foreach ($breakchars as $char)
-				{
-					$clean_break_pos_new = strrpos($preview, $char);
-					$clean_break_pos = $clean_break_pos_new > $clean_break_pos ? $clean_break_pos_new : $clean_break_pos;
-				}
+                foreach ($breakchars as $char) {
+                    $clean_break_pos_new = strrpos($preview, $char);
+                    $clean_break_pos = $clean_break_pos_new > $clean_break_pos ? $clean_break_pos_new : $clean_break_pos;
+                }
 
-				if ($clean_break_pos)
-				{
-					$preview = substr($preview, 0, $clean_break_pos);
-				}
-			}
+                if ($clean_break_pos) {
+                    $preview = substr($preview, 0, $clean_break_pos);
+                }
+            }
 
-			$finishedAnnouncements[$announcement['topic_time']] = array(
-				'DAY' => date('d', $announcement['topic_time']),
-				'MONTH' => date('M', $announcement['topic_time']),
-				'YEAR' => date('Y', $announcement['topic_time']),
-				'U_LINK' => '/community/viewtopic.php?f=' . $announcement_forum . '&amp;t=' . $announcement['topic_id'],
-				'TITLE' => $announcement['topic_title'],
-				'FROM_BLOG' => false,
-				'PREVIEW' => $preview,
-			);
-		}
+            $finishedAnnouncements[$announcement['topic_time']] = array(
+                'DAY' => date('d', $announcement['topic_time']),
+                'MONTH' => date('M', $announcement['topic_time']),
+                'YEAR' => date('Y', $announcement['topic_time']),
+                'U_LINK' => '/community/viewtopic.php?f=' . $announcement_forum . '&amp;t=' . $announcement['topic_id'],
+                'TITLE' => $announcement['topic_title'],
+                'FROM_BLOG' => false,
+                'PREVIEW' => $preview,
+            );
+        }
 
-		// Get announcements file
-		$blogAnnouncements = json_decode(file_get_contents(
-			'https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe'
-		), true);
+        // Get announcements file
+        $blogAnnouncements = json_decode(file_get_contents(
+            'https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe'
+        ), true);
 
-		krsort($blogAnnouncements);
+        krsort($blogAnnouncements);
 
-		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
+        $announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
 
-		$templateVariables += array(
-			'homepage'              => true,
-			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
-			'announcements'         => $announcements,
-			'header_css_image'      => 'home',);
+        $templateVariables += array(
+            'homepage'              => true,
+            'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
+            'announcements'         => $announcements,
+            'header_css_image'      => 'home',);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
-	}
+        return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
+    }
 }
