@@ -77,10 +77,10 @@ class GlobalController extends Controller
 		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
 
 		$templateVariables += array(
-			'homepage'				=> true,
-			'announcements_forum'	=> '/community/viewforum.php?f=' . $announcement_forum,
-			'announcements'			=> $announcements,
-			'header_css_image'		=> 'home',);
+			'homepage'              => true,
+			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
+			'announcements'         => $announcements,
+			'header_css_image'      => 'home',);
 
 		return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
 	}
