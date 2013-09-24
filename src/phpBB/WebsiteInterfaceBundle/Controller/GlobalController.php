@@ -18,8 +18,9 @@ class GlobalController extends Controller
 	public function homeAction()
 	{
 		$templateVariables = array();
+		$announcement_forum = 14;
 
-		$finishedAnnouncements = $this->getForumAnnouncements();
+		$finishedAnnouncements = $this->getForumAnnouncements($announcement_forum);
 
 		// Get announcements file
 		$blogFile = file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
@@ -40,10 +41,8 @@ class GlobalController extends Controller
 		return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
 	}
 
-	private function getForumAnnouncements()
+	private function getForumAnnouncements($announcement_forum)
 	{
-		// Should the Announcements forum ever obtain a new forum_id, *CHANGE THIS VARIABLE*.
-		$announcement_forum = 14;
 		$retrieve_limit = 3;
 
 		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
