@@ -33,6 +33,10 @@
 <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/vnd.microsoft.icon" />
 {% endblock %}
 
+{% block javascriptHeader %}
+	{{ include(':base:javascript.html.twig') }}
+{% endblock %}
+
 </head>
 
 {% block body_tag %}<body id="phpbb" class="{{ header_css_image }}">{% endblock %}
@@ -330,8 +334,7 @@
 </div>
 {% endblock %}
 
-{% block javascript %}
-<script src=""></script>
+{% block javascriptFooter %}
 {% endblock %}
 
 </body>
