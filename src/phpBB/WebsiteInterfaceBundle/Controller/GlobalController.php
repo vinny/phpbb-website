@@ -19,6 +19,29 @@ class GlobalController extends Controller
 	{
 		$templateVariables = array();
 
+		$finishedAnnouncements = $this->getForumAnnouncements();
+
+		// Get announcements file
+		$blogFile = file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
+		$blogJson = json_decode($blogFile, true);
+
+		$blogAnnouncements = $blogJson === null ? array() : $blogJson;
+
+		krsort($blogAnnouncements);
+
+		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
+
+		$templateVariables += array(
+			'homepage'              => true,
+			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
+			'announcements'         => $announcements,
+			'header_css_image'      => 'home',);
+
+		return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
+	}
+
+	private function getForumAnnouncements()
+	{
 		// Should the Announcements forum ever obtain a new forum_id, *CHANGE THIS VARIABLE*.
 		$announcement_forum = 14;
 		$retrieve_limit = 3;
@@ -67,22 +90,6 @@ class GlobalController extends Controller
 			);
 		}
 
-		// Get announcements file
-		$blogFile = file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
-		$blogJson = json_decode($blogFile, true);
-
-		$blogAnnouncements = $blogJson === null ? array() : $blogJson;
-
-		krsort($blogAnnouncements);
-
-		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
-
-		$templateVariables += array(
-			'homepage'              => true,
-			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
-			'announcements'         => $announcements,
-			'header_css_image'      => 'home',);
-
-		return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
+		return $finishedAnnouncements;
 	}
 }
