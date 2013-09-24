@@ -18,9 +18,31 @@ class GlobalController extends Controller
 	public function homeAction()
 	{
 		$templateVariables = array();
-
-		// Should the Announcements forum ever obtain a new forum_id, *CHANGE THIS VARIABLE*.
 		$announcement_forum = 14;
+
+		$finishedAnnouncements = $this->getForumAnnouncements($announcement_forum);
+
+		// Get announcements file
+		$blogFile = file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
+		$blogJson = json_decode($blogFile, true);
+
+		$blogAnnouncements = $blogJson === null ? array() : $blogJson;
+
+		krsort($blogAnnouncements);
+
+		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
+
+		$templateVariables += array(
+			'homepage'              => true,
+			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
+			'announcements'         => $announcements,
+			'header_css_image'      => 'home',);
+
+		return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
+	}
+
+	private function getForumAnnouncements($announcement_forum)
+	{
 		$retrieve_limit = 3;
 
 		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
@@ -67,22 +89,6 @@ class GlobalController extends Controller
 			);
 		}
 
-		// Get announcements file
-		$blogFile = file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
-		$blogJson = json_decode($blogFile, true);
-
-		$blogAnnouncements = $blogJson === null ? array() : $blogJson;
-
-		krsort($blogAnnouncements);
-
-		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
-
-		$templateVariables += array(
-			'homepage'              => true,
-			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
-			'announcements'         => $announcements,
-			'header_css_image'      => 'home',);
-
-		return $this->render('phpBBWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
+		return $finishedAnnouncements;
 	}
 }
