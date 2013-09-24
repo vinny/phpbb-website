@@ -29,9 +29,6 @@ class DevelopmentController extends Controller
 
 		$data = $this->getProsilverPageData();
 
-		$next_page = (isset($data[$page + 1])) ? $page + 1 : '';
-		$prev_page = (isset($data[$page - 1])) ? $page - 1 : '';
-
 		$i = 1;
 
 		$toc = array();
@@ -40,7 +37,6 @@ class DevelopmentController extends Controller
 		{
 			$var['TITLE']	= $item['DATE'];
 			$var['ITEM']	= '/development/prosilver/' . $i;
-			$var['IS_ACTIVE']	= ($i == $page) ? true : false;
 			$var['ID']		= $i;
 
 			$toc[$i] = $var;
@@ -54,13 +50,15 @@ class DevelopmentController extends Controller
 			'TOC'					=> $toc,
 			'MENU_COUNT' 			=> count($toc),
 
+			'PAGE'					=> $page,
+
 			'DATE_TITLE'			=> $data[$page]['DATE'],
 			'CAPTION'				=> $data[$page]['TEXT'],
 
 			'IMAGE'		=> ($data[$page]['IMAGE'] != '') ? '/assets/images/prosilver/' . $data[$page]['IMAGE'] : '',
 
-			'NEXT_PAGE'	=> ($next_page != '') ? ('/development/prosilver/' . $next_page) : '',
-			'PREV_PAGE'	=> ($prev_page != '') ? ('/development/prosilver/' . $prev_page) : '',
+			'NEXT_PAGE'	=> (isset($data[$page + 1])) ? ('/development/prosilver/' . ($page + 1)) : '',
+			'PREV_PAGE'	=> (isset($data[$page - 1])) ? ('/development/prosilver/' . ($page - 1)) : '',
 
 			'IN_DEV_PROSILVER'	=> true,
 		);
