@@ -74,7 +74,7 @@ class GlobalController extends Controller
 
 		krsort($blogAnnouncements);
 
-		$announcements = array_merge($finishedAnnouncements, $blogAnnouncements);
+		$announcements = $blogAnnouncements === null ? $finishedAnnouncements : array_merge($finishedAnnouncements, $blogAnnouncements);
 
 		$templateVariables += array(
 			'homepage'              => true,
