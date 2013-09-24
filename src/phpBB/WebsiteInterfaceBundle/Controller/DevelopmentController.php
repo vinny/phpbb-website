@@ -55,7 +55,7 @@ class DevelopmentController extends Controller
 			'DATE_TITLE'			=> $data[$page]['DATE'],
 			'CAPTION'				=> $data[$page]['TEXT'],
 
-			'IMAGE'		=> ($data[$page]['IMAGE'] != '') ? '/assets/images/prosilver/' . $data[$page]['IMAGE'] : '',
+			'IMAGE'		=> ('/assets/images/prosilver/' . $data[$page]['IMAGE']),
 
 			'NEXT_PAGE'	=> (isset($data[$page + 1])) ? ('/development/prosilver/' . ($page + 1)) : '',
 			'PREV_PAGE'	=> (isset($data[$page - 1])) ? ('/development/prosilver/' . ($page - 1)) : '',
