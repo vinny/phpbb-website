@@ -31,8 +31,8 @@ class GlobalControllerTest extends BootstrapTestSuite
 		// Title Check
 		$expectedTitle = array('phpBB', 'Free and Open Source Forum Software');
 
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),$expectedTitle[0]) !== false, 'Title contains phpBB');
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()),$expectedTitle[1]) !== false, 'Title contains Free and Open Source Forum Software');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), $expectedTitle[0]) !== false, 'Title contains phpBB');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), $expectedTitle[1]) !==se, 'Title contains Free and Open Source Forum Software');
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("THE #1 FREE, OPEN SOURCE BULLETIN BOARD SOFTWARE")')->count() > 0, 'Homepage Content Check');
