@@ -14,12 +14,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ModsController extends Controller
 {
-	public function homeAction()
-	{
-		$templateVariables = array(
-			'header_css_image'		=> 'mods',
-		);
+    public function homeAction()
+    {
+        $templateVariables = array(
+            'header_css_image'		=> 'mods',
+        );
 
-		return $this->render('phpBBWebsiteInterfaceBundle:Mods:home.html.twig', $templateVariables);
-	}
+        return $this->render('phpBBWebsiteInterfaceBundle:Mods:home.html.twig', $templateVariables);
+    }
 }
