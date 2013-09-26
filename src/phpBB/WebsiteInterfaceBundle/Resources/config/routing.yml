@@ -13,3 +13,7 @@ phpBBWebsite_Development:
 phpBBWebsite_About:
     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/about.yml"
     prefix:   /about
+
+phpBBWebsite_getInvolved:
+    path:  /get-involved/
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:getInvolved }
