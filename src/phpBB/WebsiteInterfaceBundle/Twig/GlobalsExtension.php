@@ -24,7 +24,7 @@ class GlobalsExtension extends \Twig_Extension
 		// @TODO Generate URLs for routes
 		$pathVars = $this->getMainPaths();
 
-		$modVars = $this->getModVars();
+		$modVars = $this->getModsVars();
 
 		$developmentVars = array(
 			'DEV_HOME' => '//area51.phpbb.com/',
