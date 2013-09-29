@@ -22,4 +22,13 @@ class SupportController extends Controller
 
 		return $this->render('phpBBWebsiteInterfaceBundle:Support:home.html.twig', $templateVariables);
 	}
+
+	public function ircAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'support irc',
+		);
+
+		return $this->render('phpBBWebsiteInterfaceBundle:Support:irc.html.twig', $templateVariables);
+	}
 }
