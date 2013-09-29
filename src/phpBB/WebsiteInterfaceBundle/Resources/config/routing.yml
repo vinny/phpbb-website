@@ -6,6 +6,10 @@ phpBBWebsite_getInvolved:
     path:  /get-involved/
     defaults: { _controller: phpBBWebsiteInterfaceBundle:About:getInvolved }
 
+phpBBWebsite_demo:
+    path:  /demo/
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:Global:demo }
+
 phpBBWebsite_About:
     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/about.yml"
     prefix:   /about
