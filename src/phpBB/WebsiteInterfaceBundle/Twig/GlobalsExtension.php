@@ -26,17 +26,16 @@ class GlobalsExtension extends \Twig_Extension
 
 		$modVars = $this->getModsVars();
 
+		$supportVars = $this->getSupportVars();
+
 		$developmentVars = array(
 			'DEV_HOME' => '//area51.phpbb.com/',
 			'DEV_BOARD' => '//area51.phpbb.com/phpBB/',
-			'BUGS_PHPBB' => 'http://tracker.phpbb.com/',
+			'BUGS_PHPBB' => 'http://tracker.phpbb.com/', // Usage = 2
 			'BUGS' => '/bugs/',
-			'SECURITY' => '/security/',
+			'SECURITY' => '/security/', // Usage = 2
 			'DEV_PROSILVER' => '/development/prosilver/', // Usage = 2
-		);
-
-		$supportVars = array(
-			'SUPPORT_TUTORIALS' => '/support/tutorials/',
+			'INCIDENTS' => '/incidents/',
 		);
 
 		$aboutVars = array(
@@ -110,10 +109,27 @@ class GlobalsExtension extends \Twig_Extension
 			'kb_path'			=> '/kb/',
 			'showcase_path'		=> '/showcase/',
 			'documentation_path'=> '/support/documentation/',
-			'ideas_path'        => '/ideas/',
+			'ideas_path'		=> '/ideas/',
 		);
 
 		return $pathVars;
+	}
+
+	private function getSupportVars()
+	{
+		$supportVars = array(
+			'DOCUMENTATION_3_0' 		=> '/support/documentation/3.0/',
+			'SUPPORT_TUTORIALS_3_0' 	=> '/upport/tutorials/3.0/',
+			'SUPPORT_IRC'				=> '/support/irc/',
+			'SUPPORT_SRT' 				=> '/support/srt/',
+			'SUPPORT_FORUMS'			=> '/support/forums/',
+			'SUPPORT_INTL'				=> '/support/intl/',
+			'SUPPORT_STK'				=> '/support/stk/',
+			'SUPPORT_TUTORIALS'			=> '/support/tutorials/',
+			'SUPPORT_CODE_CHANGES'		=> '//area51.phpbb.com/code-changes/',
+		);
+
+		return $supportVars;
 	}
 
 	private function getModsVars()
