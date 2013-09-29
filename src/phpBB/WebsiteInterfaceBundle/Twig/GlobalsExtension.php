@@ -64,7 +64,8 @@ class GlobalsExtension extends \Twig_Extension
 		);
 
 		$forumVars = array(
-			'FORUM_PHPBBDISC' => '/community/viewforum.php?f=64',
+			'FORUM_PHPBBDISC' 	=> '/community/viewforum.php?f=64',
+			'RULES'				=> '/rules/',
 			);
 
 		$variables = array_merge(
