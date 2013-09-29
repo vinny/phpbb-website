@@ -30,6 +30,8 @@ class GlobalsExtension extends \Twig_Extension
 
 		$peopleVars = $this->getPeopleVars();
 
+		$miscVars = $this->getMiscVars();
+
 		$developmentVars = array(
 			'DEV_HOME' => '//area51.phpbb.com/',
 			'DEV_BOARD' => '//area51.phpbb.com/phpBB/',
@@ -40,6 +42,44 @@ class GlobalsExtension extends \Twig_Extension
 			'INCIDENTS' => '/incidents/',
 		);
 
+		$aboutVars = $this->getAboutVars();
+
+		$forumVars = array(
+			'FORUM_PHPBBDISC' 	=> '/community/viewforum.php?f=64',
+			);
+
+		$variables = array_merge(
+			$generalVars,
+			$pathVars,
+			$modVars,
+			$developmentVars,
+			$supportVars,
+			$aboutVars,
+			$peopleVars,
+			$forumVars,
+			$miscVars
+		);
+
+		return $variables;
+	}
+
+	public function getName()
+	{
+		return 'phpbb_extension_globals';
+	}
+
+	private function getMiscVars()
+	{
+		$miscVars = array(
+			'DEMO_30X'			=> 'http://try-phpbb.com/30x',
+			'RULES'				=> '/rules/',
+		);
+
+		return $miscVars;
+	}
+
+	private function getAboutVars()
+	{
 		$aboutVars = array(
 			'ABOUT_FEATURES'	=> '/about/features/',
 			'ABOUT_COMPARE'		=> '/about/features/compare.php',
@@ -54,28 +94,7 @@ class GlobalsExtension extends \Twig_Extension
 			'MANAGEMENT_TEAM'	=> '/community/memberlist.php?mode=group&g=13330',
 		);
 
-		$forumVars = array(
-			'FORUM_PHPBBDISC' 	=> '/community/viewforum.php?f=64',
-			'RULES'				=> '/rules/',
-			);
-
-		$variables = array_merge(
-			$generalVars,
-			$pathVars,
-			$modVars,
-			$developmentVars,
-			$supportVars,
-			$aboutVars,
-			$peopleVars,
-			$forumVars
-		);
-
-		return $variables;
-	}
-
-	public function getName()
-	{
-		return 'phpbb_extension_globals';
+		return $aboutVars;
 	}
 
 	private function getMainPaths()
