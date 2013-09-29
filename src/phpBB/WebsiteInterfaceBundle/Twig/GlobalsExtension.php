@@ -28,6 +28,8 @@ class GlobalsExtension extends \Twig_Extension
 
 		$supportVars = $this->getSupportVars();
 
+		$peopleVars = $this->getPeopleVars();
+
 		$developmentVars = array(
 			'DEV_HOME' => '//area51.phpbb.com/',
 			'DEV_BOARD' => '//area51.phpbb.com/phpBB/',
@@ -50,17 +52,6 @@ class GlobalsExtension extends \Twig_Extension
 			'STYLES_JV_APP'		=> '/styles/contribute/index.php?p=jv',
 			'LANGUAGES_30X'		=> '/languages/',
 			'MANAGEMENT_TEAM'	=> '/community/memberlist.php?mode=group&g=13330',
-		);
-
-		$peopleVars = array(
-			'SUPPORT_TL_NAME'		=> 'Noxwizard',
-			'SUPPORT_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=192443',
-			'SUPPORT_DOCS_NAME'		=> 'stevemaury',
-			'SUPPORT_DOCS_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=280664',
-			'STYLES_TL_NAME'		=> 'Raimon',
-			'STYLES_TL_CONTACT'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
-			'WEBSITE_TL_NAME'		=> 'Marshalrusty',
-			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
 		);
 
 		$forumVars = array(
@@ -162,5 +153,21 @@ class GlobalsExtension extends \Twig_Extension
 		);
 
 		return $modVars;
+	}
+
+	private function getPeopleVars()
+	{
+		$peopleVars = array(
+			'SUPPORT_TL_NAME'		=> 'Noxwizard',
+			'SUPPORT_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=192443',
+			'SUPPORT_DOCS_NAME'		=> 'stevemaury',
+			'SUPPORT_DOCS_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=280664',
+			'STYLES_TL_NAME'		=> 'Raimon',
+			'STYLES_TL_CONTACT'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
+			'WEBSITE_TL_NAME'		=> 'Marshalrusty',
+			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
+		);
+
+		return $peopleVars;
 	}
 }
