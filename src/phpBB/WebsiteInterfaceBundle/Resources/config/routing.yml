@@ -2,6 +2,14 @@ phpBBWebsiteInterfaceBundle_homepage:
     path:  /
     defaults: { _controller: phpBBWebsiteInterfaceBundle:Global:home }
 
+phpBBWebsite_getInvolved:
+    path:  /get-involved/
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:getInvolved }
+
+phpBBWebsite_About:
+    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/about.yml"
+    prefix:   /about
+
 phpBBWebsite_Mods:
     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/mods.yml"
     prefix:   /mods
@@ -10,10 +18,6 @@ phpBBWebsite_Development:
     resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/development.yml"
     prefix:   /development
 
-phpBBWebsite_About:
-    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/about.yml"
-    prefix:   /about
-
-phpBBWebsite_getInvolved:
-    path:  /get-involved/
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:getInvolved }
+phpBBWebsite_Support:
+    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/support.yml"
+    prefix:   /support
