@@ -17,6 +17,7 @@ class PrivateGlobalsExtension extends \Twig_Extension
 		$variables = array(
 			'FORUM_PRIVATE'				=> '/community/viewforum.php?f=53',
 			'SUPPORT_COOKIES'			=> '/support/cookies.php',
+			'MODS_MODX_SPEC'		=> '/mods/modx/spec/',
 		);
 
 		return $variables;
