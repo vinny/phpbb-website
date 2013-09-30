@@ -61,4 +61,13 @@ class AboutController extends Controller
 
 		return $this->render('phpBBWebsiteInterfaceBundle:About:contact.html.twig', $templateVariables);
 	}
+
+	public function featureAction()
+	{
+		$templateVariables = array(
+			'header_css_image'	=> 'about features',
+		);
+
+		return $this->render('phpBBWebsiteInterfaceBundle:About:features.html.twig', $templateVariables);
+	}
 }

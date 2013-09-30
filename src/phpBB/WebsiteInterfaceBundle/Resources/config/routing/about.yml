@@ -14,6 +14,10 @@ phpBBWebsite_About_contact:
     path:  /contact/
     defaults: { _controller: phpBBWebsiteInterfaceBundle:About:contact }
 
+phpBBWebsite_About_features:
+    path:  /features/
+    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:feature }
+
 phpBBWebsite_About_getInvolved:
     path:  /get-involved/
     defaults:
