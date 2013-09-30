@@ -3,7 +3,7 @@
 	<h3><a href="{{ about_path }}">About Section</a></h3>
 	<ul class="menu">
 		<li><a href="{{ ABOUT_FEATURES }}">The Features</a></li>
-		{% if S_SHOW_COMPARE_PAGE is defined %}
+		{% if SHOW_COMPARE_PAGE is defined %}
 			<li><a href="{{ ABOUT_COMPARE }}">Compare phpBB</a></li>
 		{% endif %}
 		<li><a href="{{ ABOUT_HISTORY }}">The History</a></li>
@@ -11,8 +11,8 @@
 		<li><a href="{{ get_involved_path }}">Get Involved</a></li>
 		<li><a href="{{ showcase_path }}">Showcase</a></li>
 		<li><a href="{{ ABOUT_LOGOS }}">Logos</a></li>
-		<li><a href="{{ ABOUT_CONTACT }}">Contact Us</a></li>
-		<li class="last"><a href="{{ ABOUT_ADVERTISE }}">Advertise on phpBB.com</a></li>
+		<li><a href="{{ contact_path }}">Contact Us</a></li>
+		<li class="last"><a href="{{ advertise_path }}">Advertise on phpBB.com</a></li>
 	</ul>
 	<span class="corners-bottom"><span></span></span></div>
 </div>
