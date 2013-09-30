@@ -21,6 +21,13 @@ phpBBWebsite_About_getInvolved:
         path: /get-involved/
         permanent: true
 
+phpBBWebsite_About_features_compare:
+    path:  /features/compare.php
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /about/features/
+        permanent: true
+
 phpBBWebsite_About_contact_redirect:
     path:  /contact_us.php
     defaults:
