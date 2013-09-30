@@ -55,71 +55,71 @@ class GlobalsExtension extends \Twig_Extension
 			'home_path'			=> '/',
 
 			'about_path'		=> '/about/',
-			//'ABOUT'				=> '/about/',
+			'ABOUT'				=> '/about/',
 			//'ABOUT_INDEX_SUB'	=> '/about/',
 
 			'advertise_path'	=> '/about/advertise/',
-			//'ABOUT_ADVERTISE'	=> '/about/advertise/',
+			'ABOUT_ADVERTISE'	=> '/about/advertise/',
 
 			'demo_path'			=> '/demo/',
-			//'DEMO'				=> '/demo/',
+			'DEMO'				=> '/demo/',
 
 			'downloads_path'	=> '/downloads/',
 			//'DOWNLOADS_SUB'		=> '/downloads/',
-			// 'DOWNLOADS'			=> '/downloads/',
-			// 'DOWNLOADS_HEADER'	=> '/downloads/?from=header',
+			'DOWNLOADS'			=> '/downloads/',
+			'DOWNLOADS_HEADER'	=> '/downloads/?from=header',
 
 			'cdb_path'			=> '/customise/db/',
-			// 'CUSTOMISE'			=> '/customise/db/',
+			'CUSTOMISE'			=> '/customise/db/',
 
 			'support_path'		=> '/support/',
-			// 'SUPPORT'			=> '/support/',
+			'SUPPORT'			=> '/support/',
 
 			'development_path'	=> '/development/', // Usage = 3
 			// 'DEV_INDEX_SUB'		=> '/development/',
-			// 'DEVELOPMENT'		=> '/development/',
+			'DEVELOPMENT'		=> '/development/',
 
 			'community_path'	=> '/community/',
-			// 'COMMUNITY'			=> '/community',
+			'COMMUNITY'			=> '/community',
 
 			'contact_path'		=> '/about/contact_us.php',
-			// 'ABOUT_CONTACT'		=> '/about/contact_us.php',
+			'ABOUT_CONTACT'		=> '/about/contact_us.php',
 
 			'get_involved_path'		=> '/get-involved/', // Usage = 2
 			// 'ABOUT_GETINVOLVED_SUB'	=> '/get-involved/',
-			// 'DEV_GI_SUB'			=> '/development/get-involved/',
-			// 'GET_INVOLVED'			=> '/get-involved/',
+			'DEV_GI_SUB'			=> '/development/get-involved/',
+			'GET_INVOLVED'			=> '/get-involved/',
 
 			'mods_db_path'		=> '/customise/db/modifications-1/',
 			// 'MODS_DB_SUB'		=> '/customise/db/modifications-1/',
 
 			'mods_path'			=> '/mods/',
-			// 'MODS'				=> '/mods/',
+			'MODS'				=> '/mods/',
 
 			'styles_db_path'	=> '/customise/db/styles-2/',
 			// 'STYLES_DB_SUB'		=> '/customise/db/styles-2/',
 
 			'shop_path'			=> '/shop/',
-			// 'SHOP'				=> '/shop/',
+			'SHOP'				=> '/shop/',
 
 			'blog_link'			=> '//blog.phpbb.com/',
-			// 'BLOG'				=> '//blog.phpbb.com/',
+			'BLOG'				=> '//blog.phpbb.com/',
 
 			'feeds_rss_path'	=> '/feeds/rss/',
-			// 'FEEDS_RSS'			=> '/feeds/rss/',
+			'FEEDS_RSS'			=> '/feeds/rss/',
 
 			'kb_path'			=> '/kb/',
-			// 'KB'				=> '/kb/',
+			'KB'				=> '/kb/',
 			//'KB'				=> '/knowledgebase/',
 
 			'showcase_path'		=> '/showcase/',
-			// 'SHOWCASE'			=> '/showcase/',
+			'SHOWCASE'			=> '/showcase/',
 
 			'documentation_path'=> '/support/documentation/',
-			// 'DOCUMENTATION'		=> '/support/documentation/',
+			'DOCUMENTATION'		=> '/support/documentation/',
 
 			'ideas_path'		=> '/ideas/',
-			// 'IDEAS'				=> '/ideas/',
+			'IDEAS'				=> '/ideas/',
 		);
 
 		return $pathVars;
@@ -486,7 +486,7 @@ class GlobalsExtension extends \Twig_Extension
 			'RULES'				=> '/rules/',
 			'MODS_RULES'			=> '/mods/rules/',
 			'GOOGLECSE'			=> '/search/',
-			// 'ADVERTISE'			=> '/about/advertise/',
+			'ADVERTISE'			=> '/about/advertise/',
 			'LANGUAGES_30X'		=> '/languages/',
 			'LANGUAGES_20X'		=> '/languages/?type=20x',
 
