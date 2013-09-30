@@ -51,4 +51,14 @@ class AboutController extends Controller
 
 		return $this->render('phpBBWebsiteInterfaceBundle:About:getInvolved.html.twig', $templateVariables);
 	}
+
+	public function contactAction()
+	{
+		$templateVariables = array(
+			'header_css_image'	=> 'contact',
+			'ICON_POST_REPORT'	=> '/community/styles/prosilver/imageset/icon_post_report.gif',
+		);
+
+		return $this->render('phpBBWebsiteInterfaceBundle:About:contact.html.twig', $templateVariables);
+	}
 }
