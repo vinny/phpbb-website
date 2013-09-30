@@ -6,7 +6,7 @@ services:
 #        class: %php_bb_private_website.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
 
-	phpbb.twig.privateglobalvars:
-		class: phpBB\PrivateWebsiteBundle\Twig\PrivateGlobalsExtension
-		tags:
-			- { name: twig.extension }
+	# phpbb.twig.privateglobalvars:
+	# 	class: phpBB\PrivateWebsiteBundle\Twig\PrivateGlobalsExtension
+	# 	tags:
+	# 		- { name: twig.extension }
