@@ -99,4 +99,22 @@ class AboutControllerTest extends BootstrapTestSuite
 
 		$this->assertEquals('301', $this->response->getStatusCode(), 'Development Get Involved Redirect');
 	}*/
+
+	public function testContactMain()
+	{
+		$objs = $this->setupTest('/about/contact/');
+		$crawler = $objs['crawler'];
+
+		// Title Check
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Contact phpBB') !== false, 'Title contains Contact phpBB(R)');
+
+		// Content Check
+		$this->assertTrue($crawler->filter('html:contains("Who to contact concerning non-phpbb.com boards ")')->count() > 0, 'Contact Content Check');
+		$this->assertTrue($crawler->filter('a:contains("Logos")')->count() > 0, 'Contact Sidebar Check');
+
+		// Standard All Page Checks
+		$this->globalTests();
+
+		// @TODO Test redirect for /about/contact_us.php
+	}
 }
