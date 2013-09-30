@@ -421,8 +421,12 @@ class GlobalsExtension extends \Twig_Extension
 			'DEMO_30X'			=> 'http://try-phpbb.com/30x',
 			'RULES'				=> '/rules/',
 
-			'package_version'		=> '3.0.11', // Usage = 1
-			'package_release_date'	=> '2012-08-25', // Usage = 1
+			'package_version'		=> '3.0.12', // Usage = 1
+			'package_release_date'	=> '2013-09-28', // Usage = 1
+			'PACKAGE_VERSION' => '3.0.12',
+			'PACKAGE_ANNOUNCE_URL' => '/community/viewtopic.php?f=14&amp;t=2200921',
+			'PACKAGE_RELEASE_DATE' => '2013-09-28',
+
 			'bot'					=> false, // @TODO Set this to true for bots // Usage = 1
 			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce', // Usage = 1
 

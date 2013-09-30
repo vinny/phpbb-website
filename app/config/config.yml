@@ -13,8 +13,8 @@ framework:
     csrf_protection: ~
     validation:      { enable_annotations: true }
     templating:
-        assets_version:         v6
-        assets_version_format:  %%s?%%s
+        assets_version:         300920132143
+        assets_version_format:  %%s?v%%s
         engines:
             - twig
     default_locale:  en

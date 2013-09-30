@@ -1,0 +1,875 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Features{% endblock title %}
+
+{% block javascriptHeader %}
+	{{ parent() }}
+
+	<!-- JS for Features Page -->
+	<script type="text/javascript" src="{{ asset('assets/js/about/features/features_fn.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+		<strong>&#8249;</strong> <a href="{{ about_path }}">About</a>
+		<strong>&#8249;</strong> <a href="{{ ABOUT_FEATURES }}">Features</a>
+	</li>
+</ul>
+
+<div class="wide">
+	<h2 class="imgrep features">Features of phpBB<sup>&reg;</sup></h2>
+	<p class="feature-page-desc">phpBB<sup>&reg;</sup> is now in its third major version. Version 3.0 incorporates a professional-quality modular
+		design, high security, multiple-language interface, support for a multitude of database servers
+		and complete layout customisation, all with a low execution overhead.</p>
+</div>
+<div class="clear"></div>
+<div class="expandall wide">
+	<span></span>
+</div>
+<div class="clear"></div>
+<div class="wide">
+	<div class="column1">
+		<div class="feature-box feature-1">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/stats.png') }}" class="floatleft" alt="General features" />
+				<h3>General</h3>
+				<p>Learn about phpBB's general features.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+					<div class="feature-item">
+						<h4><a name="gpl" href="#gpl">Licensed under the GPLv2</a></h4>
+						<p>phpBB is open source, licensed under Version 2 of the GNU <span class="definition define-gpl">GPL</span>. You can read more about the license <a href="http://www.opensource.org/licenses/gpl-2.0.php" rel="external">here</a>.</p>
+					</div>
+					<div class="feature-item">
+						<h4><a name="php" href="#php">Written in PHP</a></h4>
+						<p>True to its name, phpBB was written in the <a href="http://php.net" rel="external">PHP</a> programming language.</p>
+					</div>
+					<div class="feature-item">
+						<h4><a name="version" href="#version"><strong>Latest Version:</strong> {{ package_version }}</a></h4>
+						<p>The latest version of phpBB is {{ package_version }}, <a href="{{ PACKAGE_ANNOUNCE_URL }}">released</a> on {{ package_release_date }}.</p>
+					</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-2">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/web.png') }}" class="floatleft" alt="Basic Features" />
+				<h3>Basic Features</h3>
+				<p>At its core, what does phpBB offer?</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name ="utf8" href="#utf8">UTF-8 Support</a></h4>
+					<p>phpBB is fully compatible with <span class="definition define-utf8">UTF-8</span> and uses it as the default character encoding. This ensures complete compatibility with nearly every language on the planet.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name ="xhtml" href="#xhtml">XHTML 1.0 Strict Compliant</a></h4>
+					<p>prosilver, phpBB's default style, complies 100% with the W3C specifications for XHTML 1.0 Strict, ensuring optimal performance and cross-browser support.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="ucp" href="#ucp">User Preferences</a></h4>
+					<p>phpBB offers a completely modularised User Control Panel to give your users full control over their account on the board. See the <strong>Users</strong> section for more details.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="moderation" href="#moderation">Moderation</a></h4>
+					<p>An arsenal of tools are at your disposal in order to moderate your board. See the <strong>Moderators</strong> section for details.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="admin" href="#admin">Administration</a></h4>
+					<p>phpBB provides a comprehensive Administration Control Panel which allows you to configure and customise nearly every aspect of your board. See the <strong>Administration</strong> section for details.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="se" href="#se">Search Engine Spider Handling</a></h4>
+					<p>phpBB comes pre-loaded with configuration for over 100 of the most common spiders and optimises your board when they visit. Using the <strong>Permissions</strong> system, you have full control of what the spiders can see and where they can go.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="unread" href="#unread">Unread Message Tracking</a></h4>
+					<p>phpBB keeps track of the topics and posts users have and have not read, even between sessions!</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="pm" href="#pm">Private Message System</a></h4>
+					<p>Users have the ability to send messages to one another directly via the board. See the <strong>Private Messaging</strong> section for details.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-3">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/user-female.png') }}" class="floatleft" alt="Registration" />
+				<h3>Registration</h3>
+				<p>phpBB offers a fully customisable registration process for your users.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="coppa" href="#coppa">COPPA Registrations</a></h4>
+					<p><a href="http://en.wikipedia.org/wiki/Children's_Online_Privacy_Protection_Act">COPPA</a>, primarily used within the United States, requires parental approval for children under the age of 13 to register on the board. phpBB can facilitate this functionality.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="limitreg" href="#limitreg">Limit Registration Attempts</a></h4>
+					<p>A strict limit on the number of attempted registrations (when using the <span class="definition define-captcha">CAPTCHA</span>) can be set.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="namelength" href="#namelength">Min/Max Username &amp; Password Length</a></h4>
+					<p>phpBB allows you to set a required username and password length, or ensure that usernames aren't too long!</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name ="limitchars" href="#limitchars">Limit Username Characters</a></h4>
+					<p>Usernames can be limited to a certain set of characters such alpha-numeric or ASCII. Multiple presets are available.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="passcom" href="#passcom">Password Complexity</a></h4>
+					<p>In order to protect the security of your board's users, you can set the required password complexity.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="dupemail" href="#dupemail">Allow/Disallow Duplicate Emails</a></h4>
+					<p>phpBB provides the option to either allow or disallow multiple user accounts from having identical email addresses.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-4">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/chat.png') }}" class="floatleft" alt="Posting" />
+				<h3>Posting</h3>
+				<p>The primary purpose of phpBB is to facilitate discussion via posting.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="flattopic" href="#flattopic">Flat Topic Structure</a></h4>
+					<p>phpBB utilises a flat topic and post structure, rather than threaded.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="bbcode" href="#bbcode">BBCode &amp; Custom BBCode</a></h4>
+					<p>BBCode is an easy to use and highly effective way that users can format their posts, insert images and links, and post emoticons. In addition to the default BBCodes, phpBB allows you to add new, custom BBCodes to suit your needs.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="attach" href="#attach">Attachments</a></h4>
+					<p>phpBB provides the ability to post multiple attachments to posts. The types and size of files allowed to be posted is fully configurable within the ACP.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="qr" href="#qr">Quick Reply</a></h4>
+					<p>A simple posting box can be enabled on the board to facilitate faster replies to topics without having to load the Posting page.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="smilies" href="#smilies">Smilies &amp; Emoticons</a></h4>
+					<p>Help demonstrate emotion in your posts with smilies! <img src="/community/images/smilies/icon_e_biggrin.gif" alt=":D" /> You also have the option of adding custom smilies.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="quoting" href="#quoting">Quoting</a></h4>
+					<p>In order to help the flow of discussion, phpBB allows users to quote another user's post within their own. phpBB supports nested quoting, as well.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="censor" href="#censor">Word Censors</a></h4>
+					<p>Keep your board tame by implementing word censors and language filters to automatically eliminate or replace choice words or phrases.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="syntax" href="#syntax">Syntax Highlighting</a></h4>
+					<p>When placing code within a post, using BBCode, phpBB can automatically highlight the syntax to make it easier to read.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="drafts" href="#drafts">Post Drafts</a></h4>
+					<p>In the middle of typing a long reply but can't finish it right now? phpBB allows users to save unfinished posts to their Drafts so they can finish them later.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="polls" href="#polls">Polls</a></h4>
+					<p>phpBB offers a fully configurable Polling feature for topics. Multiple polling options as well as time limits can be set. Users can be allowed or disallowed to change their vote at a later time.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="review" href="#review">Beaten-to-Posting Review</a></h4>
+					<p>If another user posts a reply while a user was typing theirs, the user will be notified so that they can make changes to the post if necessary.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="preview" href="#preview">Posting Preview</a></h4>
+					<p>Not sure how a post is going to look? Users have the option of previewing how their post will appear before submitting it.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-5">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/upload.png') }}" class="floatleft" alt="Attachments" />
+				<h3>Attachments</h3>
+				<p>Share files by uploading them to the board attaching them to posts.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="thumb" href="#thumb">Automatic Image Thumbnails</a></h4>
+					<p>For larger images, phpBB will automatically create a thumbnail when placing the image in the post to keep things looking neat.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="attachtype" href="#attachtype">Attachment Types</a></h4>
+					<p>Control what type of files and which extensions are permitted to be uploaded to the board.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="multiattach" href="#multiattach">Multiple Attachments</a></h4>
+					<p>Multiple attachments can be placed in a single post. The exact number is configurable in the ACP.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="attachplace" href="#attachplace">Attachment Placement</a></h4>
+					<p>Place links to the attachments anywhere in the body of the post, not just at the end.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-6">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/forums.png') }}" class="floatleft" alt="Forums" />
+				<h3>Forums</h3>
+				<p>Forums make up the organisational structure of the board.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="cat" href="#cat">Categories</a></h4>
+					<p>Categories are organisational containers which house the individual forums.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="forumpass" href="#forumpass">Password Protected Forums</a></h4>
+					<p>Require a unique password to be entered in order for any user to access a single forum.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="forumstyle" href="#forumstyle">Forum-specific Styles</a></h4>
+					<p>Set individual forums to use a different installed style.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="forumurl" href="#forumurl">URL Redirect Forums</a></h4>
+					<p>Make a forum link directly to a specified URL instead of the forum itself.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="forumrules" href="#forumrules">Forum Rules</a></h4>
+					<p>Customise and display forum rules at the top of a single forum or globally across the board.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="subforums" href="#subforums">Subforums</a></h4>
+					<p>phpBB allows for an unlimited number of subforums in the hierarchical structure.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="lastpost" href="#lastpost">Last Post</a></h4>
+					<p>phpBB will list who made the last post in a particular topic and when it was made on the forum's page.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="pruning" href="#pruning">Forum Pruning</a></h4>
+					<p>phpBB provides options for pruning old or inactive topics using custom conditions. This can be a one-time action or be done automatically.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="activetopics" href="#activetopics">Display Active Topics</a></h4>
+					<p>A list of the most active topics in a forum can be displayed in a separate container at the top of the forum.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="subscribe" href="#subscribe">Subscribe to Forums &amp; Topics</a></h4>
+					<p>Users have the ability to subscribe to individual topics or entire forums so that they can be notified of any new topics or posts made.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="bookmark" href="#bookmark">Bookmark Topics</a></h4>
+					<p>Users have the ability to bookmark topics that interest them for quick access at a later time.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="sorting" href="#sorting">Topic &amp; Post Sorting</a></h4>
+					<p>Users have the ability to change the order in which topics and posts are displayed, such as oldest to newest, alphabetical order, or by the number of replies.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="tracking" href="#tracking">Topic Participation Tracking</a></h4>
+					<p>Users will see an indicator next to topics in which they have posted.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="print" href="#print">Print &amp; Email Topic</a></h4>
+					<p>phpBB creates a custom formatted page that is printer-friendly. Users also have the option to email a topic to their friends.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-7">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/user-male.png') }}" class="floatleft" alt="Users" />
+				<h3>Users</h3>
+				<p>Users are the backbone of any board. Users have many options available.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="signatures" href="#signatures">Signatures</a></h4>
+					<p>A signature is small bit of text or images that is inserted after a user's post. Each user can customise their own signature, if allowed.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="avatars" href="#avatars">Avatars</a></h4>
+					<p>Avatars are a personal image displayed above the user's username on a post and in their profile. If avatars are enabled, each user can customise their own.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="ranks" href="#ranks">Ranks</a></h4>
+					<p>User and group specific ranks are available and fully customisable. Ranks display under a user's username in a post or in their profile.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="online" href="#online">Users Online List</a></h4>
+					<p>If enabled, phpBB can list all of the users who are currently online or have signed in during a specified period of time.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="userpref" href="#userpref">User Preferences &amp; Profile Settings</a></h4>
+					<p>Individual users can customise their board preferences, such as the way the board looks, the sorting of topics, or the language used. Users can customise their profile and add additional information such as an email address or IM accounts.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="managedrafts" href="#managedrafts">Manage Saved Drafts</a></h4>
+					<p>Saved PM or post drafts are able to be edited from within the User Control Panel.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="managesubs" href="#managesubs">Mange Bookmarks &amp; Subscriptions</a></h4>
+					<p>Users can view a list of their bookmarks and subscriptions from within their control panel and unsubscribe if desired.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="cpf" href="#cpf">Custom Profile Fields</a></h4>
+					<p>phpBB ships with an assortment of profile fields (such as AIM/WLM/ICQ accounts), but board owners have the option to add completely custom profile fields.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="friendfoe" href="#friendfoe">Friend/Foe List</a></h4>
+					<p>Users can decide to add a particular user to their friend or foes list, enabling fine tuning of whose posts they see while browsing the board.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-8">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/delete.png') }}" class="floatleft" alt="Moderators" />
+				<h3>Moderators</h3>
+				<p>Moderators help maintain order by assisting users and enforcing the rules.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="globalmod" href="#globalmod">Global Moderators</a></h4>
+					<p>A Global Moderator immediately has access to moderation tasks for all forums on the board.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="forummod" href="#forummod">Forum Moderators</a></h4>
+					<p>Moderators can be assigned to individual forums on a per-user or per-group basis.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="queue" href="#queue">Posts/Reports Moderation Queue</a></h4>
+					<p>Moderators have quick access to a list of any post needing approval or posts which users have reported, and can deal with it efficiently.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="history" href="#history">Topic History</a></h4>
+					<p>Moderators have access to a full log of a topic's history, such as when it was approved, locked, or moved to another forum.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topiclog" href="#topiclog">Forum Topic Logs</a></h4>
+					<p>Moderators have access to logs of actions that took place in an entire forum or on a per-topic basis.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="editing" href="#editing">Post Editing</a></h4>
+					<p>Moderators can have the ability to edit the contents of a user's post.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="postlocking" href="#postlocking">Post Locking</a></h4>
+					<p>Moderators can lock individual posts so that the original author cannot edit it any longer.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="postdetails" href="#postdetails">Post Details</a></h4>
+					<p>Moderators have access to view details about a particular post, such as the IP address used while posting.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="postauthor" href="#postauthor">Change Post Author</a></h4>
+					<p>Moderators can change the author of a particular post from one user to another.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topicmove" href="#topicmove">Move Topics</a></h4>
+					<p>Moderators have the ability to move any number of posts to a new forum. Selecting and moving multiple topics at once is supported.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topicmerge" href="#topicmerge">Merge Topics/Posts</a></h4>
+					<p>Moderators have the ability to merge two topics together or only merge selected posts from one topic into another.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topicsplit" href="#topicsplit">Split Topics</a></h4>
+					<p>Moderators can split a topic into two separate topics, individual which posts stay and which go.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topiclock" href="#topiclock">Lock Topics</a></h4>
+					<p>Individual topics can be locked so that regular users can no longer reply or edit their posts.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topicdelete" href="#topicdelete">Delete Topics</a></h4>
+					<p>Moderators can permanently delete a topic and all of its replies from the board.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="globaltopic" href="#globaltopic">Global Topics/Announcements</a></h4>
+					<p>Moderators can create topics which are present as announcements in all forums on the board.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topiccopy" href="#topiccopy">Copy Topics</a></h4>
+					<p>Moderators can duplicate a topic to another forum.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="sticky" href="#sticky">Announcement/Sticky Topics</a></h4>
+					<p>Announcement topics are the most prominent topics in a forum, having their own section at the top of the list of topics. Stickies are less prominent, but still remain at the top of the forum no matter when the last post was made.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="manageban" href="#manageban">Manage Bans and Warnings</a></h4>
+					<p>Moderators who have permissions to issue and remove bans can do so from within the Moderator Control Panel. From here, moderators can also issue and edit warnings.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="usernotes" href="#usernotes">User Notes</a></h4>
+					<p>Moderators can keep a log of notes on a particular user which only other moderators can see.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-9">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/forward.png') }}" class="floatleft" alt="Usergroups" />
+				<h3>Usergroups</h3>
+				<p>Usergroups allow users to be easily organised on the board.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="grouptype" href="#grouptype">Group Types</a></h4>
+					<p>phpBB offers several type of groups: <strong>Hidden</strong> (only members can see it), <strong>Closed</strong> (everyone can see it, but users must manually be added), <strong>Open</strong> (anyone can join), and <strong>Request</strong> (users can request to be added by the Group Leader).</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="groupleader" href="#groupleader">Multiple Group Leaders</a></h4>
+					<p>phpBB supports the option to make multiple users the leaders of a group.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="groupcolour" href="#groupcolour">Custom Group Colours</a></h4>
+					<p>Users in a particular group can have their usernames set to a configurable colour.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="grouprank" href="#grouprank">Group Ranks &amp; Avatars</a></h4>
+					<p>Custom ranks and avatars can be set to display for all members in a particular group.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="grouplist" href="#grouplist">Group-based Memberlist Display</a></h4>
+					<p>phpBB can show a list of users based on their groups from within the memberlist.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div class="feature-box feature-10">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/mail.png') }}" class="floatleft" alt="Private Messaging" />
+				<h3>Private Messaging</h3>
+				<p>Private messages are direct messages between two or more users.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="pmfolders" href="#pmfolders">Custom PM Folders</a></h4>
+					<p>Users can create custom PM folders and create a set of filters/rules to automatically sort PMs.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="pmrecip" href="#pmrecip">Multiple Recipients</a></h4>
+					<p>Private messages can be sent to more than one user at a time.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="pmbcc" href="#pmbcc">Send Blind Carbon Copies (BCC)</a></h4>
+					<p>Private messages can be Blind Carbon Copied to a set of users. To these users, it will appear as if they are the only recipient.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="grouppm" href="#grouppm">Send to Groups</a></h4>
+					<p>PMs can be sent all users in a particular usergroup.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="addressbook" href="#addressbook">Address Book</a></h4>
+					<p>Users can quickly send a PM to someone in their friends list.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="pmdraft" href="#pmdraft">Message Drafts</a></h4>
+					<p>Unfinished PMs can be saved as drafts and, just like posts, can be edited and sent later.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="pmexport" href="#pmexport">Export Messages</a></h4>
+					<p>Private messages can be exported from phpBB for archiving purposes.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="pmattach" href="#pmattach">Attachments in PMs</a></h4>
+					<p>Just like posts, attachments can be placed in PMs.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="pmconvo" href="#pmconvo">Conversation View</a></h4>
+					<p>phpBB keeps track of PM replies and displays a chronological view of the PM history.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+	</div>
+	<div class="column2">
+		<div class="feature-box feature-13">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/security.png') }}" class="floatleft" alt="Security" />
+				<h3>Security</h3>
+				<p>phpBB leads the industry in security.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="audit" href="#audit"><strong>Paid Code Security Audit</strong></a></h4>
+					<p>Before its initial release, phpBB3 underwent a rigorous security audit by the well-known organisation <a href="http://www.sektioneins.de/de/index/">SektionEins</a>, and most notably Stefan Esser, a highly respected PHP security consultant.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="passhash" href="#passhash"><strong>Password Hashing</strong></a></h4>
+					<p>All passwords in phpBB are entirely <span class="definition define-hash">hashed</span> before stored in the database, so you can be sure they're secure. phpBB uses a salted hash based on <a href="http://www.openwall.com/phpass/" rel="external">phpass</a>.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="paratype" href="#paratype"><strong>Type-aware Parameter Handling and Database Layer</strong></a></h4>
+					<p>phpBB checks and enforces all data types when collected and before being used to enable a high level of security.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="feature-box feature-14">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/protection.png') }}" class="floatleft" alt="Anti-spam" />
+				<h3>Anti-spam</h3>
+				<p>Multiple tools keep your board free of unwanted users and spam.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="captcha" href="#captcha">CAPTCHA Confirmation</a></h4>
+					<p>phpBB offers multiple <span class="definition define-captcha">CAPTCHAs</span> to use during registration, including the industry-standard <a href="http://www.google.com/recaptcha" rel="external">reCAPTCHA</a> by Google, a custom 3D CAPTCHA, and a customisable Q&amp;A CAPTCHA.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="flood" href="#flood">Flood Control</a></h4>
+					<p>phpBB provides the option to limit the number of posts that can be made or PMs that can be sent in a given time period.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="userban" href="#userban">User Banning &amp; Suspension</a></h4>
+					<p>phpBB allows designated administrators or moderators to permanently ban or temporarily suspend a user's account for a given time period.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="userwarn" href="#userwarn">Warnings</a></h4>
+					<p>Designated moderators and administrators are able to issue warnings to users. These warnings can be set to expire automatically.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="userlog" href="#userlog">User Logging</a></h4>
+					<p>User's actions on the board can be logged and viewed by administrators and moderators. IP addresses are logged for these actions as well as each post made.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="reportpost" href="#reportpost">Report Posts &amp; Private Messages</a></h4>
+					<p>Users have the ability to flag a post or a PM as spam to a moderator for later review.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="postapprove" href="#postapprove">Post Approval</a></h4>
+					<p>phpBB can be configured to require individual topics and posts to be approved by moderators before they're visible to everyone.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div class="feature-box feature-15">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/database.png') }}" class="floatleft" alt="Data Management" />
+				<h3>Data Management</h3>
+				<p>phpBB supports a wide variety of database storage servers.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="mysql" href="#mysql">MySQL</a></h4>
+					<p>Likely the most common database server used for the web. MySQL is open source, released under the GPL, the same license as phpBB.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="sqlserver" href="#sqlserver">Microsoft SQL Server</a></h4>
+					<p>phpBB supports Microsoft's industry-leading SQL Server for use on Windows-based servers. Both SQL Server native and ODBC connections are supported.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="postgresql" href="#postgresql">PostgreSQL</a></h4>
+					<p>Known for its high level of scalability, PostgreSQL is an open-source database server which is quickly gaining popularity.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="oracle" href="#oracle">Oracle Database</a></h4>
+					<p>Using an Oracle database in an business or enterprise environment? No problem. phpBB fully supports this database.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="firebird" href="#firebird">Firebird</a></h4>
+					<p>Firebird is an open-source database system which is available on multiple platforms.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="sqllite" href="#sqllite">SQLite</a></h4>
+					<p>SQLite is a small, lightweight, and fast database server.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="dbbackup" href="#dbbackup">Backup &amp; Restore</a></h4>
+					<p>Utilities are provided within the ACP to fully backup and restore your board's database.</p>
+				</div>
+				<div class="clear"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div class="feature-box feature-16">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/cache.png') }}" class="floatleft" alt="Caching" />
+				<h3>Caching</h3>
+				<p>phpBB utilises an advanced caching system which increases performance.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="dbcache" href="#dbcache">Database Query Caching</a></h4>
+					<p>phpBB will cache the results of commonly executed queries in order to decrease page load times.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="stylecache" href="#stylecache">Template Caching</a></h4>
+					<p>Rather than recompiling the template on each page load, phpBB has the ability to cache its output in order to save on CPU cycles and decrease page load times.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="refreshcache" href="#refreshcache">Manually Refresh Cache</a></h4>
+					<p>Options in the ACP allow board owners to manually clear the template cache, the theme cache, or everything all in one go.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="feature-box feature-17">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/favorite.png') }}" class="floatleft" alt="Styles" />
+				<h3>Styles</h3>
+				<p>Fully customise the way phpBB looks with user-contributed styles.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="userstyle" href="#userstyle">User Selectable Styles</a></h4>
+					<p>If multiple styles are installed on the board, each user will have the option to use the one he or she likes best.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="customstyle" href="#customstyle">Install/Manage Custom Styles</a></h4>
+					<p>phpBB's style is fully customisable. Either tweak an existing style or create one from scratch.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="editstyle" href="#editstyle">Customise Style Components</a></h4>
+					<p>Individual style components, such as CSS themes, template files, and images, can be customised right from within the ACP without having to touch the files on the server.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="feature-box feature-18">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/permissions.png') }}" class="floatleft" alt="Permissions" />
+				<h3>Permissions</h3>
+				<p>Fine tune where users can go and which features they can use.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="permrules" href="#permrules">Permission Roles</a></h4>
+					<p>Permission roles simplify the permission process by allowing board owners to create a "template" of permissions and then applying them to various users and groups.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="groupperm" href="#groupperm">Group-based Permissions</a></h4>
+					<p>phpBB allows board owners to place multiple users into a group and then apply a set of Moderator, Administrator, Forum, or Global permissions to the group.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="userprm" href="#userprm">User-based Permissions</a></h4>
+					<p>phpBB allows board owners to assign Moderator, Administrator, Forum, or Global permissions to individual users.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="permmask" href="#permmask">Permission Masks</a></h4>
+					<p>Permission Masks are an invaluable tool which can allow you to see exactly what a user has access to at any given time. They trivialise the process of identifying conflicting permissions.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="feature-box feature-19">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/user.png') }}" class="floatleft"  alt="Administration" />
+				<h3>Administration</h3>
+				<p>Gain full control over the look, feel, and operation of your board.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="founder" href="#founder">Founder Status/Board Creator</a></h4>
+					<p>The founder status of a user ensures that no other administrator can take complete control of the board without the founder's explicit permission.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="adminload" href="#adminload">Load Settings</a></h4>
+					<p>phpBB allows board owners to configure various settings which have an effect on the load on the server.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="userprune" href="#userprune">Prune Inactive Users</a></h4>
+					<p>Has a user not logged in for a long time or not posted in a while? The ACP gives administrators the option to remove inactive users within a specified time period.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="manageranks" href="#manageranks">Manage Ranks</a></h4>
+					<p>Add, edit, or remove user and group ranks from the board. Customise the images displayed or the number of posts necessary to achieve a certain rank.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="managegroups" href="#managegroups">Manage Groups</a></h4>
+					<p>Create groups, add users to groups, assign leaders to groups, and assign permissions to groups all from within the ACP.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="manageattach" href="#manageattach">Manage Attachments</a></h4>
+					<p>Control attachment settings, such as file times or file sizes from the ACP. Board owners can also view a list of attachments on the board and delete ones if necessary.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="useredit" href="#useredit">User Editing</a></h4>
+					<p>Manage a user's profile and board preferences.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topicicon" href="#topicicon">Topic Icons</a></h4>
+					<p>Add, edit, or remove custom topic icons which can be selected by users when creating a new topic.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="massemail" href="#massemail">Mass-email</a></h4>
+					<p>Send out a bulk email to all of your board's users simultaneously.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="managereport" href="#managereport">Manage report/denial Reasons</a></h4>
+					<p>When users report posts, they have the option to select a reason for the report. Administrators can create, edit, or remove these reasons from the ACP.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="managemodual" href="#managemodual">Module Management</a></h4>
+					<p>With the module manager, administrators can customise exactly which features appear within the UCP, MCP, or ACP. New modules can be added.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="adminban" href="#adminban">Manage Bans</a></h4>
+					<p>View a list of banned users, unban users, or initialise a new ban by username, email address, or IP address.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="feature-box feature-20">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/search.png') }}" class="floatleft" alt="Search System" />
+				<h3>Search System</h3>
+				<p>The powerful search system lets users find topics, posts, and users.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="searchnative" href="#searchnative">Fulltext Native</a></h4>
+					<p>Database fulltext native support is available with the use of a plugin.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="topicsearch" href="#topicsearch">Customised Topic Search</a></h4>
+					<p>Users can search for a particular post from within a topic using various filters and sorting options.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="forumsearch" href="#forumsearch">Customised Forum Search</a></h4>
+					<p>Users can search for a particular post or topic from within a forum using various filters and sorting options.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="mysqlfulltext" href="#mysqlfulltext">MySQL Fulltext</a></h4>
+					<p>phpBB includes a fully functional MySQL fulltext plugin which allows for improved search capabilities.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="searchauthor" href="#searchauthor">Author Search</a></h4>
+					<p>Search for a list of topics or posts by a particular author.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="advancedsearch" href="#advancedsearch">Advanced Search</a></h4>
+					<p>phpBB's search system allows for a full range of filters and options to be set when performing a search, such as timeframe, post author, or within multiple forums. Wildcard searches are also supported.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="unanswered" href="#unanswered">View Unanswered Posts</a></h4>
+					<p>phpBB's search system can find a list of all topics on the board or in a forum which have no replies.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="searchactive" href="#searchactive">Active/New Topics</a></h4>
+					<p>The search system can find topics which have been very active or have a certain number of replies.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="searchlast" href="#searchlast">Posts Since Last Visit</a></h4>
+					<p>phpBB can show users a list of posts and topics which have been made since their last visit to the board.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="searchflood" href="#searchflood">Search Flood Control</a></h4>
+					<p>phpBB can be configured to limit the number of searches that can be performed in a specified time interval.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="feature-box feature-21">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/settings.png') }}" class="floatleft" alt="Plugins" />
+				<h3>Plugins</h3>
+				<p>phpBB boasts a powerful plugin system to connect phpBB to other applications.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="authplugin" href="#authplugin">Authentication Plugins</a></h4>
+					<p>phpBB can, by default, authentication with a database, Apache, and LDAP. Additional plugins are available.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="searchplugin" href="#searchplugin">Search Plugins</a></h4>
+					<p>MySQL native is included with phpBB. Additional plugins, such as Sphinx, are available.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="cacheplugin" href="#cacheplugin">Cache Plugins</a></h4>
+					<p>phpBB includes plugins for file-based cache, memcache, X-Cache, APC, and eAccelerator.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="captchaplugin" href="#captchaplugin">CAPTCHA Plugins</a></h4>
+					<p>phpBB includes Classic GD, 3D Wave, Q&amp;A, and reCAPTCHA plugins by default.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="hooks" href="#hooks">Hooks System</a></h4>
+					<p>phpBB was designed with a hooks system at a low level, enabling external applications to gain access to phpBB's functions.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="moduals" href="#moduals">Expandable Modules</a></h4>
+					<p>All of the existing modules in phpBB (ACP, UCP, MCP) are fully configurable. Additional modules and sections can be created easily with little modification to the code.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="feature-box feature-22">
+			<div class="features-item-head unselected">
+				<img src="{{ asset('/assets/images/images/features/notifications.png') }}" class="floatleft" alt="Notifications" />
+				<h3>Notifications</h3>
+				<p>phpBB offers multiple methods of notifying users of activities on the board.</p>
+			</div>
+			<div class="features-item-content" style="clear:both;">
+				<div class="feature-item">
+					<h4><a name="email" href="#email">Email</a></h4>
+					<p>phpBB can send users notifications via email about new posts in subscribed topics or when a PM is received.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="im" href="#im">Instant Messaging</a></h4>
+					<p>Using the Jabber protocol, users can receive notifications via instant messaging applications, such as <a href="http://www.google.com/talk/" rel="external">GTalk</a>.</p>
+				</div>
+				<div class="feature-item">
+					<h4><a name="atom" href="#atom">ATOM Feeds</a></h4>
+					<p>Using a feed reader application, users can subscribe to the board, a forum, or individual topics via syndicated ATOM XML feeds.</p>
+				</div>
+				<div style="clear: both;"></div>
+				<span class="feature-collapse"><img src="{{ asset('/assets/images/images/features/sm-arrow-up.gif') }}" alt="Collapse" class="floatleft collapse" /> Collapse</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="clear: both;"></div>
+<div class="floatleft expandall">
+	<span></span>
+</div>
+<div class="small floatright">
+	<p class="floatright">Icons by <a href="http://kyo-tux.deviantart.com/">Kyo Tux</a></p>
+</div>
+<div style="clear: both;"></div>
+
+</div>
+{% endblock %}
+
