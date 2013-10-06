@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * @package phpBBWebsiteInterfaceBundle
+ * @package PhpbbWebsiteInterfaceBundle
  * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
  *
  */
 
-namespace phpBB\WebsiteInterfaceBundle\Controller;
+namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -20,7 +20,7 @@ class AboutController extends Controller
 			'header_css_image'		=> 'about',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:About:home.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:About:home.html.twig', $templateVariables);
 	}
 
 	public function historyAction()
@@ -29,7 +29,7 @@ class AboutController extends Controller
 			'header_css_image'		=> 'about history',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:About:history.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:About:history.html.twig', $templateVariables);
 	}
 
 	public function advertiseAction()
@@ -38,7 +38,7 @@ class AboutController extends Controller
 			'header_css_image'		=> 'about advertise-contact',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:About:advertise.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:About:advertise.html.twig', $templateVariables);
 	}
 
 	public function getInvolvedAction()
@@ -49,7 +49,7 @@ class AboutController extends Controller
 			'TRANSLATIONS_APPLY'	=> '/languages/apply.php',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:About:getInvolved.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:About:getInvolved.html.twig', $templateVariables);
 	}
 
 	public function contactAction()
@@ -59,7 +59,7 @@ class AboutController extends Controller
 			'ICON_POST_REPORT'	=> '/community/styles/prosilver/imageset/icon_post_report.gif',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:About:contact.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:About:contact.html.twig', $templateVariables);
 	}
 
 	public function featureAction()
@@ -68,6 +68,6 @@ class AboutController extends Controller
 			'header_css_image'	=> 'about features',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:About:features.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:About:features.html.twig', $templateVariables);
 	}
 }

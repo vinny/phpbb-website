@@ -1,7 +1,7 @@
 phpBBWebsite_Support_home:
     path:  /
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:Support:home }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Support:home }
 
 phpBBWebsite_Support_irc:
     path:  /irc/
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:Support:irc }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Support:irc }

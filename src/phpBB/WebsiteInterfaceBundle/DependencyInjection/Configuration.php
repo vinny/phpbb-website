@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * @package phpBBWebsiteInterfaceBundle
+ * @package PhpbbWebsiteInterfaceBundle
  * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
  *
  */
 
-namespace phpBB\WebsiteInterfaceBundle\DependencyInjection;
+namespace Phpbb\WebsiteInterfaceBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('php_bb_website_interface');
+        $rootNode = $treeBuilder->root('phpbb_website_interface');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

@@ -1,27 +1,27 @@
-phpBBWebsiteInterfaceBundle_homepage:
+PhpbbWebsiteInterfaceBundle_homepage:
     path:  /
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:Global:home }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:home }
 
 phpBBWebsite_getInvolved:
     path:  /get-involved/
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:getInvolved }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:getInvolved }
 
 phpBBWebsite_demo:
     path:  /demo/
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:Global:demo }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:demo }
 
 phpBBWebsite_About:
-    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/about.yml"
+    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/about.yml"
     prefix:   /about
 
 phpBBWebsite_Mods:
-    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/mods.yml"
+    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/mods.yml"
     prefix:   /mods
 
 phpBBWebsite_Development:
-    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/development.yml"
+    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/development.yml"
     prefix:   /development
 
 phpBBWebsite_Support:
-    resource: "@phpBBWebsiteInterfaceBundle/Resources/config/routing/support.yml"
+    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/support.yml"
     prefix:   /support

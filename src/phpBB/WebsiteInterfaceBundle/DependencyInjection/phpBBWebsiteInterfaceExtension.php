@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * @package phpBBWebsiteInterfaceBundle
+ * @package PhpbbWebsiteInterfaceBundle
  * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
  *
  */
 
-namespace phpBB\WebsiteInterfaceBundle\DependencyInjection;
+namespace Phpbb\WebsiteInterfaceBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class phpBBWebsiteInterfaceExtension extends Extension
+class PhpbbWebsiteInterfaceExtension extends Extension
 {
     /**
      * {@inheritDoc}
