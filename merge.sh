@@ -9,6 +9,8 @@ git fetch private
 echo ""
 git checkout master
 echo ""
+php composer.phar install
+echo ""
 bin/phpunit -c app/
 echo ""
 git merge public/master
