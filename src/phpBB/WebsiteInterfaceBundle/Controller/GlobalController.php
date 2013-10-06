@@ -23,8 +23,9 @@ class GlobalController extends Controller
 		$finishedAnnouncements = $this->getForumAnnouncements($announcement_forum);
 
 		// Get announcements file
-		$blogFile = file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
-		$blogJson = json_decode($blogFile, true);
+		$blogFile = @file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
+
+		$blogJson = @json_decode($blogFile, true);
 
 		$blogAnnouncements = $blogJson === null ? array() : $blogJson;
 
