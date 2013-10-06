@@ -1,0 +1,7 @@
+phpBBWebsite_Support_home:
+    path:  /
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Support:home }
+
+phpBBWebsite_Support_irc:
+    path:  /irc/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Support:irc }
