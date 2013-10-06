@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * @package phpBBWebsiteInterfaceBundle
+ * @package PhpbbWebsiteInterfaceBundle
  * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
  *
  */
 
-namespace phpBB\WebsiteInterfaceBundle\Controller;
+namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -20,7 +20,7 @@ class SupportController extends Controller
 			'header_css_image'		=> 'support',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:Support:home.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Support:home.html.twig', $templateVariables);
 	}
 
 	public function ircAction()
@@ -29,6 +29,6 @@ class SupportController extends Controller
 			'header_css_image'		=> 'support irc',
 		);
 
-		return $this->render('phpBBWebsiteInterfaceBundle:Support:irc.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Support:irc.html.twig', $templateVariables);
 	}
 }

@@ -1,17 +1,17 @@
 <?php
 /**
- * 
- * @package phpBBPrivateWebsiteBundle
+ *
+ * @package PhpbbPrivateWebsiteBundle
  * @copyright (c) 2012 phpBB Group
  * @license Not for re-distribution
  * @author Unknown Bliss
- * 
+ *
  */
 
-namespace phpBB\PrivateWebsiteBundle;
+namespace Phpbb\PrivateWebsiteBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class phpBBPrivateWebsiteBundle extends Bundle
+class PhpbbPrivateWebsiteBundle extends Bundle
 {
 }
