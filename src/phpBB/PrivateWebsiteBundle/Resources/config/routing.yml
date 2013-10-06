@@ -1,3 +1,0 @@
-PhpbbPrivateWebsiteBundle_homepage:
-    path: /hello/{name}
-    defaults: { _controller: PhpbbPrivateWebsiteBundle:Default:index }
