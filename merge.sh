@@ -11,7 +11,7 @@ git checkout master
 echo ""
 php composer.phar install
 echo ""
-bin/phpunit -c app/
+tests.sh
 echo ""
 git merge public/master
 echo ""
