@@ -1,14 +1,14 @@
 <?php
 /**
  *
- * @package phpBBWebsiteInterfaceBundle
+ * @package PhpbbWebsiteInterfaceBundle
  * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
  *
  */
 
-namespace phpBB\WebsiteInterfaceBundle\Controller;
+namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -20,7 +20,7 @@ class DevelopmentController extends Controller
             'header_css_image'		=> 'development',
         );
 
-        return $this->render('phpBBWebsiteInterfaceBundle:Development:home.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:Development:home.html.twig', $templateVariables);
     }
 
     public function prosilverAction($page = 1)
@@ -62,7 +62,7 @@ class DevelopmentController extends Controller
             'IN_DEV_PROSILVER'	=> true,
         );
 
-        return $this->render('phpBBWebsiteInterfaceBundle:Development:prosilver.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:Development:prosilver.html.twig', $templateVariables);
     }
 
     private function getProsilverPageData()

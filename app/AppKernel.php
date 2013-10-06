@@ -16,10 +16,10 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            //new phpBB\phpBBSessionsAuthBundle\phpBBphpBBSessionsAuthBundle(),
-            new phpBB\PrivateWebsiteBundle\phpBBPrivateWebsiteBundle(),
-            new phpBB\WebsiteInterfaceBundle\phpBBWebsiteInterfaceBundle(),
+            new Phpbb\PrivateWebsiteBundle\PhpbbPrivateWebsiteBundle(),
+            new Phpbb\WebsiteInterfaceBundle\PhpbbWebsiteInterfaceBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Phpbb\PhpbbIntergrationBundle\PhpbbIntergrationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,22 +1,22 @@
 phpBBWebsite_About_home:
     path:  /
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:home }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:home }
 
 phpBBWebsite_About_history:
     path:  /history/
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:history }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:history }
 
 phpBBWebsite_About_advertise:
     path:  /advertise/
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:advertise }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:advertise }
 
 phpBBWebsite_About_contact:
     path:  /contact/
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:contact }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:contact }
 
 phpBBWebsite_About_features:
     path:  /features/
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:About:feature }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:feature }
 
 phpBBWebsite_About_getInvolved:
     path:  /get-involved/

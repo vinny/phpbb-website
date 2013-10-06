@@ -1,3 +1,3 @@
 phpBBWebsite_Mods_home:
     path:  /
-    defaults: { _controller: phpBBWebsiteInterfaceBundle:Mods:home }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Mods:home }
