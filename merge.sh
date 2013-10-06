@@ -9,11 +9,13 @@ git fetch private
 echo ""
 git checkout master
 echo ""
-bin/phpunit -c app/
-echo ""
 git merge public/master
 echo ""
 git merge private/master
+echo ""
+php composer.phar install
+echo ""
+tests.sh
 echo ""
 git checkout develop
 echo ""
@@ -27,9 +29,9 @@ git checkout sandbox
 echo ""
 git merge private/sandbox
 echo ""
-git merge develop
-echo ""
 git merge private
+echo ""
+git merge develop
 echo ""
 git merge private/private
 echo ""
