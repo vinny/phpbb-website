@@ -1,0 +1,26 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Extensions{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+	<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+	<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep mods">Extensions</h2>
+    <p>Extensions are a new capability of phpBB 3.1 which allow for the inclusion of new features into a phpBB installation.</p>
+    <p>Unlike MODs, Extensions are completely self-contained and don't include modifications to core phpBB files.</p>
+    <p>Rules and Guidelines for Extensions can be viewed <a href="{{ EXTENSIONS_RULES }}">here</a>.</p>
+</div>
+
+<div id="extras">
+	{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+</div>
+</div>
+{% endblock %}

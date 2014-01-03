@@ -23,6 +23,7 @@ class GlobalsExtension extends \Twig_Extension
 		$modVars 			= $this->getModsVars();
 		$styleVars 			= $this->getStyleVars();
 		$supportVars 		= $this->getSupportVars();
+		$extensionVars		= $this->getExtensionVars();
 
 		$forumVars 	= $this->getForumVars();
 		$peopleVars = $this->getPeopleVars();
@@ -38,7 +39,8 @@ class GlobalsExtension extends \Twig_Extension
 			$supportVars,
 			$forumVars,
 			$peopleVars,
-			$miscVars
+			$miscVars,
+			$extensionVars
 		);
 
 		return $variables;
@@ -120,6 +122,8 @@ class GlobalsExtension extends \Twig_Extension
 
 			'ideas_path'		=> '/ideas/',
 			'IDEAS'				=> '/ideas/',
+
+			'extensions_path'	=> '/extensions/',
 		);
 
 		return $pathVars;
@@ -363,6 +367,15 @@ class GlobalsExtension extends \Twig_Extension
 		return $supportVars;
 	}
 
+	private function getExtensionVars()
+	{
+		$extensionVars = array(
+			'EXTENSIONS_RULES'		=> '/extensions/rules-and-guidelines/',
+		);
+
+		return $extensionVars;
+	}
+
 	private function getForumVars()
 	{
 		$forumVars = array(
@@ -388,6 +401,8 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_REQUESTS_FORUM_30X'		=> '/community/viewforum.php?f=72',
 			'MODS_WRITERS_FORUM_30X'		=> '/community/viewforum.php?f=71',
 			'MODS_WRITERS_FORUM_20X'		=> '/community/viewforum.php?f=35',
+
+			'FORUM_EXTENSIONS_31X'			=> '/community/viewforum.php?f=451',
 
 			'FORUM_SUPPORT'				=> '/community/viewforum.php?f=46',
 			'FORUM_STYLES_CAT'				=> '/community/viewforum.php?f=80',
