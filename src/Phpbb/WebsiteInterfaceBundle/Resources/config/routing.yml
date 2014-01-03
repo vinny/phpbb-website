@@ -25,3 +25,7 @@ phpBBWebsite_Development:
 phpBBWebsite_Support:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/support.yml"
     prefix:   /support
+
+phpBBWebsite_Extensions:
+    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/extensions.yml"
+    prefix:   /extensions
