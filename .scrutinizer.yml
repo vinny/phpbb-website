@@ -25,7 +25,7 @@ tools:
     php_analyzer:
         enabled: true
         filter:
-            paths: [app/check.php]
+            excluded_paths: [app/*]
         config:
             use_statement_fixes:
                 order_alphabetically: true
