@@ -5,10 +5,12 @@ PhpbbWebsiteInterfaceBundle_homepage:
 phpBBWebsite_getInvolved:
     path:  /get-involved/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:getInvolved }
+    methods:  [GET]
 
 phpBBWebsite_demo:
     path:  /demo/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:demo }
+    methods:  [GET]
 
 phpBBWebsite_About:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/about.yml"
