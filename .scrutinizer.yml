@@ -14,6 +14,8 @@ tools:
         enabled: true
         config:
             level: all
+            fixers:
+                indentation: false
         filter:
             excluded_paths: [app/*]
     php_mess_detector:
