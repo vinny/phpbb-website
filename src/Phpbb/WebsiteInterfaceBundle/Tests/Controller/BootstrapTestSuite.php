@@ -123,9 +123,9 @@ class BootstrapTestSuite extends WebTestCase
 
 	private function getSymfonyFixtures($table)
 	{
-		/*switch ($table) {
+		switch ($table) {
 			// Case statement
-		}*/
+		}
 
 		return (isset($sql) ? $sql : null);
 	}
