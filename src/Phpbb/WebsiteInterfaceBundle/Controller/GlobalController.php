@@ -10,8 +10,8 @@
 
 namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Phpbb\WebsiteInterfaceBundle\Wrappers\PhpbbHandling;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class GlobalController extends Controller
 {
@@ -51,6 +51,9 @@ class GlobalController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Global:demo.html.twig', $templateVariables);
 	}
 
+	/**
+	 * @param integer $announcement_forum
+	 */
 	private function getForumAnnouncements($announcement_forum)
 	{
 		$retrieve_limit = 3;
