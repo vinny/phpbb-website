@@ -12,7 +12,7 @@ namespace Phpbb\WebsiteInterfaceBundle\Tests;
 
 use Phpbb\WebsiteInterfaceBundle\Wrappers\PhpbbHandling;
 
-class phpBBWrapperTest extends \PHPUnit_Framework_TestCase
+class PhpbbWrapperTest extends \PHPUnit_Framework_TestCase
 {
     public function testBbcodeStripping()
     {
