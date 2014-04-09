@@ -49,7 +49,7 @@ class BootstrapTestSuite extends WebTestCase
 		}
 
 		if ($profile = $this->client->getProfile()) {
-			$this->queryCheck($queries, $profile)
+			$this->queryCheck($queries, $profile);
 		}
 	}
 
