@@ -32,6 +32,7 @@ class DevelopmentController extends Controller
         $i = 1;
 
         $toc = array();
+        $var = array();
 
         foreach ($data as $item) {
             $var['TITLE']	= $item['DATE'];
@@ -43,7 +44,7 @@ class DevelopmentController extends Controller
             $i++;
         }
 
-        $templateVariables = array(
+        $templateVariables += array(
             'header_css_image'		=> 'development prosilver',
 
             'TOC'					=> $toc,
