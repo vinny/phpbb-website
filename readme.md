@@ -1,6 +1,7 @@
 # phpBB Website
 
 This is the copy of the new symfony website running at www.phpbb.com
+The site is maintained by the [phpBB Website Team](https://www.phpbb.com/community/memberlist.php?mode=group&g=47077)
 
 ## Analysis Tools
 
@@ -37,3 +38,11 @@ We use phpunit for our unit tests but we don't require phpunit to be installed g
 ## Dependencies
 
 Should you have problems with composer retrieving depdenencies you can request a copy of the latest `vendor/` and `bin/` directories by emailing `website [at] phpbb [dot] com` or contacting us via IRC as described above.
+
+## License
+
+[GNU GPL v3](http://opensource.org/licenses/gpl-3.0)
+
+By contributing you agree to assign copyright of your code to `phpBB Limited`.
+
+See the `LICENSE` file for the full license.
