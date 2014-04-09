@@ -1,7 +1,6 @@
 # phpBB Website
 
-This is the copy of the new symfony website running at www.phpbb.com
-The site is maintained by the [phpBB Website Team](https://www.phpbb.com/community/memberlist.php?mode=group&g=47077)
+This is the copy of the new symfony website running at www.phpbb.com. The site is maintained by the [phpBB Website Team](https://www.phpbb.com/community/memberlist.php?mode=group&g=47077)
 
 ## Analysis Tools
 
