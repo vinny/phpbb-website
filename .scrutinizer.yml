@@ -14,6 +14,8 @@ tools:
         enabled: true
         config:
             level: all
+            fixers:
+                indentation: false
         filter:
             excluded_paths: [app/*]
     php_mess_detector:
@@ -22,7 +24,8 @@ tools:
         enabled: true
     php_analyzer:
         enabled: true
-        filter: app/check.php
+        filter:
+            - app/check.php
         config:
             use_statement_fixes:
                 order_alphabetically: true
