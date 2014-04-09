@@ -30,6 +30,9 @@ class PhpbbHandling
         return $text;
     }
 
+    /**
+     * @param integer $retrieve_limit
+     */
     public static function getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit)
     {
         $sql = 'SELECT t.*, p.post_text, p.bbcode_uid
