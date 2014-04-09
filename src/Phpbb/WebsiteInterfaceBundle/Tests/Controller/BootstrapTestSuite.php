@@ -14,163 +14,163 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class BootstrapTestSuite extends WebTestCase
 {
-	public $client;
-	public $crawler;
-	public $response;
+    public $client;
+    public $crawler;
+    public $response;
 
-	protected function setupTest($path)
-	{
-		$client = static::createClient();
-		$this->setClient($client);
-		$client->enableProfiler();
-		$crawler = $client->request('GET', $path);
-		$response = $client->getResponse();
-		$this->setupBootstrapping($client, $crawler, $response);
+    protected function setupTest($path)
+    {
+        $client = static::createClient();
+        $this->setClient($client);
+        $client->enableProfiler();
+        $crawler = $client->request('GET', $path);
+        $response = $client->getResponse();
+        $this->setupBootstrapping($client, $crawler, $response);
 
-		return array('client' => $client, 'crawler' => $crawler, 'response' => $response);
-	}
+        return array('client' => $client, 'crawler' => $crawler, 'response' => $response);
+    }
 
-	public function setupBootstrapping($client, $crawler, $response)
-	{
-		$this->setClient($client);
-		$this->setCrawler($crawler);
-		$this->setResponse($response);
-	}
+    public function setupBootstrapping($client, $crawler, $response)
+    {
+        $this->setClient($client);
+        $this->setCrawler($crawler);
+        $this->setResponse($response);
+    }
 
-	public function globalTests($status = 200, $queries = 20)
-	{
-		$this->assertTrue($this->crawler->filter('html:contains("phpBB Limited")')->count() > 0, 'Footer Check');
-		$this->assertTrue($this->crawler->filter('html:contains("About")')->count() > 0, 'Header Check');
-		$this->assertEquals($this->response->getStatusCode(), $status, 'Response Code Check');
-		$this->assertTrue($this->crawler->filter('html:contains("advertisements")')->count() > 0, 'Advertisments Check');
+    public function globalTests($status = 200, $queries = 20)
+    {
+        $this->assertTrue($this->crawler->filter('html:contains("phpBB Limited")')->count() > 0, 'Footer Check');
+        $this->assertTrue($this->crawler->filter('html:contains("About")')->count() > 0, 'Header Check');
+        $this->assertEquals($this->response->getStatusCode(), $status, 'Response Code Check');
+        $this->assertTrue($this->crawler->filter('html:contains("advertisements")')->count() > 0, 'Advertisments Check');
 
-		if (strpos(strval($status), '2') !== false) {
-			$this->assertTrue($this->client->getResponse()->isSuccessful(), 'Response is a sucessful one');
-		}
+        if (strpos(strval($status), '2') !== false) {
+            $this->assertTrue($this->client->getResponse()->isSuccessful(), 'Response is a sucessful one');
+        }
 
-		if ($profile = $this->client->getProfile()) {
-			$this->queryCheck($queries, $profile);
-		}
-	}
+        if ($profile = $this->client->getProfile()) {
+            $this->queryCheck($queries, $profile);
+        }
+    }
 
-	private function queryCheck($queries, $profile)
-	{
-		// Shouldn't really have more than 20 queries on any page
-		$this->assertLessThan(
-			$queries,
-			$profile->getCollector('db')->getQueryCount(),
-			('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
-			);
-	}
+    private function queryCheck($queries, $profile)
+    {
+        // Shouldn't really have more than 20 queries on any page
+        $this->assertLessThan(
+            $queries,
+            $profile->getCollector('db')->getQueryCount(),
+            ('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
+            );
+    }
 
-	public function get($dependency)
-	{
-		$container = $this->client->getContainer();
+    public function get($dependency)
+    {
+        $container = $this->client->getContainer();
 
-		return $container->get($dependency);
-	}
+        return $container->get($dependency);
+    }
 
-	private function dropTablesInDatabase($symfonyConnection, $phpbbConnection)
-	{
-		// Check what tables exists
-		$symfonyOldTables = $symfonyConnection->fetchAll('SHOW TABLES');
-		$phpbbOldTables = $phpbbConnection->fetchAll('SHOW TABLES');
+    private function dropTablesInDatabase($symfonyConnection, $phpbbConnection)
+    {
+        // Check what tables exists
+        $symfonyOldTables = $symfonyConnection->fetchAll('SHOW TABLES');
+        $phpbbOldTables = $phpbbConnection->fetchAll('SHOW TABLES');
 
-		// Delete existing tables
-		foreach ($symfonyOldTables as $i => $oldTable) {
-			foreach ($oldTable as $key => $oldTableName) {
-				$symfonyConnection->query('DROP TABLE '. $oldTableName);
-			}
-		}
+        // Delete existing tables
+        foreach ($symfonyOldTables as $i => $oldTable) {
+            foreach ($oldTable as $key => $oldTableName) {
+                $symfonyConnection->query('DROP TABLE '. $oldTableName);
+            }
+        }
 
-		foreach ($phpbbOldTables as $i => $oldTable) {
-			foreach ($oldTable as $key => $oldTableName) {
-				$phpbbConnection->query('DROP TABLE '. $oldTableName);
-			}
-		}
-	}
+        foreach ($phpbbOldTables as $i => $oldTable) {
+            foreach ($oldTable as $key => $oldTableName) {
+                $phpbbConnection->query('DROP TABLE '. $oldTableName);
+            }
+        }
+    }
 
-	public function setupDatabase($symfonyTables, $phpbbTables)
-	{
-		// Connections to databases
-		$symfonyConnection = $this->get('database_connection');
-		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
+    public function setupDatabase($symfonyTables, $phpbbTables)
+    {
+        // Connections to databases
+        $symfonyConnection = $this->get('database_connection');
+        $phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
 
-		$this->dropTablesInDatabase($symfonyConnection, $phpbbConnection);
+        $this->dropTablesInDatabase($symfonyConnection, $phpbbConnection);
 
-		// Add each symfony table's fixtures for those tables needed
-		foreach ($symfonyTables as $symfonyTable) {
-			$sql = $this->getSymfonyFixtures($symfonyTable);
+        // Add each symfony table's fixtures for those tables needed
+        foreach ($symfonyTables as $symfonyTable) {
+            $sql = $this->getSymfonyFixtures($symfonyTable);
 
-			if ($sql) {
-				$symfonyConnection->query($sql);
-				unset($sql);
-			}
-		}
+            if ($sql) {
+                $symfonyConnection->query($sql);
+                unset($sql);
+            }
+        }
 
-		// Add each phpbb table's fixtures for those tables needed
-		foreach ($phpbbTables as $phpbbTable) {
-			$sql = $this->getPhpbbFixtures($phpbbTable);
+        // Add each phpbb table's fixtures for those tables needed
+        foreach ($phpbbTables as $phpbbTable) {
+            $sql = $this->getPhpbbFixtures($phpbbTable);
 
-			if ($sql) {
-				$phpbbConnection->query($sql);
-				unset($sql);
-			}
-		}
+            if ($sql) {
+                $phpbbConnection->query($sql);
+                unset($sql);
+            }
+        }
 
-		return;
-	}
+        return;
+    }
 
-	private function getSymfonyFixtures($table)
-	{
-		switch ($table) {
-			// Case statement
-		}
+    private function getSymfonyFixtures($table)
+    {
+        switch ($table) {
+            // Case statement
+        }
 
-		return (isset($sql) ? $sql : null);
-	}
+        return (isset($sql) ? $sql : null);
+    }
 
-	private function getPhpbbFixtures($table)
-	{
-		switch ($table) {
-			case 'community_posts':
-			$sql = "
-			CREATE TABLE IF NOT EXISTS `community_posts` (
-				`post_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-				`topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-				`forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-				`poster_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-				`icon_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-				`poster_ip` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '',
-				`post_time` int(11) unsigned NOT NULL DEFAULT '0',
-				`post_approved` tinyint(1) unsigned NOT NULL DEFAULT '1',
-				`post_reported` tinyint(1) unsigned NOT NULL DEFAULT '0',
-				`enable_bbcode` tinyint(1) unsigned NOT NULL DEFAULT '1',
-				`enable_smilies` tinyint(1) unsigned NOT NULL DEFAULT '1',
-				`enable_magic_url` tinyint(1) unsigned NOT NULL DEFAULT '1',
-				`enable_sig` tinyint(1) unsigned NOT NULL DEFAULT '1',
-				`post_username` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-				`post_subject` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-				`post_text` mediumtext COLLATE utf8_bin NOT NULL,
-				`post_checksum` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
-				`post_attachment` tinyint(1) unsigned NOT NULL DEFAULT '0',
-				`bbcode_bitfield` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-				`bbcode_uid` varchar(8) COLLATE utf8_bin NOT NULL DEFAULT '',
-				`post_postcount` tinyint(1) unsigned NOT NULL DEFAULT '1',
-				`post_edit_time` int(11) unsigned NOT NULL DEFAULT '0',
-				`post_edit_reason` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-				`post_edit_user` mediumint(8) unsigned NOT NULL DEFAULT '0',
-				`post_edit_count` smallint(4) unsigned NOT NULL DEFAULT '0',
-				`post_edit_locked` tinyint(1) unsigned NOT NULL DEFAULT '0',
-				PRIMARY KEY (`post_id`),
-				KEY `forum_id` (`forum_id`),
-				KEY `topic_id` (`topic_id`),
-				KEY `poster_ip` (`poster_ip`),
-				KEY `poster_id` (`poster_id`),
-				KEY `post_approved` (`post_approved`),
-				KEY `post_username` (`post_username`),
-				KEY `tid_post_time` (`topic_id`,`post_time`)
-				) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
+    private function getPhpbbFixtures($table)
+    {
+        switch ($table) {
+            case 'community_posts':
+            $sql = "
+            CREATE TABLE IF NOT EXISTS `community_posts` (
+                `post_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+                `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+                `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+                `poster_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+                `icon_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+                `poster_ip` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '',
+                `post_time` int(11) unsigned NOT NULL DEFAULT '0',
+                `post_approved` tinyint(1) unsigned NOT NULL DEFAULT '1',
+                `post_reported` tinyint(1) unsigned NOT NULL DEFAULT '0',
+                `enable_bbcode` tinyint(1) unsigned NOT NULL DEFAULT '1',
+                `enable_smilies` tinyint(1) unsigned NOT NULL DEFAULT '1',
+                `enable_magic_url` tinyint(1) unsigned NOT NULL DEFAULT '1',
+                `enable_sig` tinyint(1) unsigned NOT NULL DEFAULT '1',
+                `post_username` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+                `post_subject` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+                `post_text` mediumtext COLLATE utf8_bin NOT NULL,
+                `post_checksum` varchar(32) COLLATE utf8_bin NOT NULL DEFAULT '',
+                `post_attachment` tinyint(1) unsigned NOT NULL DEFAULT '0',
+                `bbcode_bitfield` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+                `bbcode_uid` varchar(8) COLLATE utf8_bin NOT NULL DEFAULT '',
+                `post_postcount` tinyint(1) unsigned NOT NULL DEFAULT '1',
+                `post_edit_time` int(11) unsigned NOT NULL DEFAULT '0',
+                `post_edit_reason` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+                `post_edit_user` mediumint(8) unsigned NOT NULL DEFAULT '0',
+                `post_edit_count` smallint(4) unsigned NOT NULL DEFAULT '0',
+                `post_edit_locked` tinyint(1) unsigned NOT NULL DEFAULT '0',
+                PRIMARY KEY (`post_id`),
+                KEY `forum_id` (`forum_id`),
+                KEY `topic_id` (`topic_id`),
+                KEY `poster_ip` (`poster_ip`),
+                KEY `poster_id` (`poster_id`),
+                KEY `post_approved` (`post_approved`),
+                KEY `post_username` (`post_username`),
+                KEY `tid_post_time` (`topic_id`,`post_time`)
+                ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
 
 INSERT INTO `community_posts` (`post_id`, `topic_id`, `forum_id`, `poster_id`, `icon_id`, `poster_ip`, `post_time`, `post_approved`, `post_reported`, `enable_bbcode`, `enable_smilies`, `enable_magic_url`, `enable_sig`, `post_username`, `post_subject`, `post_text`, `post_checksum`, `post_attachment`, `bbcode_bitfield`, `bbcode_uid`, `post_postcount`, `post_edit_time`, `post_edit_reason`, `post_edit_user`, `post_edit_count`, `post_edit_locked`) VALUES
 (1, 1, 2, 2, 0, '127.0.0.1', 1343840387, 1, 0, 1, 1, 1, 1, '', 'Welcome to phpBB3', 'This is an example post in your phpBB3 installation. Everything seems to be working. You may delete this post if you like and continue to set up your board. During the installation process your first category and your first forum are assigned an appropriate set of permissions for the predefined usergroups administrators, bots, global moderators, guests, registered users and registered COPPA users. If you also choose to delete your first category and your first forum, do not forget to assign permissions for all these usergroups for all new categories and forums you create. It is recommended to rename your first category and your first forum and copy permissions from these while creating new categories and forums. Have fun!', '5dd683b17f641daf84c040bfefc58ce9', 0, '', '', 1, 0, '', 0, 0, 0),
@@ -184,48 +184,48 @@ break;
 case 'community_topics':
 $sql = "
 CREATE TABLE IF NOT EXISTS `community_topics` (
-	`topic_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-	`forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`icon_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_attachment` tinyint(1) unsigned NOT NULL DEFAULT '0',
-	`topic_approved` tinyint(1) unsigned NOT NULL DEFAULT '1',
-	`topic_reported` tinyint(1) unsigned NOT NULL DEFAULT '0',
-	`topic_title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-	`topic_poster` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_time` int(11) unsigned NOT NULL DEFAULT '0',
-	`topic_time_limit` int(11) unsigned NOT NULL DEFAULT '0',
-	`topic_views` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_replies` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_replies_real` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_status` tinyint(3) NOT NULL DEFAULT '0',
-	`topic_type` tinyint(3) NOT NULL DEFAULT '0',
-	`topic_first_post_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_first_poster_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-	`topic_first_poster_colour` varchar(6) COLLATE utf8_bin NOT NULL DEFAULT '',
-	`topic_last_post_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_last_poster_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_last_poster_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-	`topic_last_poster_colour` varchar(6) COLLATE utf8_bin NOT NULL DEFAULT '',
-	`topic_last_post_subject` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-	`topic_last_post_time` int(11) unsigned NOT NULL DEFAULT '0',
-	`topic_last_view_time` int(11) unsigned NOT NULL DEFAULT '0',
-	`topic_moved_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`topic_bumped` tinyint(1) unsigned NOT NULL DEFAULT '0',
-	`topic_bumper` mediumint(8) unsigned NOT NULL DEFAULT '0',
-	`poll_title` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-	`poll_start` int(11) unsigned NOT NULL DEFAULT '0',
-	`poll_length` int(11) unsigned NOT NULL DEFAULT '0',
-	`poll_max_options` tinyint(4) NOT NULL DEFAULT '1',
-	`poll_last_vote` int(11) unsigned NOT NULL DEFAULT '0',
-	`poll_vote_change` tinyint(1) unsigned NOT NULL DEFAULT '0',
-	PRIMARY KEY (`topic_id`),
-	KEY `forum_id` (`forum_id`),
-	KEY `forum_id_type` (`forum_id`,`topic_type`),
-	KEY `last_post_time` (`topic_last_post_time`),
-	KEY `topic_approved` (`topic_approved`),
-	KEY `forum_appr_last` (`forum_id`,`topic_approved`,`topic_last_post_id`),
-	KEY `fid_time_moved` (`forum_id`,`topic_last_post_time`,`topic_moved_id`)
-	) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
+    `topic_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+    `forum_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `icon_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_attachment` tinyint(1) unsigned NOT NULL DEFAULT '0',
+    `topic_approved` tinyint(1) unsigned NOT NULL DEFAULT '1',
+    `topic_reported` tinyint(1) unsigned NOT NULL DEFAULT '0',
+    `topic_title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+    `topic_poster` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_time` int(11) unsigned NOT NULL DEFAULT '0',
+    `topic_time_limit` int(11) unsigned NOT NULL DEFAULT '0',
+    `topic_views` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_replies` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_replies_real` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_status` tinyint(3) NOT NULL DEFAULT '0',
+    `topic_type` tinyint(3) NOT NULL DEFAULT '0',
+    `topic_first_post_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_first_poster_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+    `topic_first_poster_colour` varchar(6) COLLATE utf8_bin NOT NULL DEFAULT '',
+    `topic_last_post_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_last_poster_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_last_poster_name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+    `topic_last_poster_colour` varchar(6) COLLATE utf8_bin NOT NULL DEFAULT '',
+    `topic_last_post_subject` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+    `topic_last_post_time` int(11) unsigned NOT NULL DEFAULT '0',
+    `topic_last_view_time` int(11) unsigned NOT NULL DEFAULT '0',
+    `topic_moved_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `topic_bumped` tinyint(1) unsigned NOT NULL DEFAULT '0',
+    `topic_bumper` mediumint(8) unsigned NOT NULL DEFAULT '0',
+    `poll_title` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+    `poll_start` int(11) unsigned NOT NULL DEFAULT '0',
+    `poll_length` int(11) unsigned NOT NULL DEFAULT '0',
+    `poll_max_options` tinyint(4) NOT NULL DEFAULT '1',
+    `poll_last_vote` int(11) unsigned NOT NULL DEFAULT '0',
+    `poll_vote_change` tinyint(1) unsigned NOT NULL DEFAULT '0',
+    PRIMARY KEY (`topic_id`),
+    KEY `forum_id` (`forum_id`),
+    KEY `forum_id_type` (`forum_id`,`topic_type`),
+    KEY `last_post_time` (`topic_last_post_time`),
+    KEY `topic_approved` (`topic_approved`),
+    KEY `forum_appr_last` (`forum_id`,`topic_approved`,`topic_last_post_id`),
+    KEY `fid_time_moved` (`forum_id`,`topic_last_post_time`,`topic_moved_id`)
+    ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
 
 INSERT INTO `community_topics` (`topic_id`, `forum_id`, `icon_id`, `topic_attachment`, `topic_approved`, `topic_reported`, `topic_title`, `topic_poster`, `topic_time`, `topic_time_limit`, `topic_views`, `topic_replies`, `topic_replies_real`, `topic_status`, `topic_type`, `topic_first_post_id`, `topic_first_poster_name`, `topic_first_poster_colour`, `topic_last_post_id`, `topic_last_poster_id`, `topic_last_poster_name`, `topic_last_poster_colour`, `topic_last_post_subject`, `topic_last_post_time`, `topic_last_view_time`, `topic_moved_id`, `topic_bumped`, `topic_bumper`, `poll_title`, `poll_start`, `poll_length`, `poll_max_options`, `poll_last_vote`, `poll_vote_change`) VALUES
 (1, 2, 0, 0, 1, 0, 'Welcome to phpBB3', 2, 1343840387, 0, 1, 0, 0, 0, 0, 1, 'UKB', '000000', 1, 2, 'UKB', '000000', 'Welcome to phpBB3', 1343840387, 1375644919, 0, 0, 0, '', 0, 0, 1, 0, 0),
@@ -240,75 +240,75 @@ break;
 return (isset($sql) ? $sql : null);
 }
 
-	/**
-	 * Gets the value of client.
-	 *
-	 * @return mixed
-	 */
-	public function getClient()
-	{
-		return $this->client;
-	}
+    /**
+     * Gets the value of client.
+     *
+     * @return mixed
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
 
-	/**
-	 * Sets the value of client.
-	 *
-	 * @param mixed $client the client
-	 *
-	 * @return self
-	 */
-	public function setClient($client)
-	{
-		$this->client = $client;
+    /**
+     * Sets the value of client.
+     *
+     * @param mixed $client the client
+     *
+     * @return self
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Gets the value of crawler.
-	 *
-	 * @return mixed
-	 */
-	public function getCrawler()
-	{
-		return $this->crawler;
-	}
+    /**
+     * Gets the value of crawler.
+     *
+     * @return mixed
+     */
+    public function getCrawler()
+    {
+        return $this->crawler;
+    }
 
-	/**
-	 * Sets the value of crawler.
-	 *
-	 * @param mixed $crawler the crawler
-	 *
-	 * @return self
-	 */
-	public function setCrawler($crawler)
-	{
-		$this->crawler = $crawler;
+    /**
+     * Sets the value of crawler.
+     *
+     * @param mixed $crawler the crawler
+     *
+     * @return self
+     */
+    public function setCrawler($crawler)
+    {
+        $this->crawler = $crawler;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Gets the value of response.
-	 *
-	 * @return mixed
-	 */
-	public function getResponse()
-	{
-		return $this->response;
-	}
+    /**
+     * Gets the value of response.
+     *
+     * @return mixed
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
 
-	/**
-	 * Sets the value of response.
-	 *
-	 * @param mixed $response the response
-	 *
-	 * @return self
-	 */
-	public function setResponse($response)
-	{
-		$this->response = $response;
+    /**
+     * Sets the value of response.
+     *
+     * @param mixed $response the response
+     *
+     * @return self
+     */
+    public function setResponse($response)
+    {
+        $this->response = $response;
 
-		return $this;
-	}
+        return $this;
+    }
 }
