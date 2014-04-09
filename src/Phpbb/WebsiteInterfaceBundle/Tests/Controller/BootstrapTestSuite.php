@@ -37,7 +37,7 @@ class BootstrapTestSuite extends WebTestCase
 		$this->setResponse($response);
 	}
 
-	public function globalTests($status = 200, $queries = 20, $time = 50000)
+	public function globalTests($status = 200, $queries = 20)
 	{
 		// Footer Check
 		$this->assertTrue($this->crawler->filter('html:contains("phpBB Limited")')->count() > 0, 'Footer Check');
