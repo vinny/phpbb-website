@@ -1,3 +1,4 @@
 phpBBWebsite_Extensions_home:
     path:  /
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:home }
+    methods:  [GET]
