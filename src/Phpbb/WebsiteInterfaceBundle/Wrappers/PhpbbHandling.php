@@ -32,6 +32,7 @@ class PhpbbHandling
 
     /**
      * @param integer $retrieve_limit
+     * @param integer $announcement_forum
      */
     public static function getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit)
     {
