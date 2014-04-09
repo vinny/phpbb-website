@@ -8,9 +8,8 @@ env:
   - DB=mysql
 
 before_script:
-  - sh -c pyrus install --force phpunit/DbUnit; fi"
+  - sh -c pyrus install --force phpunit/DbUnit; fi
   - phpenv rehash
-  - curl -s http://getcomposer.org/installer | php
   - php composer.phar install
 
 script:
