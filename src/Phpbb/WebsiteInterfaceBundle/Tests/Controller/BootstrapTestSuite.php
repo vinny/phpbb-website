@@ -39,30 +39,28 @@ class BootstrapTestSuite extends WebTestCase
 
 	public function globalTests($status = 200, $queries = 20)
 	{
-		// Footer Check
 		$this->assertTrue($this->crawler->filter('html:contains("phpBB Limited")')->count() > 0, 'Footer Check');
-
-		// Header Check
 		$this->assertTrue($this->crawler->filter('html:contains("About")')->count() > 0, 'Header Check');
-
-		// Ads Check
-		$this->assertTrue($this->crawler->filter('html:contains("advertisements")')->count() > 0, 'Advertisments Check');
-
-		// Response Check
 		$this->assertEquals($this->response->getStatusCode(), $status, 'Response Code Check');
+		$this->assertTrue($this->crawler->filter('html:contains("advertisements")')->count() > 0, 'Advertisments Check');
 
 		if (strpos(strval($status), '2') !== false) {
 			$this->assertTrue($this->client->getResponse()->isSuccessful(), 'Response is a sucessful one');
 		}
 
 		if ($profile = $this->client->getProfile()) {
-			// Shouldn't really have more than 20 queries on any page
-			$this->assertLessThan(
-				$queries,
-				$profile->getCollector('db')->getQueryCount(),
-				('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
-				);
+			$this->queryCheck($queries, $profile)
 		}
+	}
+
+	private function queryCheck($queries, $profile)
+	{
+		// Shouldn't really have more than 20 queries on any page
+		$this->assertLessThan(
+			$queries,
+			$profile->getCollector('db')->getQueryCount(),
+			('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
+			);
 	}
 
 	public function get($dependency)
