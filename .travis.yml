@@ -8,9 +8,11 @@ env:
   - DB=mysql
 
 before_script:
-  - sh -c pyrus install --force phpunit/DbUnit; fi
   - phpenv rehash
-  - php composer.phar install
+  - mysql -e 'create database www_tests_symfony;'
+  - mysql -e 'create database www_tests_phpbb;'
+  - cp app/config/parameters_travis.yml app/config/parameters.yml
+  - php composer.phar install --dev
 
 script:
   - tests.sh
@@ -19,8 +21,8 @@ notifications:
   email:
     recipients:
       - website@phpbb.com
-    on_success: always
-    on_failure: always
+    on_success: change
+    on_failure: change
 
 branches:
   only:
