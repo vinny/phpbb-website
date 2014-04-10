@@ -60,8 +60,7 @@ class DevelopmentController extends Controller
             'NEXT_PAGE'	=> (isset($data[$page + 1])) ? ('/development/prosilver/' . ($page + 1)) : '',
             'PREV_PAGE'	=> (isset($data[$page - 1])) ? ('/development/prosilver/' . ($page - 1)) : '',
 
-            'IN_DEV_PROSILVER'	=> true,
-        );
+            'IN_DEV_PROSILVER'	=> true,);
 
         return $this->render('PhpbbWebsiteInterfaceBundle:Development:prosilver.html.twig', $templateVariables);
     }
