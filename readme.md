@@ -10,7 +10,7 @@ Static Code Analysis from SensioLabs Insights: *Coming Soon*
 
 Test Suite Continous Integration from Travis CI:[![Build Status](https://travis-ci.org/phpbb/phpbb-website.svg?branch=master)](https://travis-ci.org/phpbb/phpbb-website)
 
-Code Coverage: *Coming Soon*
+Code Coverage from Bamboo: [phpBB Continous Integration (Bamboo)](https://bamboo.phpbb.com/browse/WEB-PUB)
 
 ## Setting up the website
 
