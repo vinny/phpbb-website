@@ -34,4 +34,5 @@ tools:
         excluded_dirs:
             [vendor/*, app/*]
         enabled: true
-    external_code_coverage: true
+    external_code_coverage:
+        timeout: 3600
