@@ -34,5 +34,4 @@ tools:
         excluded_dirs:
             [vendor/*, app/*]
         enabled: true
-    #php_code_coverage:
-        #test_command: bin/phpunit -c app/
+    php_code_coverage: true
