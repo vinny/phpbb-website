@@ -14,6 +14,8 @@ class GlobalsExtension extends \Twig_Extension
 {
     public function getGlobals()
     {
+
+
         // @TODO Generate URLs for routes
         $pathVars = $this->getPathVars();
         $menuVars = $this->getMenuVars();
@@ -29,6 +31,8 @@ class GlobalsExtension extends \Twig_Extension
         $peopleVars = $this->getPeopleVars();
         $miscVars 	= $this->getMiscVars();
 
+        $legacySubMenuVars = $this->getSubMenuLegacyVars();
+
         $variables = array_merge(
             $pathVars,
             $menuVars,
@@ -40,7 +44,8 @@ class GlobalsExtension extends \Twig_Extension
             $forumVars,
             $peopleVars,
             $miscVars,
-            $extensionVars
+            $extensionVars,
+            $legacySubMenuVars
         );
 
         return $variables;
@@ -427,6 +432,65 @@ class GlobalsExtension extends \Twig_Extension
         );
 
         return $peopleVars;
+    }
+
+    private function getSubMenuLegacyVars()
+    {
+        $subMenuVars = array(
+            'U_ABOUT_FEATURES_SUB'              => '/about/features/?from=submenu',
+            'U_ABOUT_HISTORY_SUB'               => '/about/history/?from=submenu',
+            'U_ABOUT_GETINVOLVED_SUB'           => '/get-involved/?from=submenu',
+            'U_ABOUT_TEAM_SUB'                  => '/about/team/?from=submenu',
+            'U_ABOUT_CONTACT_SUB'               => '/about/contact_us.php?from=submenu',
+            'U_ABOUT_ADVERTISE_SUB'             => '/about/advertise/?from=submenu',
+
+            'U_DOWNLOADS_HEADER'                => '/downloads/?from=header',
+            'U_DOWNLOADS_SUB'                   => '/downloads/?from=submenu',
+            'U_DOWNLOADS_UPDATE_SUB'            => '/downloads/#update?from=submenu',
+            'U_STYLES_DB_SUB'                   => '/customise/db/styles-2/?from=submenu',
+            'U_LANGUAGES_SUB'                   => '/languages/?from=submenu',
+            'U_MODS_DB_SUB'                     => '/customise/db/modifications-1/?from=submenu',
+
+            'U_MODS_SUB'                        => '/mods/?from=submenu',
+            'U_DEV_WIKI_SUB'                    => '//wiki.phpbb.com/?from=submenu',
+            'U_STYLES_SUB'                      => '/styles/?from=submenu',
+            'U_STYLES_DEMO_SUB'                 => '/styles/demo/3.0/?from=submenu',
+
+            'U_DOCUMENTATION_SUB'               => '/support/documentation/3.0/?from=submenu',
+            'U_KB_SUB'                          => '/kb/?from=submenu',
+            'U_SUPPORT_IRC_SUB'                 => '/support/irc/?from=submenu',
+            'U_SUPPORT_TUTORIALS_SUB'           => '/support/tutorials/3.0/?from=submenu',
+            'U_SUPPORT_FORUMS_SUB'              => '/support/forums/?from=submenu',
+            'U_SUPPORT_INTL_SUB'                => '/support/intl/?from=submenu',
+
+            'U_DEV_GI_SUB'                      => '/development/get-involved/?from=submenu',
+            'U_BUGS_SUB'                        => '/bugs/?from=submenu',
+            'U_BUGS_PHPBB_SUB'                  => 'http://tracker.phpbb.com/?from=submenu',
+            'U_SECURITY_SUB'                    => '/security/?from=submenu',
+            'U_DEV_HOME_SUB'                    => '//area51.phpbb.com/?from=submenu',
+
+            'U_FORUM_SUPPORT_SUB'               => '/community/viewforum.php?from=submenu&amp;f=46',
+            'U_FORUM_STYLES_SUB'                => '/community/viewforum.php?from=submenu&amp;f=80',
+            'U_FORUM_MODS_SUB'                  => '/community/viewforum.php?from=submenu&amp;f=81',
+            'U_FORUM_PHPBBDISC_SUB'             => '/community/viewforum.php?from=submenu&amp;f=64',
+            'U_FORUM_EVENTS_SUB'                => '/community/viewforum.php?from=submenu&amp;f=105',
+            'U_FORUM_GENDISC_SUB'               => '/community/viewforum.php?from=submenu&amp;f=6',
+            'U_FORUM_PRIVATE_SUB'               => '/community/viewforum.php?from=submenu&amp;f=53',
+
+            'U_IDEAS'                           => '/ideas?from=submenu',
+
+            'U_FORUM_INDEX_SUB'                 => '/community/?from=submenu',
+            'U_ABOUT_INDEX_SUB'                 => '/about/?from=submenu',
+            'U_SUPPORT_INDEX_SUB'               => '/support/?from=submenu',
+            'U_DEV_INDEX_SUB'                   => '/development/?from=submenu',
+
+            'U_CDB_MOD_SUPPORT'                 => '/customise/db/support/modifications-1?from=submenu',
+            'U_CDB_STYLE_SUPPORT'               => '/customise/db/support/styles-2?from=submenu',
+            'U_CDB_CONVERTOR_SUPPORT'           => '/customise/db/support/converter/?from=submenu',
+            'U_CDB_TRANSLATION_SUPPORT'         => '/customise/db/support/translation/?from=submenu',
+        );
+
+        return $subMenuVars;
     }
 
     private function getMiscVars()
