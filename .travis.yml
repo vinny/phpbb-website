@@ -13,10 +13,11 @@ before_script:
   - mysql -e 'create database www_tests_symfony;'
   - mysql -e 'create database www_tests_phpbb;'
   - cp app/config/parameters_travis.yml app/config/parameters.yml
-  - php composer.phar install --dev
+  - php composer.phar install -v --dev
 
 script:
   - bin/phpunit -c app/
+  - bin/security-checker security:check composer.lock
 
 notifications:
   email:
