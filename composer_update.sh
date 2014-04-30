@@ -10,5 +10,6 @@ composer update -v --dev
 # php composer.phar update --dev
 echo ""
 bin/phpunit -c app/
+bin/security-checker security:check composer.lock
 echo ""
 echo "COMPLETE!"
