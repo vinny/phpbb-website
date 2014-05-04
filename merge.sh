@@ -1,4 +1,4 @@
-set -x
+set -ex
 git status -sb
 echo "If that showed anything abort now!!!!!!"
 sleep 5
