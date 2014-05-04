@@ -2,3 +2,8 @@ phpBBWebsite_Extensions_home:
     path:  /
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:home }
     methods:  [GET]
+
+phpBBWebsite_Extensions_rules_and_guidelines:
+    path:  /rules-and-guidelines/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:rules }
+    methods:  [GET]
