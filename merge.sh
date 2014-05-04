@@ -15,7 +15,7 @@ echo ""
 echo "$ git fetch public"
 git fetch public
 echo ""
-echo "$ git fetch public"
+echo "$ git fetch private"
 git fetch private
 echo ""
 echo "$ git checkout master"
