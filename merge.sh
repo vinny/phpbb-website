@@ -31,9 +31,19 @@ echo "Install composer deps:"
 echo "------------------------"
 php composer.phar install
 echo ""
-echo "Tests:"
-echo "--------"
-tests.sh
+if ["$1" != "--skip-tests" ]
+then
+	echo "Tests:"
+	echo "--------"
+	if [ "$1" == "--path" ]
+	then
+		echo "./tests.sh"
+		./tests.sh
+	else
+		echo "tests.sh"
+		tests.sh
+	fi
+fi
 echo ""
 echo "Checkout develop branch:"
 echo "--------------------------"
