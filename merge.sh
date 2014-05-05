@@ -96,7 +96,7 @@ echo "Checkout master branch:"
 echo "--------------------------"
 git checkout master
 echo ""
-echo "Push master & develop branches to publc repository:"
+echo "Push master & develop branches to public repository:"
 echo "------------------------------------------------------"
 git push public master develop
 echo ""
