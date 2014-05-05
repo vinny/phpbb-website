@@ -31,7 +31,7 @@ echo "Install composer deps:"
 echo "------------------------"
 php composer.phar install
 echo ""
-if ["$1" != "--skip-tests" ]
+if [ "$1" != "--skip-tests" ]
 then
 	echo "Tests:"
 	echo "--------"
