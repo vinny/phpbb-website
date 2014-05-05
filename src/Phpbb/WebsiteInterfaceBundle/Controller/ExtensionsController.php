@@ -12,6 +12,7 @@ namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+// Controller for Extensions pages
 class ExtensionsController extends Controller
 {
     public function homeAction()
