@@ -30,17 +30,15 @@ echo ""
 echo "Install composer deps:"
 echo "------------------------"
 php composer.phar install
-echo ""
-if ["$1" != "--skip-tests" ]
+if [ "$1" != "--skip-tests" ]
 then
+	echo ""
 	echo "Tests:"
 	echo "--------"
 	if [ "$1" == "--path" ]
 	then
-		echo "./tests.sh"
 		./tests.sh
 	else
-		echo "tests.sh"
 		tests.sh
 	fi
 fi
