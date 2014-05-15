@@ -8,14 +8,15 @@ php:
 env:
   - DB=mysql
 
+install:
+  - sudo apt-get install parallel
+
 before_script:
   - phpenv rehash
   - mysql -e 'create database www_tests_symfony;'
   - mysql -e 'create database www_tests_phpbb;'
   - cp app/config/parameters_travis.yml app/config/parameters.yml
   - php composer.phar install -v --dev
-  - sudo apt-get install parallel
-
 
 script:
   - bin/phpunit -c app/
