@@ -14,10 +14,14 @@ before_script:
   - mysql -e 'create database www_tests_phpbb;'
   - cp app/config/parameters_travis.yml app/config/parameters.yml
   - php composer.phar install -v --dev
+  - sudo apt-get install parallel
+
 
 script:
   - bin/phpunit -c app/
   - bin/security-checker security:check composer.lock
+  - find . -type f -name "*.php" | parallel --gnu --keep-order 'php -l {} > /dev/null' || exit 1
+  - php app/console twig:lint @PhpbbWebsiteInterfaceBundle
 
 notifications:
   email:
