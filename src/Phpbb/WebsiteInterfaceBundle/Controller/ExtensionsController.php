@@ -34,4 +34,13 @@ class ExtensionsController extends Controller
 
         return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:rules.html.twig', $templateVariables);
     }
+
+    public function recognisedDeveloperAction()
+    {
+        $templateVariables = array(
+            'header_css_image' => 'mods',
+        );
+
+        return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:recognised-developer.html.twig', $templateVariables);
+    }
 }

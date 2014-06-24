@@ -371,6 +371,7 @@ class GlobalsExtension extends \Twig_Extension
     {
         $extensionVars = array(
             'EXTENSIONS_RULES'		=> '/extensions/rules-and-guidelines/',
+            'EXTENSIONS_RECOGNISED_DEVELOPER'   => '/extensions/recognised-developer/',
         );
 
         return $extensionVars;
