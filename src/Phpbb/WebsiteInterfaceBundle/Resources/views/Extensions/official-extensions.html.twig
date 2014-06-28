@@ -22,6 +22,7 @@
             {% for extension in extensions %}
                 <h3>{{ extension.getName() }}</h3>
                 <p>{{ extension.getDescription() }}</p>
+                <p>For Extension Authors: {{ extension.getDescriptionForDevelopers() }}</p>
                 <p><a href="{{ extension.getContribution() }}">Contribution</a>, <a href="{{ extension.getGithub() }}">GitHub</a></p>
             {% endfor %}
 

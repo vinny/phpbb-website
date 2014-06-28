@@ -13,13 +13,15 @@ class OfficialExtension
 {
     protected $name;
     protected $description;
+    protected $descriptionForDevelopers;
     protected $contribution;
     protected $github;
 
-    public function __construct($name, $description, $contribution, $github)
+    public function __construct($name, $description, $descriptionForDevelopers, $contribution, $github)
     {
         $this->name = $name;
         $this->description = $description;
+        $this->descriptionForDevelopers = $descriptionForDevelopers;
         $this->contribution = $contribution;
         $this->github = $github;
     }
@@ -34,6 +36,12 @@ class OfficialExtension
     public function getDescription()
     {
         return $this->description;
+    }
+
+    // Extra information for developers
+    public function getDescriptionForDevelopers()
+    {
+        return $this->descriptionForDevelopers;
     }
 
     // Link to the contribution page
