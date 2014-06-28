@@ -12,3 +12,8 @@ phpBBWebsite_Extensions_recognised_developer:
     path:  /recognised-developer/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:recognisedDeveloper }
     methods:  [GET]
+
+phpBBWebsite_Extensions_official_extensions:
+    path:  /official-extensions/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:officialExtensions }
+    methods:  [GET]

@@ -379,6 +379,7 @@ class GlobalsExtension extends \Twig_Extension
 
             'EXTENSIONS_RULES'		            => '/extensions/rules-and-guidelines/',
             'EXTENSIONS_RECOGNISED_DEVELOPER'   => '/extensions/recognised-developer/',
+            'EXTENSIONS_OFFICIAL_EXTENSIONS'    => '/extensions/official-extensions/',
             'EXTENSIONS_PRE_VALIDATOR'          => '#',
         );
 
