@@ -382,7 +382,8 @@ class GlobalsExtension extends \Twig_Extension
             'EXTENSIONS_OFFICIAL_EXTENSIONS'        => '/extensions/official-extensions/',
             'EXTENSIONS_OFFICIAL_EXTENSIONS_TEAM'   => '/extensions/official-extensions/team/',
             'EXTENSIONS_PRE_VALIDATOR'              => '#',
-            'EXTENSIONS_INSTALLING'                 => '/extensions/installing/'
+            'EXTENSIONS_INSTALLING'                 => '/extensions/installing/',
+            'EXTENSIONS_TEAM_OVERVIEW'              => '/extensions/team-overview/',
         );
 
         return $extensionVars;
