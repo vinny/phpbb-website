@@ -370,17 +370,19 @@ class GlobalsExtension extends \Twig_Extension
     private function getExtensionVars()
     {
         $extensionVars = array(
-            'EXTENSIONS_CUSTOMISATION_DATABASE' => 'https://www.phpbb.com/customise/db/modifications-1/',
-            'EXTENSIONS_WIKI'                   => 'https://wiki.phpbb.com/Category:Extensions',
-            'EXTENSIONS_IN_DEVELOPMENT_FORUM'   => '/community/viewforum.php?f=456',
-            'EXTENSIONS_WRITERS_FORUM'          => '/community/viewforum.php?f=461',
-            'EXTENSIONS_QUICKINSTALL'           => 'https://www.phpbb.com/mods/quickinstall/', //replace later
+            'EXTENSIONS_CUSTOMISATION_DATABASE'     => 'https://www.phpbb.com/customise/db/modifications-1/',
+            'EXTENSIONS_WIKI'                       => 'https://wiki.phpbb.com/Category:Extensions',
+            'EXTENSIONS_IN_DEVELOPMENT_FORUM'       => '/community/viewforum.php?f=456',
+            'EXTENSIONS_WRITERS_FORUM'              => '/community/viewforum.php?f=461',
+            'EXTENSIONS_QUICKINSTALL'               => 'https://www.phpbb.com/mods/quickinstall/', //replace later
             'EXTENSIONS_PHPBB_CODING_GUIDELINES'    => 'https://area51.phpbb.com/docs/31x/coding-guidelines.html',
 
-            'EXTENSIONS_RULES'		            => '/extensions/rules-and-guidelines/',
-            'EXTENSIONS_RECOGNISED_DEVELOPER'   => '/extensions/recognised-developer/',
-            'EXTENSIONS_OFFICIAL_EXTENSIONS'    => '/extensions/official-extensions/',
-            'EXTENSIONS_PRE_VALIDATOR'          => '#',
+            'EXTENSIONS_RULES'		                => '/extensions/rules-and-guidelines/',
+            'EXTENSIONS_RECOGNISED_DEVELOPER'       => '/extensions/recognised-developer/',
+            'EXTENSIONS_OFFICIAL_EXTENSIONS'        => '/extensions/official-extensions/',
+            'EXTENSIONS_OFFICIAL_EXTENSIONS_TEAM'   => '/extensions/official-extensions/team/',
+            'EXTENSIONS_PRE_VALIDATOR'              => '#',
+            'EXTENSIONS_INSTALLING'                 => '/extensions/installing/'
         );
 
         return $extensionVars;

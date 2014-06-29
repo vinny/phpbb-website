@@ -17,3 +17,13 @@ phpBBWebsite_Extensions_official_extensions:
     path:  /official-extensions/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:officialExtensions }
     methods:  [GET]
+
+phpBBWebsite_Extensions_official_extensions_team:
+    path:  /official-extensions/team/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:officialExtensionsTeam }
+    methods:  [GET]
+
+phpBBWebsite_Extensions_installing:
+    path:  /installing/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:installing }
+    methods:  [GET]

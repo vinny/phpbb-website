@@ -1,0 +1,52 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Installing Extensions{% endblock title %}
+
+{% block body %}
+    <div id="page-body">
+
+        <ul class="linklist navlinks">
+            <li><a href="{{ home_path }}">Home</a>
+                <strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+                <strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+                <strong>&#8249;</strong> <a href="{{ EXTENSIONS_INSTALLING }}">Installing Extensions</a>
+            </li>
+        </ul>
+
+        <div id="main">
+            <h2 class="imgrep mods">Installing Extensions</h2>
+            <p>Extensions are downloadable packages which can be installed on a phpBB board to add new features and functionality. Extensions are the successor to MODs in phpBB 3.1 and they are a vast improvement. With Extensions, you no longer have to modify a single line of code in phpBB. Extensions are simply uploaded to your board and enabled inside the ACP. Updating, disabling and removing Extensions is equally as easy to perform.</p>
+
+            <h2 class="title">Installing an Extension</h2>
+            <p>Inside your phpBB board's directory is an "ext" folder. This is the location where all Extensions are stored. Every Extension follows the same folder hierarchy in which Extensions are grouped into folders by their author's vendor name. If you downloaded an Extension named "foobar" from the author/vendor "acme" then it would be uploaded to "ext/acme/foobar". Any other Extensions created by the author/vendor "acme" would also be stored in "ext/acme/".</p>
+
+            <h3>1. Download and unzip</h3>
+            <p>Once you have downloaded an Extension, you will need to unpackage it on your computer, as Extensions are typically available in the compressed "zip" file format.</p>
+            <p>In Windows, to unzip the Extension, simply double click it from Windows Explorer view (for instance, if you downloaded the Extension to My Documents, you would open My Documents and double click the file). Proceed to click "Extract all files" under the address bar (Windows Vista, 7 and 8) or under the Folder Tasks menu (Windows XP) from within the Explorer window and follow the prompts.</p>
+            <p>On Mac, zipped files are automatically unzipped upon download by Safari (this setting can be disabled by unticking "Open safe files" in Safari's preferences) and can be accessed through the downloads list.</p>
+            <p>It is recommended to only download Extensions from phpBB's Customisation Database as this is a trusted source where all Extensions have been validated by the Extensions Team. All Extensions downloaded from the Customisation Database should be ready to be uploaded to your board's "ext" folder.</p>
+
+            <h3>2. Upload to your forum</h3>
+            <p>To upload files, open your favourite FTP client (such as FileZilla, CuteFTP, SmartFTP, etc - even some internet web browsers have this capability) and log in to your account. Generally your publicly accessible files will be in an area named "public_html" or similar. Navigate to your forum folder. In this example we will look at transferring the "acme/foobar" Extension. You would need to navigate to the "ext/" directory once you are in your forum folder.</p>
+            <p>Drag the folder "acme/foobar" to the "ext" folder in your FTP client. Normally there will be a small folder icon within the FTP client (this may vary from client to client) followed by the name of the directory - this is where you should be dragging the file to. If there is already an "acme" folder inside your "ext" folder, then just copy the "foobar" folder to "ext/acme/".</p>
+
+            <h3>3. Enable</h3>
+            <p>Once the Extension has been uploaded, navigate in the forum's ACP to Customise -> Manage extensions. You should see your recently uploaded Extension listed under "Disabled Extensions". Simply click its "Enable" button and installation is complete!</p>
+
+            <h2 class="title">Removing an Extension</h2>
+            <p>Sometimes it is necessary to remove an Extension. phpBB allows you to disable an Extension and to permanently delete it from your forum.</p>
+
+            <h3>1. Disable</h3>
+            <p>Disabling an Extension will effectively turn it off, removing it from your Board. However, all modifications made to your database are still intact, so you can re-enable the Extension without losing any of its stored settings and data. To disable an Extension, simply click its "Disable" button in the Extensions Management page.</p>
+
+            <h3>2. Delete Data</h3>
+            <p>To delete the Extension, click the "Delete Data" button in the Extensions Management page after the Extension has already been disabled. This is a destructive move that will delete any settings and data used by the Extension from the database. (If you re-enable the Extension at this point, it will be as if it were being installed for the first time.) Once you have deleted the data you can safely use your FTP program to delete the Extension's folder from the "ext" directory.</p>
+        </div>
+
+        <br />
+
+        <div id="extras">
+            {{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

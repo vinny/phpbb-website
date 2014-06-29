@@ -73,4 +73,22 @@ class ExtensionsController extends Controller
 
         return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:official-extensions.html.twig', $templateVariables);
     }
+
+    public function officialExtensionsTeamAction()
+    {
+        $templateVariables = array(
+            'header_css_image' => 'mods',
+        );
+
+        return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:official-extensions-team.html.twig', $templateVariables);
+    }
+
+    public function installingAction()
+    {
+        $templateVariables = array(
+            'header_css_image' => 'mods',
+        );
+
+        return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:installing.html.twig', $templateVariables);
+    }
 }
