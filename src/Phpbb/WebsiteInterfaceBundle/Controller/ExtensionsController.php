@@ -92,6 +92,15 @@ class ExtensionsController extends Controller
         return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:installing.html.twig', $templateVariables);
     }
 
+    public function writingAction()
+    {
+        $templateVariables = array(
+            'header_css_image' => 'mods',
+        );
+
+        return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:writing.html.twig', $templateVariables);
+    }
+
     public function teamOverviewAction()
     {
         $templateVariables = array(

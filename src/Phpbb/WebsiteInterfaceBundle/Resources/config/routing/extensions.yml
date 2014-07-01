@@ -28,6 +28,11 @@ phpBBWebsite_Extensions_installing:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:installing }
     methods:  [GET]
 
+phpBBWebsite_Extensions_writing:
+    path:  /writing/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:writing }
+    methods:  [GET]
+
 phpBBWebsite_Extensions_team_overview:
     path:  /team-overview/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:teamOverview }
