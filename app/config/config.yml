@@ -23,7 +23,10 @@ framework:
     http_method_override: true
     trusted_hosts:   ~
 
-    session:         ~
+    session:
+        name: "PHPBBWS"
+        handler_id: session.handler.native_file
+        save_path: "%kernel.root_dir%/sessions"
 
 # Twig Configuration
 twig:
