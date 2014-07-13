@@ -47,7 +47,7 @@ class ExtensionsController extends Controller
 
     public function officialExtensionsAction()
     {
-        // In the future we may load this dynamically from a database table
+        // TODO: In the future we may load this dynamically from a database table
         $officialExtensions = array();
 
         $officialExtensions[] = new OfficialExtension(

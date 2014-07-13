@@ -372,8 +372,7 @@ class GlobalsExtension extends \Twig_Extension
 		$extensionVars = array(
 			'extensions_cdb'						=> 'https://www.phpbb.com/customise/db/modifications-1/',
 			'extensions_wiki'						=> 'https://wiki.phpbb.com/Category:Extensions',
-			'extensions_dev_forum'					=> '/community/viewforum.php?f=456',
-			'extensions_writers_forum'				=> '/community/viewforum.php?f=461',
+
 			'extensions_quickinstall'				=> 'https://www.phpbb.com/mods/quickinstall/', //replace later
 			'extensions_phpbb_cgs'					=> 'https://area51.phpbb.com/docs/31x/coding-guidelines.html',
 
@@ -381,6 +380,7 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_recognised_devs'			=> '/extensions/recognised-developer/',
 			'extensions_offical_exts'				=> '/extensions/official-extensions/',
 			'extensions_offical_exts_team'			=> '/extensions/official-extensions/team/',
+			// TODO: Must be fixed
 			'extensions_epv'						=> '#',
 			'extensions_installing'					=> '/extensions/installing/',
 			'extensions_writing'					=> '/extensions/writing/',
@@ -415,11 +415,13 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_WRITERS_FORUM_30X'		=> '/community/viewforum.php?f=71',
 			'MODS_WRITERS_FORUM_20X'		=> '/community/viewforum.php?f=35',
 
-			'FORUM_EXTENSIONS_31X'			=> '/community/viewforum.php?f=451',
+			'forum_extensions_31x'			=> '/community/viewforum.php?f=451',
+			'forum_extensions_31x_dev'		=> '/community/viewforum.php?f=456',
+			'forum_extensions_31x_writers'	=> '/community/viewforum.php?f=461',
 
 			'FORUM_SUPPORT'				=> '/community/viewforum.php?f=46',
-			'FORUM_STYLES_CAT'				=> '/community/viewforum.php?f=80',
-			'FORUM_MODS_CAT'					=> '/community/viewforum.php?f=81',
+			'FORUM_STYLES_CAT'			=> '/community/viewforum.php?f=80',
+			'FORUM_MODS_CAT'			=> '/community/viewforum.php?f=81',
 			'FORUM_EVENTS'				=> '/community/viewforum.php?f=105',
 			'FORUM_GENDISC'				=> '/community/viewforum.php?f=6',
 		);
@@ -438,6 +440,8 @@ class GlobalsExtension extends \Twig_Extension
 			'STYLES_TL_CONTACT'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
 			'WEBSITE_TL_NAME'		=> 'Marshalrusty',
 			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
+			'ext_dev_tl_name'		=> 'EXreaction',
+			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=202401',
 		);
 
 		return $peopleVars;
