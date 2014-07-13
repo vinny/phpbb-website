@@ -1,4 +1,6 @@
-# Ensure you have setup your parameters.yml and have no passkey on your ssh key before running this script.
+echo "Ensure you have setup your parameters.yml and have no passkey on your ssh
+key before running this script. If not hit Ctrl + C now."
+sleep 5
 set -ex
 
 php composer.phar self-update
