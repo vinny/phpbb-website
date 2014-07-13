@@ -35,8 +35,7 @@
         "symfony/symfony": "2.5.*",
         "twig/extensions": "~1.0",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "doctrine/data-fixtures": "dev-master",
-        "friendsofsymfony/user-bundle": "dev-master"
+        "doctrine/data-fixtures": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.*",
