@@ -15,14 +15,14 @@
 
         <div id="main">
             <h2 class="imgrep mods">phpBB Official Extensions</h2>
-            <p>phpBB is proud to present a collection of official Extensions. These are Extensions created and maintained by the <a href="{{ extensions_offical_exts_TEAM }}">Extensions Development Team</a>. These Extensions were chosen based on various criteria including community interest and their ability to serve as teaching examples for Extension Authors. Their code has been extensively commented to provide as much information as possible to help Extension Authors learn from them.</p>
+            <p>phpBB is proud to present a collection of official extensions. These are extensions created and maintained by the <a href="{{ extensions_offical_exts_TEAM }}">Offical Extensions Development Team</a>. These extensions were chosen based on various criteria including community interest and their ability to serve as teaching examples for extension Authors. Their code has been extensively commented to provide as much information as possible to help extension Authors learn from them.</p>
 
             <h2 class="title">Extensions</h2>
 
             {% for extension in extensions %}
                 <h3>{{ extension.getName() }}</h3>
                 <p>{{ extension.getDescription() }}</p>
-                <p>For Extension Authors: {{ extension.getDescriptionForDevelopers() }}</p>
+                <p>For extension authors: {{ extension.getDescriptionForDevelopers() }}</p>
                 <p><a href="{{ extension.getContribution() }}">Contribution</a>, <a href="{{ extension.getGithub() }}">GitHub</a></p>
             {% endfor %}
 
