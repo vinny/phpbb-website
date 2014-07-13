@@ -9,7 +9,7 @@
             <li><a href="{{ home_path }}">Home</a>
                 <strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
                 <strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
-                <strong>&#8249;</strong> <a href="{{ EXTENSIONS_WRITING }}">Writing Extensions</a>
+                <strong>&#8249;</strong> <a href="{{ extensions_writing }}">Writing Extensions</a>
             </li>
         </ul>
 
@@ -40,16 +40,18 @@
 			"role": "Lead Developer"
 		}],
 	"require": {
-		"php": ">=5.3.3",
-		"phpbb/phpbb": "3.1.*@dev"
+		"php": ">=5.3.3"
 	},
 	"extra": {
-		"display-name": "Acme Demo Extension"
+		"display-name": "Acme Demo Extension",
+        "soft-require" : {
+            "phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+        }
 	}
 }
             </pre>
         <br /><br />
-        <p>The information in this file will be used by the Extensions Manager. The extensions manager is an ACP feature that will allow extensions to be enabled, disabled or purged (meaning any database changes introduced by an extension will be reverted).</p>
+        <p>The information in this file will be used by the Extensions Manager. The Extensions Manager is an ACP feature that will allow extensions to be enabled, disabled or purged (meaning any database changes introduced by an extension will be reverted).</p>
 
         <h2 class="title">ext.php - Extending the base class</h2>
         <p>Developers can extend \phpbb\extension\base if they wish to by creating an ext.php file. Otherwise, an ext.php does not need to be created. The acme-demo extension does not extend \phpbb\extension\base, and generally this would not be required for most extensions. Extending \phpbb\extension\base permits for custom code to be executed during the enabling, disabling or purging of an extension.</p>
