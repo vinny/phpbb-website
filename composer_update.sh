@@ -9,7 +9,6 @@ echo ""
 composer update -v --dev
 # php composer.phar update --dev
 echo ""
-bin/phpunit -c app/
-bin/security-checker security:check composer.lock
+tests.sh
 echo ""
 echo "COMPLETE!"
