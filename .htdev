@@ -9,6 +9,8 @@
 # Include old .htdev
 Include /var/www/phpbb.com/htdocs/old/.htdev
 
+RewriteEngine On
+
 # Exists in /old as directory or file and if so serve it
 RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
 RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -d
