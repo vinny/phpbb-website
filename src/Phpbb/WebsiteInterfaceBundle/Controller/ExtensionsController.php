@@ -12,14 +12,26 @@ namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+// Controller for Extensions pages
 class ExtensionsController extends Controller
 {
     public function homeAction()
     {
+        // Extensions Homepage
         $templateVariables = array(
-            'header_css_image'		=> 'mods',
+            'header_css_image' => 'mods',
         );
 
         return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:home.html.twig', $templateVariables);
+    }
+
+    public function rulesAction()
+    {
+        // Extensions Rules and Guidelines
+        $templateVariables = array(
+            'header_css_image' => 'mods',
+        );
+
+        return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:rules.html.twig', $templateVariables);
     }
 }

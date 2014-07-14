@@ -8,3 +8,4 @@ app/config/parameters.yml
 app/config/parameters.ini
 bin/*
 app/SymfonyRequirements.php
+app/sessions/*

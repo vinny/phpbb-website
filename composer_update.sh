@@ -9,6 +9,6 @@ echo ""
 composer update -v --dev
 # php composer.phar update --dev
 echo ""
-bin/phpunit -c app/
+tests.sh
 echo ""
 echo "COMPLETE!"

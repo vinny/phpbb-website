@@ -3,23 +3,26 @@ php:
   - 5.3
   - 5.4
   - 5.5
+  - 5.6
 
 env:
   - DB=mysql
+
+install:
+  - sudo apt-get install parallel
 
 before_script:
   - phpenv rehash
   - mysql -e 'create database www_tests_symfony;'
   - mysql -e 'create database www_tests_phpbb;'
   - cp app/config/parameters_travis.yml app/config/parameters.yml
-  - php composer.phar install --dev
+  - php composer.phar install -v --dev
 
 script:
-  - bin/phpunit -c app/ --coverage-clover=coverage.coverage-clover
-
-after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - bin/phpunit -c app/
+  - bin/security-checker security:check composer.lock
+  - find . -path ./vendor -prune -o -type f -name "*.php" | parallel --gnu --keep-order 'php -l {} > /dev/null' || exit 1
+  - php app/console twig:lint @PhpbbWebsiteInterfaceBundle
 
 notifications:
   email:

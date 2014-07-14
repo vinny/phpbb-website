@@ -23,8 +23,8 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extensions') !== false, 'Title contains Extensions');
 
         // Content Check
-        $this->assertTrue($crawler->filter('html:contains("Extensions are completely self-contained")')->count() > 0, 'Extensions Home Content Check');
-        $this->assertTrue($crawler->filter('html:contains("Extensions Policies")')->count() > 0, 'Extensions Sidebar Check');
+        $this->assertTrue($crawler->filter('html:contains("Extensions are the natural successor to modifications")')->count() > 0, 'Extensions Home Content Check');
+        $this->assertTrue($crawler->filter('html:contains("Extensions Rules and Guidelines")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks
         $this->globalTests();
