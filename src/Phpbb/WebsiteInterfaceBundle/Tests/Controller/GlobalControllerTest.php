@@ -79,4 +79,19 @@ class GlobalControllerTest extends BootstrapTestSuite
         // Standard All Page Checks
         $this->globalTests();
     }
+
+    public function testCustomiseMain()
+    {
+        $objs = $this->setupTest('/customise/');
+        $crawler = $objs['crawler'];
+
+        // Title Check
+        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Customise') !== false, 'Title contains Customise');
+
+        // Content Check
+        $this->assertTrue($crawler->filter('html:contains("Styles")')->count() > 0, 'Customise Page Content Check');
+
+        // Standard All Page Checks
+        $this->globalTests();
+    }
 }
