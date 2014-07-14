@@ -92,12 +92,15 @@ class GlobalsExtension extends \Twig_Extension
 			'DEV_GI_SUB'			=> '/development/get-involved/',
 			'GET_INVOLVED'			=> '/get-involved/',
 
+			'customise_path'	=> '/customise/',
+
 			'mods_db_path'		=> '/customise/db/modifications-1/',
 			// 'MODS_DB_SUB'		=> '/customise/db/modifications-1/',
 
 			'mods_path'			=> '/mods/',
 			'MODS'				=> '/mods/',
 
+			'styles_path'		=> '/styles/',
 			'styles_db_path'	=> '/customise/db/styles-2/',
 			// 'STYLES_DB_SUB'		=> '/customise/db/styles-2/',
 
@@ -320,7 +323,7 @@ class GlobalsExtension extends \Twig_Extension
 		$styleVars = array(
 			'STYLES'							=> '/styles/',
 			'STYLES_DB'						=> '/customise/db/styles-2/',
-			'STYLES_DEMO_30'					=> '/styles/demo/3.0/',
+			'STYLES_DEMO_OLYMPUS'					=> '/styles/demo/3.0/',
 			'STYLES_DOCUMENTATION'			=> '/styles/documentation/',
 			'STYLES_FAQ'						=> '/styles/faq/',
 			'STYLES_SSP'						=> '/community/viewtopic.php?f=73&amp;t=988545',
@@ -406,14 +409,12 @@ class GlobalsExtension extends \Twig_Extension
 
 			// Modification Forums
 			'FORUM_MODS'					=> '/community/viewforum.php?f=78',
+			'FORUM_MODS_OLYMPUS'				=> '/community/viewforum.php?f=81',
 			'FORUM_MODS_30X'				=> '/community/viewforum.php?f=81',
 			'MODS_DEVELOPMENT_FORUM_30X'	=> '/community/viewforum.php?f=70',
-			'MODS_DEVELOPMENT_FORUM_20X'	=> '/community/viewforum.php?f=16',
 			'MODS_DATABASE_RELEASES_30X'	=> '/community/viewforum.php?f=69',
-			'MODS_DATABASE_RELEASES_20X'	=> '/community/viewforum.php?f=15',
 			'MODS_REQUESTS_FORUM_30X'		=> '/community/viewforum.php?f=72',
 			'MODS_WRITERS_FORUM_30X'		=> '/community/viewforum.php?f=71',
-			'MODS_WRITERS_FORUM_20X'		=> '/community/viewforum.php?f=35',
 
 			'forum_extensions_31x'			=> '/community/viewforum.php?f=451',
 			'forum_extensions_31x_dev'		=> '/community/viewforum.php?f=456',
@@ -454,7 +455,6 @@ class GlobalsExtension extends \Twig_Extension
 	private function getMiscVars()
 	{
 		$miscVars = array(
-			'DEMO_30X'			=> 'http://try-phpbb.com/30x',
 			'RULES'				=> '/rules/',
 
 			'package_version'		=> '3.0.12',

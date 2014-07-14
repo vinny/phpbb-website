@@ -12,6 +12,18 @@ phpBBWebsite_demo:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:demo }
     methods:  [GET]
 
+phpBBWebsite_customise:
+    path:  /customise/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:customise }
+    methods:  [GET]
+
+phpBBWebsite_About_contact_redirect:
+    path:  /contact/
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /about/contact/
+        permanent: true
+
 phpBBWebsite_About:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/about.yml"
     prefix:   /about
