@@ -10,3 +10,4 @@ bin/*
 app/SymfonyRequirements.php
 app/sessions/*
 !vendor/.htaccess
+!app/cache/.gitkeep
