@@ -49,7 +49,7 @@ RewriteCond %{REQUEST_URI} !^/styles/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/theme/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/updatecheck/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/website/{0,1}.*
-#RewriteCond %{REQUEST_URI} !^/mods/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/mods/.+
 RewriteCond %{REQUEST_URI} !^/support/docs/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/documentation/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/faq/{0,1}.*
