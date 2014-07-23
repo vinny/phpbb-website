@@ -169,10 +169,9 @@ class GlobalController extends Controller
 										'result_id'		=> $resultId,
 										'update_file_count'	=> $update_file_count,
 										'update_time'	=> date('l jS \of F Y \a\t h:i:s A', $last_pull_time),
-									),
+									)
 								)
-							)
-						;
+							);
 						$this->get('mailer')->send($message);
 					}
 				}
