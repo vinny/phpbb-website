@@ -38,10 +38,15 @@ parameters:
     phpbb_test_database_password:    hlgiHu7hFD
 
     # Mailer Settings, shouldn't need to touch these unless its a live/sandbox install.
-    mailer_transport:   smtp
-    mailer_host:        localhost
+    mailer_transport:   mail
+    mailer_host:        ~
     mailer_user:        ~
     mailer_password:    ~
+    mailer_port:        ~
+    mailer_encryption:  ~
+    mailer_auth_mode:   ~
+    mailer_delivery_address:   ~
+    mailer_disable_delivery:   true
 
     locale:             en
     secret:             ThisTokenIsNotSoSecretChangeIt
