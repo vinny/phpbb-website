@@ -30,7 +30,3 @@ notifications:
       - website@phpbb.com
     on_success: change
     on_failure: change
-
-branches:
-  only:
-    master
