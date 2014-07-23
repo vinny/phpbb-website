@@ -3,9 +3,12 @@ web/uploads/*
 app/bootstrap*
 app/cache/*
 app/logs/*
+app/updates/*
+app/sessions/*
 vendor/*
 app/config/parameters.yml
 app/config/parameters.ini
 bin/*
 app/SymfonyRequirements.php
-app/sessions/*
+!vendor/.htaccess
+!app/cache/.gitkeep

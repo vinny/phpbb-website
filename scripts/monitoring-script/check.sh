@@ -66,7 +66,7 @@ chmod 0666 $WRITABLE/output
 #
 # Check if phpbb.com responds with non-zero content to http requests
 #
-curl --connect-timeout 30 --max-time 45 --cookie-jar $WRITABLE/cookie-jar --dump-header $WRITABLE/headers --output $WRITABLE/output http://www.phpbb.com/community/ 2>&1
+curl --connect-timeout 30 --max-time 45 --cookie-jar $WRITABLE/cookie-jar --dump-header $WRITABLE/headers --output $WRITABLE/output https://www.phpbb.com/community/ 2>&1
 if [ -s $WRITABLE/output ]; then
 	output "      - http://www.phpbb.com returned a non-empty response"
 else

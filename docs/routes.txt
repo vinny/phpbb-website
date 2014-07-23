@@ -1,0 +1,23 @@
+[router] Current routes
+ Name                                         Method Scheme Host Path
+ PhpbbWebsiteInterfaceBundle_homepage         ANY    ANY    ANY  /
+ phpBBWebsite_getInvolved                     GET    ANY    ANY  /get-involved/
+ phpBBWebsite_demo                            GET    ANY    ANY  /demo/
+ phpBBWebsite_customise                       GET    ANY    ANY  /customise/
+ phpBBWebsite_About_home                      GET    ANY    ANY  /about/
+ phpBBWebsite_About_history                   GET    ANY    ANY  /about/history/
+ phpBBWebsite_About_advertise                 GET    ANY    ANY  /about/advertise/
+ phpBBWebsite_About_contact                   GET    ANY    ANY  /about/contact/
+ phpBBWebsite_About_features                  GET    ANY    ANY  /about/features/
+ phpBBWebsite_About_getInvolved               ANY    ANY    ANY  /about/get-involved/
+ phpBBWebsite_About_features_compare          ANY    ANY    ANY  /about/features/compare.php
+ phpBBWebsite_About_contact_redirect          ANY    ANY    ANY  /about/contact_us.php
+ phpBBWebsite_Mods_home                       GET    ANY    ANY  /mods/
+ phpBBWebsite_Development_home                GET    ANY    ANY  /development/
+ phpBBWebsite_Development_prosilver           GET    ANY    ANY  /development/prosilver/
+ phpBBWebsite_Development_prosilver_page      GET    ANY    ANY  /development/prosilver/{page}
+ phpBBWebsite_Development_getInvolved         ANY    ANY    ANY  /development/get-involved/
+ phpBBWebsite_Support_home                    GET    ANY    ANY  /support/
+ phpBBWebsite_Support_irc                     GET    ANY    ANY  /support/irc/
+ phpBBWebsite_Extensions_home                 GET    ANY    ANY  /extensions/
+ phpBBWebsite_Extensions_rules_and_guidelines GET    ANY    ANY  /extensions/rules-and-guidelines/
