@@ -73,6 +73,6 @@ swiftmailer:
     port:           %mailer_port%
     encryption:     %mailer_encryption%
     auth_mode:      %mailer_auth_mode%
-    auth_delivery_address:  %mailer_delivery_address%
-    auth_disable_delivery:  %mailer_disable_delivery%
+    delivery_address:  %mailer_delivery_address%
+    disable_delivery:  %mailer_disable_delivery%
     spool: { type: memory }
