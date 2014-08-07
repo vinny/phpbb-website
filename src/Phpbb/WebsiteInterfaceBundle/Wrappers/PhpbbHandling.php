@@ -12,6 +12,15 @@ namespace Phpbb\WebsiteInterfaceBundle\Wrappers;
 
 class PhpbbHandling
 {
+    /**
+     * Strip bbcodes from a post content
+     *
+     * @param  string $text The raw content from the database to strip bbcodes from
+     * @param  string $uid  The $uid used in encoding/decoding the bbcode
+     * @return string $text The post with bbcodes stripped
+     * @access public
+     * @static
+     */
     public static function bbcodeStripping($text, $uid = '[0-9a-z]{5,}')
     {
         $text = preg_replace("#\[\/?[a-z0-9\*\+\-]+(?:=(?:&quot;.*&quot;|[^\]]*))?(?::[a-z])?(\:$uid)\]#", ' ', $text);
@@ -31,16 +40,24 @@ class PhpbbHandling
     }
 
     /**
-     * @param integer $retrieve_limit
-     * @param integer $announcement_forum
+     * Get the topic details from the forums table & the first post
+     *
+     * @param Doctrine\DBAL\Connection      $phpBBConnection    DBAL connection to a phpBB database
+     *                                                              (Doctrine\DBAL\Connection)
+     * @param integer $forum                ID for the forum to get topics from
+     * @param integer $retrieve_limit       Maxmium number of topics to retrieved
+     * @param string  $database_prefix      The prefix of the tables in the database (include underscore)
+     * @return array  $topics               The topics from that forum
+     * @access public
+     * @static
      */
-    public static function getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit)
+    public static function getTopicsFromForum(\Doctrine\DBAL\Connection $phpbbConnection, $forum, $retrieve_limit, $database_prefix = 'phpbb_')
     {
         $sql = 'SELECT t.*, p.post_text, p.bbcode_uid
-            FROM community_topics t
-            LEFT JOIN community_posts p
+            FROM ' . $database_prefix . 'topics t
+            LEFT JOIN ' . $database_prefix . 'posts p
                 ON t.topic_first_post_id = p.post_id
-            WHERE t.forum_id IN (' . $announcement_forum . ', 0)
+            WHERE t.forum_id IN (' . $forum . ', 0)
                 AND t.topic_approved = 1
             ORDER BY topic_time DESC
             LIMIT 0,' . $retrieve_limit;

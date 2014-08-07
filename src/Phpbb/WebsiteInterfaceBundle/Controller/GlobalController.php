@@ -198,7 +198,12 @@ class GlobalController extends Controller
 		$retrieve_limit = 3;
 
 		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
-		$forumAnnouncements = PhpbbHandling::getTopicsFromForum($phpbbConnection, $announcement_forum, $retrieve_limit);
+		$forumAnnouncements = PhpbbHandling::getTopicsFromForum(
+			$phpbbConnection,
+			$announcement_forum,
+			$retrieve_limit,
+			$this->container->getParameter('phpbb_database_prefix')
+		);
 		$finishedAnnouncements = array();
 
 		foreach ($forumAnnouncements as $announcement) {
@@ -229,13 +234,13 @@ class GlobalController extends Controller
 			}
 
 			$finishedAnnouncements[$announcement['topic_time']] = array(
-				'DAY' => date('d', $announcement['topic_time']),
-				'MONTH' => date('M', $announcement['topic_time']),
-				'YEAR' => date('Y', $announcement['topic_time']),
-				'U_LINK' => '/community/viewtopic.php?f=' . $announcement_forum . '&amp;t=' . $announcement['topic_id'],
-				'TITLE' => $announcement['topic_title'],
+				'DAY' 		=> date('d', $announcement['topic_time']),
+				'MONTH' 	=> date('M', $announcement['topic_time']),
+				'YEAR' 		=> date('Y', $announcement['topic_time']),
+				'U_LINK' 	=> '/community/viewtopic.php?f=' . $announcement_forum . '&amp;t=' . $announcement['topic_id'],
+				'TITLE' 	=> $announcement['topic_title'],
 				'FROM_BLOG' => false,
-				'PREVIEW' => $preview,
+				'PREVIEW' 	=> $preview,
 			);
 		}
 
