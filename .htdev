@@ -7,9 +7,73 @@
 # Including as mentioned above should work in almost every case.
 
 # Include old .htdev
-Include /var/www/phpbb.com/htdocs/old/.htdev
+Include /var/www/new.phpbb.com/htdocs/old/.htdev
 
-# The real stuff
-RewriteEngine On
-RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old$1
+# RewriteEngine On
 
+# Exists in /old as directory or file and if so serve it
+RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
+RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -d
+RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old$1 [L]
+
+# Exists in /symfony/web as directory or file and if so serve it
+RewriteCond /var/www/new.phpbb.com/htdocs/symfony/web%{REQUEST_URI} -f [OR]
+RewriteCond /var/www/new.phpbb.com/htdocs/symfony/web%{REQUEST_URI} -d
+RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web$1 [L]
+
+# nope? Go through app.php which will handle errors such as 404
+RewriteCond %{REQUEST_URI} !^/community/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/about/map/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/about/team/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/about/logos/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/api/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/customise/db/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/downloads/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/feeds/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/files/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/forum_files/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/hosting/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/js/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/kb/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/languages/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/libertyvasion/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/londonvasion/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/logs/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/marshalrusty/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/rules/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/search/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/shop/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/showcase/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/stats/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/theme/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/updatecheck/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/website/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/mods/.+
+RewriteCond %{REQUEST_URI} !^/support/docs/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/documentation/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/faq/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/forums/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/intl/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/srt/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/stk/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/tutorials/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/cookies{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/documents{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/statistics{0,1}.*
+RewriteCond %{REQUEST_URI} !^/shop2/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/ideas/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/update_website.php
+RewriteCond %{REQUEST_URI} !^/member-login.php
+RewriteCond %{REQUEST_URI} !^/date.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/var/www/new.phpbb.com/htdocs/symfony/web
+RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
+
+# Hello ErrorDocuments! I guess they could do with prettification by way of title image and header?
+ErrorDocument 401 /var/www/new.phpbb.com/htdocs/old/errordocs/401.php
+ErrorDocument 403 /var/www/new.phpbb.com/htdocs/old/errordocs/403.php
+ErrorDocument 404 /var/www/new.phpbb.com/htdocs/old/errordocs/404.php
+ErrorDocument 412 /var/www/new.phpbb.com/htdocs/old/errordocs/412.php
+ErrorDocument 500 /var/www/new.phpbb.com/htdocs/old/errordocs/500.php
