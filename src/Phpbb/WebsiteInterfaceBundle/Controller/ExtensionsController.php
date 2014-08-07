@@ -25,6 +25,16 @@ class ExtensionsController extends Controller
         return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:home.html.twig', $templateVariables);
     }
 
+	public function devRulesAction()
+	{
+		// Extensions Rules and Guidelines
+		$templateVariables = array(
+			'header_css_image' => 'mods',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext_dev_rules.html.twig', $templateVariables);
+	}
+
     public function rulesAction()
     {
         // Extensions Rules and Guidelines

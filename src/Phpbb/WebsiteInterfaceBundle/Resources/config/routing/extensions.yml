@@ -7,3 +7,8 @@ phpBBWebsite_Extensions_rules_and_guidelines:
     path:  /rules-and-guidelines/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:rules }
     methods:  [GET]
+
+phpBBWebsite_Extensions_dev_forum_rules:
+    path: /rules-and-guidelines/development-rules
+    defaults: { _controller: PhpbbWebsiteInerfaceBundle:Extensions:devRules }
+    methods:  [GET]
