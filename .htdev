@@ -16,6 +16,9 @@ RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
 RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -d
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old$1 [L]
 
+RewriteCond ^/customise/db/{0,1}.*
+RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old$1 [L]
+
 # Exists in /symfony/web as directory or file and if so serve it
 RewriteCond /var/www/new.phpbb.com/htdocs/symfony/web%{REQUEST_URI} -f [OR]
 RewriteCond /var/www/new.phpbb.com/htdocs/symfony/web%{REQUEST_URI} -d
@@ -49,7 +52,7 @@ RewriteCond %{REQUEST_URI} !^/styles/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/theme/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/updatecheck/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/website/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/mods/.+
+RewriteCond %{REQUEST_URI} !^/mods/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/docs/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/documentation/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/faq/{0,1}.*
@@ -69,6 +72,10 @@ RewriteCond %{REQUEST_URI} !^/date.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/var/www/new.phpbb.com/htdocs/symfony/web
+RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
+
+
+RewriteCond %{REQUEST_URI} ^/mods/
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
 
 # Hello ErrorDocuments! I guess they could do with prettification by way of title image and header?
