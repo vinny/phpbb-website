@@ -16,7 +16,7 @@ RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
 RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -d
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old$1 [L]
 
-RewriteCond %{REQUEST_URI} !^/customise/db/{0,1}.*
+RewriteCond %{REQUEST_URI} ^/customise/db/{0,1}.*
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old$1 [L]
 
 # Exists in /symfony/web as directory or file and if so serve it
