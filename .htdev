@@ -61,6 +61,7 @@ RewriteCond %{REQUEST_URI} !^/support/intl/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/srt/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/stk/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/tutorials/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/support/tutorials/3.0/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/cookies{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/documents{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/statistics{0,1}.*
@@ -73,7 +74,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/var/www/new.phpbb.com/htdocs/symfony/web
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
-
 
 RewriteCond %{REQUEST_URI} ^/mods/
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
