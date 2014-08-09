@@ -35,7 +35,7 @@
 			</li>
 			
 			<li>Tabs are used instead of spaces for indenting. A tab is defined as four spaces in this instance.</li>
-			<li>Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible.</li>
+			<li>Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible. It is also preferred to use Composer to manage third-party libraries if possible.</li>
 			<li>PHP files are saved as UTF-8 Encoded with UNIX line endings (LF).</li>
 			<li>PHP files do not contain a (Byte Order Mark) BOM.</li>
 		</ol>
@@ -50,7 +50,8 @@
 			<li>IN_PHPBB [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>]‬ check must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files.</li>
 			<li><a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html#general">$request->variable()</a> function is used instead of $_POST, $_GET, or $_REQUEST to get user input.</li>
 			<li>Integer variables from $request->variable() are cast as integers using the form: $request->variable('var', 0); and not $request->variable ('var', '0');.</li>
-			<li>$_SERVER variables are properly sanitised, (many $_SERVER indexes can be user manipulated).</li>
+			<li>$_SERVER variables are properly sanitised, (many $_SERVER indexes can be user manipulated). It is preferred to use $request->server() instead of $_SERVER, e.g.: $request->server('REMOTE_ADDR'), as these will be properly sanitised by the $request method.</li>
+			<li>The $user object also contains several sanitised variables about the user, for example: $user->ip (user's REMOTE_ADDR) and $user->page (name of page currently viewed by user).</li>
 			<li><a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html#sql‬‬">phpBB3 DBAL</a> is used instead of database specific SQL functions.
 				<ol>
 					<li>User-input string variables are properly sanitised using $db->sql_escape(); [<a href="https://wiki.phpbb.com/Dbal.sql_escape">wiki</a>] when using variables in SQL queries.</li>
@@ -64,7 +65,7 @@
 					<li>SQL Queries within loops should be avoided.</li>
 				</ol>
 			</li>			
-			<li>helper->error(); and/or trigger_error(); [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>] are used for error handling and user messages instead of die(); or message_die(); or similar.</li>
+			<li>helper->error(); and/or trigger_error(); [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>] are used for error handling and user messages instead of die(); or similar.</li>
 			<li>login_forum_box(); or login_box(); [<a href="http://wiki.phpbb.com/Login_box">wiki</a>] is used for login.</li>
 			<li>confirm_box(); [<a href="http://wiki.phpbb.com/Confirm_box">wiki</a>] is used for the user to confirm sensitive actions (such as deleting items).</li>
 			<li>URLs pointing to phpBB files call append_sid(); []<a href="http://wiki.phpbb.com/Append_sid">wiki</a>]  to correctly append the session id.</li>
@@ -125,7 +126,13 @@
 		<ol>
 			<li>Extensions are packaged as follows:<br />
 				/vendorname/extensionname/<br >
-				The names should be alphanumeric. (So no dashes or underscores. Capitals are allowed.)
+				The names should be alphanumeric. (So no dashes or underscores. Capitals are allowed.)<br />
+				For example, the following common extension files, composer.json, ext.php and license.txt would be located at:<br />
+				<pre>
+					/vendorname/extensionname/composer.json
+					/vendorname/extensionname/ext.php
+					/vendorname/extensionname/license.txt
+				</pre>
 			</li>
 			<li>Sementic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
 			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files contained in their respective directories.</li>
