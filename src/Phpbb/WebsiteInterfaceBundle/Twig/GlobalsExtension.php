@@ -394,8 +394,7 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_general'					=> '/extensions/rules-and-guidelines/general',
 			'extensions_instadeny'					=> '/extensions/rules-and-guidelines/insta-deny',
 			'extensions_repack'						=> '/extensions/rules-and-guidelines/repack',
-			'EXTENSIONS_RULES'		=> '/extensions/rules-and-guidelines/',
-			'EXTENSIONS_RULES_DEV'		=> '/extensions/rules-and-guidelines/development-rules',
+			'extensions_rules_dev'					=> '/extensions/rules-and-guidelines/development-rules',
 		);
 
 		return $extensionVars;
