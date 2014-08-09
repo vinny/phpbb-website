@@ -34,8 +34,8 @@
 				<span class="year">{{ announcement.YEAR }}</span>
 			</div>
 			<div class="announce_img">{% if announcement.FROM_BLOG %}<img src="{{ asset('/assets/images/images/icon_blog.png') }}" title="Blog Post" alt="Blog Post" />{% else %}<img src="{{ asset('/assets/images/images/icon_announcement.png') }}" title="Announcement" alt="Announcement" />{% endif %}</div>
-			<div class="title"><a href="{{ announcement.U_LINK }}">{% if announcement.FROM_BLOG %}Blog{% else %}Announcement{% endif %} &bull; {{ announcement.TITLE|e }}</a></div>
-			<p class="preview">{{ announcement.PREVIEW|e }}&hellip; <a href="{{ announcement.U_LINK }}">read more</a></p>
+			<div class="title"><a href="{{ announcement.U_LINK|raw }}">{% if announcement.FROM_BLOG %}Blog{% else %}Announcement{% endif %} &bull; {{ announcement.TITLE|e }}</a></div>
+			<p class="preview">{{ announcement.PREVIEW|e }}&hellip; <a href="{{ announcement.U_LINK|raw }}">read more</a></p>
 		</li>
 	{% endfor %}
 	</ul>
@@ -52,7 +52,7 @@
 		<div class="inner"><span class="corners-top"><span></span></span>
 		<h3>Sponsors</h3>
 		<ul class="text-links">
-			<li><strong><a href="https://www.phpbb.com/hosting/r/bluehost-frontpage/" class="text-links-favicon" style="background-image: url({{ asset('/assets/images/images/favicons/bluehost.png') }});"{% if bot is defined %} rel="nofollow"{% endif %}>&nbsp;BlueHost.com</a></strong> - voted best web host with superior support <strong>2004-2010!</strong> Offering a <strong>free domain</strong>, <strong class="posthilit">unlimited</strong> space, <strong class="posthilit">unlimited</strong> transfer - easy 1-click install of phpBB all for <a href="https://www.phpbb.com/hosting/r/bluehost-frontpage/"{% if bot is defined %} rel="nofollow"{% endif %}><strong>only $6.95/month</strong>&hellip; <strong><em>Sign up now!</em></strong></a></li>
+			<li><strong><a href="/hosting/r/bluehost-frontpage/" class="text-links-favicon" style="background-image: url({{ asset('/assets/images/images/favicons/bluehost.png') }});"{% if bot is defined %} rel="nofollow"{% endif %}>&nbsp;BlueHost.com</a></strong> - voted best web host with superior support <strong>2004-2010!</strong> Offering a <strong>free domain</strong>, <strong class="posthilit">unlimited</strong> space, <strong class="posthilit">unlimited</strong> transfer - easy 1-click install of phpBB all for <a href="/hosting/r/bluehost-frontpage/"{% if bot is defined %} rel="nofollow"{% endif %}><strong>only $6.95/month</strong>&hellip; <strong><em>Sign up now!</em></strong></a></li>
 			<li><a href="http://www.cpaptalk.com/"{% if bot is defined %} rel="nofollow"{% endif %}>CPAP</a></li>
 			<li><a href="http://www.eukhost.com/dedicated-server-hosting.php"{% if bot is defined %} rel="nofollow"{% endif %}><b>Dedicated Server Hosting</b></a></li>
 			<li><a href="http://www.cpap.com/"{% if bot is defined %} rel="nofollow"{% endif %}>CPAP Supplies</a></li>
