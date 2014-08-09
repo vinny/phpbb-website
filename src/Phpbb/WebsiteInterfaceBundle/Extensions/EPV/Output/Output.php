@@ -11,6 +11,8 @@
 namespace Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output;
 
 
+use Phpbb\epv\Output\OutputFormatter;
+use SensioLabs\AnsiConverter\AnsiToHtmlConverter;
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -68,7 +70,7 @@ class Output implements OutputInterface{
 	 */
 	public function writeln($messages, $type = self::OUTPUT_NORMAL)
 	{
-		$this->write($messages, true, $type);
+		$this->write($messages, false, $type);
 	}
 
 	/**
@@ -145,6 +147,13 @@ class Output implements OutputInterface{
 
 	public function getBuffer()
 	{
+		if ($this->type == self::TYPE_HTML)
+		{
+			$formatter = new OutputFormatter(true);
+
+			$convertor = new AnsiToHtmlConverter();
+			return $convertor->convert($formatter->format($this->buffer));
+		}
 		return $this->buffer;
 	}
 
