@@ -386,8 +386,11 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_recognised_devs'			=> '/extensions/recognised-developer/',
 			'extensions_offical_exts'				=> '/extensions/official-extensions/',
 			'extensions_offical_exts_team'			=> '/extensions/official-extensions/team/',
-			// TODO: Must be fixed
-			//'extensions_epv'						=> '#',
+
+			'extensions_epv'						=> '/extensions/epv',
+			'extensions_epv_repo'                   => '',
+			'extensions_epv_bugs'                   => '',
+			'extensions_epv_instructions'           => '/community/viewtopic.php?f=461&amp;t=2239116',
 			'extensions_installing'					=> '/extensions/installing/',
 			'extensions_writing'					=> '/extensions/writing/',
 			'extensions_team_overview'				=> '/extensions/team-overview/',
