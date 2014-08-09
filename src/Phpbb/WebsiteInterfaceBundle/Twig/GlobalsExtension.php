@@ -391,9 +391,9 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_installing'					=> '/extensions/installing/',
 			'extensions_writing'					=> '/extensions/writing/',
 			'extensions_team_overview'				=> '/extensions/team-overview/',
-			'extensions_general'					=> '/extensions/general/',
-			'extensions_instadeny'					=> '/extensions/insta-deny/',
-			'extensions_repack'						=> '/extensions/repack/',
+			'extensions_general'					=> '/extensions/rules-and-guidelines/general',
+			'extensions_instadeny'					=> '/extensions/rules-and-guidelines/insta-deny',
+			'extensions_repack'						=> '/extensions/rules-and-guidelines/repack',
 			'EXTENSIONS_RULES'		=> '/extensions/rules-and-guidelines/',
 			'EXTENSIONS_RULES_DEV'		=> '/extensions/rules-and-guidelines/development-rules',
 		);
