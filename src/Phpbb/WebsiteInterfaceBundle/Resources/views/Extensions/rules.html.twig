@@ -5,54 +5,54 @@
 {% block body %}
 <div id="page-body">
 
-    <ul class="linklist navlinks">
-        <li><a href="{{ home_path }}">Home</a>
-            <strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
-            <strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
-            <strong>&#8249;</strong> <a href="{{ EXTENSIONS_RULES }}">Rules and Guidelines</a>
-        </li>
-    </ul>
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ EXTENSIONS_RULES }}">Rules and Guidelines</a>
+		</li>
+	</ul>
 
-    <div id="main">
-        <h2 class="imgrep mods">Extensions</h2>
+	<div id="main">
+		<h2 class="imgrep mods">Extensions</h2>
 
-        <h2 class="imgrep mod_rules">phpBB Extension Rules</h2>
-        <p>phpBB.com Extensions Rules and Guidelines</p>
+		<h2 class="imgrep mod_rules">phpBB Extension Rules</h2>
+		<p>phpBB.com Extensions Rules and Guidelines</p>
 
-        <h3 class="title"><a href="{{ EXTENSIONS_RULES_DEV }}">Extension Development Forum Guidelines</a></h3>
-        <p>Rules for the [3.1.x] Extension Development forum.</p>
+		<h3 class="title"><a href="{{ EXTENSIONS_RULES_DEV }}">Extension Development Forum Guidelines</a></h3>
+		<p>Rules for the [3.1.x] Extension Development forum.</p>
 
-        <h3><a href="{{  }}">Extensions Writers Discussion Forum Guidelines</a></h3>
-        <p>The phpBB.com Extensions Writers Discussion Forum rules and guidelines.</p>
+		<h3><a href="{{  }}">Extensions Writers Discussion Forum Guidelines</a></h3>
+		<p>The phpBB.com Extensions Writers Discussion Forum rules and guidelines.</p>
 
-        <h3>Extension Database Policies</h3>
+		<h3>Extension Database Policies</h3>
 
-        <div class="forabg">
-            <div class="inner"><span class="corners-top"><span></span></span>
-                <table class="table1" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th colspan="2">Policy</th>
-                        <th>Download</th>
-                    </tr>
-                    </thead>
+		<div class="forabg">
+			<div class="inner"><span class="corners-top"><span></span></span>
+				<table class="table1" cellspacing="0">
+					<thead>
+					<tr>
+						<th colspan="2">Policy</th>
+						<th>Download</th>
+					</tr>
+					</thead>
 
-                    <tbody>
-                    {% for policy in policies  %}
-                    <tr class="{{ cycle(['bg2', 'bg1'], i) }}">
-                        <td><strong><a href="{{ policy.link }}">{{ policy.name }}</a></strong></td>
-                        <td>{{ policy.description }}</td>
-                        <td></td>
-                    </tr>
-                    {{ endfor }}
-                    </tbody>
-                </table>
-                <span class="corners-bottom"><span></span></span></div>
-        </div>
-    </div>
+					<tbody>
+					{% for policy in policies  %}
+					<tr class="{{ cycle(['bg2', 'bg1'], i) }}">
+						<td><strong><a href="{{ policy.link }}">{{ policy.name }}</a></strong></td>
+						<td>{{ policy.description }}</td>
+						<td></td>
+					</tr>
+					{{ endfor }}
+					</tbody>
+				</table>
+				<span class="corners-bottom"><span></span></span></div>
+		</div>
+	</div>
 
-    <div id="extras">
-        {{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-    </div>
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+	</div>
 </div>
 {% endblock %}

@@ -5,17 +5,17 @@
 {% block body %}
 <div id="page-body">
 
-    <ul class="linklist navlinks">
-        <li><a href="{{ home_path }}">Home</a>
-            <strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
-            <strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
-            <strong>&#8249;</strong> <a href="{{ EXTENSIONS_RULES }}">Rules and Guidelines</a>
-        </li>
-    </ul>
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ EXTENSIONS_RULES }}">Rules and Guidelines</a>
+		</li>
+	</ul>
 
-    <div id="main">
-            <h2 class="imgrep mods">phpBB Extensions Insta-Deny Policy</h2>
-            <p>Insta-Deny is meant to detect basic problems in an extension when submitted for validation. Extensions are checked against the Extension Pre Validator (EPV) for standard problems. In case a standard problem is found the extension will be Insta-Denied within 72 hours after submission. After this, it either means the extension passed the Insta-Deny requirements or the validators were too late in denying it.</p>
+	<div id="main">
+			<h2 class="imgrep mods">phpBB Extensions Insta-Deny Policy</h2>
+			<p>Insta-Deny is meant to detect basic problems in an extension when submitted for validation. Extensions are checked against the Extension Pre Validator (EPV) for standard problems. In case a standard problem is found the extension will be Insta-Denied within 72 hours after submission. After this, it either means the extension passed the Insta-Deny requirements or the validators were too late in denying it.</p>
 			
 			<p>In case EPV finds a problem, the validator or JR validator will look at the code where the problem is located and decide if it is a correct usage of this code or not. All problems are looked at on a case-by-case basis as there can be valid uses of certain things EPV detects.</p>
 
@@ -41,8 +41,8 @@
 		<p>An Insta-Deny can be prevented by using EPV before you submit your extension. If there are any problems you will receive them in a report from EPV. In case you have any questions regarding this report please feel free to ask in <a href="{{ forum_extensions_31x_writers }}">Extension Writers Forum</a>. On extension submission, the EPV results will be shown and you should act, if appropriate, upon them.</p>
 	</div>
 
-    <div id="extras">
-        {{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-    </div>
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+	</div>
 </div>
 {% endblock %}

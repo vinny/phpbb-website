@@ -5,19 +5,19 @@
 {% block body %}
 <div id="page-body">
 
-    <ul class="linklist navlinks">
-        <li><a href="{{ home_path }}">Home</a>
-            <strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
-            <strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
-            <strong>&#8249;</strong> <a href="{{ EXTENSIONS_RULES }}">Rules and Guidelines</a>
-        </li>
-    </ul>
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ EXTENSIONS_RULES }}">Rules and Guidelines</a>
+		</li>
+	</ul>
 
-    <div id="main">
-        <h2 class="imgrep mods">Extension Validation Policy</h2>
+	<div id="main">
+		<h2 class="imgrep mods">Extension Validation Policy</h2>
 		<p>The following policies should be followed when developing extensions for phpBB. This ensures consistent and quality code that is up to standard of phpBB. If you have any questions about any of the policies, feel free to discuss them in the <a href="{{ forum_extensions_31x_writers }}">Extension Writers Forum</a>.</p>
 
-        <h3>1. General</h3>
+		<h3>1. General</h3>
 		<ol>
 			<li>Avoid using the deprecated functions from phpBB 3.0. View updated functions from the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>.</li>
 			<li>
@@ -90,14 +90,14 @@
 				
 				<br />
 				
-                <dl class="codebox">
-                    <dt>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></dt>
-                    <dd><code>
+				<dl class="codebox">
+					<dt>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></dt>
+					<dd><code>
 &lt;!-- IF not $INCLUDEDED_HIGHSLIDEJS --&gt;
    &lt;script type=&quot;text/javascript&quot; src=&quot;highslide-full.js&quot;&gt;&lt;/script&gt;
    &lt;!-- DEFINE $INCLUDEDED_HIGHSLIDEJS = true --&gt;
 &lt;!-- ENDIF --&gt;<br /></code></dd>
-                </dl>
+				</dl>
 				
 				<br />
 				Some example template varaible definitions to use with common libraries:
@@ -131,10 +131,10 @@
 			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files contained in their respective directories.</li>
 		</ol>			
 
-    </div>
+	</div>
 
-    <div id="extras">
-        {{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-    </div>
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+	</div>
 </div>
 {% endblock %}

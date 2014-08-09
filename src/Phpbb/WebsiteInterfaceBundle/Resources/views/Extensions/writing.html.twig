@@ -3,28 +3,28 @@
 {% block title %}Writing Extensions{% endblock title %}
 
 {% block body %}
-    <div id="page-body">
+	<div id="page-body">
 
-        <ul class="linklist navlinks">
-            <li><a href="{{ home_path }}">Home</a>
-                <strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
-                <strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
-                <strong>&#8249;</strong> <a href="{{ extensions_writing }}">Writing Extensions</a>
-            </li>
-        </ul>
+		<ul class="linklist navlinks">
+			<li><a href="{{ home_path }}">Home</a>
+				<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+				<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+				<strong>&#8249;</strong> <a href="{{ extensions_writing }}">Writing Extensions</a>
+			</li>
+		</ul>
 
-        <div id="main">
-            <h2 class="imgrep mods">Writing Extensions</h2>
-            <p>If you are an existing developer or a phpBB board owner thinking about learning PHP there has been no better time to get involved in the MOD community. The extensions system for edit-less changes in phpBB 3.1 "Ascraeus" makes customising phpBB easier than ever. Existing MOD developers will be glad to know that the best parts of phpBB development such as the powerful DBAL, templating and language systems have been retained for phpBB 3.1, so the transition from writing MODs to extensions is a smooth one.</p>
+		<div id="main">
+			<h2 class="imgrep mods">Writing Extensions</h2>
+			<p>If you are an existing developer or a phpBB board owner thinking about learning PHP there has been no better time to get involved in the MOD community. The extensions system for edit-less changes in phpBB 3.1 "Ascraeus" makes customising phpBB easier than ever. Existing MOD developers will be glad to know that the best parts of phpBB development such as the powerful DBAL, templating and language systems have been retained for phpBB 3.1, so the transition from writing MODs to extensions is a smooth one.</p>
 
-            <h2 class="title">Overview</h2>
-            <p>Extensions are the natural successor to modifications, the development and support of which have defined the community's involvement in the phpBB project for over a decade. Unlike modifications, which often required a developer to alter the phpBB codebase to achieve a desired functionality, extensions enable a developer to develop new functionality for phpBB that is self-contained and void of actual code changes. As such, administrators wishing to include new functionality on their boards simply have to upload a set of files (the “extension”) to their webspace and do not have to concern themselves with editing any files.</p>
+			<h2 class="title">Overview</h2>
+			<p>Extensions are the natural successor to modifications, the development and support of which have defined the community's involvement in the phpBB project for over a decade. Unlike modifications, which often required a developer to alter the phpBB codebase to achieve a desired functionality, extensions enable a developer to develop new functionality for phpBB that is self-contained and void of actual code changes. As such, administrators wishing to include new functionality on their boards simply have to upload a set of files (the “extension”) to their webspace and do not have to concern themselves with editing any files.</p>
 
-            <h2 class="title">How to write an extension</h2>
-            <p>The example detailed below will demonstrate how to write a basic extension that will add a new page to a board that will simply display “Hello world!” or “Goodbye world!” based on the option set in the ACP. This extension touches on all the basic principles that can apply to any other type of extension, including adding a front-controller page, modifying phpBB through core events and template events, modifying the database using migrations, and installing an ACP module with config settings for the extension.</p>
-            <p>The first step is to find the ext/ directory, located within the phpBB root (the same location as viewtopic.php, viewforum.php, index.php, etc). Inside ext/, create a new directory called acme/ (the vendor name associated with the extension, e.g., your phpBB username) and inside acme/, create another folder called demo/ (the name of the extension). Note that due to internal logic inside the code, vendor and extension names may ONLY contain numbers and letters. Underscores, dashes, and other characters are NOT permitted.</p>
-            <p>When the directory is created, a composer.json file needs to be constructed. This is a meta data file which details information specific to the extension, similar to the beginning section of a MODX file. The layout of the file is as follows:</p>
-            <pre>
+			<h2 class="title">How to write an extension</h2>
+			<p>The example detailed below will demonstrate how to write a basic extension that will add a new page to a board that will simply display “Hello world!” or “Goodbye world!” based on the option set in the ACP. This extension touches on all the basic principles that can apply to any other type of extension, including adding a front-controller page, modifying phpBB through core events and template events, modifying the database using migrations, and installing an ACP module with config settings for the extension.</p>
+			<p>The first step is to find the ext/ directory, located within the phpBB root (the same location as viewtopic.php, viewforum.php, index.php, etc). Inside ext/, create a new directory called acme/ (the vendor name associated with the extension, e.g., your phpBB username) and inside acme/, create another folder called demo/ (the name of the extension). Note that due to internal logic inside the code, vendor and extension names may ONLY contain numbers and letters. Underscores, dashes, and other characters are NOT permitted.</p>
+			<p>When the directory is created, a composer.json file needs to be constructed. This is a meta data file which details information specific to the extension, similar to the beginning section of a MODX file. The layout of the file is as follows:</p>
+			<pre>
 {
 	"name": "acme/demo",
 	"type": "phpbb-extension",
@@ -44,19 +44,19 @@
 	},
 	"extra": {
 		"display-name": "Acme Demo Extension",
-        "soft-require" : {
-            "phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
-        }
+		"soft-require" : {
+			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		}
 	}
 }
-            </pre>
-        <br /><br />
-        <p>The information in this file will be used by the Extensions Manager. The Extensions Manager is an ACP feature that will allow extensions to be enabled, disabled or purged (meaning any database changes introduced by an extension will be reverted).</p>
+			</pre>
+		<br /><br />
+		<p>The information in this file will be used by the Extensions Manager. The Extensions Manager is an ACP feature that will allow extensions to be enabled, disabled or purged (meaning any database changes introduced by an extension will be reverted).</p>
 
-        <h2 class="title">ext.php - Extending the base class</h2>
-        <p>Developers can extend \phpbb\extension\base if they wish to by creating an ext.php file. Otherwise, an ext.php does not need to be created. The acme-demo extension does not extend \phpbb\extension\base, and generally this would not be required for most extensions. Extending \phpbb\extension\base permits for custom code to be executed during the enabling, disabling or purging of an extension.</p>
-        <p>For example, suppose an extension was to perform a unique action upon being enabled such as connecting to a webservice and processing an XML dataset. This is easily achieved by overriding the enable_step function.</p>
-        <pre>
+		<h2 class="title">ext.php - Extending the base class</h2>
+		<p>Developers can extend \phpbb\extension\base if they wish to by creating an ext.php file. Otherwise, an ext.php does not need to be created. The acme-demo extension does not extend \phpbb\extension\base, and generally this would not be required for most extensions. Extending \phpbb\extension\base permits for custom code to be executed during the enabling, disabling or purging of an extension.</p>
+		<p>For example, suppose an extension was to perform a unique action upon being enabled such as connecting to a webservice and processing an XML dataset. This is easily achieved by overriding the enable_step function.</p>
+		<pre>
 &lt;?php
 
 namespace acme\demo;
@@ -81,18 +81,18 @@ class ext extends \phpbb\extension\base
 	}
 }
 </pre>
-            <br /><br />
-            <p>In the case of processing the XML dataset returned by the webservice, the execution time could potentially be very large depending on the size of the dataset. The extension code in phpBB has a contingency for this; if the returned value from enable_step is not false, then the returned value will be serialised and stored in the database [1]. This allows for a large process to be paused and resumed, as the last known state will be deserialised when enable_step is called again. This could be effected by the script redirecting on to itself as enable_step will continue to be executed until such time as false is returned.</p>
-            <p>Essentially, by extending \phpbb\extension\base and overriding any of the available functions (disable_step and purge_step can be used in a similar way to enable_step as mentioned above) the functionality is available to perform script execution in a series of steps.</p>
+			<br /><br />
+			<p>In the case of processing the XML dataset returned by the webservice, the execution time could potentially be very large depending on the size of the dataset. The extension code in phpBB has a contingency for this; if the returned value from enable_step is not false, then the returned value will be serialised and stored in the database [1]. This allows for a large process to be paused and resumed, as the last known state will be deserialised when enable_step is called again. This could be effected by the script redirecting on to itself as enable_step will continue to be executed until such time as false is returned.</p>
+			<p>Essentially, by extending \phpbb\extension\base and overriding any of the available functions (disable_step and purge_step can be used in a similar way to enable_step as mentioned above) the functionality is available to perform script execution in a series of steps.</p>
 
-            <h2 class="title">Controllers - Writing the main functionality for pages</h2>
-            <p>For all extensions that are to display a user interface, the core functionality for an extension needs to be included in controller files. Controller files may be placed anywhere inside an extension’s directory structure, although for optimal organization it is best to place them either in the root of an extension or in a separate folder named controller/ as in the acme-demo extension. Controller files may also be given any name, such as main.php in the acme-demo.</p>
-            <p>The main function is called handle(). This is a function whose purpose is to handle the request to display pages. There is no need to declare the standard phpBB globals ($user, $db, etc) by virtue of this being handled by dependency injection. All global variables have been defined in the main.php class constructor and most importantly, in the services definition file found in config/services.yml.</p>
+			<h2 class="title">Controllers - Writing the main functionality for pages</h2>
+			<p>For all extensions that are to display a user interface, the core functionality for an extension needs to be included in controller files. Controller files may be placed anywhere inside an extension’s directory structure, although for optimal organization it is best to place them either in the root of an extension or in a separate folder named controller/ as in the acme-demo extension. Controller files may also be given any name, such as main.php in the acme-demo.</p>
+			<p>The main function is called handle(). This is a function whose purpose is to handle the request to display pages. There is no need to declare the standard phpBB globals ($user, $db, etc) by virtue of this being handled by dependency injection. All global variables have been defined in the main.php class constructor and most importantly, in the services definition file found in config/services.yml.</p>
 
-            <h2 class="title">Services</h2>
-            <p>The services.yml is a YAML file used to define the services that will be used in the PHP files of an extension. For the main.php file, which requires the $config, $template, $user and $controller_helper global variables (aka services), the YAML code looks like:</p>
-            <pre>
-    services:
+			<h2 class="title">Services</h2>
+			<p>The services.yml is a YAML file used to define the services that will be used in the PHP files of an extension. For the main.php file, which requires the $config, $template, $user and $controller_helper global variables (aka services), the YAML code looks like:</p>
+			<pre>
+	services:
     acme.demo.controller:
         class: acme\demo\controller\main
         arguments:
@@ -100,28 +100,28 @@ class ext extends \phpbb\extension\base
             - @controller.helper
             - @template
             - @user
-                </pre>
+				</pre>
 
-            <br /><br />
-            <p>Note that acme.demo.controller is the unique name for our main.php class. This name can be whatever you want, but phpBB extensions should preface them with the vendor name (in this case, acme) to prevent potential conflicts with other extensions or core services. The class is simply the namespaced path to the main.php file. The arguments are each service required. It is important that the order of the services listed here exactly match the order of these services as arguments in the main.php constructor.</p>
+			<br /><br />
+			<p>Note that acme.demo.controller is the unique name for our main.php class. This name can be whatever you want, but phpBB extensions should preface them with the vendor name (in this case, acme) to prevent potential conflicts with other extensions or core services. The class is simply the namespaced path to the main.php file. The arguments are each service required. It is important that the order of the services listed here exactly match the order of these services as arguments in the main.php constructor.</p>
 
-            <h2 class="title">Routing</h2>
-            <p>One final aspect of controller files is accessing them from a URL. The acme-demo page is accessed from ./app.php/demo (all extension controller files are accessed via app.php). The routing.yml, located in the config/ folder, allows us to define the URLs that will access our controller files. The YAML code for this looks like:</p>
+			<h2 class="title">Routing</h2>
+			<p>One final aspect of controller files is accessing them from a URL. The acme-demo page is accessed from ./app.php/demo (all extension controller files are accessed via app.php). The routing.yml, located in the config/ folder, allows us to define the URLs that will access our controller files. The YAML code for this looks like:</p>
 
-            <pre>demo_controller:
+			<pre>demo_controller:
     pattern: /demo/{name}
     defaults: { _controller: acme.demo.controller:handle }
-            </pre>
+			</pre>
 
-            <br /><br />
+			<br /><br />
 
-            <p>The first item, demo_controller, is a unique name for this routing, and can be named whatever we want. This name is used by the controller_helper class to generate the link to this routing, by calling $controller_helper->route(‘demo_controller’). The pattern is used to define what the url should look like after app.php, in this case /demo/{name} where name is a URL parameter variable. For example, the URL ./app.php/demo/hello would be similar to ./app.php/demo?name=hello. The routing YAML allows us to define URLs with various patterns leading to controller classes, and/or to specific methods within controller classes. The defaults definition above specifies that the demo_controller routing should point to the handle method in our acme.demo.controller service, and pass any {name} URL parameter to the handle method (you can see the handle method accepts $name as an argument).</p>
+			<p>The first item, demo_controller, is a unique name for this routing, and can be named whatever we want. This name is used by the controller_helper class to generate the link to this routing, by calling $controller_helper->route(‘demo_controller’). The pattern is used to define what the url should look like after app.php, in this case /demo/{name} where name is a URL parameter variable. For example, the URL ./app.php/demo/hello would be similar to ./app.php/demo?name=hello. The routing YAML allows us to define URLs with various patterns leading to controller classes, and/or to specific methods within controller classes. The defaults definition above specifies that the demo_controller routing should point to the handle method in our acme.demo.controller service, and pass any {name} URL parameter to the handle method (you can see the handle method accepts $name as an argument).</p>
 
-            <h2 class="title">Including files</h2>
-            <p>As part of phpBB's shift towards widespread use of object orientation, it is advisable for developers to make use of classes to organise data where appropriate. Although the acme-demo extension does not use them, more complex extensions are encouraged to store related functions in classes, and classes in their own files.</p>
-            <p>Separate class files from the controller class are encouraged, and using object orientation, they can be called upon within the controller file(s) as needed. In addition, properly namespaced classes are auto-loaded by phpBB, meaning that accessor functions do not need to be made for them to be accessible to other classes.</p>
-            <p>The naming of classes is important for consistency. All classes should be namespaced and have a direct class to path name mapping; in other words the namespace and class name must be inclusive of the directory structure. For example:</p>
-            <pre>
+			<h2 class="title">Including files</h2>
+			<p>As part of phpBB's shift towards widespread use of object orientation, it is advisable for developers to make use of classes to organise data where appropriate. Although the acme-demo extension does not use them, more complex extensions are encouraged to store related functions in classes, and classes in their own files.</p>
+			<p>Separate class files from the controller class are encouraged, and using object orientation, they can be called upon within the controller file(s) as needed. In addition, properly namespaced classes are auto-loaded by phpBB, meaning that accessor functions do not need to be made for them to be accessible to other classes.</p>
+			<p>The naming of classes is important for consistency. All classes should be namespaced and have a direct class to path name mapping; in other words the namespace and class name must be inclusive of the directory structure. For example:</p>
+			<pre>
 &lt;?php
 
 namespace acme\demo\controller;
@@ -131,58 +131,58 @@ class main
 }
 </pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>is located in the /ext/acme/demo/controller/ directory and the name of the class file is main.php.</p>
-        <p>The phpBB 3.1 coding standard states that the closing ?> is not required in PHP files, and all files should contain one extra blank line at the bottom.</p>
+		<p>is located in the /ext/acme/demo/controller/ directory and the name of the class file is main.php.</p>
+		<p>The phpBB 3.1 coding standard states that the closing ?> is not required in PHP files, and all files should contain one extra blank line at the bottom.</p>
 
-        <h2 class="title">Modifying Existing Functionality</h2>
-        <p>phpBB 3.1 uses a system of events to allow extensions the ability to modify existing functionality by inserting new code and/or modifying variables throughout the codebase and template files. There are two types of events: core events and template events.</p>
-        <p>Core events allow extensions to hook into phpBB’s PHP code at specific locations. These events often provide variables from the core that can be used and modified by the extension, or events can be used simply as a means to inject some additional new PHP code. Extensions do this by using event listeners, located at .ext/acme/demo/events.</p>p>
-        <p>For example, the acme-demo needs to add a link for its controller page to the header navlinks bar, next to the FAQ link. In main_listener.php there is a method called add_page_header_link() that has been subscribed to the core.page_header event. This method receives as its argument an $event variable, an array of all the variables from the core.page_header event which can be used and modified. For this example we do not need to do anything other than create a new template variable for our link that will be inserted into the core at this event location.</p>
-        <p>The load_language_on_setup() method in the main_listener.php is an example where the $event data passed to it is manipulated, in order to add additional language file data to the core.user_setup event.</p>
-        <p>Template events allow extensions to insert template code into event locations found throughout the template structure. Template events found inside phpBB’s template files look like:</p>
+		<h2 class="title">Modifying Existing Functionality</h2>
+		<p>phpBB 3.1 uses a system of events to allow extensions the ability to modify existing functionality by inserting new code and/or modifying variables throughout the codebase and template files. There are two types of events: core events and template events.</p>
+		<p>Core events allow extensions to hook into phpBB’s PHP code at specific locations. These events often provide variables from the core that can be used and modified by the extension, or events can be used simply as a means to inject some additional new PHP code. Extensions do this by using event listeners, located at .ext/acme/demo/events.</p>p>
+		<p>For example, the acme-demo needs to add a link for its controller page to the header navlinks bar, next to the FAQ link. In main_listener.php there is a method called add_page_header_link() that has been subscribed to the core.page_header event. This method receives as its argument an $event variable, an array of all the variables from the core.page_header event which can be used and modified. For this example we do not need to do anything other than create a new template variable for our link that will be inserted into the core at this event location.</p>
+		<p>The load_language_on_setup() method in the main_listener.php is an example where the $event data passed to it is manipulated, in order to add additional language file data to the core.user_setup event.</p>
+		<p>Template events allow extensions to insert template code into event locations found throughout the template structure. Template events found inside phpBB’s template files look like:</p>
 
-        <pre>&lt;!-- EVENT overall_header_head_append --&gt;</pre>
+		<pre>&lt;!-- EVENT overall_header_head_append --&gt;</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>All that is needed to use a template event, is to name your template file the same as the event you want to use, and place your template event file in an “event” folder inside your style’s template folder. For example, the above template event could be used to add some CSS style script to the header.</p>
-        <p>The template file would be located at: ./ext/acme/demo/styles/prosilver/template/event/overall_header_head_append.html</p>
-        <p>A special case for including CSS files and JS files exists. These use the &lt;!-- INCLUDECSS --&gt; and &lt;!-- INCLUDEJS --&gt; syntax, respectively.</p>
-        <p>For example:</p>
-        <p>To include this file in prosilver: ./ext/acme/demo/styles/prosilver/theme/custom.css</p>
-        <p>A template event would be created at:</p>
-        <p>./ext/acme/demo/styles/prosilver/template/event/overall_header_head_append.html</p>
-        <p>It would contain the following line of code:</p>
-        <pre>&lt;!-- INCLUDECSS ../theme/custom.css --&gt;</pre>
-        <br /><br />
-        <p>To include this file in all styles: ./ext/acme/demo/styles/all/js/scripts.js</p>
-        <p>A template event would be created at:</p>
-        <p>./ext/acme/demo/styles/all/template/event/overall_footer_after.html</p>
-        <p>It would contain the following line of code:</p>
-        <pre>&lt;!-- INCLUDEJS @acme_demo/js/scripts.js --&gt;</pre>
-        <br /><br />
-        <p>phpBB’s core PHP and template files have been prepared with dozens of event locations. However, if there are no events where your extension may need one, the phpBB developer team welcomes event requests, which can be made at area51.com.</p>
+		<p>All that is needed to use a template event, is to name your template file the same as the event you want to use, and place your template event file in an “event” folder inside your style’s template folder. For example, the above template event could be used to add some CSS style script to the header.</p>
+		<p>The template file would be located at: ./ext/acme/demo/styles/prosilver/template/event/overall_header_head_append.html</p>
+		<p>A special case for including CSS files and JS files exists. These use the &lt;!-- INCLUDECSS --&gt; and &lt;!-- INCLUDEJS --&gt; syntax, respectively.</p>
+		<p>For example:</p>
+		<p>To include this file in prosilver: ./ext/acme/demo/styles/prosilver/theme/custom.css</p>
+		<p>A template event would be created at:</p>
+		<p>./ext/acme/demo/styles/prosilver/template/event/overall_header_head_append.html</p>
+		<p>It would contain the following line of code:</p>
+		<pre>&lt;!-- INCLUDECSS ../theme/custom.css --&gt;</pre>
+		<br /><br />
+		<p>To include this file in all styles: ./ext/acme/demo/styles/all/js/scripts.js</p>
+		<p>A template event would be created at:</p>
+		<p>./ext/acme/demo/styles/all/template/event/overall_footer_after.html</p>
+		<p>It would contain the following line of code:</p>
+		<pre>&lt;!-- INCLUDEJS @acme_demo/js/scripts.js --&gt;</pre>
+		<br /><br />
+		<p>phpBB’s core PHP and template files have been prepared with dozens of event locations. However, if there are no events where your extension may need one, the phpBB developer team welcomes event requests, which can be made at area51.com.</p>
 
-        <h2 class="title">Languages</h2>
-        <p>Language entries can be included with the extension, but to reference the correct language file the add_lang_ext function needs to be called. It takes two arguments, the first being the vendor/package and the second being the name of the language file (the PHP file) or an array of language file names.</p>
+		<h2 class="title">Languages</h2>
+		<p>Language entries can be included with the extension, but to reference the correct language file the add_lang_ext function needs to be called. It takes two arguments, the first being the vendor/package and the second being the name of the language file (the PHP file) or an array of language file names.</p>
 
-        <pre>// Handle language
+		<pre>// Handle language
 $this->user->add_lang_ext(‘acme/demo’, ‘common’);</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>This would correspond to ext/acme/demo/language/en/common.php (for an English language file).</p>
+		<p>This would correspond to ext/acme/demo/language/en/common.php (for an English language file).</p>
 
-        <pre>$this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’));</pre>
+		<pre>$this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’));</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>This would load the two corresponding language files: /ext/acme/demo/language/en/common.php and /ext/acme/demo/language/en/controller.php</p>
+		<p>This would load the two corresponding language files: /ext/acme/demo/language/en/common.php and /ext/acme/demo/language/en/controller.php</p>
 
-        <p>While this ability to load language files at any point in your extension’s code when they may be needed is convenient, there are special core events for loading language files too. The core.user_setup event can be used to load language files that need to be available at all times. And a special core.permissions event should be used to load a special language file that contains translations for phpBB’s permissions system. For example:</p>
-        <pre>&lt;php
+		<p>While this ability to load language files at any point in your extension’s code when they may be needed is convenient, there are special core events for loading language files too. The core.user_setup event can be used to load language files that need to be available at all times. And a special core.permissions event should be used to load a special language file that contains translations for phpBB’s permissions system. For example:</p>
+		<pre>&lt;php
 
 // Sample permissions language file
 if (empty($lang) || !is_array($lang))
@@ -194,49 +194,49 @@ $lang = array_merge($lang, array(
 	'ACL_A_STATISTICS'		=> 'Can manage statistics',
 ));</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <h2 class="title">Templates</h2>
-        <p>Templating for extensions is no different to templating for phpBB3 in general. phpBB 3.1 has switched to the TWIG template engine but retains phpBB’s original templating syntax. Therefor, both phpBB and TWIG template syntaxes are permissible in an extension. If you are not familiar with TWIG, you may use phpBB’s syntax (phpBB 3.1’s core template files are all written using phpBB syntax).</p>
-        <p>Like language files, template files can be included with the extension and should be organized in a fashion similar to phpBB’s template files. The /styles/ folder should contain folders for each style you have written template files for. For example, prosilver and subsilver2. Any style that inherits from prosilver, will inherit from your extension’s prosilver folder as well. A special “all” folder can also be used to contain template files that can be used with any and all styles (a common JS file, for example). Template files for the ACP should be stored in the /adm/style/ location, similar to phpBB’s structure.</p>
-        <p>Including an extensions template file is handled by the controller_helper’s render method:</p>
+		<h2 class="title">Templates</h2>
+		<p>Templating for extensions is no different to templating for phpBB3 in general. phpBB 3.1 has switched to the TWIG template engine but retains phpBB’s original templating syntax. Therefor, both phpBB and TWIG template syntaxes are permissible in an extension. If you are not familiar with TWIG, you may use phpBB’s syntax (phpBB 3.1’s core template files are all written using phpBB syntax).</p>
+		<p>Like language files, template files can be included with the extension and should be organized in a fashion similar to phpBB’s template files. The /styles/ folder should contain folders for each style you have written template files for. For example, prosilver and subsilver2. Any style that inherits from prosilver, will inherit from your extension’s prosilver folder as well. A special “all” folder can also be used to contain template files that can be used with any and all styles (a common JS file, for example). Template files for the ACP should be stored in the /adm/style/ location, similar to phpBB’s structure.</p>
+		<p>Including an extensions template file is handled by the controller_helper’s render method:</p>
 
-        <pre>return $controller_helper->render('demo_body.html', $name);</pre>
+		<pre>return $controller_helper->render('demo_body.html', $name);</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>The first argument is the name of the template file, and the optional second argument is the page title. In this example, the demo_body.html is located in ./ext/acme/demo/styles/prosilver/template (for prosilver). For the ACP template, things are handled using coding familiar to MOD authors. The ACP template file ‘demo_body.html’ is located in .ext/acme/demo/adm/style/ and is loaded in the acp/main_module.php by:</p>
-        <pre>$user->add_lang('acp/common');
+		<p>The first argument is the name of the template file, and the optional second argument is the page title. In this example, the demo_body.html is located in ./ext/acme/demo/styles/prosilver/template (for prosilver). For the ACP template, things are handled using coding familiar to MOD authors. The ACP template file ‘demo_body.html’ is located in .ext/acme/demo/adm/style/ and is loaded in the acp/main_module.php by:</p>
+		<pre>$user->add_lang('acp/common');
 $this->tpl_name = 'demo_body';
 $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>If a standard phpBB template filename is used as an extension template, then this will override the template file from phpBB. Therefore it is important to be mindful of this when naming template files. Overriding template files is not advisable for publicly released extensions as it could conflict with other extensions.</p>
+		<p>If a standard phpBB template filename is used as an extension template, then this will override the template file from phpBB. Therefore it is important to be mindful of this when naming template files. Overriding template files is not advisable for publicly released extensions as it could conflict with other extensions.</p>
 
-        <h2 class="title">Migrations</h2>
+		<h2 class="title">Migrations</h2>
 
-        <p>Migrations are a new way of facilitating database changes, much in the same way UMIL was used in phpBB 3.0. Through Migrations, developers will be able to handle processes such as creating new tables or adding new permissions and other data to the database.</p>
-        <p>Migrations have two primary methods for facilitating database changes: update_schema() and update_data(). As their names suggest, update_schema is for facilitating schema changes, such as adding new tables, columns and fields. The update_data method is for inserting, updating and dropping field data. Each of these methods also has a revert_ method to specify the changes to be made during the purge step of removing an extension. The update_data() method is automatically reverted during a purge step, though there may be times where additional changes may need to be defined using the revert_data() method. The revert_schema() method should always be including to revet any changes introduced by the update_schema() method.</p>
-        <p>There are a few migration tools to facilitate database changes.</p>
-        <p>Config tool: The config tool helps adding, updating, and removing config settings.</p>
-        <pre>public function update_data()
+		<p>Migrations are a new way of facilitating database changes, much in the same way UMIL was used in phpBB 3.0. Through Migrations, developers will be able to handle processes such as creating new tables or adding new permissions and other data to the database.</p>
+		<p>Migrations have two primary methods for facilitating database changes: update_schema() and update_data(). As their names suggest, update_schema is for facilitating schema changes, such as adding new tables, columns and fields. The update_data method is for inserting, updating and dropping field data. Each of these methods also has a revert_ method to specify the changes to be made during the purge step of removing an extension. The update_data() method is automatically reverted during a purge step, though there may be times where additional changes may need to be defined using the revert_data() method. The revert_schema() method should always be including to revet any changes introduced by the update_schema() method.</p>
+		<p>There are a few migration tools to facilitate database changes.</p>
+		<p>Config tool: The config tool helps adding, updating, and removing config settings.</p>
+		<pre>public function update_data()
 {
     return array(
-         array('config.add’, array('acme_demo_goodbye', 0)),
+        array('config.add’, array('acme_demo_goodbye', 0)),
     );
 }</pre>
-        <br /><br />
+		<br /><br />
 
-        <p>Module tool: The module tool helps adding and removing modules (ACP, MCP, UCP modules).</p>
-        <pre>public function update_data()
+		<p>Module tool: The module tool helps adding and removing modules (ACP, MCP, UCP modules).</p>
+		<pre>public function update_data()
 {
     return array(
         array('module.add', array(
             'acp',
             'ACP_CAT_DOT_MODS',
             'ACP_CAT_TEST_MOD'
-       )),
+        )),
         array('module.add', array(
             'acp',
             'ACP_CAT_TEST_MOD',
@@ -248,52 +248,52 @@ $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
     ));
 }</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>Permission tool: The permission tool helps adding, removing, setting, and unsetting permissions and adding or removing permission roles.</p>
-        <pre>public function update_data()
+		<p>Permission tool: The permission tool helps adding, removing, setting, and unsetting permissions and adding or removing permission roles.</p>
+		<pre>public function update_data()
 {
     return array(
-         array('permission.add', array('a_new')),
+        array('permission.add', array('a_new')),
 }</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>Migrations have two additional important methods to facilitate running them in the correct sequential order and prevent overwriting existing data.</p>
-        <p>The depends_on() method is used to define a Migrations dependencies. Dependencies tell the Migrator what order Migrations must be installed in. In the acme-demo Migration files, the release_1_0_1 migration depends on release_1_0_0. This is set in the release_1_0_1 depends_on() method:</p>
-        <pre>static public function depends_on()
+		<p>Migrations have two additional important methods to facilitate running them in the correct sequential order and prevent overwriting existing data.</p>
+		<p>The depends_on() method is used to define a Migrations dependencies. Dependencies tell the Migrator what order Migrations must be installed in. In the acme-demo Migration files, the release_1_0_1 migration depends on release_1_0_0. This is set in the release_1_0_1 depends_on() method:</p>
+		<pre>static public function depends_on()
 {
 	return array('\acme\demo\migrations\release_1_0_0');
 }
 </pre>
 
-        <br /><br />
+		<br /><br />
 
-        <p>The effectively_installed() method is used primarily to help transition from a previous database installer method (such as a MOD that used UMIL) to Migrations. If it returns true, the Migration is marked as installed without applying any changes. In the following example the migration file would not be applied if the specified config value already exists in the database:</p>
-        <pre>public function effectively_installed()
+		<p>The effectively_installed() method is used primarily to help transition from a previous database installer method (such as a MOD that used UMIL) to Migrations. If it returns true, the Migration is marked as installed without applying any changes. In the following example the migration file would not be applied if the specified config value already exists in the database:</p>
+		<pre>public function effectively_installed()
 {
 	return isset($this->config['acme_demo_goodbye']);
 }</pre>
 
-        <br /><br />
+		<br /><br />
 
-        <h2 class="title">Notes</h2>
-        <p>1. The serialised data is stored in the phpbb_ext table under the ext_state field. Developers should never manipulate this field directly as the serialisation is handled internally by phpBB.</p>
+		<h2 class="title">Notes</h2>
+		<p>1. The serialised data is stored in the phpbb_ext table under the ext_state field. Developers should never manipulate this field directly as the serialisation is handled internally by phpBB.</p>
 
-        <h2 class="title">Additional Resources</h2>
-        <p>
-            Extensions Wiki: <a href="https://wiki.phpbb.com/Category:Extensions">https://wiki.phpbb.com/Category:Extensions</a><br />
-            Extensions in Development Forum: <a href="https://www.phpbb.com/community/viewforum.php?f=456">https://www.phpbb.com/community/viewforum.php?f=456</a><br />
-            Extension Writers Forum: <a href="https://www.phpbb.com/community/viewforum.php?f=461">https://www.phpbb.com/community/viewforum.php?f=461</a><br />
-            Coding Guidelines: <a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html">https://area51.phpbb.com/docs/31x/coding-guidelines.html</a>
-        </p>
+		<h2 class="title">Additional Resources</h2>
+		<p>
+			Extensions Wiki: <a href="https://wiki.phpbb.com/Category:Extensions">https://wiki.phpbb.com/Category:Extensions</a><br />
+			Extensions in Development Forum: <a href="https://www.phpbb.com/community/viewforum.php?f=456">https://www.phpbb.com/community/viewforum.php?f=456</a><br />
+			Extension Writers Forum: <a href="https://www.phpbb.com/community/viewforum.php?f=461">https://www.phpbb.com/community/viewforum.php?f=461</a><br />
+			Coding Guidelines: <a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html">https://area51.phpbb.com/docs/31x/coding-guidelines.html</a>
+		</p>
 
-        </div>
+		</div>
 
-        <br />
+		<br />
 
-        <div id="extras">
-            {{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-        </div>
-    </div>
+		<div id="extras">
+			{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+		</div>
+	</div>
 {% endblock %}
