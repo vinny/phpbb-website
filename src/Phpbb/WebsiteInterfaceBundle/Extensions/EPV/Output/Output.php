@@ -1,9 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: paulsohier
- * Date: 02-08-14
- * Time: 18:44
+ *
+ * @package PhpbbWebsiteInterfaceBundle
+ * @copyright (c) 2013 phpBB Group
+ * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
+ * @author Paul
+ *
  */
 
 namespace Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output;
