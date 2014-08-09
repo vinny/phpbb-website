@@ -15,8 +15,19 @@ use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Output implements OutputInterface{
+	const TYPE_HTML = 1;
+	const TYPE_BBCODE = 2;
 
 	private $buffer = "";
+	private $type;
+
+	/**
+	 * @param int $type Output type (HTML or BBCode)
+	 */
+	public function __constructor($type = Output::TYPE_HTML)
+	{
+		$this->type = $type;
+	}
 
 	/**
 	 * Writes a message to the output.
