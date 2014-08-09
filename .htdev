@@ -78,7 +78,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/var/www/new.phpbb.com/htdocs/symfony/web
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
 
-RewriteCond %{REQUEST_URI} ^/mods/
+RewriteCond %{REQUEST_URI} ^/mods/$
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
 
 RewriteCond %{REQUEST_URI} ^/mods/{0,1}.*
