@@ -3,75 +3,75 @@
 {% block title %}Extensions{% endblock title %}
 
 {% block body %}
-    <div id="page-body">
+<div id="page-body">
 
-        <ul class="linklist navlinks">
-            <li><a href="{{ home_path }}">Home</a>
-                <strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
-                <strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
-                <strong>&#8249;</strong> <a href="{{ EXTENSIONS_EPV }}">EPV</a>
+    <ul class="linklist navlinks">
+        <li><a href="{{ home_path }}">Home</a>
+            <strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+            <strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+            <strong>&#8249;</strong> <a href="{{ EXTENSIONS_EPV }}">EPV</a>
+        </li>
+    </ul>
+
+    <div id="main">
+        <h2 class="imgrep mods">Extensions</h2>
+        <p>The extension pre-validator (EPV) is a tool which is used to validate extensions when submitted to the extension database.
+            The tool checks for common mistakes, guidelines and more. When a extension doesn't pass the pre-validator, it will be denied.
+        </p>
+
+        <h3>Using EPV</h3>
+        <p>
+            It is suggested that extension authors use EPV during development and prior to submitting the extension.
+            EPV supports a few different usages:
+        <ol>
+            <li>This page: Below you can provide the short name of your repository on github, and you can validate it afterwards.</li>
+            <li>You can download EPV from the git repository at <a href="{{ EPV_REPO }}">github</a>. When downloaded, you can run the validator by a single command:
+                <ul>
+                    <li>github's short name:
+                    <pre>
+                        php ./src/Epv/EPV.php --github="paul999/profile-guestbook-ext"
+                    </pre>
+                    </li>
+                    <li>a git repository:
+                    <pre>
+                        php ./src/Epv/EPV.php --git="https://github.com/paul999/profile-guestbook-ext/"
+                    </pre>
+                    </li>
+                    <li>a local directory:
+                    <pre>
+                        php ./src/Epv/EPV.php --dir="/Users/paulsohier/profile-guestbook-ext/"
+                    </pre>
+                    </li>
+                </ul>
+                When adding the --debug option, more information is printed on what happens during validation.
             </li>
-        </ul>
+            <li>When submitting a Extension to the Extension Database. This will happen automaticly.</li>
+            <li>By using travis-ci. Instructions can be found <a href="{{ extensions_epv_instructions }}">here</a></li>
+        </ol>
+        </p>
 
-        <div id="main">
-            <h2 class="imgrep mods">Extensions</h2>
-            <p>The extension pre-validator (EPV) is a tool which is used to validate extensions when submitted to the extension database.
-                The tool checks for common mistakes, guidelines and more. When a extension doesn't pass the pre-validator, it will be denied.
-            </p>
+        <h3>Run EPV on your github repository</h3>
+        {% IF results %}
+        Results:
+<pre>
+    {{ results }}
+</pre>
+        {% ELSE %}
+        <form action="{{ extensions_epv }}" method="post">
+            <input type="text" name="github" />Github short name.<br />
+            <input type="submit" value="Run" />
+        </form>
+        {% ENDIF %}
+        <h3>Reporting bugs</h3>
+        <p>Please report bugs to the bugtracker found <a href="{{ extensions_epv_bugs }}">here</a>.
+        </p>
+        <h3>Contributing to EPV</h3>
+        <p>You can contribute to EPV by forking the <a href="{{ extensions_epv_repo }}">repository</a>. After that make your changes in a new branch and create a pull request.</p>
 
-            <h3>Using EPV</h3>
-            <p>
-                It is suggested that extension authors use EPV during development and prior to submitting the extension.
-                EPV supports a few different usages:
-            <ol>
-                <li>This page: Below you can provide the short name of your repository on github, and you can validate it afterwards.</li>
-                <li>You can download EPV from the git repository at <a href="{{ EPV_REPO }}">github</a>. When downloaded, you can run the validator by a single command:
-                    <ul>
-                        <li>github's short name:
-                        <pre>
-                            php ./src/Epv/EPV.php --github="paul999/profile-guestbook-ext"
-                        </pre>
-                        </li>
-                        <li>a git repository:
-                        <pre>
-                            php ./src/Epv/EPV.php --git="https://github.com/paul999/profile-guestbook-ext/"
-                        </pre>
-                        </li>
-                        <li>a local directory:
-                        <pre>
-                            php ./src/Epv/EPV.php --dir="/Users/paulsohier/profile-guestbook-ext/"
-                        </pre>
-                        </li>
-                    </ul>
-                    When adding the --debug option, more information is printed on what happens during validation.
-                </li>
-                <li>When submitting a Extension to the Extension Database. This will happen automaticly.</li>
-                <li>By using travis-ci. Instructions can be found <a href="{{ extensions_epv_instructions }}">here</a></li>
-            </ol>
-            </p>
-
-            <h3>Run EPV on your github repository</h3>
-            {% IF results %}
-            Results:
-    <pre>
-        {{ results }}
-    </pre>
-            {% ELSE %}
-            <form action="{{ extensions_epv }}" method="post">
-                <input type="text" name="github" />Github short name.<br />
-                <input type="submit" value="Run" />
-            </form>
-            {% ENDIF %}
-            <h3>Reporting bugs</h3>
-            <p>Please report bugs to the bugtracker found <a href="{{ extensions_epv_bugs }}">here</a>.
-            </p>
-            <h3>Contributing to EPV</h3>
-            <p>You can contribute to EPV by forking the <a href="{{ extensions_epv_repo }}">repository</a>. After that make your changes in a new branch and create a pull request.</p>
-
-        </div>
-
-        <div id="extras">
-            {{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-        </div>
     </div>
+
+    <div id="extras">
+        {{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+    </div>
+</div>
 {% endblock %}
