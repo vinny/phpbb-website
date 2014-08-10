@@ -18,12 +18,13 @@
 		<p>The following policies should be followed when developing extensions for phpBB. This ensures consistent and quality code that is up to standard of phpBB. If you have any questions about any of the policies, feel free to discuss them in the <a href="{{ forum_extensions_31x_writers }}">Extension Writers Forum</a>.</p>
 
 		<h3>1. General</h3>
-		<ol>
+		<ol type="a">
 			<li>Avoid using the deprecated functions from phpBB 3.0. View updated functions from the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>.</li>
 			<li>
-				<p>Composer</p>
-				<p>A composer.json file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a></p>
-			</li>
+				<ol>
+				    <li>A composer.json file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a></li>
+                </ol>
+            </li>
 			<li>
 				<p>Coding Guidelines</p>
 				<p>The phpBB 3.1 <a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.</p>
@@ -52,7 +53,7 @@
 		</ol>
 		
 		<h3>2. PHP Files</h3>
-		<ol>
+		<ol type="a">
 			<li>Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description.</li>
 			<li>No un-initialised variables or indices.</li>
 			<li>Proper file headers and php DocBlocks are used.‬‬</li>
@@ -83,21 +84,21 @@
 		</ol>
 
 		<h3>3. Template Files</h3>
-		<ol>
+		<ol type="a">
 			<li>No hard-coded PHP in template files.</li>
 			<li>All prosilver HTML is valid HTML5.</li>
 			<li>English language images are supplied as necessary.</li>
 		</ol>			
 
 		<h3>4. Migrations</h3>
-		<ol>
+		<ol type="a">
 			<li>Database and permission changes should be handled with migrations. All subsequent database changes should be made in new migration files.</li>
 			<li>Old migration files should never be altered or deleted.</li>
 			<li>Extensions should never delete phpBB core tables or columns.</li>
 		</ol>			
 
 		<h3>5. JavaScript</h3>
-		<ol>
+		<ol type="a">
 			<li>Included JavaScript frameworks should use a template <!--DEFINE --> to prevent duplicate inclusion. For example:<br />
 				
 				<br />
@@ -128,13 +129,13 @@
 		</ol>			
 
 		<h3>6. Licenses</h3>
-		<ol>
+		<ol type="a">
 			<li>Extensions should be released under GPL v2. Included frameworks should use GPL v2 or a compatible license. http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility</li>
 			<li>A license.txt file should be included with the extension in the root directory of the extension.</li>
 		</ol>			
 
 		<h3>7. Packaging and Version</h3>
-		<ol>
+		<ol type="a">
 			<li>Extensions are packaged as follows:<br />
 				/vendorname/extensionname/<br >
 				The names should be alphanumeric. (So no dashes or underscores. Capitals are allowed.)<br />
