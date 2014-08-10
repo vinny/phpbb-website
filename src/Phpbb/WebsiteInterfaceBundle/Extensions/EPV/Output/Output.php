@@ -11,13 +11,12 @@
 namespace Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output;
 
 
-use epv\Files\FileInterface;
 use Phpbb\epv\Output\OutputFormatter;
 use SensioLabs\AnsiConverter\AnsiToHtmlConverter;
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Output implements \epv\Output\OutputInterface{
+class Output implements OutputInterface{
 	const TYPE_HTML = 1;
 	const TYPE_BBCODE = 2;
 
@@ -167,79 +166,4 @@ class Output implements \epv\Output\OutputInterface{
 	{
 		return $message;
 	}
-
-	/**
-	 * Write a message to the output, but only if Debug is enabled.
-	 *
-	 * @param $message string|array $messages The message as an array of lines of a single string
-	 *
-	 * @throws \InvalidArgumentException When unknown output type is given
-	 */
-	public function writelnIfDebug($message)
-	{
-		// TODO: Implement writelnIfDebug() method.
-	}
-
-	/**
-	 * Add a new message to the output of the validator.
-	 *
-	 * @param                          $type    int message type
-	 * @param                          $message string message
-	 * @param \epv\Files\FileInterface $file    File the error happened in. When provided, this is displayed to the user
-	 * @param bool                     $skipError
-	 *
-	 * @return
-	 */
-	public function addMessage($type, $message, FileInterface $file = null, $skipError = false)
-	{
-		// TODO: Implement addMessage() method.
-	}
-
-	/**
-	 * Get all messages saved into the message queue.
-	 * @return array Array with messages
-	 */
-	public function getMessages()
-	{
-		// TODO: Implement getMessages() method.
-	}
-
-	/**
-	 * Get the amount of messages that were fatal.
-	 * @return int
-	 */
-	public function getFatalCount()
-	{
-		// TODO: Implement getFatalCount() method.
-	}
-
-	/**
-	 * Set the max progress (Number of tests) for this run.
-	 *
-	 *
-	 * @param $maxProgress int
-	 */
-	public function setMaxProgress($maxProgress)
-	{
-		// TODO: Implement setMaxProgress() method.
-	}
-
-	/**
-	 * Increase the max progress during the run.
-	 *
-	 * @param $inc
-	 */
-	public function inMaxPogress($inc)
-	{
-		// TODO: Implement inMaxPogress() method.
-	}
-
-	/**
-	 * Print the status of this specific test.
-	 *
-	 * @param $result The result for this specific test.
-	 */
-	public function printErrorLevel($result = null)
-	{
-		// TODO: Implement printErrorLevel() method.
-	}}
+}
