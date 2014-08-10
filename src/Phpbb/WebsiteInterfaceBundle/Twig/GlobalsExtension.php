@@ -382,6 +382,8 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_quickinstall'				=> 'https://www.phpbb.com/mods/quickinstall/', //replace later
 			'extensions_phpbb_cgs'					=> 'https://area51.phpbb.com/docs/31x/coding-guidelines.html',
 
+			'extensions_writers_discussion'         => '', //@TODO: Fix me.
+
 			'extensions_rules'						=> '/extensions/rules-and-guidelines/',
 			'extensions_recognised_devs'			=> '/extensions/recognised-developer/',
 			'extensions_offical_exts'				=> '/extensions/official-extensions/',
