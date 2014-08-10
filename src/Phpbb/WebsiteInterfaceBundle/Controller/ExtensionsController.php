@@ -138,7 +138,7 @@ class ExtensionsController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:rules.html.twig', $templateVariables);
 	}
 
-	public function repack()
+	public function repackAction()
 	{
 		// Extensions Rules and Guidelines
 		$templateVariables = array(
