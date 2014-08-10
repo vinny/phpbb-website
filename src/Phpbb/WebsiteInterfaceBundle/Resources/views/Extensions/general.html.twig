@@ -21,29 +21,28 @@
 		<ol type="a">
 			<li>Avoid using the deprecated functions from phpBB 3.0. View updated functions from the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>.</li>
 			<li>
-				<ol>
-				    <li>A composer.json file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a></li>
-                </ol>
+                <h4>Composer:</h4>
+				A composer.json file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>
             </li>
 			<li>
-				<p>Coding Guidelines</p>
-				<p>The phpBB 3.1 <a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.</p>
-			</li>
+				<h4>Coding Guidelines</h4>
+				The phpBB 3.1 <a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.
+            </li>
 			<li>
-				<p>Vendor Prefixing</p>
-				<p>All events, services and/or routes in an extension should be prefixed with the extension's vendor name and package name, e.g.:
-					<ul>
-						<li>Events: vendor.extension.custom_event</li>
-						<li>Services: vendor.extension.custom.service</li>
-						<li>Routes: vendor_extension_custom_route</li>
-					</ul>
-				</p>
-				<p>It is forbidden to use <pre>phpbb</pre> or <pre>core</pre> to prefix events, services and routes.</p>
+				<h4>Vendor Prefixing</h4>
+				All events, services and/or routes in an extension should be prefixed with the extension's vendor name and package name, e.g.:
+                <ol type="I">
+                    <li>Events: vendor.extension.custom_event</li>
+                    <li>Services: vendor.extension.custom.service</li>
+                    <li>Routes: vendor_extension_custom_route</li>
+                </ol>
+
+				It is forbidden to use <strong>phpbb</strong> or <strong>core</strong> to prefix events, services and routes.
 			</li>
 			<li>Extensions should always provide files for the English language and prosilver style.</li>
 			<li>
-				<p>Privacy</p>
-				<p>For privacy reasons it is not allowed to send private information (including but not limited to posts, user information, etc.) to any remote website or remote server. Any extension that does send information to a remote website or remote server will be denied for this reason. Exceptions to this rule, although rare, will be handled on a case-by-case basis.</p>
+				<h4>Privacy</h4>
+				For privacy reasons it is not allowed to send private information (including but not limited to posts, user information, etc.) to any remote website or remote server. Any extension that does send information to a remote website or remote server will be denied for this reason. Exceptions to this rule, although rare, will be handled on a case-by-case basis.
 			</li>
 			
 			<li>Tabs are used instead of spaces for indenting. A tab is defined as four spaces in this instance.</li>
