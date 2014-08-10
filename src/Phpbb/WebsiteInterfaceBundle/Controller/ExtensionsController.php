@@ -193,7 +193,7 @@ class ExtensionsController extends Controller
 		{
 
 			$int_output = new \Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\Output();
-			$output = new Output($int_output, $debug);
+			$output = new \epv\Output\Output($int_output, $debug);
 
 			$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
 			$templateVariables['results'] = $int_output->getBuffer();
