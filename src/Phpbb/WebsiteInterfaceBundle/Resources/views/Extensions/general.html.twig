@@ -28,6 +28,17 @@
 				<p>Coding Guidelines</p>
 				<p>The phpBB 3.1 <a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.</p>
 			</li>
+			<li>
+				<p>Vendor Prefixing</p>
+				<p>All events, services and/or routes in an extension should be prefixed with the extension's vendor name and package name, e.g.:
+					<ul>
+						<li>Events: vendor.extension.custom_event</li>
+						<li>Services: vendor.extension.custom.service</li>
+						<li>Routes: vendor_extension_custom_route</li>
+					</ul>
+				</p>
+				<p>It is forbidden to use <pre>phpbb</pre> or <pre>core</pre> to prefix events, services and routes.</p>
+			</li>
 			<li>Extensions should always provide files for the English language and prosilver style.</li>
 			<li>
 				<p>Privacy</p>
