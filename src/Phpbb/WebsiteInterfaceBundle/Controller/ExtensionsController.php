@@ -128,10 +128,10 @@ class ExtensionsController extends Controller
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 			'policies'		 => array(
-				array('name' => 'Repack Policy', 'description' => 'How we handle repacking of Extensions.', 'link' => '/extensions/rules-and-guidelines/repack'),
-				array('name' => 'Insta Deny Policy', 'description' => 'How we handle Insta-Denies of Extensions.', 'link' => '/extensions/rules-and-guidelines/insta-deny'),
-				array('name' => 'General', 'description' => 'Some general policies on how we handle validation.', 'link' => '/extensions/rules-and-guidelines/general'),
-				//array('name' => 'Validation checklist', 'description' => 'A reference for Extensions Authors to improve the validation process for their Extensions.', 'link' => '/extensions/rules-and-guidelines/checklist'),
+				array('i' => 0, 'name' => 'Repack Policy', 'description' => 'How we handle repacking of Extensions.', 'link' => '/extensions/rules-and-guidelines/repack'),
+				array('i' => 1, 'name' => 'Insta Deny Policy', 'description' => 'How we handle Insta-Denies of Extensions.', 'link' => '/extensions/rules-and-guidelines/insta-deny'),
+				array('i' => 2, 'name' => 'General', 'description' => 'Some general policies on how we handle validation.', 'link' => '/extensions/rules-and-guidelines/general'),
+				//array('i' => 3, 'name' => 'Validation checklist', 'description' => 'A reference for Extensions Authors to improve the validation process for their Extensions.', 'link' => '/extensions/rules-and-guidelines/checklist'),
 			)
 		);
 

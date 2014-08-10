@@ -51,17 +51,17 @@
         </p>
 
         <h3>Run EPV on your github repository</h3>
-        {% IF results %}
+        {% if results %}
         Results:
 <pre>
     {{ results }}
 </pre>
-        {% ELSE %}
+        {% else %}
         <form action="{{ extensions_epv }}" method="post">
             <input type="text" name="github" />Github short name.<br />
             <input type="submit" value="Run" />
         </form>
-        {% ENDIF %}
+        {% endif %}
         <h3>Reporting bugs</h3>
         <p>Please report bugs to the bugtracker found <a href="{{ extensions_epv_bugs }}">here</a>.
         </p>
