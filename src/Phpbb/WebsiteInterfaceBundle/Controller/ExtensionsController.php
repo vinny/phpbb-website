@@ -186,6 +186,8 @@ class ExtensionsController extends Controller
 
 		$github = $request->request->get('github');
 		$debug = $request->request->get('debug');
+		var_dump($github);
+		
 		if ($github)
 		{
 
