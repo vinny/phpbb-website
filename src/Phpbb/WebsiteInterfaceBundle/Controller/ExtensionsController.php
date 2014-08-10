@@ -186,7 +186,7 @@ class ExtensionsController extends Controller
 
 		$github = $request->request->get('github');
 		$debug = $request->request->get('debug');
-		$github = $_POST['github'];
+		$github = isset($_POST['github']?$_POST['github']:null;
 		var_dump($github);
 
 		if ($github)
