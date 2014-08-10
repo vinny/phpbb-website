@@ -39,7 +39,7 @@
 
 					<tbody>
 					{% for policy in policies  %}
-					<tr class="{{ cycle(['bg2', 'bg1'], i) }}">
+					<tr class="{{ cycle(['bg2', 'bg1'], policy.i) }}">
 						<td><strong><a href="{{ policy.link }}">{{ policy.name }}</a></strong></td>
 						<td>{{ policy.description }}</td>
 						<td></td>
