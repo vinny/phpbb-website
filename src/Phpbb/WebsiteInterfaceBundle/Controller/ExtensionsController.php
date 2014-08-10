@@ -178,31 +178,23 @@ class ExtensionsController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:checklist.html.twig', $templateVariables);
 	}
 
-	public function epvAction()
+	public function epvAction(Request $request)
 	{
-		// Extensions Homepage
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 		);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:epv.html.twig', $templateVariables);
-	}
-
-	public function epvResultsAction(Request $request)
-	{
 		$github = $request->request->get('github');
 		$debug = $request->request->get('debug');
+		if ($github)
+		{
 
-		$int_output = new \Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\Output();
-		$output = new Output($int_output, $debug);
+			$int_output = new \Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\Output();
+			$output = new Output($int_output, $debug);
 
-		$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
-
-		// Extensions Homepage
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-			'results'          => $int_output->getBuffer(),
-		);
+			$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
+			$templateVariables['results'] = $int_output->getBuffer();
+		}
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:epv.html.twig', $templateVariables);
 	}

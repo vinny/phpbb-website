@@ -11,12 +11,7 @@ phpBBWebsite_Extensions_rules_and_guidelines:
 phpBBWebsite_Extensions_epv:
     path:  /epv/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:epv }
-    methods:  [GET]
-
-phpBBWebsite_Extensions_epv_results:
-    path: /epv/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:epvResults }
-    methods:  [POST]
+    methods:  [GET, POST]
 
 phpBBWebsite_Extensions_recognised_developer:
     path:  /recognised-developer/
