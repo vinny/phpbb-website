@@ -389,7 +389,7 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_offical_exts'				=> '/extensions/official-extensions/',
 			'extensions_offical_exts_team'			=> '/extensions/official-extensions/team/',
 
-			'extensions_epv'						=> '/app_dev.php/extensions/epv',
+			'extensions_epv'						=> '/app_dev.php/extensions/epv/',
 			'extensions_epv_repo'                   => '',
 			'extensions_epv_bugs'                   => '',
 			'extensions_epv_instructions'           => '/community/viewtopic.php?f=461&amp;t=2239116',
