@@ -194,6 +194,7 @@ class ExtensionsController extends Controller
 
 			$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
 			$templateVariables['results'] = $int_output->getBuffer();
+			var_dump($int_output->getBuffer());
 		}
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:epv.html.twig', $templateVariables);
