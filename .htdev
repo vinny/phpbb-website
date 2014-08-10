@@ -93,7 +93,7 @@ RewriteCond %{REQUEST_URI} !^/support/documents{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/statistics{0,1}.*
 RewriteCond %{REQUEST_URI} !^/shop2/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/ideas/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/images/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/theme/images/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/update_website.php
 RewriteCond %{REQUEST_URI} !^/member-login.php
 RewriteCond %{REQUEST_URI} !^/date.php
