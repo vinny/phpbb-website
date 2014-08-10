@@ -12,3 +12,4 @@ bin/*
 app/SymfonyRequirements.php
 !vendor/.htaccess
 !app/cache/.gitkeep
+*Thumbs.db*

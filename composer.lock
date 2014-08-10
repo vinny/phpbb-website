@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "28a7565ef480c2be797766e027cc2183",
+    "hash": "e8ec75f4ed98e4d15cb23b4d04bd0e68",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1155,18 +1155,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbb/epv.git",
-                "reference": "87712c51b1fd12c38d3722e6d3bc3705dbb4a6d7"
+                "reference": "0557caa8922515c364833d8de0a5e407e325ba02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/epv/zipball/87712c51b1fd12c38d3722e6d3bc3705dbb4a6d7",
-                "reference": "87712c51b1fd12c38d3722e6d3bc3705dbb4a6d7",
+                "url": "https://api.github.com/repos/phpbb/epv/zipball/0557caa8922515c364833d8de0a5e407e325ba02",
+                "reference": "0557caa8922515c364833d8de0a5e407e325ba02",
                 "shasum": ""
             },
             "require": {
                 "gitonomy/gitlib": "0.1.*@dev",
                 "nikic/php-parser": "0.9.*@dev",
                 "php": ">=5.3.3",
+                "phpbb/phpbb": ">=3.1.0-RC2",
                 "symfony/console": ">=2.3.0",
                 "symfony/finder": ">=2.3.0",
                 "symfony/yaml": ">=2.3.0|>=2.4.0|>=2.5.0"
@@ -1194,7 +1195,7 @@
                 }
             ],
             "description": "A extension validator for phpBB extensions. Extensions are required to pass the validator when submitted to the extension database.",
-            "time": "2014-08-07 14:13:02"
+            "time": "2014-08-10 13:40:25"
         },
         {
             "name": "psr/log",
@@ -1233,6 +1234,33 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "qafoolabs/profiler",
+            "version": "v0.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/QafooLabs/profiler.git",
+                "reference": "79d95cee611509d294daa93f840cf95a8def217e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/QafooLabs/profiler/zipball/79d95cee611509d294daa93f840cf95a8def217e",
+                "reference": "79d95cee611509d294daa93f840cf95a8def217e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "QafooLabs\\Profiler": "src/main"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple library that wraps Xhprof profile collection and sends to Qafoo Profiler",
+            "time": "2014-07-31 10:34:24"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2637,18 +2665,23 @@
             "time": "2014-07-08 18:12:35"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "doctrine/doctrine-migrations-bundle": 20,
         "doctrine/migrations": 20,
         "phpbb/epv": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
-        "doctrine/data-fixtures": 20
+        "doctrine/data-fixtures": 20,
+        "qafoolabs/profiler": 0
     },
     "prefer-stable": false,
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": []
+    "platform-dev": [
+
+    ]
 }
