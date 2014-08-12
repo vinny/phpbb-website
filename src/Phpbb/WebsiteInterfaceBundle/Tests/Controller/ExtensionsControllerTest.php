@@ -39,7 +39,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Rules and Guidelines') !== false, 'Title contains Extensions Rules and Guidelines');
 
         // Content Check
-        $this->assertTrue($crawler->filter('html:contains("Licensing your Extension")')->count() > 0, 'Extensions Home Content Check');
+        $this->assertTrue($crawler->filter('html:contains("Extension Database Policies")')->count() > 0, 'Extensions Rules and Guidelines Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks
