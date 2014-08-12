@@ -64,5 +64,5 @@ phpBBWebsite_Extensions_rules_and_guidelines_checklist:
 
 phpBBWebsite_Extensions_dev_forum_rules:
     path: /rules-and-guidelines/development-rules/
-    defaults: { _controller: PhpbbWebsiteInerfaceBundle:Extensions:devRules }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:devRules }
     methods:  [GET]
