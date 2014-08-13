@@ -42,9 +42,9 @@ phpBBWebsite_Extensions_team_overview:
     path:  /team-overview/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:teamOverview }
 
-phpBBWebsite_Extensions_rules_and_guidelines_general:
-    path:  /rules-and-guidelines/general/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:general }
+phpBBWebsite_Extensions_rules_and_guidelines_validation_policy:
+    path:  /rules-and-guidelines/validation-policy/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:validationPolicy }
     methods:  [GET]
 
 phpBBWebsite_Extensions_rules_and_guidelines_repack:

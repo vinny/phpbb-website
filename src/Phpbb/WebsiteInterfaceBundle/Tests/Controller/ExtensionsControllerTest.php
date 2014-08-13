@@ -142,16 +142,16 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->globalTests();
     }
 
-    public function testExtensionsGeneral()
+    public function testExtensionsValidationPolicy()
     {
-        $objs = $this->setupTest('/extensions/rules-and-guidelines/general/');
+        $objs = $this->setupTest('/extensions/rules-and-guidelines/validation-policy/');
         $crawler = $objs['crawler'];
 
         // Title Check
         $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extension Validation Policy') !== false, 'Title contains Extension Validation Policy');
 
         // Content Check
-        $this->assertTrue($crawler->filter('html:contains("The following policies should be followed when developing extensions for phpBB")')->count() > 0, 'General Validation Policy Content Check');
+        $this->assertTrue($crawler->filter('html:contains("The following policies should be followed when developing extensions for phpBB")')->count() > 0, 'Validation Policy Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks

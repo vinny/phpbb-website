@@ -396,7 +396,7 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_installing'					=> '/extensions/installing/',
 			'extensions_writing'					=> '/extensions/writing/',
 			'extensions_team_overview'				=> '/extensions/team-overview/',
-			'extensions_general'					=> '/extensions/rules-and-guidelines/general',
+			'extensions_validation_policy'			=> '/extensions/rules-and-guidelines/validation-policy',
 			'extensions_instadeny'					=> '/extensions/rules-and-guidelines/insta-deny',
 			'extensions_repack'						=> '/extensions/rules-and-guidelines/repack',
 			'extensions_rules_dev'					=> '/extensions/rules-and-guidelines/development-rules',
