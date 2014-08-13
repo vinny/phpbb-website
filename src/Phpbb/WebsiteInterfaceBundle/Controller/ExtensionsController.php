@@ -186,10 +186,9 @@ class ExtensionsController extends Controller
 
 		$github = $request->request->get('github');
 		$debug = $request->request->get('debug');
-		
+
 		if ($github)
 		{
-
 			$int_output = new \Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\Output();
 			$output = new \epv\Output\Output($int_output, $debug);
 
