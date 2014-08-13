@@ -1155,19 +1155,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbb/epv.git",
-                "reference": "0557caa8922515c364833d8de0a5e407e325ba02"
+                "reference": "a6023cde7b6e5c5d2de9d6e50ffacbcf9553d1f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/epv/zipball/0557caa8922515c364833d8de0a5e407e325ba02",
-                "reference": "0557caa8922515c364833d8de0a5e407e325ba02",
+                "url": "https://api.github.com/repos/phpbb/epv/zipball/a6023cde7b6e5c5d2de9d6e50ffacbcf9553d1f6",
+                "reference": "a6023cde7b6e5c5d2de9d6e50ffacbcf9553d1f6",
                 "shasum": ""
             },
             "require": {
                 "gitonomy/gitlib": "0.1.*@dev",
                 "nikic/php-parser": "0.9.*@dev",
                 "php": ">=5.3.3",
-                "phpbb/phpbb": ">=3.1.0-RC2",
+                "phpbb/phpbb": ">=3.1.0-RC2@RC",
                 "symfony/console": ">=2.3.0",
                 "symfony/finder": ">=2.3.0",
                 "symfony/yaml": ">=2.3.0|>=2.4.0|>=2.5.0"
@@ -1195,7 +1195,7 @@
                 }
             ],
             "description": "A extension validator for phpBB extensions. Extensions are required to pass the validator when submitted to the extension database.",
-            "time": "2014-08-10 13:40:25"
+            "time": "2014-08-13 09:17:38"
         },
         {
             "name": "psr/log",
