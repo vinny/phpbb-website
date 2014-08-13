@@ -54,7 +54,7 @@ phpBBWebsite_Extensions_rules_and_guidelines_repack:
 
 phpBBWebsite_Extensions_rules_and_guidelines_insta_deny:
     path:  /rules-and-guidelines/insta-deny/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:instadeny }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:instadenyPolicy }
     methods:  [GET]
 
 phpBBWebsite_Extensions_rules_and_guidelines_checklist:
