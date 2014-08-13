@@ -2,7 +2,7 @@
 /**
  *
  * @package PhpbbWebsiteInterfaceBundle
- * @copyright (c) 2013 phpBB Group
+ * @copyright (c) 2014 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author Paul
  *
@@ -48,6 +48,7 @@ class Output implements OutputInterface{
 		{
 			$messages = array($messages);
 		}
+
 		foreach($messages as $message)
 		{
 			$this->buffer .= $this->parse($message);
