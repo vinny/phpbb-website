@@ -57,11 +57,6 @@ phpBBWebsite_Extensions_rules_and_guidelines_insta_deny:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:instadenyPolicy }
     methods:  [GET]
 
-phpBBWebsite_Extensions_rules_and_guidelines_checklist:
-    path:  /rules-and-guidelines/checklist/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:checklist }
-    methods:  [GET]
-
 phpBBWebsite_Extensions_dev_forum_rules:
     path: /rules-and-guidelines/development-rules/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:devRules }

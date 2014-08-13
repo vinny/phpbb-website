@@ -131,7 +131,6 @@ class ExtensionsController extends Controller
 				array('i' => 0, 'name' => 'Repack Policy', 'description' => 'How we handle repacking of Extensions.', 'link' => '/extensions/rules-and-guidelines/repack'),
 				array('i' => 1, 'name' => 'Insta Deny Policy', 'description' => 'How we handle Insta-Denies of Extensions.', 'link' => '/extensions/rules-and-guidelines/insta-deny'),
 				array('i' => 2, 'name' => 'Validation Policy', 'description' => 'Some general policies on how we handle validation.', 'link' => '/extensions/rules-and-guidelines/validation-policy'),
-				//array('i' => 3, 'name' => 'Validation checklist', 'description' => 'A reference for Extensions Authors to improve the validation process for their Extensions.', 'link' => '/extensions/rules-and-guidelines/checklist'),
 			)
 		);
 
@@ -166,16 +165,6 @@ class ExtensionsController extends Controller
 		);
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:validation-policy.html.twig', $templateVariables);
-	}
-
-	public function checklistAction()
-	{
-		// Extensions Checklist
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:checklist.html.twig', $templateVariables);
 	}
 
 	public function epvAction(Request $request)
