@@ -114,7 +114,7 @@ class ExtensionsController extends Controller
 
 	public function devRulesAction()
 	{
-		// Extensions Rules and Guidelines
+		// Extension Development Rules and Guidelines
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 		);
@@ -140,7 +140,7 @@ class ExtensionsController extends Controller
 
 	public function repackAction()
 	{
-		// Extensions Rules and Guidelines
+		// Extensions Repack Policy
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 		);
@@ -150,7 +150,7 @@ class ExtensionsController extends Controller
 
 	public function instadenyAction()
 	{
-		// Extensions Rules and Guidelines
+		// Extensions Insta-Deny Policy
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 		);
@@ -160,7 +160,7 @@ class ExtensionsController extends Controller
 
 	public function validationPolicyAction()
 	{
-		// Extensions Rules and Guidelines
+		// Extensions Validation Policy
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 		);
@@ -170,7 +170,7 @@ class ExtensionsController extends Controller
 
 	public function checklistAction()
 	{
-		// Extensions Rules and Guidelines
+		// Extensions Checklist
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 		);
