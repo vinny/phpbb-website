@@ -58,7 +58,7 @@
 		<ol type="a">
 			<li>Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description.</li>
 			<li>No un-initialised variables or indices.</li>
-			<li>Proper file headers and php DocBlocks are used.‬‬</li>
+			<li>Proper file headers and php DocBlocks should be used.‬‬</li>
 			<li>Braces { and } should be on newlines.</li>
 			<li>Contain no ‪magic numbers‬‬ [<a href="https://wiki.phpbb.com/Magic_numbers">wiki</a>]</a>.</li>
 			<li>IN_PHPBB [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>]‬ check must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files.</li>
@@ -69,7 +69,7 @@
 			<li><a href="https://area51.phpbb.com/docs/31x/coding-guidelines.html#sql‬‬">phpBB3 DBAL</a> is used instead of database specific SQL functions.
 				<ol>
 					<li>User-input string variables are properly sanitised using $db->sql_escape(); [<a href="https://wiki.phpbb.com/Dbal.sql_escape">wiki</a>] when using variables in SQL queries.</li>
-					<li>int and float variables are enforced type-casting as (int) and (float) when inserting into SQL queries.</li>
+					<li>int and float variables are enforced by type-casting as (int) and (float) when inserting into SQL queries.</li>
 					<li>$db->sql_build_query(); [<a href="https://wiki.phpbb.com/Dbal.sql_build_query">wiki</a>] is used on large SQL queries (e.g.: if the query contains joins).</li>
 					<li>$db->sql_build_array(); [<a href="https://wiki.phpbb.com/Dbal.sql_build_array">wiki</a>] is used on SQL INSERT and SQL UPDATE queries.</li>
 					<li>$db->sql_multi_insert();‪ [<a href="https://wiki.phpbb.com/Dbal.sql_multi_insert‬‬">wiki</a>] is used when performing multiple SQL INSERT statements.</li>
