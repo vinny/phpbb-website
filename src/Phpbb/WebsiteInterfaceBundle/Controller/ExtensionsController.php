@@ -138,14 +138,14 @@ class ExtensionsController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:rules.html.twig', $templateVariables);
 	}
 
-	public function repackAction()
+	public function repackPolicyAction()
 	{
 		// Extensions Repack Policy
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 		);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:repack.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:repack-policy.html.twig', $templateVariables);
 	}
 
 	public function instadenyAction()

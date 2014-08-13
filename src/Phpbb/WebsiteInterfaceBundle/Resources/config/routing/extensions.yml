@@ -49,7 +49,7 @@ phpBBWebsite_Extensions_rules_and_guidelines_validation_policy:
 
 phpBBWebsite_Extensions_rules_and_guidelines_repack:
     path:  /rules-and-guidelines/repack/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:repack }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:repackPolicy }
     methods:  [GET]
 
 phpBBWebsite_Extensions_rules_and_guidelines_insta_deny:
