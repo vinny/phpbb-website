@@ -44,6 +44,9 @@
         "phpunit/phpunit": "4.1.*",
         "sensiolabs/security-checker": "1.*"
     },
+    "provide": {
+        "phpbb/phpbb":  "3.1.0-RC2"
+    },
     "scripts": {
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
