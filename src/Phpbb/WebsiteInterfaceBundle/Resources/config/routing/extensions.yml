@@ -5,7 +5,7 @@ phpBBWebsite_Extensions_home:
 
 phpBBWebsite_Extensions_rules_and_guidelines:
     path:  /rules-and-guidelines/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:rules }
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:policies }
     methods:  [GET]
 
 phpBBWebsite_Extensions_epv:

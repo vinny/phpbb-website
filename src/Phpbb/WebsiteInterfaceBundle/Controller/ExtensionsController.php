@@ -122,7 +122,7 @@ class ExtensionsController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules.html.twig', $templateVariables);
 	}
 
-	public function rulesAction()
+	public function policiesAction()
 	{
 		// Extensions Rules and Guidelines
 		$templateVariables = array(
@@ -134,7 +134,7 @@ class ExtensionsController extends Controller
 			)
 		);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:rules.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:policies.html.twig', $templateVariables);
 	}
 
 	public function repackPolicyAction()
