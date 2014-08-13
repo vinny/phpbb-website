@@ -119,7 +119,7 @@ class ExtensionsController extends Controller
 			'header_css_image' => 'mods',
 		);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext_dev_rules.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules.html.twig', $templateVariables);
 	}
 
 	public function rulesAction()
