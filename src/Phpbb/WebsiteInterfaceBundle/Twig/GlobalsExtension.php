@@ -376,7 +376,30 @@ class GlobalsExtension extends \Twig_Extension
 	private function getExtensionVars()
 	{
 		$extensionVars = array(
-			'EXTENSIONS_RULES'		=> '/extensions/rules-and-guidelines/',
+			'extensions_cdb'						=> 'https://www.phpbb.com/customise/db/modifications-1/',
+			'extensions_wiki'						=> 'https://wiki.phpbb.com/Category:Extensions',
+
+			'extensions_quickinstall'				=> 'https://www.phpbb.com/mods/quickinstall/', //replace later
+			'extensions_phpbb_cgs'					=> 'https://area51.phpbb.com/docs/31x/coding-guidelines.html',
+
+			'extensions_writers_discussion'         => '/community/viewforum.php?f=461',
+
+			'extensions_rules'						=> '/extensions/rules-and-guidelines/',
+			'extensions_recognised_devs'			=> '/extensions/recognised-developer/',
+			'extensions_offical_exts'				=> '/extensions/official-extensions/',
+			'extensions_offical_exts_team'			=> '/extensions/official-extensions/team/',
+
+			'extensions_epv'						=> '/app_dev.php/extensions/epv/',
+			'extensions_epv_repo'                   => '',
+			'extensions_epv_bugs'                   => '',
+			'extensions_epv_instructions'           => '/community/viewtopic.php?f=461&amp;t=2239116',
+			'extensions_installing'					=> '/extensions/installing/',
+			'extensions_writing'					=> '/extensions/writing/',
+			'extensions_team_overview'				=> '/extensions/team-overview/',
+			'extensions_validation_policy'			=> '/extensions/rules-and-guidelines/validation-policy',
+			'extensions_instadeny'					=> '/extensions/rules-and-guidelines/insta-deny',
+			'extensions_repack'						=> '/extensions/rules-and-guidelines/repack',
+			'extensions_rules_dev'					=> '/extensions/rules-and-guidelines/development-rules',
 		);
 
 		return $extensionVars;
@@ -405,7 +428,13 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_REQUESTS_FORUM_30X'		=> '/community/viewforum.php?f=72',
 			'MODS_WRITERS_FORUM_30X'		=> '/community/viewforum.php?f=71',
 
-			'FORUM_EXTENSIONS_31X'			=> '/community/viewforum.php?f=451',
+			'forum_extensions_31x'			=> '/community/viewforum.php?f=451',
+			'forum_extensions_31x_dev'		=> '/community/viewforum.php?f=456',
+			'forum_extensions_31x_writers'	=> '/community/viewforum.php?f=461',
+
+			'FORUM_SUPPORT'				=> '/community/viewforum.php?f=46',
+			'FORUM_STYLES_CAT'			=> '/community/viewforum.php?f=80',
+			'FORUM_MODS_CAT'			=> '/community/viewforum.php?f=81',
 
 			'FORUM_SUPPORT'				=> '/community/viewforum.php?f=46',
 			'FORUM_STYLES_CAT'				=> '/community/viewforum.php?f=80',
@@ -428,6 +457,8 @@ class GlobalsExtension extends \Twig_Extension
 			'STYLES_TL_CONTACT'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
 			'WEBSITE_TL_NAME'		=> 'Marshalrusty',
 			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
+			'ext_dev_tl_name'		=> 'EXreaction',
+			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=202401',
 		);
 
 		return $peopleVars;
@@ -446,6 +477,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'bot'					=> false, // @TODO Set this to true for bots // Usage = 1
 			'is_on_team'			=> false, // @TODO Set this up to use sessions management and see if they are on the team
+
 			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce', // Usage = 1
 
 			'ROOT_PATH'			=> '/',

@@ -44,4 +44,4 @@ Should you have problems with composer retrieving depdenencies you can request a
 
 By contributing you agree to assign copyright of your code to `phpBB Limited`.
 
-See the `LICENSE` file for the full license.
+See the `LICENSE` file for the full license

@@ -1,0 +1,41 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Official Extensions{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
+			<strong>&#8249;</strong> <a href="{{ extensions_offical_exts }}">Official Extensions</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep mods">phpBB Official Extensions</h2>
+		<p>phpBB is proud to present a collection of official extensions. These are extensions created and maintained by the <a href="{{ extensions_offical_exts_team }}">Offical Extensions Development Team</a>. These extensions were chosen based on various criteria including community interest and their ability to serve as teaching examples for extension developers/authors. Their code has been extensively commented to provide as much information as possible to help extension authors learn from them.</p>
+
+		<h2 class="title">Extensions</h2>
+		{% for extension in extensions %}
+			<h3>{{ extension.getName() }}</h3>
+			<p>{{ extension.getDescription() }}</p>
+			<p>For extension authors: {{ extension.getDescriptionForDevelopers() }}</p>
+			<p><a href="{{ extension.getContribution() }}">Contribution</a>, <a href="{{ extension.getGithub() }}">GitHub</a></p>
+		{% endfor %}
+
+		<h2 class="title">Additional Links for Extensions</h2>
+		<p>
+			<a href="{{ extensions_cdb }}">Extensions Database</a><br />
+			<a href="{{ forum_extensions_31x_dev }}">Extensions in Development Forum</a><br />
+			<a href="{{ forum_extensions_31x_writers }}">Extension Writers Forum</a>
+		</p>
+
+		<br />
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}

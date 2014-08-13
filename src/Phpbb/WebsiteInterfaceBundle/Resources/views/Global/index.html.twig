@@ -34,8 +34,14 @@
 				<span class="year">{{ announcement.YEAR }}</span>
 			</div>
 			<div class="announce_img">{% if announcement.FROM_BLOG %}<img src="{{ asset('/assets/images/images/icon_blog.png') }}" title="Blog Post" alt="Blog Post" />{% else %}<img src="{{ asset('/assets/images/images/icon_announcement.png') }}" title="Announcement" alt="Announcement" />{% endif %}</div>
-			<div class="title"><a href="{{ announcement.U_LINK }}">{% if announcement.FROM_BLOG %}Blog{% else %}Announcement{% endif %} &bull; {{ announcement.TITLE|e }}</a></div>
-			<p class="preview">{{ announcement.PREVIEW|e }}&hellip; <a href="{{ announcement.U_LINK }}">read more</a></p>
+			<div class="title"><a href="{{ announcement.U_LINK|raw }}">{% if announcement.FROM_BLOG %}Blog{% else %}Announcement{% endif %} &bull; {{ announcement.TITLE|e }}</a></div>
+			<p class="preview">
+				{% if announcement.FROM_BLOG %}
+				{{ announcement.PREVIEW|e }}
+				{% else %}
+				{{ announcement.PREVIEW|raw }}
+				{% endif %}
+				&hellip; <a href="{{ announcement.U_LINK|raw }}">read more</a></p>
 		</li>
 	{% endfor %}
 	</ul>
