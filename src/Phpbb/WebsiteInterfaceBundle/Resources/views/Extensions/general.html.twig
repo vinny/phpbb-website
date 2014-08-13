@@ -53,7 +53,7 @@
                 </ul>
             </li>
 		</ol>
-		
+
 		<h3>2. PHP Files</h3>
 		<ol type="a">
 			<li>Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description.</li>
@@ -78,7 +78,7 @@
 					<li>Static SQL queries should be cached.‪</li>
 					<li>SQL Queries within loops should be avoided.</li>
 				</ol>
-			</li>			
+			</li>
 			<li>helper->error(); and/or trigger_error(); [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>] are used for error handling and user messages instead of die(); or similar.</li>
 			<li>login_forum_box(); or login_box(); [<a href="http://wiki.phpbb.com/Login_box">wiki</a>] is used for login.</li>
 			<li>confirm_box(); [<a href="http://wiki.phpbb.com/Confirm_box">wiki</a>] is used for the user to confirm sensitive actions (such as deleting items).</li>
@@ -90,21 +90,21 @@
 			<li>No hard-coded PHP in template files.</li>
 			<li>All prosilver HTML is valid HTML5.</li>
 			<li>English language images are supplied as necessary.</li>
-		</ol>			
+		</ol>
 
 		<h3>4. Migrations</h3>
 		<ol type="a">
 			<li>Database and permission changes should be handled with migrations. All subsequent database changes should be made in new migration files.</li>
 			<li>Old migration files should never be altered or deleted.</li>
 			<li>Extensions should never delete phpBB core tables or columns.</li>
-		</ol>			
+		</ol>
 
 		<h3>5. JavaScript</h3>
 		<ol type="a">
 			<li>Included JavaScript frameworks should use a template &lt;!--DEFINE --&gt; to prevent duplicate inclusion. For example:<br />
-				
+
 				<br />
-				
+
 				<dl class="codebox">
 					<dt>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></dt>
 					<dd><code>
@@ -113,7 +113,7 @@
    &lt;!-- DEFINE $INCLUDEDED_HIGHSLIDEJS = true --&gt;
 &lt;!-- ENDIF --&gt;<br /></code></dd>
 				</dl>
-				
+
 				<br />
 				Some example template varaible definitions to use with common libraries:
 				<ul>
@@ -128,13 +128,13 @@
 			</li>
 			<li>Include JavaScript files with the template function: &lt;!-- INCLUDEJS filename.js --&gt; [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
 			<li>Include CSS files with the template function: &lt;!-- INCLUDECSS filename.css --&gt; [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
-		</ol>			
+		</ol>
 
 		<h3>6. Licenses</h3>
 		<ol type="a">
 			<li>Extensions should be released under GPL v2. Included frameworks should use GPL v2 or a compatible license. See <a href="http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility">http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility</a></li>
 			<li>A license.txt file should be included with the extension in the root directory of the extension.</li>
-		</ol>			
+		</ol>
 
 		<h3>7. Packaging and Version</h3>
 		<ol type="a">
@@ -150,7 +150,7 @@
 			</li>
 			<li>Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
 			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files contained in their respective directories.</li>
-		</ol>			
+		</ol>
 
 	</div>
 
