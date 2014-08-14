@@ -11,10 +11,11 @@
 {% block body %}
 <div id="page-body">
 <div id="home-buttons">
-	<h2><a href="{{ about_path }}" class="what-is">What is phpBB?</a></h2>
-	<h2><a href="{{ downloads_path }}" class="get-started">Get started with phpBB</a></h2>
-	<h2><a href="{{ cdb_path }}" class="enhance">Create and Share</a></h2>
-	<h2><a href="{{ get_involved_path }}" class="contribute last">Contribute to phpBB</a></h2>
+	<h2><a href="{{ about_path }}" class="what-is responsive-top">What is phpBB?</a></h2>
+	<h2><a href="{{ downloads_path }}" class="get-started responsive-top">Get started with phpBB</a></h2>
+	<br class="responsive-clear" style="display: none;" />
+	<h2><a href="{{ cdb_path }}" class="enhance responsive-bottom">Create and Share</a></h2>
+	<h2><a href="{{ get_involved_path }}" class="contribute responsive-bottom last">Contribute to phpBB</a></h2>
 	<br class="clear" />
 </div>
 
@@ -55,7 +56,7 @@
 		<a href="http://www.forumatic.com"><img src="{{ asset('assets/images/images/bg_forumatic_front_page.png') }}" alt="Forumatic" /></a>
 	</div>
 	<div class="mini-panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 		<h3>Sponsors</h3>
 		<ul class="text-links">
 			<li><strong><a href="/hosting/r/bluehost-frontpage/" class="text-links-favicon" style="background-image: url({{ asset('/assets/images/images/favicons/bluehost.png') }});"{% if bot is defined %} rel="nofollow"{% endif %}>&nbsp;BlueHost.com</a></strong> - voted best web host with superior support <strong>2004-2010!</strong> Offering a <strong>free domain</strong>, <strong class="posthilit">unlimited</strong> space, <strong class="posthilit">unlimited</strong> transfer - easy 1-click install of phpBB all for <a href="/hosting/r/bluehost-frontpage/"{% if bot is defined %} rel="nofollow"{% endif %}><strong>only $6.95/month</strong>&hellip; <strong><em>Sign up now!</em></strong></a></li>
@@ -66,7 +67,7 @@
 			<li><strong><a href="http://www.dhgate.com/" title="Heguang International Limited"{% if bot is defined %} rel="nofollow"{% endif %}>China Wholesale</a></strong></li>
 			<li class="last"><em><a href="{{ advertise_path }}">Advertise on phpBB.com</a></em></li>
 		</ul>
-		<span class="corners-bottom"><span></span></span></div>
+		</div>
 	</div>
 	<dl class="extra-box shop">
 		<dt><a href="{{ shop_path }}">phpBB Mascot</a></dt>
