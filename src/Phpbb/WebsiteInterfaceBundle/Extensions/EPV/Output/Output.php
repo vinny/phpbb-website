@@ -10,8 +10,7 @@
 
 namespace Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output;
 
-
-use Phpbb\epv\Output\OutputFormatter;
+use Phpbb\Epv\Output\OutputFormatter;
 use SensioLabs\AnsiConverter\AnsiToHtmlConverter;
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 use Symfony\Component\Console\Output\OutputInterface;

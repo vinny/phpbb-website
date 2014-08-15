@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e8ec75f4ed98e4d15cb23b4d04bd0e68",
+    "hash": "419855d6abd9bffcb20a7c3b3ebade48",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1155,19 +1155,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbb/epv.git",
-                "reference": "a6023cde7b6e5c5d2de9d6e50ffacbcf9553d1f6"
+                "reference": "13574b29757dd9ab11de6fbdcb2a505bef241379"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/epv/zipball/a6023cde7b6e5c5d2de9d6e50ffacbcf9553d1f6",
-                "reference": "a6023cde7b6e5c5d2de9d6e50ffacbcf9553d1f6",
+                "url": "https://api.github.com/repos/phpbb/epv/zipball/13574b29757dd9ab11de6fbdcb2a505bef241379",
+                "reference": "13574b29757dd9ab11de6fbdcb2a505bef241379",
                 "shasum": ""
             },
             "require": {
                 "gitonomy/gitlib": "0.1.*@dev",
                 "nikic/php-parser": "0.9.*@dev",
                 "php": ">=5.3.3",
-                "phpbb/phpbb": ">=3.1.0-RC2@RC",
                 "symfony/console": ">=2.3.0",
                 "symfony/finder": ">=2.3.0",
                 "symfony/yaml": ">=2.3.0|>=2.4.0|>=2.5.0"
@@ -1176,13 +1175,13 @@
                 "phpunit/phpunit": "4.0.*"
             },
             "bin": [
-                "src/epv/EPV.php"
+                "src/EPV.php"
             ],
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "src/"
-                ]
+                "psr-4": {
+                    "Phpbb\\Epv\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1195,7 +1194,7 @@
                 }
             ],
             "description": "A extension validator for phpBB extensions. Extensions are required to pass the validator when submitted to the extension database.",
-            "time": "2014-08-13 09:17:38"
+            "time": "2014-08-15 09:40:24"
         },
         {
             "name": "psr/log",

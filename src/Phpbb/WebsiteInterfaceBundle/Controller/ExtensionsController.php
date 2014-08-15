@@ -10,7 +10,7 @@
 
 namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
-use epv\Tests\TestStartup;
+use Phpbb\Epv\Tests\TestStartup;
 use Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\Output;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Phpbb\WebsiteInterfaceBundle\Helper\Extensions\OfficialExtension;
@@ -178,7 +178,7 @@ class ExtensionsController extends Controller
 		if ($github)
 		{
 			$int_output = new \Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\Output();
-			$output = new \epv\Output\Output($int_output, $debug);
+			$output = new \Phpbb\Epv\Output\Output($int_output, $debug);
 
 			$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
 			$templateVariables['results'] = $int_output->getBuffer();
