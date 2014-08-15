@@ -29,7 +29,7 @@
             </li>
 			<li>
 				<h4>Vendor Prefixing</h4>
-				All events, services and/or routes in an extension should be prefixed with the extension's vendor name and package name, e.g.:
+				All events, services and/or routes in an extension should be prefixed with the extension's vendor name and package name, and contain only lowercase letters, numbers, dots, and underscores; e.g.:
                 <ul>
                     <li>Events: vendor.extension.custom_event</li>
                     <li>Services: vendor.extension.custom.service</li>
@@ -98,35 +98,33 @@
 			<li>Extensions should never delete phpBB core tables or columns.</li>
 		</ol>
 
-		<h3>5. JavaScript</h3>
+		<h3>5. JavaScript and CSS</h3>
 		<ol type="a">
-			<li>Included JavaScript frameworks should use a template &lt;!--DEFINE --&gt; to prevent duplicate inclusion. For example:<br />
-
+			<li>Include JavaScript files with the template function: &lt;!-- INCLUDEJS filename.js --&gt; [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
+			<li>Include CSS files with the template function: &lt;!-- INCLUDECSS filename.css --&gt; [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
+			<li>Included third-party JavaScript/CSS libraries and frameworks should use a template &lt;!--DEFINE --&gt; to prevent duplicate inclusion. For example:<br />
 				<br />
-
 				<dl class="codebox">
 					<dt>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></dt>
 					<dd><code>
 &lt;!-- IF not $INCLUDEDED_HIGHSLIDEJS --&gt;
-   &lt;script type=&quot;text/javascript&quot; src=&quot;highslide-full.js&quot;&gt;&lt;/script&gt;
+   &lt;!-- INCLUDEJS highslide-full.js --&gt;
    &lt;!-- DEFINE $INCLUDEDED_HIGHSLIDEJS = true --&gt;
 &lt;!-- ENDIF --&gt;<br /></code></dd>
 				</dl>
-
 				<br />
-				Some example template varaible definitions to use with common libraries:
+				Some example template variable definitions to use with common libraries:
 				<ul>
-					<li>HighSlideJS: $INCLUDEDED_HIGHSLIDEJS</li>
-					<li>Font Awesome: $INCLUDEDED_FONTAWESOME</li>
+					<li>HighSlide JS: $INCLUDEDED_HIGHSLIDEJS</li>
+					<li>Font Awesome CSS: $INCLUDEDED_FONTAWESOMECSS</li>
 					<li>ColorBox JS: $INCLUDEDED_COLORBOXJS</li>
-					<li>MoTools JS Library; $INCLUDEDED_MOTOOLSJS</li>
-					<li>Dojo JS Library: $INCLUDEDED_DOJOJS</li>
+					<li>ColPick JS: $INCLUDEDED_COLPICKJS</li>
+					<li>MoTools JS: $INCLUDEDED_MOTOOLSJS</li>
+					<li>Dojo JS: $INCLUDEDED_DOJOJS</li>
 				</ul>
 				<br />
-				Discussion of this technique can be found <a href="https://www.phpbb.com/community/viewtopic.php?f=20&t=2144227&p=13076522#p13076522">here</a>.
+				The common practice should be to name the variable definition after the library filename, e.g.: highslide.js becomes HIGHSLIDEJS. Discussion of this technique can be found <a href="https://www.phpbb.com/community/viewtopic.php?f=20&t=2144227&p=13076522#p13076522">here</a>.
 			</li>
-			<li>Include JavaScript files with the template function: &lt;!-- INCLUDEJS filename.js --&gt; [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
-			<li>Include CSS files with the template function: &lt;!-- INCLUDECSS filename.css --&gt; [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
 		</ol>
 
 		<h3>6. Licenses</h3>
@@ -139,13 +137,14 @@
 		<ol type="a">
 			<li>Extensions are packaged as follows:<br />
 				<strong>/vendorname/extensionname/</strong><br />
-				The names should be alphanumeric. (So no dashes or underscores. Capitals are allowed.)<br />
+				The names should be alphanumeric. (No dashes or underscores. Capitals are allowed.)<br />
 				For example, the following common extension files, composer.json, ext.php and license.txt would be located at:<br />
 
 				<strong>/vendorname/extensionname/composer.json<br />
 					/vendorname/extensionname/ext.php<br />
-					/vendorname/extensionname/license.txt</strong>
+					/vendorname/extensionname/license.txt</strong><br />
 
+				<a href="{{ extension_quickstart_zip }}">Extension Quickstart</a> package is available with starter composer.json and ext.php files and the required license.txt.
 			</li>
 			<li>Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
 			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files contained in their respective directories.</li>
