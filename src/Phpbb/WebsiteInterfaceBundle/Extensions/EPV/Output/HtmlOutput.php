@@ -15,7 +15,7 @@ use SensioLabs\AnsiConverter\AnsiToHtmlConverter;
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Output implements OutputInterface{
+class HtmlOutput implements OutputInterface{
 	const TYPE_HTML = 1;
 	const TYPE_BBCODE = 2;
 
@@ -25,7 +25,7 @@ class Output implements OutputInterface{
 	/**
 	 * @param int $type Output type (HTML or BBCode)
 	 */
-	public function __constructor($type = Output::TYPE_HTML)
+	public function __construct($type = self::TYPE_HTML)
 	{
 		$this->type = $type;
 	}
@@ -70,7 +70,7 @@ class Output implements OutputInterface{
 	 */
 	public function writeln($messages, $type = self::OUTPUT_NORMAL)
 	{
-		$this->write($messages, false, $type);
+		$this->write($messages, true, $type);
 	}
 
 	/**
@@ -152,7 +152,7 @@ class Output implements OutputInterface{
 			$formatter = new OutputFormatter(true);
 
 			$convertor = new AnsiToHtmlConverter();
-			return $convertor->convert($formatter->format($this->buffer));
+			return nl2br($convertor->convert($formatter->format($this->buffer)));
 		}
 		return $this->buffer;
 	}
