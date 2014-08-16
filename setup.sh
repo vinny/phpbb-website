@@ -4,7 +4,6 @@ sleep 5
 set -ex
 
 php composer.phar self-update
-git commit -am 'Update composer'
 git remote add public git@github.com:phpbb/phpbb-website.git
 git remote add private git@github.com:phpbb/phpbb-website-private.git
 git push public master
