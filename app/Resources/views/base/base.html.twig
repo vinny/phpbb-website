@@ -23,7 +23,7 @@
 <title>{% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock %}</title>
 
 {% block head_assets %}
-{{ include(':base:community_css.html.twig') }}
+<link rel="stylesheet" href="{{ asset('assets/css/community.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/website.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/headers.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/navigation.css') }}" />
@@ -230,10 +230,6 @@
 							<h4><a href="{{ U_BUGS_PHPBB_SUB }}">phpBB Bug Tracker</a></h4>
 							<p><a href="{{ U_BUGS_PHPBB_SUB }}">Report problems with phpBB core and other sub-projects such as the Website, Customisation DB, and Team Tools here.</a></p>
 						</li>
-						<li class="last">
-							<h4><a href="/ideas/?from=submenu">phpBB Ideas</a></h4>
-							<p><a href="/ideas/?from=submenu">Suggest, vote on and comment on ideas for phpBB.</a></p>
-						</li>
                         <li class="last">
                             <h4><a href="{{ U_IDEAS }}">phpBB Ideas</a></h4>
                             <p><a href="{{ U_IDEAS }}">Suggest, vote on and comment on ideas for phpBB.</a></p>
@@ -317,7 +313,7 @@
 
 {% block copyright %}
 <div id="copyright">
-	2001 - 2013 <a href="{{ about_path }}">phpBB Limited</a>
+	2001 - 2014 <a href="{{ about_path }}">phpBB Limited</a>
 	&bull; <a href="{{ contact_path }}">Contact Us</a>
 	&bull; <a href="{{ advertise_path }}">Advertise on www.phpbb.com</a>
 	<br />
