@@ -10,8 +10,9 @@
 
 namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
+use Phpbb\Epv\Output\Output;
 use Phpbb\Epv\Tests\TestStartup;
-use Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\Output;
+use Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\HtmlOutput;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Phpbb\WebsiteInterfaceBundle\Helper\Extensions\OfficialExtension;
 use Symfony\Component\HttpFoundation\Request;
@@ -177,12 +178,11 @@ class ExtensionsController extends Controller
 
 		if ($github)
 		{
-			$int_output = new \Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\Output();
-			$output = new \Phpbb\Epv\Output\Output($int_output, $debug);
+			$int_output = new HtmlOutput();
+			$output = new Output($int_output, $debug);
 
 			$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
 			$templateVariables['results'] = $int_output->getBuffer();
-			var_dump($int_output->getBuffer());
 		}
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:epv.html.twig', $templateVariables);
