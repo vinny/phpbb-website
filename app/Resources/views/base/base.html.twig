@@ -23,7 +23,7 @@
 <title>{% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock %}</title>
 
 {% block head_assets %}
-<link rel="stylesheet" href="{{ asset('assets/css/community.css') }}" />
+{{ include(':base:community_css.html.twig') }}
 <link rel="stylesheet" href="{{ asset('assets/css/website.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/headers.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/navigation.css') }}" />
@@ -44,8 +44,7 @@
 <div id="wrap">
 	<a id="top" name="top" accesskey="t"></a>
 	<div id="page-header">
-		<span class="side-left"></span>
-		<div class="header" style="position: relative;">
+		<div class="phpbb-header">
 			{% block header_button %}{% endblock %}
 			<h1 id="logo-banner"><a href="/">phpBB &bull; Free and Open Source Forum Software</a></h1>
 			<div id="top-social" class="top-social-home">
@@ -56,13 +55,19 @@
 				</div>
 			</div>
 		</div>
-		<span class="side-right"></span>
 	</div>
 
-	<div id="navbar">
-		<ul>
-			<li class="but-about">
-				<a href="{{ U_ABOUT }}"><span></span>About</a>
+	<div id="phpbb-navbar" class="phpbb-navbar">
+		<div class="nav-button but-menu"><a href="#" id="phpbb-menu-toggle" title="Show menu">Menu</a></div>
+		<div id="searchbox">
+			<!-- Google CSE Search Box Begins -->
+			<form method="get" action="/search/">
+				<input name="q" id="q" type="search" size="40" value="" />
+			</form>
+		</div>
+		<ul id="phpbb-menu">
+			<li class="nav-button but-about">
+				<a href="{{ U_ABOUT }}">About</a>
 
 				<div class="sub-menu sub-menu-extra">
 					<ul>
@@ -102,7 +107,7 @@
 				</div>
 
 			</li>
-			<li class="but-downloads"><a href="{{ U_DOWNLOADS }}"><span></span>Downloads</a>
+			<li class="nav-button but-downloads"><a href="{{ U_DOWNLOADS }}"><span></span>Downloads</a>
 
 				<div class="sub-menu">
 					<ul>
@@ -138,7 +143,7 @@
 				</div>
 
 			</li>
-			<li class="but-customise"><a href="{{ U_CUSTOMISE }}"><span></span>Customise</a>
+			<li class="nav-button but-customise"><a href="{{ U_CUSTOMISE }}"><span></span>Customise</a>
 
 				<div class="sub-menu">
 					<ul>
@@ -176,7 +181,7 @@
 				</div>
 
 			</li>
-			<li class="but-support"><a href="{{ U_SUPPORT }}"><span></span>Support</a>
+			<li class="nav-button but-support"><a href="{{ U_SUPPORT }}"><span></span>Support</a>
 
 				<div class="sub-menu sub-menu-extra">
 					<ul>
@@ -210,7 +215,7 @@
 					<div class="sub-menu-bottom"><a href="{{ U_SUPPORT_INDEX_SUB }}">More information on support &raquo;</a></div>
 				</div>
 			</li>
-			<li class="but-development"><a href="{{ U_DEVELOPMENT }}"><span></span>Development</a>
+			<li class="nav-button but-development"><a href="{{ U_DEVELOPMENT }}"><span></span>Development</a>
 
 				<div class="sub-menu sub-menu-extra">
 					<ul class="wide-menu">
@@ -223,11 +228,11 @@
 					<ul>
 						<li class="external" title="Opens an external link.">
 							<h4><a href="{{ U_BUGS_PHPBB_SUB }}">phpBB Bug Tracker</a></h4>
-							<p><a href="{{ U_BUGS_PHPBB_SUB }}">Report problems with phpBB here.</a></p>
+							<p><a href="{{ U_BUGS_PHPBB_SUB }}">Report problems with phpBB core and other sub-projects such as the Website, Customisation DB, and Team Tools here.</a></p>
 						</li>
-						<li>
-							<h4><a href="{{ U_BUGS_SUB }}">phpBB Projects Tracker</a></h4>
-							<p><a href="{{ U_BUGS_SUB }}">Report issues with the Website, Customisation Database, and Team Tools here</a></p>
+						<li class="last">
+							<h4><a href="/ideas/?from=submenu">phpBB Ideas</a></h4>
+							<p><a href="/ideas/?from=submenu">Suggest, vote on and comment on ideas for phpBB.</a></p>
 						</li>
                         <li class="last">
                             <h4><a href="{{ U_IDEAS }}">phpBB Ideas</a></h4>
@@ -247,8 +252,8 @@
 					<div class="sub-menu-bottom"><a href="{{ U_DEV_INDEX_SUB }}">Participate in phpBB development now &raquo;</a></div>
 				</div>
 			</li>
-			<li class="but-blog"><a href="{{ U_BLOG }}"><span></span>Blog</a></li>
-			<li class="but-community"><a href="{{ U_COMMUNITY }}"><span></span>Community</a>
+			<li class="nav-button but-blog"><a href="{{ U_BLOG }}"><span></span>Blog</a></li>
+			<li class="nav-button but-community"><a href="{{ U_COMMUNITY }}"><span></span>Community</a>
 
 				<div class="sub-menu sub-menu-extra">
 					<ul>
@@ -282,15 +287,7 @@
 					<div class="sub-menu-bottom"><a href="{{ U_FORUM_INDEX_SUB }}">&#0133; and many more forums &raquo;</a></div>
 				</div>
 			</li>
-			<li class="but-hosting"><a href="{{ U_HOSTING }}"><span></span>Hosting</a></li>
-			<li id="searchbox">
-				<fieldset>
-					<!-- Google CSE Search Box Begins -->
-					<form method="get" action="/search/">
-						<p><input name="q" id="q" type="text" size="40" value="" /></p>
-					</form>
-				</fieldset>
-			</li>
+			<li class="nav-button but-hosting"><a href="{{ U_HOSTING }}"><span></span>Hosting</a></li>
 		</ul>
 	</div>
 
