@@ -30,6 +30,8 @@
 <link rel="stylesheet" href="{{ asset('assets/css/documentation.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/silver.css') }}" />
 
+<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" media="only screen and (max-width: 700px), only screen and (max-device-width: 700px)" />
+
 <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/vnd.microsoft.icon" />
 {% endblock %}
 
@@ -293,7 +295,7 @@
 {# END BODY #}
 {# BEGIN FOOTER #}
 
-<div id="page-footer">
+	<div id="page-footer">
 		<h3 style="padding-top: 8px;">&#097;&#100;&#118;&#101;&#114;&#116;&#105;&#115;&#101;&#109;&#101;&#110;&#116;&#115;</h3>
 		<div id="footer_banner_leaderboard">
 			{% include ':base:ads_footer_banner.html.twig' %}
@@ -307,7 +309,6 @@
 			<a href="http://hosting.fastdomain.com/track/phpbbsoftwareltd/footer"{% if bot is defined %} rel="nofollow"{% endif %}>FastDomain Hosting</a> &bull;
 			<a href="{{ advertise_path }}"><em>Advertise on phpBB.com</em></a>
 		</p>
-		<span class="fcorners-bottom"><span></span></span>
 	</div>
 </div>
 
