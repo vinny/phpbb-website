@@ -2,7 +2,7 @@
 
 {% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock title %}
 
-{% block body_tag %}<body id="phpbb" class="home ltr">{% endblock %}
+{% block body_tag %}<body id="phpbb" class="nojs notouch home ltr">{% endblock %}
 
 {% block header_button %}
 <div id="home-dl-link"><a href="{{ downloads_path }}">Download<span class="version">{{ package_version }}</span><span>{{ package_release_date }}</span></a></div><div id="home-try-link"><a href="{{ demo_path }}">Try our<span class="version">Demo</span></a></div>
@@ -20,11 +20,14 @@
 </div>
 
 <div id="main">
-	<br />
-	<p class="free_oss">THE #1 FREE, OPEN SOURCE BULLETIN BOARD SOFTWARE</p>
+	<h2 class="free_oss">THE #1 FREE, OPEN SOURCE BULLETIN BOARD SOFTWARE</h2>
+
 	<p>phpBB is a free flat-forum bulletin board software solution that can be used to stay in touch with a group of people or can power your entire website.  With an <a href="{{ mods_db_path }}">extensive database of user-created modifications</a> and <a href="{{ styles_db_path }}">styles database</a> containing hundreds of style and image packages to customise your board, you can create a very unique forum in minutes.</p>
+
 	<p>No other bulletin board software offers a greater complement of features, while maintaining efficiency and ease of use.  Best of all, phpBB is completely free.  We welcome you to <a href="{{ demo_path }}">test it</a> for yourself today.  If you have any questions please visit our <a href="{{ community_path }}">Community Forum</a> where our staff and members of the community will be happy to assist you with anything from configuring the software to modifying the code for individual needs.  <a href="{{ about_path }}">Learn more about phpBB.</a></p>
+
 	<hr />
+
 	<h3>Latest phpBB Announcements and Blog Posts</h3><br />
 	<ul class="announcements">
 	{% for announcement in announcements %}
@@ -69,7 +72,7 @@
 		</ul>
 		</div>
 	</div>
-	<dl class="extra-box shop">
+	<dl class="extra-box shop light-blue">
 		<dt><a href="{{ shop_path }}">phpBB Mascot</a></dt>
 		<dd><a href="{{ shop_path }}">Show your support for the phpBB project by getting a <span style="text-decoration: underline;">Bertie 3.0</span>!</a></dd>
 	</dl>
