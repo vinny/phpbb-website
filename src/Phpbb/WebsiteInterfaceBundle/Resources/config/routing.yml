@@ -43,3 +43,7 @@ phpBBWebsite_Support:
 phpBBWebsite_Extensions:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/extensions.yml"
     prefix:   /extensions
+
+phpBBWebsite_Downloads:
+    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/downloads.yml"
+    prefix:   /downloads
