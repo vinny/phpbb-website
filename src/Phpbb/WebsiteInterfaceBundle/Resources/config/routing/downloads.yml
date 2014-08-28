@@ -23,7 +23,7 @@ phpBBWebsite_Downloads_download_branch:
         branch: latest|3.0|3.1
 
 phpBBWebsite_Downloads_download_package:
-    path:  /download/{package}/
+    path:  /download/{package}
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Downloads:downloadHandler }
     methods:  [GET]
     requirements:
