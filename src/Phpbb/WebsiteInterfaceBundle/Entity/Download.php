@@ -51,14 +51,6 @@ class Download
     private $ip;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="branch", type="smallint")
-     */
-    private $branch;
-
-
-    /**
      * Get id
      *
      * @return integer
@@ -137,35 +129,11 @@ class Download
         return $this->ip;
     }
 
-    /**
-     * Set branch
-     *
-     * @param integer $branch
-     * @return Download
-     */
-    public function setBranch($branch)
-    {
-        $this->branch = $branch;
-
-        return $this;
-    }
-
-    /**
-     * Get branch
-     *
-     * @return integer
-     */
-    public function getBranch()
-    {
-        return $this->branch;
-    }
-
-    public function setConfigurableOptions($package, $ip, $branch)
+    public function setConfigurableOptions($package, $ip)
     {
         $this->downloadTime = new \DateTime("now");
         $this->package = $package;
         $this->ip = $ip;
-        $this->branch = $branch;
 
         return $this;
     }
