@@ -41,6 +41,11 @@ class DownloadsController extends Controller
 		$versions = $downloadManager->getAvailableUpdateFromVersions();
 		$packages = $downloadManager->generatePackages();
 
+		$templateVariables += array(
+			'versions' => $versions,
+			'packages' => $packages,
+		);
+
 		//TODO: Get language pack details
 
 		return $this->render('PhpbbWebsiteInterfaceBundle::downloads.html.twig', $templateVariables);
@@ -62,6 +67,6 @@ class DownloadsController extends Controller
 		$downloadManager = new DownloadManager();
 		$branch = ($branch == 'latest') ? '3.1' : $branch;
 		$downloadManager->setBranch($branch);
-		return $this->downloadHandler($request, $this->downloadManager->getMainPackageName);
+		return $this->downloadHandlerAction($request, $downloadManager->getMainPackageName);
 	}
 }
