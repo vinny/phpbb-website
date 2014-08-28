@@ -60,8 +60,8 @@ class DownloadsController extends Controller
 	public function downloadRedirectHandlerAction(Request $request, $branch = 'latest')
 	{
 		$downloadManager = new DownloadManager();
-		$branch = ($branch == 'latest') : '3.1' ? $branch;
+		$branch = ($branch == 'latest') ? '3.1' : $branch;
 		$downloadManager->setBranch($branch);
-		return $this->downloadHandler($request, $this->downloadManager->getMainPackageName)
+		return $this->downloadHandler($request, $this->downloadManager->getMainPackageName);
 	}
 }
