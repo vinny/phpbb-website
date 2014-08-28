@@ -1,13 +1,4 @@
 <?php
-/**
- *
- * @package PhpbbWebsiteInterfaceBundle
- * @copyright (c) 2014 phpBB Group
- * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
- * @author MichaelC
- *
- */
-
 namespace Phpbb\WebsiteInterfaceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -15,8 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Download
  *
- * @ORM\Table()
  * @ORM\Entity
+ * @ORM\Table(name="download")
  */
 class Download
 {
