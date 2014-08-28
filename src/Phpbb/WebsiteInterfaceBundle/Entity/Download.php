@@ -159,4 +159,14 @@ class Download
     {
         return $this->branch;
     }
+
+    public function setConfigurableOptions($package, $ip, $branch)
+    {
+        $this->downloadTime = new \DateTime("now");
+        $this->package = $package;
+        $this->ip = $ip;
+        $this->branch = $branch;
+
+        return $this;
+    }
 }
