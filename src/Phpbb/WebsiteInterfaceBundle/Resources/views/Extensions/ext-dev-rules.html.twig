@@ -2,13 +2,6 @@
 
 {% block title %}Extension Development Rules and Guidelines{% endblock title %}
 
-{% block javascriptHeader %}
-	{{ parent() }}
-
-	<!-- JS for Rule Highlighting -->
-	<script type="text/javascript" src="{{ asset('assets/js/rules.js') }}"></script>
-{% endblock %}
-
 {% block body %}
 <div id="page-body">
 	<ul class="linklist navlinks">
@@ -96,8 +89,14 @@
 
 	<div id="extras">
 		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-
 		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules-menu.html.twig') }}
 	</div>
 </div>
+{% endblock %}
+
+{% block javascriptFooter %}
+	{{ parent() }}
+
+	<!-- JS for Rule Highlighting -->
+	<script type="text/javascript" src="{{ asset('assets/js/rules.js') }}"></script>
 {% endblock %}
