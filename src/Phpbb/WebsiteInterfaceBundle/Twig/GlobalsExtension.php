@@ -402,6 +402,8 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_rules_dev'					=> '/extensions/rules-and-guidelines/development-rules',
 			'extensions_rules_writer'				=> '/extensions/rules-and-guidelines/writers-rules',
 
+			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
+
 			'extension_quickstart_zip'				=> '', // TODO add link to downloadable extension quickstart zip
 		);
 
@@ -432,6 +434,7 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_WRITERS_FORUM_30X'		=> '/community/viewforum.php?f=71',
 
 			'forum_extensions_31x'			=> '/community/viewforum.php?f=451',
+			'forum_extensions_req'			=> '/community/viewforum.php?f=496',
 			'forum_extensions_31x_dev'		=> '/community/viewforum.php?f=456',
 			'forum_extensions_31x_writers'	=> '/community/viewforum.php?f=461',
 
