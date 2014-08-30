@@ -208,4 +208,23 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         // Standard All Page Checks
         $this->globalTests();
     }
+
+    public function testExtensionsWritersRules()
+    {
+        $objs = $this->setupTest('/extensions/rules-and-guidelines/writers-rules/');
+        $crawler = $objs['crawler'];
+
+        // Title Check
+        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extension Writers Rules and Guidelines') !== false, 'Title contains Extension Writers Rules and Guidelines');
+
+        // Content Check
+        $this->assertTrue($crawler->filter('html:contains("Issues that may be discussed")')->count() > 0, 'Extensions Writers Rules Content Check');
+        $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+
+        // Menu Check
+        $this->assertTrue($crawler->filter('html:contains("Rules Sections")')->count() > 0, 'Rules Sections Menu Check');
+
+        // Standard All Page Checks
+        $this->globalTests();
+    }
 }

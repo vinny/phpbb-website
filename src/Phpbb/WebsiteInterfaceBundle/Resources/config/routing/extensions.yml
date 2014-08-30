@@ -61,3 +61,8 @@ phpBBWebsite_Extensions_dev_forum_rules:
     path: /rules-and-guidelines/development-rules/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:devRules }
     methods:  [GET]
+
+phpBBWebsite_Extensions_writers_forum_rules:
+    path: /rules-and-guidelines/writers-rules/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:writersRules }
+    methods:  [GET]

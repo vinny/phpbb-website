@@ -122,6 +122,16 @@ class ExtensionsController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules.html.twig', $templateVariables);
 	}
 
+	public function writersRulesAction()
+	{
+		// Extension Writers Rules and Guidelines
+		$templateVariables = array(
+			'header_css_image' => 'mods',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-writers-rules.html.twig', $templateVariables);
+	}
+
 	public function policiesAction()
 	{
 		// Extensions Rules and Guidelines

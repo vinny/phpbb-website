@@ -400,6 +400,7 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_instadeny'					=> '/extensions/rules-and-guidelines/insta-deny',
 			'extensions_repack'						=> '/extensions/rules-and-guidelines/repack',
 			'extensions_rules_dev'					=> '/extensions/rules-and-guidelines/development-rules',
+			'extensions_rules_writer'				=> '/extensions/rules-and-guidelines/writers-rules',
 
 			'extension_quickstart_zip'				=> '', // TODO add link to downloadable extension quickstart zip
 		);
