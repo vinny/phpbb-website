@@ -384,7 +384,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'extensions_writers_discussion'         => '/community/viewforum.php?f=461',
 
-			'extensions_rules'						=> '/extensions/rules-and-guidelines/',
+			'extensions_rules'						=> '/extensions/rules-and-policies/',
 			'extensions_recognised_devs'			=> '/extensions/recognised-developer/',
 			'extensions_offical_exts'				=> '/extensions/official-extensions/',
 			'extensions_offical_exts_team'			=> '/extensions/official-extensions/team/',
@@ -396,11 +396,11 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_installing'					=> '/extensions/installing/',
 			'extensions_writing'					=> '/extensions/writing/',
 			'extensions_team_overview'				=> '/extensions/team-overview/',
-			'extensions_validation_policy'			=> '/extensions/rules-and-guidelines/validation-policy',
-			'extensions_instadeny'					=> '/extensions/rules-and-guidelines/insta-deny',
-			'extensions_repack'						=> '/extensions/rules-and-guidelines/repack',
-			'extensions_rules_dev'					=> '/extensions/rules-and-guidelines/development-rules',
-			'extensions_rules_writer'				=> '/extensions/rules-and-guidelines/writers-rules',
+			'extensions_validation_policy'			=> '/extensions/rules-and-policies/validation-policy',
+			'extensions_instadeny'					=> '/extensions/rules-and-policies/insta-deny',
+			'extensions_repack'						=> '/extensions/rules-and-policies/repack',
+			'extensions_rules_dev'					=> '/extensions/rules-and-policies/development-rules',
+			'extensions_rules_writer'				=> '/extensions/rules-and-policies/writers-rules',
 
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 

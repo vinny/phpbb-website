@@ -3,8 +3,8 @@ phpBBWebsite_Extensions_home:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:home }
     methods:  [GET]
 
-phpBBWebsite_Extensions_rules_and_guidelines:
-    path:  /rules-and-guidelines/
+phpBBWebsite_Extensions_rules_and_policies:
+    path:  /rules-and-policies/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:policies }
     methods:  [GET]
 
@@ -42,27 +42,27 @@ phpBBWebsite_Extensions_team_overview:
     path:  /team-overview/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:teamOverview }
 
-phpBBWebsite_Extensions_rules_and_guidelines_validation_policy:
-    path:  /rules-and-guidelines/validation-policy/
+phpBBWebsite_Extensions_rules_and_policies_validation_policy:
+    path:  /rules-and-policies/validation-policy/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:validationPolicy }
     methods:  [GET]
 
-phpBBWebsite_Extensions_rules_and_guidelines_repack:
-    path:  /rules-and-guidelines/repack/
+phpBBWebsite_Extensions_rules_and_policies_repack:
+    path:  /rules-and-policies/repack/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:repackPolicy }
     methods:  [GET]
 
-phpBBWebsite_Extensions_rules_and_guidelines_insta_deny:
-    path:  /rules-and-guidelines/insta-deny/
+phpBBWebsite_Extensions_rules_and_policies_insta_deny:
+    path:  /rules-and-policies/insta-deny/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:instadenyPolicy }
     methods:  [GET]
 
 phpBBWebsite_Extensions_dev_forum_rules:
-    path: /rules-and-guidelines/development-rules/
+    path: /rules-and-policies/development-rules/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:devRules }
     methods:  [GET]
 
 phpBBWebsite_Extensions_writers_forum_rules:
-    path: /rules-and-guidelines/writers-rules/
+    path: /rules-and-policies/writers-rules/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:writersRules }
     methods:  [GET]

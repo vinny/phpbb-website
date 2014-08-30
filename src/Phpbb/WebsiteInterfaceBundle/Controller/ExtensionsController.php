@@ -134,17 +134,17 @@ class ExtensionsController extends Controller
 
 	public function policiesAction()
 	{
-		// Extensions Rules and Guidelines
+		// Extensions Rules and Policies
 		$templateVariables = array(
 			'header_css_image' => 'mods',
 			'policies'		 => array(
-				array('i' => 0, 'name' => 'Repack Policy', 'description' => 'How we handle repacking of Extensions.', 'link' => '/extensions/rules-and-guidelines/repack'),
-				array('i' => 1, 'name' => 'Insta Deny Policy', 'description' => 'How we handle Insta-Denies of Extensions.', 'link' => '/extensions/rules-and-guidelines/insta-deny'),
-				array('i' => 2, 'name' => 'Validation Policy', 'description' => 'Some general policies on how we handle validation.', 'link' => '/extensions/rules-and-guidelines/validation-policy'),
+				array('i' => 0, 'name' => 'Validation Policy', 'description' => 'Some general policies on how we handle validation.', 'link' => '/extensions/rules-and-policies/validation-policy'),
+				array('i' => 1, 'name' => 'Insta-Deny Policy', 'description' => 'How we handle Insta-Denies of Extensions.', 'link' => '/extensions/rules-and-policies/insta-deny'),
+				array('i' => 2, 'name' => 'Repack Policy', 'description' => 'How we handle repacking of Extensions.', 'link' => '/extensions/rules-and-policies/repack'),
 			)
 		);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:policies.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:rules-policies.html.twig', $templateVariables);
 	}
 
 	public function repackPolicyAction()
