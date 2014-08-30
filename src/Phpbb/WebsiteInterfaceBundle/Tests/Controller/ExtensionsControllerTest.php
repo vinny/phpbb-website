@@ -202,6 +202,9 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue($crawler->filter('html:contains("Licensing your Extension")')->count() > 0, 'Extensions Development Rules Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
+        // Menu Check
+        $this->assertTrue($crawler->filter('html:contains("Rules Sections")')->count() > 0, 'Rules Sections Menu Check');
+
         // Standard All Page Checks
         $this->globalTests();
     }
