@@ -119,7 +119,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Writing Extensions') !== false, 'Title contains Writing Extensions');
 
         // Content Check
-        $this->assertTrue($crawler->filter('html:contains("How to write an extension")')->count() > 0, 'Writing Extensions Content Check');
+        $this->assertTrue($crawler->filter('html:contains("How To Write an Extension")')->count() > 0, 'Writing Extensions Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks
