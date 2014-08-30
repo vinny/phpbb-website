@@ -87,7 +87,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extensions Development Team') !== false, 'Title contains Extensions Development Team');
 
         // Content Check
-        $this->assertTrue($crawler->filter('html:contains("The Extensions Development Team are extension Authors that work under the mentorship of the Extensions Team to create")')->count() > 0, 'Extensions Development Team Content Check');
+        $this->assertTrue($crawler->filter('html:contains("The Extensions Development Team are extension authors that work under the mentorship of the Extensions Team to create")')->count() > 0, 'Extensions Development Team Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks
