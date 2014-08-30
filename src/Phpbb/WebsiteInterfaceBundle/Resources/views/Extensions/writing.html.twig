@@ -46,7 +46,7 @@
    "extra": {
       "display-name": "Acme Demo Extension",
       "soft-require" : {
-         "phpbb/phpbb": ">=3.1.0-RC2,3.2.*@dev"
+         "phpbb/phpbb": ">=3.1.0-RC2,&lt;3.2.*@dev"
       }
    }
 }</pre>
@@ -98,8 +98,7 @@ class ext extends \phpbb\extension\base
             - @config
             - @controller.helper
             - @template
-            - @user
-		</pre>
+            - @user</pre>
 
 		<br /><br />
 		<p>Note that <samp>acme.demo.controller</samp> is the unique name for our <samp>main.php</samp> class. This name can be whatever you want, but phpBB extensions should preface them with the vendor name (in this case, acme) to prevent potential conflicts with other extensions or core services. The class is simply the name-spaced path to the <samp>main.php</samp> file. The arguments are each service required. It is important that the order of the services listed here exactly match the order of these services as arguments in the <samp>main.php</samp> constructor.</p>
@@ -109,8 +108,7 @@ class ext extends \phpbb\extension\base
 
 		<pre class="codesnippet">acme_demo_controller:
     pattern: /demo/{name}
-    defaults: { _controller: acme.demo.controller:handle }
-		</pre>
+    defaults: { _controller: acme.demo.controller:handle }</pre>
 
 		<br /><br />
 
@@ -131,12 +129,12 @@ class main
 
 		<br /><br />
 
-		<p>The above code would be for a class file and path structure such as <samp>/ext/acme/demo/controller/main.php</samp>.</p>
-		<p>The phpBB 3.1 coding standard states that the closing ?> is not required in PHP files, and all files should contain one extra blank line at the bottom.</p>
+		<p>The above code would be for a class file and path structure such as <samp>acme/demo/controller/main.php</samp>.</p>
+		<p>The phpBB 3.1 coding standard states that the closing <samp>?></samp> is not required in PHP files, and all files should contain one extra blank line at the bottom.</p>
 
 		<h2 class="title">Modifying Existing Functionality</h2>
 		<p>phpBB 3.1 uses a system of events to allow extensions the ability to modify existing functionality by inserting new code and/or modifying variables throughout the codebase and template files. There are two types of events: core events and template events.</p>
-		<p>Core events allow extensions to hook into phpBB’s PHP code at specific locations. These events often provide variables from the core that can be used and modified by the extension, or events can be used simply as a means to inject some additional PHP code. Extensions do this by using event listeners, located at <samp>./ext/acme/demo/events/</samp>.</p>
+		<p>Core events allow extensions to hook into phpBB’s PHP code at specific locations. These events often provide variables from the core that can be used and modified by the extension, or events can be used simply as a means to inject some additional PHP code. Extensions do this by using event listeners, located at <samp>acme/demo/events/</samp>.</p>
 		<p>For example, the acme-demo needs to add a link for its controller page to the header's navbar, next to the FAQ link. In <samp>main_listener.php</samp> there is a method called <samp>add_page_header_link()</samp> that has been subscribed to the <samp>core.page_header</samp> event. This method receives as its argument an <samp>$event</samp> variable, an array of all the variables from the <samp>core.page_header</samp> event which can be used and modified. For this example we do not need to do anything other than create a new template variable for our link that will be inserted into the core at this event location.</p>
 		<p>The <samp>load_language_on_setup()</samp> method in the <samp>main_listener.php</samp> is an example where the <samp>$event</samp> data passed to it is manipulated, in order to add additional language file data to the <samp>core.user_setup event</samp>.</p>
 		<p>Template events allow extensions to insert template code into event locations found throughout the template structure. Template events found inside phpBB’s template files look like:</p>
@@ -147,20 +145,20 @@ class main
 
 		<p>To use a template event, simply name your template file exactly the same as the template event you want to use, and place your template event files in an “<samp>event</samp>” folder inside your style’s template folder.</p>
 		<p>For example, the above template event could be used to add some CSS style script to the header. The template file would be located at:</p>
-		<pre class="codesnippet">./ext/acme/demo/styles/prosilver/template/event/overall_header_head_append.html</pre>
+		<pre class="codesnippet">acme/demo/styles/prosilver/template/event/overall_header_head_append.html</pre>
 
 		<br /><br />
 
 		<p>A special case for including CSS files and JS files exists. These use the <samp>&lt;!-- INCLUDECSS --&gt;</samp> and <samp>&lt;!-- INCLUDEJS --&gt;</samp> syntax, respectively.</p>
-		<p>For example, to add a new <samp>custom.css</samp> file in prosilver, a template event would need to be created at:</p> 		<p><samp>./ext/acme/demo/styles/prosilver/template/event/overall_header_head_append.html</samp></p>
+		<p>For example, to add a new <samp>custom.css</samp> file in prosilver, a template event would need to be created at:</p> 		<p><samp>acme/demo/styles/prosilver/template/event/overall_header_head_append.html</samp></p>
 		<p>It would contain the following line of code:</p>
 		<pre class="codesnippet">&lt;!-- INCLUDECSS ../theme/custom.css --&gt;</pre>
 
 		<br /><br />
 
-		<p>To include a JS file in all styles: <samp>./ext/acme/demo/styles/all/js/scripts.js</samp></p>
+		<p>To include a JS file in all styles: <samp>acme/demo/styles/all/js/scripts.js</samp></p>
 		<p>A template event would be created at:</p>
-		<p><samp>./ext/acme/demo/styles/all/template/event/overall_footer_after.html</samp></p>
+		<p><samp>acme/demo/styles/all/template/event/overall_footer_after.html</samp></p>
 		<p>It would contain the following line of code:</p>
 		<pre class="codesnippet">&lt;!-- INCLUDEJS @acme_demo/js/scripts.js --&gt;</pre>
 
@@ -176,14 +174,14 @@ $this->user->add_lang_ext(‘acme/demo’, ‘common’);</pre>
 
 		<br /><br />
 
-		<p>This would load <samp>ext/acme/demo/language/en/common.php</samp> (for an English language file).</p>
+		<p>This would load <samp>acme/demo/language/en/common.php</samp> (for an English language file).</p>
 
 		<pre class="codesnippet">// Add language files common.php and controller.php
 $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’));</pre>
 
 		<br /><br />
 
-		<p>This would load the two corresponding language files:<br /><samp>/ext/acme/demo/language/en/common.php</samp><br /><samp>/ext/acme/demo/language/en/controller.php</samp></p>
+		<p>This would load the two corresponding language files:<br /><samp>acme/demo/language/en/common.php</samp><br /><samp>acme/demo/language/en/controller.php</samp></p>
 
 		<p>While this ability to load language files at any point in your extension’s code when they may be needed is convenient, there are special core events for loading language files too. The <samp>core.user_setup</samp> event can be used to load language files that need to be available at all times. And a special <samp>core.permissions</samp> event should be used to load a special language file that contains translations for phpBB’s permissions system. For example:</p>
 		<pre class="codesnippet">&lt;php
@@ -209,7 +207,7 @@ $lang = array_merge($lang, array(
 
 		<br /><br />
 
-		<p>The first argument is the name of the template file, and the optional second argument is the page title. In this example, the ‘demo_body.html’ template file is located in <samp>./ext/acme/demo/styles/prosilver/template/</samp> (for prosilver). For the ACP template, things are handled using coding familiar to MOD authors. The ACP template file ‘demo_body.html’ is located in <samp>./ext/acme/demo/adm/style/</samp> and is loaded in the <samp>acp/main_module.php</samp> by:</p>
+		<p>The first argument is the name of the template file, and the optional second argument is the page title. In this example, the ‘demo_body.html’ template file is located in <samp>acme/demo/styles/prosilver/template/</samp> (for prosilver). For the ACP template, things are handled using coding familiar to MOD authors. The ACP template file ‘demo_body.html’ is located in <samp>acme/demo/adm/style/</samp> and is loaded in the <samp>acp/main_module.php</samp> by:</p>
 		<pre class="codesnippet">$user->add_lang('acp/common');
 $this->tpl_name = 'demo_body';
 $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
@@ -244,8 +242,8 @@ $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
          'acp',
          'ACP_CAT_TEST_MOD',
          array(
-            'module_basename'   => '\acme\demo\acp\main_module',
-            'modes'             => array('settings'),
+            'module_basename' => '\acme\demo\acp\main_module',
+            'modes'           => array('settings'),
          ),
       )),
    ));
