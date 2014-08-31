@@ -391,7 +391,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'extensions_epv'						=> '/extensions/epv/',
 			'extensions_epv_repo'                   => 'https://github.com/phpbb/epv',
-			'extensions_epv_bugs'                   => 'https://github.com/phpbb/epv/issues',
+			'extensions_epv_bugs'                   => 'https://tracker.phpbb.com/browse/EXTTOOLS',
 			'extensions_epv_instructions'           => '/community/viewtopic.php?f=461&t=2239116',
 			'extensions_installing'					=> '/extensions/installing/',
 			'extensions_writing'					=> '/extensions/writing/',
