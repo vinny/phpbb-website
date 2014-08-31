@@ -154,6 +154,9 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue($crawler->filter('html:contains("The following policies should be followed when developing extensions for phpBB")')->count() > 0, 'Validation Policy Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
+        // Menu Check
+        $this->assertTrue($crawler->filter('html:contains("Policy Sections")')->count() > 0, 'Policy Sections Menu Check');
+
         // Standard All Page Checks
         $this->globalTests();
     }

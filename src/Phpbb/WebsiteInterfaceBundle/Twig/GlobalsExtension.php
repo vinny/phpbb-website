@@ -404,7 +404,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 
-			'extension_quickstart_zip'				=> '', // TODO add link to downloadable extension quickstart zip
+			'extension_quickstart_zip'				=> '#', // TODO add link to downloadable extension quickstart zip
 		);
 
 		return $extensionVars;
