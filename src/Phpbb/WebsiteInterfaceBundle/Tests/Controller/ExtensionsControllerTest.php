@@ -230,4 +230,20 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         // Standard All Page Checks
         $this->globalTests();
     }
+
+    public function testEPV()
+    {
+        $objs = $this->setupTest('/extensions/epv/');
+        $crawler = $objs['crawler'];
+
+        // Title Check
+        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'EPV - Extension Pre Validator') !== false, 'Title contains EPV - Extension Pre Validator');
+
+        // Content Check
+        $this->assertTrue($crawler->filter('html:contains("It is suggested that extension authors use EPV")')->count() > 0, 'EPV Content Check');
+        $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+
+        // Standard All Page Checks
+        $this->globalTests();
+    }
 }
