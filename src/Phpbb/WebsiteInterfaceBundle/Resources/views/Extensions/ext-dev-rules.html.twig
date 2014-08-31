@@ -89,7 +89,20 @@
 
 	<div id="extras">
 		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules-menu.html.twig') }}
+		<div class="mini-panel sections">
+			<div class="inner">
+				<h3>Rules Sections</h3>
+				<ul class="menu">
+					<li><a href="#support-rules">Support for Extensions in Development</a></li>
+					<li><a href="#licensing-rules">Licensing your Extension</a></li>
+					<li><a href="#prefixing-rules">Extension Prefixes</a></li>
+					<li><a href="#topicformat-rules">Starting an Extension Development Topic</a></li>
+					<li><a href="#downloads-rules">Extension Downloads</a></li>
+					<li><a href="#requirements-rules">Extension Development Requirements</a></li>
+					<li class="last"><a href="#abandoned-rules">Abandoned Extensions Forum</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 {% endblock %}
