@@ -390,9 +390,9 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_offical_exts_team'			=> '/extensions/official-extensions/team/',
 
 			'extensions_epv'						=> '/extensions/epv/',
-			'extensions_epv_repo'                   => '',
-			'extensions_epv_bugs'                   => '',
-			'extensions_epv_instructions'           => '/community/viewtopic.php?f=461&amp;t=2239116',
+			'extensions_epv_repo'                   => 'https://github.com/phpbb/epv',
+			'extensions_epv_bugs'                   => 'https://github.com/phpbb/epv/issues',
+			'extensions_epv_instructions'           => '/community/viewtopic.php?f=461&t=2239116',
 			'extensions_installing'					=> '/extensions/installing/',
 			'extensions_writing'					=> '/extensions/writing/',
 			'extensions_team_overview'				=> '/extensions/team-overview/',
