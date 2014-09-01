@@ -32,14 +32,14 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
     public function testExtensionsRules()
     {
-        $objs = $this->setupTest('/extensions/rules-and-guidelines/');
+        $objs = $this->setupTest('/extensions/rules-and-policies/');
         $crawler = $objs['crawler'];
 
         // Title Check
-        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Rules and Guidelines') !== false, 'Title contains Extensions Rules and Guidelines');
+        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Rules and Policies') !== false, 'Title contains Extensions Rules and Policies');
 
         // Content Check
-        $this->assertTrue($crawler->filter('html:contains("Extension Database Policies")')->count() > 0, 'Extensions Rules and Guidelines Content Check');
+        $this->assertTrue($crawler->filter('html:contains("Extension Database Policies")')->count() > 0, 'Extensions Rules and Policies Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks
@@ -87,7 +87,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extensions Development Team') !== false, 'Title contains Extensions Development Team');
 
         // Content Check
-        $this->assertTrue($crawler->filter('html:contains("The Extensions Development Team are extension Authors that work under the mentorship of the Extensions Team to create")')->count() > 0, 'Extensions Development Team Content Check');
+        $this->assertTrue($crawler->filter('html:contains("The Extensions Development Team are extension authors that work under the mentorship of the Extensions Team to create")')->count() > 0, 'Extensions Development Team Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks
@@ -119,7 +119,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Writing Extensions') !== false, 'Title contains Writing Extensions');
 
         // Content Check
-        $this->assertTrue($crawler->filter('html:contains("How to write an extension")')->count() > 0, 'Writing Extensions Content Check');
+        $this->assertTrue($crawler->filter('html:contains("How To Write an Extension")')->count() > 0, 'Writing Extensions Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks
@@ -144,7 +144,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
     public function testExtensionsValidationPolicy()
     {
-        $objs = $this->setupTest('/extensions/rules-and-guidelines/validation-policy/');
+        $objs = $this->setupTest('/extensions/rules-and-policies/validation-policy/');
         $crawler = $objs['crawler'];
 
         // Title Check
@@ -154,13 +154,16 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue($crawler->filter('html:contains("The following policies should be followed when developing extensions for phpBB")')->count() > 0, 'Validation Policy Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
+        // Menu Check
+        $this->assertTrue($crawler->filter('html:contains("Policy Sections")')->count() > 0, 'Policy Sections Menu Check');
+
         // Standard All Page Checks
         $this->globalTests();
     }
 
     public function testExtensionsRepack()
     {
-        $objs = $this->setupTest('/extensions/rules-and-guidelines/repack/');
+        $objs = $this->setupTest('/extensions/rules-and-policies/repack/');
         $crawler = $objs['crawler'];
 
         // Title Check
@@ -176,7 +179,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
     public function testExtensionsInstaDeny()
     {
-        $objs = $this->setupTest('/extensions/rules-and-guidelines/insta-deny/');
+        $objs = $this->setupTest('/extensions/rules-and-policies/insta-deny/');
         $crawler = $objs['crawler'];
 
         // Title Check
@@ -192,7 +195,7 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
     public function testExtensionsDevRules()
     {
-        $objs = $this->setupTest('/extensions/rules-and-guidelines/development-rules/');
+        $objs = $this->setupTest('/extensions/rules-and-policies/development-rules/');
         $crawler = $objs['crawler'];
 
         // Title Check
@@ -204,6 +207,41 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 
         // Menu Check
         $this->assertTrue($crawler->filter('html:contains("Rules Sections")')->count() > 0, 'Rules Sections Menu Check');
+
+        // Standard All Page Checks
+        $this->globalTests();
+    }
+
+    public function testExtensionsWritersRules()
+    {
+        $objs = $this->setupTest('/extensions/rules-and-policies/writers-rules/');
+        $crawler = $objs['crawler'];
+
+        // Title Check
+        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extension Writers Rules and Guidelines') !== false, 'Title contains Extension Writers Rules and Guidelines');
+
+        // Content Check
+        $this->assertTrue($crawler->filter('html:contains("Issues that may be discussed")')->count() > 0, 'Extensions Writers Rules Content Check');
+        $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+
+        // Menu Check
+        $this->assertTrue($crawler->filter('html:contains("Rules Sections")')->count() > 0, 'Rules Sections Menu Check');
+
+        // Standard All Page Checks
+        $this->globalTests();
+    }
+
+    public function testEPV()
+    {
+        $objs = $this->setupTest('/extensions/epv/');
+        $crawler = $objs['crawler'];
+
+        // Title Check
+        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'EPV - Extension Pre Validator') !== false, 'Title contains EPV - Extension Pre Validator');
+
+        // Content Check
+        $this->assertTrue($crawler->filter('html:contains("It is suggested that extension authors use EPV")')->count() > 0, 'EPV Content Check');
+        $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
         // Standard All Page Checks
         $this->globalTests();

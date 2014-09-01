@@ -384,24 +384,27 @@ class GlobalsExtension extends \Twig_Extension
 
 			'extensions_writers_discussion'         => '/community/viewforum.php?f=461',
 
-			'extensions_rules'						=> '/extensions/rules-and-guidelines/',
+			'extensions_rules'						=> '/extensions/rules-and-policies/',
 			'extensions_recognised_devs'			=> '/extensions/recognised-developer/',
 			'extensions_offical_exts'				=> '/extensions/official-extensions/',
 			'extensions_offical_exts_team'			=> '/extensions/official-extensions/team/',
 
 			'extensions_epv'						=> '/extensions/epv/',
-			'extensions_epv_repo'                   => '',
-			'extensions_epv_bugs'                   => '',
-			'extensions_epv_instructions'           => '/community/viewtopic.php?f=461&amp;t=2239116',
+			'extensions_epv_repo'                   => 'https://github.com/phpbb/epv',
+			'extensions_epv_bugs'                   => 'https://tracker.phpbb.com/browse/EXTTOOLS',
+			'extensions_epv_instructions'           => '/community/viewtopic.php?f=461&t=2239116',
 			'extensions_installing'					=> '/extensions/installing/',
 			'extensions_writing'					=> '/extensions/writing/',
 			'extensions_team_overview'				=> '/extensions/team-overview/',
-			'extensions_validation_policy'			=> '/extensions/rules-and-guidelines/validation-policy',
-			'extensions_instadeny'					=> '/extensions/rules-and-guidelines/insta-deny',
-			'extensions_repack'						=> '/extensions/rules-and-guidelines/repack',
-			'extensions_rules_dev'					=> '/extensions/rules-and-guidelines/development-rules',
+			'extensions_validation_policy'			=> '/extensions/rules-and-policies/validation-policy',
+			'extensions_instadeny'					=> '/extensions/rules-and-policies/insta-deny',
+			'extensions_repack'						=> '/extensions/rules-and-policies/repack',
+			'extensions_rules_dev'					=> '/extensions/rules-and-policies/development-rules',
+			'extensions_rules_writer'				=> '/extensions/rules-and-policies/writers-rules',
 
-			'extension_quickstart_zip'				=> '', // TODO add link to downloadable extension quickstart zip
+			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
+
+			'extension_quickstart_zip'				=> '/store/quickstart_extension_1.0.0.zip',
 		);
 
 		return $extensionVars;
@@ -431,6 +434,7 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_WRITERS_FORUM_30X'		=> '/community/viewforum.php?f=71',
 
 			'forum_extensions_31x'			=> '/community/viewforum.php?f=451',
+			'forum_extensions_req'			=> '/community/viewforum.php?f=496',
 			'forum_extensions_31x_dev'		=> '/community/viewforum.php?f=456',
 			'forum_extensions_31x_writers'	=> '/community/viewforum.php?f=461',
 
