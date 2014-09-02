@@ -94,6 +94,22 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->globalTests();
     }
 
+    public function testJuniorValidators()
+    {
+        $objs = $this->setupTest('/extensions/junior-validators/');
+        $crawler = $objs['crawler'];
+
+        // Title Check
+        $this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Junior Validators') !== false, 'Title contains Junior Validators');
+
+        // Content Check
+        $this->assertTrue($crawler->filter('html:contains("The task of a Junior Validator is test submitted extensions")')->count() > 0, 'Junior Validators Content Check');
+        $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+
+        // Standard All Page Checks
+        $this->globalTests();
+    }
+
     public function testExtensionsInstalling()
     {
         $objs = $this->setupTest('/extensions/installing/');

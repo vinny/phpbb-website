@@ -388,6 +388,7 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_recognised_devs'			=> '/extensions/recognised-developer/',
 			'extensions_offical_exts'				=> '/extensions/official-extensions/',
 			'extensions_offical_exts_team'			=> '/extensions/official-extensions/team/',
+			'extensions_junior_validators'			=> '/extensions/junior-validators/',
 
 			'extensions_epv'						=> '/extensions/epv/',
 			'extensions_epv_repo'                   => 'https://github.com/phpbb/epv',
@@ -465,6 +466,8 @@ class GlobalsExtension extends \Twig_Extension
 			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
 			'ext_dev_tl_name'		=> 'EXreaction',
 			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=202401',
+			'ext_tl_name'			=> 'DavidIQ',
+			'ext_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=159755',
 		);
 
 		return $peopleVars;
