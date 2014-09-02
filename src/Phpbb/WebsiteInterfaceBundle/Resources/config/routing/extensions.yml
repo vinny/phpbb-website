@@ -28,6 +28,11 @@ phpBBWebsite_Extensions_official_extensions_team:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:officialExtensionsTeam }
     methods:  [GET]
 
+phpBBWebsite_Extensions_junior_validators:
+    path:  /junior-validators/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:juniorValidators }
+    methods:  [GET]
+
 phpBBWebsite_Extensions_installing:
     path:  /installing/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Extensions:installing }
