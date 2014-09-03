@@ -1,0 +1,56 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Styles{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep styles">Styles</h2>
+		<p>phpBB version 3 uses a powerful templating system that keeps the PHP code separate from the HTML code and gives you complete freedom to customise your forum the way you want it.</p>
+
+		<h2 class="title">Styles</h2>
+		<div class="column1">
+			<h3><a href="{{ styles_demo_olympus }}">Styles Demo for phpBB</a></h3>
+			<p>Here you can view a live demo of various phpBB 3.0 board styles before you download them.</p>
+		</div>
+
+		<div class="column2">
+			<h3><a href="{{ styles_db_path }}">Styles Database</a></h3>
+			<p>Here you can download additional board styles for phpBB, as well as add-on graphics such as ranks, avatars, and smilies.</p>
+		</div>
+
+		<span class="clear"></span>
+
+		<h2 class="title">Styles Help and Tools</h2>
+		<div class="column1">
+			<h3><a href="{{ styles_gdk_30_commercial_fonts }}">prosilver Graphics Development Kit (with commercial fonts)</a></h3>
+			<p>This is a Photoshop file that contains the images used in the default phpBB 3.0 prosilver style, using commercial fonts not included in the package.</p>
+
+			<h3><a href="{{ styles_gdk_30_free_fonts }}">prosilver Graphics Development Kit (with free fonts)</a></h3>
+			<p>This is a Photoshop file that contains the images used in the default phpBB 3.0 prosilver style, using free fonts included in the package.</p>
+
+			<h3><a href="{{ styles_gdk_20 }}">subSilver Graphics Development Kit</a></h3>
+			<p>This is a Photoshop file that contains the images used in the default phpBB 2.0 subSilver style.</p>
+		</div>
+		<div class="column2">
+			<h3><a href="{{ styles_faq }}">Frequently Asked Questions</a></h3>
+			<p>Common styles questions can be found in this FAQ guide. You should read the entire FAQ before posting questions in the forums.</p>
+
+			<h3><a href="{{ styles_ssp }}">Styles Submission Policy</a></h3>
+			<p>This document explains the process of submitting your own style to our Styles Database.</p>
+		</div>
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Styles:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}

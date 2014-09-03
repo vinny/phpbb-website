@@ -1,0 +1,24 @@
+phpBBWebsite_Styles_home:
+    path:  /
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:home }
+    methods:  [GET]
+
+phpBBWebsite_Styles_faq:
+    path:  /faq/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:faq }
+    methods:  [GET]
+
+phpBBWebsite_Styles_contribute:
+    path:  /contribute/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:contribute }
+    methods:  [GET]
+
+phpBBWebsite_Styles_statistics:
+    path:  /statistics/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:statistics }
+    methods:  [GET]
+
+phpBBWebsite_Styles_ssp:
+    path:  /ssp/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:ssp }
+    methods:  [GET]

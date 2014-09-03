@@ -323,17 +323,39 @@ class GlobalsExtension extends \Twig_Extension
 	private function getStyleVars()
 	{
 		$styleVars = array(
-			'STYLES'							=> '/styles/',
-			'STYLES_DB'						=> '/customise/db/styles-2/',
-			'STYLES_DEMO_OLYMPUS'					=> '/styles/demo/3.0/',
-			'STYLES_DOCUMENTATION'			=> '/styles/documentation/',
-			'STYLES_FAQ'						=> '/styles/faq/',
-			'STYLES_SSP'						=> '/community/viewtopic.php?f=73&amp;t=988545',
-			'STYLES_GDK_30_COMMERCIAL_FONTS'	=> '/customise/db/style/prosilver_gdk_commercial_fonts/',
-			'STYLES_GDK_30_FREE_FONTS'		=> '/customise/db/style/prosilver_gdk_free_fonts/',
-			'STYLES_GDK_20'					=> '/customise/db/style/phpbb_subsilver_gdk/',
-			'STYLES_JV_APP'					=> '/styles/contribute/index.php?p=jv',
-			'STYLES_JV_GROUP'					=> '/community/memberlist.php?mode=group&amp;g=228778',
+			'STYLES'                         => '/styles/',
+			'STYLES_DB'                      => '/customise/db/styles-2/', // TODO: remove? since we already have 'styles_db_path'
+			'STYLES_DEMO_OLYMPUS'            => '/styles/demo/3.0/',
+			'STYLES_DOCUMENTATION'           => '/styles/documentation/',
+			'STYLES_FAQ'                     => '/styles/faq/',
+			'STYLES_SSP'                     => '/community/viewtopic.php?f=73&amp;t=988545',
+			'STYLES_GDK_30_COMMERCIAL_FONTS' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
+			'STYLES_GDK_30_FREE_FONTS'       => '/customise/db/style/prosilver_gdk_free_fonts/',
+			'STYLES_GDK_20'                  => '/customise/db/style/phpbb_subsilver_gdk/',
+			'STYLES_JV_APP'                  => '/styles/contribute/index.php?p=jv',
+			'STYLES_JV_GROUP'                => '/community/memberlist.php?mode=group&amp;g=228778',
+
+			'styles_contribute'              => '/styles/contribute/',
+			'styles_faq'                     => '/styles/faq/',
+			'styles_ssp'                     => '/styles/ssp/',
+			'styles_statistics'              => '/styles/statistics/',
+
+			'styles_demo_ascraeus'           => '/styles/demo/3.1/',
+			'styles_demo_olympus'            => '/styles/demo/3.0/',
+			'styles_gdk_31_commercial_fonts' => '/customise/db/style/prosilver_gdk_31_commercial_fonts/', // TODO: create
+			'styles_gdk_31_free_fonts'       => '/customise/db/style/prosilver_gdk_31_free_fonts/',
+			'styles_gdk_30_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
+			'styles_gdk_30_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/',
+			'styles_gdk_20'                  => '/customise/db/style/phpbb_subsilver_gdk/',
+
+			'styles_kb_install'              => '/kb/article/how-to-install-styles-on-phpbb3/',
+			'styles_kb_create'               => '/kb/article/how-to-create-a-style-basics/',
+			'styles_kb_inheritance'          => 'http://blog.phpbb.com/2008/07/31/templating-just-got-easier/',
+
+			'styles_changes_31x'             => '/community/viewtopic.php?f=66666&amp;t=66666', // TODO: create
+			'styles_changes_30x'             => '/community/viewtopic.php?f=73&amp;t=880735',
+
+			'styles_jv_group' => '/community/memberlist.php?mode=group&amp;g=228778'
 		);
 
 		return $styleVars;
@@ -412,6 +434,8 @@ class GlobalsExtension extends \Twig_Extension
 	private function getForumVars()
 	{
 		$forumVars = array(
+			'community_search'	=> '/community/search.php',
+
 			'FORUM_30X_SUPPORT'	=> '/community/viewforum.php?f=46',
 			'FORUM_PHPBBDISC'		=> '/community/viewforum.php?f=64',
 			'FORUM_SEARCH_EVENTS'	=> '/community/search.php?keywords=%5BEVENT%5D&amp;terms=all&amp;fid%5B%5D=64&amp;sc=1&amp;sf=titleonly&amp;sr=topics&amp;sk=t&amp;sd=d&amp;st=0&amp;ch=300&amp;t=0&amp;submit=Search',
@@ -422,6 +446,16 @@ class GlobalsExtension extends \Twig_Extension
 			'FORUM_STYLES_SUPPORT_20X'	=> '/community/viewforum.php?f=23',
 			'FORUM_STYLES_DEV_30X'		=> '/community/viewforum.php?f=185',
 			'FORUM_STYLES_30X'			=> '/community/viewforum.php?f=80',
+
+			'forum_styles_31x'         => '/community/viewforum.php?f=471',
+			'forum_styles_31x_support' => '/community/viewforum.php?f=481',
+			'forum_styles_31x_dev'     => '/community/viewforum.php?f=476',
+			'forum_styles_30x'         => '/community/viewforum.php?f=80',
+			'forum_styles_30x_support' => '/community/viewforum.php?f=74',
+			'forum_styles_30x_dev'     => '/community/viewforum.php?f=185',
+			'forum_styles_20x'         => '/community/viewforum.php?f=77',
+			'forum_styles_20x_support' => '/community/viewforum.php?f=74',
+			'forum_styles_20x_dev'     => '/community/viewforum.php?f=23',
 
 			// Modification Forums
 			'FORUM_MODS'					=> '/community/viewforum.php?f=78',

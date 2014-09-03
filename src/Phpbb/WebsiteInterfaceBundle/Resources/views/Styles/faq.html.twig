@@ -1,0 +1,74 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Styles FAQ{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
+			<strong>&#8249;</strong> <a href="{{ styles_faq }}">Frequently Asked Questions</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep stylesfaq">Styles FAQ</h2>
+
+		<ul>
+			<li><a href="#genstyles">General Styles FAQ</a></li>
+			<li><a href="#authors">Creating, Editing, and Submitting Styles FAQ</a></li>
+		</ul>
+
+		<h3 id="genstyles">General Styles FAQ</h3>
+		<div class="content">
+			<dl class="faq">
+				<dt>What is a style?</dt>
+				<dd>A style changes the appearance of your board. The default style for phpBB 3.0 is prosilver (though a 3.0 version of subSilver is also included). The <a href="{{ styles_db_path }}">Styles Database</a> contains additional styles created by members of the phpBB.com community and are available for download and installation on your phpBB board.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>How do I install a style?</dt>
+				<dd>For phpBB 3.0 styles, see <a href="{{ styles_kb_install }}">this</a> Knowledge Base article.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Will you guys install a style for me?</dt>
+				<dd>Unfortunately we cannot. If you're having difficulty, first try <a href="{{ community_search }}">searching</a> the community to see if someone else has had and resolved the same problem. If to no avail, you may post in the <a href="{{ FORUM_STYLES_SUPPORT_30X }}">Styles Support & Discussion forum</a> for assistance.</dd>
+			</dl>
+		</div>
+
+		<h3 id="authors">Creating, Editing, and Submitting Styles FAQ</h3>
+		<div class="content">
+			<dl class="faq">
+				<dt>How do I create a new style?</dt>
+				<dd>For phpBB 3.0 styles, see <a href="{{ styles_kb_create }}">this</a> Knowledge Base article.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Can I submit a style to the phpBB.com Styles Database?</dt>
+				<dd>Yes, you may submit a style that <span style="text-decoration: underline;">you</span> created and you'd like to share with the community. The phpBB Styles Team will review your submission and if it is error-free it will be added to our database.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Are there rules I need to read before submitting a style to the Styles Database?</dt>
+				<dd>Yes. All submitters should read the <a href="{{ styles_ssp }}">Styles Submission Policy</a> to see the rules for submitting styles to our database and to learn how to actually submit the files.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Where can I see the template changes for each version of phpBB?</dt>
+				<dd>Changes for 3.0.x versions can be seen <a href="{{ styles_changes_30x }}">here</a>.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>If a style has not been updated by the original author, can I update it myself and submit it to the database?</dt>
+				<dd>We generally allow updates only by the original author of the style. If the original author no longer wishes to update it themselves, they must give express permission to someone to take over their work.<br /><br />
+					If the original author is unreachable, however, then you may update the style and submit it (specifying that this is the case in the submission, in the "Message to Styles Team" field). If the original author returns after this, though, then they can then reclaim the style if they wish. The original author would have the option to keep any updates done by you or to use/integrate them as they wish.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>What is template inheritance in phpBB 3.0?</dt>
+				<dd>As of phpBB version 3.0.3 and above, there is a new feature that style authors can use called template inheritance. For details on what it is and how to use it, see <a href="{{ styles_kb_inheritance }}">this blog post</a> from the Development Team.</dd>
+			</dl>
+		</div>
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Styles:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}
