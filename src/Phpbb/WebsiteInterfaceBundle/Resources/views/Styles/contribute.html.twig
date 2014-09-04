@@ -15,7 +15,6 @@
 
 	<div id="main">
 		<h2 class="imgrep about">Contribute as a Junior Validator</h2>
-		{% if S_JR_STYLES %}
 			<p>
 				The <a href="{{ styles_jv_group }}">Junior Style Validators Team</a> is composed of community members who assist the Styles Team in validating user-submitted styles in the Styles Database.
 				<br /><br />
@@ -33,14 +32,14 @@
 				If you meet these requirements and want to contribute to the phpBB project under the Styles Team, please fill out the form below.
 			</p>
 
-		{% if not S_IS_BOT %}
-			{% if not S_USER_LOGGED_IN %}
+
+
 			<div class="rules">
 				<div class="inner">
 					You must be <a href="{U_LOGIN_LOGOUT}">logged in</a> to fill out the form.
 				</div>
 			</div>
-			{% else %}
+
 			<br />
 			<form method="post" action="{S_JR_ACTION}" id="jv">
 				<div class="panel">
@@ -73,9 +72,7 @@
 					</div>
 				</div>
 			</form>
-			{% endif %}
-		{% endif %}
-		{% endif %}
+
 	</div>
 
 	<div id="extras">

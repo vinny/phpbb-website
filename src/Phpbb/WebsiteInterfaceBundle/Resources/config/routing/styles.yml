@@ -17,8 +17,3 @@ phpBBWebsite_Styles_ssp:
     path:  /ssp/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:ssp }
     methods:  [GET]
-
-phpBBWebsite_Styles_statistics:
-    path:  /statistics/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:statistics }
-    methods:  [GET, POST]

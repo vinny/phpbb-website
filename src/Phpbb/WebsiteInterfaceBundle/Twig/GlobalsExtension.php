@@ -338,7 +338,6 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_contribute'              => '/styles/contribute/',
 			'styles_faq'                     => '/styles/faq/',
 			'styles_ssp'                     => '/styles/ssp/',
-			'styles_statistics'              => '/styles/statistics/',
 
 			'styles_demo_ascraeus'           => '/styles/demo/3.1/',
 			'styles_demo_olympus'            => '/styles/demo/3.0/',
