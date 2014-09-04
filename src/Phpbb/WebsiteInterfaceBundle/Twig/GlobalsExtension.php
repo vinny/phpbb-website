@@ -324,7 +324,7 @@ class GlobalsExtension extends \Twig_Extension
 	{
 		$styleVars = array(
 			'STYLES'                         => '/styles/',
-			'STYLES_DB'                      => '/customise/db/styles-2/', // TODO: remove? since we already have 'styles_db_path'
+			'STYLES_DB'                      => '/customise/db/styles-2/',
 			'STYLES_DEMO_OLYMPUS'            => '/styles/demo/3.0/',
 			'STYLES_DOCUMENTATION'           => '/styles/documentation/',
 			'STYLES_FAQ'                     => '/styles/faq/',

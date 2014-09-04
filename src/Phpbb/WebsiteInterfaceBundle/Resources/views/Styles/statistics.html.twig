@@ -1,5 +1,13 @@
 {% extends ':base:base.html.twig' %}
 
+{% block javascriptHeader %}
+	{{ parent() }}
+
+	{% if stats|length %}
+	<script src="{{ asset('assets/js/styles/highcharts.js') }}"></script>
+	{% endif %}
+{% endblock title %}
+
 {% block title %}Styles Team Validation Statistics{% endblock title %}
 
 {% block body %}
@@ -13,13 +21,134 @@
 		</li>
 	</ul>
 
-	<div id="main">
-		<h2 class="imgrep about">Styles Team Validation Statistics</h2>
+	<div id="main" class="wide">
+		<h2 class="imgrep validation-statistics">Styles Team Validation Statistics</h2>
 
-	</div>
+		<form action="{{ styles_statistics }}" method="post">
+			<fieldset>
+				<label>
+					<select name="month">{{ month_list }}</select>
+				</label>
+				<label>
+					<select name="year">{{ year_list }}</select>
+				</label>
+				<input type="submit" value="Go" />
+			</fieldset>
+		</form>
 
-	<div id="extras">
-		{{ include('PhpbbWebsiteInterfaceBundle:Styles:menu.html.twig') }}
+		<div class="panel bg3">
+			<div class="inner">
+			{% if stats is not empty %}
+
+				<div id="chart" style="margin: 10px 0 10px 0; width: 825px; height: 425px; background-color: #FFFFFF;"></div>
+
+				{% for user_id, user in stats %}
+				<div class="forumbg styles-user-container">
+					<div class="inner">
+						<table class="table1" cellspacing="1">
+							<thead>
+								<tr>
+									<th class="name"><a id="show{{ user_id }}" class="styles-user-toggle" href="#">{{ user.username }}</a></th>
+									<th class="info">Date/Time</th>
+								</tr>
+							</thead>
+							<tbody id="stats{{ user_id }}" class="styles-user-tbody" style="display: none">
+							{% for contrib in user.contribs %}
+								<tr class="{{ cycle(['bg2', 'bg1'], loop.index) }}">
+									<td class="name"><a href="{{ contrib.url }}">{{ contrib.name }}</a></td>
+									<td class="info">{{ contrib.time_added }}</td>
+								</tr>
+							{% else %}
+								<tr class="bg1"><td colspan="2">User did not validate any Styles in {S_MONTH_SEL}, {S_YEAR_SEL}.</td></tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				{% endfor %}
+			{% else %}
+				<div class="rules">
+					<div class="inner">
+						No styles validated/tested for the month of {S_MONTH_SEL}, {S_YEAR_SEL}.
+					</div>
+				</div>
+			{% endif %}
+			</div>
+		</div>
+
+		</div>
 	</div>
 </div>
+{% endblock %}
+
+{% block javascriptFooter %}
+	{{ parent() }}
+
+<script>
+	$(function() {
+		$('.styles-user-container').each(function() {
+			var $this = $(this);
+			var $toggle = $this.find('.styles-user-toggle');
+			var $content = $this.find('.styles-user-tbody');
+
+			$toggle.on('click', function() {
+				$(this).toggleClass('active');
+				$content.toggle();
+			})
+		});
+
+		{% if stats|length %}
+			$('#chart').highcharts({
+				chart: {
+					type: 'bar'
+				},
+				colors: ['#cc33cc'],
+				title: {
+					text: '{{ month_sel }}, {{ year_sel }}'
+				},
+				subtitle: {
+					text: null
+				},
+				xAxis: {
+					categories: [{% for user_id, user in stats %}{{ user.username }}{% if not loop.last %},{% endif %}{% endfor %}],
+					title: {
+						text: null
+					}
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: 'Styles validated'
+					}
+				},
+				tooltip: {
+					formatter: function () {
+						return '<strong>' + this.x + '</strong><br />' +
+								this.y + ((this.y > 1) ? ' Styles validated' : ' Style validated') + ' in ' + this.series.name;
+						// this.y + ((this.y > 1) ? ' Styles validated/tested' : ' Style validated/tested') + ' in ' + this.series.name;
+					}
+				},
+				plotOptions: {
+					bar: {
+						dataLabels: {
+							enabled: true,
+							color: 'auto'
+						},
+						borderColor: '#CCCCCC'
+					}
+				},
+				legend: {
+					enabled: false
+				},
+				credits: {
+					enabled: false
+				},
+				series: [{
+						name: '{{ month_sel }}, {{ year_sel }}',
+						data: [{% for user in stats %}{{ user.total_month }}{% if not loop.last %},{% endif %}{% endfor %}]
+				}]
+			});
+		{% endif %}
+	});
+</script>
 {% endblock %}
