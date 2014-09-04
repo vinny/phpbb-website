@@ -42,7 +42,7 @@ class PhpbbHandling
     /**
      * Get the topic details from the forums table & the first post
      *
-     * @param Doctrine\DBAL\Connection      $phpBBConnection    DBAL connection to a phpBB database
+     * @param \Doctrine\DBAL\Connection      $phpBBConnection    DBAL connection to a phpBB database
      *                                                              (Doctrine\DBAL\Connection)
      * @param integer $forum                ID for the forum to get topics from
      * @param integer $retrieve_limit       Maxmium number of topics to retrieved
@@ -67,16 +67,28 @@ class PhpbbHandling
         return $topics;
     }
 
-	public static function getStyleValidationStatistics(\Doctrine\DBAL\Connection $phpbbConnection, $database_prefix = 'phpbb_', $cdb_prefix = 'customisation_', $group_ids, $month_sel, $year_sel)
+	/**
+	 * Generate a statistics array for a specific month/year, containing all contributions of group's members.
+	 *
+	 * @param \Doctrine\DBAL\Connection $phpbbConnection DBAL connection to a phpBB database
+	 * @param string                    $database_prefix
+	 * @param string                    $cdb_prefix
+	 * @param int                       $type            Titania category type (1 = mod, 2 = style, etc.)
+	 * @param array                     $group_ids       The groups which should be used for statistics
+	 * @param int                       $month_sel       The selected month for the statistics query
+	 * @param int                       $year_sel        The selected year for the statistics query
+	 * @return array                    $stats
+	 */
+	public static function getValidationStatistics(\Doctrine\DBAL\Connection $phpbbConnection, $database_prefix = 'phpbb_', $cdb_prefix = 'customisation_', $type = 1, $group_ids, $month_sel, $year_sel)
 	{
 		// TODO: there's probably a better way than define()
 		define('GROUPS_TABLE', $database_prefix . 'groups');
 		define('USER_GROUP_TABLE', $database_prefix . 'user_group');
 		define('USERS_TABLE', $database_prefix . 'users');
-		define('CUSTOM_POSTS_TABLE', $cdb_prefix . 'posts');
-		define('CUSTOM_TOPICS_TABLE', $cdb_prefix . 'topics');
-		define('CUSTOM_QUEUE_TABLE', $cdb_prefix . 'queue');
-		define('CUSTOM_CONTRIBS_TABLE', $cdb_prefix . 'contribs');
+		define('CDB_POSTS_TABLE', $cdb_prefix . 'posts');
+		define('CDB_TOPICS_TABLE', $cdb_prefix . 'topics');
+		define('CDB_QUEUE_TABLE', $cdb_prefix . 'queue');
+		define('CDB_CONTRIBS_TABLE', $cdb_prefix . 'contribs');
 
 		$stats = $user_stats = array();
 
@@ -95,19 +107,19 @@ class PhpbbHandling
 			if (!isset($stats[$user_id])) {
 				$stats[$user_id] = array(
 					'username' => $user['username'],
-					'team' => ($user['group_id'] == $group_ids['styles_team_id']) ? 1 : 0 // 1 = styles team, 0 = jr team
+					'team' => ($user['group_id'] == $group_ids[0]) ? 1 : 0 // 1 = primary, 0 = secondary
 				);
 			}
 		}
 
 		// Let's get some stats
 		$sql = "SELECT cp.post_user_id, cc.contrib_name, cp.post_time, cp.post_url, cp.post_id
-		FROM " . CUSTOM_POSTS_TABLE . " cp
-		JOIN " . CUSTOM_TOPICS_TABLE . " ct ON ct.topic_id = cp.topic_id
-		JOIN " . CUSTOM_QUEUE_TABLE . " cq ON cq.queue_topic_id = ct.topic_id
-		JOIN " . CUSTOM_CONTRIBS_TABLE . " cc ON cc.contrib_id = cq.contrib_id
+		FROM " . CDB_POSTS_TABLE . " cp
+		JOIN " . CDB_TOPICS_TABLE . " ct ON ct.topic_id = cp.topic_id
+		JOIN " . CDB_QUEUE_TABLE . " cq ON cq.queue_topic_id = ct.topic_id
+		JOIN " . CDB_CONTRIBS_TABLE . " cc ON cc.contrib_id = cq.contrib_id
 		WHERE
-			ct.topic_type = 3 AND ct.topic_category = 2 AND
+			ct.topic_type = 3 AND ct.topic_category = " . $type . " AND
 			FROM_UNIXTIME(cp.post_time, '%m') = '" . str_pad($month_sel, 2, "0", STR_PAD_LEFT) . "' AND
 			FROM_UNIXTIME(cp.post_time, '%Y') = $year_sel AND
 			(LOWER(post_text) LIKE 'moved from % to %' OR LOWER(post_text) = 'marked as in-progress')
@@ -140,5 +152,47 @@ class PhpbbHandling
 		}
 
 		return $stats;
+	}
+
+	/**
+	 * Shared function which returns HTML formatted option lists for date selection forms.
+	 * It also converts the selected month from an (int) to a name (string)
+	 *
+	 * @param $month_sel
+	 * @param $month_list
+	 * @param $year_sel
+	 * @param $year_list
+	 */
+	public static function getDateFormLists(&$month_sel, &$month_list, &$year_sel, &$year_list)
+	{
+		$month_list = $year_list = '';
+
+		$months = array(
+			1  => 'January',
+			2  => 'February',
+			3  => 'March',
+			4  => 'April',
+			5  => 'May',
+			6  => 'June',
+			7  => 'July',
+			8  => 'August',
+			9  => 'September',
+			10 => 'October',
+			11 => 'November',
+			12 => 'December'
+		);
+
+		foreach ($months as $month_num => $month_name)
+		{
+			$month_list .= '<option value="' . $month_num . '"' . (($month_num == $month_sel) ? ' selected="selected"' : '') . '>' . $month_name . '</option>';
+		}
+
+		// We start at 2010 since that's when Titania went live
+		for ($year_start = 2010; $year_start <= (int)date("Y"); $year_start++)
+		{
+			$year_list .= '<option value="' . $year_start . '"' . (($year_start == $year_sel) ? ' selected="selected"' : '') . '>' . $year_start . '</option>';
+		}
+
+		$month_sel = $months[$month_sel];
 	}
 }

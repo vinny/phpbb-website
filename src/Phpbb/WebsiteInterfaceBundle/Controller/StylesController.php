@@ -55,10 +55,11 @@ class StylesController extends Controller
 	public function statisticsAction(Request $request)
 	{
 		$cdb_prefix = 'customise_'; // TODO: get this from parameters.yml?
-		$group_ids = array('styles_team_id ' => 7332, 'jrstyles_team_id' => 228778);
-		$access_group_ids = array(228778, 7332, 13330, 4);
-		$month_sel = $request->request->get('month', (int)date("m")); // TODO: test
-		$year_sel  = $request->request->get('year', (int)date("Y")); // TODO: test
+		$type = 2; // The Titania item type
+		$group_ids = array(7332, 228778); // The first item is the primary group (styles team), the others are secondary
+		$access_group_ids = array(228778, 7332, 13330, 4); // All groups that have access to the stats page
+		$month_sel = $request->request->get('month', (int)date("m"));
+		$year_sel  = $request->request->get('year', (int)date("Y"));
 
 		// Only the Styles Team, Dev Team and Management Team/Administrators have access TODO
 		/*if (!$user->data['is_registered'] || !group_memberships($access_group_ids, $user->data['user_id'], true))
@@ -66,16 +67,17 @@ class StylesController extends Controller
 			trigger_error('You are not authorized to view this page.');
 		}*/
 
-		$stats = PhpbbHandling::getStyleValidationStatistics(
+		$stats = PhpbbHandling::getValidationStatistics(
 			$this->get('doctrine.dbal.phpbb_connection'),
 			$this->container->getParameter('phpbb_database_prefix'),
 			$cdb_prefix,
+			$type,
 			$group_ids,
 			$month_sel,
 			$year_sel
 		);
 
-		$this->getDateLists($month_sel, $month_list, $year_sel, $year_list);
+		PhpbbHandling::getDateFormLists($month_sel, $month_list, $year_sel, $year_list);
 
 		$templateVariables = array(
 			'header_css_image' => 'styles statistics',
@@ -87,38 +89,5 @@ class StylesController extends Controller
 		);
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:statistics.html.twig', $templateVariables);
-	}
-
-	private function getDateLists(&$month_sel, &$month_list, &$year_sel, &$year_list)
-	{
-		$month_list = $year_list = '';
-
-		$months = array(
-			1  => 'January',
-			2  => 'February',
-			3  => 'March',
-			4  => 'April',
-			5  => 'May',
-			6  => 'June',
-			7  => 'July',
-			8  => 'August',
-			9  => 'September',
-			10 => 'October',
-			11 => 'November',
-			12 => 'December'
-		);
-
-		foreach ($months as $month_num => $month_name)
-		{
-			$month_list .= '<option value="' . $month_num . '"' . (($month_num == $month_sel) ? ' selected="selected"' : '') . '>' . $month_name . '</option>';
-		}
-
-		// We start at 2010 since that's when Titania went live
-		for ($year_start = 2010; $year_start <= date("Y"); $year_start++)
-		{
-			$year_list .= '<option value="' . $year_start . '"' . (($year_start == $year_sel) ? ' selected="selected"' : '') . '>' . $year_start . '</option>';
-		}
-
-		$month_sel = $months[$month_sel];
 	}
 }
