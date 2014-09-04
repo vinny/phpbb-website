@@ -54,18 +54,23 @@ class StylesController extends Controller
 
 	public function statisticsAction(Request $request)
 	{
-		$customisation_prefix = 'customisation_';
+		$cdb_prefix = 'customise_'; // TODO: get this from parameters.yml?
 		$group_ids = array('styles_team_id ' => 7332, 'jrstyles_team_id' => 228778);
 		$access_group_ids = array(228778, 7332, 13330, 4);
 		$month_sel = $request->request->get('month', (int)date("m")); // TODO: test
 		$year_sel  = $request->request->get('year', (int)date("Y")); // TODO: test
 
+		// Only the Styles Team, Dev Team and Management Team/Administrators have access TODO
+		/*if (!$user->data['is_registered'] || !group_memberships($access_group_ids, $user->data['user_id'], true))
+		{
+			trigger_error('You are not authorized to view this page.');
+		}*/
+
 		$stats = PhpbbHandling::getStyleValidationStatistics(
 			$this->get('doctrine.dbal.phpbb_connection'),
 			$this->container->getParameter('phpbb_database_prefix'),
-			$customisation_prefix,
+			$cdb_prefix,
 			$group_ids,
-			$access_group_ids,
 			$month_sel,
 			$year_sel
 		);
@@ -105,13 +110,13 @@ class StylesController extends Controller
 
 		foreach ($months as $month_num => $month_name)
 		{
-			$month_list .= '<option value="' . $month_num . (($month_num == $month_sel) ? '" selected="selected"' : '"') . '>' . $month_name . "</option>\n";
+			$month_list .= '<option value="' . $month_num . '"' . (($month_num == $month_sel) ? ' selected="selected"' : '') . '>' . $month_name . '</option>';
 		}
 
-		//We start at 2010 since that's when Titania went live
-		for ($year_start = 2010; $year_start <= $year_sel; $year_start++)
+		// We start at 2010 since that's when Titania went live
+		for ($year_start = 2010; $year_start <= date("Y"); $year_start++)
 		{
-			$year_list .= '<option value="' . $year_start . (($year_start == $year_sel) ? '" selected="selected"' : '"') . '>' . $year_start . "</option>\n";
+			$year_list .= '<option value="' . $year_start . '"' . (($year_start == $year_sel) ? ' selected="selected"' : '') . '>' . $year_start . '</option>';
 		}
 
 		$month_sel = $months[$month_sel];

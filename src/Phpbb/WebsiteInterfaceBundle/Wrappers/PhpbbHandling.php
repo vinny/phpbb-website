@@ -67,25 +67,16 @@ class PhpbbHandling
         return $topics;
     }
 
-
-
-	public static function getStyleValidationStatistics(\Doctrine\DBAL\Connection $phpbbConnection, $database_prefix = 'phpbb_', $customisation_prefix = 'customisation_', $group_ids, $access_group_ids, $month_sel, $year_sel)
+	public static function getStyleValidationStatistics(\Doctrine\DBAL\Connection $phpbbConnection, $database_prefix = 'phpbb_', $cdb_prefix = 'customisation_', $group_ids, $month_sel, $year_sel)
 	{
 		// TODO: there's probably a better way than define()
 		define('GROUPS_TABLE', $database_prefix . 'groups');
 		define('USER_GROUP_TABLE', $database_prefix . 'user_group');
 		define('USERS_TABLE', $database_prefix . 'users');
-		define('CUSTOM_POSTS_TABLE', $customisation_prefix . 'posts');
-		define('CUSTOM_TOPICS_TABLE', $customisation_prefix . 'topics');
-		define('CUSTOM_QUEUE_TABLE', $customisation_prefix . 'queue');
-		define('CUSTOM_CONTRIBS_TABLE', $customisation_prefix . 'contribs');
-		$contrib_url_prefix = '../customise/db/';
-
-		// Only the Styles Team, Dev Team and Management Team/Administrators have access TODO
-		/*if (!$user->data['is_registered'] || !group_memberships($access_group_ids, $user->data['user_id'], true))
-		{
-			trigger_error('You are not authorized to view this page.');
-		}*/
+		define('CUSTOM_POSTS_TABLE', $cdb_prefix . 'posts');
+		define('CUSTOM_TOPICS_TABLE', $cdb_prefix . 'topics');
+		define('CUSTOM_QUEUE_TABLE', $cdb_prefix . 'queue');
+		define('CUSTOM_CONTRIBS_TABLE', $cdb_prefix . 'contribs');
 
 		$stats = $user_stats = array();
 
@@ -140,7 +131,7 @@ class PhpbbHandling
 				{
 					$stats[$user_id]['contribs'][] = array(
 						'name'       => $contrib['contrib_name'],
-						'url'        => $contrib_url_prefix . $contrib['post_url'] . "-p_{$contrib['post_id']}#p{$contrib['post_id']}",
+						'url'        => $contrib['post_url'] . "-p_{$contrib['post_id']}#p{$contrib['post_id']}",
 						'time_added' => '1-1-1970',
 						//'time_added' => $user->format_date($contrib['post_time']), // TODO
 					);

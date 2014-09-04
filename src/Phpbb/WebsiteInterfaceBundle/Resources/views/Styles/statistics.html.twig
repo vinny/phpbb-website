@@ -6,7 +6,7 @@
 	{% if stats|length %}
 	<script src="{{ asset('assets/js/styles/highcharts.js') }}"></script>
 	{% endif %}
-{% endblock title %}
+{% endblock javascriptHeader %}
 
 {% block title %}Styles Team Validation Statistics{% endblock title %}
 
@@ -24,19 +24,19 @@
 	<div id="main" class="wide">
 		<h2 class="imgrep validation-statistics">Styles Team Validation Statistics</h2>
 
-		<form action="{{ styles_statistics }}" method="post">
+		<form action="{{ styles_statistics }}" method="post" style="margin-bottom: 15px">
 			<fieldset>
 				<label>
-					<select name="month">{{ month_list }}</select>
+					<select name="month">{{ month_list|raw }}</select>
 				</label>
 				<label>
-					<select name="year">{{ year_list }}</select>
+					<select name="year">{{ year_list|raw }}</select>
 				</label>
 				<input type="submit" value="Go" />
 			</fieldset>
 		</form>
 
-		<div class="panel bg3">
+		<div class="panel bg3" style="padding: 10px">
 			<div class="inner">
 			{% if stats is not empty %}
 
@@ -55,7 +55,7 @@
 							<tbody id="stats{{ user_id }}" class="styles-user-tbody" style="display: none">
 							{% for contrib in user.contribs %}
 								<tr class="{{ cycle(['bg2', 'bg1'], loop.index) }}">
-									<td class="name"><a href="{{ contrib.url }}">{{ contrib.name }}</a></td>
+									<td class="name"><a href="{{ cdb_path }}{{ contrib.url }}">{{ contrib.name }}</a></td>
 									<td class="info">{{ contrib.time_added }}</td>
 								</tr>
 							{% else %}
@@ -67,9 +67,9 @@
 				</div>
 				{% endfor %}
 			{% else %}
-				<div class="rules">
+				<div class="rules" style="padding: 10px">
 					<div class="inner">
-						No styles validated/tested for the month of {S_MONTH_SEL}, {S_YEAR_SEL}.
+						No styles validated/tested for the month of {{ month_sel }}, {{ year_sel }}.
 					</div>
 				</div>
 			{% endif %}
@@ -110,7 +110,7 @@
 					text: null
 				},
 				xAxis: {
-					categories: [{% for user_id, user in stats %}{{ user.username }}{% if not loop.last %},{% endif %}{% endfor %}],
+					categories: [{% for user in stats %}{{ user.username }}{% if not loop.last %},{% endif %}{% endfor %}],
 					title: {
 						text: null
 					}
