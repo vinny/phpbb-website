@@ -13,17 +13,17 @@
 	</ul>
 
 	<div id="main">
-		<h2 class="imgrep stylesfaq">Creating &amp; Modifying Styles</h2>
+		<h2 class="imgrep styles">Creating &amp; Modifying Styles</h2>
 		<p>On this page, you will find some basic as well as more advanced instructions which can help you in creating your own style for phpBB 3.1.x, or modifying an existing one to suit your needs.</p>
 		<p>The focus will be on creating a new style, based on an existing style. Besides the fact that this is the most likely scenario for most style authors, it also creates a better understanding of the template-engine and style-system as a whole in more diverse situations.</p>
 
-		<div class="note-box information-yellow"><strong>Note:</strong> this guide only applies to phpBB 3.1.x. For guides for older versions of phpBB (3.0.x), please visit the <a href="{{ styles_kb_30_create }}">knowledge base</a> or the <a href="{{ styles_wiki }}">Development Wiki</a>.</div>
+		<div class="note-box information-yellow"><strong>Note:</strong> This guide only applies to phpBB 3.1.x. For guides for older versions of phpBB (3.0.x), please visit the <a href="{{ styles_kb_30_create }}">knowledge base</a> or the <a href="{{ styles_wiki }}">Development Wiki</a>.</div>
 
-		<div class="note-box information-blue"><strong>Note:</strong> this guide is a continuation of the <a href="{{ styles_installing }}#a-editing">Editing Styles</a> section of the <a href="{{ styles_installing }}">Installing &amp; Using Styles</a> page. Please read it <span style="text-decoration: underline;">before</span> using this guide, as we will not repeat it here.</div>
+		<div class="note-box information-blue"><strong>Note:</strong> This guide is a continuation of the <a href="{{ styles_installing }}#a-editing">Editing Styles</a> section of the <a href="{{ styles_installing }}">Installing &amp; Using Styles</a> page. Please read it <span style="text-decoration: underline;">before</span> using this guide, as we will not repeat it here.</div>
 
-		<div class="note-box information-blue"><strong>Note:</strong> a good understanding of HTML, CSS (and JS) is required. There are tons of information about web-design available on the internet, so we will only focus on things that are unique to phpBB 3.1.x.</div>
+		<div class="note-box information-blue"><strong>Note:</strong> A good understanding of HTML, CSS (and JS) is required. There are tons of information about web-design available on the internet, so we will only focus on things that are unique to phpBB 3.1.x.</div>
 
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> the best way to learn how to create (or modify) styles is by learning from examples. Have a look at some of the popular styles in the <a href="{{ styles_db_path }}">Styles Database</a> and the <a href="{{ forum_styles_31x_dev }}">[3.1.x] Styles in Development</a> forum and see how they work.</div>
+		<div class="note-box information-green"><strong>Pro-Tip:</strong> The best way to learn how to create (or modify) styles is by learning from examples. Have a look at some of the popular styles in the <a href="{{ styles_db_path }}">Styles Database</a> and the <a href="{{ forum_styles_31x_dev }}">[3.1.x] Styles in Development</a> forum and see how they work.</div>
 
 		<hr />
 
@@ -67,7 +67,7 @@
 		<hr />
 
 		<h2 class="title" id="a-preparation">Preparation</h2>
-		<div class="note-box information-yellow"><strong>Note:</strong> always(!) make a backup of your board's files <span style="text-decoration: underline;">and</span> database before making changes to the code. It's generally very difficult to provide support for users that mess things up by editing code themselves.</div>
+		<div class="note-box information-yellow"><strong>Note:</strong> Always(!) make a backup of your board's files <span style="text-decoration: underline;">and</span> database before making changes to the code. It's generally very difficult to provide support for users that mess things up by editing code themselves.</div>
 
 		<h3>Choosing a "Base" Style</h3>
 		<p>Since creating a completely new style is a massive undertaking (and requires a lot of skill, in which case you won't need this guide anyway), we need to choose an existing style to use as a "base".</p>
@@ -77,9 +77,9 @@
 		<h3>Create a "skeleton"</h3>
 		<p>The first thing that needs to be done is creating the file structure for your new style. See the <a href="#a-structure">file structure</a> section to see what a basic skeleton looks like.</p>
 		<p>When you have created all the required directories (template, theme, images) and the  <samp><a href="#a-config">style.cfg</a></samp> and <samp>stylesheet.css</samp> files, you are ready start copying templates and theme assets that you want to use.</p>
-		<div class="note-box information-blue"><strong>Note:</strong> we advise you to read the rest of this guide before proceeding.</div>
+		<div class="note-box information-blue"><strong>Note:</strong> We advise you to read the rest of this guide before proceeding.</div>
 
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> don't edit existing styles. Instead, create a copy of the style you want to change, and edit the new <samp>style.cfg</samp> so that it will <em>inherit</em> from the original style. Read the <a href="#a-inheritance">template inheritance</a> and <a href="#a-asset-inheritance">asset inheritance</a> sections for more information.</div>
+		<div class="note-box information-green"><strong>Pro-Tip:</strong> Don't edit existing styles. Instead, create a copy of the style you want to change, and edit the new <samp>style.cfg</samp> so that it will <em>inherit</em> from the original style. Read the <a href="#a-inheritance">template inheritance</a> and <a href="#a-asset-inheritance">asset inheritance</a> sections for more information.</div>
 
 		<hr />
 
@@ -141,23 +141,23 @@ parent = prosilver Special Edition</pre></p>
 		<p>But besides these elements, phpBB 3.1.x requires styles to include certain specific pieces of code for the style to function properly.</p>
 		<p>If you are using a valid 3.1.x style as a base for your new style, these elements will be included already, but since they are very important, we will dedicate this section to a more detailed explenation.</p>
 
-		<div class="note-box information-blue"><strong>Note:</strong> for more information on how these code snippets are used by styles and extensions, visit the <a href="{{ extensions_writing }}">Writing Extensions</a> page or the Development Wiki page on <a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">New Template Commands in 3.1</a>.</div>
+		<div class="note-box information-blue"><strong>Note:</strong> For more information on how these code snippets are used by styles and extensions, visit the <a href="{{ extensions_writing }}">Writing Extensions</a> page or the Development Wiki page on <a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">New Template Commands in 3.1</a>.</div>
 
 		<h3>{$STYLESHEETS}</h3>
 		<p>The phpBB 3.1.x extension system lets extensions add custom (external) CSS files to your page output. They do this by using the <samp>&lt;!-- INCLUDECSS my_styling.css --&gt;</samp> template commands.</p>
 		<p>What this command does is add the specified files to the queue of files that will be loaded in the <samp>{$STYLESHEETS}</samp> template location. So if you don't include this variable in your template, many extensions will break (since their front-end styling relies on these files).</p>
-		<div class="note-box information-yellow"><samp>{$STYLESHEETS}</samp> should be present near the end of the <samp>&lt;head&gt;</samp> element (but after <samp>&lt;!-- EVENT overall_header_head_append --&gt;</samp>) in the <samp>overall_header.html</samp> template.</div>
+		<div class="note-box information-yellow"><strong>Note:</strong> <samp>{$STYLESHEETS}</samp> should be present near the end of the <samp>&lt;head&gt;</samp> element in the <samp>overall_header.html</samp> template. Ideally right before the <samp>&lt;/head&gt;</samp> tag.</div>
 
 		<h3>{$SCRIPTS}</h3>
 		<p>The <samp>{$SCRIPTS}</samp> template variable works in much the same way as <samp>{$STYLESHEETS}</samp>, but is meant for JavaScript files to be included. Extension authors use this by using the <samp>&lt;!-- INCLUDEJS my_scripts.js --&gt;</samp> template command. As with the stylesheets, the <samp>{$SCRIPTS}</samp> variable is necessary for your style (and extensions) to function properly.</p>
-		<div class="note-box information-yellow"><samp>{$SCRIPTS}</samp> should be present near the end of the <samp>overall_footer.html</samp> template. Ideally right before the <samp>&lt;/body&gt;</samp> tag.</div>
+		<div class="note-box information-yellow"><strong>Note:</strong> <samp>{$SCRIPTS}</samp> should be present near the end of the <samp>overall_footer.html</samp> template. Ideally right before the <samp>&lt;/body&gt;</samp> tag.</div>
 
 		<h3>jQuery</h3>
 		<p>As of phpBB 3.1.x, jQuery is included by default in the download package. Besides the fact that jQuery can be very handy for style authors, many extensions will utilize it too and <span style="text-decoration: underline;">depend</span> on it being active.</p>
 		<p>Therefore you should always include the instructions that loads jQuery into your template. You can do this by making sure that the following code is present in your <samp>overall_footer.html</samp> template.
 		<pre class="codesnippet">&lt;script src="{T_JQUERY_LINK}"&gt;&lt;/script&gt;
 &lt;!-- IF S_ALLOW_CDN --&gt;&lt;script&gt;window.jQuery || document.write(unescape('%3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}" type="text/javascript"%3E%3C/script%3E'));&lt;/script&gt;&lt;!-- ENDIF --&gt;</pre></p>
-		<div class="note-box information-yellow">This jQuery code snippet should ideally be the first script that is loaded in the footer. In any case, it <span style="text-decoration: underline;">must</span> be included <span style="text-decoration: underline;">before</span> <samp>{$SCRIPTS}</samp>.</div>
+		<div class="note-box information-yellow"><strong>Note:</strong> This jQuery code snippet should ideally be the first script that is loaded in the footer. In any case, it <span style="text-decoration: underline;">must</span> be included <span style="text-decoration: underline;">before</span> <samp>{$SCRIPTS}</samp>.</div>
 
 		<hr />
 
@@ -178,8 +178,8 @@ parent = prosilver Special Edition</pre></p>
 
 		<p>Since prosilver is still the default style for phpBB 3.1.x, most extensions will be primarily developed for prosilver (and therefore use prosilver's template events). Including these events (in roughly the same location as prosilver) will ensure that future extensions will work with your style.</p>
 
-		<div class="note-box information-blue"><strong>Note:</strong> a comprehensive list of all template events currently available in prosilver 3.1.x (and subsilver) can be found on the Development Wiki <a href="https://wiki.phpbb.com/Event_List#Template_Events">Event List</a> page.</div>
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> instead of trying to insert all these template events into the correct places in the templates of your style, you can use <a href="#a-inheritance">template inheritance</a>.</div>
+		<div class="note-box information-blue"><strong>Note:</strong> A comprehensive list of all template events currently available in prosilver 3.1.x (and subsilver) can be found on the Development Wiki <a href="https://wiki.phpbb.com/Event_List#Template_Events">Event List</a> page.</div>
+		<div class="note-box information-green"><strong>Pro-Tip:</strong> Instead of trying to insert all these template events into the correct places in the templates of your style, you can use <a href="#a-inheritance">template inheritance</a>.</div>
 
 		<hr />
 
@@ -191,7 +191,7 @@ parent = prosilver Special Edition</pre></p>
 
 		<p>Basically this means that phpBB will try to find a file in your new style's <samp>template</samp> directory, but if it cannot find it, it will look for the file in each of the <span style="text-decoration: underline;">parents'</span> <samp>template</samp> directories. This process can go multiple levels deep. So you can base your own child style on a child of a child of a child of a parent, like the branches of a tree (hence the "<a href="{{ styles_installing }}#a-managing">styles tree</a>").</p>
 
-		<div class="note-box information-blue"><strong>Note:</strong> with the introduction of <a href="#a-events">template events</a>, template inheritance has become much more powerful. We advise you to use it whenever possible.</div>
+		<div class="note-box information-blue"><strong>Note:</strong> With the introduction of <a href="#a-events">template events</a>, template inheritance has become much more powerful. We advise you to use it whenever possible.</div>
 
 		<h3>Example</h3>
 		<p>Many styles start off by modifying existing styles (such as prosilver), because creating a completely new style from scratch is an extremely time consuming undertaking. The following example will show how easy (and useful it is).</p>
@@ -214,7 +214,7 @@ parent = prosilver Special Edition</pre></p>
 		<p>The biggest obstacle for most style authors is the fact that the inheritance tree only works for templates, not CSS. So how do we use template inheritance, but <span style="text-decoration: underline">also</span> "inherit" the theme assets of the "parent"?</p>
 		<p>There are multiple ways of doing this, and it will depend on whether or not you plan to make really significant changes to the CSS files. We'll try to explain the different ways of "inheriting" theme assets from other styles, and their pros and cons.</p>
 
-		<div class="note-box information-blue"><strong>Note:</strong> theme assets cannot be "inherited" the same sense as templates can. There is no automated system at work here. Asset inheritance should be read as meaning: "loading theme assets from a different style, via manual instructions".</div>
+		<div class="note-box information-blue"><strong>Note:</strong> Theme assets cannot be "inherited" the same sense as templates can. There is no automated system at work here. Asset inheritance should be read as meaning: "loading theme assets from a different style, via manual instructions".</div>
 
 		<h3>Method 1. Copy-paste all theme assets</h3>
 		<p>The easiest (and probably most (ab)used method) has been to simply copy-paste all the assets (the entire <samp>theme</samp> directory) of the "parent" style to the "child" style's <samp>theme</samp> directory, and edit the various .css files to suit your needs.</p>
@@ -268,12 +268,12 @@ parent = prosilver Special Edition</pre></p>
 
 &lt;link href="{T_STYLESHEET_LINK}" rel="stylesheet" /&gt;</pre></p>
 
-		<div class="note-box information-blue"><strong>Note:</strong> we use <samp>{T_ASSETS_VERSION}</samp> as rudimentary form of browser cache control.</div>
-		<div class="note-box information-yellow"><strong>Note:</strong> although <samp>{T_SUPER_TEMPLATE_NAME}</samp> is still supported, it only traverses the styles tree 1 level. So it isn't suitable for use in complex inheritance situations.</div>
+		<div class="note-box information-blue"><strong>Note:</strong> We use <samp>{T_ASSETS_VERSION}</samp> as rudimentary form of browser cache control.</div>
+		<div class="note-box information-yellow"><strong>Note:</strong> Although <samp>{T_SUPER_TEMPLATE_NAME}</samp> is still supported, it only traverses the styles tree 1 level. So it isn't suitable for use in complex inheritance situations.</div>
 
 		<p>What this does is load prosilver's <samp>stylesheet.css</samp> first (and load all the subsequent components via the <samp>@import</samp> method as specified in that file). After that, it will load the <samp>stylesheet.css</samp> of your custom style. You can use <samp>@import</samp> rules in your own stylesheet.css file as well of course (if you want to split up your code into multiple files), or you could simply put all your CSS rules in the file itself.</p>
 
-		<div class="note-box information-yellow"><strong>Note:</strong> using both <samp>@import</samp> rules <span style="text-decoration: underline;">and</span> regular CSS rules in the same file is not advised.</div>
+		<div class="note-box information-yellow"><strong>Note:</strong> Using both <samp>@import</samp> rules <span style="text-decoration: underline;">and</span> regular CSS rules in the same file is not advised.</div>
 
 		<p>This same method can be applied to load other CSS assets directly from the parent (without having to duplicate them), such as <samp>responsive.css</samp>, <samp>print.css</samp>, <samp>bidi.css</samp>, etc. If you wish to use the parent style's language assets, you could use the following snippet:
 		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre></p>
@@ -323,7 +323,7 @@ parent = prosilver Special Edition</pre></p>
 
 		<h3>Which method should I use?</h3>
 		<p>It depends on how big the changes are that you are planning to make. From a technical and maintainability standpoint, we would suggest <strong>Method 3</strong> in case of relatively minor asset changes, and <strong>Method 4</strong> for more extensive modifications.</p>
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> if you wish to reduce the load of CSS data-transfer, you could compress and minify the various CSS files that your style uses into a single file, and serve that instead. But this is not easy to do <em>well</em>, and requires a more complex work-flow (which is beyond the scope of this guide).</div>
+		<div class="note-box information-green"><strong>Pro-Tip:</strong> If you wish to reduce the load of CSS data-transfer, you could compress and minify the various CSS files that your style uses into a single file, and serve that instead. But this is not easy to do <em>well</em>, and requires a more complex work-flow (which is beyond the scope of this guide).</div>
 
 		<hr />
 
@@ -341,7 +341,7 @@ parent = prosilver Special Edition</pre></p>
 
 &lt;link href="{T_THEME_PATH}/extensions.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre></p>
 		<p>Using this method will ensure that your custom rules are loaded after the extension's own rules, thereby overriding them.</p>
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> if (and only if) you have a very popular style, but a certain extension uses template files that simply don't work well with your style, you could contact the extension's author. If he/she agrees, you could contribute a special template to the code of the extension (via a GitHub pull request or other method).</div>
+		<div class="note-box information-green"><strong>Pro-Tip:</strong> If (and only if) you have a very popular style, but a certain extension uses template files that simply don't work well with your style, you could contact the extension's author. If he/she agrees, you could contribute a special template to the code of the extension (via a GitHub pull request or other method).</div>
 
 		<hr />
 
