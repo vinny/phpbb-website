@@ -1,47 +1,38 @@
 {% extends ':base:base.html.twig' %}
 
-{% block title %}Styles FAQ{% endblock title %}
+{% block title %}Styles Support{% endblock title %}
 
 {% block body %}
 <div id="page-body">
-
 	<ul class="linklist navlinks">
 		<li><a href="{{ home_path }}">Home</a>
 			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
 			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
-			<strong>&#8249;</strong> <a href="{{ styles_faq }}">Frequently Asked Questions</a>
+			<strong>&#8249;</strong> <a href="{{ styles_support }}">Support</a>
 		</li>
 	</ul>
 
 	<div id="main">
-		<h2 class="imgrep stylesfaq">Styles FAQ</h2>
+		<h2 class="imgrep stylesfaq">Styles Support</h2>
 
-		<ul>
-			<li><a href="#genstyles">General Styles FAQ</a></li>
-			<li><a href="#authors">Creating, Editing, and Submitting Styles FAQ</a></li>
-		</ul>
-
-		<h3 id="genstyles">General Styles FAQ</h3>
+		<h3>Installing &amp; Using Styles</h3>
+		<a href="{{ styles_installing }}">LINK</a>
 		<div class="content">
 			<dl class="faq">
-				<dt>What is a style?</dt>
-				<dd>A style changes the appearance of your board. The default style for phpBB 3.0 is prosilver (though a 3.0 version of subSilver is also included). The <a href="{{ styles_db_path }}">Styles Database</a> contains additional styles created by members of the phpBB.com community and are available for download and installation on your phpBB board.</dd>
-			</dl>
-			<dl class="faq">
 				<dt>How do I install a style?</dt>
-				<dd>For phpBB 3.0 styles, see <a href="{{ styles_kb_install }}">this</a> Knowledge Base article.</dd>
+				<dd>For phpBB 3.0 styles, see <a href="{{ styles_kb_30_install }}">this</a> Knowledge Base article.</dd>
 			</dl>
 			<dl class="faq">
 				<dt>Will you guys install a style for me?</dt>
-				<dd>Unfortunately we cannot. If you're having difficulty, first try <a href="{{ community_search }}">searching</a> the community to see if someone else has had and resolved the same problem. If to no avail, you may post in the <a href="{{ FORUM_STYLES_SUPPORT_30X }}">Styles Support & Discussion forum</a> for assistance.</dd>
+				<dd>Unfortunately we cannot. If you're having difficulty, first try <a href="{{ community_search }}">searching</a> the community to see if someone else has had and resolved the same problem. If to no avail, you may post in the <a href="{{ forum_styles_30x_support }}">Styles Support & Discussion forum</a> for assistance.</dd>
 			</dl>
 		</div>
 
-		<h3 id="authors">Creating, Editing, and Submitting Styles FAQ</h3>
+		<h3>Creating, Editing, and Submitting Styles FAQ</h3>
 		<div class="content">
 			<dl class="faq">
 				<dt>How do I create a new style?</dt>
-				<dd>For phpBB 3.0 styles, see <a href="{{ styles_kb_create }}">this</a> Knowledge Base article.</dd>
+				<dd>For phpBB 3.0 styles, see <a href="{{ styles_kb_30_create }}">this</a> Knowledge Base article.</dd>
 			</dl>
 			<dl class="faq">
 				<dt>Can I submit a style to the phpBB.com Styles Database?</dt>
@@ -59,10 +50,6 @@
 				<dt>If a style has not been updated by the original author, can I update it myself and submit it to the database?</dt>
 				<dd>We generally allow updates only by the original author of the style. If the original author no longer wishes to update it themselves, they must give express permission to someone to take over their work.<br /><br />
 					If the original author is unreachable, however, then you may update the style and submit it (specifying that this is the case in the submission, in the "Message to Styles Team" field). If the original author returns after this, though, then they can then reclaim the style if they wish. The original author would have the option to keep any updates done by you or to use/integrate them as they wish.</dd>
-			</dl>
-			<dl class="faq">
-				<dt>What is template inheritance in phpBB 3.0?</dt>
-				<dd>As of phpBB version 3.0.3 and above, there is a new feature that style authors can use called template inheritance. For details on what it is and how to use it, see <a href="{{ styles_kb_inheritance }}">this blog post</a> from the Development Team.</dd>
 			</dl>
 		</div>
 	</div>

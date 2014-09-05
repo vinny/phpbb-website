@@ -1,0 +1,60 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Creating &amp; Modifying Styles{% endblock title %}
+
+{% block body %}
+<div id="page-body">
+	<ul class="linklist navlinks">
+		<li><a href="{{ home_path }}">Home</a>
+			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
+			<strong>&#8249;</strong> <a href="{{ styles_create }}">Creating &amp; Modifying Styles</a>
+		</li>
+	</ul>
+
+	<div id="main">
+		<h2 class="imgrep stylesfaq">Creating &amp; Modifying Styles</h2>
+		<p>On this page, you will find some basic as well as more advanced instructions which can help you in creating your own style for phpBB 3.1.x, or modifying an existing one to suit your needs.</p>
+
+		<div class="note-box information-yellow"><strong>Note:</strong> this guide only applies to phpBB 3.1.x. For guides for older versions phpBB (3.0.x), please visit the <a href="{{ styles_kb_30_create }}">knowledge base</a> or the <a href="{{ styles_wiki }}">Wiki</a>.</div>
+
+		<div class="note-box information-blue"><strong>Note:</strong> this guide is a continuation of the <a href="{{ styles_installing }}#a-editing">Editing Styles</a> section of the <a href="{{ styles_installing }}">Installing &amp; Using Styles</a> page. This guide will assume that you have already read it.<br />
+		We will also assume that you have a decent understanding of HTML, CSS and JS.</div>
+
+		<h2 class="title" id="a-faq">Quick FAQ</h2>
+		<div class="content">
+			<dl class="faq">
+				<dt>Can I submit a style to the phpBB.com Styles Database?</dt>
+				<dd>Yes, you may submit a style that <span style="text-decoration: underline;">you</span> created and you'd like to share with the community. The phpBB Styles Team will review your submission and if it is error-free it will be added to our database.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Are there rules I need to read before submitting a style to the Styles Database?</dt>
+				<dd>Yes. All submitters should read the <a href="{{ styles_ssp }}">Styles Submission Policy</a> to see the rules for submitting styles to our database and to learn how to actually submit the files.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>Where can I see the template changes for each version of phpBB?</dt>
+				<dd>Changes for 3.1.x versions can be seen <a href="{{ styles_changes_31x }}">here</a>.</dd>
+			</dl>
+			<dl class="faq">
+				<dt>If a style has not been updated by the original author, can I update it myself and submit it to the database?</dt>
+				<dd>We generally allow updates only by the original author of the style. If the original author no longer wishes to update it themselves, they must give express permission to someone to take over their work.<br /><br />
+					If the original author is unreachable, however, then you may update the style and submit it (specifying that this is the case in the submission, in the "Message to Styles Team" field). If the original author returns after this, though, then they can then reclaim the style if they wish. The original author would have the option to keep any updates done by you or to use/integrate them as they wish.</dd>
+			</dl>
+		</div>
+
+		<h2 class="title" id="a-structure">File Structure</h2>
+
+		<h2 class="title" id="a-preparation">Preparation</h2>
+
+		<h2 class="title" id="a-events">Template Events</h2>
+
+		<h2 class="title" id="a-inheritance">Style Inheritance</h2>
+		<p>TODO: As of phpBB version 3.0.3 and above, there is a new feature that style authors can use called template inheritance. For details on what it is and how to use it, see <a href="{{ styles_kb_30_inheritance }}">this blog post</a> from the Development Team.</p>
+
+	</div>
+
+	<div id="extras">
+		{{ include('PhpbbWebsiteInterfaceBundle:Styles:menu.html.twig') }}
+	</div>
+</div>
+{% endblock %}

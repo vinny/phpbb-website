@@ -326,8 +326,8 @@ class GlobalsExtension extends \Twig_Extension
 			'STYLES'                         => '/styles/',
 			'STYLES_DB'                      => '/customise/db/styles-2/',
 			'STYLES_DEMO_OLYMPUS'            => '/styles/demo/3.0/',
-			'STYLES_DOCUMENTATION'           => '/styles/documentation/',
-			'STYLES_FAQ'                     => '/styles/faq/',
+			//'STYLES_DOCUMENTATION'           => '/styles/documentation/',
+			//'STYLES_FAQ'                     => '/styles/faq/',
 			'STYLES_SSP'                     => '/community/viewtopic.php?f=73&amp;t=988545',
 			'STYLES_GDK_30_COMMERCIAL_FONTS' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
 			'STYLES_GDK_30_FREE_FONTS'       => '/customise/db/style/prosilver_gdk_free_fonts/',
@@ -335,9 +335,14 @@ class GlobalsExtension extends \Twig_Extension
 			'STYLES_JV_APP'                  => '/styles/contribute/index.php?p=jv',
 			'STYLES_JV_GROUP'                => '/community/memberlist.php?mode=group&amp;g=228778',
 
-			'styles_contribute'              => '/styles/contribute/',
-			'styles_faq'                     => '/styles/faq/',
+			'styles_wiki'                    => 'https://wiki.phpbb.com/Category:Styles',
+
+			'styles_create'                  => '/styles/create/',
+			'styles_installing'              => '/styles/installing/',
 			'styles_ssp'                     => '/styles/ssp/',
+			'styles_support'                 => '/styles/support/',
+			'styles_team_overview'           => '/styles/team-overview/',
+			'styles_junior_validators'       => '/styles/junior-validators/',
 
 			'styles_demo_ascraeus'           => '/styles/demo/3.1/',
 			'styles_demo_olympus'            => '/styles/demo/3.0/',
@@ -347,14 +352,16 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_gdk_30_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/',
 			'styles_gdk_20'                  => '/customise/db/style/phpbb_subsilver_gdk/',
 
-			'styles_kb_install'              => '/kb/article/how-to-install-styles-on-phpbb3/',
-			'styles_kb_create'               => '/kb/article/how-to-create-a-style-basics/',
-			'styles_kb_inheritance'          => 'http://blog.phpbb.com/2008/07/31/templating-just-got-easier/',
+			'styles_kb'                      => '/kb/category/styles/',
+			'styles_kb_30_install'           => '/kb/article/how-to-install-styles-on-phpbb3/',
+			'styles_kb_30_create'            => '/kb/article/how-to-create-a-style-basics/',
+			'styles_docs_30'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
+			'styles_kb_30_inheritance'       => 'http://blog.phpbb.com/2008/07/31/templating-just-got-easier/',
 
 			'styles_changes_31x'             => '/community/viewtopic.php?f=66666&amp;t=66666', // TODO: create
 			'styles_changes_30x'             => '/community/viewtopic.php?f=73&amp;t=880735',
 
-			'styles_jv_group' => '/community/memberlist.php?mode=group&amp;g=228778'
+			'styles_jv_group'                => '/community/memberlist.php?mode=group&amp;g=228778'
 		);
 
 		return $styleVars;
@@ -488,8 +495,8 @@ class GlobalsExtension extends \Twig_Extension
 			'SUPPORT_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=192443',
 			'SUPPORT_DOCS_NAME'		=> 'stevemaury',
 			'SUPPORT_DOCS_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=280664',
-			'STYLES_TL_NAME'		=> 'Raimon',
-			'STYLES_TL_CONTACT'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
+			'styles_tl_name'		=> 'Raimon',
+			'styles_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
 			'WEBSITE_TL_NAME'		=> 'Marshalrusty',
 			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
 			'ext_dev_tl_name'		=> 'EXreaction',

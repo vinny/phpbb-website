@@ -23,23 +23,50 @@ class StylesController extends Controller
         return $this->render('PhpbbWebsiteInterfaceBundle:Styles:home.html.twig', $templateVariables);
     }
 
-    public function faqAction()
+	public function supportAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'styles',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:support.html.twig', $templateVariables);
+	}
+
+	public function installingAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'styles',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:installing.html.twig', $templateVariables);
+	}
+
+	public function createAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'styles',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:create.html.twig', $templateVariables);
+	}
+
+    public function teamOverviewAction()
     {
         $templateVariables = array(
-            'header_css_image'		=> 'styles faq',
+            'header_css_image'		=> 'styles',
         );
 
-        return $this->render('PhpbbWebsiteInterfaceBundle:Styles:faq.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:Styles:team-overview.html.twig', $templateVariables);
     }
 
-    public function contributeAction()
-    {
-        $templateVariables = array(
-            'header_css_image'		=> 'styles contribute',
-        );
+	public function juniorValidatorsAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'styles',
+		);
 
-        return $this->render('PhpbbWebsiteInterfaceBundle:Styles:contribute.html.twig', $templateVariables);
-    }
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:junior-validators.html.twig', $templateVariables);
+	}
 
 	public function sspAction()
 	{
@@ -48,5 +75,14 @@ class StylesController extends Controller
 		);
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:ssp.html.twig', $templateVariables);
+	}
+
+	public function demoAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'styles demo',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:demo.html.twig', $templateVariables);
 	}
 }

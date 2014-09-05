@@ -3,17 +3,37 @@ phpBBWebsite_Styles_home:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:home }
     methods:  [GET]
 
-phpBBWebsite_Styles_faq:
-    path:  /faq/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:faq }
+phpBBWebsite_Styles_support:
+    path:  /support/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:support }
     methods:  [GET]
 
-phpBBWebsite_Styles_contribute:
-    path:  /contribute/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:contribute }
+phpBBWebsite_Styles_installing:
+    path:  /installing/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:installing }
+    methods:  [GET]
+
+phpBBWebsite_Styles_create:
+    path:  /create/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:create }
     methods:  [GET]
 
 phpBBWebsite_Styles_ssp:
     path:  /ssp/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:ssp }
     methods:  [GET]
+
+phpBBWebsite_Styles_team_overview:
+    path:  /team-overview/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:teamOverview }
+    methods:  [GET]
+
+phpBBWebsite_Styles_junior_validators:
+    path:  /junior-validators/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:juniorValidators }
+    methods:  [GET]
+
+phpBBWebsite_Styles_demo:
+    path:  /demo/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:demo }
+    methods:  [GET, POST]

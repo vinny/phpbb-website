@@ -4,7 +4,6 @@
 
 {% block body %}
 <div id="page-body">
-
 	<ul class="linklist navlinks">
 		<li><a href="{{ home_path }}">Home</a>
 			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
@@ -14,23 +13,40 @@
 
 	<div id="main">
 		<h2 class="imgrep styles">Styles</h2>
-		<p>phpBB version 3 uses a powerful templating system that keeps the PHP code separate from the HTML code and gives you complete freedom to customise your forum the way you want it.</p>
+		<p>Styles change the appearance of your board. phpBB 3.x uses a powerful templating-system that keeps the PHP code separate from the HTML code and gives you complete freedom to customise your forum the way you want it.</p>
+		<p>The default style for phpBB 3.1.x is prosilver. The <a href="{{ styles_db_path }}">Styles Database</a> contains additional styles created by members of the phpBB.com community and are available for download and installation on your phpBB board.</p>
 
-		<h2 class="title">Styles</h2>
+		<h2 class="title">For Users</h2>
 		<div class="column1">
+			<h3><a href="{{ styles_db_path }}">Styles Database</a></h3>
+			<p>Here you can download additional board styles for phpBB, as well as add-on graphics such as ranks, avatars, and smilies.</p>
+
 			<h3><a href="{{ styles_demo_olympus }}">Styles Demo for phpBB</a></h3>
-			<p>Here you can view a live demo of various phpBB 3.0 board styles before you download them.</p>
+			<p>Here you can view a live demo of various phpBB 3.1.x board styles before you download them.</p>
 		</div>
 
 		<div class="column2">
-			<h3><a href="{{ styles_db_path }}">Styles Database</a></h3>
-			<p>Here you can download additional board styles for phpBB, as well as add-on graphics such as ranks, avatars, and smilies.</p>
+			<h3><a href="{{ styles_installing }}">Installing &amp; Using Styles</a></h3>
+			<p>A step by step guide on how to install and use styles on your phpBB 3.1.x board.</p>
+
+			<h3><a href="{{ styles_support }}">Styles Support</a></h3>
+			<p>Here you will find information that can aid you in solving various style-related problems you might encounter.</p>
 		</div>
 
 		<span class="clear"></span>
 
-		<h2 class="title">Styles Help and Tools</h2>
+		<h2 class="title">For Developers</h2>
 		<div class="column1">
+			<h3><a href="{{ styles_create }}">Creating &amp; Modifying Styles</a></h3>
+			<p>...</p>
+
+			<h3><a href="{{ styles_ssp }}">Styles Submission Policy</a></h3>
+			<p>This document explains the process of submitting your own style to our Styles Database.</p>
+
+			<h3><a href="{{ styles_wiki }}">Styles Development Wiki</a></h3>
+			<p>Hopelessly outdated.</p>
+		</div>
+		<div class="column2">
 			<h3><a href="{{ styles_gdk_30_commercial_fonts }}">prosilver Graphics Development Kit (with commercial fonts)</a></h3>
 			<p>This is a Photoshop file that contains the images used in the default phpBB 3.0 prosilver style, using commercial fonts not included in the package.</p>
 
@@ -40,13 +56,12 @@
 			<h3><a href="{{ styles_gdk_20 }}">subSilver Graphics Development Kit</a></h3>
 			<p>This is a Photoshop file that contains the images used in the default phpBB 2.0 subSilver style.</p>
 		</div>
-		<div class="column2">
-			<h3><a href="{{ styles_faq }}">Frequently Asked Questions</a></h3>
-			<p>Common styles questions can be found in this FAQ guide. You should read the entire FAQ before posting questions in the forums.</p>
 
-			<h3><a href="{{ styles_ssp }}">Styles Submission Policy</a></h3>
-			<p>This document explains the process of submitting your own style to our Styles Database.</p>
-		</div>
+		<span class="clear"></span>
+
+		<h2 class="title">The Styles Team</h2>
+		<h3><a href="{{ styles_team_overview }}">Styles Team Overview</a></h3>
+		<p>Important information pertaining to the activities of the Styles Team, and how you can become involved.</p>
 	</div>
 
 	<div id="extras">
