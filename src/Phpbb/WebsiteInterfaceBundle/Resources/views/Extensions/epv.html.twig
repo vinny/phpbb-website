@@ -52,10 +52,10 @@
 		<h3>Run EPV on your GitHub repository</h3>
 		{% if results is defined %}
 			Results:
-	        <br />
-	        <div style="width:100%; background-color: black">
-		        {{ results|raw }}
-	        </div>
+			<br />
+			<div style="width:100%; background-color: black">
+				{{ results|raw }}
+			</div>
 		{% else %}
 			<form action="{{ extensions_epv }}" method="post">
 				<p>Github short name: <input type="text" name="github" id="github" /> <input type="submit" value="Run" /></p>

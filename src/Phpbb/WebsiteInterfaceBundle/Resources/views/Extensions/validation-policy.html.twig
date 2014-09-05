@@ -25,16 +25,16 @@
 				<li>
 					<h3>Coding Guidelines</h3>
 					The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.
-	            </li>
+				</li>
 				<li>
-	                <h3>Composer:</h3>
+					<h3>Composer:</h3>
 					A <samp>composer.json</samp> file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>.
-	            </li>
+				</li>
 				<li>
 					<h3>Vendor Prefixing</h3>
 					All events, services and routes in an extension should be prefixed with the extension's vendor name and package name, and contain only lowercase letters, numbers, dots, and underscores; e.g.:
 					<br /><br />
-	                <ol type="a">
+					<ol type="a">
 						<li>Events: <samp>vendor.extension.custom_event</samp></li>
 						<li>Services: <samp>vendor.extension.custom.service</samp></li>
 						<li>Routes: <samp>vendor_extension_custom_route</samp></li>
@@ -51,14 +51,14 @@
 					For privacy reasons it is not allowed to send private information (including but not limited to posts, user information, etc.) to any remote website or remote server. Any extension that does send information to a remote website or remote server will be denied for this reason. Exceptions to this rule, although rare, will be handled on a case-by-case basis.
 				</li>
 				<li><h3>General</h3>
-	                <ol type="a">
+					<ol type="a">
 						<li>Avoid using deprecated functions from phpBB 3.0. View updated functions in the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>.</li>
-	                	<li>Tabs are used instead of spaces for indenting. A tab is defined as having a width of four spaces in this instance.</li>
-		                <li>Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible. It is also preferred to use Composer to manage third-party libraries if possible.</li>
-		                <li>PHP files are saved as UTF-8 Encoded with UNIX line endings (LF).</li>
-					    <li>PHP files do not contain a (Byte Order Mark) BOM.</li>
-	                </ol>
-	            </li>
+						<li>Tabs are used instead of spaces for indenting. A tab is defined as having a width of four spaces in this instance.</li>
+						<li>Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible. It is also preferred to use Composer to manage third-party libraries if possible.</li>
+						<li>PHP files are saved as UTF-8 Encoded with UNIX line endings (LF).</li>
+						<li>PHP files do not contain a (Byte Order Mark) BOM.</li>
+					</ol>
+				</li>
 			</ol>
 		</p>
 
