@@ -356,7 +356,6 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_kb_30_install'           => '/kb/article/how-to-install-styles-on-phpbb3/',
 			'styles_kb_30_create'            => '/kb/article/how-to-create-a-style-basics/',
 			'styles_docs_30'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
-			'styles_kb_30_inheritance'       => 'http://blog.phpbb.com/2008/07/31/templating-just-got-easier/',
 
 			'styles_changes_31x'             => '/community/viewtopic.php?f=66666&amp;t=66666', // TODO: create
 			'styles_changes_30x'             => '/community/viewtopic.php?f=73&amp;t=880735',
