@@ -23,14 +23,17 @@
 		<h2 class="title" id="a-anatomy">Anatomy of a Style</h2>
 		<p>Inside your phpBB board's directory is a <samp>styles</samp> folder. This is the location where all styles are stored, and where we will be uploading any future styles as well. Every style follows the same folder structure.</p>
 		<p>phpBB 3.1.x styles have three main parts: templates, theme assets, and a config file.</p>
-		<p><strong>Templates</strong><br />Templates are the HTML files responsible for the layout of the style. All template and JavaScript files (which can provide additional functionality) for a particular style are located in:<pre class="codesnippet">phpBB/styles/my_style_name/template/</pre></p>
-		<p><strong>Theme assets</strong><br />Theme assets are a combination of colour schemes and images that define the basic look of your forum. This generally includes CSS files (of which <samp>stylesheet.css</samp> is the most important) and any other audio-visual assets. These files are located in:<pre class="codesnippet">phpBB/styles/my_style_name/theme/</pre></p>
-		<p><strong>Config file</strong><br />A config file (style.cfg) contains the meta-information about a style, as well as machine-instructions for your phpBB board. This file is required, or else your phpBB board will not recognize the style. You can find it at:<pre class="codesnippet">phpBB/styles/my_style_name/style.cfg</pre></p>
+		<p><strong>Templates</strong><br />Templates are the HTML files responsible for the layout of the style. All template and JavaScript files (which can provide additional functionality) for a particular style are located in:</p>
+		<pre class="codesnippet">phpBB/styles/my_style_name/template/</pre>
+		<p><strong>Theme assets</strong><br />Theme assets are a combination of colour schemes and images that define the basic look of your forum. This generally includes CSS files (of which <samp>stylesheet.css</samp> is the most important) and any other audio-visual assets. These files are located in:</p>
+		<pre class="codesnippet">phpBB/styles/my_style_name/theme/</pre>
+		<p><strong>Config file</strong><br />A config file (style.cfg) contains the meta-information about a style, as well as machine-instructions for your phpBB board. This file is required, or else your phpBB board will not recognize the style. You can find it at:</p>
+		<pre class="codesnippet">phpBB/styles/my_style_name/style.cfg</pre>
 
 		<hr />
 
 		<h2 class="title" id="a-installing">Installing an Style</h2>
-		<div class="note-box information-blue">This guide assumes that you have correctly set up phpBB 3.1.x and have it operational. Direct write-access to your server's files (via FTP or other) is also required.</div>
+		<div class="note-box information-blue"><strong>Note:</strong> This guide assumes that you have correctly set up phpBB 3.1.x and have it operational. Direct write-access to your server's files (via FTP or other) is also required.</div>
 
 		<h3>1. Choosing a Style</h3>
 		<p>It is recommended to only download styles from phpBB's <a href="{{ styles_db_path }}">Customisation Database</a> as this is a trusted source where all styles have been validated by the Styles Team. All styles downloaded from the Customisation Database should be ready to be uploaded to your board's <samp>styles</samp> folder.</p>
@@ -46,7 +49,8 @@
 
 		<h3>3. Upload to your board</h3>
 		<p>To upload files, open your favourite FTP client (such as FileZilla, CuteFTP, SmartFTP, etc - even some internet web browsers have this capability) and log in to your hosting account. Generally your publicly accessible files will be in an area named "<samp>public_html</samp>", "<samp>www</samp>" or similar.</p>
-		<p>Upload your style files (the entire folder) to the <samp>styles/</samp> directory inside your phpBB 3.1.x root directory. You can check if you have uploaded it correctly by looking at the location of the <samp>style.cfg</samp> file. It should be located at:<pre class="codesnippet">phpBB/styles/my_style_name/style.cfg</pre></p>
+		<p>Upload your style files (the entire folder) to the <samp>styles/</samp> directory inside your phpBB 3.1.x root directory. You can check if you have uploaded it correctly by looking at the location of the <samp>style.cfg</samp> file. It should be located at:</p>
+		<pre class="codesnippet">phpBB/styles/my_style_name/style.cfg</pre>
 
 		<h3>4. Install</h3>
 		<p>Once the style has been uploaded, navigate in the board's ACP to Customise -> Install Styles. You should see your recently uploaded styles listed (assuming you uploaded it to the correct location and the style is valid), with an option to "<samp>Install style</samp>". Simply click it and the installation is complete!</p>
@@ -57,7 +61,7 @@
 		<h2 class="title" id="a-managing">Managing Styles</h2>
 		<h3>The Styles Tree (style inheritance)</h3>
 		<p>Many styles start off by modifying existing styles (such as prosilver), because creating a completely new style from scratch is an extremely time consuming undertaking. Template inheritance has been part of phpBB 3 for a while now, and you will likely encounter it.</p>
-		<p>You can easily see the hierarchy (parent/child relations) of your installed styles by looking at the "Style Management" page in your ACP. It might look like this:
+		<p>You can easily see the hierarchy (parent/child relations) of your installed styles by looking at the "Style Management" page in your ACP. It might look like this:</p>
 			<pre class="codesnippet">prosilver
    prosilver Special Edition
       prosilver SE Red Edition
@@ -65,7 +69,7 @@
 newstyle pro
    newstyle ultra
       newstyle ultra-black
-   newstyle mono</pre></p>
+   newstyle mono</pre>
 		<p>While it is theoretically possible to edit the inheritance hierarchy, this will most likely create all kinds of problems. Most styles will detect automatically which other style they should use as "parent". So it's best to leave it alone.</p>
 
 		<h3>Default Style Settings</h3>

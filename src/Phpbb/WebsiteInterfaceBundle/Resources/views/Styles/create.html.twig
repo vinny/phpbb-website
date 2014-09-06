@@ -51,7 +51,7 @@
 		<hr />
 
 		<h2 class="title" id="a-structure">File Structure</h2>
-		<p>As mentioned in the <a href="{{ styles_installing }}">Installing &amp; Using Styles</a> guide, styles have a specific directory structure, which should be adhered to. We strongly advise you to follow the same structure, as this will minimize the chances of "file not found" problems.
+		<p>As mentioned in the <a href="{{ styles_installing }}">Installing &amp; Using Styles</a> guide, styles have a specific directory structure, which should be adhered to. We strongly advise you to follow the same structure, as this will minimize the chances of "file not found" problems.</p>
 		<pre class="codesnippet">styles/
     my_style_name/
         template/
@@ -62,7 +62,7 @@
                 background.jpg
             stylesheet.css
             extra.css
-        style.cfg</pre></p>
+        style.cfg</pre>
 
 		<hr />
 
@@ -84,7 +84,7 @@
 		<hr />
 
 		<h2 class="title" id="a-config">Style.cfg</h2>
-		<p>The most important file of any style (as far as installation goes) is the <samp>style.cfg</samp> file. It provides information to your phpBB board about how to install and process the style. It generally looks like this:
+		<p>The most important file of any style (as far as installation goes) is the <samp>style.cfg</samp> file. It provides information to your phpBB board about how to install and process the style. It generally looks like this:</p>
 		<pre class="codesnippet">#
 # phpBB Style Configuration File
 #
@@ -118,21 +118,21 @@ phpbb_version = 3.1.0
 # Set value to empty or to this style's name
 # if this style does not have a parent style
 parent = prosilver
-		</pre></p>
+		</pre>
 
 		<p>Most of this is pretty self explanatory. The most important values for our purposes are the "<samp>name</samp>" and "<samp>parent</samp>" fields, which indicate <a href="#a-inheritance">template inheritance</a>.</p>
-		<p>Let's say that we want to create a style based on prosilver. Our <samp>style.cfg</samp> would contain the following lines (the other lines have been omitted for clarity):
+		<p>Let's say that we want to create a style based on prosilver. Our <samp>style.cfg</samp> would contain the following lines (the other lines have been omitted for clarity):</p>
 		<pre class="codesnippet">name = My Awesome Style
-parent = prosilver</pre></p>
+parent = prosilver</pre>
 
-		<p>Instead of using prosilver as a "base" (parent), we could also use another popular style (which in turn inherits from prosilver). Our <samp>style.cfg</samp> would read as:
+		<p>Instead of using prosilver as a "base" (parent), we could also use another popular style (which in turn inherits from prosilver). Our <samp>style.cfg</samp> would read as:</p>
 		<pre class="codesnippet">name = My Awesome Style
-parent = prosilver Special Edition</pre></p>
+parent = prosilver Special Edition</pre>
 
-		<p>After installing your new style, the style tree in your ACP would look like this:
+		<p>After installing your new style, the style tree in your ACP would look like this:</p>
 		<pre class="codesnippet">prosilver
     prosilver Special Edition
-        My Awesome Style</pre></p>
+        My Awesome Style</pre>
 
 		<hr />
 
@@ -154,9 +154,9 @@ parent = prosilver Special Edition</pre></p>
 
 		<h3>jQuery</h3>
 		<p>As of phpBB 3.1.x, jQuery is included by default in the download package. Besides the fact that jQuery can be very handy for style authors, many extensions will utilize it too and <span style="text-decoration: underline;">depend</span> on it being active.</p>
-		<p>Therefore you should always include the instructions that loads jQuery into your template. You can do this by making sure that the following code is present in your <samp>overall_footer.html</samp> template.
+		<p>Therefore you should always include the instructions that loads jQuery into your template. You can do this by making sure that the following code is present in your <samp>overall_footer.html</samp> template.</p>
 		<pre class="codesnippet">&lt;script src="{T_JQUERY_LINK}"&gt;&lt;/script&gt;
-&lt;!-- IF S_ALLOW_CDN --&gt;&lt;script&gt;window.jQuery || document.write(unescape('%3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}" type="text/javascript"%3E%3C/script%3E'));&lt;/script&gt;&lt;!-- ENDIF --&gt;</pre></p>
+&lt;!-- IF S_ALLOW_CDN --&gt;&lt;script&gt;window.jQuery || document.write(unescape('%3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}" type="text/javascript"%3E%3C/script%3E'));&lt;/script&gt;&lt;!-- ENDIF --&gt;</pre>
 		<div class="note-box information-yellow"><strong>Note:</strong> This jQuery code snippet should ideally be the first script that is loaded in the footer. In any case, it <span style="text-decoration: underline;">must</span> be included <span style="text-decoration: underline;">before</span> <samp>{$SCRIPTS}</samp>.</div>
 
 		<hr />
@@ -236,7 +236,7 @@ parent = prosilver Special Edition</pre></p>
 		<span class="clear"></span>
 
 		<h3>Method 2. Relative-path <samp>@import</samp> with selective replacement</h3>
-		<p>If you only want to make changes to a few of the parent's CSS files, you might not want to duplicate all the assets, since that would just clutter your new style. It is possible to only copy a few assets and make changes to them, without having identical copies scattered around the server. In your new style's <samp>stylesheet.css</samp>, you could include the following code:
+		<p>If you only want to make changes to a few of the parent's CSS files, you might not want to duplicate all the assets, since that would just clutter your new style. It is possible to only copy a few assets and make changes to them, without having identical copies scattered around the server. In your new style's <samp>stylesheet.css</samp>, you could include the following code:</p>
 		<pre class="codesnippet">@import url("../../prosilver/theme/common.css");
 @import url("../../prosilver/theme/links.css");
 @import url("../../prosilver/theme/content.css");
@@ -244,7 +244,7 @@ parent = prosilver Special Edition</pre></p>
 @import url("../../prosilver/theme/cp.css");
 @import url("../../prosilver/theme/forms.css");
 @import url("colours.css");
-@import url("imageset.css");</pre></p>
+@import url("imageset.css");</pre>
 		<p>This would basically load all the parent's (prosilver) CSS assets, except for <samp>colours.css</samp> and <samp>imageset.css</samp>, which you want to load from your new style's theme assets (which you have copied from prosilver, and subsequently edited to suit your needs).</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
@@ -263,10 +263,10 @@ parent = prosilver Special Edition</pre></p>
 		<span class="clear"></span>
 
 		<h3>Method 3. Multiple overriding stylesheets.css in <samp>&lt;head&gt;</samp></h3>
-		<p>Instead of copying assets and editing them, you could also write new rules that override the parent style's CSS rules.
+		<p>Instead of copying assets and editing them, you could also write new rules that override the parent style's CSS rules.</p>
 		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
 
-&lt;link href="{T_STYLESHEET_LINK}" rel="stylesheet" /&gt;</pre></p>
+&lt;link href="{T_STYLESHEET_LINK}" rel="stylesheet" /&gt;</pre>
 
 		<div class="note-box information-blue"><strong>Note:</strong> We use <samp>{T_ASSETS_VERSION}</samp> as rudimentary form of browser cache control.</div>
 		<div class="note-box information-yellow"><strong>Note:</strong> Although <samp>{T_SUPER_TEMPLATE_NAME}</samp> is still supported, it only traverses the styles tree 1 level. So it isn't suitable for use in complex inheritance situations.</div>
@@ -275,8 +275,8 @@ parent = prosilver Special Edition</pre></p>
 
 		<div class="note-box information-yellow"><strong>Note:</strong> Using both <samp>@import</samp> rules <span style="text-decoration: underline;">and</span> regular CSS rules in the same file is not advised.</div>
 
-		<p>This same method can be applied to load other CSS assets directly from the parent (without having to duplicate them), such as <samp>responsive.css</samp>, <samp>print.css</samp>, <samp>bidi.css</samp>, etc. If you wish to use the parent style's language assets, you could use the following snippet:
-		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre></p>
+		<p>This same method can be applied to load other CSS assets directly from the parent (without having to duplicate them), such as <samp>responsive.css</samp>, <samp>print.css</samp>, <samp>bidi.css</samp>, etc. If you wish to use the parent style's language assets, you could use the following snippet:</p>
+		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
 			<ul>
@@ -293,7 +293,7 @@ parent = prosilver Special Edition</pre></p>
 		<span class="clear"></span>
 
 		<h3>Method 4. Detailed overriding link components in <samp>&lt;head&gt;</samp></h3>
-		<p>This method works the same way as <em>Method 3</em>, but instead of including the parent's (prosilver) <samp>stylesheet.css</samp>, we load the various CSS assets directly (without relying on <samp>@import</samp>). This allows for greater control of which files to include/exclude.
+		<p>This method works the same way as <em>Method 3</em>, but instead of including the parent's (prosilver) <samp>stylesheet.css</samp>, we load the various CSS assets directly (without relying on <samp>@import</samp>). This allows for greater control of which files to include/exclude.</p>
 		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/common.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
 &lt;link href="{ROOT_PATH}styles/prosilver/theme/links.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
 &lt;link href="{ROOT_PATH}styles/prosilver/theme/content.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
@@ -303,7 +303,7 @@ parent = prosilver Special Edition</pre></p>
 
 &lt;link href="{T_STYLESHEET_LINK}" rel="stylesheet" /&gt;
 
-&lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre></p>
+&lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre>
 		<p>Notice that we didn't include <samp>colours.css</samp> and <samp>imageset.css</samp>, since we want to use our own custom rules (which we will specify inside our own <samp>stylesheet.css</samp>) instead of prosilver's.</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
@@ -336,10 +336,10 @@ parent = prosilver Special Edition</pre></p>
 
 		<p>Instead, we could simply reverse the load order for our style's extension-specific rules. The easiest way to do this is to move all your style's rules that are specifically for extensions into a new .css file (<samp>/theme/extensions.css</samp> for instance).</p>
 
-		<p>Now we need to include it in the <samp>&lt;head&gt;</samp> of our template, but <span style="text-decoration: underline;">after</span> <samp>{$STYLESHEETS}</samp>.
+		<p>Now we need to include it in the <samp>&lt;head&gt;</samp> of our template, but <span style="text-decoration: underline;">after</span> <samp>{$STYLESHEETS}</samp>.</p>
 		<pre class="codesnippet">{$STYLESHEETS}
 
-&lt;link href="{T_THEME_PATH}/extensions.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre></p>
+&lt;link href="{T_THEME_PATH}/extensions.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre>
 		<p>Using this method will ensure that your custom rules are loaded after the extension's own rules, thereby overriding them.</p>
 		<div class="note-box information-green"><strong>Pro-Tip:</strong> If (and only if) you have a very popular style, but a certain extension uses template files that simply don't work well with your style, you could contact the extension's author. If he/she agrees, you could contribute a special template to the code of the extension (via a GitHub pull request or other method).</div>
 
