@@ -164,7 +164,7 @@ parent = prosilver Special Edition</pre>
 		<h2 class="title" id="a-syntax">Template Syntax &amp; Variables</h2>
 		<p>phpBB 3.1.x has powerful template-engine, which lets you add/modify various pieces of code for page-output.</p>
 		<p>For more information on how to use the various template tags and conditionals, we advise you to take a look at our Development Wiki. At this time, there are no dedicated entries yet specifically for 3.1.x Styles, but a few important pages are still applicable:</p>
-		<ul>
+		<ul class="list-margin">
 			<li><a href="https://wiki.phpbb.com/Tutorial.Template_syntax">Template Syntax Tutorial</a></li>
 			<li><a href="https://wiki.phpbb.com/Category:Template_Variables">Catalogue of available Template Variables</a></li>
 			<li><a href="https://wiki.phpbb.com/Category:Template_Variables">Common Template Errors</a></li>
@@ -199,7 +199,7 @@ parent = prosilver Special Edition</pre>
 		<p>Case: <em>"I want to modify the header and index page of style X, how do I do it?"</em></p>
 
 		<p>Well the first thing to remember is that you only want to change these 2 parts <em>now</em>. You will likely want to change more and more parts as time progresses. So the best course of action would be to create a "child" style of style X (we'll called it style Y).</p>
-		<ol>
+		<ol class="list-margin">
 			<li>Create the <a href="#a-structure">file structure</a> (skeleton) for style Y.</li>
 			<li>Create a <samp><a href="#a-config">style.cfg</a></samp> for style Y which specifies X as it's "parent".</li>
 			<li>Copy <samp>overall_header.html</samp> and <samp>index_body.html</samp> from <samp>styles/x/template/</samp> to <samp>styles/y/template/</samp>.</li>
@@ -220,14 +220,14 @@ parent = prosilver Special Edition</pre>
 		<p>The easiest (and probably most (ab)used method) has been to simply copy-paste all the assets (the entire <span class="inlinecode">theme</span> directory) of the "parent" style to the "child" style's <span class="inlinecode">theme</span> directory, and edit the various CSS files to suit your needs.</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
-			<ul>
+			<ul class="list-margin">
 				<li>Easy editing</li>
 				<li>Doesn't require any template modifications</li>
 			</ul>
 		</div>
 		<div class="column2 compare">
 			<h4 class="cons">Cons</h4>
-			<ul>
+			<ul class="list-margin">
 				<li>Poor maintainability</li>
 				<li>Potential merge problems when updating parent styles</li>
 				<li>Duplication of assets</li>
@@ -248,14 +248,14 @@ parent = prosilver Special Edition</pre>
 		<p>This would basically load all the parent's (prosilver) CSS assets, except for <samp>colours.css</samp> and <samp>imageset.css</samp>, which you want to load from your new style's theme assets (which you have copied from prosilver, and subsequently edited to suit your needs).</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
-			<ul>
+			<ul class="list-margin">
 				<li>Deduplication of assets</li>
 				<li>Doesn't require any template modifications</li>
 			</ul>
 		</div>
 		<div class="column2 compare">
 			<h4 class="cons">Cons</h4>
-			<ul>
+			<ul class="list-margin">
 				<li>Relative path <samp>@import</samp> rules are bad practice (avoid if possible)</li>
 				<li>Still requires a copy of all assets that aren't included in <samp>stylesheet.css</samp> (<samp>responsive.css</samp>, <samp>/en/stylesheet.css</samp>, etc.)</li>
 			</ul>
@@ -279,14 +279,14 @@ parent = prosilver Special Edition</pre>
 		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/{T_THEME_LANG_NAME}/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;</pre>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
-			<ul>
+			<ul class="list-margin">
 				<li>No relative-path <samp>@import</samp> rules</li>
 				<li>Possible to deduplicate everything</li>
 			</ul>
 		</div>
 		<div class="column2 compare">
 			<h4 class="cons">Cons</h4>
-			<ul>
+			<ul class="list-margin">
 				<li>No detailed control over which parts of the parent's <samp>stylesheet.css</samp> to include/exclude.</li>
 			</ul>
 		</div>
@@ -307,7 +307,7 @@ parent = prosilver Special Edition</pre>
 		<p>Notice that we didn't include <samp>colours.css</samp> and <samp>imageset.css</samp>, since we want to use our own custom rules (which we will specify inside our own <samp>stylesheet.css</samp>) instead of prosilver's.</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
-			<ul>
+			<ul class="list-margin">
 				<li>Complete control over which assets to load (and in which order)</li>
 				<li>No use of CSS <samp>@import</samp> at all (this is <a href="http://stackoverflow.com/a/10037064/1894483">preferable</a>)</li>
 				<li>Possible to deduplicate everything</li>
@@ -315,7 +315,7 @@ parent = prosilver Special Edition</pre>
 		</div>
 		<div class="column2 compare">
 			<h4 class="cons">Cons</h4>
-			<ul>
+			<ul class="list-margin">
 				<li>    More complex header template</li>
 			</ul>
 		</div>
@@ -378,7 +378,7 @@ parent = prosilver Special Edition</pre>
 		<p>
 			<a href="{{ styles_db_path }}">Styles Database</a><br />
 			<a href="{{ styles_support }}">Styles Support</a><br />
-			<a href="{{ forum_styles_31x_dev }}">3.1.x Styles in Development Forum</a><br />
+			<a href="{{ forum_styles_31x_dev }}">[3.1.x] Styles in Development Forum</a><br />
 			<a href="https://wiki.phpbb.com/Template_Engine_Changes_in_3.1">Wiki: Template Engine Changes in 3.1</a>
 		</p>
 

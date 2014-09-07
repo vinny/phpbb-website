@@ -348,7 +348,7 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_demo_ascraeus'            => '/styles/demo/3.1/',
 			'styles_demo_olympus'             => '/styles/demo/3.0/',
 			'styles_gdk_31x_commercial_fonts' => '/customise/db/style/prosilver_gdk_31_commercial_fonts/', // TODO: create
-			'styles_gdk_31x_free_fonts'       => '/customise/db/style/prosilver_gdk_31_free_fonts/',
+			'styles_gdk_31x_free_fonts'       => '/customise/db/style/prosilver_gdk_31_free_fonts/', // TODO: create
 			'styles_gdk_30x_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
 			'styles_gdk_30x_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/',
 			'styles_gdk_20x'                  => '/customise/db/style/phpbb_subsilver_gdk/',
@@ -358,8 +358,8 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_kb_30x_create'            => '/kb/article/how-to-create-a-style-basics/',
 			'styles_docs_30x'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
 
-			'styles_changes_31x'              => '/community/viewtopic.php?f=66666&amp;t=66666', // TODO: create
-			'styles_changes_30x'              => '/community/viewtopic.php?f=73&amp;t=880735',
+			'styles_changes_31x'              => '/community/viewtopic.php?f=66666&t=66666', // TODO: create
+			'styles_changes_30x'              => '/community/viewtopic.php?f=73&t=880735',
 
 			'styles_team_members'             => '/community/memberlist.php?mode=group&g=7332',
 			'styles_jv_team_members'          => '/community/memberlist.php?mode=group&g=228778',
