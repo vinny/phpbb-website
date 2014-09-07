@@ -323,44 +323,48 @@ class GlobalsExtension extends \Twig_Extension
 	private function getStyleVars()
 	{
 		$styleVars = array(
-			'STYLES'                         => '/styles/',
-			'STYLES_DB'                      => '/customise/db/styles-2/',
-			'STYLES_DEMO_OLYMPUS'            => '/styles/demo/3.0/',
+			'STYLES'                          => '/styles/',
+			'STYLES_DB'                       => '/customise/db/styles-2/',
+			'STYLES_DEMO_OLYMPUS'             => '/styles/demo/3.0/',
 			//'STYLES_DOCUMENTATION'           => '/styles/documentation/',
 			//'STYLES_FAQ'                     => '/styles/faq/',
-			'STYLES_SSP'                     => '/community/viewtopic.php?f=73&amp;t=988545',
-			'STYLES_GDK_30_COMMERCIAL_FONTS' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
-			'STYLES_GDK_30_FREE_FONTS'       => '/customise/db/style/prosilver_gdk_free_fonts/',
-			'STYLES_GDK_20'                  => '/customise/db/style/phpbb_subsilver_gdk/',
-			'STYLES_JV_APP'                  => '/styles/contribute/index.php?p=jv',
-			'STYLES_JV_GROUP'                => '/community/memberlist.php?mode=group&amp;g=228778',
+			'STYLES_SSP'                      => '/community/viewtopic.php?f=73&amp;t=988545',
+			'STYLES_GDK_30_COMMERCIAL_FONTS'  => '/customise/db/style/prosilver_gdk_commercial_fonts/',
+			'STYLES_GDK_30_FREE_FONTS'        => '/customise/db/style/prosilver_gdk_free_fonts/',
+			'STYLES_GDK_20'                   => '/customise/db/style/phpbb_subsilver_gdk/',
+			'STYLES_JV_APP'                   => '/styles/contribute/index.php?p=jv',
+			'STYLES_JV_GROUP'                 => '/community/memberlist.php?mode=group&amp;g=228778',
 
-			'styles_wiki'                    => 'https://wiki.phpbb.com/Category:Styles',
+			'styles_wiki'                     => 'https://wiki.phpbb.com/Category:Styles',
 
-			'styles_create'                  => '/styles/create/',
-			'styles_installing'              => '/styles/installing/',
-			'styles_ssp'                     => '/styles/ssp/',
-			'styles_support'                 => '/styles/support/',
-			'styles_team_overview'           => '/styles/team-overview/',
-			'styles_junior_validators'       => '/styles/junior-validators/',
+			'styles_create'                   => '/styles/create/',
+			'styles_installing'               => '/styles/installing/',
+			'styles_ssp'                      => '/styles/ssp/',
+			'styles_ssp_30x'                  => '/styles/ssp/3.0/',
+			'styles_support'                  => '/styles/support/',
+			'styles_team_overview'            => '/styles/team-overview/',
+			'styles_junior_validators'        => '/styles/junior-validators/',
 
-			'styles_demo_ascraeus'           => '/styles/demo/3.1/',
-			'styles_demo_olympus'            => '/styles/demo/3.0/',
-			'styles_gdk_31_commercial_fonts' => '/customise/db/style/prosilver_gdk_31_commercial_fonts/', // TODO: create
-			'styles_gdk_31_free_fonts'       => '/customise/db/style/prosilver_gdk_31_free_fonts/',
-			'styles_gdk_30_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
-			'styles_gdk_30_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/',
-			'styles_gdk_20'                  => '/customise/db/style/phpbb_subsilver_gdk/',
+			'styles_demo_ascraeus'            => '/styles/demo/3.1/',
+			'styles_demo_olympus'             => '/styles/demo/3.0/',
+			'styles_gdk_31x_commercial_fonts' => '/customise/db/style/prosilver_gdk_31_commercial_fonts/', // TODO: create
+			'styles_gdk_31x_free_fonts'       => '/customise/db/style/prosilver_gdk_31_free_fonts/',
+			'styles_gdk_30x_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
+			'styles_gdk_30x_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/',
+			'styles_gdk_20x'                  => '/customise/db/style/phpbb_subsilver_gdk/',
 
-			'styles_kb'                      => '/kb/category/styles/',
-			'styles_kb_30_install'           => '/kb/article/how-to-install-styles-on-phpbb3/',
-			'styles_kb_30_create'            => '/kb/article/how-to-create-a-style-basics/',
-			'styles_docs_30'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
+			'styles_kb'                       => '/kb/category/styles/',
+			'styles_kb_30x_install'           => '/kb/article/how-to-install-styles-on-phpbb3/',
+			'styles_kb_30x_create'            => '/kb/article/how-to-create-a-style-basics/',
+			'styles_docs_30x'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
 
-			'styles_changes_31x'             => '/community/viewtopic.php?f=66666&amp;t=66666', // TODO: create
-			'styles_changes_30x'             => '/community/viewtopic.php?f=73&amp;t=880735',
+			'styles_changes_31x'              => '/community/viewtopic.php?f=66666&amp;t=66666', // TODO: create
+			'styles_changes_30x'              => '/community/viewtopic.php?f=73&amp;t=880735',
 
-			'styles_jv_group'                => '/community/memberlist.php?mode=group&amp;g=228778'
+			'styles_team_members'             => '/community/memberlist.php?mode=group&g=7332',
+			'styles_jv_team_members'          => '/community/memberlist.php?mode=group&g=228778',
+
+			'styles_db_my_styles'             => '/styles/db/index.php?i=author&mode=mylist',
 		);
 
 		return $styleVars;

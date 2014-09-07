@@ -77,6 +77,15 @@ class StylesController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:ssp.html.twig', $templateVariables);
 	}
 
+	public function ssp30xAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'styles ssp',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:ssp-30x.html.twig', $templateVariables);
+	}
+
 	public function demoAction()
 	{
 		$templateVariables = array(

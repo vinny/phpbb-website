@@ -23,6 +23,11 @@ phpBBWebsite_Styles_ssp:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:ssp }
     methods:  [GET]
 
+phpBBWebsite_Styles_ssp_30x:
+    path:  /ssp/3.0/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:ssp30x }
+    methods:  [GET]
+
 phpBBWebsite_Styles_team_overview:
     path:  /team-overview/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:teamOverview }
