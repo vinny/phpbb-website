@@ -5,9 +5,6 @@
 {% block javascriptHeader %}
 	{{ parent() }}
 
-	<!-- JS for Advertise Page -->
-	<script type="text/javascript" src="{{ asset('assets/js/about/ad_vertise/ad_vertise_fn.js') }}"></script>
-
 	<!-- CSS Stuff for Advertise Page -->
 	<link href="{{ asset('assets/css/ad_vertise.css') }}" rel="stylesheet" type="text/css"/>
 {% endblock %}
@@ -153,7 +150,7 @@
 <div id="extras">
 	{{ include('PhpbbWebsiteInterfaceBundle:About:menu.html.twig') }}
 <hr />
-	<div class="mini-panel panel-text" id="contact">
+	<div class="mini-panel panel-text js-scroll" id="contact">
 		<div class="inner">
 		<img src="{{ home_path }}theme/images/about/advertise/email.png" alt="mail" style="float:right" />
 		<h3>Ready to buy?</h3>

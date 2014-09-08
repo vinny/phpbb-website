@@ -448,8 +448,6 @@ class GlobalsExtension extends \Twig_Extension
 	private function getForumVars()
 	{
 		$forumVars = array(
-			'community_search'	=> '/community/search.php',
-
 			'FORUM_30X_SUPPORT'	=> '/community/viewforum.php?f=46',
 			'FORUM_PHPBBDISC'		=> '/community/viewforum.php?f=64',
 			'FORUM_SEARCH_EVENTS'	=> '/community/search.php?keywords=%5BEVENT%5D&amp;terms=all&amp;fid%5B%5D=64&amp;sc=1&amp;sf=titleonly&amp;sr=topics&amp;sk=t&amp;sd=d&amp;st=0&amp;ch=300&amp;t=0&amp;submit=Search',
@@ -581,6 +579,7 @@ class GlobalsExtension extends \Twig_Extension
 			'RULES'				=> '/rules/',
 			'MODS_RULES'			=> '/mods/rules/',
 			'GOOGLECSE'			=> '/search/',
+			'community_search'	=> '/community/search.php',
 			'ADVERTISE'			=> '/about/advertise/',
 			'LANGUAGES_30X'		=> '/languages/',
 			'LANGUAGES_20X'		=> '/languages/?type=20x',

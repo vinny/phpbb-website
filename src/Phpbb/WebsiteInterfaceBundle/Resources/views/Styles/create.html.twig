@@ -216,7 +216,7 @@ parent = prosilver Special Edition</pre>
 
 		<div class="note-box information-blue"><strong>Note:</strong> Theme assets cannot be "inherited" the same sense as templates can. There is no automated system at work here. Asset inheritance should be read as meaning: "loading theme assets from a different style, via manual instructions".</div>
 
-		<h3 id="a-method1">Method 1. Copy-paste all theme assets</h3>
+		<h3><a id="a-method1" class="anchor"></a>Method 1. Copy-paste all theme assets</h3>
 		<p>The easiest (and probably most (ab)used method) has been to simply copy-paste all the assets (the entire <span class="inlinecode">theme</span> directory) of the "parent" style to the "child" style's <span class="inlinecode">theme</span> directory, and edit the various CSS files to suit your needs.</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
@@ -235,7 +235,7 @@ parent = prosilver Special Edition</pre>
 		</div>
 		<span class="clear"></span>
 
-		<h3 id="a-method2">Method 2. Relative-path <samp>@import</samp> with selective replacement</h3>
+		<h3><a id="a-method2" class="anchor"></a>Method 2. Relative-path <samp>@import</samp> with selective replacement</h3>
 		<p>If you only want to make changes to a few of the parent's CSS files, you might not want to duplicate all the assets, since that would just clutter your new style. It is possible to only copy a few assets and make changes to them, without having identical copies scattered around the server. In your new style's <samp>stylesheet.css</samp>, you could include the following code:</p>
 		<pre class="codesnippet">@import url("../../prosilver/theme/common.css");
 @import url("../../prosilver/theme/links.css");
@@ -262,7 +262,7 @@ parent = prosilver Special Edition</pre>
 		</div>
 		<span class="clear"></span>
 
-		<h3 id="a-method3">Method 3. Multiple overriding stylesheets.css in <samp>&lt;head&gt;</samp></h3>
+		<h3><a id="a-method3" class="anchor"></a>Method 3. Multiple overriding stylesheets.css in <samp>&lt;head&gt;</samp></h3>
 		<p>Instead of copying assets and editing them, you could also write new rules that override the parent style's CSS rules.</p>
 		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
 
@@ -292,7 +292,7 @@ parent = prosilver Special Edition</pre>
 		</div>
 		<span class="clear"></span>
 
-		<h3 id="a-method4">Method 4. Detailed overriding link components in <samp>&lt;head&gt;</samp></h3>
+		<h3><a id="a-method4" class="anchor"></a>Method 4. Detailed overriding link components in <samp>&lt;head&gt;</samp></h3>
 		<p>This method works the same way as <a href="#a-method3">Method 3</a>, but instead of including the parent's (prosilver) <samp>stylesheet.css</samp>, we load the various CSS assets directly (without relying on <samp>@import</samp>). This allows for greater control of which files to include/exclude.</p>
 		<pre class="codesnippet">&lt;link href="{ROOT_PATH}styles/prosilver/theme/common.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
 &lt;link href="{ROOT_PATH}styles/prosilver/theme/links.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" /&gt;
@@ -367,14 +367,15 @@ parent = prosilver Special Edition</pre>
 		<p>Users often forget the changes that they have made to certain styles. Or they have a hard time seeing the differences between different versions of files.</p>
 		<p>This is where file comparison tools come in handy. Some of the more advanced text-editors have built-in features that help when comparing files (or entire folders). Alternatively, you could use stand-alone applications for this. A few popular free ones are <a href="http://winmerge.org/">WinMerge</a> and <a href="http://meldmerge.org/">Meld</a>.</p>
 
-		<h3 id="a-validation">Code Validation</h3>
+		<h3><a id="a-validation" class="anchor"></a>Code Validation</h3>
 		<p>Writing valid HTML and CSS code will greatly increase your chances of having your style working correctly in different browsers on different operating systems and devices.</p>
 		<p>Valid HTML and CSS code is also required if you hope to submit your style to the <a href="{{ styles_db_path }}">Styles Database</a>, as mentioned in the <a href="{{ styles_ssp }}">Style Submission Policy</a>.</p>
 		<p>Luckily, there are automated tools available that will help you in identifying problems. We suggest using <a href="http://validator.w3.org/unicorn/">Unicorn - W3C's Unified Validator</a>.</p>
 
 		<hr />
 
-		<h2 class="title" id="a-links">Additional Links for Creating Styles</h2>
+		<h2 class="title" id="a-links">Additional Resources</h2>
+		<p>We hope you found this guide informative and helpful. There are still many more resources to help you develop great styles that will expand the possibilities of what phpBB can do for your community and the many more communities that may adopt and benefit from your styles.</p>
 		<p>
 			<a href="{{ styles_db_path }}">Styles Database</a><br />
 			<a href="{{ styles_support }}">Styles Support</a><br />
@@ -382,12 +383,14 @@ parent = prosilver Special Edition</pre>
 			<a href="{{ styles_changes }}">Style Changes</a><br />
 			<a href="https://wiki.phpbb.com/Template_Engine_Changes_in_3.1">Wiki: Template Engine Changes in 3.1</a>
 		</p>
+		<p><small>If you have any suggestions or remarks relating to this guide, feel free to contact the <a href="{{ styles_team_overview }}">Styles Team</a>.</small></p>
 
 		<br />
 	</div>
 
 	<div id="extras">
 		{{ include('PhpbbWebsiteInterfaceBundle:Styles:menu.html.twig') }}
+		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
 	</div>
 </div>
 {% endblock %}
