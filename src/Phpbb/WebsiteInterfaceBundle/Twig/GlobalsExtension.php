@@ -519,6 +519,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'SHOWCASE_SUGGEST'		=> '/showcase/suggest/',
 
+			'languages_path'				=> '/languages/',
 			'LANGUAGES_SUB'					=> '/languages/',
 
 			'ABOUT_ADMIN'			=> '/about/team/adm/',
