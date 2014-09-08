@@ -18,6 +18,11 @@ phpBBWebsite_Styles_create:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:create }
     methods:  [GET]
 
+phpBBWebsite_Styles_changes:
+    path:  /changes/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:changes }
+    methods:  [GET]
+
 phpBBWebsite_Styles_ssp:
     path:  /ssp/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:ssp }
@@ -41,4 +46,4 @@ phpBBWebsite_Styles_junior_validators:
 phpBBWebsite_Styles_demo:
     path:  /demo/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:demo }
-    methods:  [GET, POST]
+    methods:  [GET]

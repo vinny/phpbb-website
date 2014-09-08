@@ -50,6 +50,15 @@ class StylesController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:create.html.twig', $templateVariables);
 	}
 
+	public function changesAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'styles',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:changes.html.twig', $templateVariables);
+	}
+
     public function teamOverviewAction()
     {
         $templateVariables = array(

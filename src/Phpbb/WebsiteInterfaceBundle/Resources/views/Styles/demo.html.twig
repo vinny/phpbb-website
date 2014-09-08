@@ -1,6 +1,6 @@
 {% extends ':base:base.html.twig' %}
 
-{% block title %}Demo{% endblock title %}
+{% block title %}Styles Demo{% endblock title %}
 
 {% block body %}
 <div id="page-body">
@@ -8,13 +8,15 @@
 		<li><a href="{{ home_path }}">Home</a>
 			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
 			<strong>&#8249;</strong> <a href="{{ styles_path }}">Styles</a>
-			<strong>&#8249;</strong> <a href="{{ styles_demo_ascraeus }}">Demo</a>
+			<strong>&#8249;</strong> <a href="{{ styles_demo }}">Demo</a>
 		</li>
 	</ul>
 
 	<div id="main">
-		<h2 class="imgrep styles">DEMO</h2>
-		<p>wuts?</p>
+		<h2 class="imgrep styles">Styles Demo</h2>
+		<p>Here are live demos for the phpBB board styles in the phpBB <a href="{{ styles_db_path }}">Styles Database</a>. You can preview them before downloading. Direct links to contribution details are also provided.</p>
+		<p><span class="mini-tag blue">3.1.x</span><a href="{{ styles_demo_31x }}">Styles Demo for phpBB 3.1.x</a></p>
+		<p><span class="mini-tag dirty-green">3.0.x</span><a href="{{ styles_demo_30x }}">Styles Demo for phpBB 3.0.x</a></p>
 	</div>
 
 	<div id="extras">

@@ -338,15 +338,17 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_wiki'                     => 'https://wiki.phpbb.com/Category:Styles',
 
 			'styles_create'                   => '/styles/create/',
+			'styles_changes'                  => '/styles/changes/',
 			'styles_installing'               => '/styles/installing/',
 			'styles_ssp'                      => '/styles/ssp/',
 			'styles_ssp_30x'                  => '/styles/ssp/3.0/',
 			'styles_support'                  => '/styles/support/',
 			'styles_team_overview'            => '/styles/team-overview/',
 			'styles_junior_validators'        => '/styles/junior-validators/',
+			'styles_demo'                     => '/styles/demo/',
 
-			'styles_demo_ascraeus'            => '/styles/demo/3.1/',
-			'styles_demo_olympus'             => '/styles/demo/3.0/',
+			'styles_demo_31x'                 => '/styles/demo/3.1/',
+			'styles_demo_30x'                 => '/styles/demo/3.0/',
 			'styles_gdk_31x_commercial_fonts' => '/customise/db/style/prosilver_gdk_31_commercial_fonts/', // TODO: create
 			'styles_gdk_31x_free_fonts'       => '/customise/db/style/prosilver_gdk_31_free_fonts/', // TODO: create
 			'styles_gdk_30x_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
@@ -360,6 +362,9 @@ class GlobalsExtension extends \Twig_Extension
 
 			'styles_changes_31x'              => '/community/viewtopic.php?f=66666&t=66666', // TODO: create
 			'styles_changes_30x'              => '/community/viewtopic.php?f=73&t=880735',
+
+			'styles_ssp_31x_feedback'         => '/community/viewtopic.php?f=66666&t=66666', // TODO: create
+			'styles_ssp_30x_feedback'         => '/community/viewtopic.php?f=74&p=12931323',
 
 			'styles_team_members'             => '/community/memberlist.php?mode=group&g=7332',
 			'styles_jv_team_members'          => '/community/memberlist.php?mode=group&g=228778',

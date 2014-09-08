@@ -78,6 +78,22 @@ class StylesControllerTest extends BootstrapTestSuite
 		$this->globalTests();
 	}
 
+	public function testStylesChanges()
+	{
+		$objs    = $this->setupTest('/styles/changes/');
+		$crawler = $objs['crawler'];
+
+		// Title Check
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Style Changes') !== false, 'Title contains Style Changes');
+
+		// Content Check
+		$this->assertTrue($crawler->filter('html:contains("On this page you will find all the style changes for the phpBB default style")')->count() > 0, 'Style Changes Content Check');
+		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+
+		// Standard All Page Checks
+		$this->globalTests();
+	}
+
 	public function testStylesTeamOverview()
 	{
 		$objs    = $this->setupTest('/styles/team-overview/');
@@ -142,35 +158,18 @@ class StylesControllerTest extends BootstrapTestSuite
 		$this->globalTests();
 	}
 
-	/*
 	public function testStylesDemo()
 	{
-		$objs    = $this->setupTest('/styles/demo/3.1/');
+		$objs    = $this->setupTest('/styles/demo/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Styles Demo') !== false, 'Title contains Styles Demo');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("???")')->count() > 0, 'Styles Demo 3.1.x Content Check');
+		$this->assertTrue($crawler->filter('html:contains("Here are live demos for the phpBB board styles")')->count() > 0, 'Styles Demo Content Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
 	}
-
-	public function testStylesDemo30x()
-	{
-		$objs    = $this->setupTest('/styles/demo/3.0/');
-		$crawler = $objs['crawler'];
-
-		// Title Check
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extensions Team Overview') !== false, 'Title contains Extensions Team Overview');
-
-		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("???")')->count() > 0, 'Styles Demo 3.0.x Content Check');
-
-		// Standard All Page Checks
-		$this->globalTests();
-	}
-	*/
 }
