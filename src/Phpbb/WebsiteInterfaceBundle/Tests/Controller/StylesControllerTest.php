@@ -52,7 +52,10 @@ class StylesControllerTest extends BootstrapTestSuite
 		$crawler = $objs['crawler'];
 
 		// Title Check
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Installing & Using Styles') !== false, 'Title contains Installing & Using Styles');
+		$expectedTitle = array('Installing', 'Using Styles');
+
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), $expectedTitle[0]) !== false, 'Title contains Installing');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), $expectedTitle[1]) !== false, 'Title contains Using Styles');
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("the process of installing and using styles")')->count() > 0, 'Styles Installing Content Check');
@@ -68,7 +71,10 @@ class StylesControllerTest extends BootstrapTestSuite
 		$crawler = $objs['crawler'];
 
 		// Title Check
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Creating & Modifying Styles') !== false, 'Title contains Creating & Modifying Styles');
+		$expectedTitle = array('Creating', 'Modifying Styles');
+
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), $expectedTitle[0]) !== false, 'Title contains Creating');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), $expectedTitle[1]) !== false, 'Title contains Modifying Styles');
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("creating your own style for phpBB 3.1.x")')->count() > 0, 'Styles Create Content Check');
@@ -168,6 +174,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 		// Content Check
 		$this->assertTrue($crawler->filter('html:contains("Here are live demos for the phpBB board styles")')->count() > 0, 'Styles Demo Content Check');
+		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
