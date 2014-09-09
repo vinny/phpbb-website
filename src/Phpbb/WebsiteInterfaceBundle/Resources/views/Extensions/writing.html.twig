@@ -21,7 +21,7 @@
 
 		<hr />
 
-		<h2 class="title">How To Write an Extension</h2>
+		<h2 class="title" id="a-howto">How To Write an Extension</h2>
 		<p>The example detailed below will demonstrate how to write a basic extension that will add a new page to a board that will simply display “Hello world!” or “Goodbye world!” based on the option set in the ACP. This extension touches on all the basic principles that can apply to any other type of extension, including adding a front-controller page, modifying phpBB through core events and template events, modifying the database using migrations, and installing an ACP module with config settings for the extension.</p>
 		<div class="note-box information-blue"><strong>Note:</strong> The extension referred to in this guide is the ACME Demo Extension by nickvergessen. It can be downloaded from its <a href="https://github.com/nickvergessen/phpbb-ext-acme-demo">Github Repository</a>.</div>
 		<p>The first step is to find the <samp>ext/</samp> directory, located within the phpBB root (the same location as viewtopic.php, viewforum.php, index.php, etc). Inside <samp>ext/</samp>, create a new directory called <samp>acme/</samp> (this would be the vendor name associated with the extension, e.g., your phpBB username) and inside <samp>acme/</samp>, create another folder called <samp>demo/</samp> (the name of the extension).</p>
@@ -57,7 +57,7 @@
 
 		<hr />
 
-		<h2 class="title">Extending the Base Class With ext.php</h2>
+		<h2 class="title" id="a-extend-base-class">Extending the Base Class With ext.php</h2>
 		<p>Developers can extend <samp>\phpbb\extension\base</samp> if they wish to by creating an <samp>ext.php</samp> file. Otherwise, an <samp>ext.php</samp> does not need to be created. The acme-demo extension does not extend <samp>\phpbb\extension\base</samp>, and generally this would not be required for most extensions. Extending <samp>\phpbb\extension\base</samp> permits for custom code to be executed during the enabling, disabling or purging of an extension.</p>
 		<p>For example, suppose an extension was to perform a unique action upon being enabled such as connecting to a web service and processing an XML dataset. This is easily achieved by overriding the <samp>enable_step()</samp> function.</p>
 		<pre class="codesnippet">&lt;?php
@@ -90,11 +90,11 @@ class ext extends \phpbb\extension\base
 
 		<hr />
 
-		<h2 class="title">Controllers - Writing the Main Functionality For Pages</h2>
+		<h2 class="title" id="a-controllers">Controllers</h2>
 		<p>For all extensions that are to display a user interface, the core functionality for an extension needs to be included in controller files. Controller files may be placed anywhere inside an extension’s directory structure, although for optimal organisation it is best to place them either in the root of an extension or in a separate folder named <samp>controller/</samp> as in the acme-demo extension. Controller files may also be given any name, such as <samp>main.php</samp> in the acme-demo.</p>
 		<p>The main function is typically called <samp>handle()</samp>. This is a function whose purpose is to handle the request to display pages. There is no need to declare the standard phpBB globals ($user, $db, etc.) by virtue of this being handled by dependency injection. All global variables have been defined in the <samp>main.php</samp> class constructor and most importantly, in the services definition file found in <samp>config/services.yml</samp>.</p>
 
-		<h3>Services</h3>
+		<h3 id="a-services">Services</h3>
 		<p>The <samp>services.yml</samp> is a YAML file used to define the services that will be used in the PHP files of an extension. For the <samp>main.php</samp> file, which requires the $config, $template, $user and $controller_helper global variables (aka services), the YAML code looks like:</p>
 		<pre class="codesnippet">services:
     acme.demo.controller:
@@ -106,7 +106,7 @@ class ext extends \phpbb\extension\base
             - @user</pre>
 		<p>Note that <samp>acme.demo.controller</samp> is the unique name for our <samp>main.php</samp> class. This name can be whatever you want, but phpBB extensions should preface them with the vendor name (in this case, acme) to prevent potential conflicts with other extensions or core services. The class is simply the name-spaced path to the <samp>main.php</samp> file. The arguments are each service required. It is important that the order of the services listed here exactly match the order of these services as arguments in the <samp>main.php</samp> constructor.</p>
 
-		<h3>Routing</h3>
+		<h3 id="a-routing">Routing</h3>
 		<p>One final aspect of controller files is accessing them from a URL. The acme-demo page is accessed from <samp>./app.php/demo</samp> (all extension controller files are accessed via <samp>app.php</samp>). The <samp>routing.yml</samp>, located in the <samp>config/</samp> folder, allows us to define the URLs that will access our controller files. The YAML code for this looks like:</p>
 		<pre class="codesnippet">acme_demo_controller:
     pattern: /demo/{name}
@@ -116,7 +116,7 @@ class ext extends \phpbb\extension\base
 
 		<hr />
 
-		<h2 class="title">Including Files</h2>
+		<h2 class="title" id="a-including">Including Files</h2>
 		<p>As part of phpBB's shift towards widespread use of object orientation, it is advisable for developers to make use of classes to organise data where appropriate. Although the acme-demo extension does not use included files, more complex extensions are encouraged to store related functions in classes, and classes in their own files.</p>
 		<p>Separate class files from the controller class are encouraged, and using object orientation, they can be called upon within the controller file(s) as needed. In addition, properly name-spaced classes are auto-loaded by phpBB, meaning that accessor functions do not need to be made for them to be accessible to other classes.</p>
 		<p>The naming of classes is important for consistency. All classes should be name-spaced and have a direct class to path name mapping; in other words the namespace and class name must be inclusive of the directory structure. For example:</p>
@@ -148,15 +148,15 @@ function do_something ()
 
 		<hr />
 
-		<h2 class="title">Modifying Existing Functionality</h2>
+		<h2 class="title" id="a-modifying">Modifying Existing Functionality</h2>
 		<p>phpBB 3.1 uses a system of events to allow extensions the ability to modify existing functionality by inserting new code and/or modifying variables throughout the codebase and template files. There are two types of events: core events and template events.</p>
 
-		<h3>Core events</h3>
+		<h3 id="a-core-events">Core events</h3>
 		<p>Core events allow extensions to hook into phpBB’s PHP code at specific locations. These events often provide variables from the core that can be used and modified by the extension, or events can be used simply as a means to inject some additional PHP code. Extensions do this by using event listeners, located at <samp>acme/demo/events/</samp>.</p>
 		<p>For example, the acme-demo needs to add a link for its controller page to the header's navbar, next to the FAQ link. In <samp>main_listener.php</samp> there is a method called <samp>add_page_header_link()</samp> that has been subscribed to the <samp>core.page_header</samp> event. This method receives as its argument an <samp>$event</samp> variable, an array of all the variables from the <samp>core.page_header</samp> event which can be used and modified. For this example we do not need to do anything other than create a new template variable for our link that will be inserted into the core at this event location.</p>
 		<p>The <samp>load_language_on_setup()</samp> method in the <samp>main_listener.php</samp> is an example where the <samp>$event</samp> data passed to it is manipulated, in order to add additional language file data to the <samp>core.user_setup event</samp>.</p>
 
-		<h3>Template events</h3>
+		<h3 id="a-template-events">Template events</h3>
 		<p>Template events allow extensions to insert template code into event locations found throughout the template structure. Template events found inside phpBB’s template files look like:</p>
 		<pre class="codesnippet">&lt;!-- EVENT overall_header_head_append --&gt;</pre>
 		<p>To use a template event, simply name your template file exactly the same as the template event you want to use, and place your template event files in an “<samp>event</samp>” folder inside your style’s template folder.</p>
@@ -175,7 +175,7 @@ function do_something ()
 
 		<hr />
 
-		<h2 class="title">Language Files</h2>
+		<h2 class="title" id="a-language-files">Language Files</h2>
 		<p>Language entries can be included with the extension, but to reference the correct language file the <samp>add_lang_ext()</samp> function needs to be called. It takes two arguments, the first being the vendor/package and the second being the name of the language file (the PHP file) or an array of language file names.</p>
 		<pre class="codesnippet">// Add language file common.php
 $this->user->add_lang_ext(‘acme/demo’, ‘common’);</pre>
@@ -188,7 +188,7 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
 
 		<hr />
 
-		<h2 class="title">Template Files</h2>
+		<h2 class="title" id="a-template-files">Template Files</h2>
 		<p>Templating for extensions is no different to templating for phpBB3 in general. phpBB 3.1 has switched to the TWIG template engine but retains phpBB’s original templating syntax. Therefor, both phpBB and TWIG template syntaxes are permissible in an extension. If you are not familiar with TWIG, you may use phpBB’s syntax (phpBB 3.1’s core template files are all written using phpBB syntax).</p>
 		<p>Like language files, template files can be included with the extension and should be organised in a fashion similar to phpBB’s template files. The <samp>styles/</samp> folder should contain folders for each style you have written template files for. For example, prosilver and subsilver2. Any style that inherits from prosilver, will inherit from your extension’s prosilver folder as well. A special “all” folder can also be used to contain template files that can be used with any and all styles (a common JS file, for example). Template files for the ACP should be stored in the <samp>adm/style/</samp> location, similar to phpBB’s structure.</p>
 		<p>Including an extension's template file is handled by the controller_helper’s render method:</p>
@@ -201,11 +201,11 @@ $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
 
 		<hr />
 
-		<h2 class="title">Migrations and the Database</h2>
+		<h2 class="title" id="a-migrations">Migrations and the Database</h2>
 		<p>Migrations are a new way of facilitating database changes, much in the same way UMIL was used in phpBB 3.0. Through Migrations, developers will be able to handle processes such as creating new tables or adding new permissions and other data to the database.</p>
 		<p>Migrations have two primary methods for facilitating database changes: <samp>update_schema()</samp> and <samp>update_data()</samp>. As their names suggest, <samp>update_schema()</samp> is for facilitating schema changes, such as adding new tables, columns and fields. The <samp>update_data()</samp> method is for inserting, updating and dropping field data. Each of these methods also has a <samp>revert_</samp> method to specify the changes to be made during the purge step of removing an extension. The <samp>update_data()</samp> method is automatically reverted during a purge step, though there may be times where additional changes may need to be defined using the <samp>revert_data()</samp> method. The <samp>revert_schema()</samp> method should always be including to revert any changes introduced by the <samp>update_schema()</samp> method.</p>
 		<p>There are a few migration tools to facilitate database changes:</p>
-		<h3>Config tool</h3>
+		<h3 id="a-config-tool">Config tool</h3>
 		<p>The config tool helps adding, updating, and removing config settings.</p>
 		<pre class="codesnippet">public function update_data()
 {
@@ -213,7 +213,7 @@ $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
       array('config.add’, array('acme_demo_goodbye', 0)),
    );
 }</pre>
-		<h3>Module tool</h3>
+		<h3 id="a-module-tool">Module tool</h3>
 		<p>The module tool helps adding and removing modules (ACP, MCP, UCP modules).</p>
 		<pre class="codesnippet">public function update_data()
 {
@@ -233,14 +233,14 @@ $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
       )),
    ));
 }</pre>
-		<h3>Permission tool</h3>
+		<h3 id="a-permission-tool">Permission tool</h3>
 		<p>The permission tool helps adding, removing, setting, and unsetting permissions and adding or removing permission roles.</p>
 		<pre class="codesnippet">public function update_data()
 {
    return array(
       array('permission.add', array('a_new')),
 }</pre>
-		<h3>Config Text tool</h3>
+		<h3 id="a-config-text-tool">Config Text tool</h3>
 		<p>The config_text tool helps adding, updating, and removing config_text settings. The config_text table is used to store options with an arbitrary length value in a TEXT column. In contrast to config values, config_text are not cached or prefetched.</p>
 		<pre class="codesnippet">public function update_data()
 {
@@ -249,13 +249,13 @@ $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
    );
 }</pre>
 		<p>Migrations have two additional important methods to facilitate running them in the correct sequential order and prevent overwriting existing data:</p>
-		<h3>depends_on()</h3>
+		<h3 id="a-depends-on">depends_on()</h3>
 		<p>The <samp>depends_on()</samp> method is used to define a migration's dependencies. Dependencies tell the migrator what order migrations must be installed in. In the acme-demo migration files, the release_1_0_1 migration depends on release_1_0_0. This is set in the release_1_0_1 <samp>depends_on()</samp> method:</p>
 		<pre class="codesnippet">static public function depends_on()
 {
    return array('\acme\demo\migrations\release_1_0_0');
 }</pre>
-		<h3>effectively_installed()</h3>
+		<h3 id="a-effectively-installed">effectively_installed()</h3>
 		<p>The <samp>effectively_installed()</samp> method is used primarily to help transition from a previous database installer method (such as a MOD that used UMIL) to migrations. If it returns true, the migration is marked as installed without applying any changes. In the following example the migration file would not be applied if the specified config value already exists in the database:</p>
 		<pre class="codesnippet">public function effectively_installed()
 {
@@ -264,7 +264,7 @@ $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
 
 		<hr />
 
-		<h2 class="title">Additional Resources</h2>
+		<h2 class="title" id="a-resources">Additional Resources</h2>
 		<p>We hope you found this extension writing tutorial informative and helpful. There are still many more resources to help you develop great extensions that will expand the possibilities of what phpBB can do for your community and the many more communities that may adopt and benefit from your extensions.</p>
 		<p>
 			<a href="{{ extensions_wiki }}">Extensions Wiki</a><br />
@@ -279,6 +279,7 @@ $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
 
 	<div id="extras">
 		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
+		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
 	</div>
 </div>
 {% endblock %}
