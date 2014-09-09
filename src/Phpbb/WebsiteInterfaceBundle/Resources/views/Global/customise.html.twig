@@ -28,19 +28,7 @@
 	</div>
 	<div id="extras">
 		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-		{# TODO: include styles menu here #}
-		<div class="mini-panel">
-			<div class="inner">
-			<h3>Styles Quick Links</h3>
-				<ul class="menu">
-					<li><a href="{{ styles_path }}">Styles</a></li>
-					<li><a href="{{ styles_db_path }}">Styles Database</a></li>
-					<li><a href="{{ styles_demo_31x }}">Styles Demo</a></li>
-					<li><a href="{{ FORUM_STYLES }}">Styles Forums</a></li>
-					<li class="last"><a href="{{ kb_path }}">Knowledge Base</a></li>
-				</ul>
-			</div>
-		</div>
+		{{ include('PhpbbWebsiteInterfaceBundle:Styles:mini-menu.html.twig') }}
 	</div>
 
 </div>
