@@ -349,7 +349,7 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_gdk_20x'                  => '/customise/db/style/phpbb_subsilver_gdk/',
 
 			// Documentation resources
-			'styles_wiki'                     => 'https://wiki.phpbb.com/Category:Styles',
+			'styles_wiki'                     => '//wiki.phpbb.com/Category:Styles',
 			'styles_kb'                       => '/kb/category/styles/',
 			'styles_kb_30x_install'           => '/kb/article/how-to-install-styles-on-phpbb3/',
 			'styles_kb_30x_create'            => '/kb/article/how-to-create-a-style-basics/',
