@@ -32,9 +32,7 @@
 				Path to a local copy of your extension:
 				<pre class="codesnippet" style="font-size:0.9em;">php src/EPV.php run --dir="/Users/paulsohier/profile-guestbook-ext/"</pre>
 				<br />
-				When adding the <samp>--debug</samp> option to the command, additional validation information is displayed.
-				<br />
-				<br />
+				<div class="note-box information-green"><strong>Pro-Tip:</strong> When adding the <samp>--debug</samp> option to the command, additional validation information is displayed.</div>
 			</li>
 			<li><strong>Submission to the Extensions Database.</strong><br />
 				When submitting an extension to the <a href="{{ extensions_cdb }}">Extension Database</a> it will automatically be tested by EPV and the results displayed. If the results display any warnings or errors, you should address them and re-submit. Extensions that do not pass EPV may be <a href="{{ extensions_instadeny }}">Insta-Denied</a>.
@@ -54,10 +52,10 @@
 		<h3>Run EPV on your GitHub repository</h3>
 		{% if results is defined %}
 			Results:
-	        <br />
-	        <div style="width:100%; background-color: black">
-		        {{ results|raw }}
-	        </div>
+			<br />
+			<div style="width:100%; background-color: black">
+				{{ results|raw }}
+			</div>
 		{% else %}
 			<form action="{{ extensions_epv }}" method="post">
 				<p>Github short name: <input type="text" name="github" id="github" /> <input type="submit" value="Run" /></p>
@@ -69,7 +67,6 @@
 
 		<h3>Contributing to EPV</h3>
 		<p>You can contribute to EPV by forking the <a href="{{ extensions_epv_repo }}">repository</a>. After that make your changes in a new branch and create a pull request.</p>
-		<br />
 	</div>
 
 	<div id="extras">

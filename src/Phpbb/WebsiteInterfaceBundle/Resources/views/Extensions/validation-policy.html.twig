@@ -17,150 +17,161 @@
 		<h2 class="imgrep mods">Extension Validation Policy</h2>
 		<p>The following policies should be followed when developing extensions for phpBB. This ensures consistent and quality code that is up to standards of phpBB. If you have any questions about any of the policies, feel free to discuss them in the <a href="{{ forum_extensions_31x_writers }}">Extension Writers Forum</a>.</p>
 
-		<ol id="rules">
-			<li id="general"><h3>General</h3>
+		<hr />
+
+		<h2 id="general">General</h2>
+		<ol>
+			<li>
+				<h3>Coding Guidelines</h3>
+				The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.
+			</li>
+			<li>
+				<h3>Composer:</h3>
+				A <samp>composer.json</samp> file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>.
+			</li>
+			<li>
+				<h3>Vendor Prefixing</h3>
+				All events, services and routes in an extension should be prefixed with the extension's vendor name and package name, and contain only lowercase letters, numbers, dots, and underscores; e.g.:
+				<br /><br />
 				<ol type="a">
-					<li>Avoid using the deprecated functions from phpBB 3.0. View updated functions from the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>.</li>
-					<li>
-		                <h4>Composer:</h4>
-						A composer.json file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>.
-		            </li>
-					<li>
-						<h4>Coding Guidelines</h4>
-						The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.
-		            </li>
-					<li>
-						<h4>Vendor Prefixing</h4>
-						All events, services and routes in an extension should be prefixed with the extension's vendor name and package name, and contain only lowercase letters, numbers, dots, and underscores; e.g.:
-						<br /><br />
-		                <ol type="I" style="list-style-type:upper-roman;">
-							<li>Events: <samp>vendor.extension.custom_event</samp></li>
-							<li>Services: <samp>vendor.extension.custom.service</samp></li>
-							<li>Routes: <samp>vendor_extension_custom_route</samp></li>
-						</ol>
-						<br />
-						Note: It is forbidden to use <strong>phpbb</strong> or <strong>core</strong> to prefix events, services and routes.
-					</li>
-					<li>
-						<h4>Language and Styles</h4>
-						Extensions should always provide files for the English language and Prosilver style.
-					</li>
-					<li>
-						<h4>Privacy</h4>
-						For privacy reasons it is not allowed to send private information (including but not limited to posts, user information, etc.) to any remote website or remote server. Any extension that does send information to a remote website or remote server will be denied for this reason. Exceptions to this rule, although rare, will be handled on a case-by-case basis.
-					</li>
-					<li><h4>General</h4>
-		                <ol type="I" style="list-style-type:upper-roman;">
-		                	<li>Tabs are used instead of spaces for indenting. A tab is defined as having a width of four spaces in this instance.</li>
-			                <li>Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible. It is also preferred to use Composer to manage third-party libraries if possible.</li>
-			                <li>PHP files are saved as UTF-8 Encoded with UNIX line endings (LF).</li>
-						    <li>PHP files do not contain a (Byte Order Mark) BOM.</li>
-		                </ol>
-		            </li>
+					<li>Events: <samp>vendor.extension.custom_event</samp></li>
+					<li>Services: <samp>vendor.extension.custom.service</samp></li>
+					<li>Routes: <samp>vendor_extension_custom_route</samp></li>
+				</ol>
+				<br />
+				<div class="note-box information-yellow"><strong>Note:</strong> It is forbidden to use <strong>phpbb</strong> or <strong>core</strong> to prefix events, services and routes.</div>
+			</li>
+			<li>
+				<h3>Language and Styles</h3>
+				Extensions including language files and/or style files should always provide files for the English language and Prosilver style, respectively.
+			</li>
+			<li>
+				<h3>Privacy</h3>
+				For privacy reasons it is not allowed to send private information (including but not limited to posts, user information, etc.) to any remote website or remote server. Any extension that does send information to a remote website or remote server will be denied for this reason. Exceptions to this rule, although rare, will be handled on a case-by-case basis.
+			</li>
+			<li>
+				<h3>General</h3>
+				<ol type="a">
+					<li>Avoid using deprecated functions from phpBB 3.0. View updated functions in the <a href="https://wiki.phpbb.com/PhpBB3.1#Changes_to_Functions">wiki</a>.</li>
+					<li>Tabs are used instead of spaces for indenting. A tab is defined as having a width of four spaces in this instance.</li>
+					<li>Included third-party libraries should be up-to-date. They should be kept un-modified as much as possible. It is also preferred to use Composer to manage third-party libraries if possible.</li>
+					<li>PHP files are saved as UTF-8 Encoded with UNIX line endings (LF).</li>
+					<li>PHP files do not contain a (Byte Order Mark) BOM.</li>
 				</ol>
 			</li>
+		</ol>
 
-			<li id="php"><h3>PHP Files</h3>
+		<hr />
+
+		<h2 id="php">PHP Files</h2>
+		<br />
+		<ol>
+			<li>Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description.</li>
+			<li>No un-initialised variables or indices.</li>
+			<li>Proper file headers and php DocBlocks should be used.‬‬</li>
+			<li>Braces { and } should be on newlines.</li>
+			<li>Contain no ‪magic numbers‬‬ [<a href="https://wiki.phpbb.com/Magic_numbers">wiki</a>].</li>
+			<li><samp>IN_PHPBB</samp> [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>]‬ checks must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files.</li>
+			<li>The <a href="{{ extensions_phpbb_cgs }}#general"><samp>$request->variable()</samp></a> function is used instead of <samp>$_POST</samp>, <samp>$_GET</samp>, or <samp>$_REQUEST</samp> to get user input.</li>
+			<li>Integer variables from <samp>$request->variable()</samp> are cast as integers using the form: <samp>$request->variable('var', 0)</samp> and not <samp>$request->variable ('var', '0')</samp>.</li>
+			<li><samp>$_SERVER</samp> variables are properly sanitised (many <samp>$_SERVER</samp> indexes can be user manipulated). It is preferred to use <samp>$request->server()</samp> instead of <samp>$_SERVER</samp>, e.g.: <samp>$request->server('REMOTE_ADDR')</samp>, as these will be properly sanitised by the $request method.</li>
+			<li>The $user object also contains several sanitised variables about the user, for example: <samp>$user->ip</samp> (user's REMOTE_ADDR) and <samp>$user->page</samp> (name of page currently viewed by user).</li>
+			<li><a href="{{ extensions_phpbb_cgs }}#sql‬‬">phpBB3 DBAL</a> is used instead of database specific SQL functions.
 				<ol type="a">
-					<li>Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description.</li>
-					<li>No un-initialised variables or indices.</li>
-					<li>Proper file headers and php DocBlocks should be used.‬‬</li>
-					<li>Braces { and } should be on newlines.</li>
-					<li>Contain no ‪magic numbers‬‬ [<a href="https://wiki.phpbb.com/Magic_numbers">wiki</a>].</li>
-					<li><samp>IN_PHPBB</samp> [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>]‬ checks must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files.</li>
-					<li>The <a href="{{ extensions_phpbb_cgs }}#general"><samp>$request->variable()</samp></a> function is used instead of <samp>$_POST</samp>, <samp>$_GET</samp>, or <samp>$_REQUEST</samp> to get user input.</li>
-					<li>Integer variables from <samp>$request->variable()</samp> are cast as integers using the form: <samp>$request->variable('var', 0)</samp> and not <samp>$request->variable ('var', '0')</samp>.</li>
-					<li><samp>$_SERVER</samp> variables are properly sanitised (many <samp>$_SERVER</samp> indexes can be user manipulated). It is preferred to use <samp>$request->server()</samp> instead of <samp>$_SERVER</samp>, e.g.: <samp>$request->server('REMOTE_ADDR')</samp>, as these will be properly sanitised by the $request method.</li>
-					<li>The $user object also contains several sanitised variables about the user, for example: <samp>$user->ip</samp> (user's REMOTE_ADDR) and <samp>$user->page</samp> (name of page currently viewed by user).</li>
-					<li><a href="{{ extensions_phpbb_cgs }}#sql‬‬">phpBB3 DBAL</a> is used instead of database specific SQL functions.
-						<ol type="I" style="list-style-type:upper-roman;">
-							<li>User-input string variables are properly sanitised using <samp>$db->sql_escape()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_escape">wiki</a>] when using variables in SQL queries.</li>
-							<li>int and float variables are enforced by type-casting as (int) and (float) when inserting into SQL queries.</li>
-							<li><samp>$db->sql_build_query()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_build_query">wiki</a>] is used on large SQL queries (e.g.: if the query contains joins).</li>
-							<li><samp>$db->sql_build_array()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_build_array">wiki</a>] is used on SQL INSERT and SQL UPDATE queries.</li>
-							<li><samp>$db->sql_multi_insert()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_multi_insert‬‬">wiki</a>] is used when performing multiple SQL INSERT statements.</li>
-							<li><samp>$db->sql_in_set()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_in_set">wiki</a>] is used for SQL IN() WHERE statements.‪</li>
-							<li><samp>$db->sql_query_limit()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_query_limit">wiki</a>] is used instead of LIMIT in SQL queries.</li>
-							<li>Static SQL queries should be cached.‪</li>
-							<li>SQL queries within loops should be avoided.</li>
-						</ol>
-					</li>
-					<li><samp>helper->error()</samp> and/or <samp>trigger_error()</samp> [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>] are used for error handling and user messages instead of <samp>die()</samp> or similar.</li>
-					<li><samp>login_forum_box()</samp> or <samp>login_box()</samp> [<a href="http://wiki.phpbb.com/Login_box">wiki</a>] is used for login.</li>
-					<li><samp>confirm_box()</samp> [<a href="http://wiki.phpbb.com/Confirm_box">wiki</a>] is used for the user to confirm sensitive actions (such as deleting items).</li>
-					<li>URLs pointing to phpBB files call <samp>append_sid()</samp> [<a href="http://wiki.phpbb.com/Append_sid">wiki</a>] to correctly append the session id.</li>
+					<li>User-input string variables are properly sanitised using <samp>$db->sql_escape()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_escape">wiki</a>] when using variables in SQL queries.</li>
+					<li>int and float variables are enforced by type-casting as (int) and (float) when inserting into SQL queries.</li>
+					<li><samp>$db->sql_build_query()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_build_query">wiki</a>] is used on large SQL queries (e.g.: if the query contains joins).</li>
+					<li><samp>$db->sql_build_array()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_build_array">wiki</a>] is used on SQL INSERT and SQL UPDATE queries.</li>
+					<li><samp>$db->sql_multi_insert()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_multi_insert‬‬">wiki</a>] is used when performing multiple SQL INSERT statements.</li>
+					<li><samp>$db->sql_in_set()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_in_set">wiki</a>] is used for SQL IN() WHERE statements.‪</li>
+					<li><samp>$db->sql_query_limit()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_query_limit">wiki</a>] is used instead of LIMIT in SQL queries.</li>
+					<li>Static SQL queries should be cached.‪</li>
+					<li>SQL queries within loops should be avoided.</li>
 				</ol>
 			</li>
+			<li><samp>helper->error()</samp> and/or <samp>trigger_error()</samp> [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>] are used for error handling and user messages instead of <samp>die()</samp> or similar.</li>
+			<li><samp>login_forum_box()</samp> or <samp>login_box()</samp> [<a href="http://wiki.phpbb.com/Login_box">wiki</a>] is used for login.</li>
+			<li><samp>confirm_box()</samp> [<a href="http://wiki.phpbb.com/Confirm_box">wiki</a>] is used for the user to confirm sensitive actions (such as deleting items).</li>
+			<li>URLs pointing to phpBB files call <samp>append_sid()</samp> [<a href="http://wiki.phpbb.com/Append_sid">wiki</a>] to correctly append the session id.</li>
+		</ol>
 
-			<li id="templates"><h3>Template Files</h3>
-				<ol type="a">
-					<li>No hard-coded PHP in template files.</li>
-					<li>All Prosilver HTML is valid HTML5 syntax.</li>
-					<li>English language images are supplied as necessary.</li>
-				</ol>
-			</li>
+		<hr />
 
-			<li id="migrations"><h3>Migrations</h3>
-				<ol type="a">
-					<li>Database and permission changes should be handled with migrations. All subsequent database changes should be made in new migration files.</li>
-					<li>Old migration files should never be altered or deleted.</li>
-					<li>Extensions should never delete phpBB core tables or columns.</li>
-				</ol>
-			</li>
+		<h2 id="templates">Template Files</h2>
+		<br />
+		<ol>
+			<li>No hard-coded PHP in template files.</li>
+			<li>All Prosilver HTML is valid HTML5 syntax.</li>
+			<li>English language images are supplied as necessary.</li>
+		</ol>
 
-			<li id="scripts"><h3>JavaScript and CSS</h3>
-				<ol type="a">
-					<li>Include JavaScript files with the template function: <samp>&lt;!-- INCLUDEJS --&gt;</samp> [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>].</li>
-					<li>Include CSS files with the template function: <samp>&lt;!-- INCLUDECSS --&gt;</samp> [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>].</li>
-					<li>Included third-party JavaScript/CSS libraries and frameworks should use a template <samp>&lt;!--DEFINE --&gt;</samp> to prevent duplicate inclusion. For example:<br />
-						<br />
-							<pre class="codesnippet">
+		<hr />
+
+		<h2 id="migrations">Migrations</h2>
+		<br />
+		<ol>
+			<li>Database and permission changes should be handled with migrations. All subsequent database changes should be made in new migration files.</li>
+			<li>Old migration files should never be altered or deleted.</li>
+			<li>Extensions should never delete phpBB core tables or columns.</li>
+		</ol>
+
+		<hr />
+
+		<h2 id="scripts">JavaScript and CSS</h2>
+		<br />
+		<ol>
+			<li>Include JavaScript files with the template function: <samp>&lt;!-- INCLUDEJS --&gt;</samp> [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>].</li>
+			<li>Include CSS files with the template function: <samp>&lt;!-- INCLUDECSS --&gt;</samp> [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>].</li>
+			<li>Included third-party JavaScript/CSS libraries and frameworks should utilise a special template <samp>&lt;!--DEFINE --&gt;</samp> tag to prevent duplicate inclusion. For example:<br />
+				<br />
+					<pre class="codesnippet">
 &lt;!-- IF not $INCLUDEDED_HIGHSLIDEJS --&gt;
     &lt;!-- INCLUDEJS highslide-full.js --&gt;
     &lt;!-- DEFINE $INCLUDEDED_HIGHSLIDEJS = true --&gt;
 &lt;!-- ENDIF --&gt;</pre>
-						<br />
-						Some example template variable definitions to use with common libraries:<br /><br />
-						<ol type="I" style="list-style-type:upper-roman;">
-							<li>HighSlide JS: <samp>$INCLUDEDED_HIGHSLIDEJS</samp></li>
-							<li>Font Awesome CSS: <samp>$INCLUDEDED_FONTAWESOMECSS</samp></li>
-							<li>ColorBox JS: <samp>$INCLUDEDED_COLORBOXJS</samp></li>
-							<li>ColPick JS: <samp>$INCLUDEDED_COLPICKJS</samp></li>
-							<li>MoTools JS: <samp>$INCLUDEDED_MOTOOLSJS</samp></li>
-							<li>Dojo JS: <samp>$INCLUDEDED_DOJOJS</samp></li>
-						</ol>
-						<br />
-						The common practice should be to name the variable definition after the library filename, e.g.: highslide.js becomes HIGHSLIDEJS. Discussion of this technique can be found <a href="https://www.phpbb.com/community/viewtopic.php?f=20&t=2144227&p=13076522#p13076522">here</a>.
-					</li>
-				</ol>
-			</li>
-
-			<li id="licenses"><h3>Licenses</h3>
+				<br />
+				Some example template variable definitions to use with common libraries:<br /><br />
 				<ol type="a">
-					<li>Extensions should be released under GPL v2. Included frameworks should use GPL v2 or a compatible license. See <a href="http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility">http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility</a></li>
-					<li>A license.txt file should be included with the extension in the root directory of the extension.</li>
+					<li>HighSlide JS: <samp>$INCLUDEDED_HIGHSLIDEJS</samp></li>
+					<li>Font Awesome CSS: <samp>$INCLUDEDED_FONTAWESOMECSS</samp></li>
+					<li>ColorBox JS: <samp>$INCLUDEDED_COLORBOXJS</samp></li>
+					<li>ColPick JS: <samp>$INCLUDEDED_COLPICKJS</samp></li>
+					<li>MoTools JS: <samp>$INCLUDEDED_MOTOOLSJS</samp></li>
+					<li>Dojo JS: <samp>$INCLUDEDED_DOJOJS</samp></li>
 				</ol>
-			</li>
-
-			<li id="packaging"><h3>Packaging and Version</h3>
-				<ol type="a">
-					<li>Extensions are packaged as follows:<br />
-						<br />
-						<pre class="codesnippet">/vendorname/extensionname/</pre><br />
-						The names should be alphanumeric. (No dashes or underscores. Capitals are allowed.)<br />
-						For example, the following common extension files, <samp>composer.json</samp>, <samp>ext.php</samp> and <samp>license.txt</samp> would be located at:<br />
-						<br />
-						<pre class="codesnippet">/vendorname/extensionname/composer.json
-/vendorname/extensionname/ext.php
-/vendorname/extensionname/license.txt</pre><br />
-						The <a href="{{ extension_quickstart_zip }}">Extension QuickStart</a> package is available with starter <samp>composer.json</samp> and <samp>ext.php</samp> files and the required <samp>license.txt</samp> .
-					</li>
-					<li>Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
-					<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files are contained in their respective directories.</li>
-				</ol>
+				<br />
+				<div class="note-box information-blue"><strong>Note:</strong> The common practice should be to name the variable definition after the library filename, e.g.: <samp>highslide.js</samp> becomes <samp>HIGHSLIDEJS</samp>. Discussion of this technique can be found <a href="https://www.phpbb.com/community/viewtopic.php?f=20&t=2144227&p=13076522#p13076522">here</a>.</div>
 			</li>
 		</ol>
+
+		<hr />
+
+		<h2 id="licenses">Licenses</h2>
 		<br />
+		<ol>
+			<li>Extensions should be released under GPL v2. Included frameworks should use GPL v2 or a compatible license. See <a href="http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility">http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility</a></li>
+			<li>A <samp>license.txt</samp> file should be included in the root directory of the extension.</li>
+		</ol>
+
+		<hr />
+
+		<h2 id="packaging">Packaging and Version</h2>
+		<br />
+		<ol>
+			<li>Extensions are packaged as follows:<br />
+				<br />
+				<pre class="codesnippet">/vendorname/extensionname/</pre><br />
+				The names should be alphanumeric. (No dashes or underscores. Capitals are allowed.)<br />
+				For example, the following common extension files, <samp>composer.json</samp>, <samp>ext.php</samp> and <samp>license.txt</samp> would be located at:<br />
+				<br />
+				<pre class="codesnippet">/vendorname/extensionname/composer.json
+/vendorname/extensionname/ext.php
+/vendorname/extensionname/license.txt</pre><br />
+				<div class="note-box information-blue"><img src="{{ THEME_PATH }}/images/icon-dl-zip.gif" width="20" height="21" style="vertical-align: middle;" alt="Download phpBB 3.0.12 (zip)"> <a href="{{ extension_quickstart_zip }}">Extension QuickStart</a> is an available package with starter <samp>composer.json</samp> and <samp>ext.php</samp> files and the required <samp>license.txt</samp>.</div>
+			</li>
+			<li>Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
+			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files are contained in their respective directories.</li>
+		</ol>
 	</div>
 
 	<div id="extras">
