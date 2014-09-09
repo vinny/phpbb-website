@@ -6,7 +6,7 @@
 <div id="page-body">
 	<ul class="linklist navlinks">
 		<li><a href="{{ home_path }}">Home</a>
-			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
 			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
 			<strong>&#8249;</strong> <a href="{{ extensions_rules }}">Rules and Policies</a>
 			<strong>&#8249;</strong> <a href="{{ extensions_validation_policy }}">Validation Policy</a>
@@ -19,8 +19,8 @@
 
 		<hr />
 
-		<h2 id="general">General</h2>
-		<ol>
+		<h2 class="title" id="general">General</h2>
+		<ol class="list-margin">
 			<li>
 				<h3>Coding Guidelines</h3>
 				The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.
@@ -32,13 +32,11 @@
 			<li>
 				<h3>Vendor Prefixing</h3>
 				All events, services and routes in an extension should be prefixed with the extension's vendor name and package name, and contain only lowercase letters, numbers, dots, and underscores; e.g.:
-				<br /><br />
 				<ol type="a">
 					<li>Events: <samp>vendor.extension.custom_event</samp></li>
 					<li>Services: <samp>vendor.extension.custom.service</samp></li>
 					<li>Routes: <samp>vendor_extension_custom_route</samp></li>
 				</ol>
-				<br />
 				<div class="note-box information-yellow"><strong>Note:</strong> It is forbidden to use <strong>phpbb</strong> or <strong>core</strong> to prefix events, services and routes.</div>
 			</li>
 			<li>
@@ -63,9 +61,9 @@
 
 		<hr />
 
-		<h2 id="php">PHP Files</h2>
+		<h2 class="title" id="php">PHP Files</h2>
 		<br />
-		<ol>
+		<ol class="list-margin">
 			<li>Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description.</li>
 			<li>No un-initialised variables or indices.</li>
 			<li>Proper file headers and php DocBlocks should be used.‬‬</li>
@@ -97,9 +95,9 @@
 
 		<hr />
 
-		<h2 id="templates">Template Files</h2>
+		<h2 class="title" id="templates">Template Files</h2>
 		<br />
-		<ol>
+		<ol class="list-margin">
 			<li>No hard-coded PHP in template files.</li>
 			<li>All Prosilver HTML is valid HTML5 syntax.</li>
 			<li>English language images are supplied as necessary.</li>
@@ -107,9 +105,9 @@
 
 		<hr />
 
-		<h2 id="migrations">Migrations</h2>
+		<h2 class="title" id="migrations">Migrations</h2>
 		<br />
-		<ol>
+		<ol class="list-margin">
 			<li>Database and permission changes should be handled with migrations. All subsequent database changes should be made in new migration files.</li>
 			<li>Old migration files should never be altered or deleted.</li>
 			<li>Extensions should never delete phpBB core tables or columns.</li>
@@ -117,9 +115,9 @@
 
 		<hr />
 
-		<h2 id="scripts">JavaScript and CSS</h2>
+		<h2 class="title" id="scripts">JavaScript and CSS</h2>
 		<br />
-		<ol>
+		<ol class="list-margin">
 			<li>Include JavaScript files with the template function: <samp>&lt;!-- INCLUDEJS --&gt;</samp> [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>].</li>
 			<li>Include CSS files with the template function: <samp>&lt;!-- INCLUDECSS --&gt;</samp> [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>].</li>
 			<li>Included third-party JavaScript/CSS libraries and frameworks should utilise a special template <samp>&lt;!--DEFINE --&gt;</samp> tag to prevent duplicate inclusion. For example:<br />
@@ -131,7 +129,7 @@
 &lt;!-- ENDIF --&gt;</pre>
 				<br />
 				Some example template variable definitions to use with common libraries:<br /><br />
-				<ol type="a">
+				<ol class="list-margin" type="a">
 					<li>HighSlide JS: <samp>$INCLUDEDED_HIGHSLIDEJS</samp></li>
 					<li>Font Awesome CSS: <samp>$INCLUDEDED_FONTAWESOMECSS</samp></li>
 					<li>ColorBox JS: <samp>$INCLUDEDED_COLORBOXJS</samp></li>
@@ -146,18 +144,18 @@
 
 		<hr />
 
-		<h2 id="licenses">Licenses</h2>
+		<h2 class="title" id="licenses">Licenses</h2>
 		<br />
-		<ol>
+		<ol class="list-margin">
 			<li>Extensions should be released under GPL v2. Included frameworks should use GPL v2 or a compatible license. See <a href="http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility">http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility</a></li>
 			<li>A <samp>license.txt</samp> file should be included in the root directory of the extension.</li>
 		</ol>
 
 		<hr />
 
-		<h2 id="packaging">Packaging and Version</h2>
+		<h2 class="title" id="packaging">Packaging and Version</h2>
 		<br />
-		<ol>
+		<ol class="list-margin">
 			<li>Extensions are packaged as follows:<br />
 				<br />
 				<pre class="codesnippet">/vendorname/extensionname/</pre><br />
@@ -171,25 +169,12 @@
 			</li>
 			<li>Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
 			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files are contained in their respective directories.</li>
-		</ol>
+		</ol><br />
 	</div>
 
 	<div id="extras">
 		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-		<div class="mini-panel sections">
-			<div class="inner">
-				<h3>Policy Sections</h3>
-				<ul class="menu">
-					<li><a href="#general">General</a></li>
-					<li><a href="#php">PHP Files</a></li>
-					<li><a href="#templates">Template Files</a></li>
-					<li><a href="#migrations">Migrations</a></li>
-					<li><a href="#scripts">JavaScript and CSS</a></li>
-					<li><a href="#licenses">Licenses</a></li>
-					<li class="last"><a href="#packaging">Packaging and Version</a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
 	</div>
 </div>
 {% endblock %}

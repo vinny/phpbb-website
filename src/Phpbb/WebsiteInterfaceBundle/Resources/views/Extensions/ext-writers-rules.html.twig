@@ -6,7 +6,7 @@
 <div id="page-body">
 	<ul class="linklist navlinks">
 		<li><a href="{{ home_path }}">Home</a>
-			<strong>&#8249;</strong> <a href="{{ cdb_path }}">Customise phpBB</a>
+			<strong>&#8249;</strong> <a href="{{ customise_path }}">Customise phpBB</a>
 			<strong>&#8249;</strong> <a href="{{ extensions_path }}">Extensions</a>
 			<strong>&#8249;</strong> <a href="{{ extensions_rules }}">Rules and Policies</a>
 		</li>
@@ -43,15 +43,7 @@
 
 	<div id="extras">
 		{{ include('PhpbbWebsiteInterfaceBundle:Extensions:menu.html.twig') }}
-		<div class="mini-panel sections">
-			<div class="inner">
-				<h3>Rules Sections</h3>
-				<ul class="menu">
-					<li><a href="#discussion-allowed">Issues that may be discussed</a></li>
-					<li class="last"><a href="#discussion-disallowed">Issues which may not be discussed</a></li>
-				</ul>
-			</div>
-		</div>
+		<div class="mini-panel js-sections js-scroll" style="display: none"></div>
 	</div>
 </div>
 {% endblock %}

@@ -170,9 +170,6 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue($crawler->filter('html:contains("The following policies should be followed when developing extensions for phpBB")')->count() > 0, 'Validation Policy Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
-        // Menu Check
-        $this->assertTrue($crawler->filter('html:contains("Policy Sections")')->count() > 0, 'Policy Sections Menu Check');
-
         // Standard All Page Checks
         $this->globalTests();
     }
@@ -221,9 +218,6 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         $this->assertTrue($crawler->filter('html:contains("Licensing your Extension")')->count() > 0, 'Extensions Development Rules Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
 
-        // Menu Check
-        $this->assertTrue($crawler->filter('html:contains("Rules Sections")')->count() > 0, 'Rules Sections Menu Check');
-
         // Standard All Page Checks
         $this->globalTests();
     }
@@ -239,9 +233,6 @@ class ExtensionsControllerTest extends BootstrapTestSuite
         // Content Check
         $this->assertTrue($crawler->filter('html:contains("Issues that may be discussed")')->count() > 0, 'Extensions Writers Rules Content Check');
         $this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
-
-        // Menu Check
-        $this->assertTrue($crawler->filter('html:contains("Rules Sections")')->count() > 0, 'Rules Sections Menu Check');
 
         // Standard All Page Checks
         $this->globalTests();
