@@ -376,11 +376,11 @@ class GlobalsExtension extends \Twig_Extension
 	private function getExtensionVars()
 	{
 		$extensionVars = array(
-			'extensions_cdb'						=> 'https://www.phpbb.com/customise/db/modifications-1/',
-			'extensions_wiki'						=> 'https://wiki.phpbb.com/Category:Extensions',
+			'extensions_cdb'						=> '/customise/db/modifications-1/',
+			'extensions_wiki'						=> '//wiki.phpbb.com/Category:Extensions',
 
-			'extensions_quickinstall'				=> 'https://www.phpbb.com/mods/quickinstall/', //replace later
-			'extensions_phpbb_cgs'					=> 'https://area51.phpbb.com/docs/31x/coding-guidelines.html',
+			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
+			'extensions_phpbb_cgs'					=> '//area51.phpbb.com/docs/31x/coding-guidelines.html',
 
 			'extensions_writers_discussion'         => '/community/viewforum.php?f=461',
 
@@ -519,6 +519,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'SHOWCASE_SUGGEST'		=> '/showcase/suggest/',
 
+			'languages_path'				=> '/languages/',
 			'LANGUAGES_SUB'					=> '/languages/',
 
 			'ABOUT_ADMIN'			=> '/about/team/adm/',
