@@ -154,7 +154,7 @@ parent = prosilver Special Edition</pre>
 
 		<h3>jQuery</h3>
 		<p>As of phpBB 3.1.x, jQuery is included by default in the download package. Besides the fact that jQuery can be very handy for style authors, many extensions will utilize it too and <span class="underline">depend</span> on it being active.</p>
-		<p>Therefore you should always include the instructions that loads jQuery into your template. You can do this by making sure that the following code is present in your <samp>overall_footer.html</samp> template.</p>
+		<p>Therefore you should always include the instructions that load jQuery into your template. You can do this by making sure that the following code is present in your <samp>overall_footer.html</samp> template.</p>
 		<pre class="codesnippet">&lt;script src="{T_JQUERY_LINK}"&gt;&lt;/script&gt;
 &lt;!-- IF S_ALLOW_CDN --&gt;&lt;script&gt;window.jQuery || document.write(unescape('%3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}" type="text/javascript"%3E%3C/script%3E'));&lt;/script&gt;&lt;!-- ENDIF --&gt;</pre>
 		<div class="note-box information-yellow"><strong>Note:</strong> This jQuery code snippet should ideally be the first script that is loaded in the footer. In any case, it <span class="underline">must</span> be included <span class="underline">before</span> <span class="inlinecode">{$SCRIPTS}</span>.</div>
@@ -162,7 +162,7 @@ parent = prosilver Special Edition</pre>
 		<hr />
 
 		<h2 class="title" id="a-syntax">Template Syntax &amp; Variables</h2>
-		<p>phpBB 3.1.x has powerful template-engine, which lets you add/modify various pieces of code for page-output.</p>
+		<p>phpBB 3.1.x has a powerful template-engine, which lets you add/modify various pieces of code for page-output.</p>
 		<p>For more information on how to use the various template tags and conditionals, we advise you to take a look at our Development Wiki. At this time, there are no dedicated entries yet specifically for 3.1.x Styles, but a few important pages are still applicable:</p>
 		<ul class="list-margin">
 			<li><a href="https://wiki.phpbb.com/Tutorial.Template_syntax">Template Syntax Tutorial</a></li>
