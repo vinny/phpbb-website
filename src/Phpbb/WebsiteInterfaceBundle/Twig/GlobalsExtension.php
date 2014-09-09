@@ -324,16 +324,6 @@ class GlobalsExtension extends \Twig_Extension
 			// To be removed
 			'STYLES'                          => '/styles/',
 			'STYLES_DB'                       => '/customise/db/styles-2/',
-			//'STYLES_DB_SUB'                  => '/customise/db/styles-2/',
-			'STYLES_DEMO_OLYMPUS'             => '/styles/demo/3.0/',
-			//'STYLES_DOCUMENTATION'           => '/styles/documentation/',
-			//'STYLES_FAQ'                     => '/styles/faq/',
-			'STYLES_SSP'                      => '/community/viewtopic.php?f=73&amp;t=988545',
-			'STYLES_GDK_30_COMMERCIAL_FONTS'  => '/customise/db/style/prosilver_gdk_commercial_fonts/',
-			'STYLES_GDK_30_FREE_FONTS'        => '/customise/db/style/prosilver_gdk_free_fonts/',
-			'STYLES_GDK_20'                   => '/customise/db/style/phpbb_subsilver_gdk/',
-			'STYLES_JV_APP'                   => '/styles/contribute/index.php?p=jv',
-			'STYLES_JV_GROUP'                 => '/community/memberlist.php?mode=group&amp;g=228778',
 
 			// Main pages
 			'styles_create'                   => '/styles/create/',
