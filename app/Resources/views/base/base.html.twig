@@ -68,11 +68,11 @@
 				<input name="q" id="q" type="search" size="40" value="" />
 			</form>
 		</div>
-		<ul id="phpbb-menu">
+		<ul id="phpbb-menu" class="phpbb-menu">
 			<li class="nav-button but-about">
 				<a href="{{ U_ABOUT }}">About</a>
 
-				<div class="sub-menu sub-menu-extra">
+				<div class="sub-menu">
 					<ul>
 						<li>
 							<h4><a href="{{ U_ABOUT_FEATURES_SUB }}">Features</a></h4>
@@ -106,11 +106,11 @@
 						</li>
 					</ul>
 					<div class="sub-menu-bottom"><a href="{{ U_ABOUT_INDEX_SUB }}">Find out more about the project &raquo;</a></div>
-
 				</div>
-
 			</li>
-			<li class="nav-button but-downloads"><a href="{{ U_DOWNLOADS }}"><span></span>Downloads</a>
+
+			<li class="nav-button but-downloads">
+				<a href="{{ U_DOWNLOADS }}">Downloads</a>
 
 				<div class="sub-menu">
 					<ul>
@@ -140,53 +140,59 @@
 							<h4><a href="{{ U_OFFICIAL_TOOLS }}">Official Tools</a></h4>
 							<p><a href="{{ U_OFFICIAL_TOOLS }}">Official tools by the phpBB team to assist you with your board.</a></p>
 						</li>
-
 					</ul>
-					<div class="sub-menu-bottom"></div>
 				</div>
-
 			</li>
-			<li class="nav-button but-customise"><a href="{{ U_CUSTOMISE }}"><span></span>Customise</a>
 
-				<div class="sub-menu">
-					<ul>
-						<li>
-							<h4><a href="{{ U_MODS_SUB }}">Modifications</a></h4>
-							<p><a href="{{ U_MODS_SUB }}">Guides on how to use them and how to create your own.</a></p>
-						</li>
-						<li>
-							<h4><a href="{{ U_MODS_DB_SUB }}">Modification database</a></h4>
-							<p><a href="{{ U_MODS_DB_SUB }}">Download and submit your work to the MOD database.</a></p>
-						</li>
-						<li class="external last" title="Opens an external link.">
-							<h4><a href="{{ U_DEV_WIKI_SUB }}">Development Wiki</a></h4>
-							<p><a href="{{ U_DEV_WIKI_SUB }}">Share experience and learn more about the codebase.</a></p>
-						</li>
+			<li class="nav-button but-customise">
+				<a href="{{ U_CUSTOMISE }}">Customise</a>
 
+				<div class="sub-menu wide-menu">
+					<ul class="wide-list">
+						<li>
+							<h4><a href="{{ U_CDB_SUB }}">Customisation Database</a></h4>
+							<img style="float:right;" src="{{ asset('assets/images/images/features/administration.png') }}" alt="Customisation Database" />
+							<p><a href="{{ U_CDB_SUB }}">Our customisation database contains just about everything you might need to customise your phpBB board to your liking. In it you will find Extensions (for 3.1.x), MODs (for 3.0.x), Styles, Language Packs, BBCodes, as well as various tools.</a></p>
+						</li>
 					</ul>
-
-					<ul>
+					<ul class="narrow-list">
 						<li>
-							<h4><a href="{{ U_STYLES_SUB }}">Styles</a></h4>
-							<p><a href="{{ U_STYLES_SUB }}">Guides on how to use them and to create your own Styles.</a></p>
-						</li>
-						<li>
-							<h4><a href="{{ U_STYLES_DB_SUB }}">Styles database</a></h4>
-							<p><a href="{{ U_STYLES_DB_SUB }}">Download and submit your Styles to our Styles database.</a></p>
+							<h4><a href="{{ U_EXT_SUB }}">Extensions <small>(3.1.x)</small></a></h4>
+							<p><a href="{{ U_EXT_SUB }}">Guides on how to use them and how to create your own.</a></p>
 						</li>
 						<li class="last">
-							<h4><a href="{{ U_STYLES_DEMO_SUB }}">Styles Demo</a></h4>
-							<p><a href="{{ U_STYLES_DEMO_SUB }}">Test drive all the Styles from our database.</a></p>
+							<h4><a href="{{ U_EXT_DB_SUB }}">Extensions db</a></h4>
+							<p><a href="{{ U_EXT_DB_SUB }}">Download or submit extensions to our extensions database.</a></p>
 						</li>
-
 					</ul>
-					<div class="sub-menu-bottom"></div>
+					<ul class="narrow-list">
+						<li>
+							<h4><a href="{{ U_MODS_SUB }}">Modifications <small>(3.0.x)</small></a></h4>
+							<p><a href="{{ U_MODS_SUB }}">Guides on how to use them and how to create your own.</a></p>
+						</li>
+						<li class="last">
+							<h4><a href="{{ U_MODS_DB_SUB }}">Modification db</a></h4>
+							<p><a href="{{ U_MODS_DB_SUB }}">Download or submit modifications to our MODs database.</a></p>
+						</li>
+					</ul>
+					<ul class="narrow-list">
+						<li>
+							<h4><a href="{{ U_STYLES_SUB }}">Styles</a></h4>
+							<p><a href="{{ U_STYLES_SUB }}">Guides on how to use them and to create your own styles.</a></p>
+						</li>
+						<li>
+							<h4><a href="{{ U_STYLES_DB_SUB }}">Styles db</a></h4>
+							<p><a href="{{ U_STYLES_DB_SUB }}">Download or submit styles to our styles database.</a></p>
+						</li>
+					</ul>
+					<div class="sub-menu-bottom"><a href="{{ U_CUSTOMISE_INDEX_SUB }}">More resources on customising your board &raquo;</a></div>
 				</div>
-
 			</li>
-			<li class="nav-button but-support"><a href="{{ U_SUPPORT }}"><span></span>Support</a>
 
-				<div class="sub-menu sub-menu-extra">
+			<li class="nav-button but-support">
+				<a href="{{ U_SUPPORT }}">Support</a>
+
+				<div class="sub-menu">
 					<ul>
 						<li>
 							<h4><a href="{{ U_DOCUMENTATION_SUB }}">Documentation</a></h4>
@@ -218,11 +224,13 @@
 					<div class="sub-menu-bottom"><a href="{{ U_SUPPORT_INDEX_SUB }}">More information on support &raquo;</a></div>
 				</div>
 			</li>
-			<li class="nav-button but-development"><a href="{{ U_DEVELOPMENT }}"><span></span>Development</a>
 
-				<div class="sub-menu sub-menu-extra">
-					<ul class="wide-menu">
-						<li class="external wide-menu-item" title="Opens an external link.">
+			<li class="nav-button but-development">
+				<a href="{{ U_DEVELOPMENT }}">Development</a>
+
+				<div class="sub-menu">
+					<ul class="wide-list">
+						<li class="external" title="Opens an external link.">
 							<h4><a href="{{ U_DEV_HOME_SUB }}">Area51 phpBB Development</a></h4>
 							<img style="float:right;" src="{{ asset('assets/images/aliens/alien32.png') }}" alt="Area51 Alien" />
 							<p><a href="{{ U_DEV_HOME_SUB }}">All Development Discussion takes place at Area51. Bug tracker, development wiki, continuous integration and other development tools are located here. Find out how to get involved in phpBB development.</a></p>
@@ -251,10 +259,13 @@
 					<div class="sub-menu-bottom"><a href="{{ U_DEV_INDEX_SUB }}">Participate in phpBB development now &raquo;</a></div>
 				</div>
 			</li>
-			<li class="nav-button but-blog"><a href="{{ U_BLOG }}"><span></span>Blog</a></li>
-			<li class="nav-button but-community"><a href="{{ U_COMMUNITY }}"><span></span>Community</a>
 
-				<div class="sub-menu sub-menu-extra">
+			<li class="nav-button but-blog"><a href="{{ U_BLOG }}"><span></span>Blog</a></li>
+
+			<li class="nav-button but-community">
+				<a href="{{ U_COMMUNITY }}">Community</a>
+
+				<div class="sub-menu">
 					<ul>
 						<li>
 							<h4><a href="{{ U_FORUM_SUPPORT_SUB }}">Support Forums</a></h4>
@@ -286,7 +297,10 @@
 					<div class="sub-menu-bottom"><a href="{{ U_FORUM_INDEX_SUB }}">&#0133; and many more forums &raquo;</a></div>
 				</div>
 			</li>
-			<li class="nav-button but-hosting"><a href="{{ U_HOSTING }}"><span></span>Hosting</a></li>
+
+			<li class="nav-button but-hosting">
+				<a href="{{ U_HOSTING }}">Hosting</a>
+			</li>
 		</ul>
 	</div>
 

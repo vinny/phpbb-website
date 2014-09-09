@@ -584,10 +584,13 @@ class GlobalsExtension extends \Twig_Extension
 			'U_DOWNLOADS_UPDATE_SUB'			=> '/downloads/#update?from=submenu',
 			'U_STYLES_DB_SUB'					=> '/customise/db/styles-2/?from=submenu',
 			'U_LANGUAGES_SUB'					=> '/languages/?from=submenu',
-			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu',
 
+			'U_CUSTOMISE'						=> '/customise/',
+			'U_CDB_SUB'							=> '/customise/db/?from=submenu',
+			'U_EXT_SUB'							=> '/extensions/?from=submenu',
+			'U_EXT_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu', // @TODO: correct?
 			'U_MODS_SUB'						=> '/mods/?from=submenu',
-			'U_DEV_WIKI_SUB'					=> '//wiki.phpbb.com/?from=submenu',
+			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu',
 			'U_STYLES_SUB'						=> '/styles/?from=submenu',
 			'U_STYLES_DEMO_SUB'					=> '/styles/demo/3.0/?from=submenu',
 
@@ -598,6 +601,8 @@ class GlobalsExtension extends \Twig_Extension
 			'U_SUPPORT_FORUMS_SUB'				=> '/support/forums/?from=submenu',
 			'U_SUPPORT_INTL_SUB'				=> '/support/intl/?from=submenu',
 
+			'U_DEVELOPMENT'						=> '/development/',
+			'U_DEV_WIKI_SUB'					=> '//wiki.phpbb.com/?from=submenu',
 			'U_DEV_GI_SUB'						=> '/development/get-involved/?from=submenu',
 			'U_BUGS_SUB'						=> '/bugs/?from=submenu',
 			'U_BUGS_PHPBB_SUB'					=> 'http://tracker.phpbb.com/?from=submenu',
@@ -616,6 +621,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'U_FORUM_INDEX_SUB'					=> '/community/?from=submenu',
 			'U_ABOUT_INDEX_SUB'					=> '/about/?from=submenu',
+			'U_CUSTOMISE_INDEX_SUB'				=> '/customise/?from=submenu',
 			'U_SUPPORT_INDEX_SUB'				=> '/support/?from=submenu',
 			'U_DEV_INDEX_SUB'					=> '/development/?from=submenu',
 
@@ -628,9 +634,7 @@ class GlobalsExtension extends \Twig_Extension
 			'U_SHOWCASE'						=> '/showcase/',
 			'U_DOWNLOADS'						=> '/downloads/',
 			'U_OFFICIAL_TOOLS'					=> '/customise/db/official_tools-23/',
-			'U_CUSTOMISE'						=> '/customise/db/',
 			'U_SUPPORT'							=> '/support/',
-			'U_DEVELOPMENT'						=> '/development/',
 			'U_BLOG'							=> '//blog.phpbb.com/',
 			'U_COMMUNITY'						=> '/community/',
 			'U_DEV_BOARD'						=> '//area51.phpbb.com/phpBB/',
