@@ -337,7 +337,7 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_demo'                     => '/styles/demo/',
 
 			// Demo pages (handled by Titania)
-			'styles_demo_31x'                 => '/styles/demo/3.1/',
+			'styles_demo_31x'                 => '/styles/demo/3.1/', // TODO: needs to be up and running
 			'styles_demo_30x'                 => '/styles/demo/3.0/',
 
 			// Styles CDB
@@ -356,8 +356,6 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_docs_30x'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
 
 			// Related community topics
-			'styles_changes_31x'              => '/community/viewtopic.php?f=66666&t=66666', // TODO: create
-			'styles_changes_30x'              => '/community/viewtopic.php?f=73&t=880735',
 			'styles_ssp_31x_feedback'         => '/community/viewtopic.php?f=66666&t=66666', // TODO: create
 			'styles_ssp_30x_feedback'         => '/community/viewtopic.php?f=74&p=12931323',
 
