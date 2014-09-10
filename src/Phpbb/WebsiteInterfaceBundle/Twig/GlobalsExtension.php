@@ -184,7 +184,6 @@ class GlobalsExtension extends \Twig_Extension
 			'ABOUT_MAP'			=> '/about/map/',
 			'ABOUT_TEAM'			=> '/about/team/',
 			'ABOUT_FEATURES'		=> '/about/features/',
-			'ABOUT_LOGOS'			=> '/about/logos/',
 			'ABOUT_COMPARE'		=> '/about/features/compare.php',
 		);
 
@@ -353,7 +352,6 @@ class GlobalsExtension extends \Twig_Extension
 			'SUPPORT_TUTORIALS'		=> '/support/tutorials/',
 			'SUPPORT_TUTORIALS_2_0'	=> '/support/tutorials/2.0/',
 			'SUPPORT_TUTORIALS_3_0'	=> '/support/tutorials/3.0/',
-			'SUPPORT_TUTORIALS'		=> '/support/tutorials/',
 			'SUPPORT_INTL'			=> '/support/intl/',
 			//'SUPPORT_INTL_CONTACT'	=> '/community/ucp.php?i=pm&amp;mode=compose&amp;u=' . INTL_CONTACT_ID,
 			'SUPPORT_SRT'				=> '/support/srt/',
@@ -443,9 +441,6 @@ class GlobalsExtension extends \Twig_Extension
 			'FORUM_STYLES_CAT'			=> '/community/viewforum.php?f=80',
 			'FORUM_MODS_CAT'			=> '/community/viewforum.php?f=81',
 
-			'FORUM_SUPPORT'				=> '/community/viewforum.php?f=46',
-			'FORUM_STYLES_CAT'				=> '/community/viewforum.php?f=80',
-			'FORUM_MODS_CAT'					=> '/community/viewforum.php?f=81',
 			'FORUM_EVENTS'				=> '/community/viewforum.php?f=105',
 			'FORUM_GENDISC'				=> '/community/viewforum.php?f=6',
 		);
@@ -476,8 +471,6 @@ class GlobalsExtension extends \Twig_Extension
 	private function getMiscVars()
 	{
 		$miscVars = array(
-			'RULES'				=> '/rules/',
-
 			'package_version'		=> '3.0.12',
 			'package_release_date'	=> '2013-09-28',
 			'PACKAGE_VERSION'		=> '3.0.12',
@@ -486,8 +479,6 @@ class GlobalsExtension extends \Twig_Extension
 
 			'bot'					=> false, // @TODO Set this to true for bots // Usage = 1
 			'is_on_team'			=> false, // @TODO Set this up to use sessions management and see if they are on the team
-
-			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce', // Usage = 1
 
 			'ROOT_PATH'			=> '/',
 			'THEME_PATH'			=> '/theme',
@@ -532,8 +523,8 @@ class GlobalsExtension extends \Twig_Extension
 			'PHPBBCOM_NEW_WEBSITE'	=> '/community/viewtopic.php?t=543015',
 			'FIRST_RC_30X'			=> '/community/viewtopic.php?t=615945',
 
-			// URLS to mailing lisz
-			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce',
+			// URLS to mailing list
+			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce', // Usage = 1
 
 			// Languages
 			'LANGUAGES_HOWTO'	=>	'/community/viewtopic.php?f=66&amp;t=1858645',
@@ -584,10 +575,13 @@ class GlobalsExtension extends \Twig_Extension
 			'U_DOWNLOADS_UPDATE_SUB'			=> '/downloads/#update?from=submenu',
 			'U_STYLES_DB_SUB'					=> '/customise/db/styles-2/?from=submenu',
 			'U_LANGUAGES_SUB'					=> '/languages/?from=submenu',
-			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu',
 
+			'U_CUSTOMISE'						=> '/customise/',
+			'U_CDB_SUB'							=> '/customise/db/?from=submenu',
+			'U_EXT_SUB'							=> '/extensions/?from=submenu',
+			'U_EXT_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu', // @TODO: correct?
 			'U_MODS_SUB'						=> '/mods/?from=submenu',
-			'U_DEV_WIKI_SUB'					=> '//wiki.phpbb.com/?from=submenu',
+			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu',
 			'U_STYLES_SUB'						=> '/styles/?from=submenu',
 			'U_STYLES_DEMO_SUB'					=> '/styles/demo/3.0/?from=submenu',
 
@@ -598,6 +592,8 @@ class GlobalsExtension extends \Twig_Extension
 			'U_SUPPORT_FORUMS_SUB'				=> '/support/forums/?from=submenu',
 			'U_SUPPORT_INTL_SUB'				=> '/support/intl/?from=submenu',
 
+			'U_DEVELOPMENT'						=> '/development/',
+			'U_DEV_WIKI_SUB'					=> '//wiki.phpbb.com/?from=submenu',
 			'U_DEV_GI_SUB'						=> '/development/get-involved/?from=submenu',
 			'U_BUGS_SUB'						=> '/bugs/?from=submenu',
 			'U_BUGS_PHPBB_SUB'					=> 'http://tracker.phpbb.com/?from=submenu',
@@ -607,6 +603,7 @@ class GlobalsExtension extends \Twig_Extension
 			'U_FORUM_SUPPORT_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=46',
 			'U_FORUM_STYLES_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=80',
 			'U_FORUM_MODS_SUB'					=> '/community/viewforum.php?from=submenu&amp;f=81',
+			'U_FORUM_EXT_SUB'					=> '/community/viewforum.php?from=submenu&amp;f=451',
 			'U_FORUM_PHPBBDISC_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=64',
 			'U_FORUM_EVENTS_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=105',
 			'U_FORUM_GENDISC_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=6',
@@ -616,6 +613,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'U_FORUM_INDEX_SUB'					=> '/community/?from=submenu',
 			'U_ABOUT_INDEX_SUB'					=> '/about/?from=submenu',
+			'U_CUSTOMISE_INDEX_SUB'				=> '/customise/?from=submenu',
 			'U_SUPPORT_INDEX_SUB'				=> '/support/?from=submenu',
 			'U_DEV_INDEX_SUB'					=> '/development/?from=submenu',
 
@@ -628,9 +626,7 @@ class GlobalsExtension extends \Twig_Extension
 			'U_SHOWCASE'						=> '/showcase/',
 			'U_DOWNLOADS'						=> '/downloads/',
 			'U_OFFICIAL_TOOLS'					=> '/customise/db/official_tools-23/',
-			'U_CUSTOMISE'						=> '/customise/db/',
 			'U_SUPPORT'							=> '/support/',
-			'U_DEVELOPMENT'						=> '/development/',
 			'U_BLOG'							=> '//blog.phpbb.com/',
 			'U_COMMUNITY'						=> '/community/',
 			'U_DEV_BOARD'						=> '//area51.phpbb.com/phpBB/',
