@@ -16,7 +16,7 @@
 		<h2 class="imgrep styles">Installing &amp; Using Styles</h2>
 		<p>Styles are downloadable packages which can be installed on a phpBB board to change the look and feel of the board. In this guide, we will walk you through the process of installing and using styles on your phpBB board.</p>
 
-		<div class="note-box information-yellow"><strong>Note:</strong> This guide only applies to phpBB 3.1.x. For older versions of phpBB (3.0.x) we suggest that you read the official <a href="{{ styles_docs_30x }}">3.0.x documentation</a> or this <a href="{{ styles_kb_30x_install }}">knowledge base article</a> instead.</div>
+		<div class="note-box yellow"><strong>Note:</strong> This guide only applies to phpBB 3.1.x. For older versions of phpBB (3.0.x) we suggest that you read the official <a href="{{ styles_docs_30x }}">3.0.x documentation</a> or this <a href="{{ styles_kb_30x_install }}">knowledge base article</a> instead.</div>
 
 		<hr />
 
@@ -33,13 +33,13 @@
 		<hr />
 
 		<h2 class="title" id="a-installing">Installing an Style</h2>
-		<div class="note-box information-blue"><strong>Note:</strong> This guide assumes that you have correctly set up phpBB 3.1.x and have it operational. Direct write-access to your server's files (via FTP or other) is also required.</div>
+		<div class="note-box blue"><strong>Note:</strong> This guide assumes that you have correctly set up phpBB 3.1.x and have it operational. Direct write-access to your server's files (via FTP or other) is also required.</div>
 
 		<h3>1. Choosing a Style</h3>
 		<p>It is recommended to only download styles from phpBB's <a href="{{ styles_db_path }}">Customisation Database</a> as this is a trusted source where all styles have been validated by the Styles Team. All styles downloaded from the Customisation Database should be ready to be uploaded to your board's <span class="inlinecode">styles</span> folder.</p>
 		<p>Additionally, you could try your luck with styles that haven't been validated yet (and therefor not included in the database). There are numerous styles availble in the <a href="{{ forum_styles_31x_dev }}">[3.1.x] Styles in Development</a> section of the community forums.</p>
 
-		<div class="note-box information-yellow"><strong>Note:</strong> Make absolutely sure that the style you downloaded is for phpBB 3.1.x. Styles created for phpBB 3.0.x are <span class="underline">not</span> compatible!</div>
+		<div class="note-box yellow"><strong>Note:</strong> Make absolutely sure that the style you downloaded is for phpBB 3.1.x. Styles created for phpBB 3.0.x are <span class="underline">not</span> compatible!</div>
 
 		<h3>2. Download and unzip</h3>
 		<p>Once you have downloaded a style, you will need to unpackage it on your computer, as styles are typically available in the compressed "zip" file format.</p>
@@ -54,7 +54,7 @@
 
 		<h3>4. Install</h3>
 		<p>Once the style has been uploaded, navigate in the board's ACP to Customise -> Install Styles. You should see your recently uploaded styles listed (assuming you uploaded it to the correct location and the style is valid), with an option to "<samp>Install style</samp>". Simply click it and the installation is complete!</p>
-		<div class="note-box information-yellow"><strong>Note:</strong> If your new style uses "template inheritance" (a method that style authors use to build styles "on top of" existing styles), make sure that you have the "parent" style installed first. phpBB will refuse to install a style if it cannot detect the parent.</div>
+		<div class="note-box yellow"><strong>Note:</strong> If your new style uses "template inheritance" (a method that style authors use to build styles "on top of" existing styles), make sure that you have the "parent" style installed first. phpBB will refuse to install a style if it cannot detect the parent.</div>
 
 		<hr />
 
@@ -83,13 +83,13 @@ newstyle pro
 		<hr />
 
 		<h2 class="title" id="a-editing">Editing Styles</h2>
-		<div class="note-box information-yellow"><strong>Note:</strong> Editing a style is no trivial matter. Unless you have at least some knowledge of HTML and CSS and know what you are doing, we advise against the editing of styles.</div>
-		<div class="note-box information-yellow"><strong>Note:</strong> Always check to see if there are <a href="{{ extensions_cdb }}">extensions</a> available which provide the changes you need. Editing styles should be a last resort.</div>
+		<div class="note-box yellow"><strong>Note:</strong> Editing a style is no trivial matter. Unless you have at least some knowledge of HTML and CSS and know what you are doing, we advise against the editing of styles.</div>
+		<div class="note-box yellow"><strong>Note:</strong> Always check to see if there are <a href="{{ extensions_cdb }}">extensions</a> available which provide the changes you need. Editing styles should be a last resort.</div>
 		<p>As mentioned in the <a href="#a-anatomy">Anatomy of a Style</a> section, a style consists of multiple parts. Depending on what exactly you want to change, you will either have to edit the template or theme asset files.</p>
 		<p>Since it is usually not possible to edit files directly on your server, you will need to make all your edits on a "local" copy (on your own PC). It's generally good practice to have a local copy of your entire board, so you can test your changes before uploading them to a "live" board.</p>
 		<p>In any case: you will need to get a local copy of your style, either by downloading the style's files from your own board (via FTP), or edit the files from the style's download package (which you downloaded from the <a href="{{ styles_db_path }}">Styles Database</a>).</p>
-		<div class="note-box information-blue"><strong>Note:</strong> We will only cover a few basics here (for inexperienced users). For more detailed information, please visit the <a href="{{ styles_create }}">Creating &amp; Modifying Styles</a> page.</div>
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> If you want to make many changes to your style, we suggest creating a "child" style based on your current style. Read the <a href="{{ styles_create }}">Creating &amp; Modifying Styles</a> page for more information.</div>
+		<div class="note-box blue"><strong>Note:</strong> We will only cover a few basics here (for inexperienced users). For more detailed information, please visit the <a href="{{ styles_create }}">Creating &amp; Modifying Styles</a> page.</div>
+		<div class="note-box green"><strong>Pro-Tip:</strong> If you want to make many changes to your style, we suggest creating a "child" style based on your current style. Read the <a href="{{ styles_create }}">Creating &amp; Modifying Styles</a> page for more information.</div>
 
 		<h3>Preparation</h3>
 		<p>In order to edit web-files, you will need a text-editor. You can use any text-editor you want, but some are smarter than others. <a href="http://notepad-plus-plus.org/download/">Notepad++</a> is a very good free text-editor, which has numerous options that can make your life easier when it comes to editing web-files.</p>
@@ -115,20 +115,20 @@ newstyle pro
 			<li><a href="https://wiki.phpbb.com/Category:Template_Variables">Common Template Errors</a></li>
 		</ul>
 		<br />
-		<div class="note-box information-blue"><strong>Note:</strong> phpBB's template-engine has to process (compile) the style's templates before it can display them. This is resource-intensive process, so it "caches" the finished pages for quicker access. If you make changes to template files, you will need to "purge" (clear) the board's cache (or else your changes will not appear). You can do this by navigating to the board's ACP and clicking "Purge the cache".</div>
+		<div class="note-box blue"><strong>Note:</strong> phpBB's template-engine has to process (compile) the style's templates before it can display them. This is resource-intensive process, so it "caches" the finished pages for quicker access. If you make changes to template files, you will need to "purge" (clear) the board's cache (or else your changes will not appear). You can do this by navigating to the board's ACP and clicking "Purge the cache".</div>
 
 		<h3>Theme Editing</h3>
 		<p>Themes are where the creativity comes into play. Editing the CSS files inside the <span class="inlinecode">theme</span> directory can have a wide range of effects. Most users however, simply want to change a few colours, images, fonts, or text-size. This is where a good text-editor can really save time (since it will warn you about syntax and other errors).</p>
 		<p>Users often know what they would like to change, but they simply don't know which files to edit (and which lines in particular). This is where the (F12) develop tools are your best friend. The specifics for each browser might differ slightly, but this <a href="https://developer.chrome.com/devtools/docs/dom-and-styles#styles">inspection guide for Google Chrome</a> will tell you everything you need to know.</p>
 		<p>Once you have identified the CSS rules or classes which control the element you want to change, simply lookup the class name inside your style's .css files. Once you have made the changes you desire, upload your style's files.</p>
-		<div class="note-box information-blue"><strong>Note:</strong> Old theme assets will sometimes remain in your browser's cache, which will prevent you from seeing the changes to your website. A "hard-refresh" usually solves this problem. This is usually done with the CTRL+F5 keyboard shortcut.</div>
+		<div class="note-box blue"><strong>Note:</strong> Old theme assets will sometimes remain in your browser's cache, which will prevent you from seeing the changes to your website. A "hard-refresh" usually solves this problem. This is usually done with the CTRL+F5 keyboard shortcut.</div>
 
 		<hr />
 
 		<h2 class="title" id="a-updating">Updating a Style</h2>
 		<p>Styles can be updated without any prior steps. All you need to do is simply upload the style's files to the same location as the old style, and let the files be overwritten.</p>
 		<p>Finally, simply navigate in the board's ACP to Customise -> Style Management, and click "<samp>Purge Cache</samp>".</p>
-		<div class="note-box information-red"><strong>Warning:</strong> If you have made changes to the style you are about to update, you will lose all your changes! So be sure to make a backup of your style's files before updating. After updating your style, you can reapply your changes.</div>
+		<div class="note-box red"><strong>Warning:</strong> If you have made changes to the style you are about to update, you will lose all your changes! So be sure to make a backup of your style's files before updating. After updating your style, you can reapply your changes.</div>
 
 		<hr />
 
@@ -140,7 +140,7 @@ newstyle pro
 
 		<h3>2. Uninstall</h3>
 		<p>To uninstall a style, click the "<samp>Uninstall</samp>" link in the Style Management page. This will effectively remove the style from your board, as well as all database settings relating to it. You will get an option to also delete the actual files from your server.</p>
-		<div class="note-box information-red"><strong>Warning:</strong> Be careful when using the "Delete from filesystem" option! It is permanent and <span class="underline">cannot</span> be undone. You will have to upload the style's files again before you can use it again.</div>
+		<div class="note-box red"><strong>Warning:</strong> Be careful when using the "Delete from filesystem" option! It is permanent and <span class="underline">cannot</span> be undone. You will have to upload the style's files again before you can use it again.</div>
 
 		<hr />
 

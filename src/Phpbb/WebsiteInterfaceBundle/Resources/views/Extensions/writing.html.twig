@@ -16,14 +16,14 @@
 		<h2 class="imgrep mods">Writing Extensions</h2>
 		<p>If you are an existing developer or a phpBB board owner thinking about learning PHP there has been no better time to get involved in the extensions community. The extensions system for edit-less changes in phpBB 3.1 "Ascraeus" makes customising phpBB easier than ever. Existing MOD developers will be glad to know that the best parts of phpBB development such as the powerful database abstraction layer, templating and language systems have been retained for phpBB 3.1, so the transition from writing MODs to extensions is a smooth one.</p>
 		<p>Extensions are the natural successor to modifications (sometimes known as MODs), the development and support of which have defined the community's involvement in the phpBB project for over a decade. Unlike modifications, which often required a developer to alter the phpBB codebase to achieve a desired functionality, extensions enable a developer to develop new functionality for phpBB that is self-contained and void of actual code changes. As such, administrators wishing to include new functionality on their boards simply have to upload a set of files (the “extension”) to their webspace and do not have to concern themselves with editing any files.</p>
-		<div class="note-box information-yellow"><strong>Note:</strong> This guide only applies to phpBB 3.1.x. For guides to older versions of phpBB (3.0.x), please visit the <a href="{{ MODS_KB }}">MODs knowledge base</a> or the <a href="{{ MODS_AUTHOR_INTRO }}">Introduction to MOD Writing</a>.</div>
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> The best way to learn how to create extensions is by learning from examples. Our <a href="{{ extensions_offical_exts }}">Official Extensions</a> are great examples to learn from. The <a href="{{ forum_extensions_31x_writers }}">[3.1.x] Extensions Writers</a> forum is also a great place to seek help and advice if you have any questions.</div>
+		<div class="note-box yellow"><strong>Note:</strong> This guide only applies to phpBB 3.1.x. For guides to older versions of phpBB (3.0.x), please visit the <a href="{{ MODS_KB }}">MODs knowledge base</a> or the <a href="{{ MODS_AUTHOR_INTRO }}">Introduction to MOD Writing</a>.</div>
+		<div class="note-box green"><strong>Pro-Tip:</strong> The best way to learn how to create extensions is by learning from examples. Our <a href="{{ extensions_offical_exts }}">Official Extensions</a> are great examples to learn from. The <a href="{{ forum_extensions_31x_writers }}">[3.1.x] Extensions Writers</a> forum is also a great place to seek help and advice if you have any questions.</div>
 
 		<hr />
 
 		<h2 class="title" id="a-howto">How To Write an Extension</h2>
 		<p>The example detailed below will demonstrate how to write a basic extension that will add a new page to a board that will simply display “Hello world!” or “Goodbye world!” based on the option set in the ACP. This extension touches on all the basic principles that can apply to any other type of extension, including adding a front-controller page, modifying phpBB through core events and template events, modifying the database using migrations, and installing an ACP module with config settings for the extension.</p>
-		<div class="note-box information-blue"><strong>Note:</strong> The extension referred to in this guide is the ACME Demo Extension by nickvergessen. It can be downloaded from its <a href="https://github.com/nickvergessen/phpbb-ext-acme-demo">Github Repository</a>.</div>
+		<div class="note-box blue"><strong>Note:</strong> The extension referred to in this guide is the ACME Demo Extension by nickvergessen. It can be downloaded from its <a href="https://github.com/nickvergessen/phpbb-ext-acme-demo">Github Repository</a>.</div>
 		<p>The first step is to find the <code class="inline">ext/</code> directory, located within the phpBB root (the same location as viewtopic.php, viewforum.php, index.php, etc). Inside <code class="inline">ext/</code>, create a new directory called <code class="inline">acme/</code> (this would be the vendor name associated with the extension, e.g., your phpBB username) and inside <code class="inline">acme/</code>, create another directory called <code class="inline">demo/</code>(the name of the extension).</p>
 		<div class="note-box information-yellow"><strong>Note:</strong> Due to internal logic inside the code, vendor and extension names may ONLY contain numbers and letters. Underscores, dashes, and other characters are NOT permitted.</div>
 		<p>When the directory is created, a <code class="inline">composer.json</code> file needs to be constructed. This is a meta data file which details and information specific to the extension, similar to the beginning section of a MODX file. The layout of a <code class="inline">composer.json</code> file is as follows:</p>
@@ -84,7 +84,7 @@ class ext extends \phpbb\extension\base
    }
 }</pre>
 		<p>In the case of processing the XML dataset returned by the web service, the execution time could potentially be very large depending on the size of the dataset. The extension code in phpBB has a contingency for this; if the returned value from <code class="inline">enable_step()</code> is not false, then the returned value will be serialised and stored in the database.</p>
-		<div class="note-box information-yellow"><strong>Note:</strong> The serialised data is stored in the phpbb_ext table under the ext_state field. Developers should never manipulate this field directly as the serialisation is handled internally by phpBB.</div>
+		<div class="note-box yellow"><strong>Note:</strong> The serialised data is stored in the phpbb_ext table under the ext_state field. Developers should never manipulate this field directly as the serialisation is handled internally by phpBB.</div>
 		<p>This allows for a large process to be paused and resumed, as the last known state will be deserialised when <code class="inline">enable_step()</code> is called again. This could be effected by the script redirecting on to itself as <code class="inline">enable_step()</code> will continue to be executed until such time as false is returned.</p>
 		<p>Essentially, by extending the base class and overriding any of the available functions (<code class="inline">disable_step()</code> and <code class="inline">purge_step()</code> can be used in a similar way to <code class="inline">enable_step()</code> as mentioned above) the functionality is available to perform script execution in a series of steps.</p>
 
@@ -113,7 +113,7 @@ class ext extends \phpbb\extension\base
     defaults: { _controller: acme.demo.controller:handle }</pre>
 		<p>The first item, <code class="inline">acme_demo_controller</code>, is a unique name for this routing, and can be named whatever we want (like services, it should be prefaced with the extension's vendor name). This name is used by the controller helper class to generate the link to this routing, by calling <code class="inline">$controller_helper->route(‘acme_demo_controller’)</code>. The pattern is used to define what the URL should look like after <code class="inline">app.php</code>, in this case <code class="inline">/demo/{name}</code> where <code class="inline">{name}</code> is a URL parameter variable.</p>
 		<p>For example, the URL <code class="inline">./app.php/demo/hello</code> would be similar to <code class="inline">./app.php/demo?name=hello</code>. The routing YAML allows us to define URLs with various patterns leading to controller classes, and/or to specific methods within controller classes. The defaults definition above specifies that the <code class="inline">acme_demo_controller</code> route should point to the <code class="inline">handle()</code> method in our <code class="inline">acme.demo.controller</code> service, and pass any <code class="inline">{name}</code> URL parameter to the <code class="inline">handle()</code> method (you can see the handle method accepts <code class="inline">$name</code> as an argument).</p>
-		<div class="note-box information-yellow"><strong>Reminder:</strong> All extension service names and route names should be prefixed with your vendor name and extension name.</div>
+		<div class="note-box yellow"><strong>Reminder:</strong> All extension service names and route names should be prefixed with your vendor name and extension name.</div>
 
 		<hr />
 
@@ -130,7 +130,7 @@ class main
 }
 </pre>
 		<p>The above namespaced code would be for a class file and path structure such as <code class="inline">acme/demo/controller/main.php</code>.</p>
-		<div class="note-box information-blue"><strong>Note:</strong> The phpBB 3.1 coding standard states that the closing <code class="inline">?&gt;</code> is not required in PHP files, and all files should contain one extra blank line at the bottom.</div>
+		<div class="note-box blue"><strong>Note:</strong> The phpBB 3.1 coding standard states that the closing <code class="inline">?&gt;</code> is not required in PHP files, and all files should contain one extra blank line at the bottom.</div>
 		<p>One final note about including PHP files regarding the use of the <code class="inline">IN_PHPBB</code> test. PHP files that contain only classes are not required to use the <code class="inline">IN_PHPBB</code> test. However, if your PHP files contain any executable code not encapsulated within a class structure, such as exposed functions, <code class="inline">include()</code> or <code class="inline">require()</code> statements, then the <code class="inline">IN_PHPBB</code> test is required prior to any executable code.</p>
 		<pre class="codesnippet">&lt;?php
 
@@ -173,7 +173,7 @@ function do_something ()
 		<pre class="codesnippet">acme/demo/styles/all/template/event/overall_footer_after.html</pre>
 		<p>It would contain the following line of code:</p>
 		<pre class="codesnippet">&lt;!-- INCLUDEJS @acme_demo/js/scripts.js --&gt;</pre>
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> phpBB’s core PHP and template files have been prepared with dozens of event locations. However, if there are no events where your extension may need one, the phpBB developer team welcomes event requests at the <a href="{{ DEV_HOME_SUB }}">area51.com</a> [3.x] Event Requests forum.</div>
+		<div class="note-box green"><strong>Pro-Tip:</strong> phpBB’s core PHP and template files have been prepared with dozens of event locations. However, if there are no events where your extension may need one, the phpBB developer team welcomes event requests at the <a href="{{ DEV_HOME_SUB }}">area51.com</a> [3.x] Event Requests forum.</div>
 
 		<hr />
 
@@ -186,7 +186,7 @@ $this->user->add_lang_ext(‘acme/demo’, ‘common’);</pre>
 $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’));</pre>
 		<p>The above would load the two corresponding language files:<br /><code class="inline">acme/demo/language/en/common.php</code><br /><code class="inline">acme/demo/language/en/controller.php</code></p>
 		<p>While this ability to load language files at any point in your extension’s code when they may be needed is convenient, there are special core events for loading language files too. The <code class="inline">core.user_setup</code> event can be used to load language files that need to be available at all times. And a special <code class="inline">core.permissions</code> event should be used to load a special language file that contains translations for phpBB’s permissions system. For example:</p>
-		<div class="note-box information-green"><strong>Pro-Tip:</strong> Language files can be given any name. However, language files prefixed with <code class="inline">permissions_</code> or <code class="inline">info_acp_</code> will be auto loaded for permission and ACP module name variables, respectively.</div>
+		<div class="note-box green"><strong>Pro-Tip:</strong> Language files can be given any name. However, language files prefixed with <code class="inline">permissions_</code> or <code class="inline">info_acp_</code> will be auto loaded for permission and ACP module name variables, respectively.</div>
 
 		<hr />
 
@@ -199,7 +199,7 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
 		<pre class="codesnippet">$user->add_lang('acp/common');
 $this->tpl_name = 'demo_body';
 $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
-		<div class="note-box information-yellow"><strong>Note:</strong> If a standard phpBB template filename is used as an extension template, then this will override the template file from phpBB. Therefore it is important to be mindful of this when naming template files. Overriding template files is not advisable for publicly released extensions as it could conflict with other extensions.</div>
+		<div class="note-box yellow"><strong>Note:</strong> If a standard phpBB template filename is used as an extension template, then this will override the template file from phpBB. Therefore it is important to be mindful of this when naming template files. Overriding template files is not advisable for publicly released extensions as it could conflict with other extensions.</div>
 
 		<hr />
 
