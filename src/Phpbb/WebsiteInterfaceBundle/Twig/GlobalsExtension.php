@@ -612,6 +612,7 @@ class GlobalsExtension extends \Twig_Extension
 			'U_FORUM_SUPPORT_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=46',
 			'U_FORUM_STYLES_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=80',
 			'U_FORUM_MODS_SUB'					=> '/community/viewforum.php?from=submenu&amp;f=81',
+			'U_FORUM_EXT_SUB'					=> '/community/viewforum.php?from=submenu&amp;f=451',
 			'U_FORUM_PHPBBDISC_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=64',
 			'U_FORUM_EVENTS_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=105',
 			'U_FORUM_GENDISC_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=6',
