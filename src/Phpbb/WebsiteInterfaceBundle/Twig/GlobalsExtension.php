@@ -184,7 +184,6 @@ class GlobalsExtension extends \Twig_Extension
 			'ABOUT_MAP'			=> '/about/map/',
 			'ABOUT_TEAM'			=> '/about/team/',
 			'ABOUT_FEATURES'		=> '/about/features/',
-			'ABOUT_LOGOS'			=> '/about/logos/',
 			'ABOUT_COMPARE'		=> '/about/features/compare.php',
 		);
 
@@ -353,7 +352,6 @@ class GlobalsExtension extends \Twig_Extension
 			'SUPPORT_TUTORIALS'		=> '/support/tutorials/',
 			'SUPPORT_TUTORIALS_2_0'	=> '/support/tutorials/2.0/',
 			'SUPPORT_TUTORIALS_3_0'	=> '/support/tutorials/3.0/',
-			'SUPPORT_TUTORIALS'		=> '/support/tutorials/',
 			'SUPPORT_INTL'			=> '/support/intl/',
 			//'SUPPORT_INTL_CONTACT'	=> '/community/ucp.php?i=pm&amp;mode=compose&amp;u=' . INTL_CONTACT_ID,
 			'SUPPORT_SRT'				=> '/support/srt/',
@@ -443,9 +441,6 @@ class GlobalsExtension extends \Twig_Extension
 			'FORUM_STYLES_CAT'			=> '/community/viewforum.php?f=80',
 			'FORUM_MODS_CAT'			=> '/community/viewforum.php?f=81',
 
-			'FORUM_SUPPORT'				=> '/community/viewforum.php?f=46',
-			'FORUM_STYLES_CAT'				=> '/community/viewforum.php?f=80',
-			'FORUM_MODS_CAT'					=> '/community/viewforum.php?f=81',
 			'FORUM_EVENTS'				=> '/community/viewforum.php?f=105',
 			'FORUM_GENDISC'				=> '/community/viewforum.php?f=6',
 		);
@@ -476,8 +471,6 @@ class GlobalsExtension extends \Twig_Extension
 	private function getMiscVars()
 	{
 		$miscVars = array(
-			'RULES'				=> '/rules/',
-
 			'package_version'		=> '3.0.12',
 			'package_release_date'	=> '2013-09-28',
 			'PACKAGE_VERSION'		=> '3.0.12',
@@ -486,8 +479,6 @@ class GlobalsExtension extends \Twig_Extension
 
 			'bot'					=> false, // @TODO Set this to true for bots // Usage = 1
 			'is_on_team'			=> false, // @TODO Set this up to use sessions management and see if they are on the team
-
-			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce', // Usage = 1
 
 			'ROOT_PATH'			=> '/',
 			'THEME_PATH'			=> '/theme',
@@ -532,8 +523,8 @@ class GlobalsExtension extends \Twig_Extension
 			'PHPBBCOM_NEW_WEBSITE'	=> '/community/viewtopic.php?t=543015',
 			'FIRST_RC_30X'			=> '/community/viewtopic.php?t=615945',
 
-			// URLS to mailing lisz
-			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce',
+			// URLS to mailing list
+			'LISTS_SUBSCRIBE'		=> 'http://lists.phpbb.com/mailman/subscribe/phpbb-announce', // Usage = 1
 
 			// Languages
 			'LANGUAGES_HOWTO'	=>	'/community/viewtopic.php?f=66&amp;t=1858645',
