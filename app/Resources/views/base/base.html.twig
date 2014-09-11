@@ -24,14 +24,12 @@
 <title>{% block title %}phpBB &bull; Free and Open Source Forum Software{% endblock %}</title>
 
 {% block head_assets %}
-<link rel="stylesheet" href="{{ asset('assets/css/community.css') }}" />
+{{ include(':base:community_css.html.twig') }}
 <link rel="stylesheet" href="{{ asset('assets/css/website.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/headers.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/navigation.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/documentation.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/css/silver.css') }}" />
-
-<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" media="only screen and (max-width: 700px), only screen and (max-device-width: 700px)" />
 
 <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/vnd.microsoft.icon" />
 {% endblock %}
