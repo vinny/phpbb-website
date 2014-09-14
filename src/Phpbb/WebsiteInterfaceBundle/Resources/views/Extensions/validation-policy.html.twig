@@ -20,14 +20,14 @@
 		<hr />
 
 		<h2 class="title" id="general">General</h2>
-		<ol class="list-margin">
+		<ol class="list-margin" style="line-height:1.5em;">
 			<li>
 				<h3>Coding Guidelines</h3>
 				The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.
 			</li>
 			<li>
 				<h3>Composer:</h3>
-				A <samp>composer.json</samp> file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>.
+				A <span class="inlinecode">composer.json</span> file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>.
 			</li>
 			<li>
 				<h3>Vendor Prefixing</h3>
@@ -62,12 +62,11 @@
 		<hr />
 
 		<h2 class="title" id="php">PHP Files</h2>
-		<br />
-		<ol class="list-margin">
+		<ol class="list-margin" style="line-height:1.5em;">
 			<li>Only functions that exist before and in PHP 5.3.3 may be used by default. If you want to use functions that were added in a later version of PHP you need to mention this requirement within the description.</li>
 			<li>No un-initialised variables or indices.</li>
 			<li>Proper file headers and php DocBlocks should be used.‬‬</li>
-			<li>Braces { and } should be on newlines.</li>
+			<li>Braces <span class="inlinecode">{</span> and <span class="inlinecode">}</span> should be on newlines.</li>
 			<li>Contain no ‪magic numbers‬‬. [<a href="https://wiki.phpbb.com/Magic_numbers">wiki</a>]</li>
 			<li><span class="inlinecode">IN_PHPBB</span> checks must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files. [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>]</li>
 			<li>The <span class="inlinecode">$request->variable()</span> function is used instead of <span class="inlinecode">$_POST</span>, <span class="inlinecode">$_GET</span>, or <span class="inlinecode">$_REQUEST</span> to get user input. [<a href="{{ extensions_phpbb_cgs }}#general">wiki</a>]</li>
@@ -96,8 +95,7 @@
 		<hr />
 
 		<h2 class="title" id="templates">Template Files</h2>
-		<br />
-		<ol class="list-margin">
+		<ol class="list-margin" style="line-height:1.5em;">
 			<li>No hard-coded PHP in template files.</li>
 			<li>All Prosilver HTML is valid HTML5 syntax.</li>
 			<li>English language images are supplied as necessary.</li>
@@ -106,8 +104,7 @@
 		<hr />
 
 		<h2 class="title" id="migrations">Migrations</h2>
-		<br />
-		<ol class="list-margin">
+		<ol class="list-margin" style="line-height:1.5em;">
 			<li>Database and permission changes should be handled with migrations. All subsequent database changes should be made in new migration files.</li>
 			<li>Old migration files should never be altered or deleted.</li>
 			<li>Extensions should never delete phpBB core tables or columns.</li>
@@ -116,8 +113,7 @@
 		<hr />
 
 		<h2 class="title" id="scripts">JavaScript and CSS</h2>
-		<br />
-		<ol class="list-margin">
+		<ol class="list-margin" style="line-height:1.5em;">
 			<li>Include JavaScript files with the template function: <span class="inlinecode">&lt;!-- INCLUDEJS --&gt;</span>. [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
 			<li>Include CSS files with the template function: <span class="inlinecode">&lt;!-- INCLUDECSS --&gt;</span>. [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
 			<li>Included third-party JavaScript/CSS libraries and frameworks should utilise a special template <span class="inlinecode">&lt;!-- DEFINE --&gt;</span> tag to prevent duplicate inclusion. For example:<br />
@@ -127,8 +123,7 @@
     &lt;!-- INCLUDEJS highslide-full.js --&gt;
     &lt;!-- DEFINE $INCLUDEDED_HIGHSLIDEJS = true --&gt;
 &lt;!-- ENDIF --&gt;</pre>
-				<br />
-				Some example template variable definitions to use with common libraries:<br /><br />
+				Some example template variable definitions to use with common libraries:<br />
 				<ol class="list-margin" type="a">
 					<li>HighSlide JS: <span class="inlinecode">$INCLUDEDED_HIGHSLIDEJS</span></li>
 					<li>Font Awesome CSS: <span class="inlinecode">$INCLUDEDED_FONTAWESOMECSS</span></li>
@@ -137,7 +132,6 @@
 					<li>MoTools JS: <span class="inlinecode">$INCLUDEDED_MOTOOLSJS</span></li>
 					<li>Dojo JS: <span class="inlinecode">$INCLUDEDED_DOJOJS</span></li>
 				</ol>
-				<br />
 				<div class="note-box information-blue"><strong>Note:</strong> The common practice should be to name the variable definition after the library filename, e.g.: <samp>highslide.js</samp> becomes <samp>HIGHSLIDEJS</samp>. Discussion of this technique can be found <a href="https://www.phpbb.com/community/viewtopic.php?f=20&t=2144227&p=13076522#p13076522">here</a>.</div>
 			</li>
 		</ol>
@@ -145,31 +139,27 @@
 		<hr />
 
 		<h2 class="title" id="licenses">Licenses</h2>
-		<br />
-		<ol class="list-margin">
+		<ol class="list-margin" style="line-height:1.5em;">
 			<li>Extensions should be released under GPL v2. Included frameworks should use GPL v2 or a compatible license. See <a href="http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility">http://www.gnu.org/licenses/gpl-faq.html#AllCompatibility</a></li>
-			<li>A <samp>license.txt</samp> file should be included in the root directory of the extension.</li>
+			<li>A <span class="inlinecode">license.txt</span> file should be included in the root directory of the extension.</li>
 		</ol>
 
 		<hr />
 
 		<h2 class="title" id="packaging">Packaging and Version</h2>
-		<br />
-		<ol class="list-margin">
-			<li>Extensions are packaged as follows:<br />
-				<br />
-				<pre class="codesnippet">/vendorname/extensionname/</pre><br />
-				The names should be alphanumeric. (No dashes or underscores. Capitals are allowed.)<br />
-				For example, the following common extension files, <samp>composer.json</samp>, <samp>ext.php</samp> and <samp>license.txt</samp> would be located at:<br />
-				<br />
+		<ol class="list-margin" style="line-height:1.5em;">
+			<li>Extensions are packaged as follows:
+				<pre class="codesnippet">/vendorname/extensionname/</pre>
+				The names should be alphanumeric. (No dashes or underscores. Capitals are allowed.) For example, the following common extension files, <span class="inlinecode">composer.json</span>, <span class="inlinecode">ext.php</span> and <span class="inlinecode">license.txt</span> would be located at:
 				<pre class="codesnippet">/vendorname/extensionname/composer.json
 /vendorname/extensionname/ext.php
-/vendorname/extensionname/license.txt</pre><br />
+/vendorname/extensionname/license.txt</pre>
 				<div class="note-box information-blue"><img src="{{ THEME_PATH }}/images/icon-dl-zip.gif" width="20" height="21" style="vertical-align: middle;" alt="Download phpBB 3.0.12 (zip)"> <a href="{{ extension_quickstart_zip }}">Extension QuickStart</a> is an available package with starter <samp>composer.json</samp> and <samp>ext.php</samp> files and the required <samp>license.txt</samp>.</div>
 			</li>
 			<li>Semantic version numbers should be used. Only stable versions are allowed in the Extension Database. For every update the version number should be increased.</li>
 			<li>Language files are within the language directory and correct lang_name (ISO) translations are used. Template and theme files are contained in their respective directories.</li>
-		</ol><br />
+		</ol>
+		<br />
 	</div>
 
 	<div id="extras">
