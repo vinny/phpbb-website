@@ -63,13 +63,13 @@
 		<p>Many styles start off by modifying existing styles (such as prosilver), because creating a completely new style from scratch is an extremely time consuming undertaking. Template inheritance has been part of phpBB 3 for a while now, and you will likely encounter it.</p>
 		<p>You can easily see the hierarchy (parent/child relations) of your installed styles by looking at the "Style Management" page in your ACP. It might look like this:</p>
 			<pre class="codesnippet">prosilver
-   prosilver Special Edition
-      prosilver SE Red Edition
-      prosilver SE Gold Edition
+    prosilver Special Edition
+        prosilver SE Red Edition
+        prosilver SE Gold Edition
 newstyle pro
-   newstyle ultra
-      newstyle ultra-black
-   newstyle mono</pre>
+    newstyle ultra
+        newstyle ultra-black
+    newstyle mono</pre>
 		<p>While it is theoretically possible to edit the inheritance hierarchy, this will most likely create all kinds of problems. Most styles will detect automatically which other style they should use as "parent". So it's best to leave it alone.</p>
 
 		<h3>Default Style Settings</h3>
