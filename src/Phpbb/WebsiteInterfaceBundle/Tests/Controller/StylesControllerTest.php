@@ -84,22 +84,6 @@ class StylesControllerTest extends BootstrapTestSuite
 		$this->globalTests();
 	}
 
-	public function testStylesChanges()
-	{
-		$objs    = $this->setupTest('/styles/changes/');
-		$crawler = $objs['crawler'];
-
-		// Title Check
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Style Changes') !== false, 'Title contains Style Changes');
-
-		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("On this page you will find all the style changes for the phpBB default style")')->count() > 0, 'Style Changes Content Check');
-		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
-
-		// Standard All Page Checks
-		$this->globalTests();
-	}
-
 	public function testStylesTeamOverview()
 	{
 		$objs    = $this->setupTest('/styles/team-overview/');
