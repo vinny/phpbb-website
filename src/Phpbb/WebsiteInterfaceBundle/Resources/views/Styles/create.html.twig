@@ -189,7 +189,7 @@ parent = prosilver Special Edition</pre>
 		<p>Enter <em>template inheritance</em>, requiring nothing more than a single line in your <samp><a href="#a-config">style.cfg</a></samp>.</p>
 		<p>By specifying a "parent" in your <samp>style.cfg</samp>, the template-engine knows how to fall back to files of a different template-set if there is anything missing in the current one. The nice thing about this is that the process is completely transparent after template compilation and comes at practically no extra costs during runtime.</p>
 
-		<p>Basically this means that phpBB will try to find a file in your new style's <code class="inline">template</code> directory, but if it cannot find it, it will look for the file in each of the <span class="underline">parents'</span> <code class="inline">template</code> directories. This process can go multiple levels deep. So you can base your own child style on a child of a child of a child of a parent, like the branches of a tree (hence the "<a href="{{ styles_installing }}#a-managing">styles tree</a>").</p>
+		<p>Basically this means that phpBB will try to find a file in your new style's <code class="inline">template/</code> directory, but if it cannot find it, it will look for the file in each of the <span class="underline">parents'</span> <code class="inline">template/</code> directories. This process can go multiple levels deep. So you can base your own child style on a child of a child of a child of a parent, like the branches of a tree (hence the "<a href="{{ styles_installing }}#a-managing">styles tree</a>").</p>
 
 		<div class="note-box blue"><strong>Note:</strong> With the introduction of <a href="#a-events">template events</a>, template inheritance has become much more powerful. We advise you to use it whenever possible.</div>
 
@@ -217,7 +217,7 @@ parent = prosilver Special Edition</pre>
 		<div class="note-box blue"><strong>Note:</strong> Theme assets cannot be "inherited" the same sense as templates can. There is no automated system at work here. Asset inheritance should be read as meaning: "loading theme assets from a different style, via manual instructions".</div>
 
 		<h3><a id="a-method1" class="anchor"></a>Method 1. Copy-paste all theme assets</h3>
-		<p>The easiest (and probably most (ab)used method) has been to simply copy-paste all the assets (the entire <code class="inline">theme</code> directory) of the "parent" style to the "child" style's <code class="inline">theme</code> directory, and edit the various CSS files to suit your needs.</p>
+		<p>The easiest (and probably most (ab)used method) has been to simply copy-paste all the assets (the entire <code class="inline">theme/</code> directory) of the "parent" style to the "child" style's <code class="inline">theme/</code> directory, and edit the various CSS files to suit your needs.</p>
 		<div class="column1 compare">
 			<h4 class="pros">Pros</h4>
 			<ul class="list-margin">

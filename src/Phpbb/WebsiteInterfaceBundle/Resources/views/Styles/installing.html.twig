@@ -21,7 +21,7 @@
 		<hr />
 
 		<h2 class="title" id="a-anatomy">Anatomy of a Style</h2>
-		<p>Inside your phpBB board's directory is a <code class="inline">styles</code> folder. This is the location where all styles are stored, and where we will be uploading any future styles as well. Every style follows the same folder structure.</p>
+		<p>Inside your phpBB board's directory is a <code class="inline">styles/</code> folder. This is the location where all styles are stored, and where we will be uploading any future styles as well. Every style follows the same folder structure.</p>
 		<p>phpBB 3.1.x styles have three main parts: templates, theme assets, and a config file.</p>
 		<p><strong>Templates</strong><br />Templates are the HTML files responsible for the layout of the style. All template and JavaScript files (which can provide additional functionality) for a particular style are located in:</p>
 		<pre class="codesnippet">phpBB/styles/my_style_name/template/</pre>
@@ -36,7 +36,7 @@
 		<div class="note-box blue"><strong>Note:</strong> This guide assumes that you have correctly set up phpBB 3.1.x and have it operational. Direct write-access to your server's files (via FTP or other) is also required.</div>
 
 		<h3>1. Choosing a Style</h3>
-		<p>It is recommended to only download styles from phpBB's <a href="{{ styles_db_path }}">Customisation Database</a> as this is a trusted source where all styles have been validated by the Styles Team. All styles downloaded from the Customisation Database should be ready to be uploaded to your board's <code class="inline">styles</code> folder.</p>
+		<p>It is recommended to only download styles from phpBB's <a href="{{ styles_db_path }}">Customisation Database</a> as this is a trusted source where all styles have been validated by the Styles Team. All styles downloaded from the Customisation Database should be ready to be uploaded to your board's <code class="inline">styles/</code> folder.</p>
 		<p>Additionally, you could try your luck with styles that haven't been validated yet (and therefor not included in the database). There are numerous styles availble in the <a href="{{ forum_styles_31x_dev }}">[3.1.x] Styles in Development</a> section of the community forums.</p>
 
 		<div class="note-box yellow"><strong>Note:</strong> Make absolutely sure that the style you downloaded is for phpBB 3.1.x. Styles created for phpBB 3.0.x are <span class="underline">not</span> compatible!</div>
@@ -49,7 +49,7 @@
 
 		<h3>3. Upload to your board</h3>
 		<p>To upload files, open your favourite FTP client (such as FileZilla, CuteFTP, SmartFTP, etc - even some internet web browsers have this capability) and log in to your hosting account. Generally your publicly accessible files will be in an area named "<samp>public_html</samp>", "<samp>www</samp>" or similar.</p>
-		<p>Upload your style files (the entire folder) to the <code class="inline">styles</code> directory inside your phpBB 3.1.x root directory. You can check if you have uploaded it correctly by looking at the location of the <samp>style.cfg</samp> file. It should be located at:</p>
+		<p>Upload your style files (the entire folder) to the <code class="inline">styles/</code> directory inside your phpBB 3.1.x root directory. You can check if you have uploaded it correctly by looking at the location of the <samp>style.cfg</samp> file. It should be located at:</p>
 		<pre class="codesnippet">phpBB/styles/my_style_name/style.cfg</pre>
 
 		<h3>4. Install</h3>
@@ -118,7 +118,7 @@ newstyle pro
 		<div class="note-box blue"><strong>Note:</strong> phpBB's template-engine has to process (compile) the style's templates before it can display them. This is resource-intensive process, so it "caches" the finished pages for quicker access. If you make changes to template files, you will need to "purge" (clear) the board's cache (or else your changes will not appear). You can do this by navigating to the board's ACP and clicking "Purge the cache".</div>
 
 		<h3>Theme Editing</h3>
-		<p>Themes are where the creativity comes into play. Editing the CSS files inside the <code class="inline">theme</code> directory can have a wide range of effects. Most users however, simply want to change a few colours, images, fonts, or text-size. This is where a good text-editor can really save time (since it will warn you about syntax and other errors).</p>
+		<p>Themes are where the creativity comes into play. Editing the CSS files inside the <code class="inline">theme/</code> directory can have a wide range of effects. Most users however, simply want to change a few colours, images, fonts, or text-size. This is where a good text-editor can really save time (since it will warn you about syntax and other errors).</p>
 		<p>Users often know what they would like to change, but they simply don't know which files to edit (and which lines in particular). This is where the (F12) develop tools are your best friend. The specifics for each browser might differ slightly, but this <a href="https://developer.chrome.com/devtools/docs/dom-and-styles#styles">inspection guide for Google Chrome</a> will tell you everything you need to know.</p>
 		<p>Once you have identified the CSS rules or classes which control the element you want to change, simply lookup the class name inside your style's .css files. Once you have made the changes you desire, upload your style's files.</p>
 		<div class="note-box blue"><strong>Note:</strong> Old theme assets will sometimes remain in your browser's cache, which will prevent you from seeing the changes to your website. A "hard-refresh" usually solves this problem. This is usually done with the CTRL+F5 keyboard shortcut.</div>
