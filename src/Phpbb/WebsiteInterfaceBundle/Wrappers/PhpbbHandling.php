@@ -42,7 +42,7 @@ class PhpbbHandling
     /**
      * Get the topic details from the forums table & the first post
      *
-     * @param Doctrine\DBAL\Connection      $phpBBConnection    DBAL connection to a phpBB database
+     * @param \Doctrine\DBAL\Connection      $phpBBConnection    DBAL connection to a phpBB database
      *                                                              (Doctrine\DBAL\Connection)
      * @param integer $forum                ID for the forum to get topics from
      * @param integer $retrieve_limit       Maxmium number of topics to retrieved
