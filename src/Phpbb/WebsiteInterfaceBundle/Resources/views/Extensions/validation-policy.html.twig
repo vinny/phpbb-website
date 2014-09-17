@@ -33,9 +33,9 @@
 				<h3>Vendor Prefixing</h3>
 				All events, services and routes in an extension should be prefixed with the extension's vendor name and package name, and contain only lowercase letters, numbers, dots, and underscores; e.g.:
 				<ol type="a">
-					<li>Events: <samp>vendor.extension.custom_event</samp></li>
-					<li>Services: <samp>vendor.extension.custom.service</samp></li>
-					<li>Routes: <samp>vendor_extension_custom_route</samp></li>
+					<li>Events: <span class="inlinecode">vendor.extension.custom_event</span></li>
+					<li>Services: <span class="inlinecode">vendor.extension.custom.service</span></li>
+					<li>Routes: <span class="inlinecode">vendor_extension_custom_route</span></li>
 				</ol>
 				<div class="note-box information-yellow"><strong>Note:</strong> It is forbidden to use <strong>phpbb</strong> or <strong>core</strong> to prefix events, services and routes.</div>
 			</li>
@@ -68,29 +68,29 @@
 			<li>No un-initialised variables or indices.</li>
 			<li>Proper file headers and php DocBlocks should be used.‬‬</li>
 			<li>Braces { and } should be on newlines.</li>
-			<li>Contain no ‪magic numbers‬‬ [<a href="https://wiki.phpbb.com/Magic_numbers">wiki</a>].</li>
-			<li><samp>IN_PHPBB</samp> [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>]‬ checks must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files.</li>
-			<li>The <a href="{{ extensions_phpbb_cgs }}#general"><samp>$request->variable()</samp></a> function is used instead of <samp>$_POST</samp>, <samp>$_GET</samp>, or <samp>$_REQUEST</samp> to get user input.</li>
-			<li>Integer variables from <samp>$request->variable()</samp> are cast as integers using the form: <samp>$request->variable('var', 0)</samp> and not <samp>$request->variable ('var', '0')</samp>.</li>
-			<li><samp>$_SERVER</samp> variables are properly sanitised (many <samp>$_SERVER</samp> indexes can be user manipulated). It is preferred to use <samp>$request->server()</samp> instead of <samp>$_SERVER</samp>, e.g.: <samp>$request->server('REMOTE_ADDR')</samp>, as these will be properly sanitised by the $request method.</li>
-			<li>The $user object also contains several sanitised variables about the user, for example: <samp>$user->ip</samp> (user's REMOTE_ADDR) and <samp>$user->page</samp> (name of page currently viewed by user).</li>
+			<li>Contain no ‪magic numbers‬‬. [<a href="https://wiki.phpbb.com/Magic_numbers">wiki</a>]</li>
+			<li><span class="inlinecode">IN_PHPBB</span> checks must be used in all included files, unless they contain only classes or interfaces. For example, function files and language files. [<a href="https://wiki.phpbb.com/IN_PHPBB">wiki</a>]</li>
+			<li>The <span class="inlinecode">$request->variable()</span> function is used instead of <span class="inlinecode">$_POST</span>, <span class="inlinecode">$_GET</span>, or <span class="inlinecode">$_REQUEST</span> to get user input. [<a href="{{ extensions_phpbb_cgs }}#general">wiki</a>]</li>
+			<li>Integer variables from <span class="inlinecode">$request->variable()</span> are cast as integers using the form: <span class="inlinecode">$request->variable('var', 0)</span> and not <span class="inlinecode">$request->variable ('var', '0')</span>.</li>
+			<li><span class="inlinecode">$_SERVER</span> variables are properly sanitised (many <span class="inlinecode">$_SERVER</span> indexes can be user manipulated). It is preferred to use <span class="inlinecode">$request->server()</span> instead of <span class="inlinecode">$_SERVER</span>, e.g.: <span class="inlinecode">$request->server('REMOTE_ADDR')</span>, as these will be properly sanitised by the $request method.</li>
+			<li>The $user object also contains several sanitised variables about the user, for example: <span class="inlinecode">$user->ip</span> (user's REMOTE_ADDR) and <span class="inlinecode">$user->page</span> (name of page currently viewed by user).</li>
 			<li><a href="{{ extensions_phpbb_cgs }}#sql‬‬">phpBB3 DBAL</a> is used instead of database specific SQL functions.
 				<ol type="a">
-					<li>User-input string variables are properly sanitised using <samp>$db->sql_escape()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_escape">wiki</a>] when using variables in SQL queries.</li>
+					<li>User-input string variables are properly sanitised using <span class="inlinecode">$db->sql_escape()</span> when using variables in SQL queries. [<a href="https://wiki.phpbb.com/Dbal.sql_escape">wiki</a>]</li>
 					<li>int and float variables are enforced by type-casting as (int) and (float) when inserting into SQL queries.</li>
-					<li><samp>$db->sql_build_query()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_build_query">wiki</a>] is used on large SQL queries (e.g.: if the query contains joins).</li>
-					<li><samp>$db->sql_build_array()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_build_array">wiki</a>] is used on SQL INSERT and SQL UPDATE queries.</li>
-					<li><samp>$db->sql_multi_insert()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_multi_insert‬‬">wiki</a>] is used when performing multiple SQL INSERT statements.</li>
-					<li><samp>$db->sql_in_set()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_in_set">wiki</a>] is used for SQL IN() WHERE statements.‪</li>
-					<li><samp>$db->sql_query_limit()</samp> [<a href="https://wiki.phpbb.com/Dbal.sql_query_limit">wiki</a>] is used instead of LIMIT in SQL queries.</li>
+					<li><span class="inlinecode">$db->sql_build_query()</span> is used on large SQL queries (e.g.: if the query contains joins). [<a href="https://wiki.phpbb.com/Dbal.sql_build_query">wiki</a>]</li>
+					<li><span class="inlinecode">$db->sql_build_array()</span> is used on SQL INSERT and SQL UPDATE queries. [<a href="https://wiki.phpbb.com/Dbal.sql_build_array">wiki</a>]</li>
+					<li><span class="inlinecode">$db->sql_multi_insert()</span> is used when performing multiple SQL INSERT statements. [<a href="https://wiki.phpbb.com/Dbal.sql_multi_insert‬‬">wiki</a>]</li>
+					<li><span class="inlinecode">$db->sql_in_set()</span> is used for SQL IN() WHERE statements.‪ [<a href="https://wiki.phpbb.com/Dbal.sql_in_set">wiki</a>]</li>
+					<li><span class="inlinecode">$db->sql_query_limit()</span> is used instead of LIMIT in SQL queries. [<a href="https://wiki.phpbb.com/Dbal.sql_query_limit">wiki</a>]</li>
 					<li>Static SQL queries should be cached.‪</li>
 					<li>SQL queries within loops should be avoided.</li>
 				</ol>
 			</li>
-			<li><samp>helper->error()</samp> and/or <samp>trigger_error()</samp> [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>] are used for error handling and user messages instead of <samp>die()</samp> or similar.</li>
-			<li><samp>login_forum_box()</samp> or <samp>login_box()</samp> [<a href="http://wiki.phpbb.com/Login_box">wiki</a>] is used for login.</li>
-			<li><samp>confirm_box()</samp> [<a href="http://wiki.phpbb.com/Confirm_box">wiki</a>] is used for the user to confirm sensitive actions (such as deleting items).</li>
-			<li>URLs pointing to phpBB files call <samp>append_sid()</samp> [<a href="http://wiki.phpbb.com/Append_sid">wiki</a>] to correctly append the session id.</li>
+			<li><span class="inlinecode">helper->error()</span> and/or <span class="inlinecode">trigger_error()</span> are used for error handling and user messages instead of <span class="inlinecode">die()</span> or similar. [<a href="https://wiki.phpbb.com/Trigger_error">wiki</a>]</li>
+			<li><span class="inlinecode">login_forum_box()</span> or <span class="inlinecode">login_box()</span> is used for login. [<a href="http://wiki.phpbb.com/Login_box">wiki</a>]</li>
+			<li><span class="inlinecode">confirm_box()</span> is used for the user to confirm sensitive actions (such as deleting items). [<a href="http://wiki.phpbb.com/Confirm_box">wiki</a>]</li>
+			<li>URLs pointing to phpBB files call <span class="inlinecode">append_sid()</span> to correctly append the session id. [<a href="http://wiki.phpbb.com/Append_sid">wiki</a>]</li>
 		</ol>
 
 		<hr />
@@ -118,9 +118,9 @@
 		<h2 class="title" id="scripts">JavaScript and CSS</h2>
 		<br />
 		<ol class="list-margin">
-			<li>Include JavaScript files with the template function: <samp>&lt;!-- INCLUDEJS --&gt;</samp> [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>].</li>
-			<li>Include CSS files with the template function: <samp>&lt;!-- INCLUDECSS --&gt;</samp> [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>].</li>
-			<li>Included third-party JavaScript/CSS libraries and frameworks should utilise a special template <samp>&lt;!--DEFINE --&gt;</samp> tag to prevent duplicate inclusion. For example:<br />
+			<li>Include JavaScript files with the template function: <span class="inlinecode">&lt;!-- INCLUDEJS --&gt;</span>. [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
+			<li>Include CSS files with the template function: <span class="inlinecode">&lt;!-- INCLUDECSS --&gt;</span>. [<a href="https://wiki.phpbb.com/New_Template_Commands_in_3.1">wiki</a>]</li>
+			<li>Included third-party JavaScript/CSS libraries and frameworks should utilise a special template <span class="inlinecode">&lt;!-- DEFINE --&gt;</span> tag to prevent duplicate inclusion. For example:<br />
 				<br />
 					<pre class="codesnippet">
 &lt;!-- IF not $INCLUDEDED_HIGHSLIDEJS --&gt;
@@ -130,12 +130,12 @@
 				<br />
 				Some example template variable definitions to use with common libraries:<br /><br />
 				<ol class="list-margin" type="a">
-					<li>HighSlide JS: <samp>$INCLUDEDED_HIGHSLIDEJS</samp></li>
-					<li>Font Awesome CSS: <samp>$INCLUDEDED_FONTAWESOMECSS</samp></li>
-					<li>ColorBox JS: <samp>$INCLUDEDED_COLORBOXJS</samp></li>
-					<li>ColPick JS: <samp>$INCLUDEDED_COLPICKJS</samp></li>
-					<li>MoTools JS: <samp>$INCLUDEDED_MOTOOLSJS</samp></li>
-					<li>Dojo JS: <samp>$INCLUDEDED_DOJOJS</samp></li>
+					<li>HighSlide JS: <span class="inlinecode">$INCLUDEDED_HIGHSLIDEJS</span></li>
+					<li>Font Awesome CSS: <span class="inlinecode">$INCLUDEDED_FONTAWESOMECSS</span></li>
+					<li>ColorBox JS: <span class="inlinecode">$INCLUDEDED_COLORBOXJS</span></li>
+					<li>ColPick JS: <span class="inlinecode">$INCLUDEDED_COLPICKJS</span></li>
+					<li>MoTools JS: <span class="inlinecode">$INCLUDEDED_MOTOOLSJS</span></li>
+					<li>Dojo JS: <span class="inlinecode">$INCLUDEDED_DOJOJS</span></li>
 				</ol>
 				<br />
 				<div class="note-box information-blue"><strong>Note:</strong> The common practice should be to name the variable definition after the library filename, e.g.: <samp>highslide.js</samp> becomes <samp>HIGHSLIDEJS</samp>. Discussion of this technique can be found <a href="https://www.phpbb.com/community/viewtopic.php?f=20&t=2144227&p=13076522#p13076522">here</a>.</div>
