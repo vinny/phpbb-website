@@ -26,6 +26,10 @@
 				The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">Coding Guidelines</a> should be followed as much as possible. This means that all files should follow these guidelines, including PHP, JavaScript, and HTML files. This is to ensure maximum readability by the phpBB Extensions Team. Third-party libraries are the only exceptions and do not have to follow the coding guidelines. It is also required to use the English language for all table names, variable names and comments. The primary language for phpBB and extensions is English.
 			</li>
 			<li>
+				<h3>Modifying phpBB Files</h3>
+				No files that belong to the core phpBB package shall be modified in any way. Although the basis for all modifications in 3.0 was built on modifying phpBB's core files, extensions in 3.1 are intended to be self-contained and void of actual code changes to phpBB's core files. As such, no extension may require code changes to phpBB's core files.
+			</li>
+			<li>
 				<h3>Composer:</h3>
 				A <code class="inline">composer.json</code> file is required. Detailed information about this file can be found in the <a href="https://wiki.phpbb.com/Extension_meta_data">wiki</a>.
 			</li>
