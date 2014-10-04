@@ -13,6 +13,7 @@ namespace Phpbb\WebsiteInterfaceBundle\Controller;
 use Phpbb\Epv\Output\HtmlOutput;
 use Phpbb\Epv\Output\Output;
 use Phpbb\Epv\Tests\TestStartup;
+use Phpbb\WebsiteInterfaceBundle\Entity\EpvResults;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Phpbb\WebsiteInterfaceBundle\Helper\Extensions\OfficialExtension;
 use Symfony\Component\HttpFoundation\Request;
@@ -210,6 +211,15 @@ class ExtensionsController extends Controller
 
 			$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
 			$templateVariables['results'] = $int_output->getBuffer();
+
+			$result = new EpvResults();
+			$result->setGithub($github);
+			$result->setRuntime(time());
+
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($result);
+			$em->flush();
+
 		}
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:epv.html.twig', $templateVariables);
