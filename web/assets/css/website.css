@@ -3483,7 +3483,16 @@ h2 sup {
 	text-align: center !important;
 	width: 105px !important;
 }
+/** EPV  **/
 
+#epv-results {
+    background-color: black;
+    width: 100%;
+    overflow-x: visible;
+    font-family: Monaco;
+    font-size: 9px;
+    padding: 5px;
+}
 
 /* Responsive mode
 --------------------------------------------- */

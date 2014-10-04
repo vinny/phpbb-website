@@ -85,7 +85,9 @@ RewriteCond %{REQUEST_URI} !^/search/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/shop/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/showcase/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/stats/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/styles/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/demo/2.0/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/demo/3.0/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/statistics.php
 RewriteCond %{REQUEST_URI} !^/theme/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/updatecheck/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/website/{0,1}.*
