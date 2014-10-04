@@ -10,9 +10,9 @@
 
 namespace Phpbb\WebsiteInterfaceBundle\Controller;
 
+use Phpbb\Epv\Output\HtmlOutput;
 use Phpbb\Epv\Output\Output;
 use Phpbb\Epv\Tests\TestStartup;
-use Phpbb\WebsiteInterfaceBundle\Extensions\EPV\Output\HtmlOutput;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Phpbb\WebsiteInterfaceBundle\Helper\Extensions\OfficialExtension;
 use Symfony\Component\HttpFoundation\Request;
