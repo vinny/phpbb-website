@@ -206,19 +206,47 @@ class ExtensionsController extends Controller
 
 		if ($github)
 		{
-			$int_output = new HtmlOutput();
-			$output = new Output($int_output, $debug);
-
-			$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
-			$templateVariables['results'] = $int_output->getBuffer();
-
-			$result = new EpvResults();
-			$result->setGithub($github);
-			$result->setRuntime(time());
-
+			$results = $this->getDoctrine()
+				->getRepository('PhpbbWebsiteInterfaceBundle:EpvResults')
+				->findByGithub($github);
 			$em = $this->getDoctrine()->getManager();
-			$em->persist($result);
-			$em->flush();
+
+			$fail = false;
+			if ($results && sizeof($results))
+			{
+				/** @var  $item EpvResults */
+				foreach ($results as $item)
+				{
+					if ($item->getRuntime() > time() - 30)
+					{
+						$fail = true;
+					}
+					else
+					{
+						$em->remove($item);
+					}
+				}
+			}
+
+			if (!$fail)
+			{
+				$int_output = new HtmlOutput();
+				$output     = new Output($int_output, $debug);
+
+				$test                         = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
+				$templateVariables['results'] = $int_output->getBuffer();
+
+				$result = new EpvResults();
+				$result->setGithub($github);
+				$result->setRuntime(time());
+
+				$em->persist($result);
+				$em->flush();
+			}
+			else
+			{
+				$templateVariables['errors'] = 'Please wait a while before running EPV again.';
+			}
 
 		}
 
