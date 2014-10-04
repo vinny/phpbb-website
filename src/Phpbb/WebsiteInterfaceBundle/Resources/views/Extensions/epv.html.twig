@@ -49,18 +49,18 @@
 			</li>
 		</ol>
 
-		<h3>Run EPV on your GitHub repository</h3>
+		<h3><a id="epv-result">Run EPV on your GitHub repository</a></h3>
 		{% if results is defined %}
 			Results:
 			<br />
 			<div style="width:100%; " id="epv-results">
 				{{ results|raw }}
 			</div>
-		{% else %}
-			<form action="{{ extensions_epv }}" method="post">
-				<p>Github short name: <input type="text" name="github" id="github" /> <input type="submit" value="Run" /></p>
-			</form>
 		{% endif %}
+        <form action="{{ extensions_epv }}#epv-result" method="post">
+            <p>Github short name: <input type="text" name="github" id="github" /> <input type="submit" value="Run" /></p>
+        </form>
+
 
 		<h3>Reporting bugs</h3>
 		<p>Please report bugs to the bug tracker found <a href="{{ extensions_epv_bugs }}">here</a>.</p>
