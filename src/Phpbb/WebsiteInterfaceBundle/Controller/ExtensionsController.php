@@ -13,6 +13,7 @@ namespace Phpbb\WebsiteInterfaceBundle\Controller;
 use Phpbb\Epv\Output\HtmlOutput;
 use Phpbb\Epv\Output\Output;
 use Phpbb\Epv\Tests\TestStartup;
+use Phpbb\WebsiteInterfaceBundle\Entity\EpvResults;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Phpbb\WebsiteInterfaceBundle\Helper\Extensions\OfficialExtension;
 use Symfony\Component\HttpFoundation\Request;
@@ -205,11 +206,48 @@ class ExtensionsController extends Controller
 
 		if ($github)
 		{
-			$int_output = new HtmlOutput();
-			$output = new Output($int_output, $debug);
+			$results = $this->getDoctrine()
+				->getRepository('PhpbbWebsiteInterfaceBundle:EpvResults')
+				->findByGithub($github);
+			$em = $this->getDoctrine()->getManager();
 
-			$test = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
-			$templateVariables['results'] = $int_output->getBuffer();
+			$fail = false;
+			if ($results && sizeof($results))
+			{
+				/** @var  $item EpvResults */
+				foreach ($results as $item)
+				{
+					if ($item->getRuntime() > time() - 30)
+					{
+						$fail = true;
+					}
+					else
+					{
+						$em->remove($item);
+					}
+				}
+			}
+
+			if (!$fail)
+			{
+				$int_output = new HtmlOutput();
+				$output     = new Output($int_output, $debug);
+
+				$test                         = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
+				$templateVariables['results'] = $int_output->getBuffer();
+
+				$result = new EpvResults();
+				$result->setGithub($github);
+				$result->setRuntime(time());
+
+				$em->persist($result);
+				$em->flush();
+			}
+			else
+			{
+				$templateVariables['errors'] = 'Please wait a while before running EPV again.';
+			}
+
 		}
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:epv.html.twig', $templateVariables);
