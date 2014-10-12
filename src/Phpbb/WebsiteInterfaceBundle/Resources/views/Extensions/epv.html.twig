@@ -50,6 +50,10 @@
 		</ol>
 
 		<h3><a id="epv-result">Run EPV on your GitHub repository</a></h3>
+        {% if errors is defined %}
+            <br />
+            <div class="note-box red">{{ errors }}</div>
+        {% endif %}
 		{% if results is defined %}
 			Results:
 			<br />
