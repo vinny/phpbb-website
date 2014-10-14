@@ -137,6 +137,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/var/www/new.phpbb.com/htdocs/symfony/web
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
 
+# Titania
+RewriteCond %{REQUEST_URI} ^/customise/db/{0,1}.*
+RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old/customise/app.php [QSA,L]
+
 # Hello ErrorDocuments! I guess they could do with prettification by way of title image and header?
 ErrorDocument 401 /var/www/new.phpbb.com/htdocs/old/errordocs/401.php
 ErrorDocument 403 /var/www/new.phpbb.com/htdocs/old/errordocs/403.php
