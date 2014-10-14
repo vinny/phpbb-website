@@ -6,8 +6,6 @@
 # you might need to locally remove leading slashes from the rewrite rules.
 # Including as mentioned above should work in almost every case.
 
-107.132.148.174
-
 # Include old .htdev
 Include /var/www/new.phpbb.com/htdocs/old/.htdev
 
