@@ -9,11 +9,11 @@
 # Include old .htdev
 Include /var/www/new.phpbb.com/htdocs/old/.htdev
 
+# Cesar, Yuriy, Michael
+RewriteCond %{REMOTE_HOST} !^107\.132\.148\.174
 RewriteCond %{REMOTE_HOST} !^68\.196\.98\.132
 RewriteCond %{REMOTE_HOST} !^90\.209\.210\.140
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old/maintenance.html [L]
-
-# RewriteEngine On
 
 # Exists in /old as directory or file and if so serve it
 RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
