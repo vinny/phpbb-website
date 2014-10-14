@@ -15,6 +15,9 @@ RewriteCond %{REMOTE_HOST} !^68\.196\.98\.132
 RewriteCond %{REMOTE_HOST} !^90\.209\.210\.140
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old/maintenance.html [L]
 
+# Titania
+RewriteRule ^/customise/db/{0,1}$ /var/www/new.phpbb.com/old/community/app.php/db/$1 [QSA]
+
 # Exists in /old as directory or file and if so serve it
 RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
 RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -d
@@ -136,10 +139,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/var/www/new.phpbb.com/htdocs/symfony/web
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/symfony/web/app.php$1 [L]
-
-# Titania
-RewriteCond %{REQUEST_URI} ^/customise/db/{0,1}.*
-RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old/customise/app.php [QSA,L]
 
 # Hello ErrorDocuments! I guess they could do with prettification by way of title image and header?
 ErrorDocument 401 /var/www/new.phpbb.com/htdocs/old/errordocs/401.php
