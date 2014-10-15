@@ -9,14 +9,15 @@
 # Include old .htdev
 Include /var/www/new.phpbb.com/htdocs/old/.htdev
 
-# Cesar, Yuriy, Michael
+# Cesar, Yuriy, Michael, Bas
 RewriteCond %{REMOTE_HOST} !^107\.132\.148\.174
 RewriteCond %{REMOTE_HOST} !^68\.196\.98\.132
 RewriteCond %{REMOTE_HOST} !^90\.209\.210\.140
+RewriteCond %{REMOTE_HOST} !^87\.211\.215\.203
 RewriteRule ^(.*)$ /var/www/new.phpbb.com/htdocs/old/maintenance.html [L]
 
 # Titania
-RewriteRule ^/customise/db/{0,1}$ /var/www/new.phpbb.com/old/community/app.php/db/$1 [QSA,L]
+RewriteRule ^/customise/db/{0,1}$ /var/www/new.phpbb.com/htdocs/old/community/app.php/db/$1 [QSA,L]
 
 # Exists in /old as directory or file and if so serve it
 RewriteCond /var/www/new.phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
