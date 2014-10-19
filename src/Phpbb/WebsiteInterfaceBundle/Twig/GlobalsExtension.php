@@ -621,7 +621,7 @@ class GlobalsExtension extends \Twig_Extension
 			'U_CUSTOMISE'						=> '/customise/',
 			'U_CDB_SUB'							=> '/customise/db/?from=submenu',
 			'U_EXT_SUB'							=> '/extensions/?from=submenu',
-			'U_EXT_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu', // @TODO: correct?
+			'U_EXT_DB_SUB'						=> '/customise/db/extensions-36/?from=submenu', // @TODO: correct?
 			'U_MODS_SUB'						=> '/mods/?from=submenu',
 			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu',
 			'U_STYLES_SUB'						=> '/styles/?from=submenu',
