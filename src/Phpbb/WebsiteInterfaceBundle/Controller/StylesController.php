@@ -94,4 +94,13 @@ class StylesController extends Controller
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:demo.html.twig', $templateVariables);
 	}
+
+	public function demoNotReadyAction()
+	{
+		$templateVariables = array(
+			'header_css_image'		=> 'styles demo',
+		);
+
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:demoNotReady.html.twig', $templateVariables);
+	}
 }
