@@ -42,3 +42,9 @@ phpBBWebsite_Styles_demo:
     path:  /demo/
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:demo }
     methods:  [GET]
+
+phpBBWebsite_Styles_demo:
+    path:  /demo/3.1/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Styles:demoNotReady }
+    methods:  [GET]
+
