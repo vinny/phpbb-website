@@ -49,6 +49,13 @@ class OfficialExtension
     protected $github;
 
     /**
+     * Extension icon name
+     * @var string
+     * @access protected
+     */
+    protected $icon;
+
+    /**
      * Constructor
      *
      * @param string $name                     Extension Name
@@ -56,14 +63,16 @@ class OfficialExtension
      * @param string $descriptionForDevelopers Extra Information for Developers
      * @param string $contribution             Link to extension cdb page
      * @param string $github                   Link to extension github repository
+     * @param string $icon                     Extension icon name
      */
-    public function __construct($name, $description, $descriptionForDevelopers, $contribution, $github)
+    public function __construct($name, $description, $descriptionForDevelopers, $contribution, $github, $icon)
     {
         $this->name = $name;
         $this->description = $description;
         $this->descriptionForDevelopers = $descriptionForDevelopers;
         $this->contribution = $contribution;
         $this->github = $github;
+        $this->icon = $icon;
     }
 
     /**
@@ -114,5 +123,15 @@ class OfficialExtension
     public function getGithub()
     {
         return $this->github;
+    }
+
+    /**
+     * Get extension icon name
+     *
+     * @return string $this->icon
+     */
+    public function getIcon()
+    {
+        return $this->icon;
     }
 }
