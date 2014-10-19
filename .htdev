@@ -18,9 +18,6 @@ RewriteCond %{REMOTE_HOST} !^90\.42\.166\.210
 RewriteCond %{REMOTE_HOST} !^92\.108\.128\.155
 RewriteRule ^(.*)$ /var/www/phpbb.com/htdocs/old/maintenance.html [L]
 
-# Titania
-RewriteRule ^/customise/db/(.*)$ /var/www/phpbb.com/htdocs/old/community/app.php/db/$1 [L]
-
 # Exists in /old as directory or file and if so serve it
 RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
 RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -d
