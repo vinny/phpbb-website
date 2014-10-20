@@ -97,8 +97,8 @@ class GlobalsExtension extends \Twig_Extension
 
 			'customise_path'	=> '/customise/',
 
-			'mods_db_path'		=> '/customise/db/modifications-1/',
-			// 'MODS_DB_SUB'		=> '/customise/db/modifications-1/',
+			'mods_db_path'		=> '/customise/db/modifications-1',
+			// 'MODS_DB_SUB'		=> '/customise/db/modifications-1',
 
 			'mods_path'			=> '/mods/',
 			'MODS'				=> '/mods/',
@@ -165,10 +165,10 @@ class GlobalsExtension extends \Twig_Extension
 			'ABOUT_INDEX_SUB'					=> '/about/',
 			'SUPPORT_INDEX_SUB'				=> '/support/',
 
-			'CDB_MOD_SUPPORT'					=> '/customise/db/support/modifications-1',
-			'CDB_STYLE_SUPPORT'				=> '/customise/db/support/styles-2',
-			'CDB_CONVERTOR_SUPPORT'			=> '/customise/db/support/converter/',
-			'CDB_TRANSLATION_SUPPORT'			=> '/customise/db/support/translation/',
+			'CDB_MOD_SUPPORT'					=> '/customise/db/support/modifications-1', // TODO: remove (used in support_forums.html)
+			'CDB_STYLE_SUPPORT'				=> '/customise/db/support/styles-2', // TODO: remove
+			'CDB_CONVERTOR_SUPPORT'			=> '/customise/db/support/converter/', // TODO: remove (used in support_forums.html)
+			'CDB_TRANSLATION_SUPPORT'			=> '/customise/db/support/translation/', // TODO: remove
 		);
 
 		return $menuVars;
@@ -225,7 +225,7 @@ class GlobalsExtension extends \Twig_Extension
 			'MODS_AUTOMOD'		=> '/mods/automod/',
 			'MODS_GENERATOR'		=> '/mods/utilities/generator/',
 			'MODS_CHECKIST'		=> '/mods/validator/checklist.php',
-			'MODS_DB'				=> '/customise/db/modifications-1/',
+			'MODS_DB'				=> '/customise/db/modifications-1',
 			'MODS_FAQ'			=> '/mods/faq/',
 			'MODS_VOLUNTEER'		=> '/mods/volunteer/',
 			'MODS_DOCUMENTATION'	=> '/mods/documentation/',
@@ -296,7 +296,7 @@ class GlobalsExtension extends \Twig_Extension
 			//'MODX_VERSION'			=> MODX_VERSION,
 
 			// Bridges
-			'BRIDGES_DB'				=> '/customise/db/bridges-24/',
+			'BRIDGES_DB'				=> '/customise/db/bridges-24',
 			'BRIDGES_POLICIES'	=> '/mods/bridges/',
 
 			// installing mods
@@ -323,7 +323,7 @@ class GlobalsExtension extends \Twig_Extension
 		$styleVars = array(
 			// To be removed
 			'STYLES'                          => '/styles/',
-			'STYLES_DB'                       => '/customise/db/styles-2/',
+			'STYLES_DB'                       => '/customise/db/styles-2',
 
 			// Main pages
 			'styles_create'                   => '/styles/create/',
@@ -341,11 +341,11 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_demo_30x'                 => '/styles/demo/3.0/',
 
 			// Styles CDB
-			'styles_db_path'                  => '/customise/db/styles-2/',
-			'styles_gdk_31x_commercial_fonts' => '/customise/db/style/prosilver_gdk_31x_commercial_fonts/', // TODO: create
-			'styles_gdk_31x_free_fonts'       => '/customise/db/style/prosilver_gdk_31x_free_fonts/', // TODO: create
-			'styles_gdk_30x_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/', // TODO: rename in Titania?
-			'styles_gdk_30x_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/', // TODO: rename in Titania?
+			'styles_db_path'                  => '/customise/db/styles-2',
+			'styles_gdk_31x_commercial_fonts' => '/customise/db/style/prosilver_gdk_31x_commercial_fonts/',
+			'styles_gdk_31x_free_fonts'       => '/customise/db/style/prosilver_gdk_31x_free_fonts/',
+			'styles_gdk_30x_commercial_fonts' => '/customise/db/style/prosilver_gdk_commercial_fonts/',
+			'styles_gdk_30x_free_fonts'       => '/customise/db/style/prosilver_gdk_free_fonts/',
 			'styles_gdk_20x'                  => '/customise/db/style/phpbb_subsilver_gdk/',
 
 			// Documentation resources
@@ -405,7 +405,7 @@ class GlobalsExtension extends \Twig_Extension
 	private function getExtensionVars()
 	{
 		$extensionVars = array(
-			'extensions_cdb'						=> '/customise/db/modifications-1/',
+			'extensions_cdb'						=> '/customise/db/modifications-1',
 			'extensions_wiki'						=> '//wiki.phpbb.com/Category:Extensions',
 
 			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
@@ -547,7 +547,7 @@ class GlobalsExtension extends \Twig_Extension
 			'CHANGELOG'			=> '/support/documents.php?mode=changelog&amp;version=3',
 			'INSTALL_DOCUMENT'	=> '/support/documents.php?mode=install&amp;version=3',
 			'LICENSE'				=> '/downloads/license/',
-			'OFFICIAL_TOOLS'				=> '/customise/db/official_tools-23/',
+			'OFFICIAL_TOOLS'				=> '/customise/db/official_tools-23',
 
 			'SHOWCASE_SUGGEST'		=> '/showcase/suggest/',
 
@@ -605,69 +605,69 @@ class GlobalsExtension extends \Twig_Extension
 	{
 		$legacyVars = array(
 			'U_ABOUT'							=> '/about/',
-			'U_ABOUT_FEATURES_SUB'				=> '/about/features/?from=submenu',
-			'U_ABOUT_HISTORY_SUB'				=> '/about/history/?from=submenu',
-			'U_ABOUT_GETINVOLVED_SUB'			=> '/get-involved/?from=submenu',
-			'U_ABOUT_TEAM_SUB'					=> '/about/team/?from=submenu',
-			'U_ABOUT_CONTACT_SUB'				=> '/about/contact_us.php?from=submenu',
-			'U_ABOUT_ADVERTISE_SUB'				=> '/about/advertise/?from=submenu',
+			'U_ABOUT_FEATURES_SUB'				=> '/about/features/',
+			'U_ABOUT_HISTORY_SUB'				=> '/about/history/',
+			'U_ABOUT_GETINVOLVED_SUB'			=> '/get-involved/',
+			'U_ABOUT_TEAM_SUB'					=> '/about/team/',
+			'U_ABOUT_CONTACT_SUB'				=> '/about/contact_us.php',
+			'U_ABOUT_ADVERTISE_SUB'				=> '/about/advertise/',
 
 			'U_DOWNLOADS_HEADER'				=> '/downloads/?from=header',
-			'U_DOWNLOADS_SUB'					=> '/downloads/?from=submenu',
-			'U_DOWNLOADS_UPDATE_SUB'			=> '/downloads/#update?from=submenu',
-			'U_STYLES_DB_SUB'					=> '/customise/db/styles-2/?from=submenu',
-			'U_LANGUAGES_SUB'					=> '/languages/?from=submenu',
+			'U_DOWNLOADS_SUB'					=> '/downloads/',
+			'U_DOWNLOADS_UPDATE_SUB'			=> '/downloads/#update',
+			'U_STYLES_DB_SUB'					=> '/customise/db/styles-2',
+			'U_LANGUAGES_SUB'					=> '/languages/',
 
 			'U_CUSTOMISE'						=> '/customise/',
-			'U_CDB_SUB'							=> '/customise/db/?from=submenu',
-			'U_EXT_SUB'							=> '/extensions/?from=submenu',
-			'U_EXT_DB_SUB'						=> '/customise/db/extensions-36/?from=submenu', // @TODO: correct?
-			'U_MODS_SUB'						=> '/mods/?from=submenu',
-			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1/?from=submenu',
-			'U_STYLES_SUB'						=> '/styles/?from=submenu',
-			'U_STYLES_DEMO_SUB'					=> '/styles/demo/3.0/?from=submenu',
+			'U_CDB_SUB'							=> '/customise/db/',
+			'U_EXT_SUB'							=> '/extensions/',
+			'U_EXT_DB_SUB'						=> '/customise/db/extensions-36',
+			'U_MODS_SUB'						=> '/mods/',
+			'U_MODS_DB_SUB'						=> '/customise/db/modifications-1',
+			'U_STYLES_SUB'						=> '/styles/',
+			'U_STYLES_DEMO_SUB'					=> '/styles/demo/3.0/',
 
-			'U_DOCUMENTATION_SUB'				=> '/support/documentation/3.0/?from=submenu',
-			'U_KB_SUB'							=> '/kb/?from=submenu',
+			'U_DOCUMENTATION_SUB'				=> '/support/documentation/3.0/',
+			'U_KB_SUB'							=> '/kb/',
 			'U_SUPPORT_IRC_SUB'					=> '/support/irc/',
-			'U_SUPPORT_TUTORIALS_SUB'			=> '/support/tutorials/3.0/?from=submenu',
-			'U_SUPPORT_FORUMS_SUB'				=> '/support/forums/?from=submenu',
-			'U_SUPPORT_INTL_SUB'				=> '/support/intl/?from=submenu',
+			'U_SUPPORT_TUTORIALS_SUB'			=> '/support/tutorials/3.0/',
+			'U_SUPPORT_FORUMS_SUB'				=> '/support/forums/',
+			'U_SUPPORT_INTL_SUB'				=> '/support/intl/',
 
 			'U_DEVELOPMENT'						=> '/development/',
-			'U_DEV_WIKI_SUB'					=> '//wiki.phpbb.com/?from=submenu',
-			'U_DEV_GI_SUB'						=> '/development/get-involved/?from=submenu',
-			'U_BUGS_SUB'						=> '/bugs/?from=submenu',
-			'U_BUGS_PHPBB_SUB'					=> 'http://tracker.phpbb.com/?from=submenu',
-			'U_SECURITY_SUB'					=> '/security/?from=submenu',
-			'U_DEV_HOME_SUB'					=> '//area51.phpbb.com/?from=submenu',
+			'U_DEV_WIKI_SUB'					=> '//wiki.phpbb.com/',
+			'U_DEV_GI_SUB'						=> '/development/get-involved/',
+			'U_BUGS_SUB'						=> '/bugs/',
+			'U_BUGS_PHPBB_SUB'					=> 'http://tracker.phpbb.com/',
+			'U_SECURITY_SUB'					=> '/security/',
+			'U_DEV_HOME_SUB'					=> '//area51.phpbb.com/',
 
-			'U_FORUM_SUPPORT_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=46',
-			'U_FORUM_STYLES_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=80',
-			'U_FORUM_MODS_SUB'					=> '/community/viewforum.php?from=submenu&amp;f=81',
-			'U_FORUM_EXT_SUB'					=> '/community/viewforum.php?from=submenu&amp;f=451',
-			'U_FORUM_PHPBBDISC_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=64',
-			'U_FORUM_EVENTS_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=105',
-			'U_FORUM_GENDISC_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=6',
-			'U_FORUM_PRIVATE_SUB'				=> '/community/viewforum.php?from=submenu&amp;f=53',
+			'U_FORUM_SUPPORT_SUB'				=> '/community/viewforum.php?f=46',
+			'U_FORUM_STYLES_SUB'				=> '/community/viewforum.php?f=80',
+			'U_FORUM_MODS_SUB'					=> '/community/viewforum.php?f=81',
+			'U_FORUM_EXT_SUB'					=> '/community/viewforum.php?f=451',
+			'U_FORUM_PHPBBDISC_SUB'				=> '/community/viewforum.php?f=64',
+			'U_FORUM_EVENTS_SUB'				=> '/community/viewforum.php?f=105',
+			'U_FORUM_GENDISC_SUB'				=> '/community/viewforum.php?f=6',
+			'U_FORUM_PRIVATE_SUB'				=> '/community/viewforum.php?f=53',
 
-			'U_IDEAS'							=> '/ideas?from=submenu',
+			'U_IDEAS'							=> '/ideas',
 
-			'U_FORUM_INDEX_SUB'					=> '/community/?from=submenu',
-			'U_ABOUT_INDEX_SUB'					=> '/about/?from=submenu',
-			'U_CUSTOMISE_INDEX_SUB'				=> '/customise/?from=submenu',
-			'U_SUPPORT_INDEX_SUB'				=> '/support/?from=submenu',
-			'U_DEV_INDEX_SUB'					=> '/development/?from=submenu',
+			'U_FORUM_INDEX_SUB'					=> '/community/',
+			'U_ABOUT_INDEX_SUB'					=> '/about/',
+			'U_CUSTOMISE_INDEX_SUB'				=> '/customise/',
+			'U_SUPPORT_INDEX_SUB'				=> '/support/',
+			'U_DEV_INDEX_SUB'					=> '/development/',
 
-			'U_CDB_MOD_SUPPORT'					=> '/customise/db/support/modifications-1?from=submenu',
-			'U_CDB_STYLE_SUPPORT'				=> '/customise/db/support/styles-2?from=submenu',
-			'U_CDB_CONVERTOR_SUPPORT'			=> '/customise/db/support/converter/?from=submenu',
-			'U_CDB_TRANSLATION_SUPPORT'			=> '/customise/db/support/translation/?from=submenu',
+			'U_CDB_MOD_SUPPORT'					=> '/customise/db/support/modifications-1', // TODO: remove (used in support_forums.html)
+			'U_CDB_STYLE_SUPPORT'				=> '/customise/db/support/styles-2', // TODO: remove
+			'U_CDB_CONVERTOR_SUPPORT'			=> '/customise/db/support/converter/', // TODO: remove (used in support_forums.html)
+			'U_CDB_TRANSLATION_SUPPORT'			=> '/customise/db/support/translation/', // TODO: remove
 
 			'U_DEMO'							=> '/demo/',
 			'U_SHOWCASE'						=> '/showcase/',
 			'U_DOWNLOADS'						=> '/downloads/',
-			'U_OFFICIAL_TOOLS'					=> '/customise/db/official_tools-23/',
+			'U_OFFICIAL_TOOLS'					=> '/customise/db/official_tools-23',
 			'U_SUPPORT'							=> '/support/',
 			'U_BLOG'							=> '//blog.phpbb.com/',
 			'U_COMMUNITY'						=> '/community/',
