@@ -178,11 +178,12 @@ class GlobalsExtension extends \Twig_Extension
 	{
 		$aboutVars = array(
 			'ABOUT_HISTORY'		=> '/about/history/',
-			'ABOUT_LOGOS'			=> '/about/logos/',
+			'ABOUT_LOGOS'		=> '/about/logos/',
 			'ABOUT_MAP'			=> '/about/map/',
-			'ABOUT_TEAM'			=> '/about/team/',
-			'ABOUT_FEATURES'		=> '/about/features/',
+			'ABOUT_TEAM'		=> '/about/team/',
+			'ABOUT_FEATURES'	=> '/about/features/',
 			'ABOUT_COMPARE'		=> '/about/features/compare.php',
+			'about_launch'		=> '/about/launch/',
 		);
 
 		return $aboutVars;
