@@ -405,7 +405,7 @@ class GlobalsExtension extends \Twig_Extension
 	private function getExtensionVars()
 	{
 		$extensionVars = array(
-			'extensions_cdb'						=> '/customise/db/modifications-1',
+			'extensions_cdb'						=> '/customise/db/extensions-36',
 			'extensions_wiki'						=> '//wiki.phpbb.com/Category:Extensions',
 
 			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
