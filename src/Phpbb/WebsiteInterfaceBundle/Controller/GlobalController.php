@@ -100,8 +100,7 @@ class GlobalController extends Controller
 				$preview_clean = str_replace('&#58;', ':', $preview);
 
 				if (substr($preview_clean, 0, 8) == 'https://' || substr($preview_clean, 0, 7) == 'http://') {
-					preg_match('/^(\S*)\s/', $preview, $matches);	
-					$preview = substr($preview, strlen($matches[1]));
+					$preview = preg_replace('/^(\S*)\s/', '', $preview);
 				}
 	
 				// Truncate to the maximum length
