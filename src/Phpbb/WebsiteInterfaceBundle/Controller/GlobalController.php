@@ -89,13 +89,21 @@ class GlobalController extends Controller
 		foreach ($forumAnnouncements as $announcement) {
 			$preview = $announcement['post_text'];
 			$preview = PhpbbHandling::bbcodeStripping($preview, $announcement['bbcode_uid']);
-			$preview = preg_replace('#http(?:\:|&\#58;)//\S+#', '', $preview);
+			$preview = trim(preg_replace('#http(?:\:|&\#58;)//\S+#', '', $preview));
 
 			// Decide how large the preview text should be
 			$preview_max_len = 200;
 			$preview_len = strlen($preview);
 
 			if ($preview_len > $preview_max_len) {
+				// If the first thing is a link, nuke it
+				$preview_clean = str_replace('&#58;', ':', $preview);
+
+				if (substr($preview_clean, 0, 8) == 'https://' || substr($preview_clean, 0, 7) == 'http://') {
+					preg_match('/^(\S*)\s/', $preview, $matches);	
+					$preview = substr($preview, strlen($matches[1]));
+				}
+	
 				// Truncate to the maximum length
 				$preview = substr($preview, 0, $preview_max_len);
 
