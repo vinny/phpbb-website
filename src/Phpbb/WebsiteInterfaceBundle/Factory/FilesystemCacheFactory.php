@@ -15,7 +15,8 @@ class FilesystemCacheFactory
 {
 	protected $kernel;
 
-	function __construct($kernel) {
+	function __construct($kernel)
+	{
 		$this->kernel = $kernel;
 	}
 
