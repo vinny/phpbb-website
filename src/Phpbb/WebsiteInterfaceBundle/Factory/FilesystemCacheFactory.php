@@ -13,6 +13,8 @@ use Doctrine\Common\Cache\FilesystemCache;
 
 class FilesystemCacheFactory
 {
+	protected $kernel;
+
 	function __construct($kernel) {
 		$this->kernel = $kernel;
 	}
