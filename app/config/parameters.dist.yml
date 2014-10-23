@@ -50,8 +50,8 @@ parameters:
     # Change this to something random (just hit random keys on your keyboard if you must)
     secret:             ThisTokenIsNotThatSecretChangeItOnAllInstallations
 
-    # phpbb.memcached_cache for memcache, phpbb.apc_cache for file cache
-    cacheDriver:        phpbb.apc_cache
+    # phpbb.memcached_cache for memcache, phpbb.filesystem_cache for file cache
+    cacheDriver:        phpbb.filesystem_cache
     # memcached or array
     ormCache:           array
     # localhost or ~

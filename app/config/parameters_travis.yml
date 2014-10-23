@@ -52,15 +52,14 @@ parameters:
     locale:             en
     secret:             TravisRandomToken
 
-    # phpbb.memcached_cache for memcache, phpbb.apc_cache for file cache
-    cacheDriver:        phpbb.apc_cache
-
+    # See services.yml for options
+    cacheDriver:        phpbb.filesystem_cache
     # memcached or array
     ormCache:           array
     # localhost or ~
-    ormCacheHost: ~
+    ormCacheHost:       ~
     # 11211 or ~
-    ormCachePort: ~
+    ormCachePort:       ~
     # Memcached or ~
     ormCacheInstanceClass: ~
 
