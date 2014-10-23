@@ -55,9 +55,9 @@ parameters:
     # memcached or array
     ormCache:           array
     # localhost or ~
-    ormCacheHost: ~
+    ormCacheHost:       ~
     # 11211 or ~
-    ormCachePort: ~
+    ormCachePort:       ~
     # Memcached or ~
     ormCacheInstanceClass: ~
 
