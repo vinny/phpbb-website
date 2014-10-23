@@ -65,6 +65,21 @@ doctrine:
             default:
                 connection:       default
                 auto_mapping: true
+                metadata_cache_driver:
+                    type: %ormCache%
+                    host: %ormCacheHost%
+                    port: %ormCachePort%
+                    instance_class: %ormCacheInstanceClass%
+                query_cache_driver:
+                    type: %ormCache%
+                    host: %ormCacheHost%
+                    port: %ormCachePort%
+                    instance_class: %ormCacheInstanceClass%
+                result_cache_driver:
+                    type: %ormCache%
+                    host: %ormCacheHost%
+                    port: %ormCachePort%
+                    instance_class: %ormCacheInstanceClass%
 
 # Swiftmailer Configuration
 swiftmailer:

@@ -11,3 +11,26 @@ services:
         class: Phpbb\WebsiteInterfaceBundle\Twig\GlobalsExtension
         tags:
             - { name: twig.extension }
+
+    phpbb.memcached:
+        class: memcached
+        calls:
+            - [ addServer, ['localhost', 11211] ]
+
+    phpbb.apc_cache:
+        class: Doctrine\Common\Cache\ApcCache
+
+    phpbb.array_cache:
+        class: Doctrine\Common\Cache\ArrayCache
+
+    phpbb.filesystem_cache:
+        class: Doctrine\Common\Cache\FilesystemCache
+
+    phpbb.memcached_cache:
+        class: Doctrine\Common\Cache\MemcachedCache
+        calls:
+            - [ setMemcached, [@phpbb.memcached] ]
+
+    phpbb.cacheFactory:
+        class: Phpbb\WebsiteInterfaceBundle\Factory\CacheFactory
+        arguments: [ @service_container, %cacheDriver%]

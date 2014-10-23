@@ -22,8 +22,19 @@ class GlobalController extends Controller
 
 		$finishedAnnouncements = $this->getForumAnnouncements($announcement_forum);
 
-		// Get announcements file
-		$blogFile = @file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
+		$cache = $this->get('phpbb.cache_factory')->getCache();
+
+		if ($cache->contains('blog_announcements_file') !== FALSE)
+		{
+			$blogFile == $cache->fetch('blog_announcements_file');
+			echo ('Hit!');
+		}
+		else
+		{
+			$blogFile = @file_get_contents('https://www.phpbb.com/website/wp_announcements.php?password=thisisnotverysecretbutitdoesntreallyneedtobe');
+			$cache->save('blog_announcements_file', $blogFile, 3600);
+			echo('Miss!');
+		}
 
 		$blogJson = @json_decode($blogFile, true);
 
@@ -102,7 +113,7 @@ class GlobalController extends Controller
 				if (substr($preview_clean, 0, 8) == 'https://' || substr($preview_clean, 0, 7) == 'http://') {
 					$preview = preg_replace('/^(\S*)\s/', '', $preview);
 				}
-	
+
 				// Truncate to the maximum length
 				$preview = substr($preview, 0, $preview_max_len);
 
