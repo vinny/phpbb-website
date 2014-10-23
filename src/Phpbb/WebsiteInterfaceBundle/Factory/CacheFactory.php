@@ -21,7 +21,7 @@ class CacheFactory
 		$this->cacheDriver = $cacheDriver;
 	}
 
-	public function getCache()
+	public function get()
 	{
 		return $this->container->get($this->cacheDriver);
 	}
