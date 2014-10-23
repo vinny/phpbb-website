@@ -50,7 +50,7 @@ parameters:
     # Change this to something random (just hit random keys on your keyboard if you must)
     secret:             ThisTokenIsNotThatSecretChangeItOnAllInstallations
 
-    # phpbb.memcached_cache for memcache, phpbb.filesystem_cache for file cache
+    # See services.yml for options
     cacheDriver:        phpbb.filesystem_cache
     # memcached or array
     ormCache:           array
