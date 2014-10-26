@@ -9,8 +9,6 @@
 # Include old .htdev
 Include /var/www/phpbb.com/htdocs/old/.htdev
 
-# RewriteEngine On
-
 # Exists in /old as directory or file and if so serve it
 RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -f [OR]
 RewriteCond /var/www/phpbb.com/htdocs/old%{REQUEST_URI} -d
@@ -80,7 +78,9 @@ RewriteCond %{REQUEST_URI} !^/search/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/shop/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/showcase/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/stats/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/styles/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/demo/2.0/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/demo/3.0/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/styles/statistics.php
 RewriteCond %{REQUEST_URI} !^/theme/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/updatecheck/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/website/{0,1}.*
@@ -121,7 +121,6 @@ RewriteCond %{REQUEST_URI} !^/support/cookies{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/documents{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/statistics{0,1}.*
 RewriteCond %{REQUEST_URI} !^/shop2/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/ideas/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/theme/images/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/update_website.php
 RewriteCond %{REQUEST_URI} !^/member-login.php

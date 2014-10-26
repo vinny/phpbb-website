@@ -17,6 +17,11 @@ phpBBWebsite_customise:
     defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:customise }
     methods:  [GET]
 
+phpBBWebsite_ideas:
+    path:  /ideas/
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:ideas }
+    methods:  [GET]
+
 phpBBWebsite_About_contact_redirect:
     path:  /contact/
     defaults:
@@ -47,3 +52,7 @@ phpBBWebsite_Extensions:
 phpBBWebsite_Downloads:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/downloads.yml"
     prefix:   /downloads
+
+phpBBWebsite_Styles:
+    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/styles.yml"
+    prefix:   /styles
