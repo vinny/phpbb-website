@@ -19,7 +19,7 @@ class DownloadsController extends Controller
 {
 	public function homeAction(Request $request, $branch = '3.1')
 	{
-		$downloadManager = new DownloadManager();
+		$downloadManager = $this->get('phpbb.downloadManager');
 		$downloadManager->setBranch($branch);
 
 		$templateVariables = array(
@@ -35,9 +35,6 @@ class DownloadsController extends Controller
 			$downloadManager->setUpdate($selected_version);
 		}
 
-		$downloadLink = 'https://www.phpbb.com/downloads/download/';
-		$downloadManager->setDownloadLink($downloadLink);
-
 		$versions = $downloadManager->getAvailableUpdateFromVersions();
 		$packages = $downloadManager->generatePackages();
 
@@ -45,8 +42,6 @@ class DownloadsController extends Controller
 			'versions' => $versions,
 			'packages' => $packages,
 		);
-
-		//TODO: Get language pack details
 
 		return $this->render('PhpbbWebsiteInterfaceBundle::downloads.html.twig', $templateVariables);
 	}
