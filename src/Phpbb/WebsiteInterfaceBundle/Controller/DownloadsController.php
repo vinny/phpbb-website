@@ -35,15 +35,25 @@ class DownloadsController extends Controller
 			$downloadManager->setUpdate($selected_version);
 		}
 
-		$versions = $downloadManager->getAvailableUpdateFromVersions();
-		$packages = $downloadManager->generatePackages();
+		$packagesInfo = $downloadManager->generatePackages();
+
+		$packages = $packagesInfo['packages'];
+		$versions = $packagesInfo['updateFromVersions'];
 
 		$templateVariables += array(
 			'versions' => $versions,
 			'packages' => $packages,
 		);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle::downloads.html.twig', $templateVariables);
+		$content = $this->renderView('PhpbbWebsiteInterfaceBundle::downloads.html.twig', $templateVariables);
+		$response = new Response($content);
+
+		// Set caching headers
+		$response->headers->set('X-Cache-Download-Json', $packagesInfo['caching'][0]);
+		$response->headers->set('X-Cache-Download-Hashes', $packagesInfo['caching'][1]);
+		$response->headers->set('X-Cache-Download-Packages', $packagesInfo['caching'][2]);
+
+		return $response;
 	}
 
 	// public function downloadHandlerAction(Request $request, $package)
