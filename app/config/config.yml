@@ -13,7 +13,7 @@ framework:
     csrf_protection: ~
     validation:      { enable_annotations: true }
     templating:
-        assets_version:         2014091901
+        assets_version:         2014102700
         #Assets Version format: YYYYMMDDCC (CC for count of number of updates in that day)
         assets_version_format:  %%s?v%%s
         engines:
@@ -65,6 +65,21 @@ doctrine:
             default:
                 connection:       default
                 auto_mapping: true
+                metadata_cache_driver:
+                    type: %ormCache%
+                    host: %ormCacheHost%
+                    port: %ormCachePort%
+                    instance_class: %ormCacheInstanceClass%
+                query_cache_driver:
+                    type: %ormCache%
+                    host: %ormCacheHost%
+                    port: %ormCachePort%
+                    instance_class: %ormCacheInstanceClass%
+                result_cache_driver:
+                    type: %ormCache%
+                    host: %ormCacheHost%
+                    port: %ormCachePort%
+                    instance_class: %ormCacheInstanceClass%
 
 # Swiftmailer Configuration
 swiftmailer:

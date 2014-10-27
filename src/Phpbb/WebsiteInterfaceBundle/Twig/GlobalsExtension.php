@@ -87,8 +87,8 @@ class GlobalsExtension extends \Twig_Extension
 			'community_path'	=> '/community/',
 			'COMMUNITY'			=> '/community',
 
-			'contact_path'		=> '/about/contact_us.php',
-			'ABOUT_CONTACT'		=> '/about/contact_us.php',
+			'contact_path'		=> '/about/contact/',
+			'ABOUT_CONTACT'		=> '/about/contact/',
 
 			'get_involved_path'		=> '/get-involved/', // Usage = 2
 			// 'ABOUT_GETINVOLVED_SUB'	=> '/get-involved/',
@@ -140,7 +140,7 @@ class GlobalsExtension extends \Twig_Extension
 			// 'ABOUT_HISTORY_SUB'				=> '/about/history/',
 
 			// 'ABOUT_TEAM_SUB'					=> '/about/team/',
-			//'ABOUT_CONTACT_SUB'				=> '/about/contact_us.php',
+			//'ABOUT_CONTACT_SUB'				=> '/about/contact/',
 			// 'ABOUT_ADVERTISE_SUB'				=> '/about/advertise/',
 
 			'DOWNLOADS_UPDATE_SUB'			=> '/downloads/#update',
@@ -178,11 +178,12 @@ class GlobalsExtension extends \Twig_Extension
 	{
 		$aboutVars = array(
 			'ABOUT_HISTORY'		=> '/about/history/',
-			'ABOUT_LOGOS'			=> '/about/logos/',
+			'ABOUT_LOGOS'		=> '/about/logos/',
 			'ABOUT_MAP'			=> '/about/map/',
-			'ABOUT_TEAM'			=> '/about/team/',
-			'ABOUT_FEATURES'		=> '/about/features/',
+			'ABOUT_TEAM'		=> '/about/team/',
+			'ABOUT_FEATURES'	=> '/about/features/',
 			'ABOUT_COMPARE'		=> '/about/features/compare.php',
+			'about_launch'		=> '/about/launch/',
 		);
 
 		return $aboutVars;
@@ -195,8 +196,8 @@ class GlobalsExtension extends \Twig_Extension
 			'BUGS_PHPBB'			=> 'http://tracker.phpbb.com/',
 			'BUGS_WEBSITE'		=> '/bugs/website/',
 			'INCIDENTS'			=> '/incidents/',
-			'SECURITY'			=> '/security/',
-			'SECURITY_MODS'		=> '/security/mods/',
+			'SECURITY'			=> 'https://tracker.phpbb.com/secure/BrowseProjects.jspa#10020',
+			'SECURITY_MODS'		=> 'https://tracker.phpbb.com/browse/EXTSEC/',
 			'BUGS_30X'			=> 'http://tracker.phpbb.com/',
 			'BUGS_DOCS'			=> '/bugs/docs/',
 			'BUGS_MODTOOLS'		=> '/bugs/modteamtools/',
@@ -337,8 +338,8 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_demo'                     => '/styles/demo/',
 
 			// Demo pages (handled by Titania)
-			'styles_demo_31x'                 => '/styles/demo/3.1/', // TODO: needs to be up and running
-			'styles_demo_30x'                 => '/styles/demo/3.0/',
+			'styles_demo_31x'                 => '/customise/db/style/prosilver/demo/3.1', // TODO: needs to be up and running
+			'styles_demo_30x'                 => '/customise/db/style/prosilver/demo/3.0',
 
 			// Styles CDB
 			'styles_db_path'                  => '/customise/db/styles-2',
@@ -356,15 +357,15 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_docs_30x'                 => '/support/documentation/3.0/adminguide/acp_styles.php',
 
 			// Related community topics
-			'styles_ssp_31x_feedback'         => '/community/viewtopic.php?f=66666&t=66666', // TODO: create
-			'styles_ssp_30x_feedback'         => '/community/viewtopic.php?f=74&p=12931323',
+			'styles_ssp_31x_feedback'         => '/community/viewforum.php?f=481&t=66666', // TODO: create topic
+			'styles_ssp_30x_feedback'         => '/community/viewtopic.php?f=74&p=12931323', // TODO: move topic to 3.0 styles?
 
 			// Team members
 			'styles_team_members'             => '/community/memberlist.php?mode=group&g=7332',
 			'styles_jv_team_members'          => '/community/memberlist.php?mode=group&g=228778',
 
 			// Other
-			'styles_db_my_styles'             => '/styles/db/index.php?i=author&mode=mylist', // TODO: what do we prefer? This uses rewrite-rule
+			'styles_db_my_styles'             => '/customise/db/author/USERNAME/contributions', // TODO: this dynamic link needs the current username (used on SSP pages)
 		);
 
 		return $styleVars;
@@ -405,7 +406,7 @@ class GlobalsExtension extends \Twig_Extension
 	private function getExtensionVars()
 	{
 		$extensionVars = array(
-			'extensions_cdb'						=> '/customise/db/modifications-1',
+			'extensions_cdb'						=> '/customise/db/extensions-36',
 			'extensions_wiki'						=> '//wiki.phpbb.com/Category:Extensions',
 
 			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
@@ -435,6 +436,11 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 
 			'extension_quickstart_zip'				=> '/store/quickstart_extension_1.0.0.zip',
+
+			// Team members
+			'extension_team_members'				=> '/community/memberlist.php?mode=group&g=7331',
+			'extension_dev_team_members'			=> '/community/memberlist.php?mode=group&g=228787',
+			'extension_jv_team_members'				=> '/community/memberlist.php?mode=group&g=228685',
 		);
 
 		return $extensionVars;
@@ -500,8 +506,8 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
 			'WEBSITE_TL_NAME'		=> 'Marshalrusty',
 			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
-			'ext_dev_tl_name'		=> 'EXreaction',
-			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=202401',
+			'ext_dev_tl_name'		=> 'VSE',
+			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=868795',
 			'ext_tl_name'			=> 'DavidIQ',
 			'ext_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=159755',
 		);
@@ -594,6 +600,8 @@ class GlobalsExtension extends \Twig_Extension
 			'TWITTER'				=> 'http://www.twitter.com/phpbb',
 			// phpBB Demo
 			'DEMO_30X'			=> 'http://try-phpbb.com/30x',
+			'demo_31x'			=> 'http://try-phpbb.com/31x',
+			'latest_demo'		=> 'http://try-phpbb.com/31x',
 
 			'MANAGEMENT_TEAM'	=> '/community/memberlist.php?mode=group&g=13330',
 		);
@@ -609,8 +617,9 @@ class GlobalsExtension extends \Twig_Extension
 			'U_ABOUT_HISTORY_SUB'				=> '/about/history/',
 			'U_ABOUT_GETINVOLVED_SUB'			=> '/get-involved/',
 			'U_ABOUT_TEAM_SUB'					=> '/about/team/',
-			'U_ABOUT_CONTACT_SUB'				=> '/about/contact_us.php',
+			'U_ABOUT_CONTACT_SUB'				=> '/about/contact/',
 			'U_ABOUT_ADVERTISE_SUB'				=> '/about/advertise/',
+			'U_ABOUT_LAUNCH_SUB'				=> '/about/launch/',
 
 			'U_DOWNLOADS_HEADER'				=> '/downloads/?from=header',
 			'U_DOWNLOADS_SUB'					=> '/downloads/',

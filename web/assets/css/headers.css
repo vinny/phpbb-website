@@ -99,10 +99,10 @@ body.community .phpbb-header {
 	background-image: url("/assets/images/headers/header_community.jpg");
 }
 
-/* Countdown
-body.community .phpbb-header, body.customise .phpbb-header {
+/* Countdown */
+body.launch .phpbb-header {
 	background-image: url("/assets/images/headers/header_countdown.jpg");
-} */
+}
 
 /* XMAS
 body.community .phpbb-header {
@@ -225,6 +225,22 @@ body.home .phpbb-navbar {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-appearance: none;
+}
+
+.countdown-block:hover {
+	text-decoration: none;
+}
+
+/* Content of the block is constantly updated by timer, this makes the link less twitchy */
+.countdown-block:after {
+	display: block;
+	background: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	content: '';
+	top: 0;
+	left: 0;
 }
 
 .countdown-block .timer-big {
