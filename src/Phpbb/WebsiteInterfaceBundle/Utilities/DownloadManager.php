@@ -65,15 +65,15 @@ class DownloadManager
 		{
 			// If we don't have it in cache, find it & load it
 			$locator = new FileLocator($this->kernel->getRootDir());
-			$jsonFile = $locator->locate('packages.json', null, true);
-			$packagesDataJson = $jsonFile->getContents();
+			$locator->locate('packages.json', null, true);
+			$packagesDataJson = $locator->getContents();
 			$this->cache->save('packages_json_downloads', $packagesDataJson, 3600);
 			$cacheStatus = 'Miss';
 		}
 
 		// Parse JSON response and discard irrelevant branches
 		$packagesData = json_decode($packagesDataJson, true);
-		$relevantPackages = $packagesData[$branch];
+		$relevantPackages = $packagesData[$this->branch];
 
 		// Latest release in this branch is...
 		$release = $relevantPackages['release'];
@@ -82,7 +82,7 @@ class DownloadManager
 		$download_base_link = 'https://download.phpbb.com/pub/release/' . $this->branch . '/' . $release . '/';
 
 		// If we haven't established it's an update (and have an update from version)
-		if (!$update)
+		if (!$this->update)
 		{
 			// Discard irrlevant data
 			$packages = array(

@@ -46,22 +46,22 @@ class DownloadsController extends Controller
 		return $this->render('PhpbbWebsiteInterfaceBundle::downloads.html.twig', $templateVariables);
 	}
 
-	public function downloadHandlerAction(Request $request, $package)
-	{
-		$download = new Download();
-		$download->setConfigurableOptions($package, $request->getClientIp());
-		$em = $this->getDoctrine()->getManager();
-		$em->persist($download);
-		$em->flush();
+	// public function downloadHandlerAction(Request $request, $package)
+	// {
+	// 	$download = new Download();
+	// 	$download->setConfigurableOptions($package, $request->getClientIp());
+	// 	$em = $this->getDoctrine()->getManager();
+	// 	$em->persist($download);
+	// 	$em->flush();
 
-		return $this->redirect(('https://download.phpbb.com/pub/release/' . $package), 301);
-	}
+	// 	return $this->redirect(('https://download.phpbb.com/pub/release/' . $package), 301);
+	// }
 
-	public function downloadRedirectHandlerAction(Request $request, $branch = 'latest')
-	{
-		$downloadManager = new DownloadManager();
-		$branch = ($branch == 'latest') ? '3.1' : $branch;
-		$downloadManager->setBranch($branch);
-		return $this->downloadHandlerAction($request, $downloadManager->getMainPackageName);
-	}
+	// public function downloadRedirectHandlerAction(Request $request, $branch = 'latest')
+	// {
+	// 	$downloadManager = $this->get('phpbb.downloadManager');
+	// 	$branch = ($branch == 'latest') ? '3.1' : $branch;
+	// 	$downloadManager->setBranch($branch);
+	// 	return $this->downloadHandlerAction($request, $downloadManager->getMainPackageName);
+	// }
 }
