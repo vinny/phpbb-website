@@ -636,8 +636,8 @@ class GlobalsExtension extends \Twig_Extension
 			'U_STYLES_SUB'						=> '/styles/',
 			'U_STYLES_DEMO_SUB'					=> '/styles/demo/3.0/',
 
-			'U_DOCUMENTATION_SUB'				=> '/support/documentation/3.0/',
-			'U_KB_SUB'							=> '/kb/',
+			'U_SUPPORT_DOCS_SUB'				=> '/support/docs/',
+			'U_SUPPORT_KB_SUB'					=> '/support/docs/3.1/en/kb/',
 			'U_SUPPORT_IRC_SUB'					=> '/support/irc/',
 			'U_SUPPORT_TUTORIALS_SUB'			=> '/support/tutorials/3.0/',
 			'U_SUPPORT_FORUMS_SUB'				=> '/support/forums/',
