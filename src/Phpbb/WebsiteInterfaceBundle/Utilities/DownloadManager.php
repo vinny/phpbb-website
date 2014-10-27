@@ -71,7 +71,7 @@ class DownloadManager
 			$locator = new FileLocator($this->kernel->getRootDir());
 			$locator->locate('packages.json', null, true);
 			$packagesDataJson = $locator->getContents();
-			$this->cache->save('packages_json_downloads', $packagesDataJson, 3600);
+			$this->cache->save('packages_json_downloads', $packagesDataJson, 86400);
 			$cacheStatus = 'Miss';
 		}
 
@@ -261,7 +261,7 @@ class DownloadManager
 		{
 			// It seems we have no choice, grab the file from the external server
 			$hash = @file_get_contents($url . '.' . $hashType);
-			$this->cache->save($cacheName, $hash, 3600);
+			$this->cache->save($cacheName, $hash, 86400);
 			$hashCacheStatus = 'Miss';
 		}
 
