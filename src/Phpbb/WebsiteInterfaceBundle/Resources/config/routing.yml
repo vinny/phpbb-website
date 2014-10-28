@@ -49,10 +49,6 @@ phpBBWebsite_Extensions:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/extensions.yml"
     prefix:   /extensions
 
-phpBBWebsite_Downloads:
-    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/downloads.yml"
-    prefix:   /downloads
-
 phpBBWebsite_Styles:
     resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/styles.yml"
     prefix:   /styles
