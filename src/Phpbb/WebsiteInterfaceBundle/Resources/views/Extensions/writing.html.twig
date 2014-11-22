@@ -130,7 +130,7 @@ class ext extends \phpbb\extension\base
 		<h2 class="title" id="a-controllers">Controllers</h2>
 		<p>For all extensions that are to display a user interface, the core functionality for an extension needs to be included in controller files. Controller files may be placed anywhere inside an extension’s directory structure, although for optimal organisation it is best to place them either in the root of an extension or in a separate directory named <code class="inline">controller/</code> as in the Acme Demo extension. Controller files may also be given any name, such as <samp>main.php</samp> in the Acme Demo.</p>
 		<p>The main function is typically called <code class="inline">handle()</code>. This is a function whose purpose is to handle the request to display pages. There is no need to declare the standard phpBB globals ($user, $db, etc.) by virtue of this being handled by dependency injection. All global variables have been defined in the <samp>main.php</samp> class constructor and most importantly, in the services definition file found in <code class="inline">config/services.yml</code>.</p>
-		<p>A controller should never call <code class="inline">trigger_error()</code> to generate output. Insted, a controller must return an instance of <code class="inline">Symfony\Component\HttpFoundation\Response</code> or throw an exception. This is easily achieved by using the <code class="inline">render()</code> method in the controller_helper class when you are ready to render data to the template file, e.g.:</p>
+		<p>A controller should never call <code class="inline">trigger_error()</code> to generate output. Instead, a controller must return an instance of <code class="inline">Symfony\Component\HttpFoundation\Response</code> or throw an exception. This is easily achieved by using the <code class="inline">render()</code> method in the controller_helper class when you are ready to render data to the template file, e.g.:</p>
 		<pre class="codesnippet">return $controller_helper->render('demo_body.html', $name);</pre>
 		<h3 id="a-routing">Routing</h3>
 		<p>One final aspect of controller files is accessing them from a URL. The routing YAML file allows us to define URLs with various patterns leading to controller classes, and/or to specific methods within controller classes.</p>
@@ -171,7 +171,7 @@ class main
 }
 </pre>
 		<p>The above namespaced code would be for a class file and path structure such as <code class="inline">acme/demo/controller/main.php</code>.</p>
-		<div class="note-box blue"><strong>Note:</strong> The phpBB 3.1 coding standard states that the closing <code class="inline">?&gt;</code> is not required in PHP files, and all files should contain one extra blank line at the bottom.</div>
+		<div class="note-box blue"><strong>Note:</strong> The phpBB 3.1 <a href="{{ extensions_phpbb_cgs }}">coding guidelines</a> states that the closing <code class="inline">?&gt;</code> is not required in PHP files, and all files should contain one extra blank line at the bottom.</div>
 		<p>One final note about including PHP files regarding the use of the <code class="inline">IN_PHPBB</code> test. PHP files that contain only classes are not required to use the <code class="inline">IN_PHPBB</code> test. However, if your PHP files contain any executable code not encapsulated within a class structure, such as exposed functions, <code class="inline">include()</code> or <code class="inline">require()</code> statements, then the <code class="inline">IN_PHPBB</code> test is required prior to any executable code.</p>
 		<pre class="codesnippet">&lt;?php
 
@@ -199,9 +199,9 @@ function do_something ()
 styles/
 	all/
 		template/
-				acme_demo_body.html
-				event/
-					overall_header_head_append.html
+			acme_demo_body.html
+			event/
+				overall_header_head_append.html
 		theme/
 			css/
 				acme_demo_main.css
@@ -262,7 +262,7 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
 		<pre class="codesnippet">acme/demo/styles/prosilver/template/event/overall_header_head_append.html</pre>
 		<p>Note: When a template event can be used by all styles, it should be placed in the <code class="inline">all/</code> style directory. This helps prevent code duplication and eases style file management. The prosilver and subsilver directories should be used for template events that must be custom tailored to each style. Similarly, if a custom 3rd-party style requires additional customisation to maintain compatibility with the style, a folder for that style should be included with those events.</p>
 		<p>It's also important to understand that when phpBB compiles the templates, there is no current system for determining the priority in which template events are compiled. In rare cases some extensions could cause a conflict, in which case the reccomendation is for the extension authors to work out a solution for their conflicting template events.</p>
-		<div class="note-box green"><strong>Pro-Tip:</strong> phpBB’s core PHP and template files have been prepared with dozens of event locations. However, if there are no events where your extension may need one, the phpBB developer team welcomes event requests at the <a href="{{ DEV_HOME_SUB }}">area51.com</a> [3.x] Event Requests forum.</div>
+		<div class="note-box green"><strong>Pro-Tip:</strong> phpBB’s core PHP and template files have been prepared with dozens of event locations. However, if there are no events where your extension may need one, the phpBB development team welcomes event requests at the <a href="{{ DEV_HOME_SUB }}">area51.com</a> [3.x] Event Requests forum.</div>
 		<h3 id="a-includejs-css">Including JavaScript and CSS Scripts</h3>
 		<p>A special case for including CSS files and JS files exists. These use the <code class="inline">&lt;!-- INCLUDECSS --&gt;</code> and <code class="inline">&lt;!-- INCLUDEJS --&gt;</code> syntax, respectively.</p>
 		<p>The INCLUDECSS tag will automatically generate a &lt;link&gt; tag for the supplied CSS file in the template &lt;head&gt; section. For example, to add a new <code class="inline">custom.css</code> file in prosilver, a template event would need to be created at:</p>
@@ -289,6 +289,7 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
 				<li>ColPick JS: <code class="inline">$INCLUDED_COLPICKJS</code></li>
 				<li>MoTools JS: <code class="inline">$INCLUDED_MOTOOLSJS</code></li>
 				<li>Dojo JS: <code class="inline">$INCLUDED_DOJOJS</code></li>
+				<li>Angular JS: <code class="inline">$INCLUDED_ANGULARJS</code></li>
 			</ol>
 			</p>
 		<div class="note-box yellow"><strong>Note:</strong> The INCLUDECSS tag will only work inside the overall_header_head_append event. However, the INCLUDEJS tag can be used in any template event or custom template file.</div>
