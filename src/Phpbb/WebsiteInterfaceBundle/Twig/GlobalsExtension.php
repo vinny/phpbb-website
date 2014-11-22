@@ -435,6 +435,14 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_rules_dev'					=> '/extensions/rules-and-policies/development-rules',
 			'extensions_rules_writer'				=> '/extensions/rules-and-policies/writers-rules',
 
+			'extensions_wiki_developing_extensions'	=> '//wiki.phpbb.com/Developing_Extensions',
+			'extensions_wiki_helper_class'			=> '//wiki.phpbb.com/Controller#The_Helper_Class',
+			'extensions_wiki_template_listeners'	=> '//wiki.phpbb.com/Add_Template_Listeners',
+			'extensions_wiki_controller'			=> '//wiki.phpbb.com/Controller',
+			'extensions_wiki_composer'				=> '//wiki.phpbb.com/Extension_meta_data',
+			'extensions_wiki_dependency_injection'	=> '//wiki.phpbb.com/Dependency_Injection_Container',
+			'extensions_wiki_migrations'			=> '//wiki.phpbb.com/Migrations',
+
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 
 			'extension_quickstart_zip'				=> '/store/quickstart_extension_1.0.0.zip',
