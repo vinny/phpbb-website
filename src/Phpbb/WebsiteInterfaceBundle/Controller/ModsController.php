@@ -16,10 +16,6 @@ class ModsController extends Controller
 {
     public function homeAction()
     {
-        $templateVariables = array(
-            'header_css_image'		=> 'mods',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:Mods:home.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:Mods:home.html.twig');
     }
 }

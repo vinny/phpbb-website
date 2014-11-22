@@ -16,91 +16,51 @@ class StylesController extends Controller
 {
     public function homeAction()
     {
-        $templateVariables = array(
-            'header_css_image'		=> 'styles',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:Styles:home.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:Styles:home.html.twig');
     }
 
 	public function supportAction()
 	{
-		$templateVariables = array(
-			'header_css_image'		=> 'styles',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:support.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:support.html.twig');
 	}
 
 	public function installingAction()
 	{
-		$templateVariables = array(
-			'header_css_image'		=> 'styles',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:installing.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:installing.html.twig');
 	}
 
 	public function createAction()
 	{
-		$templateVariables = array(
-			'header_css_image'		=> 'styles',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:create.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:create.html.twig');
 	}
 
     public function teamOverviewAction()
     {
-        $templateVariables = array(
-            'header_css_image'		=> 'styles',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:Styles:team-overview.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:Styles:team-overview.html.twig');
     }
 
 	public function juniorValidatorsAction()
 	{
-		$templateVariables = array(
-			'header_css_image'		=> 'styles',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:junior-validators.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:junior-validators.html.twig');
 	}
 
 	public function sspAction()
 	{
-		$templateVariables = array(
-			'header_css_image'		=> 'styles ssp',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:ssp.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:ssp.html.twig');
 	}
 
 	public function ssp30xAction()
 	{
-		$templateVariables = array(
-			'header_css_image'		=> 'styles ssp',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:ssp-30x.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:ssp-30x.html.twig');
 	}
 
 	public function demoAction()
 	{
-		$templateVariables = array(
-			'header_css_image'		=> 'styles demo',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:demo.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:demo.html.twig');
 	}
 
 	public function demoNotReadyAction()
 	{
-		$templateVariables = array(
-			'header_css_image'		=> 'styles demo',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:demoNotReady.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Styles:demoNotReady.html.twig');
 	}
 }

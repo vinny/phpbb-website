@@ -49,8 +49,7 @@ class GlobalController extends Controller
 		$templateVariables += array(
 			'homepage'              => true,
 			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
-			'announcements'         => $announcements,
-			'header_css_image'      => 'home',);
+			'announcements'         => $announcements,);
 
 		$content = $this->renderView('PhpbbWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
 		$response = new Response($content);
@@ -60,29 +59,17 @@ class GlobalController extends Controller
 
 	public function demoAction()
 	{
-		$templateVariables = array(
-			'header_css_image'      => 'demo',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Global:demo.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Global:demo.html.twig');
 	}
 
 	public function customiseAction()
 	{
-		$templateVariables = array(
-			'header_css_image'      => 'customise',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Global:customise.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Global:customise.html.twig');
 	}
 
 	public function ideasAction()
 	{
-		$templateVariables = array(
-			'header_css_image'      => 'misc',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Global:ideas.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Global:ideas.html.twig');
 	}
 
 	/**

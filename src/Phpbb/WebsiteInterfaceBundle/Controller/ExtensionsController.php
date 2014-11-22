@@ -23,21 +23,12 @@ class ExtensionsController extends Controller
 {
 	public function homeAction()
 	{
-		// Extensions Homepage
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:home.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:home.html.twig');
 	}
 
 	public function recognisedDeveloperAction()
 	{
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:recognised-developer.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:recognised-developer.html.twig');
 	}
 
 	public function officialExtensionsAction()
@@ -82,7 +73,6 @@ class ExtensionsController extends Controller
 		);
 
 		$templateVariables = array(
-			'header_css_image'  => 'mods',
 			'extensions'		=> $officialExtensions,
 		);
 
@@ -91,74 +81,45 @@ class ExtensionsController extends Controller
 
 	public function officialExtensionsTeamAction()
 	{
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:official-extensions-team.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:official-extensions-team.html.twig');
 	}
 
 	public function juniorValidatorsAction()
 	{
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:junior-validators.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:junior-validators.html.twig');
 	}
 
 	public function installingAction()
 	{
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:installing.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:installing.html.twig');
 	}
 
 	public function writingAction()
 	{
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:writing.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:writing.html.twig');
 	}
 
 	public function teamOverviewAction()
 	{
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:team-overview.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:team-overview.html.twig');
 	}
 
 	public function devRulesAction()
 	{
 		// Extension Development Rules and Guidelines
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules.html.twig');
 	}
 
 	public function writersRulesAction()
 	{
 		// Extension Writers Rules and Guidelines
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-writers-rules.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-writers-rules.html.twig');
 	}
 
 	public function policiesAction()
 	{
 		// Extensions Rules and Policies
 		$templateVariables = array(
-			'header_css_image' => 'mods',
 			'policies'		 => array(
 				array('i' => 0, 'name' => 'Validation Policy', 'description' => 'Some general policies on how we handle validation.', 'link' => '/extensions/rules-and-policies/validation-policy'),
 				array('i' => 1, 'name' => 'Insta-Deny Policy', 'description' => 'How we handle Insta-Denies of Extensions.', 'link' => '/extensions/rules-and-policies/insta-deny'),
@@ -172,38 +133,24 @@ class ExtensionsController extends Controller
 	public function repackPolicyAction()
 	{
 		// Extensions Repack Policy
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:repack-policy.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:repack-policy.html.twig');
 	}
 
 	public function instadenyPolicyAction()
 	{
 		// Extensions Insta-Deny Policy
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:instadeny-policy.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:instadeny-policy.html.twig');
 	}
 
 	public function validationPolicyAction()
 	{
 		// Extensions Validation Policy
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
-
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:validation-policy.html.twig', $templateVariables);
+		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:validation-policy.html.twig');
 	}
 
 	public function epvAction(Request $request)
 	{
-		$templateVariables = array(
-			'header_css_image' => 'mods',
-		);
+		$templateVariables = array();
 
 		$github = $request->request->get('github');
 		$debug = $request->request->get('debug');

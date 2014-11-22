@@ -16,11 +16,7 @@ class DevelopmentController extends Controller
 {
     public function homeAction()
     {
-        $templateVariables = array(
-            'header_css_image'		=> 'development',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:Development:home.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:Development:home.html.twig');
     }
 
     public function prosilverAction($page = 1)
@@ -45,8 +41,6 @@ class DevelopmentController extends Controller
         }
 
         $templateVariables += array(
-            'header_css_image'		=> 'development prosilver',
-
             'TOC'					=> $toc,
             'MENU_COUNT' 			=> count($toc),
 

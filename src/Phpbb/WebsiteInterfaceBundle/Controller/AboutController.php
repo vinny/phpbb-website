@@ -16,35 +16,22 @@ class AboutController extends Controller
 {
     public function homeAction()
     {
-        $templateVariables = array(
-            'header_css_image'		=> 'about',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:home.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:About:home.html.twig');
     }
 
     public function historyAction()
     {
-        $templateVariables = array(
-            'header_css_image'		=> 'about history',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:history.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:About:history.html.twig');
     }
 
     public function advertiseAction()
     {
-        $templateVariables = array(
-            'header_css_image'		=> 'about advertise-contact',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:advertise.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:About:advertise.html.twig');
     }
 
     public function getInvolvedAction()
     {
         $templateVariables = array(
-            'header_css_image'		=> 'get-involved',
             'FORUM_EVENTS'			=> '/community/search.php?keywords=%5BEVENT%5D&terms=all&fid%5B%5D=64&sc=1&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search',
             'TRANSLATIONS_APPLY'	=> '/languages/apply.php',
         );
@@ -55,7 +42,6 @@ class AboutController extends Controller
     public function contactAction()
     {
         $templateVariables = array(
-            'header_css_image'	=> 'contact',
             'ICON_POST_REPORT'	=> '/community/styles/prosilver/imageset/icon_post_report.gif',
         );
 
@@ -64,19 +50,11 @@ class AboutController extends Controller
 
     public function featureAction()
     {
-        $templateVariables = array(
-            'header_css_image'	=> 'about features',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:features.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:About:features.html.twig');
     }
 
     public function launchAction()
     {
-        $templateVariables = array(
-            'header_css_image'  => 'about launch',
-        );
-
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:launch.html.twig', $templateVariables);
+        return $this->render('PhpbbWebsiteInterfaceBundle:About:launch.html.twig');
     }
 }
