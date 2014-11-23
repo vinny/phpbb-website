@@ -136,12 +136,12 @@ class ext extends \phpbb\extension\base
 		<p>One final aspect of controller files is accessing them from a URL. The routing YAML file allows us to define URLs with various patterns leading to controller classes, and/or to specific methods within controller classes.</p>
 		<p>The Acme Demo page is accessed from <code class="inline">./app.php/demo</code> (all extension controller files are accessed via <code class="inline">app.php</code>). The <code class="inline">routing.yml</code> (also located in the <code class="inline">config/</code> directory), allows us to define the URLs that will access our controller files. The YAML code for this looks like:</p>
 		<pre class="codesnippet">acme_demo_controller:
-    pattern: /demo/{name}
+    path: /demo/{name}
     defaults: { _controller: acme.demo.controller:handle }</pre>
 		<p>A route is composed of three essential elements:
 			<ul>
 				<li>The Route name, <code class="inline">acme_demo_controller</code>, is a unique name for this routing, and can be named whatever you want (like services, it should be prefaced with the vendor and extension name). This name is used by the controller_helper class to generate the link to this routing, by calling <code class="inline">$controller_helper->route(‘acme_demo_controller’)</code>.</li>
-				<li>The pattern is used to define what the URL should look like after <code class="inline">app.php</code>, in this case <code class="inline">/demo/{name}</code> where <code class="inline">{name}</code> is a URL parameter variable. For example, the URL <code class="inline">./app.php/demo/hello</code> would be similar to <code class="inline">./app.php/demo?name=hello</code>. The pattern may contain multiple variable parameters (in brackets).</li>
+				<li>The path is used to define what the URL should look like after <code class="inline">app.php</code>, in this case <code class="inline">/demo/{name}</code> where <code class="inline">{name}</code> is a URL parameter variable. For example, the URL <code class="inline">./app.php/demo/hello</code> would be similar to <code class="inline">./app.php/demo?name=hello</code>. The path may contain multiple variable parameters (in brackets). Note that prior to Symfony 2.2, "pattern" was used instead of "path". Currently Symfony supports using "path" or "pattern" but the former is preferred as the latter will eventually be removed from Symfony.</li>
 				<li>The defaults definition specifies that the <code class="inline">acme_demo_controller</code> route should point to the <code class="inline">handle()</code> method in our <code class="inline">acme.demo.controller</code> service, and pass any <code class="inline">{name}</code> URL parameter to the <code class="inline">handle()</code> method (you can see the handle method accepts <code class="inline">$name</code> as an argument).</li>
 			</ul>
 		</p>
