@@ -16,17 +16,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GlobalController extends Controller
 {
-	/**
-	 * Renders a template directly from the routing.yml, so it doesn't need a dedicated controller
-	 *
-	 * @param $template
-	 * @return \Symfony\Component\HttpFoundation\Response
-	 */
-	public function templateAction($template)
-	{
-		return $this->render($template);
-	}
-
 	public function homeAction()
 	{
 		$templateVariables = array();
