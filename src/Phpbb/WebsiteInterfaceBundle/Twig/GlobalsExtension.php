@@ -214,7 +214,7 @@ class GlobalsExtension extends \Twig_Extension
 			//'DEV_QA_CONTACT'		=> '/community/ucp.php?i=pm&amp;mode=compose&amp;u=' . DEV_QA_CONTACT_ID),
 			'DEV_QA_TOOL'			=> '/development/qa/release/new',
 			'DEV_QA_30X_BUGLIST'	=> '/bugs/phpbb3/qa.php',
-			'DEV_WIKI'			=> '//wiki.phpbb.com/',
+			'DEV_WIKI'			=> 'https://wiki.phpbb.com/',
 		);
 
 		return $developmentVars;
@@ -350,7 +350,7 @@ class GlobalsExtension extends \Twig_Extension
 			'styles_gdk_20x'                  => '/customise/db/style/phpbb_subsilver_gdk/',
 
 			// Documentation resources
-			'styles_wiki'                     => '//wiki.phpbb.com/Category:Styles',
+			'styles_wiki'                     => 'https://wiki.phpbb.com/Category:Styles',
 			'styles_kb'                       => '/support/docs/en/3.1/kb/styles/',
 			'styles_kb_31x'                   => '/support/docs/en/3.1/kb/styles/',
 			'styles_kb_30x'                   => '/support/docs/en/3.0/kb/styles/',
@@ -409,7 +409,7 @@ class GlobalsExtension extends \Twig_Extension
 	{
 		$extensionVars = array(
 			'extensions_cdb'						=> '/customise/db/extensions-36',
-			'extensions_wiki'						=> '//wiki.phpbb.com/Category:Extensions',
+			'extensions_wiki'						=> 'https://wiki.phpbb.com/Category:Extensions',
 
 			'extensions_quickinstall'				=> '/mods/quickinstall/', //replace later
 			'extensions_phpbb_cgs'					=> '//area51.phpbb.com/docs/31x/coding-guidelines.html',
@@ -435,13 +435,13 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_rules_dev'					=> '/extensions/rules-and-policies/development-rules',
 			'extensions_rules_writer'				=> '/extensions/rules-and-policies/writers-rules',
 
-			'extensions_wiki_developing_extensions'	=> '//wiki.phpbb.com/Developing_Extensions',
-			'extensions_wiki_helper_class'			=> '//wiki.phpbb.com/Controller#The_Helper_Class',
-			'extensions_wiki_template_listeners'	=> '//wiki.phpbb.com/Add_Template_Listeners',
-			'extensions_wiki_controller'			=> '//wiki.phpbb.com/Controller',
-			'extensions_wiki_composer'				=> '//wiki.phpbb.com/Extension_meta_data',
-			'extensions_wiki_dependency_injection'	=> '//wiki.phpbb.com/Dependency_Injection_Container',
-			'extensions_wiki_migrations'			=> '//wiki.phpbb.com/Migrations',
+			'extensions_wiki_developing_extensions'	=> 'https://wiki.phpbb.com/Developing_Extensions',
+			'extensions_wiki_helper_class'			=> 'https://wiki.phpbb.com/Controller#The_Helper_Class',
+			'extensions_wiki_template_listeners'	=> 'https://wiki.phpbb.com/Add_Template_Listeners',
+			'extensions_wiki_controller'			=> 'https://wiki.phpbb.com/Controller',
+			'extensions_wiki_composer'				=> 'https://wiki.phpbb.com/Extension_meta_data',
+			'extensions_wiki_dependency_injection'	=> 'https://wiki.phpbb.com/Dependency_Injection_Container',
+			'extensions_wiki_migrations'			=> 'https://wiki.phpbb.com/Migrations',
 
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 
@@ -647,7 +647,7 @@ class GlobalsExtension extends \Twig_Extension
 			'U_SUPPORT_INTL_SUB'				=> '/support/intl/',
 
 			'U_DEVELOPMENT'						=> '/development/',
-			'U_DEV_WIKI_SUB'					=> '//wiki.phpbb.com/',
+			'U_DEV_WIKI_SUB'					=> 'https://wiki.phpbb.com/',
 			'U_DEV_GI_SUB'						=> '/development/get-involved/',
 			'U_BUGS_SUB'						=> '/bugs/',
 			'U_BUGS_PHPBB_SUB'					=> 'http://tracker.phpbb.com/',

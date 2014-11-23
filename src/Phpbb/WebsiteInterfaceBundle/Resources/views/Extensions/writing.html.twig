@@ -27,7 +27,7 @@
 
 		<hr />
 
-		<h2 class="title" id="a-packaging">Packaging Nomenclature</h2>
+		<h2 class="title" id="a-packaging">Package Naming Conventions</h2>
 		<p>All extensions will be located within the the <code class="inline">ext/</code> directory, located within the phpBB root (the same location as viewtopic.php, viewforum.php, index.php, etc).</p>
 		<p>Extensions are packaged in a directory structure as follows: <code class="inline">vendorname/extensionname</code>.</p>
 		<p>The vendorname could be your username or any other name you choose to associate your extensions with. The extensionname is the name of the extension. In the case of the Acme Demo extension examined here, it should look like <code class="inline">acme/demo</code>.</p>
@@ -65,8 +65,8 @@
 }</pre>
 		<p>The information in this file will be used by the Extensions Manager. The Extensions Manager is an ACP feature that will allow extensions to be enabled, disabled or purged (meaning any database changes introduced by an extension will be reverted).</p>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="{{ extensions_wiki_composer }}">Composer &amp; Extension meta data wiki</a>.<br />
-			<a href="https://getcomposer.org/doc/04-schema.md">Composer Schema</a>.<br />
+			<a href="{{ extensions_wiki_composer }}">Composer &amp; Extension Meta Data Wiki</a><br />
+			<a href="https://getcomposer.org/doc/04-schema.md">Composer Schema</a><br />
 		</div>
 
 		<hr />
@@ -102,7 +102,7 @@ class ext extends \phpbb\extension\base
 		<p>This allows for a large process to be paused and resumed, as the last known state will be deserialised when <code class="inline">enable_step()</code> is called again. This could be effected by the script redirecting on to itself as <code class="inline">enable_step()</code> will continue to be executed until such time as false is returned.</p>
 		<p>Essentially, by extending the base class and overriding any of the available functions (<code class="inline">disable_step()</code> and <code class="inline">purge_step()</code> can be used in a similar way to <code class="inline">enable_step()</code> as mentioned above) the functionality is available to perform script execution in a series of steps.</p>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="{{ extensions_wiki_developing_extensions }}">Developing Extensions wiki</a>.<br />
+			<a href="{{ extensions_wiki_developing_extensions }}">Developing Extensions Wiki</a><br />
 		</div>
 
 		<hr />
@@ -123,8 +123,8 @@ class ext extends \phpbb\extension\base
 		<p>Note that <code class="inline">acme.demo.controller</code> is the unique service name for the <samp>main.php</samp> class. This name can be whatever you want, but phpBB extensions should preface them with the vendor and extension name (in this case, acme.demo) to prevent potential conflicts with other extensions or core services. The class is simply the name-spaced path to the <samp>main.php</samp> file. The arguments are the service dependencies required by the class. It is important that the order of the services listed here exactly match the order of these services as arguments in the <samp>main.php</samp> constructor.</p>
 		<p>Most PHP files in an extension should use the dependency injection model with service definitions, particularly controllers and event listeners. The exceptions to this are any ACP files, language files and migration files (which do not currently use the service container).</p>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="{{ extensions_wiki_dependency_injection }}">Dependency Injection Container wiki</a>.<br />
-			<a href="http://symfony.com/doc/2.3/components/dependency_injection/introduction.html">Symfony: The DependencyInjection Component</a>.<br />
+			<a href="{{ extensions_wiki_dependency_injection }}">Dependency Injection Container Wiki</a><br />
+			<a href="http://symfony.com/doc/2.3/components/dependency_injection/introduction.html">Symfony: The DependencyInjection Component</a><br />
 		</div>
 
 		<h2 class="title" id="a-controllers">Controllers</h2>
@@ -151,9 +151,9 @@ class ext extends \phpbb\extension\base
 		<p>By assigning the above line to a template var in the event listener, the link becomes available for injection into phpBB's nav bar using a template event.</p>
 		<div class="note-box yellow"><strong>Reminder:</strong> All extension service names and route names should be prefixed with your vendor name and extension name.</div>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="{{ extensions_wiki_controller }}">Controller wiki</a>.<br />
-			<a href="http://symfony.com/doc/current/book/routing.html">Symfony: Routing</a>.<br />
-			<a href="http://symfony.com/doc/2.3/components/routing/introduction.html">Symfony: The Routing Component</a>.<br />
+			<a href="{{ extensions_wiki_controller }}">Controller Wiki</a><br />
+			<a href="http://symfony.com/doc/current/book/routing.html">Symfony: Routing</a><br />
+			<a href="http://symfony.com/doc/2.3/components/routing/introduction.html">Symfony: The Routing Component</a><br />
 		</div>
 
 		<hr />
@@ -192,7 +192,7 @@ function do_something ()
 
 		<h2 class="title" id="a-template-files">Template Files</h2>
 		<p>Templating for extensions is no different to templating for phpBB3 in general. phpBB 3.1 has switched to the TWIG template engine but retains phpBB’s original templating syntax. Therefor, both phpBB and TWIG template syntaxes are permissible in an extension. If you are not familiar with TWIG, you may use phpBB’s syntax (phpBB 3.1’s core template files are all written using phpBB syntax).</p>
-		<p>An extension can contain two types of template files: custom templates and <a href="http://phpbb-website:8888/extensions/writing/#a-template-events">template events</a>. An extension's custom template files should have unique names, preferably prefixed with the vendor and extension names, to prevent conflicts with other extension or phpBB template files. In addition to templates, an extension can contain theme files (CSS scripts and images), Javascript files and other assets.</p>
+		<p>An extension can contain two types of template files: custom templates and <a href="#a-template-events">template events</a>. An extension's custom template files should have unique names, preferably prefixed with the vendor and extension names, to prevent conflicts with other extension or phpBB template files. In addition to templates, an extension can contain theme files (CSS scripts and images), Javascript files and other assets.</p>
 		<p>Like language files, template files in an extension should be organised in a fashion similar to phpBB’s template file structure. The <code class="inline">styles/</code> directory should contain directories for each style you have written template files for. For example, prosilver and subsilver2. Any style that inherits from prosilver, will inherit from your extension’s prosilver directory as well. A special <code class="inline">all/</code> directory can also be used to contain template files that can be used with any and all styles (a common JS file, for example). Template files for the ACP should be stored in the <code class="inline">adm/style/</code> location, similar to phpBB’s structure.</p>
 		<p>An example directory structure for an extension with universal (all) files and theme specific files:</p>
 		<pre class="codesnippet">
@@ -223,12 +223,12 @@ styles/
 		<pre class="codesnippet">$user->add_lang('acp/common');
 $this->tpl_name = 'demo_body';
 $this->page_title = $user->lang('ACP_DEMO_TITLE');</pre>
-		<p>See the section below on <a href="http://phpbb-website:8888/extensions/writing/#a-template-events">template events</a> to learn how to inject new template code into core phpBB template files, and how to include any JavaScript and CSS files.</p>
+		<p>See the section below on <a href="#a-template-events">template events</a> to learn how to inject new template code into core phpBB template files, and how to include any JavaScript and CSS files.</p>
 		<div class="note-box yellow"><strong>Note:</strong> If a standard phpBB template filename is used as an extension template, then this will override the template file from phpBB. Therefore it is important to be mindful of this when naming template files. Overriding template files is not advisable for publicly released extensions as it could conflict with other extensions.</div>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="http://twig.sensiolabs.org/">TWIG Template Engine</a> at Sensio Labs.<br />
-			<a href="{{ extensions_wiki_helper_class }}">Controller Helper Class wiki</a>.<br />
-			<a href="{{ extensions_validation_policy }}/#templates">Template Validation Policy</a>.<br />
+			<a href="http://twig.sensiolabs.org/">TWIG Template Engine</a> at Sensio Labs<br />
+			<a href="{{ extensions_wiki_helper_class }}">Controller Helper Class Wiki</a><br />
+			<a href="{{ extensions_validation_policy }}/#templates">Template Validation Policy</a><br />
 		</div>
 
 		<hr />
@@ -294,9 +294,9 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
 			</p>
 		<div class="note-box yellow"><strong>Note:</strong> The INCLUDECSS tag will only work inside the overall_header_head_append event. However, the INCLUDEJS tag can be used in any template event or custom template file.</div>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="{{ extensions_wiki_template_listeners }}">Template Events wiki</a>.<br />
-			<a href="{{ extensions_validation_policy }}/#templates">Template Validation Policy</a>.<br />
-			<a href="{{ extensions_validation_policy }}/#scripts">JavaScript and CSS Validation Policy</a>.
+			<a href="{{ extensions_wiki_template_listeners }}">Template Events Wiki</a><br />
+			<a href="{{ extensions_validation_policy }}/#templates">Template Validation Policy</a><br />
+			<a href="{{ extensions_validation_policy }}/#scripts">JavaScript and CSS Validation Policy</a>
 		</div>
 		<hr />
 
@@ -361,10 +361,10 @@ $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’)
    return isset($this->config['acme_demo_goodbye']);
 }</pre>
 		<div class="note-box blue"><strong>Resources:</strong><br />
-			<a href="{{ extensions_wiki_migrations }}">Migrations wiki</a>.<br />
-			<a href="{{ extensions_wiki_migrations }}/Getting_Started">Getting started with Migrations</a>.<br />
-			<a href="{{ extensions_wiki_migrations }}/Tools">Migration Tools wiki</a>.<br />
-			<a href="{{ extensions_validation_policy }}/#migrations">Migrations Validation Policy</a>.<br />
+			<a href="{{ extensions_wiki_migrations }}">Migrations Wiki</a><br />
+			<a href="{{ extensions_wiki_migrations }}/Getting_Started">Getting started with Migrations</a><br />
+			<a href="{{ extensions_wiki_migrations }}/Tools">Migration Tools Wiki</a><br />
+			<a href="{{ extensions_validation_policy }}/#migrations">Migrations Validation Policy</a><br />
 		</div>
 
 		<hr />
