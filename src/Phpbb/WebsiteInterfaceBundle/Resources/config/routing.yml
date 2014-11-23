@@ -4,9 +4,7 @@ PhpbbWebsiteInterfaceBundle_homepage:
 
 phpBBWebsite_getInvolved:
     path:  /get-involved/
-    defaults:
-        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
-        template: PhpbbWebsiteInterfaceBundle:About:getInvolved.html.twig
+    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:getInvolved }
     methods:  [GET]
 
 phpBBWebsite_demo:
