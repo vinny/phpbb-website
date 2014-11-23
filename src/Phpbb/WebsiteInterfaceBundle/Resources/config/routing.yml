@@ -4,22 +4,30 @@ PhpbbWebsiteInterfaceBundle_homepage:
 
 phpBBWebsite_getInvolved:
     path:  /get-involved/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:getInvolved }
+    defaults:
+        _controller:  PhpbbWebsiteInterfaceBundle:Global:template
+        template: PhpbbWebsiteInterfaceBundle:About:getInvolved.html.twig
     methods:  [GET]
 
 phpBBWebsite_demo:
     path:  /demo/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:demo }
+    defaults:
+        _controller:  PhpbbWebsiteInterfaceBundle:Global:template
+        template: PhpbbWebsiteInterfaceBundle:Global:demo.html.twig
     methods:  [GET]
 
 phpBBWebsite_customise:
     path:  /customise/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:customise }
+    defaults:
+        _controller:  PhpbbWebsiteInterfaceBundle:Global:template
+        template: PhpbbWebsiteInterfaceBundle:Global:customise.html.twig
     methods:  [GET]
 
 phpBBWebsite_ideas:
     path:  /ideas/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:ideas }
+    defaults:
+        _controller:  PhpbbWebsiteInterfaceBundle:Global:template
+        template: PhpbbWebsiteInterfaceBundle:Global:ideas.html.twig
     methods:  [GET]
 
 phpBBWebsite_About_contact_redirect:

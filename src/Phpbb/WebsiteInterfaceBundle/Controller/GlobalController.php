@@ -16,6 +16,17 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GlobalController extends Controller
 {
+	/**
+	 * Renders a template directly from the routing.yml, so it doesn't need a dedicated controller
+	 *
+	 * @param $template
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
+	public function templateAction($template)
+	{
+		return $this->render($template);
+	}
+
 	public function homeAction()
 	{
 		$templateVariables = array();
@@ -55,21 +66,6 @@ class GlobalController extends Controller
 		$response = new Response($content);
 		$response->headers->set('X-Cache-Blog', $cacheStatus);
 		return $response;
-	}
-
-	public function demoAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Global:demo.html.twig');
-	}
-
-	public function customiseAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Global:customise.html.twig');
-	}
-
-	public function ideasAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Global:ideas.html.twig');
 	}
 
 	/**

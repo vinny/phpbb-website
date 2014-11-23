@@ -14,11 +14,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DevelopmentController extends Controller
 {
-    public function homeAction()
-    {
-        return $this->render('PhpbbWebsiteInterfaceBundle:Development:home.html.twig');
-    }
-
     public function prosilverAction($page = 1)
     {
         $templateVariables = array();

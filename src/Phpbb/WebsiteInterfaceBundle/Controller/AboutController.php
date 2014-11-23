@@ -14,21 +14,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AboutController extends Controller
 {
-    public function homeAction()
-    {
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:home.html.twig');
-    }
-
-    public function historyAction()
-    {
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:history.html.twig');
-    }
-
-    public function advertiseAction()
-    {
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:advertise.html.twig');
-    }
-
     public function getInvolvedAction()
     {
         $templateVariables = array(
@@ -46,15 +31,5 @@ class AboutController extends Controller
         );
 
         return $this->render('PhpbbWebsiteInterfaceBundle:About:contact.html.twig', $templateVariables);
-    }
-
-    public function featureAction()
-    {
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:features.html.twig');
-    }
-
-    public function launchAction()
-    {
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:launch.html.twig');
     }
 }

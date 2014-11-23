@@ -21,16 +21,6 @@ use Symfony\Component\HttpFoundation\Request;
 // Controller for Extensions pages
 class ExtensionsController extends Controller
 {
-	public function homeAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:home.html.twig');
-	}
-
-	public function recognisedDeveloperAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:recognised-developer.html.twig');
-	}
-
 	public function officialExtensionsAction()
 	{
 		// TODO: In the future we may load this dynamically from a database table
@@ -73,47 +63,10 @@ class ExtensionsController extends Controller
 		);
 
 		$templateVariables = array(
-			'extensions'		=> $officialExtensions,
+			'extensions' => $officialExtensions,
 		);
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:official-extensions.html.twig', $templateVariables);
-	}
-
-	public function officialExtensionsTeamAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:official-extensions-team.html.twig');
-	}
-
-	public function juniorValidatorsAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:junior-validators.html.twig');
-	}
-
-	public function installingAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:installing.html.twig');
-	}
-
-	public function writingAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:writing.html.twig');
-	}
-
-	public function teamOverviewAction()
-	{
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:team-overview.html.twig');
-	}
-
-	public function devRulesAction()
-	{
-		// Extension Development Rules and Guidelines
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-dev-rules.html.twig');
-	}
-
-	public function writersRulesAction()
-	{
-		// Extension Writers Rules and Guidelines
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:ext-writers-rules.html.twig');
 	}
 
 	public function policiesAction()
@@ -128,24 +81,6 @@ class ExtensionsController extends Controller
 		);
 
 		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:rules-policies.html.twig', $templateVariables);
-	}
-
-	public function repackPolicyAction()
-	{
-		// Extensions Repack Policy
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:repack-policy.html.twig');
-	}
-
-	public function instadenyPolicyAction()
-	{
-		// Extensions Insta-Deny Policy
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:instadeny-policy.html.twig');
-	}
-
-	public function validationPolicyAction()
-	{
-		// Extensions Validation Policy
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:validation-policy.html.twig');
 	}
 
 	public function epvAction(Request $request)
