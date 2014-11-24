@@ -442,6 +442,8 @@ class GlobalsExtension extends \Twig_Extension
 			'extensions_wiki_composer'				=> 'https://wiki.phpbb.com/Extension_meta_data',
 			'extensions_wiki_dependency_injection'	=> 'https://wiki.phpbb.com/Dependency_Injection_Container',
 			'extensions_wiki_migrations'			=> 'https://wiki.phpbb.com/Migrations',
+			'extension_wiki_core_events'			=> 'https://wiki.phpbb.com/Event_List',
+			'extension_template_events'				=> 'https://github.com/phpbb/phpbb/blob/develop-ascraeus/phpBB/docs/events.md',
 
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 
