@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package PhpbbWebsiteInterfaceBundle
+ * @package AppBundle
  * @copyright (c) 2014 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC, Paul, VSE & battye
@@ -66,7 +66,7 @@ class ExtensionsController extends Controller
 			'extensions' => $officialExtensions,
 		);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:official-extensions.html.twig', $templateVariables);
+		return $this->render('AppBundle:Extensions:official-extensions.html.twig', $templateVariables);
 	}
 
 	public function policiesAction()
@@ -80,7 +80,7 @@ class ExtensionsController extends Controller
 			)
 		);
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:rules-policies.html.twig', $templateVariables);
+		return $this->render('AppBundle:Extensions:rules-policies.html.twig', $templateVariables);
 	}
 
 	public function epvAction(Request $request)
@@ -93,7 +93,7 @@ class ExtensionsController extends Controller
 		if ($github)
 		{
 			$results = $this->getDoctrine()
-				->getRepository('PhpbbWebsiteInterfaceBundle:EpvResults')
+				->getRepository('AppBundle:EpvResults')
 				->findByGithub($github);
 			$em = $this->getDoctrine()->getManager();
 
@@ -136,6 +136,6 @@ class ExtensionsController extends Controller
 
 		}
 
-		return $this->render('PhpbbWebsiteInterfaceBundle:Extensions:epv.html.twig', $templateVariables);
+		return $this->render('AppBundle:Extensions:epv.html.twig', $templateVariables);
 	}
 }

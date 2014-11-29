@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package PhpbbWebsiteInterfaceBundle
+ * @package AppBundle
  * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
@@ -51,7 +51,7 @@ class GlobalController extends Controller
 			'announcements_forum'   => '/community/viewforum.php?f=' . $announcement_forum,
 			'announcements'         => $announcements,);
 
-		$content = $this->renderView('PhpbbWebsiteInterfaceBundle:Global:index.html.twig', $templateVariables);
+		$content = $this->renderView('AppBundle:Global:index.html.twig', $templateVariables);
 		$response = new Response($content);
 		$response->headers->set('X-Cache-Blog', $cacheStatus);
 		return $response;

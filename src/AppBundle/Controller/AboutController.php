@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package PhpbbWebsiteInterfaceBundle
+ * @package AppBundle
  * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
@@ -21,7 +21,7 @@ class AboutController extends Controller
             'TRANSLATIONS_APPLY'	=> '/languages/apply.php',
         );
 
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:getInvolved.html.twig', $templateVariables);
+        return $this->render('AppBundle:About:getInvolved.html.twig', $templateVariables);
     }
 
     public function contactAction()
@@ -30,6 +30,6 @@ class AboutController extends Controller
             'ICON_POST_REPORT'	=> '/community/styles/prosilver/imageset/icon_post_report.gif',
         );
 
-        return $this->render('PhpbbWebsiteInterfaceBundle:About:contact.html.twig', $templateVariables);
+        return $this->render('AppBundle:About:contact.html.twig', $templateVariables);
     }
 }

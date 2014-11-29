@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package PhpbbWebsiteInterfaceBundle
+ * @package AppBundle
  * @copyright (c) 2014 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
@@ -41,7 +41,7 @@ class DownloadsController extends Controller
 			'packages' => $packages,
 		);
 
-		$content = $this->renderView('PhpbbWebsiteInterfaceBundle::downloads.html.twig', $templateVariables);
+		$content = $this->renderView('AppBundle::downloads.html.twig', $templateVariables);
 		$response = new Response($content);
 
 		// Set caching headers

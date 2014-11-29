@@ -1,31 +1,31 @@
-PhpbbWebsiteInterfaceBundle_homepage:
+AppBundle_homepage:
     path:  /
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Global:home }
+    defaults: { _controller: AppBundle:Global:home }
 
 phpBBWebsite_getInvolved:
     path:  /get-involved/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:About:getInvolved }
+    defaults: { _controller: AppBundle:About:getInvolved }
     methods:  [GET]
 
 phpBBWebsite_demo:
     path:  /demo/
     defaults:
-        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
-        template: PhpbbWebsiteInterfaceBundle:Global:demo.html.twig
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Global:demo.html.twig
     methods:  [GET]
 
 phpBBWebsite_customise:
     path:  /customise/
     defaults:
-        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
-        template: PhpbbWebsiteInterfaceBundle:Global:customise.html.twig
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Global:customise.html.twig
     methods:  [GET]
 
 phpBBWebsite_ideas:
     path:  /ideas/
     defaults:
-        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
-        template: PhpbbWebsiteInterfaceBundle:Global:ideas.html.twig
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Global:ideas.html.twig
     methods:  [GET]
 
 phpBBWebsite_About_contact_redirect:
@@ -36,25 +36,25 @@ phpBBWebsite_About_contact_redirect:
         permanent: true
 
 phpBBWebsite_About:
-    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/about.yml"
+    resource: "@AppBundle/Resources/config/routing/about.yml"
     prefix:   /about
 
 phpBBWebsite_Mods:
-    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/mods.yml"
+    resource: "@AppBundle/Resources/config/routing/mods.yml"
     prefix:   /mods
 
 phpBBWebsite_Development:
-    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/development.yml"
+    resource: "@AppBundle/Resources/config/routing/development.yml"
     prefix:   /development
 
 phpBBWebsite_Support:
-    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/support.yml"
+    resource: "@AppBundle/Resources/config/routing/support.yml"
     prefix:   /support
 
 phpBBWebsite_Extensions:
-    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/extensions.yml"
+    resource: "@AppBundle/Resources/config/routing/extensions.yml"
     prefix:   /extensions
 
 phpBBWebsite_Styles:
-    resource: "@PhpbbWebsiteInterfaceBundle/Resources/config/routing/styles.yml"
+    resource: "@AppBundle/Resources/config/routing/styles.yml"
     prefix:   /styles

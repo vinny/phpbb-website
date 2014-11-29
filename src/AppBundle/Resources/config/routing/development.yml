@@ -1,18 +1,18 @@
 phpBBWebsite_Development_home:
     path:  /
     defaults:
-        _controller: PhpbbWebsiteInterfaceBundle:StaticTemplate:staticTemplate
-        template: PhpbbWebsiteInterfaceBundle:Development:home.html.twig
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Development:home.html.twig
     methods:  [GET]
 
 phpBBWebsite_Development_prosilver:
     path: /prosilver/
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Development:prosilver, page: 1 }
+    defaults: { _controller: AppBundle:Development:prosilver, page: 1 }
     methods:  [GET]
 
 phpBBWebsite_Development_prosilver_page:
     path: /prosilver/{page}
-    defaults: { _controller: PhpbbWebsiteInterfaceBundle:Development:prosilver, page: 1 }
+    defaults: { _controller: AppBundle:Development:prosilver, page: 1 }
     methods:  [GET]
     requirements:
         page:  \d+

@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package PhpbbWebsiteInterfaceBundle
+ * @package AppBundle
  * @copyright (c) 2013 phpBB Group
  * @license http://opensource.org/licenses/gpl-3.0.php GNU General Public License v3
  * @author MichaelC
@@ -51,7 +51,7 @@ class DevelopmentController extends Controller
 
             'IN_DEV_PROSILVER'	=> true,);
 
-        return $this->render('PhpbbWebsiteInterfaceBundle:Development:prosilver.html.twig', $templateVariables);
+        return $this->render('AppBundle:Development:prosilver.html.twig', $templateVariables);
     }
 
     private function getProsilverPageData()
