@@ -8,14 +8,14 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Controller;
+namespace AppBundle\Controller;
 
 use Phpbb\Epv\Output\HtmlOutput;
 use Phpbb\Epv\Output\Output;
 use Phpbb\Epv\Tests\TestStartup;
-use Phpbb\WebsiteInterfaceBundle\Entity\EpvResults;
+use AppBundle\Entity\EpvResults;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Phpbb\WebsiteInterfaceBundle\Helper\Extensions\OfficialExtension;
+use AppBundle\Helper\Extensions\OfficialExtension;
 use Symfony\Component\HttpFoundation\Request;
 
 // Controller for Extensions pages

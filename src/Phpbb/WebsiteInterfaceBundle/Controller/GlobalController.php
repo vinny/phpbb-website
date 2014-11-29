@@ -8,9 +8,9 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Controller;
+namespace AppBundle\Controller;
 
-use Phpbb\WebsiteInterfaceBundle\Wrappers\PhpbbHandling;
+use AppBundle\Wrappers\PhpbbHandling;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 

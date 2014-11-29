@@ -8,7 +8,7 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Twig;
+namespace AppBundle\Twig;
 
 class GlobalsExtension extends \Twig_Extension
 {

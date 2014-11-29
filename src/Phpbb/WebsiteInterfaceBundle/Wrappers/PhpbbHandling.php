@@ -8,7 +8,7 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Wrappers;
+namespace AppBundle\Wrappers;
 
 class PhpbbHandling
 {

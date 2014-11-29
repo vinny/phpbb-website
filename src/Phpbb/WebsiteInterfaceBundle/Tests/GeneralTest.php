@@ -10,7 +10,7 @@
 
 // Theses tests check the test suite as opposed to the actual application
 
-namespace Phpbb\WebsiteInterfaceBundle\Tests;
+namespace AppBundle\Tests;
 
 class GeneralTest extends \PHPUnit_Framework_TestCase
 {

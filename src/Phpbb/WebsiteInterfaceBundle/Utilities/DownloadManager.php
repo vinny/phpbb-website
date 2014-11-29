@@ -8,7 +8,7 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Utilities;
+namespace AppBundle\Utilities;
 
 class DownloadManager
 {

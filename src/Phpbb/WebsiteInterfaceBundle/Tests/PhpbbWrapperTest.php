@@ -8,9 +8,9 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Tests;
+namespace AppBundle\Tests;
 
-use Phpbb\WebsiteInterfaceBundle\Wrappers\PhpbbHandling;
+use AppBundle\Wrappers\PhpbbHandling;
 
 class PhpbbWrapperTest extends \PHPUnit_Framework_TestCase
 {

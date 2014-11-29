@@ -8,7 +8,7 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Factory;
+namespace AppBundle\Factory;
 
 class CacheFactory
 {

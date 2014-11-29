@@ -8,7 +8,7 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle;
+namespace AppBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

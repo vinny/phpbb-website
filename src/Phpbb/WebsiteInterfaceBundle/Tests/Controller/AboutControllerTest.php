@@ -8,9 +8,9 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Tests\Controller;
+namespace AppBundle\Tests\Controller;
 
-use Phpbb\WebsiteInterfaceBundle\Tests\Controller;
+use AppBundle\Tests\Controller;
 
 class AboutControllerTest extends BootstrapTestSuite
 {

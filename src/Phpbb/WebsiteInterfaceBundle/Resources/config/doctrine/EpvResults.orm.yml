@@ -1,4 +1,4 @@
-Phpbb\WebsiteInterfaceBundle\Entity\EpvResults:
+AppBundle\Entity\EpvResults:
     type: entity
     table: null
     id:

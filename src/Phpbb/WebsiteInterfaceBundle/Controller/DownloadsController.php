@@ -8,12 +8,12 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Controller;
+namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Phpbb\WebsiteInterfaceBundle\Utilities\DownloadManager;
+use AppBundle\Utilities\DownloadManager;
 use Symfony\Component\HttpFoundation\Request;
-use Phpbb\WebsiteInterfaceBundle\Entity\Download;
+use AppBundle\Entity\Download;
 
 class DownloadsController extends Controller
 {

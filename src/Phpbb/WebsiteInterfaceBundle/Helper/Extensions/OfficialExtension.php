@@ -8,7 +8,7 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Helper\Extensions;
+namespace AppBundle\Helper\Extensions;
 
 // A simple helper class to help us iterate through officially sanctioned extensions
 class OfficialExtension

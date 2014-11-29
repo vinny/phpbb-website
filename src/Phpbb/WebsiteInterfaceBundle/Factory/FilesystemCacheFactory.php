@@ -8,7 +8,7 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Factory;
+namespace AppBundle\Factory;
 use Doctrine\Common\Cache\FilesystemCache;
 
 class FilesystemCacheFactory

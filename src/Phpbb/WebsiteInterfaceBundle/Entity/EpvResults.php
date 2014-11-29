@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpbb\WebsiteInterfaceBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,7 +28,7 @@ class EpvResults
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -51,7 +51,7 @@ class EpvResults
     /**
      * Get github
      *
-     * @return string 
+     * @return string
      */
     public function getGithub()
     {
@@ -74,7 +74,7 @@ class EpvResults
     /**
      * Get runtime
      *
-     * @return integer 
+     * @return integer
      */
     public function getRuntime()
     {
