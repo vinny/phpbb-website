@@ -8,133 +8,133 @@
  *
  */
 
-namespace Phpbb\WebsiteInterfaceBundle\Tests\Controller;
+namespace AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class BootstrapTestSuite extends WebTestCase
 {
-    public $client;
-    public $crawler;
-    public $response;
+	public $client;
+	public $crawler;
+	public $response;
 
-    protected function setupTest($path)
-    {
-        $client = static::createClient();
-        $this->setClient($client);
-        $client->enableProfiler();
-        $crawler = $client->request('GET', $path);
-        $response = $client->getResponse();
-        $this->setupBootstrapping($client, $crawler, $response);
+	protected function setupTest($path)
+	{
+		$client = static::createClient();
+		$this->setClient($client);
+		$client->enableProfiler();
+		$crawler = $client->request('GET', $path);
+		$response = $client->getResponse();
+		$this->setupBootstrapping($client, $crawler, $response);
 
-        return array('client' => $client, 'crawler' => $crawler, 'response' => $response);
-    }
+		return array('client' => $client, 'crawler' => $crawler, 'response' => $response);
+	}
 
-    public function setupBootstrapping($client, $crawler, $response)
-    {
-        $this->setClient($client);
-        $this->setCrawler($crawler);
-        $this->setResponse($response);
-    }
+	public function setupBootstrapping($client, $crawler, $response)
+	{
+		$this->setClient($client);
+		$this->setCrawler($crawler);
+		$this->setResponse($response);
+	}
 
-    public function globalTests($status = 200, $queries = 20)
-    {
-        $this->assertTrue($this->crawler->filter('html:contains("phpBB Limited")')->count() > 0, 'Footer Check');
-        $this->assertTrue($this->crawler->filter('html:contains("About")')->count() > 0, 'Header Check');
-        $this->assertEquals($this->response->getStatusCode(), $status, 'Response Code Check');
-        $this->assertTrue($this->crawler->filter('html:contains("advertisements")')->count() > 0, 'Advertisments Check');
+	public function globalTests($status = 200, $queries = 20)
+	{
+		$this->assertTrue($this->crawler->filter('html:contains("phpBB Limited")')->count() > 0, 'Footer Check');
+		$this->assertTrue($this->crawler->filter('html:contains("About")')->count() > 0, 'Header Check');
+		$this->assertEquals($this->response->getStatusCode(), $status, 'Response Code Check');
+		$this->assertTrue($this->crawler->filter('html:contains("advertisements")')->count() > 0, 'Advertisments Check');
 
-        if (strpos(strval($status), '2') !== false) {
-            $this->assertTrue($this->client->getResponse()->isSuccessful(), 'Response is a sucessful one');
-        }
+		if (strpos(strval($status), '2') !== false) {
+			$this->assertTrue($this->client->getResponse()->isSuccessful(), 'Response is a sucessful one');
+		}
 
-        if ($profile = $this->client->getProfile()) {
-            $this->queryCheck($queries, $profile);
-        }
-    }
+		if ($profile = $this->client->getProfile()) {
+			$this->queryCheck($queries, $profile);
+		}
+	}
 
-    private function queryCheck($queries, $profile)
-    {
-        // Shouldn't really have more than 20 queries on any page
-        $this->assertLessThan(
-            $queries,
-            $profile->getCollector('db')->getQueryCount(),
-            ('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
-            );
-    }
+	private function queryCheck($queries, $profile)
+	{
+		// Shouldn't really have more than 20 queries on any page
+		$this->assertLessThan(
+			$queries,
+			$profile->getCollector('db')->getQueryCount(),
+			('Checks that query count is less than' . $queries . ' (token ' .  $profile->getToken() .')')
+			);
+	}
 
-    public function get($dependency)
-    {
-        $container = $this->client->getContainer();
+	public function get($dependency)
+	{
+		$container = $this->client->getContainer();
 
-        return $container->get($dependency);
-    }
+		return $container->get($dependency);
+	}
 
-    private function dropTablesInDatabase($symfonyConnection, $phpbbConnection)
-    {
-        // Check what tables exists
-        $symfonyOldTables = $symfonyConnection->fetchAll('SHOW TABLES');
-        $phpbbOldTables = $phpbbConnection->fetchAll('SHOW TABLES');
+	private function dropTablesInDatabase($symfonyConnection, $phpbbConnection)
+	{
+		// Check what tables exists
+		$symfonyOldTables = $symfonyConnection->fetchAll('SHOW TABLES');
+		$phpbbOldTables = $phpbbConnection->fetchAll('SHOW TABLES');
 
-        // Delete existing tables
-        foreach ($symfonyOldTables as $i => $oldTable) {
-            foreach ($oldTable as $key => $oldTableName) {
-                $symfonyConnection->query('DROP TABLE '. $oldTableName);
-            }
-        }
+		// Delete existing tables
+		foreach ($symfonyOldTables as $i => $oldTable) {
+			foreach ($oldTable as $key => $oldTableName) {
+				$symfonyConnection->query('DROP TABLE '. $oldTableName);
+			}
+		}
 
-        foreach ($phpbbOldTables as $i => $oldTable) {
-            foreach ($oldTable as $key => $oldTableName) {
-                $phpbbConnection->query('DROP TABLE '. $oldTableName);
-            }
-        }
-    }
+		foreach ($phpbbOldTables as $i => $oldTable) {
+			foreach ($oldTable as $key => $oldTableName) {
+				$phpbbConnection->query('DROP TABLE '. $oldTableName);
+			}
+		}
+	}
 
-    public function setupDatabase($symfonyTables, $phpbbTables)
-    {
-        // Connections to databases
-        $symfonyConnection = $this->get('database_connection');
-        $phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
+	public function setupDatabase($symfonyTables, $phpbbTables)
+	{
+		// Connections to databases
+		$symfonyConnection = $this->get('database_connection');
+		$phpbbConnection = $this->get('doctrine.dbal.phpbb_connection');
 
-        $this->dropTablesInDatabase($symfonyConnection, $phpbbConnection);
+		$this->dropTablesInDatabase($symfonyConnection, $phpbbConnection);
 
-        // Add each symfony table's fixtures for those tables needed
-        foreach ($symfonyTables as $symfonyTable) {
-            $sql = $this->getSymfonyFixtures($symfonyTable);
+		// Add each symfony table's fixtures for those tables needed
+		foreach ($symfonyTables as $symfonyTable) {
+			$sql = $this->getSymfonyFixtures($symfonyTable);
 
-            if ($sql) {
-                $symfonyConnection->query($sql);
-                unset($sql);
-            }
-        }
+			if ($sql) {
+				$symfonyConnection->query($sql);
+				unset($sql);
+			}
+		}
 
-        // Add each phpbb table's fixtures for those tables needed
-        foreach ($phpbbTables as $phpbbTable) {
-            $sql = $this->getPhpbbFixtures($phpbbTable);
+		// Add each phpbb table's fixtures for those tables needed
+		foreach ($phpbbTables as $phpbbTable) {
+			$sql = $this->getPhpbbFixtures($phpbbTable);
 
-            if ($sql) {
-                $phpbbConnection->query($sql);
-                unset($sql);
-            }
-        }
+			if ($sql) {
+				$phpbbConnection->query($sql);
+				unset($sql);
+			}
+		}
 
-        return;
-    }
+		return;
+	}
 
-    private function getSymfonyFixtures($table)
-    {
-        switch ($table) {
-            // Case statement
-        }
+	private function getSymfonyFixtures($table)
+	{
+		switch ($table) {
+			// Case statement
+		}
 
-        return (isset($sql) ? $sql : null);
-    }
+		return (isset($sql) ? $sql : null);
+	}
 
-    private function getPhpbbFixtures($table)
-    {
-        switch ($table) {
-            case 'community_posts':
-            $sql = "
+	private function getPhpbbFixtures($table)
+	{
+		switch ($table) {
+			case 'community_posts':
+			$sql = "
 CREATE TABLE IF NOT EXISTS `community_posts` (
   `post_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -255,75 +255,75 @@ break;
 return (isset($sql) ? $sql : null);
 }
 
-    /**
-     * Gets the value of client.
-     *
-     * @return mixed
-     */
-    public function getClient()
-    {
-        return $this->client;
-    }
+	/**
+	 * Gets the value of client.
+	 *
+	 * @return mixed
+	 */
+	public function getClient()
+	{
+		return $this->client;
+	}
 
-    /**
-     * Sets the value of client.
-     *
-     * @param mixed $client the client
-     *
-     * @return self
-     */
-    public function setClient($client)
-    {
-        $this->client = $client;
+	/**
+	 * Sets the value of client.
+	 *
+	 * @param mixed $client the client
+	 *
+	 * @return self
+	 */
+	public function setClient($client)
+	{
+		$this->client = $client;
 
-        return $this;
-    }
+		return $this;
+	}
 
-    /**
-     * Gets the value of crawler.
-     *
-     * @return mixed
-     */
-    public function getCrawler()
-    {
-        return $this->crawler;
-    }
+	/**
+	 * Gets the value of crawler.
+	 *
+	 * @return mixed
+	 */
+	public function getCrawler()
+	{
+		return $this->crawler;
+	}
 
-    /**
-     * Sets the value of crawler.
-     *
-     * @param mixed $crawler the crawler
-     *
-     * @return self
-     */
-    public function setCrawler($crawler)
-    {
-        $this->crawler = $crawler;
+	/**
+	 * Sets the value of crawler.
+	 *
+	 * @param mixed $crawler the crawler
+	 *
+	 * @return self
+	 */
+	public function setCrawler($crawler)
+	{
+		$this->crawler = $crawler;
 
-        return $this;
-    }
+		return $this;
+	}
 
-    /**
-     * Gets the value of response.
-     *
-     * @return mixed
-     */
-    public function getResponse()
-    {
-        return $this->response;
-    }
+	/**
+	 * Gets the value of response.
+	 *
+	 * @return mixed
+	 */
+	public function getResponse()
+	{
+		return $this->response;
+	}
 
-    /**
-     * Sets the value of response.
-     *
-     * @param mixed $response the response
-     *
-     * @return self
-     */
-    public function setResponse($response)
-    {
-        $this->response = $response;
+	/**
+	 * Sets the value of response.
+	 *
+	 * @param mixed $response the response
+	 *
+	 * @return self
+	 */
+	public function setResponse($response)
+	{
+		$this->response = $response;
 
-        return $this;
-    }
+		return $this;
+	}
 }
