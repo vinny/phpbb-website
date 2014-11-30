@@ -117,9 +117,9 @@ class ExtensionsController extends Controller
 			if (!$fail)
 			{
 				$int_output = new HtmlOutput();
-				$output     = new Output($int_output, $debug);
+				$output	 = new Output($int_output, $debug);
 
-				$test                         = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
+				$test						 = new TestStartup($output, TestStartup::TYPE_GITHUB, $github, $debug);
 				$templateVariables['results'] = $int_output->getBuffer();
 
 				$result = new EpvResults();
