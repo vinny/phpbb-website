@@ -244,7 +244,7 @@ $this->user->add_lang_ext(‘acme/demo’, ‘common’);</pre>
 $this->user->add_lang_ext(‘acme/demo’, array(‘common’, ‘controller’));</pre>
 		<p>The above would load the two corresponding language files:<br /><code class="inline">acme/demo/language/en/common.php</code><br /><code class="inline">acme/demo/language/en/controller.php</code></p>
 		<p>It is preferred to use the above method to load language files at any point in your extension’s code execution where the language keys are needed. However, if it is neccessary to load an extension's language keys globally, so they are available at all times, the <code class="inline">core.user_setup</code> event should be used.</p>
-		<div class="note-box green"><strong>Pro-Tip:</strong> Language files can be given any name. However, language files that start with <code class="inline">permissions_</code> or <code class="inline">info_acp_</code> will be automatically loaded within the ACP for permission and module name variables, respectively, and do not need to be loaded using the previously discussed functions or events.</div>
+		<div class="note-box green"><strong>Pro-Tip:</strong> Language files can be given any name. However, language files that start with <code class="inline">permissions_</code> or <code class="inline">info_acp_</code> will be automatically loaded within the ACP for permission and ACP module name variables, respectively, and do not need to be loaded using the previously discussed functions or events.</div>
 
 		<hr />
 
