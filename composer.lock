@@ -1389,12 +1389,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:phpbb/website-assets.git",
-                "reference": "a36f4f6e00d7d3643f0ce8c752a7d71b89dacc39"
+                "reference": "a712101af408677cd575dc4211e8db1195c21eb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/a36f4f6e00d7d3643f0ce8c752a7d71b89dacc39",
-                "reference": "a36f4f6e00d7d3643f0ce8c752a7d71b89dacc39",
+                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/a712101af408677cd575dc4211e8db1195c21eb2",
+                "reference": "a712101af408677cd575dc4211e8db1195c21eb2",
                 "shasum": ""
             },
             "require": {
@@ -1405,7 +1405,7 @@
                 "source": "https://github.com/phpbb/website-assets/tree/master",
                 "issues": "https://github.com/phpbb/website-assets/issues"
             },
-            "time": "2015-02-05 00:32:17"
+            "time": "2015-02-05 16:36:59"
         },
         {
             "name": "psr/log",
