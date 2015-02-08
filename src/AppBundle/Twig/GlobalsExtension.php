@@ -66,6 +66,8 @@ class GlobalsExtension extends \Twig_Extension
 			'advertise_path'	=> '/about/advertise/',
 			'ABOUT_ADVERTISE'	=> '/about/advertise/',
 
+			'release_path'		=> '/about/release/',
+
 			'demo_path'			=> '/demo/',
 			'DEMO'				=> '/demo/',
 
