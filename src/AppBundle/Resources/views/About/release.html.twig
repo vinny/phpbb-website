@@ -1,0 +1,54 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Release Process{% endblock title %}
+
+{% block phpbb_body_class %}about{% endblock %}
+
+{% block body %}
+<div id="page-body">
+
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+	<strong>&#8249;</strong> <a href="{{ about_path }}">About</a>
+	<strong>&#8249;</strong> <a href="{{ release_path }}">Release Process</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep advertise-contact">Release Process</h2>
+
+	<p>
+		<strong>Latest Branch of phpBB</strong>: 3.1.x (Ascraeus)<br />
+		<strong>Branches in 'maintenance' stage</strong>: 3.0.x (Olympus), 3.1.x (Ascraeus)<br />
+		<strong>Next branch of phpBB</strong>: 3.2.x (Rhea) <br />
+	</p>
+
+	<p>phpBB releases are time-based meaning we release a new minor (x.y) or major (x) release once every year around December. In between minor releases we release maintenance releases (x.y.z) which include bug and, when nessasary, security fixes. On occassion we also release patch level releases (x.y.z-PLn) which fix important issues introduced in a maintenance release.</p>
+
+	<h2>End of Life / End of Maintenance</h2>
+	<p>
+		End of Maintenance (EOM) occurs to a branch 18 months after it's 'gold' (3.x.0) release. When this occurs we:
+		<ul>
+			<li>Recommend you upgrade to the latest branch of phpBB</li>
+			<li>Only patch security issues in new maintenance releases</li>
+		</ul><p/>
+	</p>
+	<p>
+		End of Life (EOL) occurs to a branch 24 months after it's 'gold' (3.x.0) release. When this occurs we:
+		<ul>
+			<li>Strongly recommend you upgrade your version of phpBB</li>
+			<li>No longer provide support for versions in a branch of phpBB except in upgrading from it to the latest branch of phpBB</li>
+			<li>No longer patch security issues</li>
+			<li>No longer make any releases of this branch</li>
+			<li>No longer allow contributions for this branch to be submitted to our customisation database</li>
+			<li>Begin actively purging documentation for this branch of phpBB</li>
+		</ul><p/>
+	</p>
+</div>
+
+<div id="extras">
+	{{ include('AppBundle:About:menu.html.twig') }}
+</div>
+
+</div>
+{% endblock %}
