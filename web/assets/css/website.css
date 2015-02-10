@@ -121,6 +121,9 @@ body {
 	font-size: 1.2em;
 	text-align: justify;
 }
+#main p.left, #main-extra p.left {
+	text-align: left;
+}
 #main strong, #main-extra strong {
 	color: #222222;
 }
@@ -333,7 +336,7 @@ a.text-links-favicon {
 }
 
 /* Tabs */
-#tabs  ul {
+#tabs ul {
 	font-size: 10px;
 	line-height: 14px;
 }
@@ -407,8 +410,15 @@ a.text-links-favicon {
 	color: #3c4e20;
 }
 
-.mini-tag a {
+.mini-tag a, a.mini-tag {
 	text-decoration: none !important;
+}
+.mini-tag a:hover, a.mini-tag:hover {
+	color: #D31141;
+}
+
+.mini-tags-group {
+	display: inline-block;
 }
 
 /* Comparisons */

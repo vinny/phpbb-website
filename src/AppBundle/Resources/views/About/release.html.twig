@@ -17,81 +17,72 @@
 <div id="main">
 	<h2 class="imgrep advertise-contact">Release & Update Policy</h2>
 
-	<p>
-		<strong>Latest Branch of phpBB</strong>: 3.1.x (Ascraeus)<br />
-		<strong>Branches in 'maintenance' stage</strong>: 3.0.x (Olympus), 3.1.x (Ascraeus)<br />
-		<strong>Development Branch</strong>: 3.2.x (Rhea) <br />
-	</p>
+	<p class="left"><strong>Latest Branch of phpBB</strong>: <a class="mini-tag blue" href="{{ downloads_path_31x }}">3.1.x (Ascraeus)</a></p>
+	<p class="left"><strong>Branches in 'maintenance' stage</strong>: <span class="mini-tags-group"><a class="mini-tag dirty-green" href="{{ downloads_path_30x }}">3.0.x (Olympus)</a>, <a class="mini-tag blue" href="{{ downloads_path_31x }}">3.1.x (Ascraeus)</a></span></p>
+	<p class="left"><strong>Development Branch</strong>: <a class="mini-tag orange" href="{{ downloads_path_32x }}">3.2.x (Rhea)</a></p>
 
-	<p>phpBB releases are time-based meaning we release a new minor (x.y) or major (x) update once every year around November/December. In between minor releases we release maintenance releases (x.y.z) which include bug and, when required, security fixes. On occassion we also release patch level releases (x.y.z-PLn) which fix important issues introduced in a maintenance release.</p>
+	<p>phpBB releases are time-based meaning we release a new minor (x.y) or major (x) update once every year around November/December. In between minor releases we release maintenance releases (x.y.z) which include bug and, when required, security fixes. On occasion we also release patch level releases (x.y.z-PLn) which fix important issues introduced in a maintenance release.</p>
 
 	<h2>End of Life / End of Maintenance</h2>
-	<p>
-		End of Maintenance (EOM) occurs to a branch 18 months after it's first stable release (3.x.0) release. This occurs in May each year. When this occurs we:
-		<ul>
-			<li>Recommend you upgrade to the latest stable branch of phpBB</li>
-			<li>Only patch security issues in new maintenance releases</li>
-		</ul><p/>
-	</p>
-	<p>
-		End of Life (EOL) occurs to a branch 24 months after it's first stable release (3.x.0) release. This occurs in November each year. When this occurs we:
-		<ul>
-			<li>Strongly recommend you upgrade your version of phpBB to the latest stable release</li>
-			<li>No longer provide support for versions in a branch of phpBB except in upgrading from it to the latest branch of phpBB</li>
-			<li>No longer patch security issues</li>
-			<li>No longer make any releases of this branch</li>
-			<li>No longer allow contributions for this branch to be submitted to our customisation database</li>
-			<li>Begin actively purging documentation for this branch of phpBB</li>
-		</ul></p>
-	</p>
+	<p>End of Maintenance (EOM) occurs to a branch 18 months after it's first stable release (3.x.0) release. This occurs in May each year. When this occurs we:</p>
+	<ul class="list-margin">
+		<li>Recommend you upgrade to the latest stable branch of phpBB</li>
+		<li>Only patch security issues in new maintenance releases</li>
+	</ul><br />
+
+	<p>End of Life (EOL) occurs to a branch 24 months after it's first stable release (3.x.0) release. This occurs in November each year. When this occurs we:</p>
+	<ul class="list-margin">
+		<li>Strongly recommend you upgrade your version of phpBB to the latest stable release</li>
+		<li>No longer provide support for versions in a branch of phpBB except in upgrading from it to the latest branch of phpBB</li>
+		<li>No longer patch security issues</li>
+		<li>No longer make any releases of this branch</li>
+		<li>No longer allow contributions for this branch to be submitted to our customisation database</li>
+		<li>Begin actively purging documentation for this branch of phpBB</li>
+	</ul>
 
 	<h2>phpBB 3.0.x (Olympus)</h2>
-	<p>
-		phpBB 3.0.x is a special case due to the length of it's time in 'maintenance period'. It will reach its 'End of Maintenance' period in May 2015 and its 'End of Life' period will occur in November 2015.
-	</p>
+	<p>phpBB 3.0.x is a special case due to the length of it's time in 'maintenance period'. It will reach its 'End of Maintenance' period in May 2015 and its 'End of Life' period will occur in November 2015.</p>
 
 	<h2>Upcoming Timetable</h2>
-	<table>
-		<colgroup>
-			<col width="10%" />
-			<col width="30%" />
-			<col width="25%" />
-			<col width="25%" />
-		</colgroup>
-		<thead>
-			<tr>
-				<th class="header">Version</th>
-				<th class="header">Release</th>
-				<th class="header">End of Maintenance</th>
-				<th class="header">End of Life</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>3.0</td>
-				<td>December 2007</td>
-				<td>May 2015</td>
-				<td>November 2015</td>
-			</tr>
-			<tr>
-				<td>3.1</td>
-				<td>November 2014</td>
-				<td>May 2016</td>
-				<td>November 2016</td>
-			</tr>
-			<tr>
-				<td>3.2</td>
-				<td>November/December 2015</td>
-				<td>May 2017</td>
-				<td>November 2017</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="forumbg forumbg-table">
+		<div class="inner">
+			<table class="table1 show-header responsive">{# TODO: show-header and responsive classes are usually added automatically by prosilver, but not in this case apparently #}
+				<thead>
+					<tr>
+						<th class="header">Version</th>
+						<th class="header">Release</th>
+						<th class="header">End of Maintenance</th>
+						<th class="header">End of Life</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="bg1">
+						<td><span class="mini-tag dirty-green">3.0</span></td>
+						<td>December 2007</td>
+						<td>May 2015</td>
+						<td>November 2015</td>
+					</tr>
+					<tr class="bg2">
+						<td><span class="mini-tag blue">3.1</span></td>
+						<td>November 2014</td>
+						<td>May 2016</td>
+						<td>November 2016</td>
+					</tr>
+					<tr class="bg1">
+						<td><span class="mini-tag orange">3.2</span></td>
+						<td>November/December 2015</td>
+						<td>May 2017</td>
+						<td>November 2017</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
 	<h2>Contributing</h2>
 	<p>
-		If you want to contribute a bug fix and it affects all maintained branches it will go into the next maintenance release of the lowest supported branch. Therefore it will likely go into the next phpBB 3.0.x release (Github{#(TODO:Add a little icon here)#}: <a href="https://github.com/phpbb/phpbb/tree/develop-olympus">develop-olympus</a>) or for an 3.1.x only bug into the next phpBB 3.1.x release (Github{#(TODO:Add a little icon here)#}: <a href="https://github.com/phpbb/phpbb/tree/develop-ascraeus">develop-ascraeus</a>).<br /><br />
-		If you want to contribute a new feature it will go into the development branch and go into phpBB 3.2.0 (Github{#(TODO:Add a little icon here)#}: <a href="https://github.com/phpbb/phpbb/tree/develop">develop</a>).
+		If you want to contribute a bug fix and it affects all maintained branches it will go into the next maintenance release of the lowest supported branch. Therefore it will likely go into the next phpBB 3.0.x release (<img src="{{ asset('assets/images/icons/github/GitHub-Mark-16px-plus.png') }}" style="vertical-align: bottom;" /> <a href="{{ dev_github_phpbb_30x }}">develop-olympus</a>) or for an 3.1.x only bug into the next phpBB 3.1.x release (<img src="{{ asset('assets/images/icons/github/GitHub-Mark-16px-plus.png') }}" style="vertical-align: bottom;" /> <a href="{{ dev_github_phpbb_31x }}">develop-ascraeus</a>).<br /><br />
+		If you want to contribute a new feature it will go into the development branch and go into phpBB 3.2.0 (<img src="{{ asset('assets/images/icons/github/GitHub-Mark-16px-plus.png') }}" style="vertical-align: bottom;" /> <a href="{{ dev_github_phpbb_32x }}">develop</a>).
 	</p>
 
 </div>
