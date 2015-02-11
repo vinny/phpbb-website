@@ -14,22 +14,22 @@
 	</li>
 </ul>
 
-<div id="main">
+<div id="main" class="wide">
 	<h2 class="imgrep advertise-contact">Release &amp; Update Policy</h2>
 
 	<div class="columns release-versions">
 		<div class="column column-thirds">
-			<strong>latest branch of phpBB</strong>
+			<strong>Latest branch of phpBB</strong>
 			<a class="big-tag double-height blue" href="{{ downloads_path_31x }}">3.1.x (Ascraeus)</a>
 		</div>
 		<div class="column column-thirds">
-			<strong>branches in 'maintenance'</strong>
+			<strong>Branches in 'Maintenance'</strong>
 			<a class="big-tag blue" href="{{ downloads_path_31x }}">3.1.x (Ascraeus)</a>
 			<a class="big-tag dirty-green" href="{{ downloads_path_30x }}">3.0.x (Olympus)</a>
 		</div>
 		<div class="column column-thirds">
-			<strong>development branch</strong>
-			<a class="big-tag double-height purple" href="{{ downloads_path_32x }}">3.2.x (Rhea)</a>
+			<strong>Development branch</strong>
+			<a class="big-tag double-height orange" href="{{ downloads_path_32x }}">3.2.x (Rhea)</a>
 		</div>
 	</div>
 
@@ -81,7 +81,7 @@
 						<td>November 2016</td>
 					</tr>
 					<tr class="bg1">
-						<td><span class="mini-tag purple">3.2</span></td>
+						<td><span class="mini-tag orange">3.2</span></td>
 						<td>November/December 2015</td>
 						<td>May 2017</td>
 						<td>November 2017</td>
@@ -94,10 +94,6 @@
 	<h2>Contributing</h2>
 	<p>If you want to contribute a bug fix and it affects all maintained branches it will go into the next maintenance release of the lowest supported branch. Therefore it will likely go into the next phpBB 3.0.x release (<span class="github-link"> <a href="{{ dev_github_phpbb_30x }}">develop-olympus</a></span>) or for an 3.1.x only bug into the next phpBB 3.1.x release (<span class="github-link"> <a href="{{ dev_github_phpbb_31x }}">develop-ascraeus</a></span>).<br /><br />
 		If you want to contribute a new feature it will go into the development branch and go into phpBB 3.2.0 (<span class="github-link"> <a href="{{ dev_github_phpbb_32x }}">develop</a></span>).</p>
-</div>
-
-<div id="extras">
-	{{ include('AppBundle:About:menu.html.twig') }}
 </div>
 
 </div>
