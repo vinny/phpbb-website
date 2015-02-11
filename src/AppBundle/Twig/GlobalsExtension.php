@@ -73,8 +73,9 @@ class GlobalsExtension extends \Twig_Extension
 
 			'downloads_path'	=> '/downloads/',
 			'downloads_path_32x' => 'https://bamboo.phpbb.com/browse/PHPBB3-RHEA/latestSuccessful/artifact/JOBPACKAGE/Release-Files',
-			'downloads_path_31x' => '/downloads/',
+			'downloads_path_31x' => '/downloads/3.1/',
 			'downloads_path_30x' => '/downloads/3.0/',
+
 			//'DOWNLOADS_SUB'		=> '/downloads/',
 			'DOWNLOADS'			=> '/downloads/',
 			'DOWNLOADS_HEADER'	=> '/downloads/?from=header',
