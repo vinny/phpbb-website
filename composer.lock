@@ -4,8 +4,102 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "900ee414fa4647511395d1184be00835",
+    "hash": "574583c5790f330a70a3309f4b8af4fc",
     "packages": [
+        {
+            "name": "composer/installers",
+            "version": "v1.0.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "1bff8aa77a18f3616f468ed8000cf86a5725bac3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/1bff8aa77a18f3616f468ed8000cf86a5725bac3",
+                "reference": "1bff8aa77a18f3616f468ed8000cf86a5725bac3",
+                "shasum": ""
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": "Composer\\Installers\\Installer",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Composer\\Installers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "http://composer.github.com/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Hurad",
+                "MODX Evo",
+                "OXID",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "annotatecms",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "elgg",
+                "fuelphp",
+                "grav",
+                "installer",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lithium",
+                "magento",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "moodle",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "zend",
+                "zikula"
+            ],
+            "time": "2015-01-11 03:51:11"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.3",
@@ -1288,6 +1382,30 @@
             ],
             "description": "A extension validator for phpBB extensions. Extensions are required to pass the validator when submitted to the extension database.",
             "time": "2015-02-05 18:25:28"
+        },
+        {
+            "name": "phpbb/website-assets",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:phpbb/website-assets.git",
+                "reference": "fbeec2981003eadccc9f64f1f646bd47a8a33c68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpbb/website-assets/zipball/fbeec2981003eadccc9f64f1f646bd47a8a33c68",
+                "reference": "fbeec2981003eadccc9f64f1f646bd47a8a33c68",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "phpbb-style",
+            "support": {
+                "source": "https://github.com/phpbb/website-assets/tree/master",
+                "issues": "https://github.com/phpbb/website-assets/issues"
+            },
+            "time": "2015-02-07 19:18:50"
         },
         {
             "name": "psr/log",
@@ -2874,6 +2992,7 @@
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/data-fixtures": 20,
         "qafoolabs/profiler": 0,
+        "phpbb/website-assets": 20,
         "liuggio/fastest": 20
     },
     "prefer-stable": false,
