@@ -532,8 +532,8 @@ class GlobalsExtension extends \Twig_Extension
 			'SUPPORT_DOCS_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=280664',
 			'styles_tl_name'		=> 'Raimon',
 			'styles_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=253197',
-			'WEBSITE_TL_NAME'		=> 'Marshalrusty',
-			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=151944',
+			'WEBSITE_TL_NAME'		=> 'MichaelC',
+			'WEBSITE_TL_CONTACT'	=> '/community/memberlist.php?mode=viewprofile&u=1175315',
 			'ext_dev_tl_name'		=> 'VSE',
 			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=868795',
 			'ext_tl_name'			=> 'DavidIQ',
@@ -557,7 +557,7 @@ class GlobalsExtension extends \Twig_Extension
 
 			'ROOT_PATH'			=> '/',
 			'THEME_PATH'			=> '/theme',
-			'FAVICON_PATH'		=> '/theme/images/favicons',
+			'FAVICON_PATH'		=> '/assets/images/images/favicons',
 			'YEAR'				=> date('Y'),
 			'ON_TEAM'				=> false,
 
