@@ -118,11 +118,11 @@ class ext extends \phpbb\extension\base
     acme.demo.controller:
         class: acme\demo\controller\main
         arguments:
-            - @config
-            - @controller.helper
-            - @template
-            - @user</pre>
-		<p>Note that <code class="inline">acme.demo.controller</code> is the unique service name for the <samp>main.php</samp> class. This name can be whatever you want, but phpBB extensions should preface them with the vendor and extension name (in this case, acme.demo) to prevent potential conflicts with other extensions or core services. The class is simply the name-spaced path to the <samp>main.php</samp> file. The arguments are the service dependencies required by the class. It is important that the order of the services listed here exactly match the order of these services as arguments in the <samp>main.php</samp> constructor.</p>
+            - '@config'
+            - '@controller.helper'
+            - '@template'
+            - '@user'</pre>
+		<p>Note that <code class="inline">acme.demo.controller</code> is the unique service name for the <samp>main.php</samp> class. This name can be whatever you want, but phpBB extensions should preface them with the vendor and extension name (in this case, acme.demo) to prevent potential conflicts with other extensions or core services. The class is simply the name-spaced path to the <samp>main.php</samp> file. The arguments are the service dependencies required by the class. It is important that the order of the services listed here exactly match the order of these services as arguments in the <samp>main.php</samp> constructor. It is also recommended that any argument beginning with <code class="inline">@</code> or <code class="inline">%</code> symbols be wrapped in single quotes.</p>
 		<p>Most PHP files in an extension should use the dependency injection model with service definitions, particularly controllers and event listeners. The exceptions to this are any ACP files, language files and migration files (which do not currently use the service container).</p>
 		<div class="note-box blue"><strong>Resources:</strong><br />
 			<a href="{{ extensions_wiki_dependency_injection }}">Dependency Injection Container Wiki</a><br />
