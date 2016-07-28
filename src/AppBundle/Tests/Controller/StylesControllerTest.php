@@ -15,7 +15,7 @@ class StylesControllerTest extends BootstrapTestSuite
 {
 	public function testStylesMain()
 	{
-		$objs    = $this->setupTest('/styles/');
+		$objs	= $this->setupTest('/styles/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -31,7 +31,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesSupport()
 	{
-		$objs    = $this->setupTest('/styles/support/');
+		$objs	= $this->setupTest('/styles/support/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -47,7 +47,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesInstalling()
 	{
-		$objs    = $this->setupTest('/styles/installing/');
+		$objs	= $this->setupTest('/styles/installing/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -66,7 +66,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesCreate()
 	{
-		$objs    = $this->setupTest('/styles/create/');
+		$objs	= $this->setupTest('/styles/create/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -85,7 +85,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesTeamOverview()
 	{
-		$objs    = $this->setupTest('/styles/team-overview/');
+		$objs	= $this->setupTest('/styles/team-overview/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -101,7 +101,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesJuniorValidators()
 	{
-		$objs    = $this->setupTest('/styles/junior-validators/');
+		$objs	= $this->setupTest('/styles/junior-validators/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -117,7 +117,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesSSP()
 	{
-		$objs    = $this->setupTest('/styles/ssp/');
+		$objs	= $this->setupTest('/styles/ssp/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -133,7 +133,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesSSP30x()
 	{
-		$objs    = $this->setupTest('/styles/ssp/3.0/');
+		$objs	= $this->setupTest('/styles/ssp/3.0/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -149,7 +149,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesDemo()
 	{
-		$objs    = $this->setupTest('/styles/demo/');
+		$objs	= $this->setupTest('/styles/demo/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
@@ -165,7 +165,7 @@ class StylesControllerTest extends BootstrapTestSuite
 
 	public function testStylesDemoNotReady()
 	{
-		$objs    = $this->setupTest('/styles/demo/3.1/');
+		$objs	= $this->setupTest('/styles/demo/3.1/');
 		$crawler = $objs['crawler'];
 
 		// Title Check
