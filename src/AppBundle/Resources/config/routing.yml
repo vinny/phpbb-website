@@ -60,6 +60,5 @@ phpBBWebsite_Styles:
     prefix:   /styles
 
 phpBBWebsite_viglink:
-    path:  /viglink/
+    path:  /viglink/convert
     defaults: { _controller: AppBundle:VigLink:key }
-    methods:  [GET]
