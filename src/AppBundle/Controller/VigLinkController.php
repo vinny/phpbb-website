@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\{Response, Request};
 
 class VigLinkController extends Controller
 {
-	public function keyAction(Request $request): Response
+	public function keyAction(Request $request)
 	{
 		$sitename = $request->query->get('sitename');
 		$siteId = $request->query->get('uuid');
