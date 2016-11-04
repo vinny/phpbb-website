@@ -33,7 +33,7 @@ class VigLinkController extends Controller
 			'signature' => $signature,]
 		);
 
-		$url = ('https://www.viglink.com/ursers/convertaccount' . $queryParams);
+		$url = ('https://www.viglink.com/users/convertAccount?' . $queryParams);
 
 		$response = new Response($url);
 
