@@ -15,16 +15,22 @@ class VigLinkController extends Controller
 
 		if (!isset($sitename, $siteId, $apiKey))
 		{
+			var_dump('404');
 			throw new Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
 		}
 
 		$subId = md5($sitename . $siteId);
 		$expiration = strtotime("+1 year");
-		$key = $this->getParameter('viglink_api_key');
+		$key = $this->container->hasParameter('viglink_api_key') ? $this->getParameter('viglink_api_key') : $apiKey;
+
+		if (!$this->container->hasParameter('viglink_secret_key')) {
+			throw new Exception('Viglink is not enabled');
+		}
+
 		$secretKey = $this->getParameter('viglink_secret_key');
 
 		$url = ("https://www.viglink.com/users/convertAccount?key=" . $key . "&subId=" . $subId);
-		$signature = hex(hash_hmac('md5', ($url . "-" . $expiration), $secretKey));
+		$signature = bin2hex(hash_hmac('md5', ($url . "-" . $expiration), $secretKey));
 
 		$queryParams = http_build_query(
 			['key' => $key,
@@ -36,6 +42,8 @@ class VigLinkController extends Controller
 		$url = ('https://www.viglink.com/users/convertAccount?' . $queryParams);
 
 		$response = new Response($url);
+
+		var_dump($url);
 
 		return $response;
 	}
