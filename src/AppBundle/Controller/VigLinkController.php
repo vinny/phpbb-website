@@ -15,7 +15,6 @@ class VigLinkController extends Controller
 
 		if (!isset($sitename, $siteId, $apiKey))
 		{
-			var_dump('404');
 			throw new Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
 		}
 
@@ -42,8 +41,6 @@ class VigLinkController extends Controller
 		$url = ('https://www.viglink.com/users/convertAccount?' . $queryParams);
 
 		$response = new Response($url);
-
-		var_dump($url);
 
 		return $response;
 	}
