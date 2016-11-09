@@ -29,7 +29,7 @@ class VigLinkController extends Controller
 		$secretKey = $this->getParameter('viglink_secret_key');
 
 		$url = ("https://www.viglink.com/users/convertAccount?key=" . $key . "&subId=" . $subId);
-		$signature = bin2hex(hash_hmac('md5', ($url . "-" . $expiration), $secretKey));
+		$signature = hash_hmac('md5', ($url . "-" . $expiration), $secretKey);
 
 		$queryParams = http_build_query(
 			['key' => $key,
