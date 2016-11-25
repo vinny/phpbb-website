@@ -9,16 +9,17 @@ class VigLinkController extends Controller
 {
 	public function keyAction(Request $request)
 	{
-		$sitename = $request->query->get('sitename');
-		$siteId = $request->query->get('uuid');
+		$siteId = $request->query->get('siteid');
+		$uuid = $request->query->get('uuid');
 		$apiKey = $request->query->get('key');
+		$siteDomain = $request->query->get('domain');
 
-		if (!isset($sitename, $siteId, $apiKey))
+		if (!isset($siteId, $uuid, $apiKey, $siteDomain))
 		{
 			throw new Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
 		}
 
-		$subId = md5($sitename . $siteId);
+		$subId = md5($siteId . $uuid);
 		$expiration = strtotime("+1 year");
 		$key = $this->container->hasParameter('viglink_api_key') ? $this->getParameter('viglink_api_key') : $apiKey;
 
