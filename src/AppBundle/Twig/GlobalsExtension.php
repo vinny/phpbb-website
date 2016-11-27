@@ -437,6 +437,9 @@ class GlobalsExtension extends \Twig_Extension
 
 			'extensions_docs_31'					=> 'https://area51.phpbb.com/docs/dev/31x/extensions/',
 			'extensions_docs_32'					=> 'https://area51.phpbb.com/docs/dev/32x/extensions/',
+			'extensions_docs_basics'				=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_basics.html',
+			'extensions_docs_key_concepts'			=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_key_concepts.html',
+			'extensions_docs_modules'				=> 'https://area51.phpbb.com/docs/dev/31x/extensions/tutorial_modules.html',
 
 			'extensions_security_tracker'			=> 'https://tracker.phpbb.com/browse/EXTSEC',
 
