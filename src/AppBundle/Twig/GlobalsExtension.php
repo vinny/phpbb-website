@@ -88,6 +88,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'development_path'	=> '/development/', // Usage = 3
 			// 'DEV_INDEX_SUB'		=> '/development/',
 			'DEVELOPMENT'		=> '/development/',
+			
+			'GSOC'			=> '/development/gsoc/'
 
 			'community_path'	=> '/community/',
 			'COMMUNITY'			=> '/community',
@@ -215,6 +217,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'DEV_BOARD'			=> '//area51.phpbb.com/phpBB/',
 			'DEV_HOME'			=> '//area51.phpbb.com/',
 			'DEV_PROSILVER'		=> '/development/prosilver/',
+			'GSOC'			=> '/development/gsoc/'
+			'DEV_GSOC_IDEAS'	=> '/development/gsoc/ideas/',
 			'DEV_QA'				=> '/development/qa/',
 			//'DEV_QA_CONTACT'		=> '/community/ucp.php?i=pm&amp;mode=compose&amp;u=' . DEV_QA_CONTACT_ID),
 			'DEV_QA_TOOL'			=> '/development/qa/release/new',
