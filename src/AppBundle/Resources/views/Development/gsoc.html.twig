@@ -1,0 +1,52 @@
+{% extends ':base:base.html.twig' %}
+
+{% block title %}Google Summer of Code 2017 &bull; phpBB{% endblock title %}
+
+{% block phpbb_body_class %}development{% endblock %}
+
+{% block body %}
+<div id="page-body">
+<ul class="linklist navlinks">
+	<li><a href="{{ home_path }}">Home</a>
+		<strong>&#8249;</strong> <a href="{{ development_path }}">Development</a>
+		<strong>&#8249;</strong> <a href="{{ gsoc_path }}">GSoC 2017</a>
+	</li>
+</ul>
+
+<div id="main">
+	<h2 class="imgrep development">Google Summer of Code 2017</h2>
+	<h3>What is Google Summer of Code?</h3>
+	<p>Google Summer of Code is an annual program in which Google awards stipends to students participating in coding projects for free and open source software projects. Its aim is to get students involved in and familiar with the open source community. Read more about the program at the <a href="https://summerofcode.withgoogle.com/about/">Google Summer of Code site</a>.</p>
+	<br class="clear" />
+	<br />
+</div>
+
+<div id="extras">
+	{{ include('AppBundle:lists:subscribe.html.twig') }}
+	{{ include('AppBundle:lists:carbon_ads.html.twig') }}
+
+	<div class="mini-panel">
+		<div class="inner">
+		<h3>GSoC 2017</h3>
+		<ul class="menu">
+			<li class="last"><a href="{{ DEV_GSOC_IDEAS }}">GSoC 2017 Ideas</a></li>
+			<li class="last"><a href="{{ DEV_BOARD }}">Area51 Discussion Board</a></li>
+			<li class="last"><a href="{{ DEV_IRC_CHAT }}">IRC Development Channel</a></li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="mini-panel">
+		<div class="inner">
+		<h3>Previous years</h3>
+		<ul class="menu">
+			<li class="last"><a href="{{ DEV_GSOC_2012 }}">GSoC 2012</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2013 }}">GSoC 2013</a></li>
+			<li class="last"><a href="{{ DEV_GSOC_2014 }}">GSoC 2014</a></li>
+		</ul>
+		</div>
+	</div>
+
+</div>
+</div>
+{% endblock %}
