@@ -90,6 +90,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'DEVELOPMENT'		=> '/development/',
 			
 			'GSOC'			=> '/development/gsoc/'
+			'gsoc_path'		=> '/development/gsoc/',
 
 			'community_path'	=> '/community/',
 			'COMMUNITY'			=> '/community',
