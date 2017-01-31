@@ -89,7 +89,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			// 'DEV_INDEX_SUB'		=> '/development/',
 			'DEVELOPMENT'		=> '/development/',
 			
-			'GSOC'			=> '/development/gsoc/'
+			'GSOC'			=> '/development/gsoc/',
 			'gsoc_path'		=> '/development/gsoc/',
 
 			'community_path'	=> '/community/',
