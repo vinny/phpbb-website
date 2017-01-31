@@ -213,7 +213,9 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'CODE_DOCS_30X'		=> '//area51.phpbb.com/docs/code/',
 			'GIT_REPOSITORY'		=> 'https://github.com/phpbb',
 			'GIT_REPOSITORY_3_0'	=> 'https://github.com/phpbb/phpbb3',
-			'CODING_GUIDELINES'	=> '//area51.phpbb.com/docs/30x/coding-guidelines.html',
+			'GIT_REPOSITORY_LATEST'	=> 'https://github.com/phpbb/phpbb',
+			'CODING_GUIDELINES_3_0'	=> '//area51.phpbb.com/docs/30x/coding-guidelines.html',
+			'CODING_GUIDELINES'	=> '//area51.phpbb.com/docs/32x/coding-guidelines.html',
 
 			'DEV_BOARD'			=> '//area51.phpbb.com/phpBB/',
 			'DEV_HOME'			=> '//area51.phpbb.com/',
