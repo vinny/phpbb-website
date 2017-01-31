@@ -218,7 +218,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'DEV_BOARD'			=> '//area51.phpbb.com/phpBB/',
 			'DEV_HOME'			=> '//area51.phpbb.com/',
 			'DEV_PROSILVER'		=> '/development/prosilver/',
-			'GSOC'			=> '/development/gsoc/'
+			'GSOC'			=> '/development/gsoc/',
 			'DEV_GSOC_IDEAS'	=> '/development/gsoc/ideas/',
 			'DEV_GSOC_2012'		=> 'https://wiki.phpbb.com/GSoC/2012/Ideas',
 			'DEV_GSOC_2013'		=> 'https://wiki.phpbb.com/GSoC/2013/Ideas',
