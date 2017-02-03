@@ -680,6 +680,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'U_BUGS_PHPBB_SUB'					=> 'http://tracker.phpbb.com/',
 			'U_SECURITY_SUB'					=> '/security/',
 			'U_DEV_HOME_SUB'					=> '//area51.phpbb.com/',
+			'U_DEV_GSOC_SUB'					=> '/development/gsoc',
 
 			'U_IDEAS'							=> '/ideas',
 
