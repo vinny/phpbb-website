@@ -1,6 +1,6 @@
 {% extends ':base:base.html.twig' %}
 
-{% block title %}Google Summer of Code 2017 &bull; phpBB{% endblock title %}
+{% block title %}Google Summer of Code 2017 Ideas &bull; phpBB{% endblock title %}
 
 {% block phpbb_body_class %}development{% endblock %}
 
@@ -79,8 +79,9 @@
 			</ul>
 			<h4 class="gsoc-page">Available mentors</h4>
 			<p>Marc Alexander, Tristan Darricau</p>
+			<hr>
 
-			<h3 class="gsoc-page"><a id="api" href="#api">Push notifications</a></h3>
+			<h3 class="gsoc-page"><a id="push-notifications" href="#push-notifications">Push notifications</a></h3>
 			<h4 class="gsoc-page">Summary</h4>
 			<p>Adding a feature which allows users to recieve desktop notifications from phpBB in realtime, as well as provide the neccessary backend features for other extension developers to easily extend phpBB with other types of push notifications (e.g. for mobile apps etc).</p>
 			<h4 class="gsoc-page">Expected results</h4>
@@ -100,7 +101,96 @@
 				<li>Useful: Familiarity with test tools, and JavaScript build tools such as gulp</li>
 			</ul>
 			<h4 class="gsoc-page">Available mentors</h4>
-			<p>Máté Bartus</p>
+			<p>Máté Bartus, Marc Alexander</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="admin-ui" href="#admin-ui">Admin Control Panel UI/UX</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>The phpBB Admin Control Panel user interface has been in use since the release of phpBB 3.0 in 2007. Naturally, its design is no longer up-to-date with the ever evolving design language of current websites. In addition to that, concerns about it being over-complex and not intuitive to use have been voiced before.</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Create a concept for a new ACP user interface structure keeping usability in mind</li>
+				<li>Create a concept design based on the structure concept using modern practices</li>
+				<li>Start implementation of a new user interface based on the concepts</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: PHP, HTML5, CSS, Photoshop or similar tools</li>
+				<li>Useful: JS, jQuery, Gulp or similar JS build tool, previous UI design experience</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Michael Miday, Marc Alexander</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="converter" href="#converter">Converter Framework</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				In addition to installation and updates from previous versions, phpBB also supports conversions from
+				other forum software. However, converters usually can only target a certain software at a specific version.
+				As a result, the possible conversion paths to phpBB are not as easy and straightforward as one might expect
+				and usually requires an extra file that takes care of the actual conversion process. The goal of this project
+				is to create a converter framework that can convert the database entries from any other BB software to phpBB's
+				format with a simple configuration file that defines the "steps" it needs to take during the conversion process.
+			</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Create a converter framework that can be easily adjusted to migrate database entries to phpBB</li>
+				<li>Support the definition of migrations using a configuration file</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: PHP, SQL</li>
+				<li>Useful: Symfony, YAML, MySQL or similar</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Marc Alexander</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="styleguide" href="#styleguide">Advanced Styleguide driven development(SDD) system</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				Build a NodeJS based app to view, interact with, and dynamically build/manage components in StyleGuides(phpBB theme).
+			</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Creating a simple user interface (material design spec) for the app using suggested CSS/SCSS/Twig formats developed in conjunction with mentors for extracting data from files</li>
+				<li>Must allow user to view example(s) of components and framework layer/partials while allowing for scaling between established breakpoints (<a href="https://v4-alpha.getbootstrap.com/layout/grid/#grid-options">Bootstrap Grid System</a>) of responsive design.</li>
+				<li>Must allow viewing/editing of required files (SCSS, TWIG, JS), and allow for adding components.</li>
+				<li>Must integrate into phpBB template system (be able to read from and manipulate within phpBB styles dir).</li>
+				<li>Must be able to switch between styleguides.</li>
+				<li>Must build all styleguides to mentor defined folder structure or allow for customization of folder structure.</li>
+				<li>Must follow all coding standards set by mentors for SCSS, JS, TWIG. Project must use modern best practices and run on a NodeJS backend, relying on ExpressJS and or VueJS for routing & interface interactions.</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented design principles, Javascript, NodeJS, ExpressJS and/or VueJS 2.0, twig.js, GulpJS, JQuery, AJAX, SCSS, CSS, XHTML</li>
+				<li>Useful: PHP, phpBB / phpBB Themes</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Michael Miday</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="moderator-tools" href="#moderator-tools">Improved moderator tools</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>
+				Moderator actions within a topic like "Split topic" and "move posts" needs a detour through the MCP. Changing the mcp-tabs (Move posts, split topic etc.) won't change the select-input-field in mcp, too. This leads to a couner intuive behaviour.
+
+				The idea is to add a checkbox to each post, make each post selectable and open a "alert"-similar popup to present the moderator options directly to the user. So select to posts, select "move posts" opens an alert-popup where you can look for and enter a topic ID. Split topic analog to that behaviour.
+
+				In addition to that, possible improvements to moderation of topics and posts should be assessed and implemented in order of importance to give a moderators a more powerful and easy to use set of tools.
+			</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Add a checkbox or similar way of selecting posts to split off or move to the topic view. This should be as intuitive as possible.</li>
+				<li>Improve Moderator Control Panel usability, e.g. by reviewing interaction paths & usability</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Git, PHP, JavaScript, AJAX, HTML</li>
+				<li>Useful: CSS, previous phpBB experience</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Christian Schnegelberger, Marc Alexander</p>
 
 			<h2 class="gsoc-page"><a id="extensions" href="#extensions">Extensions Ideas</a></h2>
 
@@ -120,6 +210,23 @@
 			</ul>
 			<h4 class="gsoc-page">Available mentors</h4>
 			<p>Derk Ruitenbeek, Matt Friedman</p>
+			<hr>
+
+			<h3 class="gsoc-page"><a id="human-urls" href="#human-urls">Human Readable URLs</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>One of the most requested phpBB features is the ability to use human readable URLs. This extension should use the topic, forum and other page titles in the URL while still redirecting traditional URLs to these enhanced ones for backwards compatibility. (Also see the <a href="https://area51.phpbb.com/phpBB/viewtopic.php?f=108&t=40965">RFC</a> at Area51)</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>Add sanitised versions of topic and forum titles into the URLs</li>
+				<li>Maintain backward compatibility so regular phpBB URLs created before the enabling of this extension will still be usable and redirect to the Human Readable URLs</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: PHP, Object-oriented design principles</li>
+				<li>Useful: phpBB Extensions system</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Derk Ruitenbeek, Matt Friedman, Paul Sohier</p>
 
 			<h2 class="gsoc-page"><a id="own-idea" href="#own-idea">Proposing your own idea</a></h2>
 			<p>
@@ -146,6 +253,7 @@
 					<h3>GSoC 2017</h3>
 					<ul class="menu">
 						<li class="last"><a href="{{ GSOC }}">GSoC 2017 Instructions</a></li>
+						<li class="last"><a href="{{  DEV_GSOC_GUIDELINES }}">GSoC 2017 Student Proposal Guidelines</a></li>
 						<li class="last"><a href="{{ DEV_BOARD }}">Area51 Discussion Board</a></li>
 						<li class="last"><a href="{{ DEV_IRC_CHAT }}">IRC Development Channel</a></li>
 					</ul>

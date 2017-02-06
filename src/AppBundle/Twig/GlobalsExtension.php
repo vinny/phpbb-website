@@ -222,6 +222,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'DEV_PROSILVER'		=> '/development/prosilver/',
 			'GSOC'			=> '/development/gsoc/',
 			'DEV_GSOC_IDEAS'	=> '/development/gsoc/ideas/',
+			'DEV_GSOC_GUIDELINES'	=> '/development/gsoc/guidelines/',
 			'DEV_GSOC_2012'		=> 'https://wiki.phpbb.com/GSoC/2012/Ideas',
 			'DEV_GSOC_2013'		=> 'https://wiki.phpbb.com/GSoC/2013/Ideas',
 			'DEV_GSOC_2014'		=> 'https://wiki.phpbb.com/GSoC/2014/Ideas',

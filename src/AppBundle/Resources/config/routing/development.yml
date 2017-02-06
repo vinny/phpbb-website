@@ -19,6 +19,13 @@ phpBBWebsite_Development_gsoc_ideas:
         template: AppBundle:Development:gsoc_ideas.html.twig
     methods:  [GET]
 
+phpBBWebsite_Development_gsoc_guidelines:
+    path:  /gsoc/guidelines/
+    defaults:
+        _controller: AppBundle:StaticTemplate:staticTemplate
+        template: AppBundle:Development:gsoc_guidelines.html.twig
+    methods:  [GET]
+
 phpBBWebsite_Development_prosilver:
     path: /prosilver/
     defaults: { _controller: AppBundle:Development:prosilver, page: 1 }
