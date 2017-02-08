@@ -88,6 +88,9 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'development_path'	=> '/development/', // Usage = 3
 			// 'DEV_INDEX_SUB'		=> '/development/',
 			'DEVELOPMENT'		=> '/development/',
+			
+			'GSOC'			=> '/development/gsoc/',
+			'gsoc_path'		=> '/development/gsoc/',
 
 			'community_path'	=> '/community/',
 			'COMMUNITY'			=> '/community',
@@ -210,16 +213,27 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'CODE_DOCS_30X'		=> '//area51.phpbb.com/docs/code/',
 			'GIT_REPOSITORY'		=> 'https://github.com/phpbb',
 			'GIT_REPOSITORY_3_0'	=> 'https://github.com/phpbb/phpbb3',
-			'CODING_GUIDELINES'	=> '//area51.phpbb.com/docs/30x/coding-guidelines.html',
+			'GIT_REPOSITORY_LATEST'	=> 'https://github.com/phpbb/phpbb',
+			'CODING_GUIDELINES_3_0'	=> '//area51.phpbb.com/docs/30x/coding-guidelines.html',
+			'CODING_GUIDELINES'	=> '//area51.phpbb.com/docs/32x/coding-guidelines.html',
 
 			'DEV_BOARD'			=> '//area51.phpbb.com/phpBB/',
 			'DEV_HOME'			=> '//area51.phpbb.com/',
 			'DEV_PROSILVER'		=> '/development/prosilver/',
+			'GSOC'			=> '/development/gsoc/',
+			'DEV_GSOC_IDEAS'	=> '/development/gsoc/ideas/',
+			'DEV_GSOC_GUIDELINES'	=> '/development/gsoc/guidelines/',
+			'DEV_GSOC_2012'		=> 'https://wiki.phpbb.com/GSoC/2012/Ideas',
+			'DEV_GSOC_2013'		=> 'https://wiki.phpbb.com/GSoC/2013/Ideas',
+			'DEV_GSOC_2014'		=> 'https://wiki.phpbb.com/GSoC/2014/Ideas',
+			'DEV_GSOC_2015'		=> 'https://wiki.phpbb.com/GSoC/2015/Ideas',
+			'DEV_GSOC_2016'		=> 'https://wiki.phpbb.com/GSoC/2016/Ideas',
 			'DEV_QA'				=> '/development/qa/',
 			//'DEV_QA_CONTACT'		=> '/community/ucp.php?i=pm&amp;mode=compose&amp;u=' . DEV_QA_CONTACT_ID),
 			'DEV_QA_TOOL'			=> '/development/qa/release/new',
 			'DEV_QA_30X_BUGLIST'	=> '/bugs/phpbb3/qa.php',
 			'DEV_WIKI'			=> 'https://wiki.phpbb.com/',
+			'DEV_IRC_CHAT'		=> 'https://webchat.freenode.net/?channels=phpbb-dev',
 
 			'dev_github_phpbb_master' => 'https://github.com/phpbb/phpbb/tree/master',
 			'dev_github_phpbb_32x' => 'https://github.com/phpbb/phpbb/tree/3.2.x',
@@ -672,6 +686,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'U_BUGS_PHPBB_SUB'					=> 'http://tracker.phpbb.com/',
 			'U_SECURITY_SUB'					=> '/security/',
 			'U_DEV_HOME_SUB'					=> '//area51.phpbb.com/',
+			'U_DEV_GSOC_SUB'					=> '/development/gsoc',
 
 			'U_IDEAS'							=> '/ideas',
 
