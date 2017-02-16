@@ -134,6 +134,22 @@ class StylesControllerTest extends BootstrapTestSuite
 		$this->globalTests();
 	}
 
+	public function testStylesSubmissionPolicy32x()
+	{
+		$objs	= $this->setupTest('/styles/rules-and-policies/submission-policy/3.2/');
+		$crawler = $objs['crawler'];
+
+		// Title Check
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Styles Submission Policy (3.2.x)') !== false, 'Title contains Styles Submission Policy (3.2.x)');
+
+		// Content Check
+		$this->assertTrue($crawler->filter('html:contains("this Styles Submission Policy page is dedicated to styles for phpBB 3.2.x")')->count() > 0, 'Submission Policy 3.2.x Content Check');
+		$this->assertTrue($crawler->filter('html:contains("3.2.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
+
+		// Standard All Page Checks
+		$this->globalTests();
+	}
+
 	public function testStylesSubmissionPolicy31x()
 	{
 		$objs	= $this->setupTest('/styles/rules-and-policies/submission-policy/3.1/');
