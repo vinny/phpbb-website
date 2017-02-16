@@ -22,7 +22,7 @@ class StylesControllerTest extends BootstrapTestSuite
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Styles') !== false, 'Title contains Styles');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("The default style for phpBB 3.1.x is prosilver")')->count() > 0, 'Styles Home Content Check');
+		$this->assertTrue($crawler->filter('html:contains("The default style for phpBB 3.1.x and 3.2.x is prosilver")')->count() > 0, 'Styles Home Content Check');
 		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
@@ -76,7 +76,7 @@ class StylesControllerTest extends BootstrapTestSuite
 		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), $expectedTitle[1]) !== false, 'Title contains Modifying Styles');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("creating your own style for phpBB 3.1.x")')->count() > 0, 'Styles Create Content Check');
+		$this->assertTrue($crawler->filter('html:contains("creating your own style for phpBB 3.2.x/3.1.x")')->count() > 0, 'Styles Create Content Check');
 		$this->assertTrue($crawler->filter('html:contains("3.1.x Styles Forums")')->count() > 0, 'Styles Sidebar Check');
 
 		// Standard All Page Checks
