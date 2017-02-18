@@ -24,13 +24,16 @@ class PhpbbHandling
 	{
 		if (preg_match('#^<[rt][ >]#', $text))
 		{
+			$text_only_message = str_replace('[*:' . $uid . ']', '&sdot;&nbsp;', $text);
 			// Insert a space before <s> and <e> then remove formatting
-			$xml = preg_replace('#<[es]>#', ' $0', $text);
+			$xml = preg_replace('#<[es]>#', ' $0', $text_only_message);
 			
 			$flags = (\LIBXML_VERSION >= 20700) ? \LIBXML_COMPACT | \LIBXML_PARSEHUGE : 0;
-			$dom = new DOMDocument;
+			$dom = new \DOMDocument();
+			// Somehow need to also force UTF8 encoding here
+			$xml = mb_convert_encoding($xml, 'UTF-8');
 			$dom->loadXML($xml, $flags);
-			$xpath = new DOMXPath($dom);
+			$xpath = new \DOMXPath($dom);
 			foreach ($xpath->query('//e | //s') as $node)
 			{
 				$node->parentNode->removeChild($node);
