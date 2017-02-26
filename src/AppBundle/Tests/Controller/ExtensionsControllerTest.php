@@ -131,11 +131,11 @@ class ExtensionsControllerTest extends BootstrapTestSuite
 		$crawler = $objs['crawler'];
 
 		// Title Check
-		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extensions Team Overview') !== false, 'Title contains Extensions Team Overview');
+		$this->assertTrue(strpos(($crawler->filter('title')->first()->text()), 'Extension Customisations Team Overview') !== false, 'Title contains Extensions Team Overview');
 
 		// Content Check
-		$this->assertTrue($crawler->filter('html:contains("The Extensions Team oversees all activities on phpBB.com with relation to extensions")')->count() > 0, 'Extensions Team Content Check');
-		$this->assertTrue($crawler->filter('html:contains("Extensions Team")')->count() > 0, 'Extensions Sidebar Check');
+		$this->assertTrue($crawler->filter('html:contains("The Extension Customisations Team oversees all activities on phpBB.com with relation to extensions")')->count() > 0, 'Extensions Team Content Check');
+		$this->assertTrue($crawler->filter('html:contains("Extension Customisations Team")')->count() > 0, 'Extensions Sidebar Check');
 
 		// Standard All Page Checks
 		$this->globalTests();
