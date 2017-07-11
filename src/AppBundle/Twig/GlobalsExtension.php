@@ -130,8 +130,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'documentation_path'=> '/support/docs/',
 			'DOCUMENTATION'		=> '/support/docs/',
 
-			'ideas_path'		=> '/ideas/',
-			'IDEAS'				=> '/ideas/',
+			'ideas_path'		=> '/community/ideas/',
+			'IDEAS'				=> '/community/ideas/',
 
 			'extensions_path'	=> '/extensions/',
 
@@ -694,7 +694,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'U_DEV_HOME_SUB'					=> '//area51.phpbb.com/',
 			'U_DEV_GSOC_SUB'					=> '/development/gsoc',
 
-			'U_IDEAS'							=> '/ideas',
+			'U_IDEAS'							=> '/community/ideas',
 
 			'U_FORUM_INDEX_SUB'					=> '/community/',
 			'U_ABOUT_INDEX_SUB'					=> '/about/',
