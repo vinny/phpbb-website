@@ -120,8 +120,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'feeds_rss_path'	=> '/feeds/rss/',
 			'FEEDS_RSS'			=> '/feeds/rss/',
 
-			'kb_path'			=> '/support/docs/en/3.1/kb/',
-			'KB'				=> '/support/docs/en/3.1/kb/',
+			'kb_path'			=> '/support/docs/en/3.2/kb/',
+			'KB'				=> '/support/docs/en/3.2/kb/',
 			//'KB'				=> '/knowledgebase/',
 
 			'showcase_path'		=> '/showcase/',
@@ -428,8 +428,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'SUPPORT_CODE_CHANGES'	=> '//area51.phpbb.com/code-changes/',
 
 			'SUPPORT_DOCS'			=> '/support/docs/',
-			'SUPPORT_DOCS_UG'			=> '/support/docs/en/3.1/ug/',
-			'SUPPORT_DOCS_KB'			=> '/support/docs/en/3.1/kb/',
+			'SUPPORT_DOCS_UG'			=> '/support/docs/en/3.2/ug/',
+			'SUPPORT_DOCS_KB'			=> '/support/docs/en/3.2/kb/',
 			'SUPPORT_DOCS_FLASH'		=> '/support/docs/flash/',
 		);
 
