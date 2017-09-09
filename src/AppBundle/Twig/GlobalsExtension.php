@@ -643,7 +643,8 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			// phpBB Demo
 			'DEMO_30X'			=> 'http://try-phpbb.com/30x',
 			'demo_31x'			=> 'http://try-phpbb.com/31x',
-			'latest_demo'		=> 'http://try-phpbb.com/31x',
+			'demo_32x'			=> 'http://try-phpbb.com/32x',
+			'latest_demo'		=> 'http://try-phpbb.com/32x',
 
 			'MANAGEMENT_TEAM'	=> '/community/memberlist.php?mode=group&g=13330',
 		);
