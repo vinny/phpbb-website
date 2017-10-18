@@ -559,6 +559,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=868795',
 			'ext_tl_name'			=> 'DavidIQ',
 			'ext_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=159755',
+            'moderator_team'        => '/community/memberlist.php?mode=group&g=993',
 		);
 
 		return $peopleVars;
