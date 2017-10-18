@@ -11,6 +11,9 @@ namespace AppBundle\Twig;
 
 class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {
+
+    const INTL_CONTACT_ID = 964015;
+
 	public function getGlobals()
 	{
 		// @TODO Generate URLs for routes
@@ -84,6 +87,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 
 			'support_path'		=> '/support/',
 			'SUPPORT'			=> '/support/',
+            'support_intl_path' => '/support/intl',
 
 			'development_path'	=> '/development/', // Usage = 3
 			// 'DEV_INDEX_SUB'		=> '/development/',
@@ -418,7 +422,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'SUPPORT_TUTORIALS_2_0'	=> '/support/tutorials/2.0/',
 			'SUPPORT_TUTORIALS_3_0'	=> '/support/tutorials/3.0/',
 			'SUPPORT_INTL'			=> '/support/intl/',
-			//'SUPPORT_INTL_CONTACT'	=> '/community/ucp.php?i=pm&amp;mode=compose&amp;u=' . INTL_CONTACT_ID,
+			'SUPPORT_INTL_CONTACT'	=> '/community/ucp.php?i=pm&mode=compose&u=' . self::INTL_CONTACT_ID,
 			'SUPPORT_SRT'				=> '/support/srt/',
 			'SUPPORT_SRT_FEEDBACK'	=> '/community/viewtopic.php?f=64&amp;t=1455965',
 			'SUPPORT_SRT_TOPIC'		=> '/community/viewtopic.php?f=46&amp;t=543515',

@@ -93,7 +93,6 @@ RewriteCond %{REQUEST_URI} !^/support/docs/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/documentation/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/faq/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/forums/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/support/intl/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/srt/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/stk/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/tutorials/{0,1}.*
