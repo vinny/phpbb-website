@@ -74,7 +74,6 @@ RewriteCond %{REQUEST_URI} !^/libertyvasion/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/londonvasion/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/logs/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/marshalrusty/{0,1}.*
-RewriteCond %{REQUEST_URI} !^/rules/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/search/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/shop/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/showcase/{0,1}.*
