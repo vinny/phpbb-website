@@ -1,4 +1,4 @@
-phpBBWebsite_About_home:
+phpBBWebsite_Rules_home:
     path:  /
     defaults:
         _controller: AppBundle:StaticTemplate:staticTemplate
