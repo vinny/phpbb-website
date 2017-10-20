@@ -47,9 +47,9 @@ class GlobalController extends Controller
                     $blog_preview = substr($blog_preview, 0, strpos($blog_preview, '>'));
 
                     $announcements[$post_time] = array(
-                        'DAY' => date($post_time, 'd'),
-                        'MONTH' => date($post_time, 'M'),
-                        'YEAR' => date($post_time, 'Y'),
+                        'DAY' => date('d', $post_time),
+                        'MONTH' => date('M', $post_time),
+                        'YEAR' => date('Y', $post_time),
                         'U_LINK' => (string) $item->link,
                         'TITLE' => (string) $item->title,
                         'FROM_BLOG' => true,
