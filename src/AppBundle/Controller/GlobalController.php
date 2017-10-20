@@ -37,7 +37,7 @@ class GlobalController extends Controller
 
             if (isset($rss_content))
             {
-                $xml_elements = new SimpleXMLElement($rss_content);
+                $xml_elements = new \SimpleXMLElement($rss_content);
                 $i = 0;
 
                 foreach ($xml_elements->channel->item as $item)
