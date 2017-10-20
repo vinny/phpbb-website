@@ -89,6 +89,8 @@ RewriteCond %{REQUEST_URI} !^/mods/finding/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/mods/opening/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/mods/installing/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/mods/bridges/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/mods/faq/{0,1}.*
+RewriteCond %{REQUEST_URI} !^/mods/support/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/docs/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/documentation/{0,1}.*
 RewriteCond %{REQUEST_URI} !^/support/faq/{0,1}.*
