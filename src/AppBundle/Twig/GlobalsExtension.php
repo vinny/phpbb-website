@@ -87,7 +87,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 
 			'support_path'		=> '/support/',
 			'SUPPORT'			=> '/support/',
-            'support_intl_path' => '/support/intl',
+			'support_intl_path' => '/support/intl',
 
 			'development_path'	=> '/development/', // Usage = 3
 			// 'DEV_INDEX_SUB'		=> '/development/',
@@ -476,7 +476,7 @@ class GlobalsExtension extends \Twig_Extension implements \Twig_Extension_Global
 			'ext_dev_tl_contact'	=> '/community/memberlist.php?mode=viewprofile&u=868795',
 			'ext_tl_name'			=> 'DavidIQ',
 			'ext_tl_contact'		=> '/community/memberlist.php?mode=viewprofile&u=159755',
-            'moderator_team'        => '/community/memberlist.php?mode=group&g=993',
+			'moderator_team'        => '/community/memberlist.php?mode=group&g=993',
 		);
 
 		return $peopleVars;
