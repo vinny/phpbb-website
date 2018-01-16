@@ -1,6 +1,6 @@
 {% extends ':base:base.html.twig' %}
 
-{% block title %}Google Summer of Code 2018 Ideas &bull; phpBB{% endblock title %}
+{% block title %}Google Summer of Code 2017 Ideas &bull; phpBB{% endblock title %}
 
 {% block phpbb_body_class %}development{% endblock %}
 
@@ -9,18 +9,18 @@
 		<ul class="linklist navlinks">
 			<li><a href="{{ home_path }}">Home</a>
 				<strong>&#8249;</strong> <a href="{{ development_path }}">Development</a>
-				<strong>&#8249;</strong> <a href="{{ gsoc_path }}">GSoC 2018</a>
+				<strong>&#8249;</strong> <a href="{{ gsoc_path }}">GSoC 2017</a>
 			</li>
 		</ul>
 
 		<div id="main">
-			<h2 class="imgrep gsoc">GSoC 2018 Project Ideas</h2>
-			<img style="float:right;margin:10px;" width="96" src="{{ asset('assets/images/images/development/gsoc_17_icon.svg') }}" alt="GSoC 2018 Logo" />
-			<h3 class="gsoc-page">Welcome to the GSoC 2018 Ideas Page</h3>
+			<h2 class="imgrep gsoc">GSoC 2017 Project Ideas</h2>
+			<img style="float:right;margin:10px;" width="96" src="{{ asset('assets/images/images/development/gsoc_17_icon.svg') }}" alt="GSoC 2017 Logo" />
+			<h3 class="gsoc-page">Welcome to the GSoC 2017 Ideas Page</h3>
 			<p>
-				phpBB is applying to participate as a mentor organisation in Google Summer of Code 2018. On this page you can find ideas for projects
-				which might inspire your application. If you wish to submit a proposal based on these ideas, you may want to <a href="{{ GSOC }}#contact">contact</a> the available
-				mentors for more detailed information.
+				phpBB was a mentor organisation in Google Summer of Code 2017. On this page you can find ideas for projects that were listed
+				in 2017 and which might inspire your application. The ideas for Google Summer of Code 2018 can be found on the
+				<a href="{{ GSOC_IDEAS }}" alt="GSoC 2018 Ideas">GSoC 2018 Ideas</a> page.<br><br>
 
 				Feel free to discuss any project ideas you might have in addition to the ones listed here.
 
@@ -41,6 +41,7 @@
 			</ul>
 			<h3 class="gsoc-page"><a href="#extensions">Extensions Ideas</a></h3>
 			<ul>
+				<li><a href="#ad-management">Advertisement Management</a></li>
 				<li><a href="#human-urls">Human Readable URLs</a></li>
 			</ul>
 			<h3 class="gsoc-page"><a href="#own-idea">Idea proposals</a></h3>
@@ -120,7 +121,7 @@
 			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
 			<ul>
 				<li>Required: Strong understanding of OOP fundamentals, as well as, familiarity with PHP and JavaScript</li>
-				<li>Useful: Familiarity with test tools, and JavaScript build tools such as gulp, Websockets</li>
+				<li>Useful: Familiarity with test tools, and JavaScript build tools such as gulp</li>
 			</ul>
 			<h4 class="gsoc-page">Available mentors</h4>
 			<p>Máté Bartus, Marc Alexander</p>
@@ -217,6 +218,24 @@
 			<br>
 			<h2 class="gsoc-page"><a id="extensions" href="#extensions">Extensions Ideas</a></h2>
 
+			<h3 class="gsoc-page"><a id="ad-management" href="#ad-management">Advertisement Management</a></h3>
+			<h4 class="gsoc-page">Summary</h4>
+			<p>The ability to easily handle advertisements in phpBB is often requested. Create a basic advertisement management extension that allows admins to add HTML/JS advertisement code to a number of predefined locations in the template.</p>
+			<h4 class="gsoc-page">Expected results</h4>
+			<ul>
+				<li>A validated phpBB extension which adds advertisement management to phpBB</li>
+				<li>Allow admins to add HTML/JS advertisement code to predefined locations (ie: forum footer, header, after a topic's first post, etc.)</li>
+				<li>If time allows: additional features such as hiding advertisements for specific groups, allow image banner uploads from the ACP, ability to set end dates for specific advertisements.</li>
+			</ul>
+			<h4 class="gsoc-page">Knowledge Prerequisites</h4>
+			<ul>
+				<li>Required: Object-oriented PHP, SQL, JavaScript/jQuery, CSS, Git</li>
+				<li>Useful: phpBB Extensions system</li>
+			</ul>
+			<h4 class="gsoc-page">Available mentors</h4>
+			<p>Derk Ruitenbeek, Matt Friedman</p>
+			<hr>
+
 			<h3 class="gsoc-page"><a id="human-urls" href="#human-urls">Human Readable URLs</a></h3>
 			<h4 class="gsoc-page">Summary</h4>
 			<p>One of the most requested phpBB features is the ability to use human readable URLs. This extension should use the topic, forum and other page titles in the URL while still redirecting traditional URLs to these enhanced ones for backwards compatibility. (Also see the <a href="https://area51.phpbb.com/phpBB/viewtopic.php?f=108&t=40965">RFC</a> at Area51)</p>
@@ -259,6 +278,7 @@
 					<h3>GSoC 2017</h3>
 					<ul class="menu">
 						<li class="last"><a href="{{ GSOC }}">GSoC 2018 Instructions</a></li>
+						<li class="last"><a href="{{ DEV_GSOC_IDEAS }}">GSoC 2018 Ideas</a></li>
 						<li class="last"><a href="{{  DEV_GSOC_GUIDELINES }}">GSoC 2018 Student Proposal Guidelines</a></li>
 						<li class="last"><a href="{{ DEV_BOARD }}">Area51 Discussion Board</a></li>
 						<li class="last"><a href="{{ DEV_IRC_CHAT }}">IRC Development Channel</a></li>
