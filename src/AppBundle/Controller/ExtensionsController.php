@@ -73,7 +73,7 @@ class ExtensionsController extends Controller
 		$officialExtensions[] = new OfficialExtension(
 			'Google Analytics',
 			'The Google Analytics Extension simply adds a Google Analytics tracking code with your Property ID to your phpBB forum.',
-			'This extension is the simplest of extensions in form and function. It adds a single new field to the ACP for a Google Analytics Property ID, validates it, and inserts the Universal Analytics a-synchronous javascript code into the head of your board\'s HTML pages, just before the closing </head> tag, as recommended by Google. In addition to allowing boards to easily add Google\'s powerful analytics, this extension is an ideal starting example for new extension authors, demonstrating how to effectively add an ACP config option implement that config setting using template events.',
+			'This extension is the simplest of extensions in form and function. It adds a single new field to the ACP for a Google Analytics Property ID, validates it, and inserts the Universal Analytics a-synchronous javascript code into the head of your board\'s HTML pages, just before the closing &lt;/head&gt; tag, as recommended by Google. In addition to allowing boards to easily add Google\'s powerful analytics, this extension is an ideal starting example for new extension authors, demonstrating how to effectively add an ACP config option implement that config setting using template events.',
 			'https://www.phpbb.com/customise/db/extension/googleanalytics/',
 			'https://github.com/phpbb-extensions/googleanalytics',
 			'/assets/images/images/extensions/googleanalytics.png'
